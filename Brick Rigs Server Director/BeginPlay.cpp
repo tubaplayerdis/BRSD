@@ -1,3 +1,15 @@
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
+/*                                                                            */
+/*    Module:     BeginPlay.cpp		                                          */
+/*    Author:     Aaron Wilk                                                  */
+/*    Created:    24 June 2025                                                */
+/*                                                                            */
+/*    Revisions:  V0.1                                                        */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+
 #include "BeginPlay.h"
 #include "global.h"
 #include "watermark.h"
