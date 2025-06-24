@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{926f77ee-06be-4afa-ad71-29438c8f0828}</ProjectGuid>
+    <RootNamespace>BrickRigsServerDirector</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;BRICKRIGSSERVERDIRECTOR_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;BRICKRIGSSERVERDIRECTOR_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;BRICKRIGSSERVERDIRECTOR_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;BRICKRIGSSERVERDIRECTOR_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Include\buffer.c" />
+    <ClCompile Include="..\Include\hde\hde32.c" />
+    <ClCompile Include="..\Include\hde\hde64.c" />
+    <ClCompile Include="..\Include\hook.c" />
+    <ClCompile Include="..\Include\SDK\ABP_Character_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\ABP_Zombie_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\Basic.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_Blender_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_BrickCharacter_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_Brick_8x8x1s_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_Construction_Building_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_Dumpster_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_FuelTank_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_MenuFunctionLibrary_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_PowerPlant_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_Shredder_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_Sign_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_UIFunctionLibrary_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_UIStyle_Blue_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_UIStyle_Cyan_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_UIStyle_Default_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_UIStyle_Gray_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_UIStyle_Orange_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_UIStyle_Violet_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_UIStyle_White_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BP_ZombieAIController_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\BrickRigs_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\CoreUObject_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\EngineSettings_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\Engine_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\UMG_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\Water_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_BrickSliderReadOnly_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_BrickSlider_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_BrickTextBox_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_ChatMessage_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_Chat_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_ContextMenu_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_ControlHint_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_Crosshair_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_CurrentItem_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_GameLogo_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_GameOverlay_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_HealthBar_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_HUDContainer_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_HUDIconContainer_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_HUDNotification_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_HurtMarker_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_InputActionCategory_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_InputActionList_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_InputAction_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_InputChord_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_InputHelp_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_InputKeySpacer_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_InputKey_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_InteractionOption_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_Interaction_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_LoadingScreen_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_MatchState_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_MatchTimer_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_MenuButton_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_Menu_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_PingIndicator_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_Player_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_PopupContainer_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_RestrictedArea_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_StructProperty_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_TeamScore_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_Tooltip_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_WindowManager_functions.cpp" />
+    <ClCompile Include="..\Include\trampoline.c" />
+    <ClCompile Include="AddChatMessage.cpp" />
+    <ClCompile Include="BeginPlay.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="DrawTransition.cpp" />
+    <ClCompile Include="FBrickChatMessage.cpp" />
+    <ClCompile Include="FLinearColor.cpp" />
+    <ClCompile Include="FSlateColor.cpp" />
+    <ClCompile Include="global.cpp" />
+    <ClCompile Include="hooks.cpp" />
+    <ClCompile Include="interpreter.cpp" />
+    <ClCompile Include="LoadMap.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="messages.cpp" />
+    <ClCompile Include="moderation.cpp" />
+    <ClCompile Include="OnPlayerJoined.cpp" />
+    <ClCompile Include="OpenMenu.cpp" />
+    <ClCompile Include="StartPlay.cpp" />
+    <ClCompile Include="UBrickBorder.cpp" />
+    <ClCompile Include="UNetDriver.cpp" />
+    <ClCompile Include="watermark.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AddChatMessage.h" />
+    <ClInclude Include="BeginPlay.h" />
+    <ClInclude Include="DrawTransition.h" />
+    <ClInclude Include="FBrickChatMessage.h" />
+    <ClInclude Include="FLinearColor.h" />
+    <ClInclude Include="FSlateColor.h" />
+    <ClInclude Include="functions.h" />
+    <ClInclude Include="global.h" />
+    <ClInclude Include="hooks.h" />
+    <ClInclude Include="interpreter.h" />
+    <ClInclude Include="LoadMap.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="messages.h" />
+    <ClInclude Include="moderation.h" />
+    <ClInclude Include="modules.h" />
+    <ClInclude Include="OnPlayerJoined.h" />
+    <ClInclude Include="OpenMenu.h" />
+    <ClInclude Include="PlayerInfo.h" />
+    <ClInclude Include="StartPlay.h" />
+    <ClInclude Include="stringlist.h" />
+    <ClInclude Include="UBrickBorder.h" />
+    <ClInclude Include="UNetDriver.h" />
+    <ClInclude Include="watermark.h" />
+    <ClInclude Include="welcome.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

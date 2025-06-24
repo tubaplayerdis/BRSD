@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="More Files">
+      <UniqueIdentifier>{ec5a5eb5-a05a-4b2a-bcfa-041f59da7744}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="More Files\MinHook">
+      <UniqueIdentifier>{986cd902-7252-498e-b118-4d0e887651c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="More Files\SDK">
+      <UniqueIdentifier>{9c402f8f-83c4-40ae-bc94-a00f48ab495d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="More Files\SDK\Core">
+      <UniqueIdentifier>{93e059e1-986c-4e9b-a2bb-33560fedaf89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="More Files\SDK\Blueprint">
+      <UniqueIdentifier>{dc0513bb-f623-4a48-9be2-e9dcd5804cf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="More Files\SDK\UI">
+      <UniqueIdentifier>{8594e586-0950-4e32-aec4-fc59428078c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="More Files\SDK\Engine">
+      <UniqueIdentifier>{485c4f9b-b838-4425-8dc5-af8944f11591}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\main">
+      <UniqueIdentifier>{5a6d75e4-b621-4667-9a4a-cefe8384becf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\hooks">
+      <UniqueIdentifier>{a91785ca-9c6d-49cf-a545-038f5ee1d94e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\global">
+      <UniqueIdentifier>{02f32757-3add-4903-af03-c7d3e6abf34d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ui">
+      <UniqueIdentifier>{4ffad4b8-2037-4ab7-b844-1f0da2ad4da4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\functions">
+      <UniqueIdentifier>{ccf6ab00-3ee6-494e-b948-8217943d86ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\main">
+      <UniqueIdentifier>{27ad5e02-cb69-4120-b24e-cc0cf1239588}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\hooks">
+      <UniqueIdentifier>{f8b3b3ec-6691-46e7-be25-4c1f6eeb96ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\global">
+      <UniqueIdentifier>{22ced9ca-4054-4d6c-87b2-cd4bb6e81afd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\functions">
+      <UniqueIdentifier>{b04b0053-f4f5-472d-8b71-756bc1f0e0dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ui">
+      <UniqueIdentifier>{476724d6-10c6-4fe4-b6d5-ed6dfe5d1653}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\functions\colors">
+      <UniqueIdentifier>{ae8043c9-ac08-4b03-9140-82468ca0a811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\functions\colors">
+      <UniqueIdentifier>{f163f6aa-e9ff-460c-88d6-cca4605efc9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\modules">
+      <UniqueIdentifier>{e75be812-c34a-4c96-91cb-58a5d5b3b39c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules">
+      <UniqueIdentifier>{0a5e6bfc-4f2f-4144-95ab-31c5d7b9cd97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\hooks\global">
+      <UniqueIdentifier>{35331ff7-9b38-43e5-8b6f-1a4865199143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\hooks\global">
+      <UniqueIdentifier>{b03d79a6-c1ce-4117-8181-888834746beb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Include\trampoline.c">
+      <Filter>More Files\MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\hook.c">
+      <Filter>More Files\MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\buffer.c">
+      <Filter>More Files\MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\hde\hde32.c">
+      <Filter>More Files\MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\hde\hde64.c">
+      <Filter>More Files\MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\CoreUObject_functions.cpp">
+      <Filter>More Files\SDK\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BrickRigs_functions.cpp">
+      <Filter>More Files\SDK\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\Basic.cpp">
+      <Filter>More Files\SDK\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files\main</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\main</Filter>
+    </ClCompile>
+    <ClCompile Include="AddChatMessage.cpp">
+      <Filter>Source Files\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="FLinearColor.cpp">
+      <Filter>Source Files\functions\colors</Filter>
+    </ClCompile>
+    <ClCompile Include="hooks.cpp">
+      <Filter>Source Files\hooks</Filter>
+    </ClCompile>
+    <ClCompile Include="FBrickChatMessage.cpp">
+      <Filter>Source Files\functions</Filter>
+    </ClCompile>
+    <ClCompile Include="FSlateColor.cpp">
+      <Filter>Source Files\functions\colors</Filter>
+    </ClCompile>
+    <ClCompile Include="global.cpp">
+      <Filter>Source Files\global</Filter>
+    </ClCompile>
+    <ClCompile Include="messages.cpp">
+      <Filter>Source Files\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="watermark.cpp">
+      <Filter>Source Files\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="UBrickBorder.cpp">
+      <Filter>Source Files\functions</Filter>
+    </ClCompile>
+    <ClCompile Include="UNetDriver.cpp">
+      <Filter>Source Files\functions</Filter>
+    </ClCompile>
+    <ClCompile Include="BeginPlay.cpp">
+      <Filter>Source Files\hooks\global</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawTransition.cpp">
+      <Filter>Source Files\hooks\global</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadMap.cpp">
+      <Filter>Source Files\hooks\global</Filter>
+    </ClCompile>
+    <ClCompile Include="OnPlayerJoined.cpp">
+      <Filter>Source Files\hooks\global</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenMenu.cpp">
+      <Filter>Source Files\hooks\global</Filter>
+    </ClCompile>
+    <ClCompile Include="StartPlay.cpp">
+      <Filter>Source Files\hooks\global</Filter>
+    </ClCompile>
+    <ClCompile Include="interpreter.cpp">
+      <Filter>Source Files\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="moderation.cpp">
+      <Filter>Source Files\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\UMG_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_BrickSlider_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_BrickSliderReadOnly_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_BrickTextBox_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_Chat_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_ChatMessage_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_ContextMenu_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_ControlHint_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_Crosshair_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_CurrentItem_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_GameLogo_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_GameOverlay_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_HealthBar_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_HUDContainer_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_HUDIconContainer_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_HUDNotification_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_HurtMarker_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_InputAction_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_InputActionCategory_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_InputActionList_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_InputChord_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_InputHelp_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_InputKey_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_InputKeySpacer_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_Interaction_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_InteractionOption_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_LoadingScreen_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_MatchState_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_MatchTimer_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_Menu_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_MenuButton_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_PingIndicator_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_Player_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_PopupContainer_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_RestrictedArea_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_StructProperty_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_TeamScore_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_Tooltip_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_WindowManager_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\Water_functions.cpp">
+      <Filter>More Files\SDK\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\Engine_functions.cpp">
+      <Filter>More Files\SDK\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\EngineSettings_functions.cpp">
+      <Filter>More Files\SDK\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_ZombieAIController_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_UIStyle_White_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_UIStyle_Violet_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_UIStyle_Orange_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_UIStyle_Gray_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_UIStyle_Default_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_UIStyle_Cyan_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_UIStyle_Blue_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_UIFunctionLibrary_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_Sign_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_Shredder_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_PowerPlant_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_MenuFunctionLibrary_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_FuelTank_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_Dumpster_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_Construction_Building_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_BrickCharacter_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_Brick_8x8x1s_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\BP_Blender_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\ABP_Zombie_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\ABP_Character_functions.cpp">
+      <Filter>More Files\SDK\Blueprint</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>Header Files\main</Filter>
+    </ClInclude>
+    <ClInclude Include="hooks.h">
+      <Filter>Header Files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="AddChatMessage.h">
+      <Filter>Header Files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="FLinearColor.h">
+      <Filter>Header Files\functions\colors</Filter>
+    </ClInclude>
+    <ClInclude Include="FSlateColor.h">
+      <Filter>Header Files\functions\colors</Filter>
+    </ClInclude>
+    <ClInclude Include="global.h">
+      <Filter>Header Files\global</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerInfo.h">
+      <Filter>Header Files\global</Filter>
+    </ClInclude>
+    <ClInclude Include="watermark.h">
+      <Filter>Header Files\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="messages.h">
+      <Filter>Header Files\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="modules.h">
+      <Filter>Header Files\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="FBrickChatMessage.h">
+      <Filter>Header Files\functions</Filter>
+    </ClInclude>
+    <ClInclude Include="functions.h">
+      <Filter>Header Files\functions</Filter>
+    </ClInclude>
+    <ClInclude Include="UBrickBorder.h">
+      <Filter>Header Files\functions</Filter>
+    </ClInclude>
+    <ClInclude Include="UNetDriver.h">
+      <Filter>Header Files\functions</Filter>
+    </ClInclude>
+    <ClInclude Include="BeginPlay.h">
+      <Filter>Header Files\hooks\global</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawTransition.h">
+      <Filter>Header Files\hooks\global</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenMenu.h">
+      <Filter>Header Files\hooks\global</Filter>
+    </ClInclude>
+    <ClInclude Include="OnPlayerJoined.h">
+      <Filter>Header Files\hooks\global</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadMap.h">
+      <Filter>Header Files\hooks\global</Filter>
+    </ClInclude>
+    <ClInclude Include="StartPlay.h">
+      <Filter>Header Files\hooks\global</Filter>
+    </ClInclude>
+    <ClInclude Include="welcome.h">
+      <Filter>Header Files\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="stringlist.h">
+      <Filter>Header Files\global</Filter>
+    </ClInclude>
+    <ClInclude Include="interpreter.h">
+      <Filter>Header Files\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="moderation.h">
+      <Filter>Header Files\modules</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
