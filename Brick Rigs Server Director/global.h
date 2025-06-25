@@ -11,8 +11,15 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
+#include "windows.h"
+#include <Psapi.h>
+#include <string>
+#include "PlayerInfo.h"
+#include <SDK.hpp>
+#include <SDK/Engine_classes.hpp>
+
 #define STRING(string) UC::FString(string)
-#define NAME(text) SDK::UKistmetStringLibrary::Conv_StringToName(SDK::FString(text));
+#define NAME(text) SDK::UKismetStringLibrary::Conv_StringToName(SDK::FString(text))
 #define GetBoolString(text) (text ? "true" : "false")
 #define RETF return false
 #define RETT return true
@@ -23,11 +30,6 @@
 #define Engine() SDK::UEngine::GetEngine()
 #define Notification(message, icon) global::SendNotificationLocal(message, icon)
 #define WIN32_LEAN_AND_MEAN
-#include "windows.h"
-#include <Psapi.h>
-#include <string>
-#include "PlayerInfo.h"
-#include "SDK.hpp"
 
 #undef TEXT
 #define TEXT(text) SDK::UKismetTextLibrary::Conv_StringToText(SDK::FString(text))
@@ -110,6 +112,15 @@ namespace global
 	/// </summary>
 	/// <returns>true if Brick Rigs is in the main menu; otherwise, false.</returns>
 	bool IsInMainMenu();
+
+	/// <summary>
+	/// Retrieves the bytecode of a specified function from a given class object.
+	/// </summary>
+	/// <param name="objectclass">Pointer to the UClass object representing the class containing the function.</param>
+	/// <param name="classname">The name of the class as a string.</param>
+	/// <param name="functionname">The name of the function whose bytecode is to be retrieved.</param>
+	/// <returns>A vector of bytes containing the bytecode of the specified function.</returns>
+	std::vector<uint8_t> GetFunctionBytecode(SDK::UClass* objectclass, std::string classname, std::string functionname);
 }
 
 SDK::ABrickCharacter* GetBrickCharacter();

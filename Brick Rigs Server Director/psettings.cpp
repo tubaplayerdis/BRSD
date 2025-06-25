@@ -2,19 +2,25 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     functions.h			                                      */
+/*    Module:     psettings.cpp		                                          */
 /*    Author:     Aaron Wilk                                                  */
-/*    Created:    24 June 2025                                                */
+/*    Created:    25 June 2025                                                */
 /*                                                                            */
 /*    Revisions:  V0.1                                                        */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
-#pragma once
+#include "psettings.h"
+#include "uibase.h"
+#include "global.h"
 
-#include "FLinearColor.h"
-#include "FSlateColor.h"
-#include "FBrickChatMessage.h"
-#include "SynchronizeProperties.h"
-#include "UNetDriver.h"
-#include "UModHookSubsystem.h"
+bool psettings::CreateCustomSettingsPage()
+{
+    CustomSettingsPage = static_cast<SDK::UMenuSettingsPageWidget*>(SDK::UGameplayStatics::SpawnObject(SDK::UMenuSettingsPageWidget::StaticClass(), GetMenu()));
+    return true;
+}
+
+void psettings::Uninitalize()
+{
+    CustomSettingsPage == nullptr;
+}

@@ -23,6 +23,7 @@ namespace uibase
 	void Cleanup();
 }
 
+SDK::UWBP_WindowManager_C* GetWindowManager();
 SDK::UPanelWidget* GetRootWidgetPanel();
 SDK::UCanvasPanel* GetCanvasPanel();
 SDK::UWBP_Menu_C* GetMenu();

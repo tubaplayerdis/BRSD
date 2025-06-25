@@ -215,6 +215,7 @@
     <ClCompile Include="CreateButton.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="DrawTransition.cpp" />
+    <ClCompile Include="modhook.cpp" />
     <ClCompile Include="obutton.cpp" />
     <ClCompile Include="FBrickChatMessage.cpp" />
     <ClCompile Include="FLinearColor.cpp" />
@@ -226,11 +227,16 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="messages.cpp" />
     <ClCompile Include="moderation.cpp" />
+    <ClCompile Include="OnClicked.cpp" />
     <ClCompile Include="OnPlayerJoined.cpp" />
     <ClCompile Include="OpenMenu.cpp" />
+    <ClCompile Include="psettings.cpp" />
     <ClCompile Include="StartPlay.cpp" />
     <ClCompile Include="SynchronizeProperties.cpp" />
     <ClCompile Include="uibase.cpp" />
+    <ClCompile Include="UMainWidgetBase.cpp" />
+    <ClCompile Include="UMenuWidget.cpp" />
+    <ClCompile Include="UModHookSubsystem.cpp" />
     <ClCompile Include="UNetDriver.cpp" />
     <ClCompile Include="watermark.cpp" />
   </ItemGroup>
@@ -239,6 +245,7 @@
     <ClInclude Include="BeginPlay.h" />
     <ClInclude Include="CreateButton.h" />
     <ClInclude Include="DrawTransition.h" />
+    <ClInclude Include="modhook.h" />
     <ClInclude Include="obutton.h" />
     <ClInclude Include="FBrickChatMessage.h" />
     <ClInclude Include="FLinearColor.h" />
@@ -252,13 +259,18 @@
     <ClInclude Include="messages.h" />
     <ClInclude Include="moderation.h" />
     <ClInclude Include="modules.h" />
+    <ClInclude Include="OnClicked.h" />
     <ClInclude Include="OnPlayerJoined.h" />
     <ClInclude Include="OpenMenu.h" />
     <ClInclude Include="PlayerInfo.h" />
+    <ClInclude Include="psettings.h" />
     <ClInclude Include="StartPlay.h" />
     <ClInclude Include="stringlist.h" />
     <ClInclude Include="SynchronizeProperties.h" />
     <ClInclude Include="uibase.h" />
+    <ClInclude Include="UMainWidgetBase.h" />
+    <ClInclude Include="UMenuWidget.h" />
+    <ClInclude Include="UModHookSubsystem.h" />
     <ClInclude Include="UNetDriver.h" />
     <ClInclude Include="watermark.h" />
     <ClInclude Include="welcome.h" />

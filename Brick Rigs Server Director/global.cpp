@@ -219,6 +219,22 @@ bool global::IsInMainMenu()
 	return SDK::UGameplayStatics::GetCurrentLevelName(World(), true).ToString() == "MainMenu";
 }
 
+std::vector<uint8_t> global::GetFunctionBytecode(SDK::UClass* objectclass,std::string classname, std::string functionname)
+{
+	std::vector<uint8_t> ret = std::vector<uint8_t>();
+	SDK::UFunction* Fn = objectclass->GetFunction(classname, functionname);
+	if (!Fn || Fn->Script.Num() == 0) return;
+
+	printf("Bytecode for %s:\n", Fn->GetName());
+	for (int i = 0; i < Fn->Script.Num(); ++i)
+	{
+		printf("%02X ", Fn->Script[i]);
+		ret.push_back(Fn->Script[i]);
+	}
+	printf("\n");
+	return ret;
+}
+
 uintptr_t GetModuleBaseN()
 {
 	return (uintptr_t)GetModuleHandle(NULL);
