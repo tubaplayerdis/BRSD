@@ -19,8 +19,10 @@
 #include "watermark.h"
 #include "messages.h"
 #include "welcome.h"
-#include "uibase.h"
 #include "obutton.h"
+#include "UMenuWidget.h"
+#include "psettings.h"
+#include "uibase.h"
 
 using namespace global;
 
@@ -55,6 +57,8 @@ void MainLoop()
 
 	if (IsHost()) welcome::SendWelcomeMessage();
 
+	psettings::CreateCustomSettingsPage();
+
 	std::cout << "Starting Main Loop!" << std::endl;
 
 	while (true) {
@@ -82,6 +86,8 @@ void MainLoop()
 	
 	watermark::HideWaterWark();
 	watermark::UnInitalizeWaterMark();
+
+	psettings::Uninitalize();
 
 	uibase::Cleanup();
 

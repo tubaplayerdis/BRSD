@@ -28,10 +28,10 @@ bool hooks::InitHooks()
 	bool ONJHook = OnPlayerJoined::Init();//0
 	bool RGHook = StartPlay::Init();
 	bool LMHook = LoadMap::Init();
-	bool CBHook = true;
+	bool OCHook = OnClicked::Init();
 	auto end = std::chrono::high_resolution_clock::now();
 	std::cout << "Elapsed Time Finding Hooks: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << std::endl;
-	if (!ACMHook || !BPHook || !OMHook || !ONJHook || !RGHook || !LMHook || !CBHook) {
+	if (!ACMHook || !BPHook || !OMHook || !ONJHook || !RGHook || !LMHook || !OCHook) {
 		//print cases
 		std::cout << "ACMHOOK: " << ACMHook << std::endl;
 		std::cout << "BPHOOK: " << BPHook << std::endl;
@@ -39,7 +39,7 @@ bool hooks::InitHooks()
 		std::cout << "ONJHOOK:" << ONJHook << std::endl;
 		std::cout << "RGHOOK:" << RGHook << std::endl;
 		std::cout << "LMHook" << LMHook << std::endl;
-		std::cout << "CBHook" << CBHook << std::endl;
+		std::cout << "CBHook" << OCHook << std::endl;
 
 		//Print cases to file
 		std::ofstream saveFile;
@@ -52,7 +52,7 @@ bool hooks::InitHooks()
 			saveFile << "ONJHOOK: " << ONJHook << std::endl;
 			saveFile << "RGHOOK: " << RGHook << std::endl;
 			saveFile << "LMHOOK: " << LMHook << std::endl;
-			saveFile << "CBHOOK: " << CBHook << std::endl;
+			saveFile << "OCHOOK: " << OCHook << std::endl;
 			saveFile.close();
 		}
 		return false;
@@ -68,6 +68,7 @@ void hooks::EnableHooks()
 	OnPlayerJoined::Enable();
 	StartPlay::Enable();
 	LoadMap::Enable();
+	OnClicked::Enable();
 }
 
 void hooks::OpenCrashFile()

@@ -372,6 +372,24 @@
     <ClCompile Include="CreateButton.cpp">
       <Filter>Source Files\hooks\ui</Filter>
     </ClCompile>
+    <ClCompile Include="psettings.cpp">
+      <Filter>Source Files\modules\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="UModHookSubsystem.cpp">
+      <Filter>Source Files\functions</Filter>
+    </ClCompile>
+    <ClCompile Include="modhook.cpp">
+      <Filter>Source Files\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="UMenuWidget.cpp">
+      <Filter>Source Files\functions</Filter>
+    </ClCompile>
+    <ClCompile Include="OnClicked.cpp">
+      <Filter>Source Files\hooks\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="UMainWidgetBase.cpp">
+      <Filter>Source Files\functions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -454,6 +472,24 @@
     </ClInclude>
     <ClInclude Include="CreateButton.h">
       <Filter>Header Files\hooks\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="psettings.h">
+      <Filter>Header Files\modules\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="modhook.h">
+      <Filter>Header Files\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="UModHookSubsystem.h">
+      <Filter>Header Files\functions</Filter>
+    </ClInclude>
+    <ClInclude Include="UMenuWidget.h">
+      <Filter>Header Files\functions</Filter>
+    </ClInclude>
+    <ClInclude Include="OnClicked.h">
+      <Filter>Header Files\hooks\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="UMainWidgetBase.h">
+      <Filter>Header Files\functions</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

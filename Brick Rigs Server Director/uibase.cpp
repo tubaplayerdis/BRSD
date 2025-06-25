@@ -13,9 +13,14 @@
 #include "uibase.h"
 #include "global.h"
 
+SDK::UWBP_WindowManager_C* GetWindowManager()
+{
+	return static_cast<SDK::UWBP_WindowManager_C*>(SDK::UWindowManagerWidget::Get(World()));
+}
+
 SDK::UPanelWidget* GetRootWidgetPanel()
 {
-	return static_cast<SDK::UPanelWidget*>(SDK::UWindowManagerWidget::Get(World())->WidgetTree->RootWidget);
+	return static_cast<SDK::UPanelWidget*>(GetWindowManager()->WidgetTree->RootWidget);
 }
 
 SDK::UCanvasPanel* GetCanvasPanel()

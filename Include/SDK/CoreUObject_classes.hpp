@@ -108,7 +108,17 @@ public:
 	class FField*                                 ChildProperties;                                   // 0x0050(0x0008)(NOT AUTO-GENERATED PROPERTY)
 	int32                                         Size;                                              // 0x0058(0x0004)(NOT AUTO-GENERATED PROPERTY)
 	int32                                         MinAlignemnt;                                      // 0x005C(0x0004)(NOT AUTO-GENERATED PROPERTY)
-	uint8                                         Pad_60[0x50];                                      // 0x0060(0x0050)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	
+	// BEGIN: Real fields replacing Pad_60[0x50]
+	TArray<uint8>                                 Script; // 0x60
+	FProperty*									  PropertyLink;						// 0x70
+	FProperty*									  RefLink;							// 0x78
+	FProperty*									  DestructorLink;					// 0x80
+	FProperty*									  PostConstructLink;				// 0x88
+	TArray<UObject*>                              ScriptAndPropertyObjectReferences;// 0x90
+	// We don't need these two fields
+	uint8                                         Pad_A0[0x10];                   // 0xA0 to 0xB0
+	// END
 
 public:
 	bool IsSubclassOf(const UStruct* Base) const;

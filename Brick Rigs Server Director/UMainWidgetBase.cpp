@@ -2,19 +2,23 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     functions.h			                                      */
+/*    Module:     UMainWidgetBase.cpp		                                  */
 /*    Author:     Aaron Wilk                                                  */
-/*    Created:    24 June 2025                                                */
+/*    Created:    25 June 2025                                                */
 /*                                                                            */
 /*    Revisions:  V0.1                                                        */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
-#pragma once
+#include "UMainWidgetBase.h"
+#include <windows.h>
 
-#include "FLinearColor.h"
-#include "FSlateColor.h"
-#include "FBrickChatMessage.h"
-#include "SynchronizeProperties.h"
-#include "UNetDriver.h"
-#include "UModHookSubsystem.h"
+void UMainWidgetBase::UpdateInputMode(SDK::UMainWidgetBase* Base)
+{
+	uintptr_t UpdateInputModeFunction = (uintptr_t)GetModuleHandle(NULL) + 0x0DEEB70;
+
+	using UpdateInputModeFn = void (__fastcall*)(SDK::UMainWidgetBase* Base);
+	UpdateInputModeFn OnUpdateInputModeFunction = reinterpret_cast<UpdateInputModeFn>(UpdateInputModeFunction);
+
+	OnUpdateInputModeFunction(Base);
+}

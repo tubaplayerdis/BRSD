@@ -12948,6 +12948,7 @@ public:
 	TSubclassOf<class AGameStateBase> OverrideGameStateClass(TSubclassOf<class AGameStateBase> GameStateClass);
 	TArray<TSubclassOf<class AInventoryItem>> OverrideLoadoutContainerItems(const TArray<TSubclassOf<class AInventoryItem>>& ItemClasses);
 	bool OverrideLoadSubLevel(bool bLoadLevel, const class FString& LevelName, class UGameModeInfo* GameMode);
+	// Allows you to modify or add menu pages, return true if the original menu page should not be shown
 	bool OverrideMenu(class UMenuWidget* Widget, const class FName& Context);
 	TSoftClassPtr<class UClass> OverrideMenuSequence(const TSoftClassPtr<class UClass>& SequenceClass);
 	struct FWorldSetupParams OverrideMenuWorldSetupParams(const struct FWorldSetupParams& Params_0);
