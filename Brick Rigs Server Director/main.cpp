@@ -10,15 +10,17 @@
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
+#include <iostream>
+#include <MinHook.h>
+#include <windows.h>
 #include "main.h"
 #include "hooks.h"
 #include "global.h"
 #include "watermark.h"
 #include "messages.h"
 #include "welcome.h"
-#include <iostream>
-#include <MinHook.h>
-#include <windows.h>
+#include "uibase.h"
+#include "obutton.h"
 
 using namespace global;
 
@@ -39,7 +41,7 @@ void MainLoop()
 	std::cout << reinterpret_cast<const char*>(CommandLineLogo) << std::endl;
 
 	if (!hooks::InitHooks()) {
-		if (MessageBox(GetActiveWindow(), L"Failed To Hook Critical Functions. Uninjecting BCSD. Would you like to look at the crash log?", L"Uninjecting BRCI", MB_YESNO) == IDYES) hooks::OpenCrashFile();
+		if (MessageBox(GetActiveWindow(), L"Failed To Hook Critical Functions. Uninjecting BCSD. Would you like to look at the crash log?", L"Uninjecting BRSD", MB_YESNO) == IDYES) hooks::OpenCrashFile();
 		return;
 	}
 
@@ -48,6 +50,8 @@ void MainLoop()
 	hooks::EnableHooks();
 
 	watermark::InitalizeWaterMark();
+
+	if(uibase::IsInGameMenuOpen()) obutton::AddToButtonMenu();
 
 	if (IsHost()) welcome::SendWelcomeMessage();
 
@@ -78,6 +82,8 @@ void MainLoop()
 	
 	watermark::HideWaterWark();
 	watermark::UnInitalizeWaterMark();
+
+	uibase::Cleanup();
 
 	MessageAdmin("Uninjecting BRSD!");
 

@@ -160,7 +160,8 @@ std::string GetPlayerNameFromIDORName(std::string input)
 
 bool global::isMapValid()
 {
-	std::string name = mapLevelName;
+	std::string name = SDK::UGameplayStatics::GetCurrentLevelName(World(), true).ToString();
+	std::cout << "Current Level Name: " << name << std::endl;
 	if (name == "City2") return true;
 	else if (name == "Canyon") return true;
 	else if (name == "City") return true;
@@ -211,6 +212,11 @@ bool global::IsActiveWindow()
 	if (GetWindowThreadProcessId(hwnd, &foregroundPid) == 0) return false;
 
 	return (foregroundPid == GetCurrentProcessId());
+}
+
+bool global::IsInMainMenu()
+{
+	return SDK::UGameplayStatics::GetCurrentLevelName(World(), true).ToString() == "MainMenu";
 }
 
 uintptr_t GetModuleBaseN()

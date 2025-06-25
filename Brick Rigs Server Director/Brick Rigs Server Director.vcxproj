@@ -212,8 +212,10 @@
     <ClCompile Include="..\Include\trampoline.c" />
     <ClCompile Include="AddChatMessage.cpp" />
     <ClCompile Include="BeginPlay.cpp" />
+    <ClCompile Include="CreateButton.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="DrawTransition.cpp" />
+    <ClCompile Include="obutton.cpp" />
     <ClCompile Include="FBrickChatMessage.cpp" />
     <ClCompile Include="FLinearColor.cpp" />
     <ClCompile Include="FSlateColor.cpp" />
@@ -227,14 +229,17 @@
     <ClCompile Include="OnPlayerJoined.cpp" />
     <ClCompile Include="OpenMenu.cpp" />
     <ClCompile Include="StartPlay.cpp" />
-    <ClCompile Include="UBrickBorder.cpp" />
+    <ClCompile Include="SynchronizeProperties.cpp" />
+    <ClCompile Include="uibase.cpp" />
     <ClCompile Include="UNetDriver.cpp" />
     <ClCompile Include="watermark.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddChatMessage.h" />
     <ClInclude Include="BeginPlay.h" />
+    <ClInclude Include="CreateButton.h" />
     <ClInclude Include="DrawTransition.h" />
+    <ClInclude Include="obutton.h" />
     <ClInclude Include="FBrickChatMessage.h" />
     <ClInclude Include="FLinearColor.h" />
     <ClInclude Include="FSlateColor.h" />
@@ -252,7 +257,8 @@
     <ClInclude Include="PlayerInfo.h" />
     <ClInclude Include="StartPlay.h" />
     <ClInclude Include="stringlist.h" />
-    <ClInclude Include="UBrickBorder.h" />
+    <ClInclude Include="SynchronizeProperties.h" />
+    <ClInclude Include="uibase.h" />
     <ClInclude Include="UNetDriver.h" />
     <ClInclude Include="watermark.h" />
     <ClInclude Include="welcome.h" />

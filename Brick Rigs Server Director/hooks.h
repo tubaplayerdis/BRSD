@@ -20,6 +20,7 @@
 #include "OnPlayerJoined.h"
 #include "OpenMenu.h"
 #include "StartPlay.h"
+#include "CreateButton.h"
 
 namespace hooks
 {

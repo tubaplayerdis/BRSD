@@ -2604,7 +2604,7 @@ public:
 	class UBrickButtonWidget*                     Button;                                            // 0x0270(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UBrickTextBlock*                        TextBlock;                                         // 0x0278(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UBrickImage*                            IconImage;                                         // 0x0280(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_288[0x10];                                     // 0x0288(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             OnClickedDelegate;                           // 0x0288(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnClicked();
@@ -12651,7 +12651,7 @@ class UMenuButtonPanelWidget : public UUserWidget
 {
 public:
 	TArray<class UMenuButtonWidget*>              Buttons;                                           // 0x0260(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_270[0x8];                                      // 0x0270(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         NumButtonsUsed;                                    // 0x0270(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
 	class UBrickGridPanel*                        ButtonPanel;                                       // 0x0278(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TSubclassOf<class UMenuButtonWidget>          ButtonClass;                                       // 0x0280(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	int32                                         NumButtonsPerRow;                                  // 0x0288(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
