@@ -11,8 +11,6 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#undef TEXT
-#define TEXT(text) SDK::UKismetTextLibrary::Conv_StringToText(SDK::FString(text))
 #define STRING(string) UC::FString(string)
 #define NAME(text) SDK::UKistmetStringLibrary::Conv_StringToName(SDK::FString(text));
 #define GetBoolString(text) (text ? "true" : "false")
@@ -30,6 +28,9 @@
 #include <string>
 #include "PlayerInfo.h"
 #include "SDK.hpp"
+
+#undef TEXT
+#define TEXT(text) SDK::UKismetTextLibrary::Conv_StringToText(SDK::FString(text))
 
 //For "global" items, but ones that do not pollute the actual global namespace
 namespace global
@@ -104,6 +105,11 @@ namespace global
 	/// <returns>Returns whether the Brick Rigs game window is on the foreground</returns>
 	bool IsActiveWindow();
 
+	/// <summary>
+	/// Checks if Brick Rigs is currently in the main menu.
+	/// </summary>
+	/// <returns>true if Brick Rigs is in the main menu; otherwise, false.</returns>
+	bool IsInMainMenu();
 }
 
 SDK::ABrickCharacter* GetBrickCharacter();

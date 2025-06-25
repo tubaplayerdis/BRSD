@@ -28,9 +28,10 @@ bool hooks::InitHooks()
 	bool ONJHook = OnPlayerJoined::Init();//0
 	bool RGHook = StartPlay::Init();
 	bool LMHook = LoadMap::Init();
+	bool CBHook = true;
 	auto end = std::chrono::high_resolution_clock::now();
 	std::cout << "Elapsed Time Finding Hooks: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << std::endl;
-	if (!ACMHook || !BPHook || !OMHook || !ONJHook || !RGHook || !LMHook) {
+	if (!ACMHook || !BPHook || !OMHook || !ONJHook || !RGHook || !LMHook || !CBHook) {
 		//print cases
 		std::cout << "ACMHOOK: " << ACMHook << std::endl;
 		std::cout << "BPHOOK: " << BPHook << std::endl;
@@ -38,18 +39,20 @@ bool hooks::InitHooks()
 		std::cout << "ONJHOOK:" << ONJHook << std::endl;
 		std::cout << "RGHOOK:" << RGHook << std::endl;
 		std::cout << "LMHook" << LMHook << std::endl;
+		std::cout << "CBHook" << CBHook << std::endl;
 
 		//Print cases to file
 		std::ofstream saveFile;
 		saveFile.open("BRSDCRASH.txt", std::ios::trunc);
 		if (!saveFile.bad() && !saveFile.fail() && saveFile.is_open()) {
-			saveFile << "Hooks have a possibility of loading incorrectly given a version change for BR. This is normal an update should be out soon fixing this if that is the case." << std::endl;
+			saveFile << "Hooks have a possibility of loading incorrectly given a version change for Brick Rigs (An Update). This is normal and an update should be out soon fixing this if that is the case." << std::endl;
 			saveFile << "ACMHOOK: " << ACMHook << std::endl;
 			saveFile << "BPHOOK: " << BPHook << std::endl;
 			saveFile << "OMHOOK: " << OMHook << std::endl;
-			saveFile << "ONJHOOK:" << ONJHook << std::endl;
-			saveFile << "RGHOOK:" << RGHook << std::endl;
-			saveFile << "LMHook" << LMHook << std::endl;
+			saveFile << "ONJHOOK: " << ONJHook << std::endl;
+			saveFile << "RGHOOK: " << RGHook << std::endl;
+			saveFile << "LMHOOK: " << LMHook << std::endl;
+			saveFile << "CBHOOK: " << CBHook << std::endl;
 			saveFile.close();
 		}
 		return false;
@@ -80,6 +83,6 @@ void hooks::OpenCrashFile()
 	if (!curDir.empty() && curDir.back() != L'\\') {
 		curDir += L'\\';
 	}
-	curDir += L"BRCICRASH.txt";
+	curDir += L"BRSDCRASH.txt";
 	ShellExecute(NULL, L"open", curDir.c_str(), NULL, NULL, SW_SHOW);
 }

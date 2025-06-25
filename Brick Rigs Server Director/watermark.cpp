@@ -11,22 +11,15 @@
 /*----------------------------------------------------------------------------*/
 
 #include "watermark.h"
-#include "UBrickBorder.h"
+#include "SynchronizeProperties.h"
+#include "uibase.h"
 #include "global.h"
 
 bool watermark::InitalizeWaterMark()
 {
 	//Basic Init
 	if (!global::World) return false;
-	RootPanel = static_cast<SDK::UPanelWidget*>(SDK::UWindowManagerWidget::Get(global::World)->WidgetTree->RootWidget);
-	if (!RootPanel) return false;
-	for (int i = 0; i < RootPanel->GetChildrenCount(); ++i) {
-		SDK::UWidget* child = RootPanel->GetChildAt(i);
-		if (child->IsA(SDK::UCanvasPanel::StaticClass())) {
-			panel = static_cast<SDK::UCanvasPanel*>(child);
-			break;
-		}
-	}
+	panel = GetCanvasPanel();
 	if (!panel) return false;
 
 	//Text Block/Border Init
@@ -60,7 +53,7 @@ bool watermark::InitalizeWaterMark()
 
 	// 3. Offset inward from top-right screen corner
 	slot2->SetPosition(SDK::FVector2D(-20.f, 20.f));  // x: 20px left, y: 20px down
-	UBrickBorder::SynchronizeProperties(TextBorder);
+	SynchronizeProperties(TextBorder);
 
 	return true;
 }
@@ -79,6 +72,5 @@ void watermark::UnInitalizeWaterMark()
 {
 	if (TextBorder) TextBorder->RemoveFromParent();
 	TextBorder = nullptr;
-	RootPanel = nullptr;
 	panel = nullptr;
 }

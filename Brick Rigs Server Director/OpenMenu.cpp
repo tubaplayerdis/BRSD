@@ -13,14 +13,19 @@
 #include "OpenMenu.h"
 #include "global.h"
 #include "watermark.h"
+#include "obutton.h"
 #include <MinHook.h>
 
 void __fastcall hooks::OpenMenu::HookedOpenMenuFunction(SDK::UMenuWidget* This, SDK::FName InMenu)
 {
 	OriginalOpenMenuFunction(This, InMenu);
 	if (!This) return;
+	std::cout << "Opening Menu: " << InMenu.GetRawString() << std::endl;
 	if (InMenu.GetRawString().c_str() == nullptr) return;
-	if (InMenu.GetRawString() == "InGameMenu") watermark::ShowWaterMark();
+	if (InMenu.GetRawString() == "InGameMenu") {
+		watermark::ShowWaterMark();
+		obutton::AddToButtonMenu();
+	}
 	if (InMenu.GetRawString() == "None" && global::isMapValid()) watermark::HideWaterWark();
 }
 

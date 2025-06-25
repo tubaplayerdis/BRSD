@@ -43,9 +43,6 @@
     <Filter Include="Source Files\global">
       <UniqueIdentifier>{02f32757-3add-4903-af03-c7d3e6abf34d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\ui">
-      <UniqueIdentifier>{4ffad4b8-2037-4ab7-b844-1f0da2ad4da4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\functions">
       <UniqueIdentifier>{ccf6ab00-3ee6-494e-b948-8217943d86ab}</UniqueIdentifier>
     </Filter>
@@ -60,9 +57,6 @@
     </Filter>
     <Filter Include="Header Files\functions">
       <UniqueIdentifier>{b04b0053-f4f5-472d-8b71-756bc1f0e0dc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\ui">
-      <UniqueIdentifier>{476724d6-10c6-4fe4-b6d5-ed6dfe5d1653}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\functions\colors">
       <UniqueIdentifier>{ae8043c9-ac08-4b03-9140-82468ca0a811}</UniqueIdentifier>
@@ -81,6 +75,18 @@
     </Filter>
     <Filter Include="Source Files\hooks\global">
       <UniqueIdentifier>{b03d79a6-c1ce-4117-8181-888834746beb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\modules\ui">
+      <UniqueIdentifier>{4ffad4b8-2037-4ab7-b844-1f0da2ad4da4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\modules\ui">
+      <UniqueIdentifier>{476724d6-10c6-4fe4-b6d5-ed6dfe5d1653}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\hooks\ui">
+      <UniqueIdentifier>{ef8948ea-28da-4a43-8e30-e3224f9eb269}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\hooks\ui">
+      <UniqueIdentifier>{56407c7c-f938-4ed9-ac25-4be7e654faac}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -134,12 +140,6 @@
     </ClCompile>
     <ClCompile Include="messages.cpp">
       <Filter>Source Files\modules</Filter>
-    </ClCompile>
-    <ClCompile Include="watermark.cpp">
-      <Filter>Source Files\modules</Filter>
-    </ClCompile>
-    <ClCompile Include="UBrickBorder.cpp">
-      <Filter>Source Files\functions</Filter>
     </ClCompile>
     <ClCompile Include="UNetDriver.cpp">
       <Filter>Source Files\functions</Filter>
@@ -357,6 +357,21 @@
     <ClCompile Include="..\Include\SDK\ABP_Character_functions.cpp">
       <Filter>More Files\SDK\Blueprint</Filter>
     </ClCompile>
+    <ClCompile Include="watermark.cpp">
+      <Filter>Source Files\modules\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="obutton.cpp">
+      <Filter>Source Files\modules\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="SynchronizeProperties.cpp">
+      <Filter>Source Files\functions</Filter>
+    </ClCompile>
+    <ClCompile Include="uibase.cpp">
+      <Filter>Source Files\modules\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateButton.cpp">
+      <Filter>Source Files\hooks\ui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -380,9 +395,6 @@
     <ClInclude Include="PlayerInfo.h">
       <Filter>Header Files\global</Filter>
     </ClInclude>
-    <ClInclude Include="watermark.h">
-      <Filter>Header Files\modules</Filter>
-    </ClInclude>
     <ClInclude Include="messages.h">
       <Filter>Header Files\modules</Filter>
     </ClInclude>
@@ -393,9 +405,6 @@
       <Filter>Header Files\functions</Filter>
     </ClInclude>
     <ClInclude Include="functions.h">
-      <Filter>Header Files\functions</Filter>
-    </ClInclude>
-    <ClInclude Include="UBrickBorder.h">
       <Filter>Header Files\functions</Filter>
     </ClInclude>
     <ClInclude Include="UNetDriver.h">
@@ -430,6 +439,21 @@
     </ClInclude>
     <ClInclude Include="moderation.h">
       <Filter>Header Files\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="watermark.h">
+      <Filter>Header Files\modules\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="obutton.h">
+      <Filter>Header Files\modules\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="SynchronizeProperties.h">
+      <Filter>Header Files\functions</Filter>
+    </ClInclude>
+    <ClInclude Include="uibase.h">
+      <Filter>Header Files\modules\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateButton.h">
+      <Filter>Header Files\hooks\ui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

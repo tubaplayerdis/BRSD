@@ -2,7 +2,7 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     functions.h			                                      */
+/*    Module:     uibase.h			                                          */
 /*    Author:     Aaron Wilk                                                  */
 /*    Created:    24 June 2025                                                */
 /*                                                                            */
@@ -11,9 +11,18 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
+#include <SDK.hpp>
 
-#include "FLinearColor.h"
-#include "FSlateColor.h"
-#include "FBrickChatMessage.h"
-#include "SynchronizeProperties.h"
-#include "UNetDriver.h"
+namespace uibase
+{
+	void PrintButtonsInfo();
+	std::string GetCurrentMenu();
+	bool IsButtonMenuVisible();
+	bool IsInGameMenuOpen();
+
+	void Cleanup();
+}
+
+SDK::UPanelWidget* GetRootWidgetPanel();
+SDK::UCanvasPanel* GetCanvasPanel();
+SDK::UWBP_Menu_C* GetMenu();
