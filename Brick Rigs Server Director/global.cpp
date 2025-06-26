@@ -223,8 +223,7 @@ std::vector<uint8_t> global::GetFunctionBytecode(SDK::UClass* objectclass,std::s
 {
 	std::vector<uint8_t> ret = std::vector<uint8_t>();
 	SDK::UFunction* Fn = objectclass->GetFunction(classname, functionname);
-	if (!Fn || Fn->Script.Num() == 0) return;
-
+	if (!Fn || Fn->Script.Num() == 0) return ret;
 	printf("Bytecode for %s:\n", Fn->GetName());
 	for (int i = 0; i < Fn->Script.Num(); ++i)
 	{

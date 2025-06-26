@@ -2,32 +2,33 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     OnClicked.h		                                          */
+/*    Module:     SetTitleText.h	                                          */
 /*    Author:     Aaron Wilk                                                  */
-/*    Created:    25 June 2025                                                */
+/*    Created:    26 June 2025                                                */
 /*                                                                            */
 /*    Revisions:  V0.1                                                        */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include "SDK.hpp"
-#include "windows.h"
+#include <SDK.hpp>
+#include "Hook.h"
+
 namespace hooks
 {
-	namespace OnClicked
+	class SetTitleText;
+	inline SetTitleText* SetTitleTextSingleton = nullptr; //Non-Inline causes link 2005
+
+	class SetTitleText : public Hook<void, SDK::UMenuWidget*, const SDK::FText*>
 	{
-		inline bool enabled = false;
-		inline bool initalized = false;
-		inline uintptr_t FunctionPointer = 0;//Transisiton to a signature if this becomes important in the future.
+	public:
 
-		using Function_t = void (__fastcall*)(SDK::UMenuButtonWidget* This);
-		inline Function_t OriginalFunction = nullptr;
+		static void __fastcall HookedFunction(SDK::UMenuWidget* This, const SDK::FText* Name)
+		{
+			std::cout << "Setting Title Text: " << Name->ToString() << std::endl;
+			SetTitleTextSingleton->OriginalFunction(This, Name); //The original function is filled in when the class is created.
+		}
 
-		void __fastcall HookedFunction(SDK::UMenuButtonWidget* This);
-
-		bool Init();
-		void Enable();
-		void Disable();
-	}
+		SetTitleText() : Hook(0x0EA2170, HookedFunction) {}
+	};
 }

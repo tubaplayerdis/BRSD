@@ -22,12 +22,15 @@
 #include "StartPlay.h"
 #include "CreateButton.h"
 #include "OnClicked.h"
+#include "SetTitleText.h"
 
 namespace hooks
 {
 	bool InitHooks();
 
 	void EnableHooks();
+
+	void DestroyHookObjects();
 
 	void OpenCrashFile();
 }

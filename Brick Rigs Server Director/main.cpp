@@ -89,6 +89,8 @@ void MainLoop()
 
 	psettings::Uninitalize();
 
+	hooks::DestroyHookObjects();
+
 	uibase::Cleanup();
 
 	MessageAdmin("Uninjecting BRSD!");
