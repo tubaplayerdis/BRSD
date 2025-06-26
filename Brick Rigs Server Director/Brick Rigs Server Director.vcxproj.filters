@@ -491,5 +491,11 @@
     <ClInclude Include="UMainWidgetBase.h">
       <Filter>Header Files\functions</Filter>
     </ClInclude>
+    <ClInclude Include="SetTitleText.h">
+      <Filter>Header Files\hooks\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="Hook.h">
+      <Filter>Header Files\hooks</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

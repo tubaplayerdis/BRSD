@@ -245,6 +245,7 @@
     <ClInclude Include="BeginPlay.h" />
     <ClInclude Include="CreateButton.h" />
     <ClInclude Include="DrawTransition.h" />
+    <ClInclude Include="Hook.h" />
     <ClInclude Include="modhook.h" />
     <ClInclude Include="obutton.h" />
     <ClInclude Include="FBrickChatMessage.h" />
@@ -264,6 +265,7 @@
     <ClInclude Include="OpenMenu.h" />
     <ClInclude Include="PlayerInfo.h" />
     <ClInclude Include="psettings.h" />
+    <ClInclude Include="SetTitleText.h" />
     <ClInclude Include="StartPlay.h" />
     <ClInclude Include="stringlist.h" />
     <ClInclude Include="SynchronizeProperties.h" />

@@ -15,6 +15,8 @@
 #include <fstream>
 #include <windows.h>
 #include <shellapi.h>
+#include <MinHook.h>
+#include "global.h"
 
 #pragma comment(lib, "shell32.lib")
 
@@ -29,17 +31,26 @@ bool hooks::InitHooks()
 	bool RGHook = StartPlay::Init();
 	bool LMHook = LoadMap::Init();
 	bool OCHook = OnClicked::Init();
+	bool STHook = true;
+	try {
+		SetTitleTextSingleton = new SetTitleText();
+	}
+	catch (HookingException e) {
+		std::cout << e.what() << std::endl;
+		STHook = false;
+	}
 	auto end = std::chrono::high_resolution_clock::now();
 	std::cout << "Elapsed Time Finding Hooks: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << std::endl;
-	if (!ACMHook || !BPHook || !OMHook || !ONJHook || !RGHook || !LMHook || !OCHook) {
+	if (!ACMHook || !BPHook || !OMHook || !ONJHook || !RGHook || !LMHook || !OCHook || !STHook) {
 		//print cases
 		std::cout << "ACMHOOK: " << ACMHook << std::endl;
 		std::cout << "BPHOOK: " << BPHook << std::endl;
 		std::cout << "OMHOOK: " << OMHook << std::endl;
-		std::cout << "ONJHOOK:" << ONJHook << std::endl;
-		std::cout << "RGHOOK:" << RGHook << std::endl;
-		std::cout << "LMHook" << LMHook << std::endl;
-		std::cout << "CBHook" << OCHook << std::endl;
+		std::cout << "ONJHOOK: " << ONJHook << std::endl;
+		std::cout << "RGHOOK: " << RGHook << std::endl;
+		std::cout << "LMHook: " << LMHook << std::endl;
+		std::cout << "CBHook: " << OCHook << std::endl;
+		std::cout << "STHOOK: " << STHook << std::endl;
 
 		//Print cases to file
 		std::ofstream saveFile;
@@ -53,6 +64,7 @@ bool hooks::InitHooks()
 			saveFile << "RGHOOK: " << RGHook << std::endl;
 			saveFile << "LMHOOK: " << LMHook << std::endl;
 			saveFile << "OCHOOK: " << OCHook << std::endl;
+			saveFile << "STHOOK: " << STHook << std::endl;
 			saveFile.close();
 		}
 		return false;
@@ -69,6 +81,13 @@ void hooks::EnableHooks()
 	StartPlay::Enable();
 	LoadMap::Enable();
 	OnClicked::Enable();
+	SetTitleTextSingleton->Enable();
+}
+
+void hooks::DestroyHookObjects()
+{
+	delete SetTitleTextSingleton;
+	SetTitleTextSingleton = nullptr;
 }
 
 void hooks::OpenCrashFile()
