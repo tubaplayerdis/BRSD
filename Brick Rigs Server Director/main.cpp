@@ -20,11 +20,9 @@
 #include "messages.h"
 #include "welcome.h"
 #include "obutton.h"
-#include "UMenuWidget.h"
 #include "psettings.h"
 #include "uibase.h"
-#include "modhook.h"
-#include "UModHookSubsystem.h"
+#include "functions.h"
 
 using namespace global;
 
@@ -61,8 +59,6 @@ void MainLoop()
 
 	psettings::CreateCustomSettingsPage();
 
-	modhook::CreateBRSDModHook();
-
 	std::cout << "Starting Main Loop!" << std::endl;
 
 	while (true) {
@@ -97,8 +93,6 @@ void MainLoop()
 	psettings::Uninitalize();
 
 	hooks::DestroyHookObjects();
-
-	modhook::Uninitialize();
 
 	uibase::Cleanup();
 

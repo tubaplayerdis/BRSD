@@ -19,7 +19,7 @@
 #include "uibase.h"
 #include "SetTitleText.h"
 #include "psettings.h"
-#include "UMenuWidget.h"
+#include "functions.h"
 
 namespace hooks
 {

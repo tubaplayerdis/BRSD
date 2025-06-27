@@ -15,7 +15,6 @@
 //Include all hook files
 #include "AddChatMessage.h"
 #include "BeginPlay.h"
-#include "DrawTransition.h"
 #include "LoadMap.h"
 #include "OnPlayerJoined.h"
 #include "OpenMenu.h"

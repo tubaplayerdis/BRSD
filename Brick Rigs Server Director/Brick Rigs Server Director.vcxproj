@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -211,12 +211,7 @@
     <ClCompile Include="..\Include\SDK\WBP_WindowManager_functions.cpp" />
     <ClCompile Include="..\Include\trampoline.c" />
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="DrawTransition.cpp" />
-    <ClCompile Include="modhook.cpp" />
     <ClCompile Include="obutton.cpp" />
-    <ClCompile Include="FBrickChatMessage.cpp" />
-    <ClCompile Include="FLinearColor.cpp" />
-    <ClCompile Include="FSlateColor.cpp" />
     <ClCompile Include="global.cpp" />
     <ClCompile Include="hooks.cpp" />
     <ClCompile Include="interpreter.cpp" />
@@ -224,11 +219,7 @@
     <ClCompile Include="messages.cpp" />
     <ClCompile Include="moderation.cpp" />
     <ClCompile Include="psettings.cpp" />
-    <ClCompile Include="SynchronizeProperties.cpp" />
     <ClCompile Include="uibase.cpp" />
-    <ClCompile Include="UMainWidgetBase.cpp" />
-    <ClCompile Include="UModHookSubsystem.cpp" />
-    <ClCompile Include="UNetDriver.cpp" />
     <ClCompile Include="watermark.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -237,11 +228,7 @@
     <ClInclude Include="Function.h" />
     <ClInclude Include="Hook.h" />
     <ClInclude Include="BeginPlay.h" />
-    <ClInclude Include="modhook.h" />
     <ClInclude Include="obutton.h" />
-    <ClInclude Include="FBrickChatMessage.h" />
-    <ClInclude Include="FLinearColor.h" />
-    <ClInclude Include="FSlateColor.h" />
     <ClInclude Include="functions.h" />
     <ClInclude Include="global.h" />
     <ClInclude Include="hooks.h" />
@@ -259,12 +246,7 @@
     <ClInclude Include="SetTitleText.h" />
     <ClInclude Include="StartPlay.h" />
     <ClInclude Include="stringlist.h" />
-    <ClInclude Include="SynchronizeProperties.h" />
     <ClInclude Include="uibase.h" />
-    <ClInclude Include="UMainWidgetBase.h" />
-    <ClInclude Include="UMenuWidget.h" />
-    <ClInclude Include="UModHookSubsystem.h" />
-    <ClInclude Include="UNetDriver.h" />
     <ClInclude Include="watermark.h" />
     <ClInclude Include="welcome.h" />
   </ItemGroup>

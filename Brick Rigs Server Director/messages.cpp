@@ -11,7 +11,7 @@
 /*----------------------------------------------------------------------------*/
 
 #include "messages.h"
-#include "FBrickChatMessage.h"
+#include "functions.h"
 #include "global.h"
 
 #define TEXT(text) SDK::UKismetTextLibrary::Conv_StringToText(SDK::FString(text))

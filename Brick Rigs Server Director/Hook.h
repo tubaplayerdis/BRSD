@@ -17,7 +17,7 @@
 #include <vector>
 #include <limits>
 #include <MinHook.h>
-#include <windows.h>
+#include <libloaderapi.h>
 #include <Psapi.h>
 
 template <typename Ret, typename... Args>  
@@ -50,10 +50,10 @@ public:
     void Disable();
 
 protected:
-	static uintptr_t FindPattern(const char* pattern, const char* mask, uintptr_t base, size_t size);
-	static uintptr_t FindPatternS(const char* pattern, const char* mask, uintptr_t base, size_t size);
-	static uintptr_t GetModuleBase();
-	static uintptr_t GetModuleSize();
+	static unsigned long long FindPattern(const char* pattern, const char* mask, unsigned long long base, unsigned __int64 size);
+	static unsigned long long FindPatternS(const char* pattern, const char* mask, unsigned long long base, unsigned __int64 size);
+	static unsigned long long GetModuleBase();
+	static unsigned long long GetModuleSize();
 };
 
 template<typename Ret, typename ...Args>
@@ -140,23 +140,23 @@ void Hook<Ret, Args...>::Disable() {
 }
 
 template<typename Ret, typename ...Args>
-inline uintptr_t Hook<Ret, Args...>::FindPattern(const char* pattern, const char* mask, uintptr_t base, size_t size)
+inline unsigned long long Hook<Ret, Args...>::FindPattern(const char* pattern, const char* mask, unsigned long long base, unsigned __int64 size)
 {
-	const size_t patternLen = strlen(mask);
+	const unsigned __int64 patternLen = strlen(mask);
 	if (patternLen == 0) {
 		return 0;
 	}
 
 	// 1. Create the bad-character skip table
-	std::vector<size_t> skipTable(256, patternLen);
-	for (size_t i = 0; i < patternLen - 1; ++i) {
+	std::vector<unsigned __int64> skipTable(256, patternLen);
+	for (unsigned __int64 i = 0; i < patternLen - 1; ++i) {
 		if (mask[i] != '?') {
 			skipTable[static_cast<unsigned char>(pattern[i])] = patternLen - 1 - i;
 		}
 	}
 
-	const uintptr_t searchEnd = base + size - patternLen;
-	uintptr_t currentPos = base;
+	const unsigned long long searchEnd = base + size - patternLen;
+	unsigned long long currentPos = base;
 
 	while (currentPos <= searchEnd) {
 		// 2. Compare from the end of the pattern backwards
@@ -181,14 +181,14 @@ inline uintptr_t Hook<Ret, Args...>::FindPattern(const char* pattern, const char
 }
 
 template<typename Ret, typename ...Args>
-inline uintptr_t Hook<Ret, Args...>::FindPatternS(const char* pattern, const char* mask, uintptr_t base, size_t size)
+inline unsigned long long Hook<Ret, Args...>::FindPatternS(const char* pattern, const char* mask, unsigned long long base, unsigned __int64 size)
 {
-	size_t patternLen = strlen(mask);
+	unsigned __int64 patternLen = strlen(mask);
 
-	for (size_t i = 0; i < size - patternLen; i++) {
+	for (unsigned __int64 i = 0; i < size - patternLen; i++) {
 		bool found = true;
 
-		for (size_t j = 0; j < patternLen; j++) {
+		for (unsigned __int64 j = 0; j < patternLen; j++) {
 			if (mask[j] != '?' && pattern[j] != *(char*)(base + i + j)) {
 				found = false;
 				break;
@@ -203,15 +203,15 @@ inline uintptr_t Hook<Ret, Args...>::FindPatternS(const char* pattern, const cha
 }
 
 template<typename Ret, typename ...Args>
-inline uintptr_t Hook<Ret, Args...>::GetModuleBase()
+inline unsigned long long Hook<Ret, Args...>::GetModuleBase()
 {
-	return (uintptr_t)GetModuleHandle(NULL);
+	return (unsigned long long)GetModuleHandle(NULL);
 }
 
 template<typename Ret, typename ...Args>
-inline uintptr_t Hook<Ret, Args...>::GetModuleSize()
+inline unsigned long long Hook<Ret, Args...>::GetModuleSize()
 {
 	MODULEINFO info = {};
 	GetModuleInformation(GetCurrentProcess(), GetModuleHandle(NULL), &info, sizeof(info));
-	return info.SizeOfImage;
+	return (unsigned long long)info.SizeOfImage;
 }

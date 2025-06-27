@@ -43,9 +43,6 @@
     <Filter Include="Source Files\global">
       <UniqueIdentifier>{02f32757-3add-4903-af03-c7d3e6abf34d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\functions">
-      <UniqueIdentifier>{ccf6ab00-3ee6-494e-b948-8217943d86ab}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\main">
       <UniqueIdentifier>{27ad5e02-cb69-4120-b24e-cc0cf1239588}</UniqueIdentifier>
     </Filter>
@@ -58,12 +55,6 @@
     <Filter Include="Header Files\functions">
       <UniqueIdentifier>{b04b0053-f4f5-472d-8b71-756bc1f0e0dc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\functions\colors">
-      <UniqueIdentifier>{ae8043c9-ac08-4b03-9140-82468ca0a811}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\functions\colors">
-      <UniqueIdentifier>{f163f6aa-e9ff-460c-88d6-cca4605efc9f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\modules">
       <UniqueIdentifier>{e75be812-c34a-4c96-91cb-58a5d5b3b39c}</UniqueIdentifier>
     </Filter>
@@ -72,9 +63,6 @@
     </Filter>
     <Filter Include="Header Files\hooks\global">
       <UniqueIdentifier>{35331ff7-9b38-43e5-8b6f-1a4865199143}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\hooks\global">
-      <UniqueIdentifier>{b03d79a6-c1ce-4117-8181-888834746beb}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\modules\ui">
       <UniqueIdentifier>{4ffad4b8-2037-4ab7-b844-1f0da2ad4da4}</UniqueIdentifier>
@@ -117,29 +105,14 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files\main</Filter>
     </ClCompile>
-    <ClCompile Include="FLinearColor.cpp">
-      <Filter>Source Files\functions\colors</Filter>
-    </ClCompile>
     <ClCompile Include="hooks.cpp">
       <Filter>Source Files\hooks</Filter>
-    </ClCompile>
-    <ClCompile Include="FBrickChatMessage.cpp">
-      <Filter>Source Files\functions</Filter>
-    </ClCompile>
-    <ClCompile Include="FSlateColor.cpp">
-      <Filter>Source Files\functions\colors</Filter>
     </ClCompile>
     <ClCompile Include="global.cpp">
       <Filter>Source Files\global</Filter>
     </ClCompile>
     <ClCompile Include="messages.cpp">
       <Filter>Source Files\modules</Filter>
-    </ClCompile>
-    <ClCompile Include="UNetDriver.cpp">
-      <Filter>Source Files\functions</Filter>
-    </ClCompile>
-    <ClCompile Include="DrawTransition.cpp">
-      <Filter>Source Files\hooks\global</Filter>
     </ClCompile>
     <ClCompile Include="interpreter.cpp">
       <Filter>Source Files\modules</Filter>
@@ -342,23 +315,11 @@
     <ClCompile Include="obutton.cpp">
       <Filter>Source Files\modules\ui</Filter>
     </ClCompile>
-    <ClCompile Include="SynchronizeProperties.cpp">
-      <Filter>Source Files\functions</Filter>
-    </ClCompile>
     <ClCompile Include="uibase.cpp">
       <Filter>Source Files\modules\ui</Filter>
     </ClCompile>
     <ClCompile Include="psettings.cpp">
       <Filter>Source Files\modules\ui</Filter>
-    </ClCompile>
-    <ClCompile Include="UModHookSubsystem.cpp">
-      <Filter>Source Files\functions</Filter>
-    </ClCompile>
-    <ClCompile Include="modhook.cpp">
-      <Filter>Source Files\modules</Filter>
-    </ClCompile>
-    <ClCompile Include="UMainWidgetBase.cpp">
-      <Filter>Source Files\functions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -370,12 +331,6 @@
     </ClInclude>
     <ClInclude Include="AddChatMessage.h">
       <Filter>Header Files\hooks</Filter>
-    </ClInclude>
-    <ClInclude Include="FLinearColor.h">
-      <Filter>Header Files\functions\colors</Filter>
-    </ClInclude>
-    <ClInclude Include="FSlateColor.h">
-      <Filter>Header Files\functions\colors</Filter>
     </ClInclude>
     <ClInclude Include="global.h">
       <Filter>Header Files\global</Filter>
@@ -389,13 +344,7 @@
     <ClInclude Include="modules.h">
       <Filter>Header Files\modules</Filter>
     </ClInclude>
-    <ClInclude Include="FBrickChatMessage.h">
-      <Filter>Header Files\functions</Filter>
-    </ClInclude>
     <ClInclude Include="functions.h">
-      <Filter>Header Files\functions</Filter>
-    </ClInclude>
-    <ClInclude Include="UNetDriver.h">
       <Filter>Header Files\functions</Filter>
     </ClInclude>
     <ClInclude Include="DrawTransition.h">
@@ -431,29 +380,14 @@
     <ClInclude Include="obutton.h">
       <Filter>Header Files\modules\ui</Filter>
     </ClInclude>
-    <ClInclude Include="SynchronizeProperties.h">
-      <Filter>Header Files\functions</Filter>
-    </ClInclude>
     <ClInclude Include="uibase.h">
       <Filter>Header Files\modules\ui</Filter>
     </ClInclude>
     <ClInclude Include="psettings.h">
       <Filter>Header Files\modules\ui</Filter>
     </ClInclude>
-    <ClInclude Include="modhook.h">
-      <Filter>Header Files\modules</Filter>
-    </ClInclude>
-    <ClInclude Include="UModHookSubsystem.h">
-      <Filter>Header Files\functions</Filter>
-    </ClInclude>
-    <ClInclude Include="UMenuWidget.h">
-      <Filter>Header Files\functions</Filter>
-    </ClInclude>
     <ClInclude Include="OnClicked.h">
       <Filter>Header Files\hooks\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="UMainWidgetBase.h">
-      <Filter>Header Files\functions</Filter>
     </ClInclude>
     <ClInclude Include="SetTitleText.h">
       <Filter>Header Files\hooks\ui</Filter>

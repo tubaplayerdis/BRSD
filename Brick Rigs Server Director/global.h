@@ -139,13 +139,3 @@ PlayerInfo GetPlayerInfoFromController(SDK::ABrickPlayerController* controller);
 std::string GetPlayerNameFromID(std::string ID);
 std::string GetPlayerNameFromIDORName(std::string input);
 inline SDK::ABrickPlayerController* GetBrickPlayerControllerFromIDORName(std::string input) { return GetBrickPlayerControllerFromName(GetPlayerNameFromIDORName(input)); }
-
-uintptr_t GetModuleBaseN();
-
-uintptr_t GetModuleBase(const wchar_t* moduleName);
-
-size_t GetModuleSizeN();
-
-size_t GetModuleSize(const wchar_t* moduleName);
-
-uintptr_t FindPattern(const char* pattern, const char* mask, uintptr_t base, size_t size);
