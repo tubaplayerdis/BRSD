@@ -13,24 +13,26 @@
 #pragma once
 #include <windows.h>
 #include <SDK.hpp>
+#include "messages.h"
+#include "stringlist.h"
+#include "global.h"
+#include "Hook.h"
 
 namespace hooks
 {
-    namespace OnPlayerJoined
+    class OnPlayerJoined;
+    inline OnPlayerJoined* S_OnPlayerJoined = nullptr; //Non-Inline causes link 2005
+
+    class OnPlayerJoined : public Hook<void, SDK::ABrickGameSession*, SDK::ABrickPlayerController*>
     {
-        inline bool enabled = false;
-        inline bool initalized = false;
-        inline const char* pattern = "\x48\x83\xEC\x48\x48\x89\x5C\x24\x58\x33\xDB\x48\x89\x74\x24\x68\x48\x89\x7C\x24\x40";
-        inline const char* mask = "xxxxxxxxxxxxxxxxxxxx";
-        inline uintptr_t OnPlayerJoinedFunctionPointer = 0;
+    public:
 
-        using OnPlayerJoined_t = void(__fastcall*)(SDK::ABrickGameSession* This, SDK::ABrickPlayerController* PC);
-        inline OnPlayerJoined_t OriginalOnPlayerJoinedFunction = nullptr;
+        static void __fastcall HookedFunction(SDK::ABrickGameSession* This, SDK::ABrickPlayerController* PC)
+        {
+            S_OnPlayerJoined->OriginalFunction(This, PC);
+            messages::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(PC), WelcomeClientMessage, SDK::EChatContext::Global, L"Welcome!");
+        }
 
-        void __fastcall HookedOnPlayerJoinedFunction(SDK::ABrickGameSession* This, SDK::ABrickPlayerController* PC);
-
-        bool Init();
-        void Enable();
-        void Disable();
-    }
+        OnPlayerJoined() : Hook("\x48\x83\xEC\x48\x48\x89\x5C\x24\x58\x33\xDB\x48\x89\x74\x24\x68\x48\x89\x7C\x24\x40", "xxxxxxxxxxxxxxxxxxxx", HookedFunction) {}
+    };
 }

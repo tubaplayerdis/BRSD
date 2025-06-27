@@ -17,7 +17,7 @@
 namespace hooks
 {
 	class SetTitleText;
-	inline SetTitleText* SetTitleTextSingleton = nullptr; //Non-Inline causes link 2005
+	inline SetTitleText* S_SetTitleText = nullptr; //Non-Inline causes link 2005
 
 	class SetTitleText : public Hook<void, SDK::UMenuWidget*, const SDK::FText*>
 	{
@@ -26,7 +26,7 @@ namespace hooks
 		static void __fastcall HookedFunction(SDK::UMenuWidget* This, const SDK::FText* Name)
 		{
 			std::cout << "Setting Title Text: " << Name->ToString() << std::endl;
-			SetTitleTextSingleton->OriginalFunction(This, Name); //The original function is filled in when the class is created.
+			S_SetTitleText->OriginalFunction(This, Name);
 		}
 
 		SetTitleText() : Hook(0x0EA2170, HookedFunction) {}

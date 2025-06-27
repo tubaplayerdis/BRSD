@@ -12,34 +12,28 @@
 
 #pragma once
 #include <exception>
+#include <cstdint>
+#include <cstring>
+#include <vector>
+#include <limits>
 #include <MinHook.h>
 #include <windows.h>
 #include <Psapi.h>
-
-class HookingException : public std::exception
-{
-public:
-	explicit HookingException(const char* message) : sErrorMessage(message) {}
-
-	const char* what() const noexcept override {
-		return sErrorMessage;
-	}
-private:
-	const char* sErrorMessage;
-};
 
 template <typename Ret, typename... Args>  
 class Hook  
 {  
 public:  
-    Hook(const char* pat, const char* mak, Ret(__fastcall* hookFunc)(Args...)); //pattern and mask, use the \x00 format on sigs, x and ? on masks (? is wildcard)
+    Hook(const char* pat, const char* mak, Ret(__fastcall* hookFunc)(Args...), bool fsearch = true); //pattern and mask, use the \x00 format on sigs, x and ? on masks (? is wildcard)
     Hook(unsigned long long addr, Ret(__fastcall* hookFunc)(Args...));  //The address base is calculated when creating the object. Only the offset
 	Hook(Ret(__fastcall* ptr)(Args...), Ret(__fastcall* hookFunc)(Args...)); //Use reinterpret_cast<Ret(__fastcall*)(Args...)>(vtable[index]) when inputing a vtable entry
     ~Hook();  
 
 private:  
     bool enabled;  
-    bool initalized;  
+    bool initialized; 
+	bool fastsearch;
+	
 	unsigned long long FunctionPointer;
     const char* pattern;  
     const char* mask;  
@@ -51,27 +45,30 @@ protected:
 	Function_t hookedFunction;
 
 public:
+	static bool IsInitialized(Hook<Ret, Args...>* hook);
     void Enable();
     void Disable();
 
 protected:
 	static uintptr_t FindPattern(const char* pattern, const char* mask, uintptr_t base, size_t size);
+	static uintptr_t FindPatternS(const char* pattern, const char* mask, uintptr_t base, size_t size);
 	static uintptr_t GetModuleBase();
 	static uintptr_t GetModuleSize();
 };
 
 template<typename Ret, typename ...Args>
-Hook<Ret, Args...>::Hook(const char* pat, const char* mak, Ret(__fastcall* hookFunc)(Args...))
+Hook<Ret, Args...>::Hook(const char* pat, const char* mak, Ret(__fastcall* hookFunc)(Args...), bool fsearch)
 {
 	pattern = pat;
 	mask = mak;
 	enabled = false;
-	initalized = false;
+	initialized = false;
 	FunctionPointer = 0;
 	OriginalFunction = nullptr;
 	hookedFunction = hookFunc;
+	fastsearch = fsearch;
 
-	if (!Init()) throw HookingException("Signature Not Found!");
+	Init();
 }
 
 template<typename Ret, typename ...Args>
@@ -80,12 +77,13 @@ Hook<Ret, Args...>::Hook(unsigned long long addr, Ret(__fastcall* hookFunc)(Args
 	pattern = "None";
 	mask = "None";
 	enabled = false;
-	initalized = false;
+	initialized = false;
 	FunctionPointer = (unsigned long long)(GetModuleHandle(NULL)) + addr;
 	OriginalFunction = nullptr;
 	hookedFunction = hookFunc;
+	fastsearch = true;
 
-	if (!Init()) throw HookingException("Initilization Error");
+	Init();
 }
 
 template<typename Ret, typename ...Args>
@@ -94,12 +92,13 @@ inline Hook<Ret, Args...>::Hook(Ret(__fastcall* ptr)(Args...), Ret(__fastcall* h
 	pattern = "None";
 	mask = "None";
 	enabled = false;
-	initalized = false;
+	initialized = false;
 	FunctionPointer = ptr;
 	OriginalFunction = nullptr;
 	hookedFunction = hookFunc;
+	fastsearch = true;
 
-	if (!Init()) throw HookingException("Initilization Error");
+	Init();
 }
 
 template<typename Ret, typename ...Args>
@@ -112,32 +111,77 @@ Hook<Ret, Args...>::~Hook()
 
 template<typename Ret, typename ...Args>
 bool Hook<Ret, Args...>::Init() {
-	if (initalized) return false;
-	if (FunctionPointer == 0) FunctionPointer = FindPattern(pattern, mask, GetModuleBase(), GetModuleSize());
+	if (initialized) return false;
+	if (FunctionPointer == 0) FunctionPointer = (fastsearch ? FindPattern(pattern, mask, GetModuleBase(), GetModuleSize()) : FindPatternS(pattern, mask, GetModuleBase(), GetModuleSize()));
 	if (FunctionPointer == 0) return false;
 	MH_STATUS ret = MH_CreateHook((LPVOID)FunctionPointer, hookedFunction, (void**)&OriginalFunction);
-	initalized = true;
+	initialized = true;
 	return ret == MH_OK;
 }
 
 template<typename Ret, typename ...Args>
+inline bool Hook<Ret, Args...>::IsInitialized(Hook<Ret, Args...>* hook)
+{
+	return !hook ? false : hook->initialized;
+}
+
+template<typename Ret, typename ...Args>
 void Hook<Ret, Args...>::Enable() {
-	if (!initalized || enabled) return;
-	MH_STATUS status = MH_EnableHook((LPVOID)FunctionPointer);
-	if (status != MH_OK) throw HookingException(MH_StatusToString(status));
+	if (!initialized || enabled) return;
+	MH_EnableHook((LPVOID)FunctionPointer);
 	enabled = true;
 }
 
 template<typename Ret, typename ...Args>
 void Hook<Ret, Args...>::Disable() {
-	if (!initalized || !enabled) return;
-	MH_STATUS status = MH_DisableHook((LPVOID)FunctionPointer);
-	if (status != MH_OK) throw HookingException(MH_StatusToString(status));
+	if (!initialized || !enabled) return;
+	MH_DisableHook((LPVOID)FunctionPointer);
 	enabled = false;
 }
 
 template<typename Ret, typename ...Args>
 inline uintptr_t Hook<Ret, Args...>::FindPattern(const char* pattern, const char* mask, uintptr_t base, size_t size)
+{
+	const size_t patternLen = strlen(mask);
+	if (patternLen == 0) {
+		return 0;
+	}
+
+	// 1. Create the bad-character skip table
+	std::vector<size_t> skipTable(256, patternLen);
+	for (size_t i = 0; i < patternLen - 1; ++i) {
+		if (mask[i] != '?') {
+			skipTable[static_cast<unsigned char>(pattern[i])] = patternLen - 1 - i;
+		}
+	}
+
+	const uintptr_t searchEnd = base + size - patternLen;
+	uintptr_t currentPos = base;
+
+	while (currentPos <= searchEnd) {
+		// 2. Compare from the end of the pattern backwards
+		bool match = true;
+		for (int j = patternLen - 1; j >= 0; --j) {
+			if (mask[j] != '?' && pattern[j] != *(char*)(currentPos + j)) {
+				// 3. On mismatch, use the skip table to jump forward
+				// The character from the memory text determines the jump distance.
+				const unsigned char mismatched_char = *(unsigned char*)(currentPos + patternLen - 1);
+				currentPos += skipTable[mismatched_char];
+				match = false;
+				break;
+			}
+		}
+
+		if (match) {
+			return currentPos; // Found it
+		}
+	}
+
+	return 0; // Not found
+}
+
+template<typename Ret, typename ...Args>
+inline uintptr_t Hook<Ret, Args...>::FindPatternS(const char* pattern, const char* mask, uintptr_t base, size_t size)
 {
 	size_t patternLen = strlen(mask);
 

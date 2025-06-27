@@ -85,9 +85,6 @@
     <Filter Include="Header Files\hooks\ui">
       <UniqueIdentifier>{ef8948ea-28da-4a43-8e30-e3224f9eb269}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\hooks\ui">
-      <UniqueIdentifier>{56407c7c-f938-4ed9-ac25-4be7e654faac}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Include\trampoline.c">
@@ -120,9 +117,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files\main</Filter>
     </ClCompile>
-    <ClCompile Include="AddChatMessage.cpp">
-      <Filter>Source Files\hooks</Filter>
-    </ClCompile>
     <ClCompile Include="FLinearColor.cpp">
       <Filter>Source Files\functions\colors</Filter>
     </ClCompile>
@@ -144,22 +138,7 @@
     <ClCompile Include="UNetDriver.cpp">
       <Filter>Source Files\functions</Filter>
     </ClCompile>
-    <ClCompile Include="BeginPlay.cpp">
-      <Filter>Source Files\hooks\global</Filter>
-    </ClCompile>
     <ClCompile Include="DrawTransition.cpp">
-      <Filter>Source Files\hooks\global</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadMap.cpp">
-      <Filter>Source Files\hooks\global</Filter>
-    </ClCompile>
-    <ClCompile Include="OnPlayerJoined.cpp">
-      <Filter>Source Files\hooks\global</Filter>
-    </ClCompile>
-    <ClCompile Include="OpenMenu.cpp">
-      <Filter>Source Files\hooks\global</Filter>
-    </ClCompile>
-    <ClCompile Include="StartPlay.cpp">
       <Filter>Source Files\hooks\global</Filter>
     </ClCompile>
     <ClCompile Include="interpreter.cpp">
@@ -369,9 +348,6 @@
     <ClCompile Include="uibase.cpp">
       <Filter>Source Files\modules\ui</Filter>
     </ClCompile>
-    <ClCompile Include="CreateButton.cpp">
-      <Filter>Source Files\hooks\ui</Filter>
-    </ClCompile>
     <ClCompile Include="psettings.cpp">
       <Filter>Source Files\modules\ui</Filter>
     </ClCompile>
@@ -380,12 +356,6 @@
     </ClCompile>
     <ClCompile Include="modhook.cpp">
       <Filter>Source Files\modules</Filter>
-    </ClCompile>
-    <ClCompile Include="UMenuWidget.cpp">
-      <Filter>Source Files\functions</Filter>
-    </ClCompile>
-    <ClCompile Include="OnClicked.cpp">
-      <Filter>Source Files\hooks\ui</Filter>
     </ClCompile>
     <ClCompile Include="UMainWidgetBase.cpp">
       <Filter>Source Files\functions</Filter>
@@ -428,9 +398,6 @@
     <ClInclude Include="UNetDriver.h">
       <Filter>Header Files\functions</Filter>
     </ClInclude>
-    <ClInclude Include="BeginPlay.h">
-      <Filter>Header Files\hooks\global</Filter>
-    </ClInclude>
     <ClInclude Include="DrawTransition.h">
       <Filter>Header Files\hooks\global</Filter>
     </ClInclude>
@@ -470,9 +437,6 @@
     <ClInclude Include="uibase.h">
       <Filter>Header Files\modules\ui</Filter>
     </ClInclude>
-    <ClInclude Include="CreateButton.h">
-      <Filter>Header Files\hooks\ui</Filter>
-    </ClInclude>
     <ClInclude Include="psettings.h">
       <Filter>Header Files\modules\ui</Filter>
     </ClInclude>
@@ -496,6 +460,12 @@
     </ClInclude>
     <ClInclude Include="Hook.h">
       <Filter>Header Files\hooks</Filter>
+    </ClInclude>
+    <ClInclude Include="Function.h">
+      <Filter>Header Files\functions</Filter>
+    </ClInclude>
+    <ClInclude Include="BeginPlay.h">
+      <Filter>Header Files\hooks\global</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
