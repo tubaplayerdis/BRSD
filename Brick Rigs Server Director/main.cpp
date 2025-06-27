@@ -23,6 +23,8 @@
 #include "UMenuWidget.h"
 #include "psettings.h"
 #include "uibase.h"
+#include "modhook.h"
+#include "UModHookSubsystem.h"
 
 using namespace global;
 
@@ -59,6 +61,8 @@ void MainLoop()
 
 	psettings::CreateCustomSettingsPage();
 
+	modhook::CreateBRSDModHook();
+
 	std::cout << "Starting Main Loop!" << std::endl;
 
 	while (true) {
@@ -73,6 +77,8 @@ void MainLoop()
 		if (UninjectPress() || doUninject) break;
 
 		if (TogglePress()) {
+			std::cout << UModHookSubsystem::GetModHookSubsystem()->ModHooks.Num() << std::endl;
+			/*
 			if (hooks::AddChatMessage::enabled) {
 				hooks::AddChatMessage::Disable();
 				SendNotificationLocal(L"Disabled Chat Commands!", 1); //Explore the icon atlas more
@@ -81,6 +87,7 @@ void MainLoop()
 				hooks::AddChatMessage::Enable();
 				SendNotificationLocal(L"Enabled Chat Commands!", 0);
 			}
+			*/
 		}
 	}
 	
@@ -90,6 +97,8 @@ void MainLoop()
 	psettings::Uninitalize();
 
 	hooks::DestroyHookObjects();
+
+	modhook::Uninitialize();
 
 	uibase::Cleanup();
 

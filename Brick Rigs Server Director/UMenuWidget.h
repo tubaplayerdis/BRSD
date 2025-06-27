@@ -12,8 +12,13 @@
 
 #pragma once
 #include <SDK.hpp>
+#include "Function.h"
+#include "uibase.h"
 
 namespace UMenuWidget
 {
-	void OpenMenu(SDK::FName InMenu);
+	inline void OpenMenu(SDK::FName InMenu) 
+	{
+		return CallGameFunction<void, SDK::UMenuWidget*, SDK::FName>(0x0D7AD00, GetMenu(), InMenu);
+	}
 }

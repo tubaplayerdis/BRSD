@@ -210,9 +210,6 @@
     <ClCompile Include="..\Include\SDK\WBP_Tooltip_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_WindowManager_functions.cpp" />
     <ClCompile Include="..\Include\trampoline.c" />
-    <ClCompile Include="AddChatMessage.cpp" />
-    <ClCompile Include="BeginPlay.cpp" />
-    <ClCompile Include="CreateButton.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="DrawTransition.cpp" />
     <ClCompile Include="modhook.cpp" />
@@ -223,29 +220,23 @@
     <ClCompile Include="global.cpp" />
     <ClCompile Include="hooks.cpp" />
     <ClCompile Include="interpreter.cpp" />
-    <ClCompile Include="LoadMap.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="messages.cpp" />
     <ClCompile Include="moderation.cpp" />
-    <ClCompile Include="OnClicked.cpp" />
-    <ClCompile Include="OnPlayerJoined.cpp" />
-    <ClCompile Include="OpenMenu.cpp" />
     <ClCompile Include="psettings.cpp" />
-    <ClCompile Include="StartPlay.cpp" />
     <ClCompile Include="SynchronizeProperties.cpp" />
     <ClCompile Include="uibase.cpp" />
     <ClCompile Include="UMainWidgetBase.cpp" />
-    <ClCompile Include="UMenuWidget.cpp" />
     <ClCompile Include="UModHookSubsystem.cpp" />
     <ClCompile Include="UNetDriver.cpp" />
     <ClCompile Include="watermark.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddChatMessage.h" />
-    <ClInclude Include="BeginPlay.h" />
-    <ClInclude Include="CreateButton.h" />
     <ClInclude Include="DrawTransition.h" />
+    <ClInclude Include="Function.h" />
     <ClInclude Include="Hook.h" />
+    <ClInclude Include="BeginPlay.h" />
     <ClInclude Include="modhook.h" />
     <ClInclude Include="obutton.h" />
     <ClInclude Include="FBrickChatMessage.h" />

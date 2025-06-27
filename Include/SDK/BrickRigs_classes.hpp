@@ -12933,7 +12933,7 @@ static_assert(offsetof(UMenuWidget, NetworkErrorPopupClass) == 0x0002C8, "Member
 
 // Class BrickRigs.ModHook
 // 0x0000 (0x0028 - 0x0028)
-class UModHook final : public UObject
+class UModHook : public UObject
 {
 public:
 	void BeginPlay();

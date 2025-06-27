@@ -17,6 +17,7 @@
 #include <shellapi.h>
 #include <MinHook.h>
 #include "global.h"
+#include "Hook.h"
 
 #pragma comment(lib, "shell32.lib")
 
@@ -24,21 +25,22 @@ bool hooks::InitHooks()
 {
 	std::cout << "Finding Hooks!" << std::endl;
 	auto start = std::chrono::high_resolution_clock::now();
-	bool ACMHook = AddChatMessage::Init();
-	bool BPHook = BeginPlay::Init();
-	bool OMHook = OpenMenu::Init();
-	bool ONJHook = OnPlayerJoined::Init();//0
-	bool RGHook = StartPlay::Init();
-	bool LMHook = LoadMap::Init();
-	bool OCHook = OnClicked::Init();
-	bool STHook = true;
-	try {
-		SetTitleTextSingleton = new SetTitleText();
-	}
-	catch (HookingException e) {
-		std::cout << e.what() << std::endl;
-		STHook = false;
-	}
+	S_AddChatMessage = new AddChatMessage();
+	S_BeginPlay = new BeginPlay();
+	S_OpenMenu = new OpenMenu();
+	S_OnPlayerJoined = new OnPlayerJoined();
+	S_StartPlay = new StartPlay();
+	S_LoadMap = new LoadMap();
+	S_OnClicked = new OnClicked();
+	S_SetTitleText = new SetTitleText();
+	bool ACMHook = S_AddChatMessage->IsInitialized(S_AddChatMessage);
+	bool BPHook = S_BeginPlay->IsInitialized(S_BeginPlay);
+	bool OMHook = S_OpenMenu->IsInitialized(S_OpenMenu);
+	bool ONJHook = S_OnPlayerJoined->IsInitialized(S_OnPlayerJoined);
+	bool RGHook = S_StartPlay->IsInitialized(S_StartPlay);
+	bool LMHook = S_LoadMap->IsInitialized(S_LoadMap);
+	bool OCHook = S_OnClicked->IsInitialized(S_OnClicked);
+	bool STHook = S_SetTitleText->IsInitialized(S_SetTitleText);
 	auto end = std::chrono::high_resolution_clock::now();
 	std::cout << "Elapsed Time Finding Hooks: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << std::endl;
 	if (!ACMHook || !BPHook || !OMHook || !ONJHook || !RGHook || !LMHook || !OCHook || !STHook) {
@@ -74,20 +76,37 @@ bool hooks::InitHooks()
 
 void hooks::EnableHooks()
 {
-	AddChatMessage::Enable();
-	BeginPlay::Enable();
-	OpenMenu::Enable();
-	OnPlayerJoined::Enable();
-	StartPlay::Enable();
-	LoadMap::Enable();
-	OnClicked::Enable();
-	SetTitleTextSingleton->Enable();
+	S_AddChatMessage->Enable();
+	S_BeginPlay->Enable();
+	S_OpenMenu->Enable();
+	S_OnPlayerJoined->Enable();
+	S_StartPlay->Enable();
+	S_LoadMap->Enable();
+	S_OnClicked->Enable();
+	S_SetTitleText->Enable();
 }
 
 void hooks::DestroyHookObjects()
 {
-	delete SetTitleTextSingleton;
-	SetTitleTextSingleton = nullptr;
+	//Deletes
+	delete S_AddChatMessage;
+	delete S_BeginPlay;
+	delete S_OpenMenu;
+	delete S_OnPlayerJoined;
+	delete S_StartPlay;
+	delete S_LoadMap;
+	delete S_SetTitleText;
+	delete S_OnClicked;
+
+	//Set nullptr
+	S_AddChatMessage = nullptr;
+	S_BeginPlay = nullptr;
+	S_OpenMenu = nullptr;
+	S_OnPlayerJoined = nullptr;
+	S_StartPlay = nullptr;
+	S_LoadMap = nullptr;
+	S_SetTitleText = nullptr;
+	S_OnClicked = nullptr;
 }
 
 void hooks::OpenCrashFile()
