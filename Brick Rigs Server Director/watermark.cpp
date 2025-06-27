@@ -11,7 +11,7 @@
 /*----------------------------------------------------------------------------*/
 
 #include "watermark.h"
-#include "SynchronizeProperties.h"
+#include "functions.h"
 #include "uibase.h"
 #include "global.h"
 

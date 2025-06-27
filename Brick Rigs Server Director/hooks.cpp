@@ -15,9 +15,6 @@
 #include <fstream>
 #include <windows.h>
 #include <shellapi.h>
-#include <MinHook.h>
-#include "global.h"
-#include "Hook.h"
 
 #pragma comment(lib, "shell32.lib")
 

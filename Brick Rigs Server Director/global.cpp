@@ -17,7 +17,6 @@
 #include <locale>
 #include <iostream>
 #include <fstream>
-#include "UNetDriver.h"
 
 void global::pointers::InitPointers()
 {
@@ -174,7 +173,12 @@ bool global::isMapValid()
 
 bool global::IsHost(SDK::UNetDriver* driver)
 {
-	if (pointers::updatingPointers || !UNetDriver::isServer(driver)) return false;
+	if (!driver) return false;
+	using IsServerFn = bool(__fastcall*)(SDK::UNetDriver*);
+	void** vtable = *(void***)driver;
+	IsServerFn IsServerFunc = reinterpret_cast<IsServerFn>(vtable[0x378 / 8]);
+	bool isServer = IsServerFunc(driver);
+	if (pointers::updatingPointers || !isServer) return false;
 	return true;
 }
 
@@ -232,49 +236,4 @@ std::vector<uint8_t> global::GetFunctionBytecode(SDK::UClass* objectclass,std::s
 	}
 	printf("\n");
 	return ret;
-}
-
-uintptr_t GetModuleBaseN()
-{
-	return (uintptr_t)GetModuleHandle(NULL);
-}
-
-uintptr_t GetModuleBase(const wchar_t* moduleName)
-{
-	return (uintptr_t)GetModuleHandle(moduleName);
-}
-
-size_t GetModuleSizeN()
-{
-	MODULEINFO info = {};
-	GetModuleInformation(GetCurrentProcess(), GetModuleHandle(NULL), &info, sizeof(info));
-	return info.SizeOfImage;
-}
-
-size_t GetModuleSize(const wchar_t* moduleName)
-{
-	MODULEINFO info = {};
-	GetModuleInformation(GetCurrentProcess(), GetModuleHandleW(moduleName), &info, sizeof(info));
-	return info.SizeOfImage;
-}
-
-uintptr_t FindPattern(const char* pattern, const char* mask, uintptr_t base, size_t size)
-{
-	size_t patternLen = strlen(mask);
-
-	for (size_t i = 0; i < size - patternLen; i++) {
-		bool found = true;
-
-		for (size_t j = 0; j < patternLen; j++) {
-			if (mask[j] != '?' && pattern[j] != *(char*)(base + i + j)) {
-				found = false;
-				break;
-			}
-		}
-
-		if (found)
-			return base + i;
-	}
-
-	return 0;
 }
