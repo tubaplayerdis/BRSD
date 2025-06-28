@@ -244,7 +244,7 @@
     <ClInclude Include="OpenMenu.h" />
     <ClInclude Include="PlayerInfo.h" />
     <ClInclude Include="psettings.h" />
-    <ClInclude Include="sld.h" />
+    <ClInclude Include="log.h" />
     <ClInclude Include="SetTitleText.h" />
     <ClInclude Include="StartPlay.h" />
     <ClInclude Include="stringlist.h" />

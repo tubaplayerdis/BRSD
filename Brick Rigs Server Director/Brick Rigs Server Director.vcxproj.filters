@@ -404,7 +404,7 @@
     <ClInclude Include="Logger.h">
       <Filter>Header Files\global</Filter>
     </ClInclude>
-    <ClInclude Include="sld.h">
+    <ClInclude Include="log.h">
       <Filter>Header Files\global</Filter>
     </ClInclude>
   </ItemGroup>
