@@ -15,6 +15,7 @@
 #include <fstream>
 #include <windows.h>
 #include <shellapi.h>
+#include "sld.h"
 
 #pragma comment(lib, "shell32.lib")
 

@@ -66,8 +66,8 @@ void messages::sendUserSpecificMessageWithContext(PlayerInfo info, std::string m
     }
 }
 
-void messages::sendMessageToAdmin(std::string message)
+void messages::sendMessageToHost(std::string message, const wchar_t* context)
 {
-	if (!global::isMapValid()) return;
-	sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), message, SDK::EChatContext::Admin, L"BRSD");
+    if (!global::isMapValid()) return;
+    sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), message, SDK::EChatContext::Admin, context);
 }

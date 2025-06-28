@@ -401,5 +401,11 @@
     <ClInclude Include="BeginPlay.h">
       <Filter>Header Files\hooks\global</Filter>
     </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Header Files\global</Filter>
+    </ClInclude>
+    <ClInclude Include="sld.h">
+      <Filter>Header Files\global</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

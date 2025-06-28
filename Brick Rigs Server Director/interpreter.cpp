@@ -27,7 +27,7 @@
 #define sendUserSpecificMessage(info, message) messages::sendUserSpecificMessage(info, message)
 #define sendUserSpecificMessageCommandFailed(info, message) messages::sendUserSpecificMessageCommandFailed(info, message)
 #define sendUserSpecificMessageWithContext(info, message, context, sender) messages::sendUserSpecificMessageWithContext(info, message, context, sender)
-#define sendMessageToAdmin(message) messages::sendMessageToAdmin(message)
+#define sendMessageToAdmin(message) MessageHost(message, L"BSRD")
 #define ToFewArgs(info, commandstr, group) messages::ToFewArgs(info, commandstr, group)
 
 bool interpreter::Commands::Night(PlayerInfo info)
