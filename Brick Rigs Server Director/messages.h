@@ -18,7 +18,7 @@
 #define ContextMessage(info, message, context, sender) messages::sendUserSpecificMessageWithContext(info,message,context,sender)
 #define CommandFailedMessage(info, message) messages::sendUserSpecificMessageCommandFailed(info, message)
 #define ShortArgsMessage(info, message, group) messages::ToFewArgs(info, message, group)
-#define MessageAdmin(message) messages::sendMessageToAdmin(message)
+#define MessageHost(message, context) messages::sendMessageToHost(message, context)
 
 namespace messages
 {
@@ -49,5 +49,5 @@ namespace messages
 	inline void ToFewArgs(PlayerInfo info, std::string commandstr, std::string cmdgroup) { sendUserSpecificMessageCommandFailed(info, std::string("Too few arguments used in command: ") + commandstr + std::string("\nUse /help ") + cmdgroup + std::string(" for more details!")); };
 
 
-	void sendMessageToAdmin(std::string message);
+	void sendMessageToHost(std::string message, const wchar_t* context);
 }
