@@ -46,6 +46,7 @@ protected:
 
 public:
 	static bool IsInitialized(Hook<Ret, Args...>* hook);
+	static bool IsEnabled(Hook<Ret, Args...>* hook);
     void Enable();
     void Disable();
 
@@ -123,6 +124,12 @@ template<typename Ret, typename ...Args>
 inline bool Hook<Ret, Args...>::IsInitialized(Hook<Ret, Args...>* hook)
 {
 	return !hook ? false : hook->initialized;
+}
+
+template<typename Ret, typename ...Args>
+inline bool Hook<Ret, Args...>::IsEnabled(Hook<Ret, Args...>* hook)
+{
+	return !hook ? false : hook->enabled;
 }
 
 template<typename Ret, typename ...Args>

@@ -23,6 +23,7 @@
 #include "psettings.h"
 #include "uibase.h"
 #include "functions.h"
+#include "AddChatMessage.h"
 
 using namespace global;
 
@@ -73,17 +74,14 @@ void MainLoop()
 		if (UninjectPress() || doUninject) break;
 
 		if (TogglePress()) {
-			std::cout << UModHookSubsystem::GetModHookSubsystem()->ModHooks.Num() << std::endl;
-			/*
-			if (hooks::AddChatMessage::enabled) {
-				hooks::AddChatMessage::Disable();
+			if (hooks::S_AddChatMessage->IsEnabled(hooks::S_AddChatMessage)) {
+				hooks::S_AddChatMessage->Disable();
 				SendNotificationLocal(L"Disabled Chat Commands!", 1); //Explore the icon atlas more
 			}
 			else {
-				hooks::AddChatMessage::Enable();
+				hooks::S_AddChatMessage->Enable();
 				SendNotificationLocal(L"Enabled Chat Commands!", 0);
 			}
-			*/
 		}
 	}
 	
