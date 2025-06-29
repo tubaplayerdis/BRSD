@@ -29,6 +29,7 @@ namespace hooks
         static void __fastcall HookedFunction(SDK::UMenuWidget* This, SDK::FName InMenu)
         {
             S_OpenMenu->OriginalFunction(This, InMenu);
+            Sleep(10);
             if (!This) return;
             std::cout << "Opening Menu: " << InMenu.GetRawString() << std::endl;
             if (InMenu.GetRawString().c_str() == nullptr) return;
@@ -37,7 +38,6 @@ namespace hooks
                 obutton::AddToButtonMenu();
             }
             if (InMenu.GetRawString() == "None" && global::isMapValid()) watermark::HideWaterWark();
-            Sleep(10);
         }
 
         OpenMenu() : Hook("\x48\x89\x54\x24\x10\x55\x53\x56\x57\x41\x54\x41\x55\x48\x8D\x6C\x24\xD1\x48\x81\xEC", "xxxxxxxxxxxxxxxxxxxx", HookedFunction) {}

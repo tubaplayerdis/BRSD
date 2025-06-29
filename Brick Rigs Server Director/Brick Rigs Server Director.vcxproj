@@ -228,7 +228,7 @@
     <ClInclude Include="Function.h" />
     <ClInclude Include="Hook.h" />
     <ClInclude Include="BeginPlay.h" />
-    <ClInclude Include="Logger.h" />
+    <ClInclude Include="LoggerStream.h" />
     <ClInclude Include="obutton.h" />
     <ClInclude Include="functions.h" />
     <ClInclude Include="global.h" />
@@ -244,7 +244,7 @@
     <ClInclude Include="OpenMenu.h" />
     <ClInclude Include="PlayerInfo.h" />
     <ClInclude Include="psettings.h" />
-    <ClInclude Include="log.h" />
+    <ClInclude Include="logger.h" />
     <ClInclude Include="SetTitleText.h" />
     <ClInclude Include="StartPlay.h" />
     <ClInclude Include="stringlist.h" />

@@ -350,9 +350,6 @@
     <ClInclude Include="DrawTransition.h">
       <Filter>Header Files\hooks\global</Filter>
     </ClInclude>
-    <ClInclude Include="OpenMenu.h">
-      <Filter>Header Files\hooks\global</Filter>
-    </ClInclude>
     <ClInclude Include="OnPlayerJoined.h">
       <Filter>Header Files\hooks\global</Filter>
     </ClInclude>
@@ -401,11 +398,14 @@
     <ClInclude Include="BeginPlay.h">
       <Filter>Header Files\hooks\global</Filter>
     </ClInclude>
-    <ClInclude Include="Logger.h">
+    <ClInclude Include="LoggerStream.h">
       <Filter>Header Files\global</Filter>
     </ClInclude>
-    <ClInclude Include="log.h">
+    <ClInclude Include="logger.h">
       <Filter>Header Files\global</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenMenu.h">
+      <Filter>Header Files\hooks\ui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
