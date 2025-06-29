@@ -13789,7 +13789,9 @@ static_assert(sizeof(UPropellerBrick) == 0x0000F8, "Wrong size on UPropellerBric
 class UPropertyCategoryWidget final : public UUserWidget
 {
 public:
-	uint8                                         Pad_260[0x18];                                     // 0x0260(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8 Pad_260[0x10];            // 0x260–0x270
+	int32 CategoryIndex;            // 0x270–0x274
+	uint8 Pad_274[0x4];             // 0x274–0x278 (padding to align to 0x278)
 
 public:
 	void UpdateCategory(const class FText& DisplayName);
@@ -13812,7 +13814,12 @@ static_assert(sizeof(UPropertyCategoryWidget) == 0x000278, "Wrong size on UPrope
 class UPropertyContainerWidget final : public UBrickUserWidget
 {
 public:
-	uint8                                         Pad_270[0x30];                                     // 0x0270(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8_t	     								  AssetLoader_PropertyWidgetClass[0x10];			 // 0x270 (size guessed, maybe 0x10)
+	TWeakObjectPtr<UWidget>						  PropertyList;										 // 0x280 (0x8)
+	int32										  PropertyListSlotIndex;                             // 0x288 (0x4)
+	EOrientation								  Orientation;										 // 0x28C (0x1)
+	uint8										  Pad_28D[0x3];                                      // 0x28D–0x290 (align next to 0x290)
+	uint8										  PropertyInfo[0x10];								 // 0x290 (0x10)
 	class UPropertyWidget*                        PropertyWidget;                                    // 0x02A0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_2A8[0x10];                                     // 0x02A8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	class UBrickTextBlock*                        NameTextBlock;                                     // 0x02B8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)

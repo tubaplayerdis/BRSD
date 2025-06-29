@@ -17,7 +17,6 @@
 #include "global.h"
 #include "obutton.h"
 #include "uibase.h"
-#include "SetTitleText.h"
 #include "psettings.h"
 #include "functions.h"
 
@@ -36,7 +35,6 @@ namespace hooks
 				std::cout << "BRSD Button Clicked!" << std::endl;
 				if (GetMenu()->CurrentMenuPage) GetMenu()->RemoveMenuPage(GetMenu()->CurrentMenuPage);
 				const SDK::FText title = TEXT(L"BRSD");
-				if (hooks::S_SetTitleText) SetTitleText::HookedFunction(GetMenu(), &title);
 				UMenuWidget::OpenMenu(NAME(L"InGameMenu/BSRD"));
 				GetMenu()->AddMenuPage(psettings::CustomSettingsPage);
 				GetMenu()->CurrentMenuPage = psettings::CustomSettingsPage;
