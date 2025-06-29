@@ -25,13 +25,13 @@
 
 namespace logger
 {
-	inline std::ofstream logFile;
+	inline std::ifstream logFile;
 	inline std::streambuf* originalstdout = nullptr;
 	inline LoggerStream* streamtee = nullptr;
 
 	inline void Initalize()
 	{
-		logFile = std::ofstream("brsdlog.log", std::ios::trunc);
+		logFile = std::ifstream("brsdlog.log", std::ios::trunc);
 		originalstdout = std::cout.rdbuf();
 		streamtee = new LoggerStream(logFile.rdbuf(), originalstdout);
 		std::cout.rdbuf(streamtee);
@@ -42,7 +42,6 @@ namespace logger
 		std::cout << "Destroying Logging System!" << std::endl;
 		std::cout << "Uninjecting BRSD!" << std::endl;
 		std::cout.rdbuf(originalstdout);
-		logFile.close();
 		if (!streamtee) return;
 		delete streamtee;
 		streamtee = nullptr;
