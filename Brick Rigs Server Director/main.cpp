@@ -77,8 +77,6 @@ void MainLoop()
 		if (UninjectPress() || doUninject) break;
 
 		if (TogglePress()) {
-			global::GetFunctionBytecode(SDK::UMenuWidget::StaticClass(), "MenuWidget", "SetTitleText");
-			/*
 			if (hooks::S_AddChatMessage->IsEnabled(hooks::S_AddChatMessage)) {
 				hooks::S_AddChatMessage->Disable();
 				SendNotificationLocal(L"Disabled Chat Commands!", 1); //Explore the icon atlas more
@@ -87,7 +85,7 @@ void MainLoop()
 				hooks::S_AddChatMessage->Enable();
 				SendNotificationLocal(L"Enabled Chat Commands!", 0);
 			}
-			*/
+			
 		}
 	}
 	

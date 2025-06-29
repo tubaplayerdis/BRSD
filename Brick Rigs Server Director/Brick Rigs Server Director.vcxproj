@@ -245,7 +245,6 @@
     <ClInclude Include="PlayerInfo.h" />
     <ClInclude Include="psettings.h" />
     <ClInclude Include="logger.h" />
-    <ClInclude Include="SetTitleText.h" />
     <ClInclude Include="StartPlay.h" />
     <ClInclude Include="stringlist.h" />
     <ClInclude Include="uibase.h" />

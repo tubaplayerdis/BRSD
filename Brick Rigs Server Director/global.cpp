@@ -227,6 +227,7 @@ std::vector<uint8_t> global::GetFunctionBytecode(SDK::UClass* objectclass,std::s
 {
 	std::vector<uint8_t> ret = std::vector<uint8_t>();
 	SDK::UFunction* Fn = objectclass->GetFunction(classname, functionname);
+	if (Fn) std::cout << "Function Flags: " << Fn->FunctionFlags << std::endl;
 	if (!Fn || Fn->Script.Num() == 0) {
 		if (!Fn) std::cout << "Function was not found!" << std::endl;
 		std::cout << "Script was not found!" << std::endl;
