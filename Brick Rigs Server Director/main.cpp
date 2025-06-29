@@ -24,6 +24,7 @@
 #include "uibase.h"
 #include "functions.h"
 #include "AddChatMessage.h"
+#include "logger.h"
 
 using namespace global;
 
@@ -41,6 +42,8 @@ using namespace global;
 
 void MainLoop()
 {
+	InitLogging();
+
 	std::cout << reinterpret_cast<const char*>(CommandLineLogo) << std::endl;
 
 	if (!hooks::InitHooks()) {
@@ -74,6 +77,8 @@ void MainLoop()
 		if (UninjectPress() || doUninject) break;
 
 		if (TogglePress()) {
+			global::GetFunctionBytecode(SDK::UMenuWidget::StaticClass(), "MenuWidget", "SetTitleText");
+			/*
 			if (hooks::S_AddChatMessage->IsEnabled(hooks::S_AddChatMessage)) {
 				hooks::S_AddChatMessage->Disable();
 				SendNotificationLocal(L"Disabled Chat Commands!", 1); //Explore the icon atlas more
@@ -82,6 +87,7 @@ void MainLoop()
 				hooks::S_AddChatMessage->Enable();
 				SendNotificationLocal(L"Enabled Chat Commands!", 0);
 			}
+			*/
 		}
 	}
 	
@@ -94,7 +100,9 @@ void MainLoop()
 
 	uibase::Cleanup();
 
-	MessageAdmin("Uninjecting BRSD!");
+	MessageHost("Uninjecting BRSD!");
 
 	Notification(L"Uninjecting BRSD!", 9);
+
+	DestroyLogging();
 }

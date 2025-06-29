@@ -15,13 +15,12 @@
 #include <fstream>
 #include <windows.h>
 #include <shellapi.h>
-#include "log.h"
 
 #pragma comment(lib, "shell32.lib")
 
 bool hooks::InitHooks()
 {
-	log << "Finding Hooks!" << std::endl;
+	std::cout << "Finding Hooks!" << std::endl;
 	auto start = std::chrono::high_resolution_clock::now();
 	S_AddChatMessage = new AddChatMessage();
 	S_BeginPlay = new BeginPlay();

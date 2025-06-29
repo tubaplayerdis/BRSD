@@ -227,13 +227,23 @@ std::vector<uint8_t> global::GetFunctionBytecode(SDK::UClass* objectclass,std::s
 {
 	std::vector<uint8_t> ret = std::vector<uint8_t>();
 	SDK::UFunction* Fn = objectclass->GetFunction(classname, functionname);
-	if (!Fn || Fn->Script.Num() == 0) return ret;
-	printf("Bytecode for %s:\n", Fn->GetName());
+	if (!Fn || Fn->Script.Num() == 0) {
+		if (!Fn) std::cout << "Function was not found!" << std::endl;
+		std::cout << "Script was not found!" << std::endl;
+		return ret;
+	}
+	std::cout << "Bytecode for" << Fn->GetName() << std::endl;
 	for (int i = 0; i < Fn->Script.Num(); ++i)
 	{
-		printf("%02X ", Fn->Script[i]);
+		char buffer[3] = "??";
+		try {
+			sprintf_s(buffer, "%02X ", Fn->Script[i]);
+		} catch(...) {
+			std::cout << "Error buffering on bytecode decompilation." << std::endl;
+		}
+		std::cout << buffer << std::endl;
 		ret.push_back(Fn->Script[i]);
 	}
-	printf("\n");
+	std::cout << std::endl;
 	return ret;
 }
