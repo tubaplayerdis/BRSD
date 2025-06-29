@@ -17,7 +17,7 @@
 bool psettings::CreateCustomSettingsPage()
 {
     CustomSettingsPage = static_cast<SDK::UMenuSettingsPageWidget*>(SDK::UGameplayStatics::SpawnObject(SDK::UMenuSettingsPageWidget::StaticClass(), GetMenu()));
-    CustomSettingsPage->Name = NAME(L"BSRDSettings");
+    //CustomSettingsPage->Name = NAME(L"BSRDSettings"); //Causes issues with the gc
     /*
     SDK::UPropertyCategoryWidget* cat = static_cast<SDK::UPropertyCategoryWidget*>(SDK::UGameplayStatics::SpawnObject(SDK::UPropertyCategoryWidget::StaticClass(), CustomSettingsPage));
     cat->CategoryIndex = 0;
