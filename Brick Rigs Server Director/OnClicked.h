@@ -32,7 +32,6 @@ namespace hooks
 		static void __fastcall HookedFunction(SDK::UMenuButtonWidget* This)
 		{
 			if (This == obutton::CurrentButtonRef) {
-				std::cout << "BRSD Button Clicked!" << std::endl;
 				if (GetMenu()->CurrentMenuPage) GetMenu()->RemoveMenuPage(GetMenu()->CurrentMenuPage);
 				const SDK::FText title = TEXT(L"BRSD");
 				UMenuWidget::OpenMenu(NAME(L"InGameMenu/BSRD"));

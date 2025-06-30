@@ -28,7 +28,6 @@ namespace hooks
         static void __fastcall HookedFunction(SDK::AGameMode* This)
         {
             S_StartPlay->OriginalFunction(This);
-            std::cout << "Started Play!" << std::endl;
             global::pointers::UpdatePointers(SDK::UWorld::GetWorld());
         }
 

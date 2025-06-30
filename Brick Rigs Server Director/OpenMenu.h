@@ -31,7 +31,6 @@ namespace hooks
             S_OpenMenu->OriginalFunction(This, InMenu);
             Sleep(10);
             if (!This) return;
-            std::cout << "Opening Menu: " << InMenu.GetRawString() << std::endl;
             if (InMenu.GetRawString().c_str() == nullptr) return;
             if (InMenu.GetRawString() == "InGameMenu") {
                 watermark::ShowWaterMark();

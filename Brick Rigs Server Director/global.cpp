@@ -17,6 +17,8 @@
 #include <locale>
 #include <iostream>
 #include <fstream>
+#include <sstream>
+#include <chrono>
 
 void global::pointers::InitPointers()
 {
@@ -29,19 +31,16 @@ void global::pointers::InitPointers()
 
 void global::pointers::UpdatePointers(SDK::UWorld* NewWorld)
 {
-	std::cout << "Updating Pointers!" << std::endl;
 	updatingPointers = true;
 	mapLevelName = "Changing";
 	World = NewWorld;
 
 	Level = World->PersistentLevel;
 	mapLevelName = Level->Outer->GetName();
-	std::cout << "New Map Name: " << mapLevelName << std::endl;
 	LocalController = World->OwningGameInstance->LocalPlayers[0]->PlayerController;
 
 	if (LocalController == nullptr || LocalController != World->OwningGameInstance->LocalPlayers[0]->PlayerController) {
 		LocalController = World->OwningGameInstance->LocalPlayers[0]->PlayerController;
-		std::cout << "Detected Change in PlayController! Switching." << std::endl;
 	}
 
 	updatingPointers = false;
@@ -155,6 +154,24 @@ std::string GetPlayerNameFromIDORName(std::string input)
 	if (!controller) controller = GetBrickPlayerControllerFromID(input);
 	if (!controller) { return std::string("None"); }
 	return GetPlayerInfoFromController(controller).name;
+}
+
+std::string GetCurrentTimeFormatted()
+{
+	std::ostringstream oss;
+	auto now = std::chrono::system_clock::now();
+	std::time_t now_c = std::chrono::system_clock::to_time_t(now);
+	tm temi = tm(); localtime_s(&temi, &now_c);
+	oss << "[" << std::put_time(&temi, "%F %T") << "] ";
+	return oss.str();
+}
+
+SDK::TArray<SDK::AActor*>* AllActorsOfClass(SDK::TSubclassOf<SDK::AActor> sub)
+{
+	UC::TArray<SDK::AActor*> raw = UC::TArray<SDK::AActor*>();
+	UC::TArray<SDK::AActor*>* what = &raw;
+	SDK::UGameplayStatics::GetAllActorsOfClass(World(), sub, what);
+	return what;
 }
 
 bool global::isMapValid()

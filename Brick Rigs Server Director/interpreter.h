@@ -40,9 +40,6 @@ namespace interpreter
 		//Weapons
 		bool AmmoType(PlayerInfo info, std::string ammotype);
 
-		//Misc
-		void Debug(PlayerInfo info); //Use this to test varius functions. Can be called by imgui.
-
 		void Uninject(PlayerInfo info);
 
 		namespace Moderation

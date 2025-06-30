@@ -52,6 +52,7 @@ namespace hooks
 			else { watermark::ShowWaterMark(); }
 			Sleep(50); //This is janky but allows for execution of other systems to prevent freezes
 			welcome::SendWelcomeMessageA();
+			std::cout << "Started server on map: " << SDK::UGameplayStatics::GetCurrentLevelName(This, true).ToString() << std::endl;
 		}
 
 		BeginPlay() : Hook("\x40\x53\x48\x83\xEC\x20\x48\x8B\xD9\x48\x8B\x89\x18\x01\x00\x00\x48\x85\xC9\x74\x1E\x48\x8B\x01", "xxxxxxxxxxxxxxxxxxxxxxx", HookedFunction) {}
