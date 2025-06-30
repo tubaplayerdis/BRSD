@@ -35,7 +35,6 @@ bool interpreter::Commands::Night(PlayerInfo info)
     if (!isNight) { sendUserSpecificMessageCommandFailed(info, "The /night command is currently disabled!"); RETF; }
     using namespace global;
     auto cur = GetBrickGameState()->GetMatchSettings();
-    std::cout << cur.WorldSetupParams.TimeOfDay << std::endl;
     cur.WorldSetupParams.TimeOfDay = 0.00f;
     GetBrickGameState()->SetMatchSettings(cur);
     RETT;
@@ -46,7 +45,6 @@ bool interpreter::Commands::Day(PlayerInfo info)
     if (!isDay) { sendUserSpecificMessageCommandFailed(info, "The /day command is currently disabled!"); RETF; }
     using namespace global;
     SDK::FMatchSettings cur = GetBrickGameState()->MatchSettings;
-    std::cout << cur.WorldSetupParams.TimeOfDay << std::endl;
     cur.WorldSetupParams.TimeOfDay = 12.00f;
     GetBrickGameState()->SetMatchSettings(cur);
     RETT;
@@ -61,7 +59,6 @@ bool interpreter::Commands::Rain(PlayerInfo info)
     for (SDK::UWeatherCondition* condition : manager->WeatherConditions) {
         std::cout << condition->GetName() << std::endl;
         if (condition->GetName() == "WC_Rain") {
-            std::cout << "FOUND Condition!" << std::endl;
             SDK::FMatchSettings cur = GetBrickGameState()->GetMatchSettings();
             cur.WorldSetupParams.Weather = condition;
             bool old = cur.bFadeIn;
@@ -82,7 +79,6 @@ bool interpreter::Commands::Sun(PlayerInfo info)
     for (SDK::UWeatherCondition* condition : manager->WeatherConditions) {
         std::cout << condition->GetName() << std::endl;
         if (condition->GetName() == "WC_Sun") {
-            std::cout << "FOUND Condition!" << std::endl;
             SDK::FMatchSettings cur = GetBrickGameState()->GetMatchSettings();
             cur.WorldSetupParams.Weather = condition;
             bool old = cur.bFadeIn;
@@ -163,9 +159,13 @@ void interpreter::interpretCommand(std::string command, std::vector<std::string>
 {
     size_t hash_val = hash_string(command);
 
-    for (std::string i : args) {
-        std::cout << i << std::endl;
-    }
+    Release({
+        std::cout << "User: " << info.name << " is executing command: " << command << " with args: ";
+        for (std::string i : args) {
+            std::cout << i << " ";
+        }
+        std::cout << std::endl;
+    });
 
     switch (hash_val) {
     case hs("/uninject"):
@@ -502,14 +502,6 @@ bool interpreter::Commands::Ghost(PlayerInfo info)
     }
     else sendUserSpecificMessageCommandFailed(info, "Movement commands can only be used when controlling an independent character (not in a vehicle).");
     RETF;
-}
-
-/*
-Replace code with varius things.
-*/
-void interpreter::Commands::Debug(PlayerInfo info)
-{
-    sendMessageToAdmin("This message is really sad!");
 }
 
 void interpreter::Commands::Uninject(PlayerInfo info)

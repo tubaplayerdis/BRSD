@@ -23,6 +23,8 @@
 	#define DestroyLogging()
 #endif // !_DEBUG
 
+#define LOG(input) std::cout << input << std::endl
+
 namespace logger
 {
 	inline std::ifstream logFile;
@@ -31,7 +33,7 @@ namespace logger
 
 	inline void Initalize()
 	{
-		logFile = std::ifstream("brsdlog.log", std::ios::trunc);
+		logFile = std::ifstream("brsd.log", std::ios::trunc);
 		originalstdout = std::cout.rdbuf();
 		streamtee = new LoggerStream(logFile.rdbuf(), originalstdout);
 		std::cout.rdbuf(streamtee);

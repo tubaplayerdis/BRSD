@@ -140,3 +140,17 @@ PlayerInfo GetPlayerInfoFromController(SDK::ABrickPlayerController* controller);
 std::string GetPlayerNameFromID(std::string ID);
 std::string GetPlayerNameFromIDORName(std::string input);
 inline SDK::ABrickPlayerController* GetBrickPlayerControllerFromIDORName(std::string input) { return GetBrickPlayerControllerFromName(GetPlayerNameFromIDORName(input)); }
+std::string GetCurrentTimeFormatted();
+
+inline bool isRelease()
+{
+	#ifndef _DEBUG
+		return 1
+	#endif // !_DEBUG
+	return 0;
+}
+
+#define Release(arbit) if(isRelease()) arbit
+#define Debug(arbit) if(!isRelease()) arbit
+
+SDK::TArray<SDK::AActor*>* AllActorsOfClass(SDK::TSubclassOf<SDK::AActor> sub);
