@@ -80,6 +80,16 @@ inline void SynchronizeProperties(SDK::UBrickBorder* This)
 	return CallGameFunction<void, SDK::UBrickBorder*>(0x0DE8030, This);
 }
 
+inline void SynchronizeProperties(SDK::UBrickScrollBox* This)
+{
+	return CallGameFunction<void, SDK::UBrickScrollBox*>(0x0DE9250, This);
+}
+
+inline char Initalize(SDK::UBrickTextBoxWidget* Box)
+{
+	return CallGameFunction<char, SDK::UBrickTextBoxWidget*>(0x0DC5ED0, Box);
+}
+
 namespace UMainWidgetBase
 {
 	inline void UpdateInputMode(SDK::UMainWidgetBase* Base)

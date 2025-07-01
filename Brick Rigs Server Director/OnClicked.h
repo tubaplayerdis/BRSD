@@ -40,7 +40,7 @@ namespace hooks
 				psettings::SetVisibility(SDK::ESlateVisibility::Visible);
 			}
 			else {
-				psettings::SetVisibility(SDK::ESlateVisibility::Hidden);
+				psettings::SetVisibility(SDK::ESlateVisibility::Collapsed);
 				S_OnClicked->OriginalFunction(This);
 			}
 		}
