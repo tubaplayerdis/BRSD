@@ -145,7 +145,7 @@ std::string GetCurrentTimeFormatted();
 inline bool isRelease()
 {
 	#ifndef _DEBUG
-		return 1
+	return 1;
 	#endif // !_DEBUG
 	return 0;
 }
