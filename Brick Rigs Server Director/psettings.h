@@ -12,9 +12,12 @@
 
 #pragma once
 #include <SDK.hpp>
+#include <vector>
 namespace psettings
 {
-	inline SDK::UMenuSettingsPageWidget* CustomSettingsPage = nullptr;
+	inline SDK::UMenuPageWidget* CustomSettingsPage = nullptr;
+	inline std::vector<SDK::UWidget*> ElementsList = std::vector<SDK::UWidget*>();
 	bool CreateCustomSettingsPage();
+	void SetVisibilityOfElements(SDK::ESlateVisibility vis);
 	void Uninitalize();
 }

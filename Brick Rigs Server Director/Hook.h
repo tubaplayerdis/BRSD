@@ -55,6 +55,7 @@ protected:
 	static unsigned long long FindPatternS(const char* pattern, const char* mask, unsigned long long base, unsigned __int64 size);
 	static unsigned long long GetModuleBase();
 	static unsigned long long GetModuleSize();
+	static bool GetTextSection(unsigned long long& textBase, unsigned __int64& textSize);
 };
 
 template<typename Ret, typename ...Args>
@@ -94,7 +95,7 @@ inline Hook<Ret, Args...>::Hook(Ret(__fastcall* ptr)(Args...), Ret(__fastcall* h
 	mask = "None";
 	enabled = false;
 	initialized = false;
-	FunctionPointer = ptr;
+	FunctionPointer = reinterpret_cast<unsigned long long>(ptr);
 	OriginalFunction = nullptr;
 	hookedFunction = hookFunc;
 	fastsearch = true;
@@ -113,7 +114,12 @@ Hook<Ret, Args...>::~Hook()
 template<typename Ret, typename ...Args>
 bool Hook<Ret, Args...>::Init() {
 	if (initialized) return false;
-	if (FunctionPointer == 0) FunctionPointer = (fastsearch ? FindPattern(pattern, mask, GetModuleBase(), GetModuleSize()) : FindPatternS(pattern, mask, GetModuleBase(), GetModuleSize()));
+	if (FunctionPointer == 0) {
+		unsigned long long tbase;
+		unsigned __int64 tsize;
+		if (!GetTextSection(tbase, tsize)) return false;
+		FunctionPointer = (fastsearch ? FindPattern(pattern, mask, tbase, tsize) : FindPatternS(pattern, mask, tbase, tsize));
+	}
 	if (FunctionPointer == 0) return false;
 	MH_STATUS ret = MH_CreateHook((LPVOID)FunctionPointer, hookedFunction, (void**)&OriginalFunction);
 	initialized = true;
@@ -221,4 +227,25 @@ inline unsigned long long Hook<Ret, Args...>::GetModuleSize()
 	MODULEINFO info = {};
 	GetModuleInformation(GetCurrentProcess(), GetModuleHandle(NULL), &info, sizeof(info));
 	return (unsigned long long)info.SizeOfImage;
+}
+
+template<typename Ret, typename ...Args>
+inline bool Hook<Ret, Args...>::GetTextSection(unsigned long long& textBase, unsigned __int64& textSize)
+{
+	uintptr_t moduleBase = GetModuleBase();
+	auto dos = (PIMAGE_DOS_HEADER)moduleBase;
+	auto nt = (PIMAGE_NT_HEADERS)(moduleBase + dos->e_lfanew);
+
+	auto section = IMAGE_FIRST_SECTION(nt);
+	for (unsigned i = 0; i < nt->FileHeader.NumberOfSections; ++i, ++section)
+	{
+		if (strncmp((char*)section->Name, ".text", 5) == 0)
+		{
+			textBase = moduleBase + section->VirtualAddress;
+			textSize = section->Misc.VirtualSize;
+			return true;
+		}
+	}
+
+	return false;
 }
