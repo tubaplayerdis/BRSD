@@ -29,7 +29,7 @@
 #define World() SDK::UWorld::GetWorld()
 #define Engine() SDK::UEngine::GetEngine()
 #define Notification(message, icon) global::SendNotificationLocal(message, icon)
-#define Spawn(cls, out) static_cast<cls*>(SDK::UGameplayStatics::SpawnObject(cls::StaticClass(), out));
+#define Spawn(cls, out) static_cast<cls*>(SDK::UGameplayStatics::SpawnObject(cls::StaticClass(), out))
 #define WIN32_LEAN_AND_MEAN
 
 #undef TEXT

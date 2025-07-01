@@ -17,30 +17,37 @@
 
 bool psettings::CreateCustomSettingsPage()
 {
-    CustomSettingsPage = static_cast<SDK::UMenuPageWidget*>(SDK::UGameplayStatics::SpawnObject(SDK::UMenuPageWidget::StaticClass(), GetMenu()));
+    MockPage = Spawn(SDK::UMenuPageWidget, GetMenu());
 
 
-    SDK::UBrickTextBlock* TextBlock = Spawn(SDK::UBrickTextBlock, GetCanvasPanel());
+    CustomSettingsPage = Spawn(SDK::UCanvasPanel, GetWindowManager());
+    CustomSettingsPage->SetVisibility(SDK::ESlateVisibility::Hidden);
+    SDK::UCanvasPanelSlot* slot = GetCanvasPanel()->AddChildToCanvas(CustomSettingsPage);
+    slot->SetAutoSize(true);
+    SDK::FAnchors anchor = SDK::FAnchors();
+    anchor.Minimum.X = 0.3;
+    anchor.Minimum.Y = 0.2;
+    anchor.Maximum.X = 0.3;
+    anchor.Maximum.Y = 0.2;
+    slot->SetAnchors(anchor);
+    slot->SetAlignment(SDK::FVector2D(1.f, 0.f));
+    slot->SetSize(SDK::FVector2D(200.0f, 200.0f));
+
+
+    SDK::UBrickTextBlock* TextBlock = Spawn(SDK::UBrickTextBlock, CustomSettingsPage);
     if (!TextBlock) return false;
     TextBlock->SetText(TEXT(L"Testing!"));
-    SDK::UBrickBorder* TextBorder = Spawn(SDK::UBrickBorder, GetCanvasPanel());
+    SDK::UBrickBorder* TextBorder = Spawn(SDK::UBrickBorder, CustomSettingsPage);
     if (!TextBorder) return false;
     TextBorder->SetContent(TextBlock);
-    TextBorder->SetVisibility(SDK::ESlateVisibility::Hidden);
-    SDK::UCanvasPanelSlot* slot2 = GetCanvasPanel()->AddChildToCanvas(TextBorder);
+    SDK::UCanvasPanelSlot* slot2 = CustomSettingsPage->AddChildToCanvas(TextBorder);
     slot2->SetAutoSize(true);
-    SDK::FAnchors anchor = SDK::FAnchors();
-    anchor.Maximum = SDK::FVector2D(1.0f, 0.0f);
-    anchor.Minimum = SDK::FVector2D(1.0f, 0.0f);
-    slot2->SetAnchors(anchor);  // Top-Right Align
-    // 2. Align to the top-right of the widget
+    SDK::FAnchors anchos = SDK::FAnchors();
+    anchos.Maximum = SDK::FVector2D(1.0f, 0.0f);
+    anchos.Minimum = SDK::FVector2D(1.0f, 0.0f);
+    slot2->SetAnchors(anchos);  // Top-Right Align
     slot2->SetAlignment(SDK::FVector2D(1.f, 0.f));
-
-    // 3. Offset inward from top-right screen corner
-    std::cout << "X: " << CustomSettingsPage->GetCachedGeometry(). << std::endl;
-    std::cout << "Y: " << CustomSettingsPage->RenderTransformPivot.Y << std::endl;
-
-    slot2->SetPosition(CustomSettingsPage->RenderTransformPivot);  // x: 20px left, y: 20px down
+    slot2->SetPosition(SDK::FVector2D(0.0f,0.0f));  // x: 20px left, y: 20px down
 
 
     SynchronizeProperties(TextBorder);
@@ -50,12 +57,9 @@ bool psettings::CreateCustomSettingsPage()
     return true;
 }
 
-void psettings::SetVisibilityOfElements(SDK::ESlateVisibility vis)
+void psettings::SetVisibility(SDK::ESlateVisibility vis)
 {
-    for (SDK::UWidget* widget : ElementsList)
-    {
-        if(widget) widget->SetVisibility(vis);
-    }
+    CustomSettingsPage->SetVisibility(vis);
 }
 
 void psettings::Uninitalize()
