@@ -15,9 +15,10 @@
 #include <vector>
 namespace psettings
 {
-	inline SDK::UMenuPageWidget* CustomSettingsPage = nullptr;
+	inline SDK::UMenuPageWidget* MockPage = nullptr; //adds the backround of the menu page that looks correct
+	inline SDK::UCanvasPanel* CustomSettingsPage = nullptr;
 	inline std::vector<SDK::UWidget*> ElementsList = std::vector<SDK::UWidget*>();
 	bool CreateCustomSettingsPage();
-	void SetVisibilityOfElements(SDK::ESlateVisibility vis);
+	void SetVisibility(SDK::ESlateVisibility vis);
 	void Uninitalize();
 }

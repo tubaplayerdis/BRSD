@@ -35,12 +35,12 @@ namespace hooks
 				if (GetMenu()->CurrentMenuPage) GetMenu()->RemoveMenuPage(GetMenu()->CurrentMenuPage);
 				const SDK::FText title = TEXT(L"BRSD");
 				UMenuWidget::OpenMenu(NAME(L"InGameMenu/BSRD"));
-				GetMenu()->AddMenuPage(psettings::CustomSettingsPage);
-				GetMenu()->CurrentMenuPage = psettings::CustomSettingsPage;
-				psettings::SetVisibilityOfElements(SDK::ESlateVisibility::Visible);
+				GetMenu()->AddMenuPage(psettings::MockPage);
+				GetMenu()->CurrentMenuPage = psettings::MockPage;
+				psettings::SetVisibility(SDK::ESlateVisibility::Visible);
 			}
 			else {
-				psettings::SetVisibilityOfElements(SDK::ESlateVisibility::Hidden);
+				psettings::SetVisibility(SDK::ESlateVisibility::Hidden);
 				S_OnClicked->OriginalFunction(This);
 			}
 		}
