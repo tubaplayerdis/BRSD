@@ -37,8 +37,12 @@ namespace hooks
 				UMenuWidget::OpenMenu(NAME(L"InGameMenu/BSRD"));
 				GetMenu()->AddMenuPage(psettings::CustomSettingsPage);
 				GetMenu()->CurrentMenuPage = psettings::CustomSettingsPage;
+				psettings::SetVisibilityOfElements(SDK::ESlateVisibility::Visible);
 			}
-			else S_OnClicked->OriginalFunction(This);
+			else {
+				psettings::SetVisibilityOfElements(SDK::ESlateVisibility::Hidden);
+				S_OnClicked->OriginalFunction(This);
+			}
 		}
 
 		OnClicked() : Hook(0x0D76780, HookedFunction) {}

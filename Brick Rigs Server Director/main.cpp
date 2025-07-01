@@ -87,7 +87,6 @@ void MainLoop()
 				LOG("Enabled Chat Commands");
 				SendNotificationLocal(L"Enabled Chat Commands!", 0);
 			}
-			
 		}
 	}
 	
