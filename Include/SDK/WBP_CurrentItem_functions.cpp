@@ -17,45 +17,91 @@
 namespace SDK
 {
 
-// Function WBP_CurrentItem.WBP_CurrentItem_C.UpdateFireMode
-// (Event, Protected, BlueprintEvent)
+// Function WBP_CurrentItem.WBP_CurrentItem_C.ExecuteUbergraph_WBP_CurrentItem
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// const EFireMode                         NewMode                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-// const bool                              bHasFirearm                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_CurrentItem_C::UpdateFireMode(const EFireMode NewMode, const bool bHasFirearm)
+void UWBP_CurrentItem_C::ExecuteUbergraph_WBP_CurrentItem(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CurrentItem_C", "UpdateFireMode");
+		Func = Class->GetFunction("WBP_CurrentItem_C", "ExecuteUbergraph_WBP_CurrentItem");
 
-	Params::WBP_CurrentItem_C_UpdateFireMode Parms{};
+	Params::WBP_CurrentItem_C_ExecuteUbergraph_WBP_CurrentItem Parms{};
 
-	Parms.NewMode = NewMode;
-	Parms.bHasFirearm = bHasFirearm;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function WBP_CurrentItem.WBP_CurrentItem_C.UpdateAmmoType
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// EAmmoType                               NewType                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function WBP_CurrentItem.WBP_CurrentItem_C.BndEvt__WBP_CurrentItem_FadingPanel_K2Node_ComponentBoundEvent_0_OnFadedOut__DelegateSignature
+// (BlueprintEvent)
 
-void UWBP_CurrentItem_C::UpdateAmmoType(EAmmoType NewType)
+void UWBP_CurrentItem_C::BndEvt__WBP_CurrentItem_FadingPanel_K2Node_ComponentBoundEvent_0_OnFadedOut__DelegateSignature()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CurrentItem_C", "UpdateAmmoType");
+		Func = Class->GetFunction("WBP_CurrentItem_C", "BndEvt__WBP_CurrentItem_FadingPanel_K2Node_ComponentBoundEvent_0_OnFadedOut__DelegateSignature");
 
-	Params::WBP_CurrentItem_C_UpdateAmmoType Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.NewType = NewType;
+
+// Function WBP_CurrentItem.WBP_CurrentItem_C.UpdateItemName
+// (Event, Protected, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      NewName                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+
+void UWBP_CurrentItem_C::UpdateItemName(const class FText& NewName)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_CurrentItem_C", "UpdateItemName");
+
+	Params::WBP_CurrentItem_C_UpdateItemName Parms{};
+
+	Parms.NewName = std::move(NewName);
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_CurrentItem.WBP_CurrentItem_C.FadeOut
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    bImmediate                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UWBP_CurrentItem_C::FadeOut(bool bImmediate)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_CurrentItem_C", "FadeOut");
+
+	Params::WBP_CurrentItem_C_FadeOut Parms{};
+
+	Parms.bImmediate = bImmediate;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_CurrentItem.WBP_CurrentItem_C.FadeIn
+// (Event, Public, BlueprintEvent)
+
+void UWBP_CurrentItem_C::FadeIn()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_CurrentItem_C", "FadeIn");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -83,89 +129,43 @@ void UWBP_CurrentItem_C::UpdateAmmo(int32 Current, int32 Capacity, int32 Ammo)
 }
 
 
-// Function WBP_CurrentItem.WBP_CurrentItem_C.FadeIn
-// (Event, Public, BlueprintEvent)
-
-void UWBP_CurrentItem_C::FadeIn()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CurrentItem_C", "FadeIn");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_CurrentItem.WBP_CurrentItem_C.FadeOut
-// (Event, Public, BlueprintEvent)
+// Function WBP_CurrentItem.WBP_CurrentItem_C.UpdateAmmoType
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// bool                                    bImmediate                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// EAmmoType                               NewType                                                (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_CurrentItem_C::FadeOut(bool bImmediate)
+void UWBP_CurrentItem_C::UpdateAmmoType(EAmmoType NewType)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CurrentItem_C", "FadeOut");
+		Func = Class->GetFunction("WBP_CurrentItem_C", "UpdateAmmoType");
 
-	Params::WBP_CurrentItem_C_FadeOut Parms{};
+	Params::WBP_CurrentItem_C_UpdateAmmoType Parms{};
 
-	Parms.bImmediate = bImmediate;
+	Parms.NewType = NewType;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function WBP_CurrentItem.WBP_CurrentItem_C.UpdateItemName
-// (Event, Protected, HasOutParams, BlueprintEvent)
+// Function WBP_CurrentItem.WBP_CurrentItem_C.UpdateFireMode
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// const class FText&                      NewName                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// const EFireMode                         NewMode                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const bool                              bHasFirearm                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWBP_CurrentItem_C::UpdateItemName(const class FText& NewName)
+void UWBP_CurrentItem_C::UpdateFireMode(const EFireMode NewMode, const bool bHasFirearm)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CurrentItem_C", "UpdateItemName");
+		Func = Class->GetFunction("WBP_CurrentItem_C", "UpdateFireMode");
 
-	Params::WBP_CurrentItem_C_UpdateItemName Parms{};
+	Params::WBP_CurrentItem_C_UpdateFireMode Parms{};
 
-	Parms.NewName = std::move(NewName);
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_CurrentItem.WBP_CurrentItem_C.BndEvt__WBP_CurrentItem_FadingPanel_K2Node_ComponentBoundEvent_0_OnFadedOut__DelegateSignature
-// (BlueprintEvent)
-
-void UWBP_CurrentItem_C::BndEvt__WBP_CurrentItem_FadingPanel_K2Node_ComponentBoundEvent_0_OnFadedOut__DelegateSignature()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CurrentItem_C", "BndEvt__WBP_CurrentItem_FadingPanel_K2Node_ComponentBoundEvent_0_OnFadedOut__DelegateSignature");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_CurrentItem.WBP_CurrentItem_C.ExecuteUbergraph_WBP_CurrentItem
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_CurrentItem_C::ExecuteUbergraph_WBP_CurrentItem(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_CurrentItem_C", "ExecuteUbergraph_WBP_CurrentItem");
-
-	Params::WBP_CurrentItem_C_ExecuteUbergraph_WBP_CurrentItem Parms{};
-
-	Parms.EntryPoint = EntryPoint;
+	Parms.NewMode = NewMode;
+	Parms.bHasFirearm = bHasFirearm;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

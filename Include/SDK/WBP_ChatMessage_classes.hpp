@@ -29,11 +29,11 @@ public:
 	class UBrickTextBlock*                        TextBlock;                                         // 0x0328(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void UpdateColorStyle(EBrickUIColorStyle NewColorStyle);
-	void UpdateMessageText(const class FText& NewText);
-	void BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InContentStyleState);
-	void BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
 	void ExecuteUbergraph_WBP_ChatMessage(int32 EntryPoint);
+	void BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
+	void BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InContentStyleState);
+	void UpdateMessageText(const class FText& NewText);
+	void UpdateColorStyle(EBrickUIColorStyle NewColorStyle);
 
 public:
 	static class UClass* StaticClass()

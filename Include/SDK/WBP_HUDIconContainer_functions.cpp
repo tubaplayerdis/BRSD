@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function WBP_HUDIconContainer.WBP_HUDIconContainer_C.AddInteractionWidget
-// (Event, Public, BlueprintEvent)
+// Function WBP_HUDIconContainer.WBP_HUDIconContainer_C.ExecuteUbergraph_WBP_HUDIconContainer
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// class UInteractionWidget*               Widget                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_HUDIconContainer_C::AddInteractionWidget(class UInteractionWidget* Widget)
+void UWBP_HUDIconContainer_C::ExecuteUbergraph_WBP_HUDIconContainer(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HUDIconContainer_C", "AddInteractionWidget");
+		Func = Class->GetFunction("WBP_HUDIconContainer_C", "ExecuteUbergraph_WBP_HUDIconContainer");
 
-	Params::WBP_HUDIconContainer_C_AddInteractionWidget Parms{};
+	Params::WBP_HUDIconContainer_C_ExecuteUbergraph_WBP_HUDIconContainer Parms{};
 
-	Parms.Widget = Widget;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,21 +57,21 @@ void UWBP_HUDIconContainer_C::AddCrosshairWidgets(const TArray<class UMapCrossha
 }
 
 
-// Function WBP_HUDIconContainer.WBP_HUDIconContainer_C.ExecuteUbergraph_WBP_HUDIconContainer
-// (Final, UbergraphFunction, HasDefaults)
+// Function WBP_HUDIconContainer.WBP_HUDIconContainer_C.AddInteractionWidget
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UInteractionWidget*               Widget                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_HUDIconContainer_C::ExecuteUbergraph_WBP_HUDIconContainer(int32 EntryPoint)
+void UWBP_HUDIconContainer_C::AddInteractionWidget(class UInteractionWidget* Widget)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HUDIconContainer_C", "ExecuteUbergraph_WBP_HUDIconContainer");
+		Func = Class->GetFunction("WBP_HUDIconContainer_C", "AddInteractionWidget");
 
-	Params::WBP_HUDIconContainer_C_ExecuteUbergraph_WBP_HUDIconContainer Parms{};
+	Params::WBP_HUDIconContainer_C_AddInteractionWidget Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.Widget = Widget;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

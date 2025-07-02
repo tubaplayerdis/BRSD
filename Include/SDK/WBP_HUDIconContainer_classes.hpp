@@ -26,9 +26,9 @@ public:
 	class UBrickGridPanel*                        GridPanel;                                         // 0x02D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void AddInteractionWidget(class UInteractionWidget* Widget);
-	void AddCrosshairWidgets(const TArray<class UMapCrosshairWidget*>& Widgets);
 	void ExecuteUbergraph_WBP_HUDIconContainer(int32 EntryPoint);
+	void AddCrosshairWidgets(const TArray<class UMapCrosshairWidget*>& Widgets);
+	void AddInteractionWidget(class UInteractionWidget* Widget);
 
 public:
 	static class UClass* StaticClass()

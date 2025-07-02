@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function WBP_HUDContainer.WBP_HUDContainer_C.AddGameOverlayWidget
-// (Event, Protected, BlueprintEvent)
+// Function WBP_HUDContainer.WBP_HUDContainer_C.ExecuteUbergraph_WBP_HUDContainer
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// class UGameOverlayWidget*               Widget                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_HUDContainer_C::AddGameOverlayWidget(class UGameOverlayWidget* Widget)
+void UWBP_HUDContainer_C::ExecuteUbergraph_WBP_HUDContainer(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HUDContainer_C", "AddGameOverlayWidget");
+		Func = Class->GetFunction("WBP_HUDContainer_C", "ExecuteUbergraph_WBP_HUDContainer");
 
-	Params::WBP_HUDContainer_C_AddGameOverlayWidget Parms{};
+	Params::WBP_HUDContainer_C_ExecuteUbergraph_WBP_HUDContainer Parms{};
 
-	Parms.Widget = Widget;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,21 +57,21 @@ void UWBP_HUDContainer_C::AddHUDWidget(class UUserWidget* Widget)
 }
 
 
-// Function WBP_HUDContainer.WBP_HUDContainer_C.ExecuteUbergraph_WBP_HUDContainer
-// (Final, UbergraphFunction, HasDefaults)
+// Function WBP_HUDContainer.WBP_HUDContainer_C.AddGameOverlayWidget
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UGameOverlayWidget*               Widget                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_HUDContainer_C::ExecuteUbergraph_WBP_HUDContainer(int32 EntryPoint)
+void UWBP_HUDContainer_C::AddGameOverlayWidget(class UGameOverlayWidget* Widget)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HUDContainer_C", "ExecuteUbergraph_WBP_HUDContainer");
+		Func = Class->GetFunction("WBP_HUDContainer_C", "AddGameOverlayWidget");
 
-	Params::WBP_HUDContainer_C_ExecuteUbergraph_WBP_HUDContainer Parms{};
+	Params::WBP_HUDContainer_C_AddGameOverlayWidget Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.Widget = Widget;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

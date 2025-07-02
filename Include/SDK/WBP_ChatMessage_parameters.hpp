@@ -16,41 +16,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_ChatMessage.WBP_ChatMessage_C.UpdateColorStyle
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_ChatMessage_C_UpdateColorStyle final
-{
-public:
-	EBrickUIColorStyle                            NewColorStyle;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_ChatMessage_C_UpdateColorStyle) == 0x000001, "Wrong alignment on WBP_ChatMessage_C_UpdateColorStyle");
-static_assert(sizeof(WBP_ChatMessage_C_UpdateColorStyle) == 0x000001, "Wrong size on WBP_ChatMessage_C_UpdateColorStyle");
-static_assert(offsetof(WBP_ChatMessage_C_UpdateColorStyle, NewColorStyle) == 0x000000, "Member 'WBP_ChatMessage_C_UpdateColorStyle::NewColorStyle' has a wrong offset!");
-
-// Function WBP_ChatMessage.WBP_ChatMessage_C.UpdateMessageText
-// 0x0018 (0x0018 - 0x0000)
-struct WBP_ChatMessage_C_UpdateMessageText final
-{
-public:
-	class FText                                   NewText;                                           // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-};
-static_assert(alignof(WBP_ChatMessage_C_UpdateMessageText) == 0x000008, "Wrong alignment on WBP_ChatMessage_C_UpdateMessageText");
-static_assert(sizeof(WBP_ChatMessage_C_UpdateMessageText) == 0x000018, "Wrong size on WBP_ChatMessage_C_UpdateMessageText");
-static_assert(offsetof(WBP_ChatMessage_C_UpdateMessageText, NewText) == 0x000000, "Member 'WBP_ChatMessage_C_UpdateMessageText::NewText' has a wrong offset!");
-
-// Function WBP_ChatMessage.WBP_ChatMessage_C.BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature
-// 0x0002 (0x0002 - 0x0000)
-struct WBP_ChatMessage_C_BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature final
-{
-public:
-	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EBrickUIStyleState                            InContentStyleState;                               // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_ChatMessage_C_BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000001, "Wrong alignment on WBP_ChatMessage_C_BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
-static_assert(sizeof(WBP_ChatMessage_C_BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000002, "Wrong size on WBP_ChatMessage_C_BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
-static_assert(offsetof(WBP_ChatMessage_C_BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InColorStyle) == 0x000000, "Member 'WBP_ChatMessage_C_BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InColorStyle' has a wrong offset!");
-static_assert(offsetof(WBP_ChatMessage_C_BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InContentStyleState) == 0x000001, "Member 'WBP_ChatMessage_C_BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InContentStyleState' has a wrong offset!");
-
 // Function WBP_ChatMessage.WBP_ChatMessage_C.ExecuteUbergraph_WBP_ChatMessage
 // 0x0028 (0x0028 - 0x0000)
 struct WBP_ChatMessage_C_ExecuteUbergraph_WBP_ChatMessage final
@@ -70,6 +35,41 @@ static_assert(offsetof(WBP_ChatMessage_C_ExecuteUbergraph_WBP_ChatMessage, K2Nod
 static_assert(offsetof(WBP_ChatMessage_C_ExecuteUbergraph_WBP_ChatMessage, K2Node_Event_NewText) == 0x000008, "Member 'WBP_ChatMessage_C_ExecuteUbergraph_WBP_ChatMessage::K2Node_Event_NewText' has a wrong offset!");
 static_assert(offsetof(WBP_ChatMessage_C_ExecuteUbergraph_WBP_ChatMessage, K2Node_ComponentBoundEvent_InColorStyle) == 0x000020, "Member 'WBP_ChatMessage_C_ExecuteUbergraph_WBP_ChatMessage::K2Node_ComponentBoundEvent_InColorStyle' has a wrong offset!");
 static_assert(offsetof(WBP_ChatMessage_C_ExecuteUbergraph_WBP_ChatMessage, K2Node_ComponentBoundEvent_InContentStyleState) == 0x000021, "Member 'WBP_ChatMessage_C_ExecuteUbergraph_WBP_ChatMessage::K2Node_ComponentBoundEvent_InContentStyleState' has a wrong offset!");
+
+// Function WBP_ChatMessage.WBP_ChatMessage_C.BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature
+// 0x0002 (0x0002 - 0x0000)
+struct WBP_ChatMessage_C_BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature final
+{
+public:
+	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EBrickUIStyleState                            InContentStyleState;                               // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_ChatMessage_C_BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000001, "Wrong alignment on WBP_ChatMessage_C_BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
+static_assert(sizeof(WBP_ChatMessage_C_BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000002, "Wrong size on WBP_ChatMessage_C_BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
+static_assert(offsetof(WBP_ChatMessage_C_BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InColorStyle) == 0x000000, "Member 'WBP_ChatMessage_C_BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InColorStyle' has a wrong offset!");
+static_assert(offsetof(WBP_ChatMessage_C_BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InContentStyleState) == 0x000001, "Member 'WBP_ChatMessage_C_BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InContentStyleState' has a wrong offset!");
+
+// Function WBP_ChatMessage.WBP_ChatMessage_C.UpdateMessageText
+// 0x0018 (0x0018 - 0x0000)
+struct WBP_ChatMessage_C_UpdateMessageText final
+{
+public:
+	class FText                                   NewText;                                           // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+static_assert(alignof(WBP_ChatMessage_C_UpdateMessageText) == 0x000008, "Wrong alignment on WBP_ChatMessage_C_UpdateMessageText");
+static_assert(sizeof(WBP_ChatMessage_C_UpdateMessageText) == 0x000018, "Wrong size on WBP_ChatMessage_C_UpdateMessageText");
+static_assert(offsetof(WBP_ChatMessage_C_UpdateMessageText, NewText) == 0x000000, "Member 'WBP_ChatMessage_C_UpdateMessageText::NewText' has a wrong offset!");
+
+// Function WBP_ChatMessage.WBP_ChatMessage_C.UpdateColorStyle
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_ChatMessage_C_UpdateColorStyle final
+{
+public:
+	EBrickUIColorStyle                            NewColorStyle;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_ChatMessage_C_UpdateColorStyle) == 0x000001, "Wrong alignment on WBP_ChatMessage_C_UpdateColorStyle");
+static_assert(sizeof(WBP_ChatMessage_C_UpdateColorStyle) == 0x000001, "Wrong size on WBP_ChatMessage_C_UpdateColorStyle");
+static_assert(offsetof(WBP_ChatMessage_C_UpdateColorStyle, NewColorStyle) == 0x000000, "Member 'WBP_ChatMessage_C_UpdateColorStyle::NewColorStyle' has a wrong offset!");
 
 }
 

@@ -17,21 +17,21 @@
 namespace SDK
 {
 
-// Function WBP_Chat.WBP_Chat_C.UpdateIsFocused
-// (Event, Protected, BlueprintEvent)
+// Function WBP_Chat.WBP_Chat_C.ExecuteUbergraph_WBP_Chat
+// (Final, UbergraphFunction)
 // Parameters:
-// bool                                    bNewFocused                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_Chat_C::UpdateIsFocused(bool bNewFocused)
+void UWBP_Chat_C::ExecuteUbergraph_WBP_Chat(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Chat_C", "UpdateIsFocused");
+		Func = Class->GetFunction("WBP_Chat_C", "ExecuteUbergraph_WBP_Chat");
 
-	Params::WBP_Chat_C_UpdateIsFocused Parms{};
+	Params::WBP_Chat_C_ExecuteUbergraph_WBP_Chat Parms{};
 
-	Parms.bNewFocused = bNewFocused;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -57,21 +57,21 @@ void UWBP_Chat_C::UpdateIsTyping(bool bNewTyping)
 }
 
 
-// Function WBP_Chat.WBP_Chat_C.ExecuteUbergraph_WBP_Chat
-// (Final, UbergraphFunction)
+// Function WBP_Chat.WBP_Chat_C.UpdateIsFocused
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bNewFocused                                            (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWBP_Chat_C::ExecuteUbergraph_WBP_Chat(int32 EntryPoint)
+void UWBP_Chat_C::UpdateIsFocused(bool bNewFocused)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Chat_C", "ExecuteUbergraph_WBP_Chat");
+		Func = Class->GetFunction("WBP_Chat_C", "UpdateIsFocused");
 
-	Params::WBP_Chat_C_ExecuteUbergraph_WBP_Chat Parms{};
+	Params::WBP_Chat_C_UpdateIsFocused Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.bNewFocused = bNewFocused;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

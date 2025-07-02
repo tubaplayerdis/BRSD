@@ -29,11 +29,11 @@ public:
 	class UWBP_ControlHint_C*                     ControlHint;                                       // 0x0288(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void UpdateIsAlwaysOpen(bool bNewAlwaysOpen);
-	void BndEvt__Button_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
-	void BndEvt__WBP_InputHelp_Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InContentStyleState);
-	void PreConstruct(bool IsDesignTime);
 	void ExecuteUbergraph_WBP_InputHelp(int32 EntryPoint);
+	void PreConstruct(bool IsDesignTime);
+	void BndEvt__WBP_InputHelp_Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InContentStyleState);
+	void BndEvt__Button_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
+	void UpdateIsAlwaysOpen(bool bNewAlwaysOpen);
 
 public:
 	static class UClass* StaticClass()

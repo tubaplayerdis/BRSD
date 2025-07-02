@@ -17,31 +17,23 @@
 namespace SDK
 {
 
-// Function WBP_RestrictedArea.WBP_RestrictedArea_C.PlayFadeInAnim
-// (Event, Protected, BlueprintEvent)
+// Function WBP_RestrictedArea.WBP_RestrictedArea_C.ExecuteUbergraph_WBP_RestrictedArea
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_RestrictedArea_C::PlayFadeInAnim()
+void UWBP_RestrictedArea_C::ExecuteUbergraph_WBP_RestrictedArea(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RestrictedArea_C", "PlayFadeInAnim");
+		Func = Class->GetFunction("WBP_RestrictedArea_C", "ExecuteUbergraph_WBP_RestrictedArea");
 
-	UObject::ProcessEvent(Func, nullptr);
-}
+	Params::WBP_RestrictedArea_C_ExecuteUbergraph_WBP_RestrictedArea Parms{};
 
+	Parms.EntryPoint = EntryPoint;
 
-// Function WBP_RestrictedArea.WBP_RestrictedArea_C.PlayFadeOutAnim
-// (Event, Protected, BlueprintEvent)
-
-void UWBP_RestrictedArea_C::PlayFadeOutAnim()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RestrictedArea_C", "PlayFadeOutAnim");
-
-	UObject::ProcessEvent(Func, nullptr);
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -65,23 +57,31 @@ void UWBP_RestrictedArea_C::UpdateTimerRemaining(float TimeRemaining)
 }
 
 
-// Function WBP_RestrictedArea.WBP_RestrictedArea_C.ExecuteUbergraph_WBP_RestrictedArea
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// Function WBP_RestrictedArea.WBP_RestrictedArea_C.PlayFadeOutAnim
+// (Event, Protected, BlueprintEvent)
 
-void UWBP_RestrictedArea_C::ExecuteUbergraph_WBP_RestrictedArea(int32 EntryPoint)
+void UWBP_RestrictedArea_C::PlayFadeOutAnim()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_RestrictedArea_C", "ExecuteUbergraph_WBP_RestrictedArea");
+		Func = Class->GetFunction("WBP_RestrictedArea_C", "PlayFadeOutAnim");
 
-	Params::WBP_RestrictedArea_C_ExecuteUbergraph_WBP_RestrictedArea Parms{};
+	UObject::ProcessEvent(Func, nullptr);
+}
 
-	Parms.EntryPoint = EntryPoint;
 
-	UObject::ProcessEvent(Func, &Parms);
+// Function WBP_RestrictedArea.WBP_RestrictedArea_C.PlayFadeInAnim
+// (Event, Protected, BlueprintEvent)
+
+void UWBP_RestrictedArea_C::PlayFadeInAnim()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_RestrictedArea_C", "PlayFadeInAnim");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

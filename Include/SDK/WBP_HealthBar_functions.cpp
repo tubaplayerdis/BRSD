@@ -17,41 +17,21 @@
 namespace SDK
 {
 
-// Function WBP_HealthBar.WBP_HealthBar_C.UpdateHealth
-// (Event, Public, BlueprintEvent)
+// Function WBP_HealthBar.WBP_HealthBar_C.ExecuteUbergraph_WBP_HealthBar
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// float                                   NewHealth                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_HealthBar_C::UpdateHealth(float NewHealth)
+void UWBP_HealthBar_C::ExecuteUbergraph_WBP_HealthBar(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HealthBar_C", "UpdateHealth");
+		Func = Class->GetFunction("WBP_HealthBar_C", "ExecuteUbergraph_WBP_HealthBar");
 
-	Params::WBP_HealthBar_C_UpdateHealth Parms{};
+	Params::WBP_HealthBar_C_ExecuteUbergraph_WBP_HealthBar Parms{};
 
-	Parms.NewHealth = NewHealth;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_HealthBar.WBP_HealthBar_C.UpdateCanBeDamaged
-// (Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    bNewCanBeDamaged                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UWBP_HealthBar_C::UpdateCanBeDamaged(bool bNewCanBeDamaged)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HealthBar_C", "UpdateCanBeDamaged");
-
-	Params::WBP_HealthBar_C_UpdateCanBeDamaged Parms{};
-
-	Parms.bNewCanBeDamaged = bNewCanBeDamaged;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
@@ -77,21 +57,41 @@ void UWBP_HealthBar_C::UpdateHealingState(ECharacterHealingState NewState)
 }
 
 
-// Function WBP_HealthBar.WBP_HealthBar_C.ExecuteUbergraph_WBP_HealthBar
-// (Final, UbergraphFunction, HasDefaults)
+// Function WBP_HealthBar.WBP_HealthBar_C.UpdateCanBeDamaged
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// bool                                    bNewCanBeDamaged                                       (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWBP_HealthBar_C::ExecuteUbergraph_WBP_HealthBar(int32 EntryPoint)
+void UWBP_HealthBar_C::UpdateCanBeDamaged(bool bNewCanBeDamaged)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HealthBar_C", "ExecuteUbergraph_WBP_HealthBar");
+		Func = Class->GetFunction("WBP_HealthBar_C", "UpdateCanBeDamaged");
 
-	Params::WBP_HealthBar_C_ExecuteUbergraph_WBP_HealthBar Parms{};
+	Params::WBP_HealthBar_C_UpdateCanBeDamaged Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.bNewCanBeDamaged = bNewCanBeDamaged;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_HealthBar.WBP_HealthBar_C.UpdateHealth
+// (Event, Public, BlueprintEvent)
+// Parameters:
+// float                                   NewHealth                                              (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_HealthBar_C::UpdateHealth(float NewHealth)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_HealthBar_C", "UpdateHealth");
+
+	Params::WBP_HealthBar_C_UpdateHealth Parms{};
+
+	Parms.NewHealth = NewHealth;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

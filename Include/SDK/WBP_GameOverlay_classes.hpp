@@ -33,29 +33,29 @@ public:
 	class UNamedSlot*                             MatchTimerSlot;                                    // 0x0348(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void AddHUDNotification(class UHUDNotificationWidget* Widget, int32 Index_0);
-	void UpdateSlomoNotification(class UHUDNotificationWidget* Widget, float SlomoSpeed, bool bInvertSpeed, bool bSlomoEnabled, bool bIsPaused);
-	void UpdateMoneyNotification(class UHUDNotificationWidget* Widget, float NewAmount, float AmountAdded);
-	void UpdateFreeCamNotification(class UHUDNotificationWidget* Widget, bool bIsInFreeCam, EFreeCamMode InFreeCamMode, bool bIsFixedCam);
-	void UpdateThumbnailNotification(class UHUDNotificationWidget* Widget);
-	void AddMatchTimerWidget(class UMatchTimerWidget* Widget);
-	void UpdateVehicleCameraNotification(class UHUDNotificationWidget* Widget, const class FText& CameraDisplayName);
-	void UpdateVehicleDownloadNotification(class UHUDNotificationWidget* Widget, const class FText& VehicleDisplayName, float Progress);
-	void AddInputHelpWidget(class UInputHelpWidget* Widget);
-	void AddChatWidget(class UChatWidget* Widget);
-	void UpdateSaveNotification(class UHUDNotificationWidget* Widget, bool bSuccess, bool bIsAutoSave);
-	void UpdateCameraSpeedNotification(class UHUDNotificationWidget* Widget, float NewSpeedRatio, float NewMaxSpeed);
-	void UpdateCameraZoomNotification(class UHUDNotificationWidget* Widget, float NewZoomRatio);
-	void AddMatchStateWidget(class UMatchStateWidget* Widget);
-	void AddTeamScoreWidget(class UTeamScoreWidget* Widget, ETeamAttitude TeamAttitude);
-	void UpdateHUDVisibilityNotification(class UHUDNotificationWidget* Widget, EHUDVisibility NewVisibility);
-	void UpdateCameraModeNotification(class UHUDNotificationWidget* Widget, ECameraMode NewMode);
-	void UpdateProjectileCameraNotification(class UHUDNotificationWidget* Widget, bool bNewEnabled);
-	void UpdateRestartFailedNotification(class UHUDNotificationWidget* Widget, const class FText& Message);
-	void UpdateRespawnDelayNotification(class UHUDNotificationWidget* Widget, float Remaining);
-	void UpdateVehicleSeatNotification(class UHUDNotificationWidget* Widget, const class FText& SeatDisplayName);
-	void UpdateVehicleConstructionNotification(class UHUDNotificationWidget* Widget, const class FText& VehicleDisplayName, float Progress);
 	void ExecuteUbergraph_WBP_GameOverlay(int32 EntryPoint);
+	void UpdateVehicleConstructionNotification(class UHUDNotificationWidget* Widget, const class FText& VehicleDisplayName, float Progress);
+	void UpdateVehicleSeatNotification(class UHUDNotificationWidget* Widget, const class FText& SeatDisplayName);
+	void UpdateRespawnDelayNotification(class UHUDNotificationWidget* Widget, float Remaining);
+	void UpdateRestartFailedNotification(class UHUDNotificationWidget* Widget, const class FText& Message);
+	void UpdateProjectileCameraNotification(class UHUDNotificationWidget* Widget, bool bNewEnabled);
+	void UpdateCameraModeNotification(class UHUDNotificationWidget* Widget, ECameraMode NewMode);
+	void UpdateHUDVisibilityNotification(class UHUDNotificationWidget* Widget, EHUDVisibility NewVisibility);
+	void AddTeamScoreWidget(class UTeamScoreWidget* Widget, ETeamAttitude TeamAttitude);
+	void AddMatchStateWidget(class UMatchStateWidget* Widget);
+	void UpdateCameraZoomNotification(class UHUDNotificationWidget* Widget, float NewZoomRatio);
+	void UpdateCameraSpeedNotification(class UHUDNotificationWidget* Widget, float NewSpeedRatio, float NewMaxSpeed);
+	void UpdateSaveNotification(class UHUDNotificationWidget* Widget, bool bSuccess, bool bIsAutoSave);
+	void AddChatWidget(class UChatWidget* Widget);
+	void AddInputHelpWidget(class UInputHelpWidget* Widget);
+	void UpdateVehicleDownloadNotification(class UHUDNotificationWidget* Widget, const class FText& VehicleDisplayName, float Progress);
+	void UpdateVehicleCameraNotification(class UHUDNotificationWidget* Widget, const class FText& CameraDisplayName);
+	void AddMatchTimerWidget(class UMatchTimerWidget* Widget);
+	void UpdateThumbnailNotification(class UHUDNotificationWidget* Widget);
+	void UpdateFreeCamNotification(class UHUDNotificationWidget* Widget, bool bIsInFreeCam, EFreeCamMode InFreeCamMode, bool bIsFixedCam);
+	void UpdateMoneyNotification(class UHUDNotificationWidget* Widget, float NewAmount, float AmountAdded);
+	void UpdateSlomoNotification(class UHUDNotificationWidget* Widget, float SlomoSpeed, bool bInvertSpeed, bool bSlomoEnabled, bool bIsPaused);
+	void AddHUDNotification(class UHUDNotificationWidget* Widget, int32 Index_0);
 
 public:
 	static class UClass* StaticClass()

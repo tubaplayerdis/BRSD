@@ -30,14 +30,14 @@ public:
 	class UWBP_InputKey_C*                        ShiftHintWidget;                                   // 0x0320(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void PoolAllModifierHintWidgets();
-	void PoolModifierHintWidget(class UInputKeyWidget*& Widget);
-	void CreateModifierHintWidget(class UInputKeyWidget*& Widget, const struct FKey& Key, const struct FVector2D& Pivot, EHorizontalAlignment HorizontalAlignment, EVerticalAlignment VerticalAlignment);
-	void UpdateSliderPosition(float NewValue);
-	void PreConstruct(bool IsDesignTime);
-	void UpdateIsDragging(const bool bIsDragging);
-	void Destruct();
 	void ExecuteUbergraph_WBP_BrickSlider(int32 EntryPoint);
+	void Destruct();
+	void UpdateIsDragging(const bool bIsDragging);
+	void PreConstruct(bool IsDesignTime);
+	void UpdateSliderPosition(float NewValue);
+	void CreateModifierHintWidget(class UInputKeyWidget*& Widget, const struct FKey& Key, const struct FVector2D& Pivot, EHorizontalAlignment HorizontalAlignment, EVerticalAlignment VerticalAlignment);
+	void PoolModifierHintWidget(class UInputKeyWidget*& Widget);
+	void PoolAllModifierHintWidgets();
 
 public:
 	static class UClass* StaticClass()

@@ -17,26 +17,6 @@
 namespace SDK
 {
 
-// Function WBP_PingIndicator.WBP_PingIndicator_C.UpdatePing
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// int32                                   InPing                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_PingIndicator_C::UpdatePing(int32 InPing)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_PingIndicator_C", "UpdatePing");
-
-	Params::WBP_PingIndicator_C_UpdatePing Parms{};
-
-	Parms.InPing = InPing;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
 // Function WBP_PingIndicator.WBP_PingIndicator_C.ExecuteUbergraph_WBP_PingIndicator
 // (Final, UbergraphFunction, HasDefaults)
 // Parameters:
@@ -52,6 +32,26 @@ void UWBP_PingIndicator_C::ExecuteUbergraph_WBP_PingIndicator(int32 EntryPoint)
 	Params::WBP_PingIndicator_C_ExecuteUbergraph_WBP_PingIndicator Parms{};
 
 	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_PingIndicator.WBP_PingIndicator_C.UpdatePing
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// int32                                   InPing                                                 (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_PingIndicator_C::UpdatePing(int32 InPing)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_PingIndicator_C", "UpdatePing");
+
+	Params::WBP_PingIndicator_C_UpdatePing Parms{};
+
+	Parms.InPing = InPing;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -2694,6 +2694,7 @@ static_assert(offsetof(FFirearmProperties, MuzzleEffect) == 0x000040, "Member 'F
 // 0x0006 (0x0006 - 0x0000)
 struct alignas(0x02) FFirearmState final
 {
+public:
 	//MANUALLY ADDED
 public:
 	EChamberState ChamberState;   // 0x0000 (1 byte)

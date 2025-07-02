@@ -10,6 +10,8 @@
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
+//NOTE TO SELF - WHEN USING GUI COMPONENTS MAKE SURE TO USE THE UWBP_COMPONENT IF IT IS A UUSERWIDGET. otherwise it wont render. the UWBP classes run blueprints and other metadata
+
 #pragma once
 #include <SDK.hpp>
 #include <vector>

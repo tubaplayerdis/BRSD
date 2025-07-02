@@ -77,6 +77,8 @@ void MainLoop()
 		if (UninjectPress() || doUninject) break;
 
 		if (TogglePress()) {
+			std::cout << static_cast<SDK::UMenuSettingsPageWidget*>(GetMenu()->CurrentMenuPage)->PropertiesPanel->PropertyContainerWidgets[0]->GetName() << std::endl;
+			/*
 			if (hooks::S_AddChatMessage->IsEnabled(hooks::S_AddChatMessage)) {
 				hooks::S_AddChatMessage->Disable();
 				LOG("Disabled Chat Commands");
@@ -87,7 +89,7 @@ void MainLoop()
 				LOG("Enabled Chat Commands");
 				SendNotificationLocal(L"Enabled Chat Commands!", 0);
 			}
-			
+			*/
 		}
 	}
 	

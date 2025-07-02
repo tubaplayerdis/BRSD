@@ -34,14 +34,14 @@ public:
 	class UBrickTextBlock*                        NameTextBlock;                                     // 0x02A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void UpdateFireMode(const EFireMode NewMode, const bool bHasFirearm);
-	void UpdateAmmoType(EAmmoType NewType);
-	void UpdateAmmo(int32 Current, int32 Capacity, int32 Ammo);
-	void FadeIn();
-	void FadeOut(bool bImmediate);
-	void UpdateItemName(const class FText& NewName);
-	void BndEvt__WBP_CurrentItem_FadingPanel_K2Node_ComponentBoundEvent_0_OnFadedOut__DelegateSignature();
 	void ExecuteUbergraph_WBP_CurrentItem(int32 EntryPoint);
+	void BndEvt__WBP_CurrentItem_FadingPanel_K2Node_ComponentBoundEvent_0_OnFadedOut__DelegateSignature();
+	void UpdateItemName(const class FText& NewName);
+	void FadeOut(bool bImmediate);
+	void FadeIn();
+	void UpdateAmmo(int32 Current, int32 Capacity, int32 Ammo);
+	void UpdateAmmoType(EAmmoType NewType);
+	void UpdateFireMode(const EFireMode NewMode, const bool bHasFirearm);
 
 public:
 	static class UClass* StaticClass()

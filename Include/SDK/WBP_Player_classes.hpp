@@ -25,13 +25,13 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0520(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void AddRestrictedAreaWidget(class URestrictedAreaWidget* InWidget);
-	void AddDashboardWidget(class UDashboardWidget* InWidget);
-	void AddCrosshairWidget(class UCrosshairWidget* InWidget);
-	void AddCurrentItemWidget(class UCurrentItemWidget* InWidget);
-	void AddHealthBarWidget(class UHealthBarWidget* InWidget);
-	void AddCameraBrickWidget(class UCameraBrickWidget* InWidget);
 	void ExecuteUbergraph_WBP_Player(int32 EntryPoint);
+	void AddCameraBrickWidget(class UCameraBrickWidget* InWidget);
+	void AddHealthBarWidget(class UHealthBarWidget* InWidget);
+	void AddCurrentItemWidget(class UCurrentItemWidget* InWidget);
+	void AddCrosshairWidget(class UCrosshairWidget* InWidget);
+	void AddDashboardWidget(class UDashboardWidget* InWidget);
+	void AddRestrictedAreaWidget(class URestrictedAreaWidget* InWidget);
 
 public:
 	static class UClass* StaticClass()

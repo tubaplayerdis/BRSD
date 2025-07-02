@@ -17,43 +17,37 @@
 namespace SDK
 {
 
-// Function WBP_ChatMessage.WBP_ChatMessage_C.UpdateColorStyle
-// (Event, Public, BlueprintEvent)
+// Function WBP_ChatMessage.WBP_ChatMessage_C.ExecuteUbergraph_WBP_ChatMessage
+// (Final, UbergraphFunction, HasDefaults)
 // Parameters:
-// EBrickUIColorStyle                      NewColorStyle                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_ChatMessage_C::UpdateColorStyle(EBrickUIColorStyle NewColorStyle)
+void UWBP_ChatMessage_C::ExecuteUbergraph_WBP_ChatMessage(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ChatMessage_C", "UpdateColorStyle");
+		Func = Class->GetFunction("WBP_ChatMessage_C", "ExecuteUbergraph_WBP_ChatMessage");
 
-	Params::WBP_ChatMessage_C_UpdateColorStyle Parms{};
+	Params::WBP_ChatMessage_C_ExecuteUbergraph_WBP_ChatMessage Parms{};
 
-	Parms.NewColorStyle = NewColorStyle;
+	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function WBP_ChatMessage.WBP_ChatMessage_C.UpdateMessageText
-// (Event, Public, HasOutParams, BlueprintEvent)
-// Parameters:
-// const class FText&                      NewText                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+// Function WBP_ChatMessage.WBP_ChatMessage_C.BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature
+// (BlueprintEvent)
 
-void UWBP_ChatMessage_C::UpdateMessageText(const class FText& NewText)
+void UWBP_ChatMessage_C::BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ChatMessage_C", "UpdateMessageText");
+		Func = Class->GetFunction("WBP_ChatMessage_C", "BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature");
 
-	Params::WBP_ChatMessage_C_UpdateMessageText Parms{};
-
-	Parms.NewText = std::move(NewText);
-
-	UObject::ProcessEvent(Func, &Parms);
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 
@@ -79,35 +73,41 @@ void UWBP_ChatMessage_C::BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEve
 }
 
 
-// Function WBP_ChatMessage.WBP_ChatMessage_C.BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature
-// (BlueprintEvent)
+// Function WBP_ChatMessage.WBP_ChatMessage_C.UpdateMessageText
+// (Event, Public, HasOutParams, BlueprintEvent)
+// Parameters:
+// const class FText&                      NewText                                                (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
 
-void UWBP_ChatMessage_C::BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature()
+void UWBP_ChatMessage_C::UpdateMessageText(const class FText& NewText)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ChatMessage_C", "BndEvt__WBP_ChatMessage_Button_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature");
+		Func = Class->GetFunction("WBP_ChatMessage_C", "UpdateMessageText");
 
-	UObject::ProcessEvent(Func, nullptr);
+	Params::WBP_ChatMessage_C_UpdateMessageText Parms{};
+
+	Parms.NewText = std::move(NewText);
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
-// Function WBP_ChatMessage.WBP_ChatMessage_C.ExecuteUbergraph_WBP_ChatMessage
-// (Final, UbergraphFunction, HasDefaults)
+// Function WBP_ChatMessage.WBP_ChatMessage_C.UpdateColorStyle
+// (Event, Public, BlueprintEvent)
 // Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// EBrickUIColorStyle                      NewColorStyle                                          (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_ChatMessage_C::ExecuteUbergraph_WBP_ChatMessage(int32 EntryPoint)
+void UWBP_ChatMessage_C::UpdateColorStyle(EBrickUIColorStyle NewColorStyle)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_ChatMessage_C", "ExecuteUbergraph_WBP_ChatMessage");
+		Func = Class->GetFunction("WBP_ChatMessage_C", "UpdateColorStyle");
 
-	Params::WBP_ChatMessage_C_ExecuteUbergraph_WBP_ChatMessage Parms{};
+	Params::WBP_ChatMessage_C_UpdateColorStyle Parms{};
 
-	Parms.EntryPoint = EntryPoint;
+	Parms.NewColorStyle = NewColorStyle;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

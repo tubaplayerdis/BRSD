@@ -26,8 +26,8 @@ public:
 	class UBrickImage*                            ConnectionImage;                                   // 0x0288(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void UpdatePing(int32 InPing);
 	void ExecuteUbergraph_WBP_PingIndicator(int32 EntryPoint);
+	void UpdatePing(int32 InPing);
 
 public:
 	static class UClass* StaticClass()

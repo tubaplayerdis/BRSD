@@ -16,17 +16,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_MatchTimer.WBP_MatchTimer_C.UpdateTimer
-// 0x0004 (0x0004 - 0x0000)
-struct WBP_MatchTimer_C_UpdateTimer final
-{
-public:
-	int32                                         NewTime;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_MatchTimer_C_UpdateTimer) == 0x000004, "Wrong alignment on WBP_MatchTimer_C_UpdateTimer");
-static_assert(sizeof(WBP_MatchTimer_C_UpdateTimer) == 0x000004, "Wrong size on WBP_MatchTimer_C_UpdateTimer");
-static_assert(offsetof(WBP_MatchTimer_C_UpdateTimer, NewTime) == 0x000000, "Member 'WBP_MatchTimer_C_UpdateTimer::NewTime' has a wrong offset!");
-
 // Function WBP_MatchTimer.WBP_MatchTimer_C.ExecuteUbergraph_WBP_MatchTimer
 // 0x0040 (0x0040 - 0x0000)
 struct WBP_MatchTimer_C_ExecuteUbergraph_WBP_MatchTimer final
@@ -62,6 +51,17 @@ static_assert(offsetof(WBP_MatchTimer_C_ExecuteUbergraph_WBP_MatchTimer, CallFun
 static_assert(offsetof(WBP_MatchTimer_C_ExecuteUbergraph_WBP_MatchTimer, CallFunc_NumberToText_ReturnValue) == 0x000020, "Member 'WBP_MatchTimer_C_ExecuteUbergraph_WBP_MatchTimer::CallFunc_NumberToText_ReturnValue' has a wrong offset!");
 static_assert(offsetof(WBP_MatchTimer_C_ExecuteUbergraph_WBP_MatchTimer, CallFunc_BooleanAND_ReturnValue) == 0x000038, "Member 'WBP_MatchTimer_C_ExecuteUbergraph_WBP_MatchTimer::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
 static_assert(offsetof(WBP_MatchTimer_C_ExecuteUbergraph_WBP_MatchTimer, K2Node_Select_Default) == 0x000039, "Member 'WBP_MatchTimer_C_ExecuteUbergraph_WBP_MatchTimer::K2Node_Select_Default' has a wrong offset!");
+
+// Function WBP_MatchTimer.WBP_MatchTimer_C.UpdateTimer
+// 0x0004 (0x0004 - 0x0000)
+struct WBP_MatchTimer_C_UpdateTimer final
+{
+public:
+	int32                                         NewTime;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_MatchTimer_C_UpdateTimer) == 0x000004, "Wrong alignment on WBP_MatchTimer_C_UpdateTimer");
+static_assert(sizeof(WBP_MatchTimer_C_UpdateTimer) == 0x000004, "Wrong size on WBP_MatchTimer_C_UpdateTimer");
+static_assert(offsetof(WBP_MatchTimer_C_UpdateTimer, NewTime) == 0x000000, "Member 'WBP_MatchTimer_C_UpdateTimer::NewTime' has a wrong offset!");
 
 }
 

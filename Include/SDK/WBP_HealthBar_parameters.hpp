@@ -17,39 +17,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_HealthBar.WBP_HealthBar_C.UpdateHealth
-// 0x0004 (0x0004 - 0x0000)
-struct WBP_HealthBar_C_UpdateHealth final
-{
-public:
-	float                                         NewHealth;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_HealthBar_C_UpdateHealth) == 0x000004, "Wrong alignment on WBP_HealthBar_C_UpdateHealth");
-static_assert(sizeof(WBP_HealthBar_C_UpdateHealth) == 0x000004, "Wrong size on WBP_HealthBar_C_UpdateHealth");
-static_assert(offsetof(WBP_HealthBar_C_UpdateHealth, NewHealth) == 0x000000, "Member 'WBP_HealthBar_C_UpdateHealth::NewHealth' has a wrong offset!");
-
-// Function WBP_HealthBar.WBP_HealthBar_C.UpdateCanBeDamaged
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_HealthBar_C_UpdateCanBeDamaged final
-{
-public:
-	bool                                          bNewCanBeDamaged;                                  // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_HealthBar_C_UpdateCanBeDamaged) == 0x000001, "Wrong alignment on WBP_HealthBar_C_UpdateCanBeDamaged");
-static_assert(sizeof(WBP_HealthBar_C_UpdateCanBeDamaged) == 0x000001, "Wrong size on WBP_HealthBar_C_UpdateCanBeDamaged");
-static_assert(offsetof(WBP_HealthBar_C_UpdateCanBeDamaged, bNewCanBeDamaged) == 0x000000, "Member 'WBP_HealthBar_C_UpdateCanBeDamaged::bNewCanBeDamaged' has a wrong offset!");
-
-// Function WBP_HealthBar.WBP_HealthBar_C.UpdateHealingState
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_HealthBar_C_UpdateHealingState final
-{
-public:
-	ECharacterHealingState                        NewState;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_HealthBar_C_UpdateHealingState) == 0x000001, "Wrong alignment on WBP_HealthBar_C_UpdateHealingState");
-static_assert(sizeof(WBP_HealthBar_C_UpdateHealingState) == 0x000001, "Wrong size on WBP_HealthBar_C_UpdateHealingState");
-static_assert(offsetof(WBP_HealthBar_C_UpdateHealingState, NewState) == 0x000000, "Member 'WBP_HealthBar_C_UpdateHealingState::NewState' has a wrong offset!");
-
 // Function WBP_HealthBar.WBP_HealthBar_C.ExecuteUbergraph_WBP_HealthBar
 // 0x0034 (0x0034 - 0x0000)
 struct WBP_HealthBar_C_ExecuteUbergraph_WBP_HealthBar final
@@ -102,6 +69,39 @@ static_assert(offsetof(WBP_HealthBar_C_ExecuteUbergraph_WBP_HealthBar, K2Node_Ma
 static_assert(offsetof(WBP_HealthBar_C_ExecuteUbergraph_WBP_HealthBar, K2Node_Event_NewState) == 0x000030, "Member 'WBP_HealthBar_C_ExecuteUbergraph_WBP_HealthBar::K2Node_Event_NewState' has a wrong offset!");
 static_assert(offsetof(WBP_HealthBar_C_ExecuteUbergraph_WBP_HealthBar, K2Node_Select_Default_2) == 0x000031, "Member 'WBP_HealthBar_C_ExecuteUbergraph_WBP_HealthBar::K2Node_Select_Default_2' has a wrong offset!");
 static_assert(offsetof(WBP_HealthBar_C_ExecuteUbergraph_WBP_HealthBar, CallFunc_NotEqual_ByteByte_ReturnValue) == 0x000032, "Member 'WBP_HealthBar_C_ExecuteUbergraph_WBP_HealthBar::CallFunc_NotEqual_ByteByte_ReturnValue' has a wrong offset!");
+
+// Function WBP_HealthBar.WBP_HealthBar_C.UpdateHealingState
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_HealthBar_C_UpdateHealingState final
+{
+public:
+	ECharacterHealingState                        NewState;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_HealthBar_C_UpdateHealingState) == 0x000001, "Wrong alignment on WBP_HealthBar_C_UpdateHealingState");
+static_assert(sizeof(WBP_HealthBar_C_UpdateHealingState) == 0x000001, "Wrong size on WBP_HealthBar_C_UpdateHealingState");
+static_assert(offsetof(WBP_HealthBar_C_UpdateHealingState, NewState) == 0x000000, "Member 'WBP_HealthBar_C_UpdateHealingState::NewState' has a wrong offset!");
+
+// Function WBP_HealthBar.WBP_HealthBar_C.UpdateCanBeDamaged
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_HealthBar_C_UpdateCanBeDamaged final
+{
+public:
+	bool                                          bNewCanBeDamaged;                                  // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_HealthBar_C_UpdateCanBeDamaged) == 0x000001, "Wrong alignment on WBP_HealthBar_C_UpdateCanBeDamaged");
+static_assert(sizeof(WBP_HealthBar_C_UpdateCanBeDamaged) == 0x000001, "Wrong size on WBP_HealthBar_C_UpdateCanBeDamaged");
+static_assert(offsetof(WBP_HealthBar_C_UpdateCanBeDamaged, bNewCanBeDamaged) == 0x000000, "Member 'WBP_HealthBar_C_UpdateCanBeDamaged::bNewCanBeDamaged' has a wrong offset!");
+
+// Function WBP_HealthBar.WBP_HealthBar_C.UpdateHealth
+// 0x0004 (0x0004 - 0x0000)
+struct WBP_HealthBar_C_UpdateHealth final
+{
+public:
+	float                                         NewHealth;                                         // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_HealthBar_C_UpdateHealth) == 0x000004, "Wrong alignment on WBP_HealthBar_C_UpdateHealth");
+static_assert(sizeof(WBP_HealthBar_C_UpdateHealth) == 0x000004, "Wrong size on WBP_HealthBar_C_UpdateHealth");
+static_assert(offsetof(WBP_HealthBar_C_UpdateHealth, NewHealth) == 0x000000, "Member 'WBP_HealthBar_C_UpdateHealth::NewHealth' has a wrong offset!");
 
 }
 

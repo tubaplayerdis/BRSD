@@ -26,8 +26,8 @@ public:
 	class UBrickVerticalBox*                      OptionsBox;                                        // 0x0290(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void AddOptionWidget(class UInteractionOptionWidget* Widget, int32 OptionIndex);
 	void ExecuteUbergraph_WBP_Interaction(int32 EntryPoint);
+	void AddOptionWidget(class UInteractionOptionWidget* Widget, int32 OptionIndex);
 
 public:
 	static class UClass* StaticClass()

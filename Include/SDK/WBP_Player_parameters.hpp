@@ -16,72 +16,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_Player.WBP_Player_C.AddRestrictedAreaWidget
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_Player_C_AddRestrictedAreaWidget final
-{
-public:
-	class URestrictedAreaWidget*                  InWidget;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_Player_C_AddRestrictedAreaWidget) == 0x000008, "Wrong alignment on WBP_Player_C_AddRestrictedAreaWidget");
-static_assert(sizeof(WBP_Player_C_AddRestrictedAreaWidget) == 0x000008, "Wrong size on WBP_Player_C_AddRestrictedAreaWidget");
-static_assert(offsetof(WBP_Player_C_AddRestrictedAreaWidget, InWidget) == 0x000000, "Member 'WBP_Player_C_AddRestrictedAreaWidget::InWidget' has a wrong offset!");
-
-// Function WBP_Player.WBP_Player_C.AddDashboardWidget
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_Player_C_AddDashboardWidget final
-{
-public:
-	class UDashboardWidget*                       InWidget;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_Player_C_AddDashboardWidget) == 0x000008, "Wrong alignment on WBP_Player_C_AddDashboardWidget");
-static_assert(sizeof(WBP_Player_C_AddDashboardWidget) == 0x000008, "Wrong size on WBP_Player_C_AddDashboardWidget");
-static_assert(offsetof(WBP_Player_C_AddDashboardWidget, InWidget) == 0x000000, "Member 'WBP_Player_C_AddDashboardWidget::InWidget' has a wrong offset!");
-
-// Function WBP_Player.WBP_Player_C.AddCrosshairWidget
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_Player_C_AddCrosshairWidget final
-{
-public:
-	class UCrosshairWidget*                       InWidget;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_Player_C_AddCrosshairWidget) == 0x000008, "Wrong alignment on WBP_Player_C_AddCrosshairWidget");
-static_assert(sizeof(WBP_Player_C_AddCrosshairWidget) == 0x000008, "Wrong size on WBP_Player_C_AddCrosshairWidget");
-static_assert(offsetof(WBP_Player_C_AddCrosshairWidget, InWidget) == 0x000000, "Member 'WBP_Player_C_AddCrosshairWidget::InWidget' has a wrong offset!");
-
-// Function WBP_Player.WBP_Player_C.AddCurrentItemWidget
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_Player_C_AddCurrentItemWidget final
-{
-public:
-	class UCurrentItemWidget*                     InWidget;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_Player_C_AddCurrentItemWidget) == 0x000008, "Wrong alignment on WBP_Player_C_AddCurrentItemWidget");
-static_assert(sizeof(WBP_Player_C_AddCurrentItemWidget) == 0x000008, "Wrong size on WBP_Player_C_AddCurrentItemWidget");
-static_assert(offsetof(WBP_Player_C_AddCurrentItemWidget, InWidget) == 0x000000, "Member 'WBP_Player_C_AddCurrentItemWidget::InWidget' has a wrong offset!");
-
-// Function WBP_Player.WBP_Player_C.AddHealthBarWidget
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_Player_C_AddHealthBarWidget final
-{
-public:
-	class UHealthBarWidget*                       InWidget;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_Player_C_AddHealthBarWidget) == 0x000008, "Wrong alignment on WBP_Player_C_AddHealthBarWidget");
-static_assert(sizeof(WBP_Player_C_AddHealthBarWidget) == 0x000008, "Wrong size on WBP_Player_C_AddHealthBarWidget");
-static_assert(offsetof(WBP_Player_C_AddHealthBarWidget, InWidget) == 0x000000, "Member 'WBP_Player_C_AddHealthBarWidget::InWidget' has a wrong offset!");
-
-// Function WBP_Player.WBP_Player_C.AddCameraBrickWidget
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_Player_C_AddCameraBrickWidget final
-{
-public:
-	class UCameraBrickWidget*                     InWidget;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_Player_C_AddCameraBrickWidget) == 0x000008, "Wrong alignment on WBP_Player_C_AddCameraBrickWidget");
-static_assert(sizeof(WBP_Player_C_AddCameraBrickWidget) == 0x000008, "Wrong size on WBP_Player_C_AddCameraBrickWidget");
-static_assert(offsetof(WBP_Player_C_AddCameraBrickWidget, InWidget) == 0x000000, "Member 'WBP_Player_C_AddCameraBrickWidget::InWidget' has a wrong offset!");
-
 // Function WBP_Player.WBP_Player_C.ExecuteUbergraph_WBP_Player
 // 0x00C8 (0x00C8 - 0x0000)
 struct WBP_Player_C_ExecuteUbergraph_WBP_Player final
@@ -129,6 +63,72 @@ static_assert(offsetof(WBP_Player_C_ExecuteUbergraph_WBP_Player, K2Node_Event_In
 static_assert(offsetof(WBP_Player_C_ExecuteUbergraph_WBP_Player, CallFunc_AddChildToCanvas_ReturnValue_4) == 0x0000A8, "Member 'WBP_Player_C_ExecuteUbergraph_WBP_Player::CallFunc_AddChildToCanvas_ReturnValue_4' has a wrong offset!");
 static_assert(offsetof(WBP_Player_C_ExecuteUbergraph_WBP_Player, CallFunc_AddChildToCanvas_ReturnValue_5) == 0x0000B0, "Member 'WBP_Player_C_ExecuteUbergraph_WBP_Player::CallFunc_AddChildToCanvas_ReturnValue_5' has a wrong offset!");
 static_assert(offsetof(WBP_Player_C_ExecuteUbergraph_WBP_Player, K2Node_MakeStruct_Anchors_5) == 0x0000B8, "Member 'WBP_Player_C_ExecuteUbergraph_WBP_Player::K2Node_MakeStruct_Anchors_5' has a wrong offset!");
+
+// Function WBP_Player.WBP_Player_C.AddCameraBrickWidget
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_Player_C_AddCameraBrickWidget final
+{
+public:
+	class UCameraBrickWidget*                     InWidget;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_Player_C_AddCameraBrickWidget) == 0x000008, "Wrong alignment on WBP_Player_C_AddCameraBrickWidget");
+static_assert(sizeof(WBP_Player_C_AddCameraBrickWidget) == 0x000008, "Wrong size on WBP_Player_C_AddCameraBrickWidget");
+static_assert(offsetof(WBP_Player_C_AddCameraBrickWidget, InWidget) == 0x000000, "Member 'WBP_Player_C_AddCameraBrickWidget::InWidget' has a wrong offset!");
+
+// Function WBP_Player.WBP_Player_C.AddHealthBarWidget
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_Player_C_AddHealthBarWidget final
+{
+public:
+	class UHealthBarWidget*                       InWidget;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_Player_C_AddHealthBarWidget) == 0x000008, "Wrong alignment on WBP_Player_C_AddHealthBarWidget");
+static_assert(sizeof(WBP_Player_C_AddHealthBarWidget) == 0x000008, "Wrong size on WBP_Player_C_AddHealthBarWidget");
+static_assert(offsetof(WBP_Player_C_AddHealthBarWidget, InWidget) == 0x000000, "Member 'WBP_Player_C_AddHealthBarWidget::InWidget' has a wrong offset!");
+
+// Function WBP_Player.WBP_Player_C.AddCurrentItemWidget
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_Player_C_AddCurrentItemWidget final
+{
+public:
+	class UCurrentItemWidget*                     InWidget;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_Player_C_AddCurrentItemWidget) == 0x000008, "Wrong alignment on WBP_Player_C_AddCurrentItemWidget");
+static_assert(sizeof(WBP_Player_C_AddCurrentItemWidget) == 0x000008, "Wrong size on WBP_Player_C_AddCurrentItemWidget");
+static_assert(offsetof(WBP_Player_C_AddCurrentItemWidget, InWidget) == 0x000000, "Member 'WBP_Player_C_AddCurrentItemWidget::InWidget' has a wrong offset!");
+
+// Function WBP_Player.WBP_Player_C.AddCrosshairWidget
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_Player_C_AddCrosshairWidget final
+{
+public:
+	class UCrosshairWidget*                       InWidget;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_Player_C_AddCrosshairWidget) == 0x000008, "Wrong alignment on WBP_Player_C_AddCrosshairWidget");
+static_assert(sizeof(WBP_Player_C_AddCrosshairWidget) == 0x000008, "Wrong size on WBP_Player_C_AddCrosshairWidget");
+static_assert(offsetof(WBP_Player_C_AddCrosshairWidget, InWidget) == 0x000000, "Member 'WBP_Player_C_AddCrosshairWidget::InWidget' has a wrong offset!");
+
+// Function WBP_Player.WBP_Player_C.AddDashboardWidget
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_Player_C_AddDashboardWidget final
+{
+public:
+	class UDashboardWidget*                       InWidget;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_Player_C_AddDashboardWidget) == 0x000008, "Wrong alignment on WBP_Player_C_AddDashboardWidget");
+static_assert(sizeof(WBP_Player_C_AddDashboardWidget) == 0x000008, "Wrong size on WBP_Player_C_AddDashboardWidget");
+static_assert(offsetof(WBP_Player_C_AddDashboardWidget, InWidget) == 0x000000, "Member 'WBP_Player_C_AddDashboardWidget::InWidget' has a wrong offset!");
+
+// Function WBP_Player.WBP_Player_C.AddRestrictedAreaWidget
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_Player_C_AddRestrictedAreaWidget final
+{
+public:
+	class URestrictedAreaWidget*                  InWidget;                                          // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_Player_C_AddRestrictedAreaWidget) == 0x000008, "Wrong alignment on WBP_Player_C_AddRestrictedAreaWidget");
+static_assert(sizeof(WBP_Player_C_AddRestrictedAreaWidget) == 0x000008, "Wrong size on WBP_Player_C_AddRestrictedAreaWidget");
+static_assert(offsetof(WBP_Player_C_AddRestrictedAreaWidget, InWidget) == 0x000000, "Member 'WBP_Player_C_AddRestrictedAreaWidget::InWidget' has a wrong offset!");
 
 }
 

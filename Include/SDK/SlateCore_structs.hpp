@@ -732,19 +732,7 @@ static_assert(offsetof(FEditableTextBoxStyle, ScrollBarStyle) == 0x000328, "Memb
 struct alignas(0x04) FGeometry final
 {
 public:
-	FVector2D       Size;                    // 0x00 (8 bytes)
-	float           Scale;                   // 0x08 (4 bytes)
-	FVector2D       AbsolutePosition;        // 0x0C (8 bytes)
-	FVector2D       Position;                // 0x14 (8 bytes)
-
-	uint8           Pad_AccumulatedRenderTransform[0x18]; // 0x1C–0x34
-
-	uint8           bHasRenderTransform : 1; // 0x34.0
-	uint8           Pad_Bitfield : 7;        // 0x34.1–0x34.7
-
-	uint8           Pad_35;                  // 0x35
-	uint8           Pad_36;                  // 0x36
-	uint8           Pad_37;                  // 0x37
+	uint8                                         Pad_0[0x38];                                       // 0x0000(0x0038)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FGeometry) == 0x000004, "Wrong alignment on FGeometry");
 static_assert(sizeof(FGeometry) == 0x000038, "Wrong size on FGeometry");
