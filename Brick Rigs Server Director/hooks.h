@@ -20,6 +20,7 @@
 #include "OpenMenu.h"
 #include "StartPlay.h"
 #include "OnClicked.h"
+#include "LoadPackage.h"
 
 namespace hooks
 {

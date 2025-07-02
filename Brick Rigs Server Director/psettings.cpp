@@ -15,6 +15,14 @@
 #include "global.h"
 #include "functions.h"
 
+void psettings::VerifyController()
+{
+    std::cout << World()->OwningGameInstance->LocalPlayers.Max() << std::endl;
+    if (!World()->OwningGameInstance->LocalPlayers[0]->PlayerController) {
+        
+    }
+}
+
 bool psettings::CreateCustomSettingsPage()
 {
     MockPage = Spawn(SDK::UMenuPageWidget, GetMenu());
@@ -48,24 +56,32 @@ bool psettings::CreateCustomSettingsPage()
     TextBorder->SetHorizontalAlignment(SDK::EHorizontalAlignment::HAlign_Center);
     TextBorder->SetVerticalAlignment(SDK::EVerticalAlignment::VAlign_Center);
     
-
-    SDK::UWBP_BrickTextBox_C* widget = static_cast<SDK::UWBP_BrickTextBox_C*>(WidgetU::CreateWidget(World(), SDK::UWBP_BrickTextBox_C::StaticClass(), SDK::FName()));
-    if (widget) {
-        std::cout << GetBoolString(widget->MultiLineTextBox) << std::endl;
-        std::cout << GetBoolString(widget->WidgetTree) << std::endl;
+    SDK::UWBP_PropertyContainer_C* container = Create(SDK::UWBP_PropertyContainer_C);
+    if (!container && !global::classes::IsClassLoaded(SDK::UWBP_PropertyContainer_C::StaticClass())) { 
+        std::cout << "Had to load PropertyContainer!" << std::endl;
+        SDK::UClass* ret = global::classes::StaticLoadClass(SDK::UPropertyContainerWidget::StaticClass(), nullptr, L"/BrickRigs/UI/Properties/WBP_PropertyContainer.WBP_PropertyContainer_C", nullptr, 0, nullptr);
+        container = static_cast<SDK::UWBP_PropertyContainer_C*>(WidgetU::CreateWidget(World(), ret, SDK::FName()));
     }
-    widget->SetVisibility(SDK::ESlateVisibility::Visible);
+
+    if (!container) std::cout << "wtf" << std::endl;
+    
+    //SDK::UWBP_BrickTextBox_C* widget = static_cast<SDK::UWBP_BrickTextBox_C*>(WidgetU::CreateWidget(World(), SDK::UWBP_BrickTextBox_C::StaticClass(), SDK::FName()));
+    //if (widget) {
+    //    std::cout << GetBoolString(widget->MultiLineTextBox) << std::endl;
+    //    std::cout << GetBoolString(widget->WidgetTree) << std::endl;
+    //    widget->SetVisibility(SDK::ESlateVisibility::Visible);
+    //}
   
 
     //CustomSettingsPage->AddChild(container);
-    CustomSettingsPage->AddChild(widget);
+    //CustomSettingsPage->AddChild(widget);
 
   
     SynchronizeProperties(TextBorder);
     SynchronizeProperties(CustomSettingsPage);
 
     ElementsList.push_back(TextBorder);
-    ElementsList.push_back(widget);
+    //ElementsList.push_back(widget);
     //ElementsList.push_back(container);
 
 

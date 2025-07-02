@@ -19,6 +19,7 @@
 #include <fstream>
 #include <sstream>
 #include <chrono>
+#include "Function.h"
 
 void global::pointers::InitPointers()
 {
@@ -264,4 +265,24 @@ std::vector<uint8_t> global::GetFunctionBytecode(SDK::UClass* objectclass,std::s
 	}
 	std::cout << std::endl;
 	return ret;
+}
+
+SDK::UClass* global::classes::StaticLoadClass(SDK::UClass* BaseClass, SDK::UObject* InOuter, const wchar_t* InName, const wchar_t* Filename, unsigned int LoadFlags, SDK::UPackageMap* Sandbox)
+{
+	if (addy == 0)
+	{
+		std::cout << "Calculating first time class loading" << std::endl;
+		addy = FindPatternF(signature, mask);
+	}
+
+	if (addy == 0) { std::cout << "Failed to find StaticLoadClass signatue!" << std::endl; return nullptr; }
+
+	return CallGameFunctionO<SDK::UClass*, SDK::UClass*, SDK::UObject*, const wchar_t*, const wchar_t*, unsigned int, SDK::UPackageMap*>(addy, BaseClass, InOuter, InName, Filename, LoadFlags, Sandbox);
+}
+
+bool global::classes::IsClassLoaded(SDK::UClass* classptr)
+{
+	if (!classptr) return false;
+	if (!classptr->DefaultObject) return false;
+	return true;
 }

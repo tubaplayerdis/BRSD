@@ -107,30 +107,12 @@ SDK::UUserWidget* WidgetU::CreateWidget(SDK::UWorld* World, SDK::TSubclassOf<SDK
 	if (addy == 0)
 	{
 		std::cout << "Calculating first time widget creation" << std::endl;
-		unsigned long long base = (unsigned long long)GetModuleHandle(NULL);
-		MODULEINFO modInfo = {};
-		GetModuleInformation(GetCurrentProcess(), GetModuleHandle(NULL), &modInfo, sizeof(modInfo));
-		unsigned __int64 size = modInfo.SizeOfImage;
-		unsigned __int64 patternLen = strlen(mask);
-		for (unsigned __int64 i = 0; i < size - patternLen; i++) {
-			bool found = true;
-
-			for (unsigned __int64 j = 0; j < patternLen; j++) {
-				if (mask[j] != '?' && signature[j] != *(char*)(base + i + j)) {
-					found = false;
-					break;
-				}
-			}
-
-			if (found) {
-				addy = base + i;
-				break;
-			}
-
-		}
+		addy = FindPatternF(signature, mask);
 	}
 
-	if (addy == 0) { std::cout << "boom!" << std::endl; return nullptr; }
+	if (addy == 0) { std::cout << "Failed to find CreateWidget Signature!" << std::endl; return nullptr; }
+
+	std::cout << "Calling Game Function!" << std::endl;
 
 	return CallGameFunctionO<SDK::UUserWidget*, SDK::UWorld*, SDK::TSubclassOf<SDK::UUserWidget>, SDK::FName>(addy, World, UserWidgetClass, WidgetName);
 }

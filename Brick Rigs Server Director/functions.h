@@ -85,10 +85,16 @@ inline void SynchronizeProperties(SDK::UBrickScrollBox* This)
 	return CallGameFunction<void, SDK::UBrickScrollBox*>(0x0DE9250, This);
 }
 
-inline char Initalize(SDK::UBrickTextBoxWidget* Box)
+inline char Initalize(SDK::UUserWidget* widget)
 {
-	return CallGameFunction<char, SDK::UBrickTextBoxWidget*>(0x0DC5ED0, Box);
+	if (!widget) return false;
+	using InitalizeFn = bool(__fastcall*)(SDK::UUserWidget*);
+	void** vtable = *(void***)widget;
+	InitalizeFn InitalizeFunc = reinterpret_cast<InitalizeFn>(vtable[0x2D0 / 8]);
+	return InitalizeFunc(widget);
 }
+
+
 
 namespace UMainWidgetBase
 {

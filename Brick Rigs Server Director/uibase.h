@@ -25,8 +25,8 @@ namespace uibase
 
 namespace WidgetU
 {
-	inline const char* signature = "\x48\x89\x5C\x24\x08\x48\x89\x6C\x24\x10\x48\x89\x74\x24\x18\x57\x48\x83\xEC\x30\x48\x8B\xA9\x80\x01\x00\x00";
-	inline const char* mask = "xxxxxxxxxxxxxxxxxxxxxxxxxxx";
+	inline const char* signature = "\x48\x83\xEC\x28\x48\x85\xC9\x74\x44\x48\x89\x5C\x24\x20\xE8\x00\x00\x00\x00";
+	inline const char* mask = "xxxxxxxxxxxxxx????";
 	inline unsigned long long addy = 0;
 	SDK::UUserWidget* CreateWidget(SDK::UWorld* World, SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClass, SDK::FName WidgetName);
 }
