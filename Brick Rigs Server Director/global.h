@@ -122,6 +122,7 @@ namespace global
 	/// <param name="functionname">The name of the function whose bytecode is to be retrieved.</param>
 	/// <returns>A vector of bytes containing the bytecode of the specified function.</returns>
 	std::vector<uint8_t> GetFunctionBytecode(SDK::UClass* objectclass, std::string classname, std::string functionname);
+
 }
 
 SDK::ABrickCharacter* GetBrickCharacter();
