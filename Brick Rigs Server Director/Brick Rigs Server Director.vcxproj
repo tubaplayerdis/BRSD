@@ -143,6 +143,8 @@
     <ClCompile Include="..\Include\hde\hde32.c" />
     <ClCompile Include="..\Include\hde\hde64.c" />
     <ClCompile Include="..\Include\hook.c" />
+    <ClCompile Include="..\Include\SDK\AssetRegistry_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\AssetTags_functions.cpp" />
     <ClCompile Include="..\Include\SDK\Basic.cpp" />
     <ClCompile Include="..\Include\SDK\BP_Blender_functions.cpp" />
     <ClCompile Include="..\Include\SDK\BP_BrickCharacter_functions.cpp" />
@@ -239,6 +241,7 @@
     <ClInclude Include="Function.h" />
     <ClInclude Include="Hook.h" />
     <ClInclude Include="BeginPlay.h" />
+    <ClInclude Include="LoadPackage.h" />
     <ClInclude Include="LoggerStream.h" />
     <ClInclude Include="obutton.h" />
     <ClInclude Include="functions.h" />
@@ -257,6 +260,7 @@
     <ClInclude Include="psettings.h" />
     <ClInclude Include="logger.h" />
     <ClInclude Include="StartPlay.h" />
+    <ClInclude Include="StaticLoadClass.h" />
     <ClInclude Include="stringlist.h" />
     <ClInclude Include="uibase.h" />
     <ClInclude Include="watermark.h" />

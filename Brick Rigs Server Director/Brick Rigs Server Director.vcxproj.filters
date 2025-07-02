@@ -354,6 +354,12 @@
     <ClCompile Include="..\Include\SDK\BP_Blender_functions.cpp">
       <Filter>More Files\SDK\Blueprint</Filter>
     </ClCompile>
+    <ClCompile Include="..\Include\SDK\AssetTags_functions.cpp">
+      <Filter>More Files\SDK\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\AssetRegistry_functions.cpp">
+      <Filter>More Files\SDK\Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -436,6 +442,12 @@
     </ClInclude>
     <ClInclude Include="OpenMenu.h">
       <Filter>Header Files\hooks\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticLoadClass.h">
+      <Filter>Header Files\hooks\global</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadPackage.h">
+      <Filter>Header Files\hooks\global</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

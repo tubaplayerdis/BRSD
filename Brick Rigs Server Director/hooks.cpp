@@ -29,6 +29,7 @@ bool hooks::InitHooks()
 	S_StartPlay = new StartPlay();
 	S_LoadMap = new LoadMap();
 	S_OnClicked = new OnClicked();
+	S_LoadPackage = new LoadPackage();
 	bool ACMHook = S_AddChatMessage->IsInitialized(S_AddChatMessage);
 	bool BPHook = S_BeginPlay->IsInitialized(S_BeginPlay);
 	bool OMHook = S_OpenMenu->IsInitialized(S_OpenMenu);
@@ -36,7 +37,7 @@ bool hooks::InitHooks()
 	bool RGHook = S_StartPlay->IsInitialized(S_StartPlay);
 	bool LMHook = S_LoadMap->IsInitialized(S_LoadMap);
 	bool OCHook = S_OnClicked->IsInitialized(S_OnClicked);
-	bool SVHook = true;
+	bool SVHook = S_LoadPackage->IsInitialized(S_LoadPackage);
 	auto end = std::chrono::high_resolution_clock::now();
 	std::cout << "Elapsed Time Finding Hooks: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << std::endl;
 	if (!ACMHook || !BPHook || !OMHook || !ONJHook || !RGHook || !LMHook || !OCHook || !SVHook) {
@@ -79,6 +80,7 @@ void hooks::EnableHooks()
 	S_StartPlay->Enable();
 	S_LoadMap->Enable();
 	S_OnClicked->Enable();
+	S_LoadPackage->Enable();
 }
 
 void hooks::DestroyHookObjects()
@@ -91,6 +93,7 @@ void hooks::DestroyHookObjects()
 	delete S_StartPlay;
 	delete S_LoadMap;
 	delete S_OnClicked;
+	delete S_LoadPackage;
 
 	//Set nullptr
 	S_AddChatMessage = nullptr;
@@ -100,6 +103,7 @@ void hooks::DestroyHookObjects()
 	S_StartPlay = nullptr;
 	S_LoadMap = nullptr;
 	S_OnClicked = nullptr;
+	S_LoadPackage = nullptr;
 }
 
 void hooks::OpenCrashFile()
