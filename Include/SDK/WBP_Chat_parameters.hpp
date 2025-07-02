@@ -16,28 +16,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_Chat.WBP_Chat_C.UpdateIsFocused
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_Chat_C_UpdateIsFocused final
-{
-public:
-	bool                                          bNewFocused;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_Chat_C_UpdateIsFocused) == 0x000001, "Wrong alignment on WBP_Chat_C_UpdateIsFocused");
-static_assert(sizeof(WBP_Chat_C_UpdateIsFocused) == 0x000001, "Wrong size on WBP_Chat_C_UpdateIsFocused");
-static_assert(offsetof(WBP_Chat_C_UpdateIsFocused, bNewFocused) == 0x000000, "Member 'WBP_Chat_C_UpdateIsFocused::bNewFocused' has a wrong offset!");
-
-// Function WBP_Chat.WBP_Chat_C.UpdateIsTyping
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_Chat_C_UpdateIsTyping final
-{
-public:
-	bool                                          bNewTyping;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_Chat_C_UpdateIsTyping) == 0x000001, "Wrong alignment on WBP_Chat_C_UpdateIsTyping");
-static_assert(sizeof(WBP_Chat_C_UpdateIsTyping) == 0x000001, "Wrong size on WBP_Chat_C_UpdateIsTyping");
-static_assert(offsetof(WBP_Chat_C_UpdateIsTyping, bNewTyping) == 0x000000, "Member 'WBP_Chat_C_UpdateIsTyping::bNewTyping' has a wrong offset!");
-
 // Function WBP_Chat.WBP_Chat_C.ExecuteUbergraph_WBP_Chat
 // 0x000C (0x000C - 0x0000)
 struct WBP_Chat_C_ExecuteUbergraph_WBP_Chat final
@@ -60,6 +38,28 @@ static_assert(offsetof(WBP_Chat_C_ExecuteUbergraph_WBP_Chat, Temp_byte_Variable)
 static_assert(offsetof(WBP_Chat_C_ExecuteUbergraph_WBP_Chat, Temp_byte_Variable_1) == 0x000007, "Member 'WBP_Chat_C_ExecuteUbergraph_WBP_Chat::Temp_byte_Variable_1' has a wrong offset!");
 static_assert(offsetof(WBP_Chat_C_ExecuteUbergraph_WBP_Chat, K2Node_Select_Default) == 0x000008, "Member 'WBP_Chat_C_ExecuteUbergraph_WBP_Chat::K2Node_Select_Default' has a wrong offset!");
 static_assert(offsetof(WBP_Chat_C_ExecuteUbergraph_WBP_Chat, K2Node_Event_bNewFocused) == 0x000009, "Member 'WBP_Chat_C_ExecuteUbergraph_WBP_Chat::K2Node_Event_bNewFocused' has a wrong offset!");
+
+// Function WBP_Chat.WBP_Chat_C.UpdateIsTyping
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_Chat_C_UpdateIsTyping final
+{
+public:
+	bool                                          bNewTyping;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_Chat_C_UpdateIsTyping) == 0x000001, "Wrong alignment on WBP_Chat_C_UpdateIsTyping");
+static_assert(sizeof(WBP_Chat_C_UpdateIsTyping) == 0x000001, "Wrong size on WBP_Chat_C_UpdateIsTyping");
+static_assert(offsetof(WBP_Chat_C_UpdateIsTyping, bNewTyping) == 0x000000, "Member 'WBP_Chat_C_UpdateIsTyping::bNewTyping' has a wrong offset!");
+
+// Function WBP_Chat.WBP_Chat_C.UpdateIsFocused
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_Chat_C_UpdateIsFocused final
+{
+public:
+	bool                                          bNewFocused;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_Chat_C_UpdateIsFocused) == 0x000001, "Wrong alignment on WBP_Chat_C_UpdateIsFocused");
+static_assert(sizeof(WBP_Chat_C_UpdateIsFocused) == 0x000001, "Wrong size on WBP_Chat_C_UpdateIsFocused");
+static_assert(offsetof(WBP_Chat_C_UpdateIsFocused, bNewFocused) == 0x000000, "Member 'WBP_Chat_C_UpdateIsFocused::bNewFocused' has a wrong offset!");
 
 }
 

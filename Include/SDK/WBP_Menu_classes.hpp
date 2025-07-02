@@ -31,30 +31,30 @@ public:
 	struct FPopupHandle                           PopupHandle;                                       // 0x0310(0x0004)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
 
 public:
-	void CreateAdminMenuButton();
-	void CreateBackButton();
-	void OnMenuContextChanged(const class FName& NewContext);
-	void AddMenuPage(class UMenuPageWidget* Widget);
-	void OnClickedOptions();
-	void OnClickedHostGame();
-	void OnClickedJoinGame();
-	void OnClickedGameplaySettings();
-	void OnClickedVideoSettings();
-	void OnClickedInputSettings();
-	void OnClickedCredits();
-	void OnClickedUISettings();
-	void OnClosedQuitGamePopup(EPopupResult Result);
-	void OnClickedMatchMenu();
-	void OnClickedAdminSettings();
-	void OnClickedPlayersMenu();
-	void OnClickedInputMappings();
-	void OnClickedEditorSettings();
-	void OnClickedMainMenu();
-	void OnClosedMainMenuPopup(EPopupResult Result);
-	void OnClickedQuickGame();
-	void RemoveMenuPage(class UMenuPageWidget* Widget);
-	void OnInitialized();
 	void ExecuteUbergraph_WBP_Menu(int32 EntryPoint);
+	void OnInitialized();
+	void RemoveMenuPage(class UMenuPageWidget* Widget);
+	void OnClickedQuickGame();
+	void OnClosedMainMenuPopup(EPopupResult Result);
+	void OnClickedMainMenu();
+	void OnClickedEditorSettings();
+	void OnClickedInputMappings();
+	void OnClickedPlayersMenu();
+	void OnClickedAdminSettings();
+	void OnClickedMatchMenu();
+	void OnClosedQuitGamePopup(EPopupResult Result);
+	void OnClickedUISettings();
+	void OnClickedCredits();
+	void OnClickedInputSettings();
+	void OnClickedVideoSettings();
+	void OnClickedGameplaySettings();
+	void OnClickedJoinGame();
+	void OnClickedHostGame();
+	void OnClickedOptions();
+	void AddMenuPage(class UMenuPageWidget* Widget);
+	void OnMenuContextChanged(const class FName& NewContext);
+	void CreateBackButton();
+	void CreateAdminMenuButton();
 
 public:
 	static class UClass* StaticClass()

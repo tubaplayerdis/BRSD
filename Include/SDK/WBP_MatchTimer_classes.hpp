@@ -28,8 +28,8 @@ public:
 	class UBrickTextBlock*                        TextBlock;                                         // 0x0270(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void UpdateTimer(int32 NewTime);
 	void ExecuteUbergraph_WBP_MatchTimer(int32 EntryPoint);
+	void UpdateTimer(int32 NewTime);
 
 public:
 	static class UClass* StaticClass()

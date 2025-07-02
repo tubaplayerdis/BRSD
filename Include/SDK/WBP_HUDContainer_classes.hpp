@@ -26,9 +26,9 @@ public:
 	class UCanvasPanel*                           CanvasPanel_35;                                    // 0x02B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void AddGameOverlayWidget(class UGameOverlayWidget* Widget);
-	void AddHUDWidget(class UUserWidget* Widget);
 	void ExecuteUbergraph_WBP_HUDContainer(int32 EntryPoint);
+	void AddHUDWidget(class UUserWidget* Widget);
+	void AddGameOverlayWidget(class UGameOverlayWidget* Widget);
 
 public:
 	static class UClass* StaticClass()

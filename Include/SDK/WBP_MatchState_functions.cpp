@@ -37,6 +37,26 @@ void UWBP_MatchState_C::ExecuteUbergraph_WBP_MatchState(int32 EntryPoint)
 }
 
 
+// Function WBP_MatchState.WBP_MatchState_C.OnAnimationFinished
+// (BlueprintCosmetic, Event, Protected, BlueprintEvent)
+// Parameters:
+// const class UWidgetAnimation*           Animation                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_MatchState_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_MatchState_C", "OnAnimationFinished");
+
+	Params::WBP_MatchState_C_OnAnimationFinished Parms{};
+
+	Parms.Animation = Animation;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function WBP_MatchState.WBP_MatchState_C.UpdateMatchState
 // (Event, Protected, HasOutParams, BlueprintEvent)
 // Parameters:
@@ -56,26 +76,6 @@ void UWBP_MatchState_C::UpdateMatchState(const class FText& NewDisplayText, EBri
 	Parms.NewDisplayText = std::move(NewDisplayText);
 	Parms.NewColorStyle = NewColorStyle;
 	Parms.bFadeOut = bFadeOut;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_MatchState.WBP_MatchState_C.OnAnimationFinished
-// (BlueprintCosmetic, Event, Protected, BlueprintEvent)
-// Parameters:
-// const class UWidgetAnimation*           Animation                                              (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_MatchState_C::OnAnimationFinished(const class UWidgetAnimation* Animation)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_MatchState_C", "OnAnimationFinished");
-
-	Params::WBP_MatchState_C_OnAnimationFinished Parms{};
-
-	Parms.Animation = Animation;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

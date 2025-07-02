@@ -17,32 +17,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_HUDNotification.WBP_HUDNotification_C.UpdateIsThumbnailNotification
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_HUDNotification_C_UpdateIsThumbnailNotification final
-{
-public:
-	bool                                          bNewIsThumbnail;                                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_HUDNotification_C_UpdateIsThumbnailNotification) == 0x000001, "Wrong alignment on WBP_HUDNotification_C_UpdateIsThumbnailNotification");
-static_assert(sizeof(WBP_HUDNotification_C_UpdateIsThumbnailNotification) == 0x000001, "Wrong size on WBP_HUDNotification_C_UpdateIsThumbnailNotification");
-static_assert(offsetof(WBP_HUDNotification_C_UpdateIsThumbnailNotification, bNewIsThumbnail) == 0x000000, "Member 'WBP_HUDNotification_C_UpdateIsThumbnailNotification::bNewIsThumbnail' has a wrong offset!");
-
-// Function WBP_HUDNotification.WBP_HUDNotification_C.InitializeNotification
-// 0x0028 (0x0028 - 0x0000)
-struct WBP_HUDNotification_C_InitializeNotification final
-{
-public:
-	struct FBrickUIIconSlot                       InIconSlot;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
-	class FText                                   InText;                                            // 0x0008(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	EBrickUIColorStyle                            InColorStyle;                                      // 0x0020(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_HUDNotification_C_InitializeNotification) == 0x000008, "Wrong alignment on WBP_HUDNotification_C_InitializeNotification");
-static_assert(sizeof(WBP_HUDNotification_C_InitializeNotification) == 0x000028, "Wrong size on WBP_HUDNotification_C_InitializeNotification");
-static_assert(offsetof(WBP_HUDNotification_C_InitializeNotification, InIconSlot) == 0x000000, "Member 'WBP_HUDNotification_C_InitializeNotification::InIconSlot' has a wrong offset!");
-static_assert(offsetof(WBP_HUDNotification_C_InitializeNotification, InText) == 0x000008, "Member 'WBP_HUDNotification_C_InitializeNotification::InText' has a wrong offset!");
-static_assert(offsetof(WBP_HUDNotification_C_InitializeNotification, InColorStyle) == 0x000020, "Member 'WBP_HUDNotification_C_InitializeNotification::InColorStyle' has a wrong offset!");
-
 // Function WBP_HUDNotification.WBP_HUDNotification_C.ExecuteUbergraph_WBP_HUDNotification
 // 0x0058 (0x0058 - 0x0000)
 struct WBP_HUDNotification_C_ExecuteUbergraph_WBP_HUDNotification final
@@ -86,6 +60,32 @@ static_assert(offsetof(WBP_HUDNotification_C_ExecuteUbergraph_WBP_HUDNotificatio
 static_assert(offsetof(WBP_HUDNotification_C_ExecuteUbergraph_WBP_HUDNotification, K2Node_Event_InIconSlot) == 0x000030, "Member 'WBP_HUDNotification_C_ExecuteUbergraph_WBP_HUDNotification::K2Node_Event_InIconSlot' has a wrong offset!");
 static_assert(offsetof(WBP_HUDNotification_C_ExecuteUbergraph_WBP_HUDNotification, K2Node_Event_InText) == 0x000038, "Member 'WBP_HUDNotification_C_ExecuteUbergraph_WBP_HUDNotification::K2Node_Event_InText' has a wrong offset!");
 static_assert(offsetof(WBP_HUDNotification_C_ExecuteUbergraph_WBP_HUDNotification, K2Node_Event_InColorStyle) == 0x000050, "Member 'WBP_HUDNotification_C_ExecuteUbergraph_WBP_HUDNotification::K2Node_Event_InColorStyle' has a wrong offset!");
+
+// Function WBP_HUDNotification.WBP_HUDNotification_C.InitializeNotification
+// 0x0028 (0x0028 - 0x0000)
+struct WBP_HUDNotification_C_InitializeNotification final
+{
+public:
+	struct FBrickUIIconSlot                       InIconSlot;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, NoDestructor)
+	class FText                                   InText;                                            // 0x0008(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	EBrickUIColorStyle                            InColorStyle;                                      // 0x0020(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_HUDNotification_C_InitializeNotification) == 0x000008, "Wrong alignment on WBP_HUDNotification_C_InitializeNotification");
+static_assert(sizeof(WBP_HUDNotification_C_InitializeNotification) == 0x000028, "Wrong size on WBP_HUDNotification_C_InitializeNotification");
+static_assert(offsetof(WBP_HUDNotification_C_InitializeNotification, InIconSlot) == 0x000000, "Member 'WBP_HUDNotification_C_InitializeNotification::InIconSlot' has a wrong offset!");
+static_assert(offsetof(WBP_HUDNotification_C_InitializeNotification, InText) == 0x000008, "Member 'WBP_HUDNotification_C_InitializeNotification::InText' has a wrong offset!");
+static_assert(offsetof(WBP_HUDNotification_C_InitializeNotification, InColorStyle) == 0x000020, "Member 'WBP_HUDNotification_C_InitializeNotification::InColorStyle' has a wrong offset!");
+
+// Function WBP_HUDNotification.WBP_HUDNotification_C.UpdateIsThumbnailNotification
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_HUDNotification_C_UpdateIsThumbnailNotification final
+{
+public:
+	bool                                          bNewIsThumbnail;                                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_HUDNotification_C_UpdateIsThumbnailNotification) == 0x000001, "Wrong alignment on WBP_HUDNotification_C_UpdateIsThumbnailNotification");
+static_assert(sizeof(WBP_HUDNotification_C_UpdateIsThumbnailNotification) == 0x000001, "Wrong size on WBP_HUDNotification_C_UpdateIsThumbnailNotification");
+static_assert(offsetof(WBP_HUDNotification_C_UpdateIsThumbnailNotification, bNewIsThumbnail) == 0x000000, "Member 'WBP_HUDNotification_C_UpdateIsThumbnailNotification::bNewIsThumbnail' has a wrong offset!");
 
 }
 

@@ -18,67 +18,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_CurrentItem.WBP_CurrentItem_C.UpdateFireMode
-// 0x0002 (0x0002 - 0x0000)
-struct WBP_CurrentItem_C_UpdateFireMode final
-{
-public:
-	EFireMode                                     NewMode;                                           // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bHasFirearm;                                       // 0x0001(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_CurrentItem_C_UpdateFireMode) == 0x000001, "Wrong alignment on WBP_CurrentItem_C_UpdateFireMode");
-static_assert(sizeof(WBP_CurrentItem_C_UpdateFireMode) == 0x000002, "Wrong size on WBP_CurrentItem_C_UpdateFireMode");
-static_assert(offsetof(WBP_CurrentItem_C_UpdateFireMode, NewMode) == 0x000000, "Member 'WBP_CurrentItem_C_UpdateFireMode::NewMode' has a wrong offset!");
-static_assert(offsetof(WBP_CurrentItem_C_UpdateFireMode, bHasFirearm) == 0x000001, "Member 'WBP_CurrentItem_C_UpdateFireMode::bHasFirearm' has a wrong offset!");
-
-// Function WBP_CurrentItem.WBP_CurrentItem_C.UpdateAmmoType
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_CurrentItem_C_UpdateAmmoType final
-{
-public:
-	EAmmoType                                     NewType;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_CurrentItem_C_UpdateAmmoType) == 0x000001, "Wrong alignment on WBP_CurrentItem_C_UpdateAmmoType");
-static_assert(sizeof(WBP_CurrentItem_C_UpdateAmmoType) == 0x000001, "Wrong size on WBP_CurrentItem_C_UpdateAmmoType");
-static_assert(offsetof(WBP_CurrentItem_C_UpdateAmmoType, NewType) == 0x000000, "Member 'WBP_CurrentItem_C_UpdateAmmoType::NewType' has a wrong offset!");
-
-// Function WBP_CurrentItem.WBP_CurrentItem_C.UpdateAmmo
-// 0x000C (0x000C - 0x0000)
-struct WBP_CurrentItem_C_UpdateAmmo final
-{
-public:
-	int32                                         Current;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Capacity;                                          // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Ammo;                                              // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_CurrentItem_C_UpdateAmmo) == 0x000004, "Wrong alignment on WBP_CurrentItem_C_UpdateAmmo");
-static_assert(sizeof(WBP_CurrentItem_C_UpdateAmmo) == 0x00000C, "Wrong size on WBP_CurrentItem_C_UpdateAmmo");
-static_assert(offsetof(WBP_CurrentItem_C_UpdateAmmo, Current) == 0x000000, "Member 'WBP_CurrentItem_C_UpdateAmmo::Current' has a wrong offset!");
-static_assert(offsetof(WBP_CurrentItem_C_UpdateAmmo, Capacity) == 0x000004, "Member 'WBP_CurrentItem_C_UpdateAmmo::Capacity' has a wrong offset!");
-static_assert(offsetof(WBP_CurrentItem_C_UpdateAmmo, Ammo) == 0x000008, "Member 'WBP_CurrentItem_C_UpdateAmmo::Ammo' has a wrong offset!");
-
-// Function WBP_CurrentItem.WBP_CurrentItem_C.FadeOut
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_CurrentItem_C_FadeOut final
-{
-public:
-	bool                                          bImmediate;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_CurrentItem_C_FadeOut) == 0x000001, "Wrong alignment on WBP_CurrentItem_C_FadeOut");
-static_assert(sizeof(WBP_CurrentItem_C_FadeOut) == 0x000001, "Wrong size on WBP_CurrentItem_C_FadeOut");
-static_assert(offsetof(WBP_CurrentItem_C_FadeOut, bImmediate) == 0x000000, "Member 'WBP_CurrentItem_C_FadeOut::bImmediate' has a wrong offset!");
-
-// Function WBP_CurrentItem.WBP_CurrentItem_C.UpdateItemName
-// 0x0018 (0x0018 - 0x0000)
-struct WBP_CurrentItem_C_UpdateItemName final
-{
-public:
-	class FText                                   NewName;                                           // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-};
-static_assert(alignof(WBP_CurrentItem_C_UpdateItemName) == 0x000008, "Wrong alignment on WBP_CurrentItem_C_UpdateItemName");
-static_assert(sizeof(WBP_CurrentItem_C_UpdateItemName) == 0x000018, "Wrong size on WBP_CurrentItem_C_UpdateItemName");
-static_assert(offsetof(WBP_CurrentItem_C_UpdateItemName, NewName) == 0x000000, "Member 'WBP_CurrentItem_C_UpdateItemName::NewName' has a wrong offset!");
-
 // Function WBP_CurrentItem.WBP_CurrentItem_C.ExecuteUbergraph_WBP_CurrentItem
 // 0x0198 (0x0198 - 0x0000)
 struct WBP_CurrentItem_C_ExecuteUbergraph_WBP_CurrentItem final
@@ -188,6 +127,67 @@ static_assert(offsetof(WBP_CurrentItem_C_ExecuteUbergraph_WBP_CurrentItem, CallF
 static_assert(offsetof(WBP_CurrentItem_C_ExecuteUbergraph_WBP_CurrentItem, K2Node_MakeStruct_FormatArgumentData_1) == 0x000130, "Member 'WBP_CurrentItem_C_ExecuteUbergraph_WBP_CurrentItem::K2Node_MakeStruct_FormatArgumentData_1' has a wrong offset!");
 static_assert(offsetof(WBP_CurrentItem_C_ExecuteUbergraph_WBP_CurrentItem, K2Node_MakeArray_Array) == 0x000170, "Member 'WBP_CurrentItem_C_ExecuteUbergraph_WBP_CurrentItem::K2Node_MakeArray_Array' has a wrong offset!");
 static_assert(offsetof(WBP_CurrentItem_C_ExecuteUbergraph_WBP_CurrentItem, CallFunc_Format_ReturnValue) == 0x000180, "Member 'WBP_CurrentItem_C_ExecuteUbergraph_WBP_CurrentItem::CallFunc_Format_ReturnValue' has a wrong offset!");
+
+// Function WBP_CurrentItem.WBP_CurrentItem_C.UpdateItemName
+// 0x0018 (0x0018 - 0x0000)
+struct WBP_CurrentItem_C_UpdateItemName final
+{
+public:
+	class FText                                   NewName;                                           // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+static_assert(alignof(WBP_CurrentItem_C_UpdateItemName) == 0x000008, "Wrong alignment on WBP_CurrentItem_C_UpdateItemName");
+static_assert(sizeof(WBP_CurrentItem_C_UpdateItemName) == 0x000018, "Wrong size on WBP_CurrentItem_C_UpdateItemName");
+static_assert(offsetof(WBP_CurrentItem_C_UpdateItemName, NewName) == 0x000000, "Member 'WBP_CurrentItem_C_UpdateItemName::NewName' has a wrong offset!");
+
+// Function WBP_CurrentItem.WBP_CurrentItem_C.FadeOut
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_CurrentItem_C_FadeOut final
+{
+public:
+	bool                                          bImmediate;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_CurrentItem_C_FadeOut) == 0x000001, "Wrong alignment on WBP_CurrentItem_C_FadeOut");
+static_assert(sizeof(WBP_CurrentItem_C_FadeOut) == 0x000001, "Wrong size on WBP_CurrentItem_C_FadeOut");
+static_assert(offsetof(WBP_CurrentItem_C_FadeOut, bImmediate) == 0x000000, "Member 'WBP_CurrentItem_C_FadeOut::bImmediate' has a wrong offset!");
+
+// Function WBP_CurrentItem.WBP_CurrentItem_C.UpdateAmmo
+// 0x000C (0x000C - 0x0000)
+struct WBP_CurrentItem_C_UpdateAmmo final
+{
+public:
+	int32                                         Current;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Capacity;                                          // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Ammo;                                              // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_CurrentItem_C_UpdateAmmo) == 0x000004, "Wrong alignment on WBP_CurrentItem_C_UpdateAmmo");
+static_assert(sizeof(WBP_CurrentItem_C_UpdateAmmo) == 0x00000C, "Wrong size on WBP_CurrentItem_C_UpdateAmmo");
+static_assert(offsetof(WBP_CurrentItem_C_UpdateAmmo, Current) == 0x000000, "Member 'WBP_CurrentItem_C_UpdateAmmo::Current' has a wrong offset!");
+static_assert(offsetof(WBP_CurrentItem_C_UpdateAmmo, Capacity) == 0x000004, "Member 'WBP_CurrentItem_C_UpdateAmmo::Capacity' has a wrong offset!");
+static_assert(offsetof(WBP_CurrentItem_C_UpdateAmmo, Ammo) == 0x000008, "Member 'WBP_CurrentItem_C_UpdateAmmo::Ammo' has a wrong offset!");
+
+// Function WBP_CurrentItem.WBP_CurrentItem_C.UpdateAmmoType
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_CurrentItem_C_UpdateAmmoType final
+{
+public:
+	EAmmoType                                     NewType;                                           // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_CurrentItem_C_UpdateAmmoType) == 0x000001, "Wrong alignment on WBP_CurrentItem_C_UpdateAmmoType");
+static_assert(sizeof(WBP_CurrentItem_C_UpdateAmmoType) == 0x000001, "Wrong size on WBP_CurrentItem_C_UpdateAmmoType");
+static_assert(offsetof(WBP_CurrentItem_C_UpdateAmmoType, NewType) == 0x000000, "Member 'WBP_CurrentItem_C_UpdateAmmoType::NewType' has a wrong offset!");
+
+// Function WBP_CurrentItem.WBP_CurrentItem_C.UpdateFireMode
+// 0x0002 (0x0002 - 0x0000)
+struct WBP_CurrentItem_C_UpdateFireMode final
+{
+public:
+	EFireMode                                     NewMode;                                           // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bHasFirearm;                                       // 0x0001(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_CurrentItem_C_UpdateFireMode) == 0x000001, "Wrong alignment on WBP_CurrentItem_C_UpdateFireMode");
+static_assert(sizeof(WBP_CurrentItem_C_UpdateFireMode) == 0x000002, "Wrong size on WBP_CurrentItem_C_UpdateFireMode");
+static_assert(offsetof(WBP_CurrentItem_C_UpdateFireMode, NewMode) == 0x000000, "Member 'WBP_CurrentItem_C_UpdateFireMode::NewMode' has a wrong offset!");
+static_assert(offsetof(WBP_CurrentItem_C_UpdateFireMode, bHasFirearm) == 0x000001, "Member 'WBP_CurrentItem_C_UpdateFireMode::bHasFirearm' has a wrong offset!");
 
 }
 

@@ -17,6 +17,26 @@
 namespace SDK
 {
 
+// Function WBP_Interaction.WBP_Interaction_C.ExecuteUbergraph_WBP_Interaction
+// (Final, UbergraphFunction)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_Interaction_C::ExecuteUbergraph_WBP_Interaction(int32 EntryPoint)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_Interaction_C", "ExecuteUbergraph_WBP_Interaction");
+
+	Params::WBP_Interaction_C_ExecuteUbergraph_WBP_Interaction Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
 // Function WBP_Interaction.WBP_Interaction_C.AddOptionWidget
 // (Event, Protected, BlueprintEvent)
 // Parameters:
@@ -34,26 +54,6 @@ void UWBP_Interaction_C::AddOptionWidget(class UInteractionOptionWidget* Widget,
 
 	Parms.Widget = Widget;
 	Parms.OptionIndex = OptionIndex;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_Interaction.WBP_Interaction_C.ExecuteUbergraph_WBP_Interaction
-// (Final, UbergraphFunction)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_Interaction_C::ExecuteUbergraph_WBP_Interaction(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_Interaction_C", "ExecuteUbergraph_WBP_Interaction");
-
-	Params::WBP_Interaction_C_ExecuteUbergraph_WBP_Interaction Parms{};
-
-	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
 }

@@ -29,11 +29,11 @@ public:
 	class UBrickBorder*                           Border;                                            // 0x02B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void PlayFadeInAnim();
-	void PlayFadeOutAnim();
-	void UpdateIsThumbnailNotification(bool bNewIsThumbnail);
-	void InitializeNotification(const struct FBrickUIIconSlot& InIconSlot, const class FText& InText, EBrickUIColorStyle InColorStyle);
 	void ExecuteUbergraph_WBP_HUDNotification(int32 EntryPoint);
+	void InitializeNotification(const struct FBrickUIIconSlot& InIconSlot, const class FText& InText, EBrickUIColorStyle InColorStyle);
+	void UpdateIsThumbnailNotification(bool bNewIsThumbnail);
+	void PlayFadeOutAnim();
+	void PlayFadeInAnim();
 
 public:
 	static class UClass* StaticClass()

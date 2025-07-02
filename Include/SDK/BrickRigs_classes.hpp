@@ -614,7 +614,7 @@ static_assert(sizeof(UBrickCharacterMovementComponent) == 0x000B00, "Wrong size 
 
 // Class BrickRigs.AdminLoginWidget
 // 0x0038 (0x0298 - 0x0260)
-class UAdminLoginWidget final : public UUserWidget
+class UAdminLoginWidget : public UUserWidget
 {
 public:
 	class UBrickTextBoxWidget*                    TextBox;                                           // 0x0260(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -1426,7 +1426,7 @@ static_assert(offsetof(AInventoryItem, StaticInfoClass) == 0x000268, "Member 'AI
 
 // Class BrickRigs.BrickComboBoxItemContainerWidget
 // 0x0020 (0x0290 - 0x0270)
-class UBrickComboBoxItemContainerWidget final : public UBrickUserWidget
+class UBrickComboBoxItemContainerWidget : public UBrickUserWidget
 {
 public:
 	uint8                                         Pad_270[0x8];                                      // 0x0270(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -1781,7 +1781,7 @@ static_assert(offsetof(ALegacyBuilding, NumFloors) == 0x000300, "Member 'ALegacy
 
 // Class BrickRigs.BrickComboBoxMenuWidget
 // 0x0010 (0x0278 - 0x0268)
-class UBrickComboBoxMenuWidget final : public UMenuAnchorWidget
+class UBrickComboBoxMenuWidget : public UMenuAnchorWidget
 {
 public:
 	uint8                                         Pad_268[0x8];                                      // 0x0268(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -1960,7 +1960,7 @@ static_assert(offsetof(UCarWheelBrickStaticInfo, TirePopSound) == 0x0001A0, "Mem
 
 // Class BrickRigs.BrickComboBoxWidget
 // 0x0090 (0x02F0 - 0x0260)
-class UBrickComboBoxWidget final : public UUserWidget
+class UBrickComboBoxWidget : public UUserWidget
 {
 public:
 	uint8                                         Pad_260[0x20];                                     // 0x0260(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
@@ -2604,7 +2604,7 @@ public:
 	class UBrickButtonWidget*                     Button;                                            // 0x0270(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UBrickTextBlock*                        TextBlock;                                         // 0x0278(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	class UBrickImage*                            IconImage;                                         // 0x0280(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	TDelegate<void()>                             OnClickedDelegate;                           // 0x0288(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             OnClickedDelegate;                                      // 0x0288(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void OnClicked();
@@ -2847,7 +2847,7 @@ static_assert(offsetof(ABaseCharacter, StaticInfoClass) == 0x0007B8, "Member 'AB
 
 // Class BrickRigs.NumericPropertyWidget
 // 0x0030 (0x02B0 - 0x0280)
-class UNumericPropertyWidget final : public UPropertyWidget
+class UNumericPropertyWidget : public UPropertyWidget
 {
 public:
 	TArray<class UBrickSliderWidget*>             Sliders;                                           // 0x0280(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, Protected, NativeAccessSpecifierProtected)
@@ -3379,7 +3379,7 @@ static_assert(sizeof(UDestructibleISMComponent) == 0x000610, "Wrong size on UDes
 
 // Class BrickRigs.BoolPropertyWidget
 // 0x0008 (0x0288 - 0x0280)
-class UBoolPropertyWidget final : public UPropertyWidget
+class UBoolPropertyWidget : public UPropertyWidget
 {
 public:
 	class UBrickComboBoxWidget*                   ComboBox;                                          // 0x0280(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -5644,7 +5644,7 @@ static_assert(offsetof(UBrickImage, bIsThrobber) == 0x0002DC, "Member 'UBrickIma
 
 // Class BrickRigs.DragStrip
 // 0x0090 (0x02B0 - 0x0220)
-class ADragStrip final : public AActor
+class ADragStrip : public AActor
 {
 public:
 	uint8                                         Pad_220[0xC];                                      // 0x0220(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
@@ -8675,7 +8675,7 @@ static_assert(sizeof(UEditorInputComponent) == 0x000190, "Wrong size on UEditorI
 
 // Class BrickRigs.EnumPropertyWidget
 // 0x0018 (0x0298 - 0x0280)
-class UEnumPropertyWidget final : public UPropertyWidget
+class UEnumPropertyWidget : public UPropertyWidget
 {
 public:
 	uint8                                         Pad_280[0x10];                                     // 0x0280(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
@@ -9146,72 +9146,15 @@ static_assert(sizeof(UFirearmAnimInstance) == 0x0002C0, "Wrong size on UFirearmA
 class UFirearmComponent final : public UActorComponent
 {
 public:
-	// 0x00B0 - Original: FFluAsyncAssetLoader AssetLoader_FireEmitter (size 0x10, 0x00B0 to 0x00C0)
-	uint8                                         Pad_AssetLoader_FireEmitter[0x10];
-	// 0x00C0 - Original: FFluAsyncAssetLoader AssetLoader_FireSound (size 0x10, 0x00C0 to 0x00D0)
-	uint8                                         Pad_AssetLoader_FireSound[0x10];
-	// 0x00D0
-	struct FTimerHandle                           TimerHandle_RevertFirearmState;
-	// 0x00D8(0x0006)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, NativeAccessSpecifierPrivate)
-	struct FFirearmState                          FirearmState;
-	// 0x00DE
-	struct FFirearmState                          LastConfirmedFirearmState;
-	// 0x00E4
-	EFireMode                                     FireMode;
-	// 0x00E5
-	EFireMode                                     CurrentBurstFireMode;
-	// 0x00E8
-	int32                                         SpreadRandomSeed;
-	// 0x00EC (starts at bit 0)
-	uint8                                         bWantsToFire : 1;
-	// 0x00EC (starts at bit 1)
-	uint8                                         bWasFiringLocally : 1;
-	// 0x00EE
-	uint16                                        BurstCount;
-	// 0x00F0
-	float                                         LastFireTime;
-	// 0x00F4
-	TWeakObjectPtr<class ABrickCharacter>         ControllingCharacter;
-	// 0x0100
-	TMap<TWeakObjectPtr<class ABrickCharacter>, TMap<EAmmoType, float>> RemoteClientsFireTime;
-	// 0x0150(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UAudioComponent* FireAC;
-	// 0x0158(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UParticleSystemComponent* FirePSC;
-	// 0x0160(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class UParticleSystem* FireEmitter;
-	// 0x0168(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	class USoundBase* FireSound;
-	// 0x0170
-	struct FFirearmProperties                     FirearmProperties;
-	// 0x0200
-	uint8										  MuzzleEffectAttachment[0x28];
-	// 0x0228 (starts at bit 0)
-	uint8                                         bInitializedFirePSC : 1;
-	// 0x0228 (starts at bit 1)
-	uint8                                         bInitializedFireAC : 1;
-	// 0x0228 (starts at bit 2)
-	uint8                                         bIsViewTarget : 1;
-	// 0x022C
-	int32                                         ReplicationKey;
-	// 0x0230 - Original: TDelegate<void(float)> OnFireDelegate (size 0x10, 0x0230 to 0x0240)
-	uint8                                         Pad_OnFireDelegate[0x10];
-	// 0x0240 - Original: TDelegate<void()> OnBoltCycledDelegate (size 0x10, 0x0240 to 0x0250)
-	uint8                                         Pad_OnBoltCycledDelegate[0x10];
-	// 0x0250 - Original: TMulticastDelegate<void(const FFirearmState&)> OnFirearmStateChangedDelegate (size 0x18, 0x0250 to 0x0268)
-	uint8                                         Pad_OnFirearmStateChangedDelegate[0x18];
-	// 0x0268 - Original: TMulticastDelegate<void(EFireMode)> OnFireModeChangedDelegate (size 0x18, 0x0268 to 0x0280)
-	uint8                                         Pad_OnFireModeChangedDelegate[0x18];
-	// 0x0280 - Original: TMulticastDelegate<void(EAmmoType)> OnAmmoTypeChangedDelegate (size 0x18, 0x0280 to 0x0298)
-	uint8                                         Pad_OnAmmoTypeChangedDelegate[0x18];
-	// 0x0298 - Original: TDelegate<void(FVector&, FRotator&, FVector&, float)> GetProjectileSpawnPointDelegate (size 0x10, 0x0298 to 0x02A8)
-	uint8                                         Pad_GetProjectileSpawnPointDelegate[0x10];
-	// 0x02A8 - Original: TDelegate<void(TArray<AActor*>&)> GetIgnoredActorsDelegate (size 0x10, 0x02A8 to 0x02B8)
-	uint8                                         Pad_GetIgnoredActorsDelegate[0x10];
-	// 0x02B8 - Original: TDelegate<bool(class UFirearmComponent*)> CanMergeProjectileDelegate (size 0x10, 0x02B8 to 0x02C8)
-	uint8                                         Pad_CanMergeProjectileDelegate[0x10];
-	// 0x02C8 - Original: TMulticastDelegate<void()> OnReplicationKeyChangedDelegate (size 0x18, 0x02C8 to 0x02E0)
-	uint8                                         Pad_OnReplicationKeyChangedDelegate[0x18];
+	uint8                                         Pad_B0[0x28];                                      // 0x00B0(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FFirearmState                          FirearmState;                                      // 0x00D8(0x0006)(Net, ZeroConstructor, IsPlainOldData, RepNotify, NoDestructor, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_DE[0x72];                                      // 0x00DE(0x0072)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAudioComponent*                        FireAC;                                            // 0x0150(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UParticleSystemComponent*               FirePSC;                                           // 0x0158(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class UParticleSystem*                        FireEmitter;                                       // 0x0160(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	class USoundBase*                             FireSound;                                         // 0x0168(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_170[0x170];                                    // 0x0170(0x0170)(Fixing Struct Size After Last Property [ Dumper-7 ])
+
 public:
 	void OnRep_FirearmState(const struct FFirearmState& PrevState);
 
@@ -9226,7 +9169,12 @@ public:
 	}
 };
 static_assert(alignof(UFirearmComponent) == 0x000008, "Wrong alignment on UFirearmComponent");
-static_assert(sizeof(UFirearmComponent) == 0x2E0, "Wrong size on UFirearmComponent");
+static_assert(sizeof(UFirearmComponent) == 0x0002E0, "Wrong size on UFirearmComponent");
+static_assert(offsetof(UFirearmComponent, FirearmState) == 0x0000D8, "Member 'UFirearmComponent::FirearmState' has a wrong offset!");
+static_assert(offsetof(UFirearmComponent, FireAC) == 0x000150, "Member 'UFirearmComponent::FireAC' has a wrong offset!");
+static_assert(offsetof(UFirearmComponent, FirePSC) == 0x000158, "Member 'UFirearmComponent::FirePSC' has a wrong offset!");
+static_assert(offsetof(UFirearmComponent, FireEmitter) == 0x000160, "Member 'UFirearmComponent::FireEmitter' has a wrong offset!");
+static_assert(offsetof(UFirearmComponent, FireSound) == 0x000168, "Member 'UFirearmComponent::FireSound' has a wrong offset!");
 
 // Class BrickRigs.FirearmInventoryComponent
 // 0x0000 (0x0298 - 0x0298)
@@ -9925,7 +9873,7 @@ static_assert(offsetof(UPlayerIconWidget, CharacterPlayerState) == 0x0002A0, "Me
 
 // Class BrickRigs.PropertiesPanelWidget
 // 0x0070 (0x02D0 - 0x0260)
-class UPropertiesPanelWidget final : public UUserWidget
+class UPropertiesPanelWidget : public UUserWidget
 {
 public:
 	uint8                                         Pad_260[0x18];                                     // 0x0260(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
@@ -10282,7 +10230,7 @@ static_assert(offsetof(AGarage, VehicleSpawnRotation) == 0x000328, "Member 'AGar
 
 // Class BrickRigs.GenericPropertyWidget
 // 0x0008 (0x0288 - 0x0280)
-class UGenericPropertyWidget final : public UPropertyWidget
+class UGenericPropertyWidget : public UPropertyWidget
 {
 public:
 	class UBrickTextBoxWidget*                    TextBox;                                           // 0x0280(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -12472,7 +12420,7 @@ static_assert(offsetof(UTurbineBrick, AutoHoverInputChannel) == 0x000208, "Membe
 
 // Class BrickRigs.MatchMenuWidget
 // 0x0008 (0x0278 - 0x0270)
-class UMatchMenuWidget final : public UMenuPageWidget
+class UMatchMenuWidget : public UMenuPageWidget
 {
 public:
 	class UPropertiesPanelWidget*                 PropertiesPanel;                                   // 0x0270(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -12652,7 +12600,7 @@ class UMenuButtonPanelWidget : public UUserWidget
 public:
 	TArray<class UMenuButtonWidget*>              Buttons;                                           // 0x0260(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
 	int32                                         NumButtonsUsed;                                    // 0x0270(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBrickGridPanel*                        ButtonPanel;                                       // 0x0278(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
+	class UBrickGridPanel* ButtonPanel;                                       // 0x0278(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TSubclassOf<class UMenuButtonWidget>          ButtonClass;                                       // 0x0280(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	int32                                         NumButtonsPerRow;                                  // 0x0288(0x0004)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	uint8                                         Pad_28C[0x4];                                      // 0x028C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -12933,7 +12881,7 @@ static_assert(offsetof(UMenuWidget, NetworkErrorPopupClass) == 0x0002C8, "Member
 
 // Class BrickRigs.ModHook
 // 0x0000 (0x0028 - 0x0028)
-class UModHook : public UObject
+class UModHook final : public UObject
 {
 public:
 	void BeginPlay();
@@ -12948,7 +12896,6 @@ public:
 	TSubclassOf<class AGameStateBase> OverrideGameStateClass(TSubclassOf<class AGameStateBase> GameStateClass);
 	TArray<TSubclassOf<class AInventoryItem>> OverrideLoadoutContainerItems(const TArray<TSubclassOf<class AInventoryItem>>& ItemClasses);
 	bool OverrideLoadSubLevel(bool bLoadLevel, const class FString& LevelName, class UGameModeInfo* GameMode);
-	// Allows you to modify or add menu pages, return true if the original menu page should not be shown
 	bool OverrideMenu(class UMenuWidget* Widget, const class FName& Context);
 	TSoftClassPtr<class UClass> OverrideMenuSequence(const TSoftClassPtr<class UClass>& SequenceClass);
 	struct FWorldSetupParams OverrideMenuWorldSetupParams(const struct FWorldSetupParams& Params_0);
@@ -13786,12 +13733,10 @@ static_assert(sizeof(UPropellerBrick) == 0x0000F8, "Wrong size on UPropellerBric
 
 // Class BrickRigs.PropertyCategoryWidget
 // 0x0018 (0x0278 - 0x0260)
-class UPropertyCategoryWidget final : public UUserWidget
+class UPropertyCategoryWidget : public UUserWidget
 {
 public:
-	uint8 Pad_260[0x10];            // 0x260–0x270
-	int32 CategoryIndex;            // 0x270–0x274
-	uint8 Pad_274[0x4];             // 0x274–0x278 (padding to align to 0x278)
+	uint8                                         Pad_260[0x18];                                     // 0x0260(0x0018)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	void UpdateCategory(const class FText& DisplayName);
@@ -13811,15 +13756,10 @@ static_assert(sizeof(UPropertyCategoryWidget) == 0x000278, "Wrong size on UPrope
 
 // Class BrickRigs.PropertyContainerWidget
 // 0x0058 (0x02C8 - 0x0270)
-class UPropertyContainerWidget final : public UBrickUserWidget
+class UPropertyContainerWidget : public UBrickUserWidget
 {
 public:
-	uint8_t	     								  AssetLoader_PropertyWidgetClass[0x10];			 // 0x270 (size guessed, maybe 0x10)
-	TWeakObjectPtr<UWidget>						  PropertyList;										 // 0x280 (0x8)
-	int32										  PropertyListSlotIndex;                             // 0x288 (0x4)
-	EOrientation								  Orientation;										 // 0x28C (0x1)
-	uint8										  Pad_28D[0x3];                                      // 0x28D–0x290 (align next to 0x290)
-	uint8										  PropertyInfo[0x10];								 // 0x290 (0x10)
+	uint8                                         Pad_270[0x30];                                     // 0x0270(0x0030)(Fixing Size After Last Property [ Dumper-7 ])
 	class UPropertyWidget*                        PropertyWidget;                                    // 0x02A0(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	uint8                                         Pad_2A8[0x10];                                     // 0x02A8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	class UBrickTextBlock*                        NameTextBlock;                                     // 0x02B8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -13876,7 +13816,7 @@ static_assert(offsetof(UPumpBrickStaticInfo, ExtinguisherProperties) == 0x000168
 
 // Class BrickRigs.RaceTimer
 // 0x0010 (0x0230 - 0x0220)
-class ARaceTimer final : public AActor
+class ARaceTimer : public AActor
 {
 public:
 	class UStaticMeshComponent*                   MeshComponent;                                     // 0x0220(0x0008)(Edit, ExportObject, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -14799,7 +14739,7 @@ static_assert(offsetof(UThrusterBrickStaticInfo, ThrusterSound) == 0x000200, "Me
 
 // Class BrickRigs.TimespanPropertyWidget
 // 0x0000 (0x0280 - 0x0280)
-class UTimespanPropertyWidget final : public UPropertyWidget
+class UTimespanPropertyWidget : public UPropertyWidget
 {
 public:
 	void SetTimespanPropertyValue(EValueChangedEventType EventType, const struct FTimespan& NewValue);

@@ -30,10 +30,10 @@ public:
 	class UBrickTextBlock*                        ScoreTextBlock;                                    // 0x0290(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void UpdateScore(int32 NewScore, int32 NewMaxScore);
-	void UpdateTeamAttitude(ETeamAttitude NewTeamAttitude);
-	void UpdateTeamIcon(class UTexture2D* NewIcon);
 	void ExecuteUbergraph_WBP_TeamScore(int32 EntryPoint);
+	void UpdateTeamIcon(class UTexture2D* NewIcon);
+	void UpdateTeamAttitude(ETeamAttitude NewTeamAttitude);
+	void UpdateScore(int32 NewScore, int32 NewMaxScore);
 
 public:
 	static class UClass* StaticClass()

@@ -30,8 +30,8 @@ public:
 
 public:
 	void ExecuteUbergraph_WBP_MatchState(int32 EntryPoint);
-	void UpdateMatchState(const class FText& NewDisplayText, EBrickUIColorStyle NewColorStyle, bool bFadeOut);
 	void OnAnimationFinished(const class UWidgetAnimation* Animation);
+	void UpdateMatchState(const class FText& NewDisplayText, EBrickUIColorStyle NewColorStyle, bool bFadeOut);
 
 public:
 	static class UClass* StaticClass()

@@ -30,10 +30,10 @@ public:
 	class UBrickTextBlock*                        RestrictedAreaTextBlock;                           // 0x02A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void PlayFadeInAnim();
-	void PlayFadeOutAnim();
-	void UpdateTimerRemaining(float TimeRemaining);
 	void ExecuteUbergraph_WBP_RestrictedArea(int32 EntryPoint);
+	void UpdateTimerRemaining(float TimeRemaining);
+	void PlayFadeOutAnim();
+	void PlayFadeInAnim();
 
 public:
 	static class UClass* StaticClass()

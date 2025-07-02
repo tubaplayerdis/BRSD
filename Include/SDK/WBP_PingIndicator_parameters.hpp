@@ -17,17 +17,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_PingIndicator.WBP_PingIndicator_C.UpdatePing
-// 0x0004 (0x0004 - 0x0000)
-struct WBP_PingIndicator_C_UpdatePing final
-{
-public:
-	int32                                         InPing;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_PingIndicator_C_UpdatePing) == 0x000004, "Wrong alignment on WBP_PingIndicator_C_UpdatePing");
-static_assert(sizeof(WBP_PingIndicator_C_UpdatePing) == 0x000004, "Wrong size on WBP_PingIndicator_C_UpdatePing");
-static_assert(offsetof(WBP_PingIndicator_C_UpdatePing, InPing) == 0x000000, "Member 'WBP_PingIndicator_C_UpdatePing::InPing' has a wrong offset!");
-
 // Function WBP_PingIndicator.WBP_PingIndicator_C.ExecuteUbergraph_WBP_PingIndicator
 // 0x00B0 (0x00B0 - 0x0000)
 struct WBP_PingIndicator_C_ExecuteUbergraph_WBP_PingIndicator final
@@ -105,6 +94,17 @@ static_assert(offsetof(WBP_PingIndicator_C_ExecuteUbergraph_WBP_PingIndicator, C
 static_assert(offsetof(WBP_PingIndicator_C_ExecuteUbergraph_WBP_PingIndicator, K2Node_Select_Default_2) == 0x000094, "Member 'WBP_PingIndicator_C_ExecuteUbergraph_WBP_PingIndicator::K2Node_Select_Default_2' has a wrong offset!");
 static_assert(offsetof(WBP_PingIndicator_C_ExecuteUbergraph_WBP_PingIndicator, K2Node_Select_Default_3) == 0x000098, "Member 'WBP_PingIndicator_C_ExecuteUbergraph_WBP_PingIndicator::K2Node_Select_Default_3' has a wrong offset!");
 static_assert(offsetof(WBP_PingIndicator_C_ExecuteUbergraph_WBP_PingIndicator, K2Node_MakeStruct_BrickUIIconSlot) == 0x0000A8, "Member 'WBP_PingIndicator_C_ExecuteUbergraph_WBP_PingIndicator::K2Node_MakeStruct_BrickUIIconSlot' has a wrong offset!");
+
+// Function WBP_PingIndicator.WBP_PingIndicator_C.UpdatePing
+// 0x0004 (0x0004 - 0x0000)
+struct WBP_PingIndicator_C_UpdatePing final
+{
+public:
+	int32                                         InPing;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_PingIndicator_C_UpdatePing) == 0x000004, "Wrong alignment on WBP_PingIndicator_C_UpdatePing");
+static_assert(sizeof(WBP_PingIndicator_C_UpdatePing) == 0x000004, "Wrong size on WBP_PingIndicator_C_UpdatePing");
+static_assert(offsetof(WBP_PingIndicator_C_UpdatePing, InPing) == 0x000000, "Member 'WBP_PingIndicator_C_UpdatePing::InPing' has a wrong offset!");
 
 }
 

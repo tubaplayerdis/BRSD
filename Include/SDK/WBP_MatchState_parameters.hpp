@@ -47,6 +47,17 @@ static_assert(offsetof(WBP_MatchState_C_ExecuteUbergraph_WBP_MatchState, CallFun
 static_assert(offsetof(WBP_MatchState_C_ExecuteUbergraph_WBP_MatchState, CallFunc_GetAnimationCurrentTime_ReturnValue) == 0x00003C, "Member 'WBP_MatchState_C_ExecuteUbergraph_WBP_MatchState::CallFunc_GetAnimationCurrentTime_ReturnValue' has a wrong offset!");
 static_assert(offsetof(WBP_MatchState_C_ExecuteUbergraph_WBP_MatchState, CallFunc_EqualEqual_FloatFloat_ReturnValue) == 0x000040, "Member 'WBP_MatchState_C_ExecuteUbergraph_WBP_MatchState::CallFunc_EqualEqual_FloatFloat_ReturnValue' has a wrong offset!");
 
+// Function WBP_MatchState.WBP_MatchState_C.OnAnimationFinished
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_MatchState_C_OnAnimationFinished final
+{
+public:
+	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_MatchState_C_OnAnimationFinished) == 0x000008, "Wrong alignment on WBP_MatchState_C_OnAnimationFinished");
+static_assert(sizeof(WBP_MatchState_C_OnAnimationFinished) == 0x000008, "Wrong size on WBP_MatchState_C_OnAnimationFinished");
+static_assert(offsetof(WBP_MatchState_C_OnAnimationFinished, Animation) == 0x000000, "Member 'WBP_MatchState_C_OnAnimationFinished::Animation' has a wrong offset!");
+
 // Function WBP_MatchState.WBP_MatchState_C.UpdateMatchState
 // 0x0020 (0x0020 - 0x0000)
 struct WBP_MatchState_C_UpdateMatchState final
@@ -61,17 +72,6 @@ static_assert(sizeof(WBP_MatchState_C_UpdateMatchState) == 0x000020, "Wrong size
 static_assert(offsetof(WBP_MatchState_C_UpdateMatchState, NewDisplayText) == 0x000000, "Member 'WBP_MatchState_C_UpdateMatchState::NewDisplayText' has a wrong offset!");
 static_assert(offsetof(WBP_MatchState_C_UpdateMatchState, NewColorStyle) == 0x000018, "Member 'WBP_MatchState_C_UpdateMatchState::NewColorStyle' has a wrong offset!");
 static_assert(offsetof(WBP_MatchState_C_UpdateMatchState, bFadeOut) == 0x000019, "Member 'WBP_MatchState_C_UpdateMatchState::bFadeOut' has a wrong offset!");
-
-// Function WBP_MatchState.WBP_MatchState_C.OnAnimationFinished
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_MatchState_C_OnAnimationFinished final
-{
-public:
-	const class UWidgetAnimation*                 Animation;                                         // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_MatchState_C_OnAnimationFinished) == 0x000008, "Wrong alignment on WBP_MatchState_C_OnAnimationFinished");
-static_assert(sizeof(WBP_MatchState_C_OnAnimationFinished) == 0x000008, "Wrong size on WBP_MatchState_C_OnAnimationFinished");
-static_assert(offsetof(WBP_MatchState_C_OnAnimationFinished, Animation) == 0x000000, "Member 'WBP_MatchState_C_OnAnimationFinished::Animation' has a wrong offset!");
 
 }
 

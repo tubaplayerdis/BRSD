@@ -17,41 +17,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_BrickTextBox.WBP_BrickTextBox_C.BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature
-// 0x0002 (0x0002 - 0x0000)
-struct WBP_BrickTextBox_C_BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature final
-{
-public:
-	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EBrickUIStyleState                            InContentStyleState;                               // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_BrickTextBox_C_BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000001, "Wrong alignment on WBP_BrickTextBox_C_BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
-static_assert(sizeof(WBP_BrickTextBox_C_BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000002, "Wrong size on WBP_BrickTextBox_C_BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
-static_assert(offsetof(WBP_BrickTextBox_C_BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InColorStyle) == 0x000000, "Member 'WBP_BrickTextBox_C_BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InColorStyle' has a wrong offset!");
-static_assert(offsetof(WBP_BrickTextBox_C_BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InContentStyleState) == 0x000001, "Member 'WBP_BrickTextBox_C_BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InContentStyleState' has a wrong offset!");
-
-// Function WBP_BrickTextBox.WBP_BrickTextBox_C.UpdateIsPassword
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_BrickTextBox_C_UpdateIsPassword final
-{
-public:
-	bool                                          bNewIsPassword;                                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_BrickTextBox_C_UpdateIsPassword) == 0x000001, "Wrong alignment on WBP_BrickTextBox_C_UpdateIsPassword");
-static_assert(sizeof(WBP_BrickTextBox_C_UpdateIsPassword) == 0x000001, "Wrong size on WBP_BrickTextBox_C_UpdateIsPassword");
-static_assert(offsetof(WBP_BrickTextBox_C_UpdateIsPassword, bNewIsPassword) == 0x000000, "Member 'WBP_BrickTextBox_C_UpdateIsPassword::bNewIsPassword' has a wrong offset!");
-
-// Function WBP_BrickTextBox.WBP_BrickTextBox_C.UpdatePasswordVisible
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_BrickTextBox_C_UpdatePasswordVisible final
-{
-public:
-	bool                                          bNewVisible;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_BrickTextBox_C_UpdatePasswordVisible) == 0x000001, "Wrong alignment on WBP_BrickTextBox_C_UpdatePasswordVisible");
-static_assert(sizeof(WBP_BrickTextBox_C_UpdatePasswordVisible) == 0x000001, "Wrong size on WBP_BrickTextBox_C_UpdatePasswordVisible");
-static_assert(offsetof(WBP_BrickTextBox_C_UpdatePasswordVisible, bNewVisible) == 0x000000, "Member 'WBP_BrickTextBox_C_UpdatePasswordVisible::bNewVisible' has a wrong offset!");
-
 // Function WBP_BrickTextBox.WBP_BrickTextBox_C.ExecuteUbergraph_WBP_BrickTextBox
 // 0x001C (0x001C - 0x0000)
 struct WBP_BrickTextBox_C_ExecuteUbergraph_WBP_BrickTextBox final
@@ -84,6 +49,41 @@ static_assert(offsetof(WBP_BrickTextBox_C_ExecuteUbergraph_WBP_BrickTextBox, K2N
 static_assert(offsetof(WBP_BrickTextBox_C_ExecuteUbergraph_WBP_BrickTextBox, CallFunc_SelectInt_ReturnValue) == 0x00000C, "Member 'WBP_BrickTextBox_C_ExecuteUbergraph_WBP_BrickTextBox::CallFunc_SelectInt_ReturnValue' has a wrong offset!");
 static_assert(offsetof(WBP_BrickTextBox_C_ExecuteUbergraph_WBP_BrickTextBox, K2Node_Select_Default) == 0x000010, "Member 'WBP_BrickTextBox_C_ExecuteUbergraph_WBP_BrickTextBox::K2Node_Select_Default' has a wrong offset!");
 static_assert(offsetof(WBP_BrickTextBox_C_ExecuteUbergraph_WBP_BrickTextBox, K2Node_MakeStruct_BrickUIIconSlot) == 0x000014, "Member 'WBP_BrickTextBox_C_ExecuteUbergraph_WBP_BrickTextBox::K2Node_MakeStruct_BrickUIIconSlot' has a wrong offset!");
+
+// Function WBP_BrickTextBox.WBP_BrickTextBox_C.UpdatePasswordVisible
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_BrickTextBox_C_UpdatePasswordVisible final
+{
+public:
+	bool                                          bNewVisible;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_BrickTextBox_C_UpdatePasswordVisible) == 0x000001, "Wrong alignment on WBP_BrickTextBox_C_UpdatePasswordVisible");
+static_assert(sizeof(WBP_BrickTextBox_C_UpdatePasswordVisible) == 0x000001, "Wrong size on WBP_BrickTextBox_C_UpdatePasswordVisible");
+static_assert(offsetof(WBP_BrickTextBox_C_UpdatePasswordVisible, bNewVisible) == 0x000000, "Member 'WBP_BrickTextBox_C_UpdatePasswordVisible::bNewVisible' has a wrong offset!");
+
+// Function WBP_BrickTextBox.WBP_BrickTextBox_C.UpdateIsPassword
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_BrickTextBox_C_UpdateIsPassword final
+{
+public:
+	bool                                          bNewIsPassword;                                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_BrickTextBox_C_UpdateIsPassword) == 0x000001, "Wrong alignment on WBP_BrickTextBox_C_UpdateIsPassword");
+static_assert(sizeof(WBP_BrickTextBox_C_UpdateIsPassword) == 0x000001, "Wrong size on WBP_BrickTextBox_C_UpdateIsPassword");
+static_assert(offsetof(WBP_BrickTextBox_C_UpdateIsPassword, bNewIsPassword) == 0x000000, "Member 'WBP_BrickTextBox_C_UpdateIsPassword::bNewIsPassword' has a wrong offset!");
+
+// Function WBP_BrickTextBox.WBP_BrickTextBox_C.BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature
+// 0x0002 (0x0002 - 0x0000)
+struct WBP_BrickTextBox_C_BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature final
+{
+public:
+	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EBrickUIStyleState                            InContentStyleState;                               // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_BrickTextBox_C_BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000001, "Wrong alignment on WBP_BrickTextBox_C_BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
+static_assert(sizeof(WBP_BrickTextBox_C_BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000002, "Wrong size on WBP_BrickTextBox_C_BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
+static_assert(offsetof(WBP_BrickTextBox_C_BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InColorStyle) == 0x000000, "Member 'WBP_BrickTextBox_C_BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InColorStyle' has a wrong offset!");
+static_assert(offsetof(WBP_BrickTextBox_C_BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InContentStyleState) == 0x000001, "Member 'WBP_BrickTextBox_C_BndEvt__ShowPasswordButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InContentStyleState' has a wrong offset!");
 
 }
 

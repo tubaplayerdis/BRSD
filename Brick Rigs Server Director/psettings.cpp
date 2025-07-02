@@ -47,38 +47,27 @@ bool psettings::CreateCustomSettingsPage()
     slot2->SetVerticalAlignment(SDK::EVerticalAlignment::VAlign_Center);
     TextBorder->SetHorizontalAlignment(SDK::EHorizontalAlignment::HAlign_Center);
     TextBorder->SetVerticalAlignment(SDK::EVerticalAlignment::VAlign_Center);
+    
 
-    //SDK::UPropertyContainerWidget* container = Spawn(SDK::UPropertyContainerWidget, CustomSettingsPage);
-    //container->PreAddPropertyButtons();
-    //container->NameTextBlock = Spawn(SDK::UBrickTextBlock, container);
-    //container->NameTextBlock->SetText(TEXT(L"Testing!"));
-    //SDK::UGenericPropertyWidget* Generic = Spawn(SDK::UGenericPropertyWidget, CustomSettingsPage);
-    //auto* TextBox = Spawn(SDK::UBrickTextBoxWidget, CustomSettingsPage);
-    //TextBox->Cr
-    //Initalize(TextBox);
-    //CallGameFunction<void, SDK::UBrickTextBoxWidget*>(0x0DCCA00, TextBox);//Native Construct
-    //std::cout << GetBoolString(TextBox->WidgetTree) << std::endl;
-    //container->AddPropertyWidget(Generic, SDK::EOrientation::Orient_Horizontal);
-    //container->SetVisibility(SDK::ESlateVisibility::Visible);
-    //container->PostAddPropertyButtons();
-    //container->SetDesiredSizeInViewport(SDK::FVector2D(200, 200));
-    //container->ForceLayoutPrepass();
-
-    SDK::UUserWidget* widget = WidgetU::CreateWidget(World(), SDK::UBrickTextBoxWidget::StaticClass(), NAME(L"OHIO"));
+    SDK::UWBP_BrickTextBox_C* widget = static_cast<SDK::UWBP_BrickTextBox_C*>(WidgetU::CreateWidget(World(), SDK::UWBP_BrickTextBox_C::StaticClass(), SDK::FName()));
     if (widget) {
-        std::cout << "grrr" << std::endl;
-        std::cout << widget->GetName() << std::endl;
+        std::cout << GetBoolString(widget->MultiLineTextBox) << std::endl;
+        std::cout << GetBoolString(widget->WidgetTree) << std::endl;
     }
-    //Initalize(static_cast<SDK::UBrickTextBoxWidget*>(widget));
-    //CallGameFunction<void, SDK::UBrickTextBoxWidget*>(0x0DCCA00, static_cast<SDK::UBrickTextBoxWidget*>(widget));
-    //CustomSettingsPage->AddChild(TextBox);
+    widget->SetVisibility(SDK::ESlateVisibility::Visible);
+  
+
+    //CustomSettingsPage->AddChild(container);
+    CustomSettingsPage->AddChild(widget);
 
   
     SynchronizeProperties(TextBorder);
     SynchronizeProperties(CustomSettingsPage);
 
     ElementsList.push_back(TextBorder);
-    //ElementsList.push_back(TextBox);
+    ElementsList.push_back(widget);
+    //ElementsList.push_back(container);
+
 
     CustomSettingsPage->SetVisibility(SDK::ESlateVisibility::Collapsed);
     return true;

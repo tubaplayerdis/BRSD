@@ -29,10 +29,10 @@ public:
 	class UBrickImage*                            WinchIcon;                                         // 0x02D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void PlayHitAnimation(const struct FClientDamageInfo& DamageInfo);
-	void UpdateIsAttachingWinch(bool bNewAttaching);
-	void UpdateWinchAttachment(bool bBlockingHit, bool bWithinRange);
 	void ExecuteUbergraph_WBP_Crosshair(int32 EntryPoint);
+	void UpdateWinchAttachment(bool bBlockingHit, bool bWithinRange);
+	void UpdateIsAttachingWinch(bool bNewAttaching);
+	void PlayHitAnimation(const struct FClientDamageInfo& DamageInfo);
 
 public:
 	static class UClass* StaticClass()

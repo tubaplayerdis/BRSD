@@ -25,8 +25,8 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame_WBP_BrickSliderReadOnly_C;          // 0x0328(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void PreConstruct(bool IsDesignTime);
 	void ExecuteUbergraph_WBP_BrickSliderReadOnly(int32 EntryPoint);
+	void PreConstruct(bool IsDesignTime);
 
 public:
 	static class UClass* StaticClass()

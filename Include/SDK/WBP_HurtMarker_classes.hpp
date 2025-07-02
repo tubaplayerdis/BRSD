@@ -27,8 +27,8 @@ public:
 	class UBrickImage*                            BrickImage_77;                                     // 0x0280(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void PlayHurtMarkerAnimation();
 	void ExecuteUbergraph_WBP_HurtMarker(int32 EntryPoint);
+	void PlayHurtMarkerAnimation();
 
 public:
 	static class UClass* StaticClass()

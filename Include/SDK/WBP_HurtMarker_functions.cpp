@@ -17,20 +17,6 @@
 namespace SDK
 {
 
-// Function WBP_HurtMarker.WBP_HurtMarker_C.PlayHurtMarkerAnimation
-// (Event, Protected, BlueprintEvent)
-
-void UWBP_HurtMarker_C::PlayHurtMarkerAnimation()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_HurtMarker_C", "PlayHurtMarkerAnimation");
-
-	UObject::ProcessEvent(Func, nullptr);
-}
-
-
 // Function WBP_HurtMarker.WBP_HurtMarker_C.ExecuteUbergraph_WBP_HurtMarker
 // (Final, UbergraphFunction)
 // Parameters:
@@ -48,6 +34,20 @@ void UWBP_HurtMarker_C::ExecuteUbergraph_WBP_HurtMarker(int32 EntryPoint)
 	Parms.EntryPoint = EntryPoint;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_HurtMarker.WBP_HurtMarker_C.PlayHurtMarkerAnimation
+// (Event, Protected, BlueprintEvent)
+
+void UWBP_HurtMarker_C::PlayHurtMarkerAnimation()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_HurtMarker_C", "PlayHurtMarkerAnimation");
+
+	UObject::ProcessEvent(Func, nullptr);
 }
 
 }

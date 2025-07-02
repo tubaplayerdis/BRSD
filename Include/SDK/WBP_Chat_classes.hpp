@@ -27,9 +27,9 @@ public:
 	class UBrickBorder*                           WarningBorder;                                     // 0x02B8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void UpdateIsFocused(bool bNewFocused);
-	void UpdateIsTyping(bool bNewTyping);
 	void ExecuteUbergraph_WBP_Chat(int32 EntryPoint);
+	void UpdateIsTyping(bool bNewTyping);
+	void UpdateIsFocused(bool bNewFocused);
 
 public:
 	static class UClass* StaticClass()

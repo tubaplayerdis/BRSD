@@ -20,302 +20,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_GameOverlay.WBP_GameOverlay_C.AddHUDNotification
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_GameOverlay_C_AddHUDNotification final
-{
-public:
-	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Index_0;                                           // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_GameOverlay_C_AddHUDNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_AddHUDNotification");
-static_assert(sizeof(WBP_GameOverlay_C_AddHUDNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_AddHUDNotification");
-static_assert(offsetof(WBP_GameOverlay_C_AddHUDNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_AddHUDNotification::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_AddHUDNotification, Index_0) == 0x000008, "Member 'WBP_GameOverlay_C_AddHUDNotification::Index_0' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateSlomoNotification
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_GameOverlay_C_UpdateSlomoNotification final
-{
-public:
-	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         SlomoSpeed;                                        // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bInvertSpeed;                                      // 0x000C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bSlomoEnabled;                                     // 0x000D(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bIsPaused;                                         // 0x000E(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_GameOverlay_C_UpdateSlomoNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateSlomoNotification");
-static_assert(sizeof(WBP_GameOverlay_C_UpdateSlomoNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateSlomoNotification");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateSlomoNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateSlomoNotification::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateSlomoNotification, SlomoSpeed) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateSlomoNotification::SlomoSpeed' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateSlomoNotification, bInvertSpeed) == 0x00000C, "Member 'WBP_GameOverlay_C_UpdateSlomoNotification::bInvertSpeed' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateSlomoNotification, bSlomoEnabled) == 0x00000D, "Member 'WBP_GameOverlay_C_UpdateSlomoNotification::bSlomoEnabled' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateSlomoNotification, bIsPaused) == 0x00000E, "Member 'WBP_GameOverlay_C_UpdateSlomoNotification::bIsPaused' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateMoneyNotification
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_GameOverlay_C_UpdateMoneyNotification final
-{
-public:
-	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         NewAmount;                                         // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         AmountAdded;                                       // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_GameOverlay_C_UpdateMoneyNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateMoneyNotification");
-static_assert(sizeof(WBP_GameOverlay_C_UpdateMoneyNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateMoneyNotification");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateMoneyNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateMoneyNotification::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateMoneyNotification, NewAmount) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateMoneyNotification::NewAmount' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateMoneyNotification, AmountAdded) == 0x00000C, "Member 'WBP_GameOverlay_C_UpdateMoneyNotification::AmountAdded' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateFreeCamNotification
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_GameOverlay_C_UpdateFreeCamNotification final
-{
-public:
-	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bIsInFreeCam;                                      // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	EFreeCamMode                                  InFreeCamMode;                                     // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bIsFixedCam;                                       // 0x000A(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_GameOverlay_C_UpdateFreeCamNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateFreeCamNotification");
-static_assert(sizeof(WBP_GameOverlay_C_UpdateFreeCamNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateFreeCamNotification");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateFreeCamNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateFreeCamNotification::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateFreeCamNotification, bIsInFreeCam) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateFreeCamNotification::bIsInFreeCam' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateFreeCamNotification, InFreeCamMode) == 0x000009, "Member 'WBP_GameOverlay_C_UpdateFreeCamNotification::InFreeCamMode' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateFreeCamNotification, bIsFixedCam) == 0x00000A, "Member 'WBP_GameOverlay_C_UpdateFreeCamNotification::bIsFixedCam' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateThumbnailNotification
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_GameOverlay_C_UpdateThumbnailNotification final
-{
-public:
-	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_GameOverlay_C_UpdateThumbnailNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateThumbnailNotification");
-static_assert(sizeof(WBP_GameOverlay_C_UpdateThumbnailNotification) == 0x000008, "Wrong size on WBP_GameOverlay_C_UpdateThumbnailNotification");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateThumbnailNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateThumbnailNotification::Widget' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.AddMatchTimerWidget
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_GameOverlay_C_AddMatchTimerWidget final
-{
-public:
-	class UMatchTimerWidget*                      Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_GameOverlay_C_AddMatchTimerWidget) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_AddMatchTimerWidget");
-static_assert(sizeof(WBP_GameOverlay_C_AddMatchTimerWidget) == 0x000008, "Wrong size on WBP_GameOverlay_C_AddMatchTimerWidget");
-static_assert(offsetof(WBP_GameOverlay_C_AddMatchTimerWidget, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_AddMatchTimerWidget::Widget' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateVehicleCameraNotification
-// 0x0020 (0x0020 - 0x0000)
-struct WBP_GameOverlay_C_UpdateVehicleCameraNotification final
-{
-public:
-	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FText                                   CameraDisplayName;                                 // 0x0008(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-};
-static_assert(alignof(WBP_GameOverlay_C_UpdateVehicleCameraNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateVehicleCameraNotification");
-static_assert(sizeof(WBP_GameOverlay_C_UpdateVehicleCameraNotification) == 0x000020, "Wrong size on WBP_GameOverlay_C_UpdateVehicleCameraNotification");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleCameraNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateVehicleCameraNotification::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleCameraNotification, CameraDisplayName) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateVehicleCameraNotification::CameraDisplayName' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateVehicleDownloadNotification
-// 0x0028 (0x0028 - 0x0000)
-struct WBP_GameOverlay_C_UpdateVehicleDownloadNotification final
-{
-public:
-	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FText                                   VehicleDisplayName;                                // 0x0008(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	float                                         Progress;                                          // 0x0020(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_GameOverlay_C_UpdateVehicleDownloadNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateVehicleDownloadNotification");
-static_assert(sizeof(WBP_GameOverlay_C_UpdateVehicleDownloadNotification) == 0x000028, "Wrong size on WBP_GameOverlay_C_UpdateVehicleDownloadNotification");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleDownloadNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateVehicleDownloadNotification::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleDownloadNotification, VehicleDisplayName) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateVehicleDownloadNotification::VehicleDisplayName' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleDownloadNotification, Progress) == 0x000020, "Member 'WBP_GameOverlay_C_UpdateVehicleDownloadNotification::Progress' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.AddInputHelpWidget
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_GameOverlay_C_AddInputHelpWidget final
-{
-public:
-	class UInputHelpWidget*                       Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_GameOverlay_C_AddInputHelpWidget) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_AddInputHelpWidget");
-static_assert(sizeof(WBP_GameOverlay_C_AddInputHelpWidget) == 0x000008, "Wrong size on WBP_GameOverlay_C_AddInputHelpWidget");
-static_assert(offsetof(WBP_GameOverlay_C_AddInputHelpWidget, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_AddInputHelpWidget::Widget' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.AddChatWidget
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_GameOverlay_C_AddChatWidget final
-{
-public:
-	class UChatWidget*                            Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_GameOverlay_C_AddChatWidget) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_AddChatWidget");
-static_assert(sizeof(WBP_GameOverlay_C_AddChatWidget) == 0x000008, "Wrong size on WBP_GameOverlay_C_AddChatWidget");
-static_assert(offsetof(WBP_GameOverlay_C_AddChatWidget, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_AddChatWidget::Widget' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateSaveNotification
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_GameOverlay_C_UpdateSaveNotification final
-{
-public:
-	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bSuccess;                                          // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bIsAutoSave;                                       // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_GameOverlay_C_UpdateSaveNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateSaveNotification");
-static_assert(sizeof(WBP_GameOverlay_C_UpdateSaveNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateSaveNotification");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateSaveNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateSaveNotification::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateSaveNotification, bSuccess) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateSaveNotification::bSuccess' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateSaveNotification, bIsAutoSave) == 0x000009, "Member 'WBP_GameOverlay_C_UpdateSaveNotification::bIsAutoSave' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateCameraSpeedNotification
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_GameOverlay_C_UpdateCameraSpeedNotification final
-{
-public:
-	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         NewSpeedRatio;                                     // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         NewMaxSpeed;                                       // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_GameOverlay_C_UpdateCameraSpeedNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateCameraSpeedNotification");
-static_assert(sizeof(WBP_GameOverlay_C_UpdateCameraSpeedNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateCameraSpeedNotification");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateCameraSpeedNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateCameraSpeedNotification::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateCameraSpeedNotification, NewSpeedRatio) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateCameraSpeedNotification::NewSpeedRatio' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateCameraSpeedNotification, NewMaxSpeed) == 0x00000C, "Member 'WBP_GameOverlay_C_UpdateCameraSpeedNotification::NewMaxSpeed' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateCameraZoomNotification
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_GameOverlay_C_UpdateCameraZoomNotification final
-{
-public:
-	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         NewZoomRatio;                                      // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_GameOverlay_C_UpdateCameraZoomNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateCameraZoomNotification");
-static_assert(sizeof(WBP_GameOverlay_C_UpdateCameraZoomNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateCameraZoomNotification");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateCameraZoomNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateCameraZoomNotification::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateCameraZoomNotification, NewZoomRatio) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateCameraZoomNotification::NewZoomRatio' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.AddMatchStateWidget
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_GameOverlay_C_AddMatchStateWidget final
-{
-public:
-	class UMatchStateWidget*                      Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_GameOverlay_C_AddMatchStateWidget) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_AddMatchStateWidget");
-static_assert(sizeof(WBP_GameOverlay_C_AddMatchStateWidget) == 0x000008, "Wrong size on WBP_GameOverlay_C_AddMatchStateWidget");
-static_assert(offsetof(WBP_GameOverlay_C_AddMatchStateWidget, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_AddMatchStateWidget::Widget' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.AddTeamScoreWidget
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_GameOverlay_C_AddTeamScoreWidget final
-{
-public:
-	class UTeamScoreWidget*                       Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETeamAttitude                                 TeamAttitude;                                      // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_GameOverlay_C_AddTeamScoreWidget) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_AddTeamScoreWidget");
-static_assert(sizeof(WBP_GameOverlay_C_AddTeamScoreWidget) == 0x000010, "Wrong size on WBP_GameOverlay_C_AddTeamScoreWidget");
-static_assert(offsetof(WBP_GameOverlay_C_AddTeamScoreWidget, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_AddTeamScoreWidget::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_AddTeamScoreWidget, TeamAttitude) == 0x000008, "Member 'WBP_GameOverlay_C_AddTeamScoreWidget::TeamAttitude' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateHUDVisibilityNotification
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_GameOverlay_C_UpdateHUDVisibilityNotification final
-{
-public:
-	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EHUDVisibility                                NewVisibility;                                     // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_GameOverlay_C_UpdateHUDVisibilityNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateHUDVisibilityNotification");
-static_assert(sizeof(WBP_GameOverlay_C_UpdateHUDVisibilityNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateHUDVisibilityNotification");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateHUDVisibilityNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateHUDVisibilityNotification::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateHUDVisibilityNotification, NewVisibility) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateHUDVisibilityNotification::NewVisibility' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateCameraModeNotification
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_GameOverlay_C_UpdateCameraModeNotification final
-{
-public:
-	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ECameraMode                                   NewMode;                                           // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_GameOverlay_C_UpdateCameraModeNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateCameraModeNotification");
-static_assert(sizeof(WBP_GameOverlay_C_UpdateCameraModeNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateCameraModeNotification");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateCameraModeNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateCameraModeNotification::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateCameraModeNotification, NewMode) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateCameraModeNotification::NewMode' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateProjectileCameraNotification
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_GameOverlay_C_UpdateProjectileCameraNotification final
-{
-public:
-	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bNewEnabled;                                       // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_GameOverlay_C_UpdateProjectileCameraNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateProjectileCameraNotification");
-static_assert(sizeof(WBP_GameOverlay_C_UpdateProjectileCameraNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateProjectileCameraNotification");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateProjectileCameraNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateProjectileCameraNotification::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateProjectileCameraNotification, bNewEnabled) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateProjectileCameraNotification::bNewEnabled' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateRestartFailedNotification
-// 0x0020 (0x0020 - 0x0000)
-struct WBP_GameOverlay_C_UpdateRestartFailedNotification final
-{
-public:
-	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FText                                   Message;                                           // 0x0008(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-};
-static_assert(alignof(WBP_GameOverlay_C_UpdateRestartFailedNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateRestartFailedNotification");
-static_assert(sizeof(WBP_GameOverlay_C_UpdateRestartFailedNotification) == 0x000020, "Wrong size on WBP_GameOverlay_C_UpdateRestartFailedNotification");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateRestartFailedNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateRestartFailedNotification::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateRestartFailedNotification, Message) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateRestartFailedNotification::Message' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateRespawnDelayNotification
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_GameOverlay_C_UpdateRespawnDelayNotification final
-{
-public:
-	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         Remaining;                                         // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_GameOverlay_C_UpdateRespawnDelayNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateRespawnDelayNotification");
-static_assert(sizeof(WBP_GameOverlay_C_UpdateRespawnDelayNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateRespawnDelayNotification");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateRespawnDelayNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateRespawnDelayNotification::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateRespawnDelayNotification, Remaining) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateRespawnDelayNotification::Remaining' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateVehicleSeatNotification
-// 0x0020 (0x0020 - 0x0000)
-struct WBP_GameOverlay_C_UpdateVehicleSeatNotification final
-{
-public:
-	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FText                                   SeatDisplayName;                                   // 0x0008(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-};
-static_assert(alignof(WBP_GameOverlay_C_UpdateVehicleSeatNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateVehicleSeatNotification");
-static_assert(sizeof(WBP_GameOverlay_C_UpdateVehicleSeatNotification) == 0x000020, "Wrong size on WBP_GameOverlay_C_UpdateVehicleSeatNotification");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleSeatNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateVehicleSeatNotification::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleSeatNotification, SeatDisplayName) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateVehicleSeatNotification::SeatDisplayName' has a wrong offset!");
-
-// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateVehicleConstructionNotification
-// 0x0028 (0x0028 - 0x0000)
-struct WBP_GameOverlay_C_UpdateVehicleConstructionNotification final
-{
-public:
-	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FText                                   VehicleDisplayName;                                // 0x0008(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	float                                         Progress;                                          // 0x0020(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_GameOverlay_C_UpdateVehicleConstructionNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateVehicleConstructionNotification");
-static_assert(sizeof(WBP_GameOverlay_C_UpdateVehicleConstructionNotification) == 0x000028, "Wrong size on WBP_GameOverlay_C_UpdateVehicleConstructionNotification");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleConstructionNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateVehicleConstructionNotification::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleConstructionNotification, VehicleDisplayName) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateVehicleConstructionNotification::VehicleDisplayName' has a wrong offset!");
-static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleConstructionNotification, Progress) == 0x000020, "Member 'WBP_GameOverlay_C_UpdateVehicleConstructionNotification::Progress' has a wrong offset!");
-
 // Function WBP_GameOverlay.WBP_GameOverlay_C.ExecuteUbergraph_WBP_GameOverlay
 // 0x0D88 (0x0D88 - 0x0000)
 struct WBP_GameOverlay_C_ExecuteUbergraph_WBP_GameOverlay final
@@ -769,6 +473,302 @@ static_assert(offsetof(WBP_GameOverlay_C_ExecuteUbergraph_WBP_GameOverlay, K2Nod
 static_assert(offsetof(WBP_GameOverlay_C_ExecuteUbergraph_WBP_GameOverlay, K2Node_MakeStruct_FormatArgumentData_18) == 0x000D20, "Member 'WBP_GameOverlay_C_ExecuteUbergraph_WBP_GameOverlay::K2Node_MakeStruct_FormatArgumentData_18' has a wrong offset!");
 static_assert(offsetof(WBP_GameOverlay_C_ExecuteUbergraph_WBP_GameOverlay, K2Node_MakeArray_Array_9) == 0x000D60, "Member 'WBP_GameOverlay_C_ExecuteUbergraph_WBP_GameOverlay::K2Node_MakeArray_Array_9' has a wrong offset!");
 static_assert(offsetof(WBP_GameOverlay_C_ExecuteUbergraph_WBP_GameOverlay, CallFunc_Format_ReturnValue_9) == 0x000D70, "Member 'WBP_GameOverlay_C_ExecuteUbergraph_WBP_GameOverlay::CallFunc_Format_ReturnValue_9' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateVehicleConstructionNotification
+// 0x0028 (0x0028 - 0x0000)
+struct WBP_GameOverlay_C_UpdateVehicleConstructionNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FText                                   VehicleDisplayName;                                // 0x0008(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	float                                         Progress;                                          // 0x0020(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_GameOverlay_C_UpdateVehicleConstructionNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateVehicleConstructionNotification");
+static_assert(sizeof(WBP_GameOverlay_C_UpdateVehicleConstructionNotification) == 0x000028, "Wrong size on WBP_GameOverlay_C_UpdateVehicleConstructionNotification");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleConstructionNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateVehicleConstructionNotification::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleConstructionNotification, VehicleDisplayName) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateVehicleConstructionNotification::VehicleDisplayName' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleConstructionNotification, Progress) == 0x000020, "Member 'WBP_GameOverlay_C_UpdateVehicleConstructionNotification::Progress' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateVehicleSeatNotification
+// 0x0020 (0x0020 - 0x0000)
+struct WBP_GameOverlay_C_UpdateVehicleSeatNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FText                                   SeatDisplayName;                                   // 0x0008(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+static_assert(alignof(WBP_GameOverlay_C_UpdateVehicleSeatNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateVehicleSeatNotification");
+static_assert(sizeof(WBP_GameOverlay_C_UpdateVehicleSeatNotification) == 0x000020, "Wrong size on WBP_GameOverlay_C_UpdateVehicleSeatNotification");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleSeatNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateVehicleSeatNotification::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleSeatNotification, SeatDisplayName) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateVehicleSeatNotification::SeatDisplayName' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateRespawnDelayNotification
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_GameOverlay_C_UpdateRespawnDelayNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         Remaining;                                         // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_GameOverlay_C_UpdateRespawnDelayNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateRespawnDelayNotification");
+static_assert(sizeof(WBP_GameOverlay_C_UpdateRespawnDelayNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateRespawnDelayNotification");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateRespawnDelayNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateRespawnDelayNotification::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateRespawnDelayNotification, Remaining) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateRespawnDelayNotification::Remaining' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateRestartFailedNotification
+// 0x0020 (0x0020 - 0x0000)
+struct WBP_GameOverlay_C_UpdateRestartFailedNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FText                                   Message;                                           // 0x0008(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+static_assert(alignof(WBP_GameOverlay_C_UpdateRestartFailedNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateRestartFailedNotification");
+static_assert(sizeof(WBP_GameOverlay_C_UpdateRestartFailedNotification) == 0x000020, "Wrong size on WBP_GameOverlay_C_UpdateRestartFailedNotification");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateRestartFailedNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateRestartFailedNotification::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateRestartFailedNotification, Message) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateRestartFailedNotification::Message' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateProjectileCameraNotification
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_GameOverlay_C_UpdateProjectileCameraNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bNewEnabled;                                       // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_GameOverlay_C_UpdateProjectileCameraNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateProjectileCameraNotification");
+static_assert(sizeof(WBP_GameOverlay_C_UpdateProjectileCameraNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateProjectileCameraNotification");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateProjectileCameraNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateProjectileCameraNotification::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateProjectileCameraNotification, bNewEnabled) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateProjectileCameraNotification::bNewEnabled' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateCameraModeNotification
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_GameOverlay_C_UpdateCameraModeNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ECameraMode                                   NewMode;                                           // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_GameOverlay_C_UpdateCameraModeNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateCameraModeNotification");
+static_assert(sizeof(WBP_GameOverlay_C_UpdateCameraModeNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateCameraModeNotification");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateCameraModeNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateCameraModeNotification::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateCameraModeNotification, NewMode) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateCameraModeNotification::NewMode' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateHUDVisibilityNotification
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_GameOverlay_C_UpdateHUDVisibilityNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EHUDVisibility                                NewVisibility;                                     // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_GameOverlay_C_UpdateHUDVisibilityNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateHUDVisibilityNotification");
+static_assert(sizeof(WBP_GameOverlay_C_UpdateHUDVisibilityNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateHUDVisibilityNotification");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateHUDVisibilityNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateHUDVisibilityNotification::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateHUDVisibilityNotification, NewVisibility) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateHUDVisibilityNotification::NewVisibility' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.AddTeamScoreWidget
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_GameOverlay_C_AddTeamScoreWidget final
+{
+public:
+	class UTeamScoreWidget*                       Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	ETeamAttitude                                 TeamAttitude;                                      // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_GameOverlay_C_AddTeamScoreWidget) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_AddTeamScoreWidget");
+static_assert(sizeof(WBP_GameOverlay_C_AddTeamScoreWidget) == 0x000010, "Wrong size on WBP_GameOverlay_C_AddTeamScoreWidget");
+static_assert(offsetof(WBP_GameOverlay_C_AddTeamScoreWidget, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_AddTeamScoreWidget::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_AddTeamScoreWidget, TeamAttitude) == 0x000008, "Member 'WBP_GameOverlay_C_AddTeamScoreWidget::TeamAttitude' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.AddMatchStateWidget
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_GameOverlay_C_AddMatchStateWidget final
+{
+public:
+	class UMatchStateWidget*                      Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_GameOverlay_C_AddMatchStateWidget) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_AddMatchStateWidget");
+static_assert(sizeof(WBP_GameOverlay_C_AddMatchStateWidget) == 0x000008, "Wrong size on WBP_GameOverlay_C_AddMatchStateWidget");
+static_assert(offsetof(WBP_GameOverlay_C_AddMatchStateWidget, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_AddMatchStateWidget::Widget' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateCameraZoomNotification
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_GameOverlay_C_UpdateCameraZoomNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         NewZoomRatio;                                      // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_GameOverlay_C_UpdateCameraZoomNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateCameraZoomNotification");
+static_assert(sizeof(WBP_GameOverlay_C_UpdateCameraZoomNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateCameraZoomNotification");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateCameraZoomNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateCameraZoomNotification::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateCameraZoomNotification, NewZoomRatio) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateCameraZoomNotification::NewZoomRatio' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateCameraSpeedNotification
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_GameOverlay_C_UpdateCameraSpeedNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         NewSpeedRatio;                                     // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         NewMaxSpeed;                                       // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_GameOverlay_C_UpdateCameraSpeedNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateCameraSpeedNotification");
+static_assert(sizeof(WBP_GameOverlay_C_UpdateCameraSpeedNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateCameraSpeedNotification");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateCameraSpeedNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateCameraSpeedNotification::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateCameraSpeedNotification, NewSpeedRatio) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateCameraSpeedNotification::NewSpeedRatio' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateCameraSpeedNotification, NewMaxSpeed) == 0x00000C, "Member 'WBP_GameOverlay_C_UpdateCameraSpeedNotification::NewMaxSpeed' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateSaveNotification
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_GameOverlay_C_UpdateSaveNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bSuccess;                                          // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bIsAutoSave;                                       // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_GameOverlay_C_UpdateSaveNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateSaveNotification");
+static_assert(sizeof(WBP_GameOverlay_C_UpdateSaveNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateSaveNotification");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateSaveNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateSaveNotification::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateSaveNotification, bSuccess) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateSaveNotification::bSuccess' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateSaveNotification, bIsAutoSave) == 0x000009, "Member 'WBP_GameOverlay_C_UpdateSaveNotification::bIsAutoSave' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.AddChatWidget
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_GameOverlay_C_AddChatWidget final
+{
+public:
+	class UChatWidget*                            Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_GameOverlay_C_AddChatWidget) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_AddChatWidget");
+static_assert(sizeof(WBP_GameOverlay_C_AddChatWidget) == 0x000008, "Wrong size on WBP_GameOverlay_C_AddChatWidget");
+static_assert(offsetof(WBP_GameOverlay_C_AddChatWidget, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_AddChatWidget::Widget' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.AddInputHelpWidget
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_GameOverlay_C_AddInputHelpWidget final
+{
+public:
+	class UInputHelpWidget*                       Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_GameOverlay_C_AddInputHelpWidget) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_AddInputHelpWidget");
+static_assert(sizeof(WBP_GameOverlay_C_AddInputHelpWidget) == 0x000008, "Wrong size on WBP_GameOverlay_C_AddInputHelpWidget");
+static_assert(offsetof(WBP_GameOverlay_C_AddInputHelpWidget, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_AddInputHelpWidget::Widget' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateVehicleDownloadNotification
+// 0x0028 (0x0028 - 0x0000)
+struct WBP_GameOverlay_C_UpdateVehicleDownloadNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FText                                   VehicleDisplayName;                                // 0x0008(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	float                                         Progress;                                          // 0x0020(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_GameOverlay_C_UpdateVehicleDownloadNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateVehicleDownloadNotification");
+static_assert(sizeof(WBP_GameOverlay_C_UpdateVehicleDownloadNotification) == 0x000028, "Wrong size on WBP_GameOverlay_C_UpdateVehicleDownloadNotification");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleDownloadNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateVehicleDownloadNotification::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleDownloadNotification, VehicleDisplayName) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateVehicleDownloadNotification::VehicleDisplayName' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleDownloadNotification, Progress) == 0x000020, "Member 'WBP_GameOverlay_C_UpdateVehicleDownloadNotification::Progress' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateVehicleCameraNotification
+// 0x0020 (0x0020 - 0x0000)
+struct WBP_GameOverlay_C_UpdateVehicleCameraNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FText                                   CameraDisplayName;                                 // 0x0008(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+static_assert(alignof(WBP_GameOverlay_C_UpdateVehicleCameraNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateVehicleCameraNotification");
+static_assert(sizeof(WBP_GameOverlay_C_UpdateVehicleCameraNotification) == 0x000020, "Wrong size on WBP_GameOverlay_C_UpdateVehicleCameraNotification");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleCameraNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateVehicleCameraNotification::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateVehicleCameraNotification, CameraDisplayName) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateVehicleCameraNotification::CameraDisplayName' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.AddMatchTimerWidget
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_GameOverlay_C_AddMatchTimerWidget final
+{
+public:
+	class UMatchTimerWidget*                      Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_GameOverlay_C_AddMatchTimerWidget) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_AddMatchTimerWidget");
+static_assert(sizeof(WBP_GameOverlay_C_AddMatchTimerWidget) == 0x000008, "Wrong size on WBP_GameOverlay_C_AddMatchTimerWidget");
+static_assert(offsetof(WBP_GameOverlay_C_AddMatchTimerWidget, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_AddMatchTimerWidget::Widget' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateThumbnailNotification
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_GameOverlay_C_UpdateThumbnailNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_GameOverlay_C_UpdateThumbnailNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateThumbnailNotification");
+static_assert(sizeof(WBP_GameOverlay_C_UpdateThumbnailNotification) == 0x000008, "Wrong size on WBP_GameOverlay_C_UpdateThumbnailNotification");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateThumbnailNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateThumbnailNotification::Widget' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateFreeCamNotification
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_GameOverlay_C_UpdateFreeCamNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsInFreeCam;                                      // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	EFreeCamMode                                  InFreeCamMode;                                     // 0x0009(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bIsFixedCam;                                       // 0x000A(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_GameOverlay_C_UpdateFreeCamNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateFreeCamNotification");
+static_assert(sizeof(WBP_GameOverlay_C_UpdateFreeCamNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateFreeCamNotification");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateFreeCamNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateFreeCamNotification::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateFreeCamNotification, bIsInFreeCam) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateFreeCamNotification::bIsInFreeCam' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateFreeCamNotification, InFreeCamMode) == 0x000009, "Member 'WBP_GameOverlay_C_UpdateFreeCamNotification::InFreeCamMode' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateFreeCamNotification, bIsFixedCam) == 0x00000A, "Member 'WBP_GameOverlay_C_UpdateFreeCamNotification::bIsFixedCam' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateMoneyNotification
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_GameOverlay_C_UpdateMoneyNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         NewAmount;                                         // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         AmountAdded;                                       // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_GameOverlay_C_UpdateMoneyNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateMoneyNotification");
+static_assert(sizeof(WBP_GameOverlay_C_UpdateMoneyNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateMoneyNotification");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateMoneyNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateMoneyNotification::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateMoneyNotification, NewAmount) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateMoneyNotification::NewAmount' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateMoneyNotification, AmountAdded) == 0x00000C, "Member 'WBP_GameOverlay_C_UpdateMoneyNotification::AmountAdded' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.UpdateSlomoNotification
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_GameOverlay_C_UpdateSlomoNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         SlomoSpeed;                                        // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bInvertSpeed;                                      // 0x000C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bSlomoEnabled;                                     // 0x000D(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bIsPaused;                                         // 0x000E(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_GameOverlay_C_UpdateSlomoNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_UpdateSlomoNotification");
+static_assert(sizeof(WBP_GameOverlay_C_UpdateSlomoNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_UpdateSlomoNotification");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateSlomoNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_UpdateSlomoNotification::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateSlomoNotification, SlomoSpeed) == 0x000008, "Member 'WBP_GameOverlay_C_UpdateSlomoNotification::SlomoSpeed' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateSlomoNotification, bInvertSpeed) == 0x00000C, "Member 'WBP_GameOverlay_C_UpdateSlomoNotification::bInvertSpeed' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateSlomoNotification, bSlomoEnabled) == 0x00000D, "Member 'WBP_GameOverlay_C_UpdateSlomoNotification::bSlomoEnabled' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_UpdateSlomoNotification, bIsPaused) == 0x00000E, "Member 'WBP_GameOverlay_C_UpdateSlomoNotification::bIsPaused' has a wrong offset!");
+
+// Function WBP_GameOverlay.WBP_GameOverlay_C.AddHUDNotification
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_GameOverlay_C_AddHUDNotification final
+{
+public:
+	class UHUDNotificationWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Index_0;                                           // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_GameOverlay_C_AddHUDNotification) == 0x000008, "Wrong alignment on WBP_GameOverlay_C_AddHUDNotification");
+static_assert(sizeof(WBP_GameOverlay_C_AddHUDNotification) == 0x000010, "Wrong size on WBP_GameOverlay_C_AddHUDNotification");
+static_assert(offsetof(WBP_GameOverlay_C_AddHUDNotification, Widget) == 0x000000, "Member 'WBP_GameOverlay_C_AddHUDNotification::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_GameOverlay_C_AddHUDNotification, Index_0) == 0x000008, "Member 'WBP_GameOverlay_C_AddHUDNotification::Index_0' has a wrong offset!");
 
 }
 

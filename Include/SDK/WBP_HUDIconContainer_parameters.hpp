@@ -14,28 +14,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_HUDIconContainer.WBP_HUDIconContainer_C.AddInteractionWidget
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_HUDIconContainer_C_AddInteractionWidget final
-{
-public:
-	class UInteractionWidget*                     Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_HUDIconContainer_C_AddInteractionWidget) == 0x000008, "Wrong alignment on WBP_HUDIconContainer_C_AddInteractionWidget");
-static_assert(sizeof(WBP_HUDIconContainer_C_AddInteractionWidget) == 0x000008, "Wrong size on WBP_HUDIconContainer_C_AddInteractionWidget");
-static_assert(offsetof(WBP_HUDIconContainer_C_AddInteractionWidget, Widget) == 0x000000, "Member 'WBP_HUDIconContainer_C_AddInteractionWidget::Widget' has a wrong offset!");
-
-// Function WBP_HUDIconContainer.WBP_HUDIconContainer_C.AddCrosshairWidgets
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_HUDIconContainer_C_AddCrosshairWidgets final
-{
-public:
-	TArray<class UMapCrosshairWidget*>            Widgets;                                           // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
-};
-static_assert(alignof(WBP_HUDIconContainer_C_AddCrosshairWidgets) == 0x000008, "Wrong alignment on WBP_HUDIconContainer_C_AddCrosshairWidgets");
-static_assert(sizeof(WBP_HUDIconContainer_C_AddCrosshairWidgets) == 0x000010, "Wrong size on WBP_HUDIconContainer_C_AddCrosshairWidgets");
-static_assert(offsetof(WBP_HUDIconContainer_C_AddCrosshairWidgets, Widgets) == 0x000000, "Member 'WBP_HUDIconContainer_C_AddCrosshairWidgets::Widgets' has a wrong offset!");
-
 // Function WBP_HUDIconContainer.WBP_HUDIconContainer_C.ExecuteUbergraph_WBP_HUDIconContainer
 // 0x0050 (0x0050 - 0x0000)
 struct WBP_HUDIconContainer_C_ExecuteUbergraph_WBP_HUDIconContainer final
@@ -66,6 +44,28 @@ static_assert(offsetof(WBP_HUDIconContainer_C_ExecuteUbergraph_WBP_HUDIconContai
 static_assert(offsetof(WBP_HUDIconContainer_C_ExecuteUbergraph_WBP_HUDIconContainer, CallFunc_Array_Get_Item_1) == 0x000038, "Member 'WBP_HUDIconContainer_C_ExecuteUbergraph_WBP_HUDIconContainer::CallFunc_Array_Get_Item_1' has a wrong offset!");
 static_assert(offsetof(WBP_HUDIconContainer_C_ExecuteUbergraph_WBP_HUDIconContainer, CallFunc_MakeLiteralByte_ReturnValue_1) == 0x000040, "Member 'WBP_HUDIconContainer_C_ExecuteUbergraph_WBP_HUDIconContainer::CallFunc_MakeLiteralByte_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(WBP_HUDIconContainer_C_ExecuteUbergraph_WBP_HUDIconContainer, CallFunc_AddChildToGrid_ReturnValue_2) == 0x000048, "Member 'WBP_HUDIconContainer_C_ExecuteUbergraph_WBP_HUDIconContainer::CallFunc_AddChildToGrid_ReturnValue_2' has a wrong offset!");
+
+// Function WBP_HUDIconContainer.WBP_HUDIconContainer_C.AddCrosshairWidgets
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_HUDIconContainer_C_AddCrosshairWidgets final
+{
+public:
+	TArray<class UMapCrosshairWidget*>            Widgets;                                           // 0x0000(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, ContainsInstancedReference)
+};
+static_assert(alignof(WBP_HUDIconContainer_C_AddCrosshairWidgets) == 0x000008, "Wrong alignment on WBP_HUDIconContainer_C_AddCrosshairWidgets");
+static_assert(sizeof(WBP_HUDIconContainer_C_AddCrosshairWidgets) == 0x000010, "Wrong size on WBP_HUDIconContainer_C_AddCrosshairWidgets");
+static_assert(offsetof(WBP_HUDIconContainer_C_AddCrosshairWidgets, Widgets) == 0x000000, "Member 'WBP_HUDIconContainer_C_AddCrosshairWidgets::Widgets' has a wrong offset!");
+
+// Function WBP_HUDIconContainer.WBP_HUDIconContainer_C.AddInteractionWidget
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_HUDIconContainer_C_AddInteractionWidget final
+{
+public:
+	class UInteractionWidget*                     Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_HUDIconContainer_C_AddInteractionWidget) == 0x000008, "Wrong alignment on WBP_HUDIconContainer_C_AddInteractionWidget");
+static_assert(sizeof(WBP_HUDIconContainer_C_AddInteractionWidget) == 0x000008, "Wrong size on WBP_HUDIconContainer_C_AddInteractionWidget");
+static_assert(offsetof(WBP_HUDIconContainer_C_AddInteractionWidget, Widget) == 0x000000, "Member 'WBP_HUDIconContainer_C_AddInteractionWidget::Widget' has a wrong offset!");
 
 }
 

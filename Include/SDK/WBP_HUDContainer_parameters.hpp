@@ -16,28 +16,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_HUDContainer.WBP_HUDContainer_C.AddGameOverlayWidget
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_HUDContainer_C_AddGameOverlayWidget final
-{
-public:
-	class UGameOverlayWidget*                     Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_HUDContainer_C_AddGameOverlayWidget) == 0x000008, "Wrong alignment on WBP_HUDContainer_C_AddGameOverlayWidget");
-static_assert(sizeof(WBP_HUDContainer_C_AddGameOverlayWidget) == 0x000008, "Wrong size on WBP_HUDContainer_C_AddGameOverlayWidget");
-static_assert(offsetof(WBP_HUDContainer_C_AddGameOverlayWidget, Widget) == 0x000000, "Member 'WBP_HUDContainer_C_AddGameOverlayWidget::Widget' has a wrong offset!");
-
-// Function WBP_HUDContainer.WBP_HUDContainer_C.AddHUDWidget
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_HUDContainer_C_AddHUDWidget final
-{
-public:
-	class UUserWidget*                            Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_HUDContainer_C_AddHUDWidget) == 0x000008, "Wrong alignment on WBP_HUDContainer_C_AddHUDWidget");
-static_assert(sizeof(WBP_HUDContainer_C_AddHUDWidget) == 0x000008, "Wrong size on WBP_HUDContainer_C_AddHUDWidget");
-static_assert(offsetof(WBP_HUDContainer_C_AddHUDWidget, Widget) == 0x000000, "Member 'WBP_HUDContainer_C_AddHUDWidget::Widget' has a wrong offset!");
-
 // Function WBP_HUDContainer.WBP_HUDContainer_C.ExecuteUbergraph_WBP_HUDContainer
 // 0x0048 (0x0048 - 0x0000)
 struct WBP_HUDContainer_C_ExecuteUbergraph_WBP_HUDContainer final
@@ -61,6 +39,28 @@ static_assert(offsetof(WBP_HUDContainer_C_ExecuteUbergraph_WBP_HUDContainer, K2N
 static_assert(offsetof(WBP_HUDContainer_C_ExecuteUbergraph_WBP_HUDContainer, K2Node_Event_Widget) == 0x000030, "Member 'WBP_HUDContainer_C_ExecuteUbergraph_WBP_HUDContainer::K2Node_Event_Widget' has a wrong offset!");
 static_assert(offsetof(WBP_HUDContainer_C_ExecuteUbergraph_WBP_HUDContainer, CallFunc_AddChildToCanvas_ReturnValue) == 0x000038, "Member 'WBP_HUDContainer_C_ExecuteUbergraph_WBP_HUDContainer::CallFunc_AddChildToCanvas_ReturnValue' has a wrong offset!");
 static_assert(offsetof(WBP_HUDContainer_C_ExecuteUbergraph_WBP_HUDContainer, CallFunc_AddChildToCanvas_ReturnValue_1) == 0x000040, "Member 'WBP_HUDContainer_C_ExecuteUbergraph_WBP_HUDContainer::CallFunc_AddChildToCanvas_ReturnValue_1' has a wrong offset!");
+
+// Function WBP_HUDContainer.WBP_HUDContainer_C.AddHUDWidget
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_HUDContainer_C_AddHUDWidget final
+{
+public:
+	class UUserWidget*                            Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_HUDContainer_C_AddHUDWidget) == 0x000008, "Wrong alignment on WBP_HUDContainer_C_AddHUDWidget");
+static_assert(sizeof(WBP_HUDContainer_C_AddHUDWidget) == 0x000008, "Wrong size on WBP_HUDContainer_C_AddHUDWidget");
+static_assert(offsetof(WBP_HUDContainer_C_AddHUDWidget, Widget) == 0x000000, "Member 'WBP_HUDContainer_C_AddHUDWidget::Widget' has a wrong offset!");
+
+// Function WBP_HUDContainer.WBP_HUDContainer_C.AddGameOverlayWidget
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_HUDContainer_C_AddGameOverlayWidget final
+{
+public:
+	class UGameOverlayWidget*                     Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_HUDContainer_C_AddGameOverlayWidget) == 0x000008, "Wrong alignment on WBP_HUDContainer_C_AddGameOverlayWidget");
+static_assert(sizeof(WBP_HUDContainer_C_AddGameOverlayWidget) == 0x000008, "Wrong size on WBP_HUDContainer_C_AddGameOverlayWidget");
+static_assert(offsetof(WBP_HUDContainer_C_AddGameOverlayWidget, Widget) == 0x000000, "Member 'WBP_HUDContainer_C_AddGameOverlayWidget::Widget' has a wrong offset!");
 
 }
 

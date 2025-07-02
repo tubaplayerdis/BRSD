@@ -30,10 +30,10 @@ public:
 	class UWBP_BrickSliderReadOnly_C*             HealthSlider;                                      // 0x0290(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void UpdateHealth(float NewHealth);
-	void UpdateCanBeDamaged(bool bNewCanBeDamaged);
-	void UpdateHealingState(ECharacterHealingState NewState);
 	void ExecuteUbergraph_WBP_HealthBar(int32 EntryPoint);
+	void UpdateHealingState(ECharacterHealingState NewState);
+	void UpdateCanBeDamaged(bool bNewCanBeDamaged);
+	void UpdateHealth(float NewHealth);
 
 public:
 	static class UClass* StaticClass()

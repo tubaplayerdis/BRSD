@@ -14,19 +14,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_Interaction.WBP_Interaction_C.AddOptionWidget
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_Interaction_C_AddOptionWidget final
-{
-public:
-	class UInteractionOptionWidget*               Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         OptionIndex;                                       // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_Interaction_C_AddOptionWidget) == 0x000008, "Wrong alignment on WBP_Interaction_C_AddOptionWidget");
-static_assert(sizeof(WBP_Interaction_C_AddOptionWidget) == 0x000010, "Wrong size on WBP_Interaction_C_AddOptionWidget");
-static_assert(offsetof(WBP_Interaction_C_AddOptionWidget, Widget) == 0x000000, "Member 'WBP_Interaction_C_AddOptionWidget::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_Interaction_C_AddOptionWidget, OptionIndex) == 0x000008, "Member 'WBP_Interaction_C_AddOptionWidget::OptionIndex' has a wrong offset!");
-
 // Function WBP_Interaction.WBP_Interaction_C.ExecuteUbergraph_WBP_Interaction
 // 0x0020 (0x0020 - 0x0000)
 struct WBP_Interaction_C_ExecuteUbergraph_WBP_Interaction final
@@ -45,6 +32,19 @@ static_assert(offsetof(WBP_Interaction_C_ExecuteUbergraph_WBP_Interaction, Entry
 static_assert(offsetof(WBP_Interaction_C_ExecuteUbergraph_WBP_Interaction, K2Node_Event_Widget) == 0x000008, "Member 'WBP_Interaction_C_ExecuteUbergraph_WBP_Interaction::K2Node_Event_Widget' has a wrong offset!");
 static_assert(offsetof(WBP_Interaction_C_ExecuteUbergraph_WBP_Interaction, K2Node_Event_OptionIndex) == 0x000010, "Member 'WBP_Interaction_C_ExecuteUbergraph_WBP_Interaction::K2Node_Event_OptionIndex' has a wrong offset!");
 static_assert(offsetof(WBP_Interaction_C_ExecuteUbergraph_WBP_Interaction, CallFunc_AddChildToVerticalBox_ReturnValue) == 0x000018, "Member 'WBP_Interaction_C_ExecuteUbergraph_WBP_Interaction::CallFunc_AddChildToVerticalBox_ReturnValue' has a wrong offset!");
+
+// Function WBP_Interaction.WBP_Interaction_C.AddOptionWidget
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_Interaction_C_AddOptionWidget final
+{
+public:
+	class UInteractionOptionWidget*               Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         OptionIndex;                                       // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_Interaction_C_AddOptionWidget) == 0x000008, "Wrong alignment on WBP_Interaction_C_AddOptionWidget");
+static_assert(sizeof(WBP_Interaction_C_AddOptionWidget) == 0x000010, "Wrong size on WBP_Interaction_C_AddOptionWidget");
+static_assert(offsetof(WBP_Interaction_C_AddOptionWidget, Widget) == 0x000000, "Member 'WBP_Interaction_C_AddOptionWidget::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_Interaction_C_AddOptionWidget, OptionIndex) == 0x000008, "Member 'WBP_Interaction_C_AddOptionWidget::OptionIndex' has a wrong offset!");
 
 }
 

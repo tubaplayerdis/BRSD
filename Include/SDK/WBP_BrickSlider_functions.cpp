@@ -17,39 +17,97 @@
 namespace SDK
 {
 
-// Function WBP_BrickSlider.WBP_BrickSlider_C.PoolAllModifierHintWidgets
-// (Public, BlueprintCallable, BlueprintEvent)
+// Function WBP_BrickSlider.WBP_BrickSlider_C.ExecuteUbergraph_WBP_BrickSlider
+// (Final, UbergraphFunction, HasDefaults)
+// Parameters:
+// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_BrickSlider_C::PoolAllModifierHintWidgets()
+void UWBP_BrickSlider_C::ExecuteUbergraph_WBP_BrickSlider(int32 EntryPoint)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BrickSlider_C", "PoolAllModifierHintWidgets");
+		Func = Class->GetFunction("WBP_BrickSlider_C", "ExecuteUbergraph_WBP_BrickSlider");
+
+	Params::WBP_BrickSlider_C_ExecuteUbergraph_WBP_BrickSlider Parms{};
+
+	Parms.EntryPoint = EntryPoint;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_BrickSlider.WBP_BrickSlider_C.Destruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+
+void UWBP_BrickSlider_C::Destruct()
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_BrickSlider_C", "Destruct");
 
 	UObject::ProcessEvent(Func, nullptr);
 }
 
 
-// Function WBP_BrickSlider.WBP_BrickSlider_C.PoolModifierHintWidget
-// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
+// Function WBP_BrickSlider.WBP_BrickSlider_C.UpdateIsDragging
+// (Event, Protected, BlueprintEvent)
 // Parameters:
-// class UInputKeyWidget*&                 Widget                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// const bool                              bIsDragging                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
 
-void UWBP_BrickSlider_C::PoolModifierHintWidget(class UInputKeyWidget*& Widget)
+void UWBP_BrickSlider_C::UpdateIsDragging(const bool bIsDragging)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BrickSlider_C", "PoolModifierHintWidget");
+		Func = Class->GetFunction("WBP_BrickSlider_C", "UpdateIsDragging");
 
-	Params::WBP_BrickSlider_C_PoolModifierHintWidget Parms{};
+	Params::WBP_BrickSlider_C_UpdateIsDragging Parms{};
 
-	Parms.Widget = Widget;
+	Parms.bIsDragging = bIsDragging;
 
 	UObject::ProcessEvent(Func, &Parms);
+}
 
-	Widget = Parms.Widget;
+
+// Function WBP_BrickSlider.WBP_BrickSlider_C.PreConstruct
+// (BlueprintCosmetic, Event, Public, BlueprintEvent)
+// Parameters:
+// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+
+void UWBP_BrickSlider_C::PreConstruct(bool IsDesignTime)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_BrickSlider_C", "PreConstruct");
+
+	Params::WBP_BrickSlider_C_PreConstruct Parms{};
+
+	Parms.IsDesignTime = IsDesignTime;
+
+	UObject::ProcessEvent(Func, &Parms);
+}
+
+
+// Function WBP_BrickSlider.WBP_BrickSlider_C.UpdateSliderPosition
+// (Event, Protected, BlueprintEvent)
+// Parameters:
+// float                                   NewValue                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+
+void UWBP_BrickSlider_C::UpdateSliderPosition(float NewValue)
+{
+	static class UFunction* Func = nullptr;
+
+	if (Func == nullptr)
+		Func = Class->GetFunction("WBP_BrickSlider_C", "UpdateSliderPosition");
+
+	Params::WBP_BrickSlider_C_UpdateSliderPosition Parms{};
+
+	Parms.NewValue = NewValue;
+
+	UObject::ProcessEvent(Func, &Parms);
 }
 
 
@@ -83,97 +141,39 @@ void UWBP_BrickSlider_C::CreateModifierHintWidget(class UInputKeyWidget*& Widget
 }
 
 
-// Function WBP_BrickSlider.WBP_BrickSlider_C.UpdateSliderPosition
-// (Event, Protected, BlueprintEvent)
+// Function WBP_BrickSlider.WBP_BrickSlider_C.PoolModifierHintWidget
+// (Public, HasOutParams, BlueprintCallable, BlueprintEvent)
 // Parameters:
-// float                                   NewValue                                               (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+// class UInputKeyWidget*&                 Widget                                                 (BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, InstancedReference, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
-void UWBP_BrickSlider_C::UpdateSliderPosition(float NewValue)
+void UWBP_BrickSlider_C::PoolModifierHintWidget(class UInputKeyWidget*& Widget)
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BrickSlider_C", "UpdateSliderPosition");
+		Func = Class->GetFunction("WBP_BrickSlider_C", "PoolModifierHintWidget");
 
-	Params::WBP_BrickSlider_C_UpdateSliderPosition Parms{};
+	Params::WBP_BrickSlider_C_PoolModifierHintWidget Parms{};
 
-	Parms.NewValue = NewValue;
+	Parms.Widget = Widget;
 
 	UObject::ProcessEvent(Func, &Parms);
+
+	Widget = Parms.Widget;
 }
 
 
-// Function WBP_BrickSlider.WBP_BrickSlider_C.PreConstruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-// Parameters:
-// bool                                    IsDesignTime                                           (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+// Function WBP_BrickSlider.WBP_BrickSlider_C.PoolAllModifierHintWidgets
+// (Public, BlueprintCallable, BlueprintEvent)
 
-void UWBP_BrickSlider_C::PreConstruct(bool IsDesignTime)
+void UWBP_BrickSlider_C::PoolAllModifierHintWidgets()
 {
 	static class UFunction* Func = nullptr;
 
 	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BrickSlider_C", "PreConstruct");
-
-	Params::WBP_BrickSlider_C_PreConstruct Parms{};
-
-	Parms.IsDesignTime = IsDesignTime;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_BrickSlider.WBP_BrickSlider_C.UpdateIsDragging
-// (Event, Protected, BlueprintEvent)
-// Parameters:
-// const bool                              bIsDragging                                            (ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-
-void UWBP_BrickSlider_C::UpdateIsDragging(const bool bIsDragging)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BrickSlider_C", "UpdateIsDragging");
-
-	Params::WBP_BrickSlider_C_UpdateIsDragging Parms{};
-
-	Parms.bIsDragging = bIsDragging;
-
-	UObject::ProcessEvent(Func, &Parms);
-}
-
-
-// Function WBP_BrickSlider.WBP_BrickSlider_C.Destruct
-// (BlueprintCosmetic, Event, Public, BlueprintEvent)
-
-void UWBP_BrickSlider_C::Destruct()
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BrickSlider_C", "Destruct");
+		Func = Class->GetFunction("WBP_BrickSlider_C", "PoolAllModifierHintWidgets");
 
 	UObject::ProcessEvent(Func, nullptr);
-}
-
-
-// Function WBP_BrickSlider.WBP_BrickSlider_C.ExecuteUbergraph_WBP_BrickSlider
-// (Final, UbergraphFunction, HasDefaults)
-// Parameters:
-// int32                                   EntryPoint                                             (BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-
-void UWBP_BrickSlider_C::ExecuteUbergraph_WBP_BrickSlider(int32 EntryPoint)
-{
-	static class UFunction* Func = nullptr;
-
-	if (Func == nullptr)
-		Func = Class->GetFunction("WBP_BrickSlider_C", "ExecuteUbergraph_WBP_BrickSlider");
-
-	Params::WBP_BrickSlider_C_ExecuteUbergraph_WBP_BrickSlider Parms{};
-
-	Parms.EntryPoint = EntryPoint;
-
-	UObject::ProcessEvent(Func, &Parms);
 }
 
 }

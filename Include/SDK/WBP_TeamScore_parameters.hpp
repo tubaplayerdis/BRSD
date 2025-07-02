@@ -18,41 +18,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_TeamScore.WBP_TeamScore_C.UpdateScore
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_TeamScore_C_UpdateScore final
-{
-public:
-	int32                                         NewScore;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         NewMaxScore;                                       // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_TeamScore_C_UpdateScore) == 0x000004, "Wrong alignment on WBP_TeamScore_C_UpdateScore");
-static_assert(sizeof(WBP_TeamScore_C_UpdateScore) == 0x000008, "Wrong size on WBP_TeamScore_C_UpdateScore");
-static_assert(offsetof(WBP_TeamScore_C_UpdateScore, NewScore) == 0x000000, "Member 'WBP_TeamScore_C_UpdateScore::NewScore' has a wrong offset!");
-static_assert(offsetof(WBP_TeamScore_C_UpdateScore, NewMaxScore) == 0x000004, "Member 'WBP_TeamScore_C_UpdateScore::NewMaxScore' has a wrong offset!");
-
-// Function WBP_TeamScore.WBP_TeamScore_C.UpdateTeamAttitude
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_TeamScore_C_UpdateTeamAttitude final
-{
-public:
-	ETeamAttitude                                 NewTeamAttitude;                                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_TeamScore_C_UpdateTeamAttitude) == 0x000001, "Wrong alignment on WBP_TeamScore_C_UpdateTeamAttitude");
-static_assert(sizeof(WBP_TeamScore_C_UpdateTeamAttitude) == 0x000001, "Wrong size on WBP_TeamScore_C_UpdateTeamAttitude");
-static_assert(offsetof(WBP_TeamScore_C_UpdateTeamAttitude, NewTeamAttitude) == 0x000000, "Member 'WBP_TeamScore_C_UpdateTeamAttitude::NewTeamAttitude' has a wrong offset!");
-
-// Function WBP_TeamScore.WBP_TeamScore_C.UpdateTeamIcon
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_TeamScore_C_UpdateTeamIcon final
-{
-public:
-	class UTexture2D*                             NewIcon;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_TeamScore_C_UpdateTeamIcon) == 0x000008, "Wrong alignment on WBP_TeamScore_C_UpdateTeamIcon");
-static_assert(sizeof(WBP_TeamScore_C_UpdateTeamIcon) == 0x000008, "Wrong size on WBP_TeamScore_C_UpdateTeamIcon");
-static_assert(offsetof(WBP_TeamScore_C_UpdateTeamIcon, NewIcon) == 0x000000, "Member 'WBP_TeamScore_C_UpdateTeamIcon::NewIcon' has a wrong offset!");
-
 // Function WBP_TeamScore.WBP_TeamScore_C.ExecuteUbergraph_WBP_TeamScore
 // 0x0108 (0x0108 - 0x0000)
 struct WBP_TeamScore_C_ExecuteUbergraph_WBP_TeamScore final
@@ -95,6 +60,41 @@ static_assert(offsetof(WBP_TeamScore_C_ExecuteUbergraph_WBP_TeamScore, K2Node_Ev
 static_assert(offsetof(WBP_TeamScore_C_ExecuteUbergraph_WBP_TeamScore, CallFunc_Format_ReturnValue) == 0x0000D0, "Member 'WBP_TeamScore_C_ExecuteUbergraph_WBP_TeamScore::CallFunc_Format_ReturnValue' has a wrong offset!");
 static_assert(offsetof(WBP_TeamScore_C_ExecuteUbergraph_WBP_TeamScore, CallFunc_EqualEqual_ObjectObject_ReturnValue) == 0x0000E8, "Member 'WBP_TeamScore_C_ExecuteUbergraph_WBP_TeamScore::CallFunc_EqualEqual_ObjectObject_ReturnValue' has a wrong offset!");
 static_assert(offsetof(WBP_TeamScore_C_ExecuteUbergraph_WBP_TeamScore, K2Node_Select_Default) == 0x0000F0, "Member 'WBP_TeamScore_C_ExecuteUbergraph_WBP_TeamScore::K2Node_Select_Default' has a wrong offset!");
+
+// Function WBP_TeamScore.WBP_TeamScore_C.UpdateTeamIcon
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_TeamScore_C_UpdateTeamIcon final
+{
+public:
+	class UTexture2D*                             NewIcon;                                           // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_TeamScore_C_UpdateTeamIcon) == 0x000008, "Wrong alignment on WBP_TeamScore_C_UpdateTeamIcon");
+static_assert(sizeof(WBP_TeamScore_C_UpdateTeamIcon) == 0x000008, "Wrong size on WBP_TeamScore_C_UpdateTeamIcon");
+static_assert(offsetof(WBP_TeamScore_C_UpdateTeamIcon, NewIcon) == 0x000000, "Member 'WBP_TeamScore_C_UpdateTeamIcon::NewIcon' has a wrong offset!");
+
+// Function WBP_TeamScore.WBP_TeamScore_C.UpdateTeamAttitude
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_TeamScore_C_UpdateTeamAttitude final
+{
+public:
+	ETeamAttitude                                 NewTeamAttitude;                                   // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_TeamScore_C_UpdateTeamAttitude) == 0x000001, "Wrong alignment on WBP_TeamScore_C_UpdateTeamAttitude");
+static_assert(sizeof(WBP_TeamScore_C_UpdateTeamAttitude) == 0x000001, "Wrong size on WBP_TeamScore_C_UpdateTeamAttitude");
+static_assert(offsetof(WBP_TeamScore_C_UpdateTeamAttitude, NewTeamAttitude) == 0x000000, "Member 'WBP_TeamScore_C_UpdateTeamAttitude::NewTeamAttitude' has a wrong offset!");
+
+// Function WBP_TeamScore.WBP_TeamScore_C.UpdateScore
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_TeamScore_C_UpdateScore final
+{
+public:
+	int32                                         NewScore;                                          // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         NewMaxScore;                                       // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_TeamScore_C_UpdateScore) == 0x000004, "Wrong alignment on WBP_TeamScore_C_UpdateScore");
+static_assert(sizeof(WBP_TeamScore_C_UpdateScore) == 0x000008, "Wrong size on WBP_TeamScore_C_UpdateScore");
+static_assert(offsetof(WBP_TeamScore_C_UpdateScore, NewScore) == 0x000000, "Member 'WBP_TeamScore_C_UpdateScore::NewScore' has a wrong offset!");
+static_assert(offsetof(WBP_TeamScore_C_UpdateScore, NewMaxScore) == 0x000004, "Member 'WBP_TeamScore_C_UpdateScore::NewMaxScore' has a wrong offset!");
 
 }
 

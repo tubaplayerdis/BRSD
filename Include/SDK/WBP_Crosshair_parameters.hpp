@@ -17,41 +17,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_Crosshair.WBP_Crosshair_C.PlayHitAnimation
-// 0x000C (0x000C - 0x0000)
-struct WBP_Crosshair_C_PlayHitAnimation final
-{
-public:
-	struct FClientDamageInfo                      DamageInfo;                                        // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
-};
-static_assert(alignof(WBP_Crosshair_C_PlayHitAnimation) == 0x000004, "Wrong alignment on WBP_Crosshair_C_PlayHitAnimation");
-static_assert(sizeof(WBP_Crosshair_C_PlayHitAnimation) == 0x00000C, "Wrong size on WBP_Crosshair_C_PlayHitAnimation");
-static_assert(offsetof(WBP_Crosshair_C_PlayHitAnimation, DamageInfo) == 0x000000, "Member 'WBP_Crosshair_C_PlayHitAnimation::DamageInfo' has a wrong offset!");
-
-// Function WBP_Crosshair.WBP_Crosshair_C.UpdateIsAttachingWinch
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_Crosshair_C_UpdateIsAttachingWinch final
-{
-public:
-	bool                                          bNewAttaching;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_Crosshair_C_UpdateIsAttachingWinch) == 0x000001, "Wrong alignment on WBP_Crosshair_C_UpdateIsAttachingWinch");
-static_assert(sizeof(WBP_Crosshair_C_UpdateIsAttachingWinch) == 0x000001, "Wrong size on WBP_Crosshair_C_UpdateIsAttachingWinch");
-static_assert(offsetof(WBP_Crosshair_C_UpdateIsAttachingWinch, bNewAttaching) == 0x000000, "Member 'WBP_Crosshair_C_UpdateIsAttachingWinch::bNewAttaching' has a wrong offset!");
-
-// Function WBP_Crosshair.WBP_Crosshair_C.UpdateWinchAttachment
-// 0x0002 (0x0002 - 0x0000)
-struct WBP_Crosshair_C_UpdateWinchAttachment final
-{
-public:
-	bool                                          bBlockingHit;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bWithinRange;                                      // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_Crosshair_C_UpdateWinchAttachment) == 0x000001, "Wrong alignment on WBP_Crosshair_C_UpdateWinchAttachment");
-static_assert(sizeof(WBP_Crosshair_C_UpdateWinchAttachment) == 0x000002, "Wrong size on WBP_Crosshair_C_UpdateWinchAttachment");
-static_assert(offsetof(WBP_Crosshair_C_UpdateWinchAttachment, bBlockingHit) == 0x000000, "Member 'WBP_Crosshair_C_UpdateWinchAttachment::bBlockingHit' has a wrong offset!");
-static_assert(offsetof(WBP_Crosshair_C_UpdateWinchAttachment, bWithinRange) == 0x000001, "Member 'WBP_Crosshair_C_UpdateWinchAttachment::bWithinRange' has a wrong offset!");
-
 // Function WBP_Crosshair.WBP_Crosshair_C.ExecuteUbergraph_WBP_Crosshair
 // 0x0048 (0x0048 - 0x0000)
 struct WBP_Crosshair_C_ExecuteUbergraph_WBP_Crosshair final
@@ -117,6 +82,41 @@ static_assert(offsetof(WBP_Crosshair_C_ExecuteUbergraph_WBP_Crosshair, K2Node_Ev
 static_assert(offsetof(WBP_Crosshair_C_ExecuteUbergraph_WBP_Crosshair, K2Node_Event_bWithinRange) == 0x00003E, "Member 'WBP_Crosshair_C_ExecuteUbergraph_WBP_Crosshair::K2Node_Event_bWithinRange' has a wrong offset!");
 static_assert(offsetof(WBP_Crosshair_C_ExecuteUbergraph_WBP_Crosshair, K2Node_Select_Default_3) == 0x00003F, "Member 'WBP_Crosshair_C_ExecuteUbergraph_WBP_Crosshair::K2Node_Select_Default_3' has a wrong offset!");
 static_assert(offsetof(WBP_Crosshair_C_ExecuteUbergraph_WBP_Crosshair, K2Node_Select_Default_4) == 0x000040, "Member 'WBP_Crosshair_C_ExecuteUbergraph_WBP_Crosshair::K2Node_Select_Default_4' has a wrong offset!");
+
+// Function WBP_Crosshair.WBP_Crosshair_C.UpdateWinchAttachment
+// 0x0002 (0x0002 - 0x0000)
+struct WBP_Crosshair_C_UpdateWinchAttachment final
+{
+public:
+	bool                                          bBlockingHit;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bWithinRange;                                      // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_Crosshair_C_UpdateWinchAttachment) == 0x000001, "Wrong alignment on WBP_Crosshair_C_UpdateWinchAttachment");
+static_assert(sizeof(WBP_Crosshair_C_UpdateWinchAttachment) == 0x000002, "Wrong size on WBP_Crosshair_C_UpdateWinchAttachment");
+static_assert(offsetof(WBP_Crosshair_C_UpdateWinchAttachment, bBlockingHit) == 0x000000, "Member 'WBP_Crosshair_C_UpdateWinchAttachment::bBlockingHit' has a wrong offset!");
+static_assert(offsetof(WBP_Crosshair_C_UpdateWinchAttachment, bWithinRange) == 0x000001, "Member 'WBP_Crosshair_C_UpdateWinchAttachment::bWithinRange' has a wrong offset!");
+
+// Function WBP_Crosshair.WBP_Crosshair_C.UpdateIsAttachingWinch
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_Crosshair_C_UpdateIsAttachingWinch final
+{
+public:
+	bool                                          bNewAttaching;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_Crosshair_C_UpdateIsAttachingWinch) == 0x000001, "Wrong alignment on WBP_Crosshair_C_UpdateIsAttachingWinch");
+static_assert(sizeof(WBP_Crosshair_C_UpdateIsAttachingWinch) == 0x000001, "Wrong size on WBP_Crosshair_C_UpdateIsAttachingWinch");
+static_assert(offsetof(WBP_Crosshair_C_UpdateIsAttachingWinch, bNewAttaching) == 0x000000, "Member 'WBP_Crosshair_C_UpdateIsAttachingWinch::bNewAttaching' has a wrong offset!");
+
+// Function WBP_Crosshair.WBP_Crosshair_C.PlayHitAnimation
+// 0x000C (0x000C - 0x0000)
+struct WBP_Crosshair_C_PlayHitAnimation final
+{
+public:
+	struct FClientDamageInfo                      DamageInfo;                                        // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm, NoDestructor)
+};
+static_assert(alignof(WBP_Crosshair_C_PlayHitAnimation) == 0x000004, "Wrong alignment on WBP_Crosshair_C_PlayHitAnimation");
+static_assert(sizeof(WBP_Crosshair_C_PlayHitAnimation) == 0x00000C, "Wrong size on WBP_Crosshair_C_PlayHitAnimation");
+static_assert(offsetof(WBP_Crosshair_C_PlayHitAnimation, DamageInfo) == 0x000000, "Member 'WBP_Crosshair_C_PlayHitAnimation::DamageInfo' has a wrong offset!");
 
 }
 
