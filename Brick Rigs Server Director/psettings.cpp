@@ -64,8 +64,12 @@ bool psettings::CreateCustomSettingsPage()
     //container->SetDesiredSizeInViewport(SDK::FVector2D(200, 200));
     //container->ForceLayoutPrepass();
 
-    SDK::UUserWidget* widget = CallGameFunction<SDK::UUserWidget*, SDK::UWorld*, SDK::TSubclassOf<SDK::UUserWidget>, SDK::FName>(0x141F83D40 - 0x141000000, World(), SDK::UBrickTextBoxWidget::StaticClass(), NAME(L"ohio"));
-    Initalize(static_cast<SDK::UBrickTextBoxWidget*>(widget));
+    SDK::UUserWidget* widget = WidgetU::CreateWidget(World(), SDK::UBrickTextBoxWidget::StaticClass(), NAME(L"OHIO"));
+    if (widget) {
+        std::cout << "grrr" << std::endl;
+        std::cout << widget->GetName() << std::endl;
+    }
+    //Initalize(static_cast<SDK::UBrickTextBoxWidget*>(widget));
     //CallGameFunction<void, SDK::UBrickTextBoxWidget*>(0x0DCCA00, static_cast<SDK::UBrickTextBoxWidget*>(widget));
     //CustomSettingsPage->AddChild(TextBox);
 

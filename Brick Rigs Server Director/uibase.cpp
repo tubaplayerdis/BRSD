@@ -12,6 +12,7 @@
 
 #include "uibase.h"
 #include "global.h"
+#include "Function.h"
 
 SDK::UWBP_WindowManager_C* GetWindowManager()
 {
@@ -99,4 +100,37 @@ void uibase::Cleanup()
 			panel->RemoveUnusedButtons();
 		}
 	}
+}
+
+SDK::UUserWidget* WidgetU::CreateWidget(SDK::UWorld* World, SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClass, SDK::FName WidgetName)
+{
+	if (addy == 0)
+	{
+		std::cout << "Calculating first time widget creation" << std::endl;
+		unsigned long long base = (unsigned long long)GetModuleHandle(NULL);
+		MODULEINFO modInfo = {};
+		GetModuleInformation(GetCurrentProcess(), GetModuleHandle(NULL), &modInfo, sizeof(modInfo));
+		unsigned __int64 size = modInfo.SizeOfImage;
+		unsigned __int64 patternLen = strlen(mask);
+		for (unsigned __int64 i = 0; i < size - patternLen; i++) {
+			bool found = true;
+
+			for (unsigned __int64 j = 0; j < patternLen; j++) {
+				if (mask[j] != '?' && signature[j] != *(char*)(base + i + j)) {
+					found = false;
+					break;
+				}
+			}
+
+			if (found) {
+				addy = base + i;
+				break;
+			}
+
+		}
+	}
+
+	if (addy == 0) { std::cout << "boom!" << std::endl; return nullptr; }
+
+	return CallGameFunctionO<SDK::UUserWidget*, SDK::UWorld*, SDK::TSubclassOf<SDK::UUserWidget>, SDK::FName>(addy, World, UserWidgetClass, WidgetName);
 }

@@ -23,6 +23,14 @@ namespace uibase
 	void Cleanup();
 }
 
+namespace WidgetU
+{
+	inline const char* signature = "\x48\x89\x5C\x24\x08\x48\x89\x6C\x24\x10\x48\x89\x74\x24\x18\x57\x48\x83\xEC\x30\x48\x8B\xA9\x80\x01\x00\x00";
+	inline const char* mask = "xxxxxxxxxxxxxxxxxxxxxxxxxxx";
+	inline unsigned long long addy = 0;
+	SDK::UUserWidget* CreateWidget(SDK::UWorld* World, SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClass, SDK::FName WidgetName);
+}
+
 SDK::UWBP_WindowManager_C* GetWindowManager();
 SDK::UPanelWidget* GetRootWidgetPanel();
 SDK::UCanvasPanel* GetCanvasPanel();
