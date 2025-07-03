@@ -13,6 +13,7 @@
 #include "uibase.h"
 #include "global.h"
 #include "Function.h"
+#include "offsets.h"
 
 SDK::UWBP_WindowManager_C* GetWindowManager()
 {
@@ -104,15 +105,12 @@ void uibase::Cleanup()
 
 SDK::UUserWidget* WidgetU::CreateWidget(SDK::UWorld* World, SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClass, SDK::FName WidgetName)
 {
-	if (addy == 0)
-	{
-		std::cout << "Calculating first time widget creation" << std::endl;
-		addy = FindPatternF(signature, mask);
+
+	if (UserWidgetClass == nullptr) {
+		GetMenu()->OnClickedAdminSettings();
+		GetMenu()->OnClickedBack();
+		//This is so hacky and stupid i hate this but Unreal Engine leaves me no alternatives what is wrong with you unreal engine.
 	}
 
-	if (addy == 0) { std::cout << "Failed to find CreateWidget Signature!" << std::endl; return nullptr; }
-
-	std::cout << "Calling Game Function!" << std::endl;
-
-	return CallGameFunctionO<SDK::UUserWidget*, SDK::UWorld*, SDK::TSubclassOf<SDK::UUserWidget>, SDK::FName>(addy, World, UserWidgetClass, WidgetName);
+	return CallGameFunction<SDK::UUserWidget*, SDK::UWorld*, SDK::TSubclassOf<SDK::UUserWidget>, SDK::FName>(OCreateWidget, World, UserWidgetClass, WidgetName);
 }

@@ -443,11 +443,8 @@
     <ClInclude Include="OpenMenu.h">
       <Filter>Header Files\hooks\ui</Filter>
     </ClInclude>
-    <ClInclude Include="StaticLoadClass.h">
-      <Filter>Header Files\hooks\global</Filter>
-    </ClInclude>
-    <ClInclude Include="FullyLoad.h">
-      <Filter>Header Files\hooks\global</Filter>
+    <ClInclude Include="offsets.h">
+      <Filter>Header Files\global</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

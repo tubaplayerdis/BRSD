@@ -14,6 +14,7 @@
 #include <SDK.hpp>
 #include "Function.h"
 #include "uibase.h"
+#include "offsets.h"
 
 namespace FLinearColor
 {
@@ -77,12 +78,12 @@ namespace FBrickChatMessage
 
 inline void SynchronizeProperties(SDK::UBrickBorder* This)
 {
-	return CallGameFunction<void, SDK::UBrickBorder*>(0x0DE8030, This);
+	return CallGameFunction<void, SDK::UBrickBorder*>(OSynchronizeProperties_UBB, This);
 }
 
 inline void SynchronizeProperties(SDK::UBrickScrollBox* This)
 {
-	return CallGameFunction<void, SDK::UBrickScrollBox*>(0x0DE9250, This);
+	return CallGameFunction<void, SDK::UBrickScrollBox*>(OSynchronizeProperties_UBSB, This);
 }
 
 inline char Initalize(SDK::UUserWidget* widget)
@@ -90,7 +91,7 @@ inline char Initalize(SDK::UUserWidget* widget)
 	if (!widget) return false;
 	using InitalizeFn = bool(__fastcall*)(SDK::UUserWidget*);
 	void** vtable = *(void***)widget;
-	InitalizeFn InitalizeFunc = reinterpret_cast<InitalizeFn>(vtable[0x2D0 / 8]);
+	InitalizeFn InitalizeFunc = reinterpret_cast<InitalizeFn>(vtable[VOInitalize]);
 	return InitalizeFunc(widget);
 }
 
@@ -100,7 +101,7 @@ namespace UMainWidgetBase
 {
 	inline void UpdateInputMode(SDK::UMainWidgetBase* Base)
 	{
-		return CallGameFunction<void, SDK::UMainWidgetBase*>(0x0DEEB70, Base);
+		return CallGameFunction<void, SDK::UMainWidgetBase*>(OUpdateInputMode, Base);
 	}
 }
 
@@ -108,7 +109,7 @@ namespace UMenuWidget
 {
 	inline void OpenMenu(SDK::FName InMenu)
 	{
-		return CallGameFunction<void, SDK::UMenuWidget*, SDK::FName>(0x0D7AD00, GetMenu(), InMenu);
+		return CallGameFunction<void, SDK::UMenuWidget*, SDK::FName>(OOpenMenu, GetMenu(), InMenu);
 	}
 }
 
@@ -116,7 +117,7 @@ namespace UModHookSubsystem
 {
 	inline SDK::UModHookSubsystem* GetModHookSubsystem() 
 	{
-		return CallGameFunction<SDK::UModHookSubsystem*>(0x0D20EE0);
+		return CallGameFunction<SDK::UModHookSubsystem*>(OGetModHookSubsystem);
 	}
 }
 
@@ -127,7 +128,7 @@ namespace UNetDriver
 		if (!driver) return false;
 		using IsServerFn = bool(__fastcall*)(SDK::UNetDriver*);
 		void** vtable = *(void***)driver;
-		IsServerFn IsServerFunc = reinterpret_cast<IsServerFn>(vtable[0x378 / 8]);
+		IsServerFn IsServerFunc = reinterpret_cast<IsServerFn>(VOisServer);
 		return IsServerFunc(driver);
 	}
 }
