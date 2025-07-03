@@ -254,13 +254,8 @@ std::vector<uint8_t> global::GetFunctionBytecode(SDK::UClass* objectclass,std::s
 	std::cout << "Bytecode for" << Fn->GetName() << std::endl;
 	for (int i = 0; i < Fn->Script.Num(); ++i)
 	{
-		char buffer[3] = "??";
-		try {
-			sprintf_s(buffer, "%02X ", Fn->Script[i]);
-		} catch(...) {
-			std::cout << "Error buffering on bytecode decompilation." << std::endl;
-		}
-		std::cout << buffer << std::endl;
+		std::string s = std::format("{:02X} ", Fn->Script[i]);
+		std::cout << s << std::endl;
 		ret.push_back(Fn->Script[i]);
 	}
 	std::cout << std::endl;
@@ -285,4 +280,17 @@ bool global::classes::IsClassLoaded(SDK::UClass* classptr)
 	if (!classptr) return false;
 	if (!classptr->DefaultObject) return false;
 	return true;
+}
+
+void global::packages::FullyLoadPackage(SDK::UPackage* This)
+{
+	if (addy == 0)
+	{
+		std::cout << "Calculating first time load package" << std::endl;
+		addy = FindPatternF(signature, mask);
+	}
+
+	if (addy == 0) { std::cout << "Failed to find FullyLoadPackage signatue!" << std::endl; return; }
+
+	CallGameFunctionO<void, SDK::UPackage*>(addy, This);
 }
