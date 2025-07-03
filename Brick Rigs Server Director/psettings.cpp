@@ -56,10 +56,12 @@ bool psettings::CreateCustomSettingsPage()
     TextBorder->SetHorizontalAlignment(SDK::EHorizontalAlignment::HAlign_Center);
     TextBorder->SetVerticalAlignment(SDK::EVerticalAlignment::VAlign_Center);
     
+
     SDK::UWBP_PropertyContainer_C* container = Create(SDK::UWBP_PropertyContainer_C);
-    if (!container && !global::classes::IsClassLoaded(SDK::UWBP_PropertyContainer_C::StaticClass())) { 
+    if (!container) { 
         std::cout << "Had to load PropertyContainer!" << std::endl;
-        SDK::UClass* ret = global::classes::StaticLoadClass(SDK::UPropertyContainerWidget::StaticClass(), nullptr, L"/BrickRigs/UI/Properties/WBP_PropertyContainer.WBP_PropertyContainer_C", nullptr, 0, nullptr);
+        SDK::UClass* ret = global::classes::StaticLoadClass(SDK::UPropertyContainerWidget::StaticClass(), 0, L"/BrickRigs/UI/Properties/WBP_PropertyContainer.WBP_PropertyContainer_C", 0, 0, 0);
+        if (!ret) std::cout << "Bruh" << std::endl;
         container = static_cast<SDK::UWBP_PropertyContainer_C*>(WidgetU::CreateWidget(World(), ret, SDK::FName()));
     }
 

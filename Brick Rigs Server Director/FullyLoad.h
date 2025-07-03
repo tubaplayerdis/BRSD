@@ -18,19 +18,19 @@
 
 namespace hooks
 {
-    class LoadPackage;
-    inline LoadPackage* S_LoadPackage = nullptr; //Non-Inline causes link 2005
+    class FullyLoad;
+    inline FullyLoad* S_FullyLoad = nullptr; //Non-Inline causes link 2005
 
-    class LoadPackage : public Hook<SDK::UPackage*, SDK::UPackage*, const wchar_t*, unsigned int, void*, void*>
+    class FullyLoad : public Hook<void, SDK::UPackage*>
     {
     public:
 
-        static SDK::UPackage* __fastcall HookedFunction(SDK::UPackage* pkg, const wchar_t* pkgName, unsigned int flags , void* smth1, void* smth2)
+        static void __fastcall HookedFunction(SDK::UPackage* pkg)
         {
-            std::wcout << L"Package-Name: " << pkgName << std::endl;
-            return S_LoadPackage->OriginalFunction(pkg, pkgName, flags, smth1, smth2);
+            std::cout << "Loading Package Fully: " << pkg->GetName() << std::endl;
+            return S_FullyLoad->OriginalFunction(pkg);
         }
-        //                      48  8B  C4  48  89  48  08  53  57  48  83  EC  58  48  89  70  18  48  8D  48  C8
-        LoadPackage() : Hook("\x48\x8B\xC4\x48\x89\x48\x08\x53\x57\x48\x83\xEC\x58\x47\x89\x70\x18\x48\x8D\x48\xC8", "xxxxxxxxxxxxxxxxxxxxx", HookedFunction, false) {}
+        
+        FullyLoad() : Hook("\x40\x53\x48\x83\xEC\x40\x48\x8B\xD9\xE8\xC2\xBD\x00\x00\x84\xC0", "xxxxxxxxxxxxxxxx", HookedFunction, FAST) {}
     };
 }

@@ -446,7 +446,7 @@
     <ClInclude Include="StaticLoadClass.h">
       <Filter>Header Files\hooks\global</Filter>
     </ClInclude>
-    <ClInclude Include="LoadPackage.h">
+    <ClInclude Include="FullyLoad.h">
       <Filter>Header Files\hooks\global</Filter>
     </ClInclude>
   </ItemGroup>

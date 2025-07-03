@@ -133,6 +133,15 @@ namespace global
 		SDK::UClass* StaticLoadClass(SDK::UClass* BaseClass, SDK::UObject* InOuter, const wchar_t* InName, const wchar_t* Filename, unsigned int LoadFlags, SDK::UPackageMap* Sandbox);
 		bool IsClassLoaded(SDK::UClass* classptr);
 	}
+
+	namespace packages
+	{
+		//40 53 48 83 EC 40 48 8B D9 E8 C2 BD 00 00 84 C0
+		inline const char* signature = "\x40\x53\x48\x83\xEC\x40\x48\x8B\xD9\xE8\xC2\xBD\x00\x00\x84\xC0";
+		inline const char* mask = "xxxxxxxxxxxxxxxx";
+		inline unsigned long long addy = 0;
+		void FullyLoadPackage(SDK::UPackage* This);
+	}
 }
 
 SDK::ABrickCharacter* GetBrickCharacter();

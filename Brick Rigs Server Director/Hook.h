@@ -20,11 +20,18 @@
 #include <libloaderapi.h>
 #include <Psapi.h>
 
+enum SearchType
+{
+	FAST = 0,
+	SAFE = 1,
+	ALL = 2
+};
+
 template <typename Ret, typename... Args>  
 class Hook  
 {  
 public:  
-    Hook(const char* pat, const char* mak, Ret(__fastcall* hookFunc)(Args...), bool fsearch = true); //pattern and mask, use the \x00 format on sigs, x and ? on masks (? is wildcard)
+    Hook(const char* pat, const char* mak, Ret(__fastcall* hookFunc)(Args...), SearchType fsearch = FAST); //pattern and mask, use the \x00 format on sigs, x and ? on masks (? is wildcard)
     Hook(unsigned long long addr, Ret(__fastcall* hookFunc)(Args...));  //The address base is calculated when creating the object. Only the offset
 	Hook(Ret(__fastcall* ptr)(Args...), Ret(__fastcall* hookFunc)(Args...)); //Use reinterpret_cast<Ret(__fastcall*)(Args...)>(vtable[index]) when inputing a vtable entry
     ~Hook();  
@@ -32,7 +39,7 @@ public:
 private:  
     bool enabled;  
     bool initialized; 
-	bool fastsearch;
+	SearchType Stype;
 	
 	unsigned long long FunctionPointer;
     const char* pattern;  
@@ -40,8 +47,10 @@ private:
     using Function_t = Ret(__fastcall*)(Args...);  
     bool Init();  
 
+public:
+	Function_t OriginalFunction;
+
 protected:  
-    Function_t OriginalFunction;  
 	Function_t hookedFunction;
 
 public:
@@ -53,13 +62,14 @@ public:
 protected:
 	static unsigned long long FindPattern(const char* pattern, const char* mask, unsigned long long base, unsigned __int64 size);
 	static unsigned long long FindPatternS(const char* pattern, const char* mask, unsigned long long base, unsigned __int64 size);
+	static unsigned long long FindPatternAll(const char* signature, const char* mask);
 	static unsigned long long GetModuleBase();
 	static unsigned long long GetModuleSize();
 	static bool GetTextSection(unsigned long long& textBase, unsigned __int64& textSize);
 };
 
 template<typename Ret, typename ...Args>
-Hook<Ret, Args...>::Hook(const char* pat, const char* mak, Ret(__fastcall* hookFunc)(Args...), bool fsearch)
+Hook<Ret, Args...>::Hook(const char* pat, const char* mak, Ret(__fastcall* hookFunc)(Args...), SearchType stype)
 {
 	pattern = pat;
 	mask = mak;
@@ -68,7 +78,7 @@ Hook<Ret, Args...>::Hook(const char* pat, const char* mak, Ret(__fastcall* hookF
 	FunctionPointer = 0;
 	OriginalFunction = nullptr;
 	hookedFunction = hookFunc;
-	fastsearch = fsearch;
+	Stype = stype;
 
 	Init();
 }
@@ -83,7 +93,7 @@ Hook<Ret, Args...>::Hook(unsigned long long addr, Ret(__fastcall* hookFunc)(Args
 	FunctionPointer = (unsigned long long)(GetModuleHandle(NULL)) + addr;
 	OriginalFunction = nullptr;
 	hookedFunction = hookFunc;
-	fastsearch = true;
+	Stype = FAST;
 
 	Init();
 }
@@ -98,7 +108,7 @@ inline Hook<Ret, Args...>::Hook(Ret(__fastcall* ptr)(Args...), Ret(__fastcall* h
 	FunctionPointer = reinterpret_cast<unsigned long long>(ptr);
 	OriginalFunction = nullptr;
 	hookedFunction = hookFunc;
-	fastsearch = true;
+	Stype = FAST;
 
 	Init();
 }
@@ -118,7 +128,21 @@ bool Hook<Ret, Args...>::Init() {
 		unsigned long long tbase;
 		unsigned __int64 tsize;
 		if (!GetTextSection(tbase, tsize)) return false;
-		FunctionPointer = (fastsearch ? FindPattern(pattern, mask, tbase, tsize) : FindPatternS(pattern, mask, tbase, tsize));
+		switch (Stype)
+		{
+			case FAST:
+				FunctionPointer = FindPattern(pattern, mask, tbase, tsize);
+				break;
+			case SAFE:
+				FunctionPointer = FindPatternS(pattern, mask, tbase, tsize);
+				break;
+			case ALL:
+				FunctionPointer = FindPatternAll(pattern, mask);
+				break;
+			default:
+				FunctionPointer = FindPattern(pattern, mask, tbase, tsize);
+				break;
+		}
 	}
 	if (FunctionPointer == 0) return false;
 	MH_STATUS ret = MH_CreateHook((LPVOID)FunctionPointer, hookedFunction, (void**)&OriginalFunction);
@@ -213,6 +237,49 @@ inline unsigned long long Hook<Ret, Args...>::FindPatternS(const char* pattern, 
 	}
 
 	return 0;
+}
+
+template<typename Ret, typename ...Args>
+inline unsigned long long Hook<Ret, Args...>::FindPatternAll(const char* signature, const char* mask)
+{
+	HMODULE hMods[1024];
+	DWORD cbNeeded;
+	HANDLE hProcess = GetCurrentProcess();
+	if (EnumProcessModules(hProcess, hMods, sizeof(hMods), &cbNeeded)) {
+		for (unsigned int i = 0; i < (cbNeeded / sizeof(HMODULE)); i++) {
+			TCHAR szModName[MAX_PATH];
+
+			if (GetModuleFileNameEx(hProcess, hMods[i], szModName, sizeof(szModName) / sizeof(TCHAR))) {
+				std::wcout << L"Searching Module: " << szModName << std::endl;
+			}
+
+			uintptr_t base = reinterpret_cast<uintptr_t>(hMods[i]);
+
+			MODULEINFO modInfo;
+			GetModuleInformation(hProcess, hMods[i], &modInfo, sizeof(modInfo));
+			unsigned __int64 size = modInfo.SizeOfImage;
+
+
+			unsigned __int64 patternLen = strlen(mask);
+
+			for (unsigned __int64 i = 0; i < size - patternLen; i++) {
+				bool found = true;
+
+				for (unsigned __int64 j = 0; j < patternLen; j++) {
+					if (mask[j] != '?' && signature[j] != *(char*)(base + i + j)) {
+						found = false;
+						break;
+					}
+				}
+
+				if (found)
+					return base + i;
+			}
+
+		}
+
+		return 0;
+	}
 }
 
 template<typename Ret, typename ...Args>

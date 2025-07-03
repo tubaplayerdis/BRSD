@@ -241,7 +241,7 @@
     <ClInclude Include="Function.h" />
     <ClInclude Include="Hook.h" />
     <ClInclude Include="BeginPlay.h" />
-    <ClInclude Include="LoadPackage.h" />
+    <ClInclude Include="FullyLoad.h" />
     <ClInclude Include="LoggerStream.h" />
     <ClInclude Include="obutton.h" />
     <ClInclude Include="functions.h" />
