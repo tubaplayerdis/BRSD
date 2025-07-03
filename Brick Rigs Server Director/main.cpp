@@ -77,23 +77,7 @@ void MainLoop()
 		if (UninjectPress() || doUninject) break;
 
 		if (TogglePress()) {
-			//std::cout << static_cast<SDK::UMenuSettingsPageWidget*>(GetMenu()->CurrentMenuPage)->PropertiesPanel->PropertyContainerWidgets[0]->GetName() << std::endl;
-			for (SDK::int32 i = 0; i < SDK::UObject::GObjects->Num(); ++i)
-			{
-				SDK::UObject* Object = SDK::UObject::GObjects->GetByIndex(i);
-				if (!Object) continue;
-
-				if (Object->IsA(SDK::UPackage::StaticClass()))
-				{
-					SDK::UPackage* Package = static_cast<SDK::UPackage*>(Object);
-					std::cout <<  Package->GetName() << ": " << Package->FileName.ToString() << std::endl;
-					if (Package->GetName() == "WBP_PropertyContainer" && Package->bHasBeenFullyLoaded == false) {
-						Package->FileName = NAME(L"WBP_PropertyContainer");
-						packages::FullyLoadPackage(Package);
-					}
-				}
-			}
-			/*
+			
 			if (hooks::S_AddChatMessage->IsEnabled(hooks::S_AddChatMessage)) {
 				hooks::S_AddChatMessage->Disable();
 				LOG("Disabled Chat Commands");
@@ -104,7 +88,6 @@ void MainLoop()
 				LOG("Enabled Chat Commands");
 				SendNotificationLocal(L"Enabled Chat Commands!", 0);
 			}
-			*/
 		}
 	}
 	

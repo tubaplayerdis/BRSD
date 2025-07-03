@@ -123,25 +123,6 @@ namespace global
 	/// <param name="functionname">The name of the function whose bytecode is to be retrieved.</param>
 	/// <returns>A vector of bytes containing the bytecode of the specified function.</returns>
 	std::vector<uint8_t> GetFunctionBytecode(SDK::UClass* objectclass, std::string classname, std::string functionname);
-
-	namespace classes
-	{
-		//40 55 53 56 57 41 54 41 55 41 56 41 57 48 8D 6C 24 C8 48 81 EC 38 01 00 00 48 8B 05 40 1D 0A 03
-		inline const char* signature = "\x40\x55\x53\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x8D\x6C\x24\xC8\x48\x81\xEC\x38\x01\x00\x00\x48\x8B\x05\x40\x1D\x0A\x03";
-		inline const char* mask = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-		inline unsigned long long addy = 0;
-		SDK::UClass* StaticLoadClass(SDK::UClass* BaseClass, SDK::UObject* InOuter, const wchar_t* InName, const wchar_t* Filename, unsigned int LoadFlags, SDK::UPackageMap* Sandbox);
-		bool IsClassLoaded(SDK::UClass* classptr);
-	}
-
-	namespace packages
-	{
-		//40 53 48 83 EC 40 48 8B D9 E8 C2 BD 00 00 84 C0
-		inline const char* signature = "\x40\x53\x48\x83\xEC\x40\x48\x8B\xD9\xE8\xC2\xBD\x00\x00\x84\xC0";
-		inline const char* mask = "xxxxxxxxxxxxxxxx";
-		inline unsigned long long addy = 0;
-		void FullyLoadPackage(SDK::UPackage* This);
-	}
 }
 
 SDK::ABrickCharacter* GetBrickCharacter();

@@ -241,7 +241,6 @@
     <ClInclude Include="Function.h" />
     <ClInclude Include="Hook.h" />
     <ClInclude Include="BeginPlay.h" />
-    <ClInclude Include="FullyLoad.h" />
     <ClInclude Include="LoggerStream.h" />
     <ClInclude Include="obutton.h" />
     <ClInclude Include="functions.h" />
@@ -253,6 +252,7 @@
     <ClInclude Include="messages.h" />
     <ClInclude Include="moderation.h" />
     <ClInclude Include="modules.h" />
+    <ClInclude Include="offsets.h" />
     <ClInclude Include="OnClicked.h" />
     <ClInclude Include="OnPlayerJoined.h" />
     <ClInclude Include="OpenMenu.h" />
@@ -260,7 +260,6 @@
     <ClInclude Include="psettings.h" />
     <ClInclude Include="logger.h" />
     <ClInclude Include="StartPlay.h" />
-    <ClInclude Include="StaticLoadClass.h" />
     <ClInclude Include="stringlist.h" />
     <ClInclude Include="uibase.h" />
     <ClInclude Include="watermark.h" />

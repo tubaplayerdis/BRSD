@@ -59,13 +59,11 @@ bool psettings::CreateCustomSettingsPage()
 
     SDK::UWBP_PropertyContainer_C* container = Create(SDK::UWBP_PropertyContainer_C);
     if (!container) { 
-        std::cout << "Had to load PropertyContainer!" << std::endl;
-        SDK::UClass* ret = global::classes::StaticLoadClass(SDK::UPropertyContainerWidget::StaticClass(), 0, L"/BrickRigs/UI/Properties/WBP_PropertyContainer.WBP_PropertyContainer_C", 0, 0, 0);
-        if (!ret) std::cout << "Bruh" << std::endl;
-        container = static_cast<SDK::UWBP_PropertyContainer_C*>(WidgetU::CreateWidget(World(), ret, SDK::FName()));
+        GetMenu()->OnClickedAdminSettings();
+        GetMenu()->OnClickedBack();
+        container = Create(SDK::UWBP_PropertyContainer_C);
     }
 
-    if (!container) std::cout << "wtf" << std::endl;
     
     //SDK::UWBP_BrickTextBox_C* widget = static_cast<SDK::UWBP_BrickTextBox_C*>(WidgetU::CreateWidget(World(), SDK::UWBP_BrickTextBox_C::StaticClass(), SDK::FName()));
     //if (widget) {
@@ -75,7 +73,7 @@ bool psettings::CreateCustomSettingsPage()
     //}
   
 
-    //CustomSettingsPage->AddChild(container);
+    CustomSettingsPage->AddChild(container);
     //CustomSettingsPage->AddChild(widget);
 
   
@@ -84,7 +82,7 @@ bool psettings::CreateCustomSettingsPage()
 
     ElementsList.push_back(TextBorder);
     //ElementsList.push_back(widget);
-    //ElementsList.push_back(container);
+    ElementsList.push_back(container);
 
 
     CustomSettingsPage->SetVisibility(SDK::ESlateVisibility::Collapsed);

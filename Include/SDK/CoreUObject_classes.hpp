@@ -340,7 +340,7 @@ public:
 	FName FileName;                            // 0x64
 	uint8 Pad_6C[0x4];                         // 0x6C,0x6D,0x6E,0x6F
 
-	unsigned long long LinkerLoad;                   // 0x70
+	void* LinkerLoad;                   // 0x70
 	int32 LinkerPackageVersion;                 // 0x78
 	int32 LinkerLicenseeVersion;                // 0x7C
 
