@@ -132,3 +132,29 @@ namespace UNetDriver
 		return IsServerFunc(driver);
 	}
 }
+
+namespace ConstructorHelpersInternal
+{
+	inline SDK::UClass* FindOrLoadClass(SDK::FString& path, SDK::UClass* baseClass)
+	{
+		return CallGameFunction<SDK::UClass*, SDK::FString&, SDK::UClass*>(FFindOrLoadClass, path, baseClass);
+	}
+}
+
+inline SDK::UPackage* LoadPackage(SDK::UPackage* InOuter, const wchar_t* InLongPackageName, unsigned int LoadFlags, void* InReaderOverride, void* InstancingContext)
+{
+	return CallGameFunction<SDK::UPackage*, SDK::UPackage*, const wchar_t*, unsigned int, void*, void*>(FLoadPackage, InOuter, InLongPackageName, LoadFlags, InReaderOverride, InstancingContext);
+}
+
+inline __int64 LoadPackageAsync(const SDK::FString& InName, void* InCompletionDelegate, int InPackagePriority = 0, __int32 InPackageFlags = 0, SDK::int32 InPIEInstanceID = -1)
+{
+	return CallGameFunction<__int64, const SDK::FString&, void*, int, __int32, SDK::int32>(FLoadPackageAsync, InName, InCompletionDelegate, InPackagePriority, InPackageFlags, InPIEInstanceID);
+}
+
+namespace FPackageName
+{
+	inline bool DoesPackageExist(const SDK::FString& LongPackageName, const SDK::FGuid* Guid, SDK::FString* OutFilename, bool InAllowTextFormats = true)
+	{
+		return CallGameFunction<bool, const SDK::FString&, const SDK::FGuid*, SDK::FString*, bool>(FDoesPackageExist, LongPackageName, Guid, OutFilename, InAllowTextFormats);
+	}
+}
