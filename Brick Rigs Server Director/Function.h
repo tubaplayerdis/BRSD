@@ -7,19 +7,9 @@
 template<typename TRet, typename... TArgs>
 inline TRet CallGameFunction(unsigned long long addr, TArgs... args) 
 {
-	unsigned long long FunctionPTR = (unsigned long long)GetModuleHandle(NULL) + addr;
 	using FunctionFn = TRet(__fastcall*)(TArgs...);
-	FunctionFn OnFunction = reinterpret_cast<FunctionFn>(FunctionPTR);
+	FunctionFn OnFunction = reinterpret_cast<FunctionFn>(addr);
 	return OnFunction(std::forward<TArgs>(args)...);
-}
-
-template<typename TRet, typename... TArgs>
-inline TRet CallGameFunctionO(unsigned long long addr, TArgs... args)
-{
-    unsigned long long FunctionPTR = addr;
-    using FunctionFn = TRet(__fastcall*)(TArgs...);
-    FunctionFn OnFunction = reinterpret_cast<FunctionFn>(FunctionPTR);
-    return OnFunction(std::forward<TArgs>(args)...);
 }
 
 inline unsigned long long FindPatternF(const char* pattern, const char* mask)

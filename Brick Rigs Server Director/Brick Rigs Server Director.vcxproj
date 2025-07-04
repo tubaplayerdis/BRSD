@@ -174,6 +174,7 @@
     <ClCompile Include="..\Include\SDK\Engine_functions.cpp" />
     <ClCompile Include="..\Include\SDK\UMG_functions.cpp" />
     <ClCompile Include="..\Include\SDK\Water_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_AdminMenu_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_BrickComboBoxItemContainer_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_BrickComboBoxItem_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_BrickComboBox_functions.cpp" />
@@ -200,8 +201,12 @@
     <ClCompile Include="..\Include\SDK\WBP_InputHelp_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_InputKeySpacer_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_InputKey_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_InputMappingKey_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_InputMappingProperty_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_InputMappings_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_InteractionOption_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_Interaction_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_KickedPlayer_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_LoadingScreen_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_MatchMenu_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_MatchState_functions.cpp" />
@@ -209,7 +214,12 @@
     <ClCompile Include="..\Include\SDK\WBP_MenuButton_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_Menu_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_NumericProperty_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_PagedListHeaderField_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_PagedListHeader_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_PagedList_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_PageSelector_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_PingIndicator_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_PlayersMenu_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_Player_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_PopupContainer_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_PropertiesPanel_functions.cpp" />
@@ -217,10 +227,13 @@
     <ClCompile Include="..\Include\SDK\WBP_PropertyContainerButton_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_PropertyContainer_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_RestrictedArea_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_ScoreboardPlayer_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_ScoreboardTeam_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_StructProperty_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_TeamScore_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_TimespanProperty_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_Tooltip_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_VideoSettings_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_WindowManager_functions.cpp" />
     <ClCompile Include="..\Include\trampoline.c" />
     <ClCompile Include="dllmain.cpp" />

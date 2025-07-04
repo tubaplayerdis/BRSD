@@ -72,18 +72,18 @@ namespace FBrickChatMessage
 {
 	inline void FBrickChatMessageConstructor(SDK::FBrickChatMessage* This, SDK::EChatMessageType ChatType, SDK::ABrickPlayerController* PC)
 	{
-		return CallGameFunction<void, SDK::FBrickChatMessage*, SDK::EChatMessageType, SDK::ABrickPlayerController*>(0x0D0EA10, This, ChatType, PC);
+		return CallGameFunction<void, SDK::FBrickChatMessage*, SDK::EChatMessageType, SDK::ABrickPlayerController*>(FFBrickChatMessageConstructor, This, ChatType, PC);
 	}
 }
 
 inline void SynchronizeProperties(SDK::UBrickBorder* This)
 {
-	return CallGameFunction<void, SDK::UBrickBorder*>(OSynchronizeProperties_UBB, This);
+	return CallGameFunction<void, SDK::UBrickBorder*>(FSynchronizeProperties_UBB, This);
 }
 
 inline void SynchronizeProperties(SDK::UBrickScrollBox* This)
 {
-	return CallGameFunction<void, SDK::UBrickScrollBox*>(OSynchronizeProperties_UBSB, This);
+	return CallGameFunction<void, SDK::UBrickScrollBox*>(FSynchronizeProperties_UBSB, This);
 }
 
 inline char Initalize(SDK::UUserWidget* widget)
@@ -91,7 +91,7 @@ inline char Initalize(SDK::UUserWidget* widget)
 	if (!widget) return false;
 	using InitalizeFn = bool(__fastcall*)(SDK::UUserWidget*);
 	void** vtable = *(void***)widget;
-	InitalizeFn InitalizeFunc = reinterpret_cast<InitalizeFn>(vtable[VOInitalize]);
+	InitalizeFn InitalizeFunc = reinterpret_cast<InitalizeFn>(vtable[VInitalize]);
 	return InitalizeFunc(widget);
 }
 
@@ -101,7 +101,7 @@ namespace UMainWidgetBase
 {
 	inline void UpdateInputMode(SDK::UMainWidgetBase* Base)
 	{
-		return CallGameFunction<void, SDK::UMainWidgetBase*>(OUpdateInputMode, Base);
+		return CallGameFunction<void, SDK::UMainWidgetBase*>(FUpdateInputMode, Base);
 	}
 }
 
@@ -109,7 +109,7 @@ namespace UMenuWidget
 {
 	inline void OpenMenu(SDK::FName InMenu)
 	{
-		return CallGameFunction<void, SDK::UMenuWidget*, SDK::FName>(OOpenMenu, GetMenu(), InMenu);
+		return CallGameFunction<void, SDK::UMenuWidget*, SDK::FName>(FOpenMenu, GetMenu(), InMenu);
 	}
 }
 
@@ -117,7 +117,7 @@ namespace UModHookSubsystem
 {
 	inline SDK::UModHookSubsystem* GetModHookSubsystem() 
 	{
-		return CallGameFunction<SDK::UModHookSubsystem*>(OGetModHookSubsystem);
+		return CallGameFunction<SDK::UModHookSubsystem*>(FGetModHookSubsystem);
 	}
 }
 
@@ -128,7 +128,7 @@ namespace UNetDriver
 		if (!driver) return false;
 		using IsServerFn = bool(__fastcall*)(SDK::UNetDriver*);
 		void** vtable = *(void***)driver;
-		IsServerFn IsServerFunc = reinterpret_cast<IsServerFn>(VOisServer);
+		IsServerFn IsServerFunc = reinterpret_cast<IsServerFn>(VisServer);
 		return IsServerFunc(driver);
 	}
 }

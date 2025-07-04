@@ -11,6 +11,7 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
+#include "offsets.h"
 #include "SDK.hpp"
 #include "windows.h"
 #include "Hook.h"
@@ -31,20 +32,36 @@ namespace hooks
 
 		static void __fastcall HookedFunction(SDK::UMenuButtonWidget* This)
 		{
+			if (GetMenu()->CurrentMenuPage && GetMenu()->CurrentMenuPage == psettings::MockPage) {
+				static_cast<SDK::UBrickBorder*>(psettings::CustomSettingsPage->Slot->Parent)->SetContent(psettings::MockPage);
+			}
 			if (This == obutton::CurrentButtonRef) {
 				if (GetMenu()->CurrentMenuPage) GetMenu()->RemoveMenuPage(GetMenu()->CurrentMenuPage);
 				const SDK::FText title = TEXT(L"BRSD");
 				UMenuWidget::OpenMenu(NAME(L"InGameMenu/BSRD"));
 				GetMenu()->AddMenuPage(psettings::MockPage);
 				GetMenu()->CurrentMenuPage = psettings::MockPage;
+				std::cout << psettings::MockPage->Slot->GetName() << std::endl;
+				SDK::UBorderSlot* slot = static_cast<SDK::UBorderSlot*>(psettings::MockPage->Slot);
+				if (!slot) 
+				{
+					std::cout << "slot no" << std::endl;
+					return;
+				}
+				if (!slot->Parent)
+				{
+					std::cout << "parent no" << std::endl;
+					return;
+				}
+				SDK::UBrickBorder* Parent = static_cast<SDK::UBrickBorder*>(slot->Parent);
+				Parent->SetContent(psettings::CustomSettingsPage);
 				psettings::SetVisibility(SDK::ESlateVisibility::Visible);
 			}
 			else {
-				psettings::SetVisibility(SDK::ESlateVisibility::Collapsed);
 				S_OnClicked->OriginalFunction(This);
 			}
 		}
 
-		OnClicked() : Hook(0x0D76780, HookedFunction) {}
+		OnClicked() : Hook(HOnClicked, HookedFunction) {}
 	};
 }

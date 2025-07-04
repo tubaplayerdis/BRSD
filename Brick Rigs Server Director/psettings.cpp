@@ -15,36 +15,15 @@
 #include "global.h"
 #include "functions.h"
 
-void psettings::VerifyController()
-{
-    std::cout << World()->OwningGameInstance->LocalPlayers.Max() << std::endl;
-    if (!World()->OwningGameInstance->LocalPlayers[0]->PlayerController) {
-        
-    }
-}
-
 bool psettings::CreateCustomSettingsPage()
 {
     MockPage = Spawn(SDK::UMenuPageWidget, GetMenu());
-
-
     CustomSettingsPage = Spawn(SDK::UBrickScrollBox, GetWindowManager());
     CustomSettingsPage->SetSlotSpacingStyle(SDK::EBrickUISpacingStyle::Large);
-    CustomSettingsPage->SetVisibility(SDK::ESlateVisibility::Hidden);
-    SDK::UCanvasPanelSlot* slot = GetCanvasPanel()->AddChildToCanvas(CustomSettingsPage);
-    SDK::FAnchors anchor = SDK::FAnchors();
-    anchor.Minimum.X = 0.214f;
-    anchor.Minimum.Y = 0.16f;
-    anchor.Maximum.X = 0.993f;
-    anchor.Maximum.Y = 0.988f;
-    slot->SetAnchors(anchor);
-    slot->SetAlignment(SDK::FVector2D(0.f, 0.f));
-    slot->SetSize(SDK::FVector2D(0.0f, 0.0f));
-    slot->SetZOrder(1000);
 
     SDK::UBrickTextBlock* TextBlock = Spawn(SDK::UBrickTextBlock, CustomSettingsPage);
     if (!TextBlock) return false;
-    TextBlock->SetText(TEXT(L"Brick Rigs Server Director Options"));
+    TextBlock->SetText(TEXT(L"Brick Rigs Server Director"));
     TextBlock->SetTextStyle(SDK::EBrickUITextStyle::Bold);
     SDK::UBrickBorder* TextBorder = Spawn(SDK::UBrickBorder, CustomSettingsPage);
     if (!TextBorder) return false;
@@ -55,37 +34,24 @@ bool psettings::CreateCustomSettingsPage()
     slot2->SetVerticalAlignment(SDK::EVerticalAlignment::VAlign_Center);
     TextBorder->SetHorizontalAlignment(SDK::EHorizontalAlignment::HAlign_Center);
     TextBorder->SetVerticalAlignment(SDK::EVerticalAlignment::VAlign_Center);
-    
 
     SDK::UWBP_PropertyContainer_C* container = Create(SDK::UWBP_PropertyContainer_C);
-    if (!container) { 
+    if (!container) {
         GetMenu()->OnClickedAdminSettings();
         GetMenu()->OnClickedBack();
         container = Create(SDK::UWBP_PropertyContainer_C);
+        //This is so hacky and stupid i hate this but Unreal Engine leaves me no alternatives what is wrong with you unreal engine.
     }
-
-    
-    //SDK::UWBP_BrickTextBox_C* widget = static_cast<SDK::UWBP_BrickTextBox_C*>(WidgetU::CreateWidget(World(), SDK::UWBP_BrickTextBox_C::StaticClass(), SDK::FName()));
-    //if (widget) {
-    //    std::cout << GetBoolString(widget->MultiLineTextBox) << std::endl;
-    //    std::cout << GetBoolString(widget->WidgetTree) << std::endl;
-    //    widget->SetVisibility(SDK::ESlateVisibility::Visible);
-    //}
   
-
     CustomSettingsPage->AddChild(container);
-    //CustomSettingsPage->AddChild(widget);
 
-  
-    SynchronizeProperties(TextBorder);
-    SynchronizeProperties(CustomSettingsPage);
+    //SynchronizeProperties(TextBorder);
+    //SynchronizeProperties(CustomSettingsPage);
 
     ElementsList.push_back(TextBorder);
-    //ElementsList.push_back(widget);
     ElementsList.push_back(container);
 
-
-    CustomSettingsPage->SetVisibility(SDK::ESlateVisibility::Collapsed);
+    std::cout << "Created UI Elements!" << std::endl;
     return true;
 }
 
@@ -96,6 +62,11 @@ void psettings::SetVisibility(SDK::ESlateVisibility vis)
 
 void psettings::Uninitalize()
 {
+    if (GetMenu()->CurrentMenuPage && GetMenu()->CurrentMenuPage == psettings::MockPage) {
+        static_cast<SDK::UBrickBorder*>(psettings::CustomSettingsPage->Slot->Parent)->SetContent(psettings::MockPage);
+    }
+
+    MockPage = nullptr;
     ElementsList.clear();
     CustomSettingsPage->ClearChildren();
     CustomSettingsPage->RemoveFromParent();

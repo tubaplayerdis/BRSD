@@ -360,6 +360,45 @@
     <ClCompile Include="..\Include\SDK\AssetRegistry_functions.cpp">
       <Filter>More Files\SDK\Engine</Filter>
     </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_AdminMenu_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_InputMappingKey_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_InputMappingProperty_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_InputMappings_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_KickedPlayer_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_PagedList_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_PagedListHeader_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_PagedListHeaderField_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_PageSelector_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_PlayersMenu_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_ScoreboardPlayer_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_ScoreboardTeam_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\SDK\WBP_VideoSettings_functions.cpp">
+      <Filter>More Files\SDK\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">

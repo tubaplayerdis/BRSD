@@ -103,14 +103,11 @@ void uibase::Cleanup()
 	}
 }
 
+//widgets must be manually loaded first do this by using a function to "open" the respective menu.
 SDK::UUserWidget* WidgetU::CreateWidget(SDK::UWorld* World, SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClass, SDK::FName WidgetName)
 {
 
-	if (UserWidgetClass == nullptr) {
-		GetMenu()->OnClickedAdminSettings();
-		GetMenu()->OnClickedBack();
-		//This is so hacky and stupid i hate this but Unreal Engine leaves me no alternatives what is wrong with you unreal engine.
-	}
+	if (UserWidgetClass == nullptr) return nullptr;
 
-	return CallGameFunction<SDK::UUserWidget*, SDK::UWorld*, SDK::TSubclassOf<SDK::UUserWidget>, SDK::FName>(OCreateWidget, World, UserWidgetClass, WidgetName);
+	return CallGameFunction<SDK::UUserWidget*, SDK::UWorld*, SDK::TSubclassOf<SDK::UUserWidget>, SDK::FName>(FCreateWidget, World, UserWidgetClass, WidgetName);
 }

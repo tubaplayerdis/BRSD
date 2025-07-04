@@ -69,15 +69,13 @@ void MainLoop()
 
 		Sleep(10);
 
-		if (ContinuePress()) {
-			std::cout << IsActiveWindow() << std::endl;
-			continue;
-		}
+		if (ContinuePress()) continue;
 
 		if (UninjectPress() || doUninject) break;
 
 		if (TogglePress()) {
-			
+			std::cout << psettings::MockPage->Slot->GetName() << "\n";
+			/*
 			if (hooks::S_AddChatMessage->IsEnabled(hooks::S_AddChatMessage)) {
 				hooks::S_AddChatMessage->Disable();
 				LOG("Disabled Chat Commands");
@@ -88,6 +86,7 @@ void MainLoop()
 				LOG("Enabled Chat Commands");
 				SendNotificationLocal(L"Enabled Chat Commands!", 0);
 			}
+			*/
 		}
 	}
 	

@@ -17,9 +17,7 @@
 #include <vector>
 namespace psettings
 {
-	//Creates or veriefies that a MenuPlayerController is present to create menus with.
-	void VerifyController();
-	inline SDK::UMenuPageWidget* MockPage = nullptr; //adds the backround of the menu page that looks correct
+	inline SDK::UMenuPageWidget* MockPage = nullptr; //adds the backround of the menu page that looks correct by forcing a BorderPanel to be added.
 	inline SDK::UBrickScrollBox* CustomSettingsPage = nullptr;
 	inline std::vector<SDK::UWidget*> ElementsList = std::vector<SDK::UWidget*>();
 	bool CreateCustomSettingsPage();
