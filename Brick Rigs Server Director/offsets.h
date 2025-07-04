@@ -41,6 +41,10 @@
 #define FOpenMenu BASE + 0x0D7AD00
 #define FGetModHookSubsystem BASE + 0x0D20EE0
 #define FFBrickChatMessageConstructor BASE + 0x0D0EA10
+#define FFindOrLoadClass BASE + 0x0C33890
+#define FLoadPackage BASE + 0x121D710
+#define FLoadPackageAsync BASE + 0x10A8AA0
+#define FDoesPackageExist BASE + 0x105F8A0
 
 //define VTable offsets. 8 is used after the number IDA gives
 

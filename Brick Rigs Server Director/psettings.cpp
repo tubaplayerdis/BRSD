@@ -34,9 +34,21 @@ bool psettings::CreateCustomSettingsPage()
     slot2->SetVerticalAlignment(SDK::EVerticalAlignment::VAlign_Center);
     TextBorder->SetHorizontalAlignment(SDK::EHorizontalAlignment::HAlign_Center);
     TextBorder->SetVerticalAlignment(SDK::EVerticalAlignment::VAlign_Center);
-
+    //SDK::FString path = SDK::FString(L"/Game/BrickRigs/UI/Properties/WBP_PropertyContainer.WBP_PropertyContainer_C");
+    //SDK::UClass* ptr = ConstructorHelpersInternal::FindOrLoadClass(path, SDK::UPropertyContainerWidget::StaticClass());
+    //if (!ptr) std::cout << "ugh" << std::endl;
+    SDK::FString PackageName = STRING(L"/Game/BrickRigs/UI/Properties/WBP_PropertyContainer");
+    SDK::FString FileName;
+    bool res = FPackageName::DoesPackageExist(PackageName, nullptr, &FileName);
+    if (res) {
+        std::cout << "exists! filename: " << FileName.ToString() << std::endl;
+        __int64 pack = LoadPackageAsync(PackageName, nullptr);
+        std::cout << "Loading Async!" << std::endl;
+        Sleep(100);
+    }
     SDK::UWBP_PropertyContainer_C* container = Create(SDK::UWBP_PropertyContainer_C);
     if (!container) {
+        std::cout << "had to load container" << std::endl;
         GetMenu()->OnClickedAdminSettings();
         GetMenu()->OnClickedBack();
         container = Create(SDK::UWBP_PropertyContainer_C);
