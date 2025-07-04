@@ -90,7 +90,7 @@ Hook<Ret, Args...>::Hook(unsigned long long addr, Ret(__fastcall* hookFunc)(Args
 	mask = "None";
 	enabled = false;
 	initialized = false;
-	FunctionPointer = (unsigned long long)(GetModuleHandle(NULL)) + addr;
+	FunctionPointer = addr;
 	OriginalFunction = nullptr;
 	hookedFunction = hookFunc;
 	Stype = FAST;

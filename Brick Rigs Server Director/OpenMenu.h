@@ -11,6 +11,7 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
+#include "offsets.h"
 #include <windows.h>
 #include <SDK.hpp>
 #include "watermark.h"
@@ -39,6 +40,6 @@ namespace hooks
             if (InMenu.GetRawString() == "None" && global::isMapValid()) watermark::HideWaterWark();
         }
 
-        OpenMenu() : Hook("\x48\x89\x54\x24\x10\x55\x53\x56\x57\x41\x54\x41\x55\x48\x8D\x6C\x24\xD1\x48\x81\xEC", "xxxxxxxxxxxxxxxxxxxx", HookedFunction) {}
+        OpenMenu() : Hook(OpenMenu_S, OpenMenu_M, HookedFunction) {}
     };
 }

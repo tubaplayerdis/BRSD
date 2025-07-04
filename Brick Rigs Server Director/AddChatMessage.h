@@ -11,6 +11,7 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
+#include "offsets.h"
 #include <SDK.hpp>
 #include <windows.h>
 #include <vector>
@@ -70,6 +71,6 @@ namespace hooks
 		}
 
         //Dosent work with the optimized search algo
-		AddChatMessage() : Hook("\x48\x89\x7C\x24\x18\x41\x56\x48\x83\xEC\x40\x48\x8B\xFA\x4C\x8B\xF1\xE8\x00\x00\x00\x00\x84\xC0\x0F\x84\x00\x00\x00\x00", "xxxxxxxxxxxxxxxxxx????xxxx????", HookedFunction, SAFE) {}
+		AddChatMessage() : Hook(AddChatMessage_S, AddChatMessage_M, HookedFunction, SAFE) {}
 	};
 }

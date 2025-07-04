@@ -15,6 +15,7 @@
 #include <SDK.hpp>
 #include "functions.h"
 #include "Hook.h"
+#include "offsets.h"
 
 namespace hooks
 {
@@ -37,6 +38,6 @@ namespace hooks
             S_DrawTransition->OriginalFunction(This, Canvas);
         }
 
-        DrawTransition() : Hook("\x48\x89\x74\x24\x18\x57\x48\x83\xEC\x40\x80\xB9\x88\x00\x00\x00\x00\x48\x8B\xF2\x48\x8B\xF9\x0F\x85\x00\x00\x00\x00\x8B\x41\x08\x45\x33\xC0\xC1\xE8\x04\xA8\x01\x41\x8B\xC0", "xxxxxxxxxxxxxxxxxxxxxxxxx????xxxxxxxxxxxxxx", HookedFunction, false) {}
+        DrawTransition() : Hook(DrawTransition_S, DrawTransition_M, HookedFunction, SAFE) {}
     };
 }

@@ -11,6 +11,7 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
+#include "offsets.h"
 #include <windows.h>
 #include <SDK.hpp>
 #include "messages.h"
@@ -55,6 +56,6 @@ namespace hooks
 
         }
 
-        OnPlayerJoined() : Hook("\x48\x83\xEC\x48\x48\x89\x5C\x24\x58\x33\xDB\x48\x89\x74\x24\x68\x48\x89\x7C\x24\x40", "xxxxxxxxxxxxxxxxxxxx", HookedFunction) {}
+        OnPlayerJoined() : Hook(OnPlayerJoined_S, OnPlayerJoined_M, HookedFunction) {}
     };
 }

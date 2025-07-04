@@ -11,6 +11,7 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
+#include "offsets.h"
 #include <windows.h>
 #include <SDK.hpp>
 #include "global.h"
@@ -31,6 +32,6 @@ namespace hooks
             global::pointers::UpdatePointers(SDK::UWorld::GetWorld());
         }
 
-        StartPlay() : Hook("\x40\x53\x48\x83\xEC\x20\x48\x8B\xD9\x48\x8B\x89\x80\x02\x00\x00\x48\x8B\x01", "xxxxxxxxxxxxxxxxxxx", HookedFunction) {}
+        StartPlay() : Hook(StartPlay_S, StartPlay_M, HookedFunction) {}
     };
 }
