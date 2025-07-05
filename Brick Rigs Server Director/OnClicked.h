@@ -19,7 +19,15 @@
 #include "obutton.h"
 #include "uibase.h"
 #include "psettings.h"
-#include "functions.h"
+#include "Function.h"
+
+namespace UMenuWidget
+{
+	inline void OpenMenu(SDK::FName InMenu)
+	{
+		return CallGameFunction<void, SDK::UMenuWidget*, SDK::FName>(FOpenMenu, GetMenu(), InMenu);
+	}
+}
 
 namespace hooks
 {
