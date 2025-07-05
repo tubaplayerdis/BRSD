@@ -25,7 +25,8 @@ namespace uibase
 
 namespace WidgetU
 {
-	SDK::UUserWidget* CreateWidget(SDK::UWorld* World, SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClass, SDK::FName WidgetName);
+	template<typename T>
+	SDK::UUserWidget* CreateWidget(SDK::UWorld* World, SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClass, const char* WidgetClassName);
 }
 
 SDK::UWBP_WindowManager_C* GetWindowManager();

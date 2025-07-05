@@ -14,6 +14,7 @@
 #include "global.h"
 #include "Function.h"
 #include "offsets.h"
+#include "functions.h"
 
 SDK::UWBP_WindowManager_C* GetWindowManager()
 {
@@ -104,10 +105,15 @@ void uibase::Cleanup()
 }
 
 //widgets must be manually loaded first do this by using a function to "open" the respective menu.
-SDK::UUserWidget* WidgetU::CreateWidget(SDK::UWorld* World, SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClass, SDK::FName WidgetName)
+template<typename T>
+SDK::UUserWidget* WidgetU::CreateWidget(SDK::UWorld* World, SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClass, const char* WidgetClassName)
 {
 
-	if (UserWidgetClass == nullptr) return nullptr;
+	if (UserWidgetClass == nullptr) {
+		std::string wcn = std::string(WidgetClassName);
+		AttemptLoadClass(wcn.substr(5).c_str());
+		UserWidgetClass = T::StaticClass();
+	}
 
-	return CallGameFunction<SDK::UUserWidget*, SDK::UWorld*, SDK::TSubclassOf<SDK::UUserWidget>, SDK::FName>(FCreateWidget, World, UserWidgetClass, WidgetName);
+	return CallGameFunction<SDK::UUserWidget*, SDK::UWorld*, SDK::TSubclassOf<SDK::UUserWidget>, SDK::FName>(FCreateWidget, World, UserWidgetClass, SDK::FName());
 }
