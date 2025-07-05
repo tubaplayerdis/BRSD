@@ -45,15 +45,25 @@
 #define FLoadPackage BASE + 0x121D710
 #define FLoadPackageAsync BASE + 0x10A8AA0
 #define FDoesPackageExist BASE + 0x105F8A0
+#define FStaticLoadClass BASE + 0x1229020
+#define FLoadAssetsFromPathInternal BASE + 0x0CCB090
+#define FGet_UBAM BASE + 0x0CE05A0
+#define FSetPath BASE + 0x1226320
+#define FLoadSynchronous BASE + 0x0843330
+#define FFlushAsyncLoading BASE + 0x10A30A0
 
 //define VTable offsets. 8 is used after the number IDA gives
 
 #define VInitalize 0x2D0 / 8
 #define VisServer 0x378 / 8
+//VTable funcs after this now dont need 8
 
 //define hook offsets
 
 #define HOnClicked BASE + 0x0D76780
+#define HLambdaNOP BASE + 0x0D55B30
+#define HSetTitleText BASE + 0x0EA2170
+#define HOnComboBoxMenuItemSelected BASE + 0x0DD7C10
 
 //define hook signatures/masks
 

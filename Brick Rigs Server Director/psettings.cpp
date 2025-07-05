@@ -14,6 +14,15 @@
 #include "uibase.h"
 #include "global.h"
 #include "functions.h"
+#include "OnComboBoxMenuItemSelected.h"
+#include <SDK/AssetRegistry_classes.hpp>
+
+void __fastcall psettings::LoaderReturn(void* input)
+{
+    std::cout << "loading!\n";
+    LoadPackage(nullptr, L"/Game/BrickRigs/UI/Properties/WBP_PropertyContainer");
+    isLoaded = true;
+}
 
 bool psettings::CreateCustomSettingsPage()
 {
@@ -34,37 +43,71 @@ bool psettings::CreateCustomSettingsPage()
     slot2->SetVerticalAlignment(SDK::EVerticalAlignment::VAlign_Center);
     TextBorder->SetHorizontalAlignment(SDK::EHorizontalAlignment::HAlign_Center);
     TextBorder->SetVerticalAlignment(SDK::EVerticalAlignment::VAlign_Center);
-    //SDK::FString path = SDK::FString(L"/Game/BrickRigs/UI/Properties/WBP_PropertyContainer.WBP_PropertyContainer_C");
-    //SDK::UClass* ptr = ConstructorHelpersInternal::FindOrLoadClass(path, SDK::UPropertyContainerWidget::StaticClass());
-    //if (!ptr) std::cout << "ugh" << std::endl;
-    SDK::FString PackageName = STRING(L"/Game/BrickRigs/UI/Properties/WBP_PropertyContainer");
-    SDK::FString FileName;
-    bool res = FPackageName::DoesPackageExist(PackageName, nullptr, &FileName);
-    if (res) {
-        std::cout << "exists! filename: " << FileName.ToString() << std::endl;
-        __int64 pack = LoadPackageAsync(PackageName, nullptr);
-        std::cout << "Loading Async!" << std::endl;
-        Sleep(100);
+
+    SDK::FString path = STRING(L"/Game/BrickRigs/UI/Properties/WBP_PropertyContainer");
+
+    SDK::FSoftObjectPtr ptr = SDK::FSoftObjectPtr();
+    FSoftObjectPath::SetPath(&ptr.ObjectID, NAME(L"/Game/BrickRigs/UI/Properties/WBP_PropertyContainer.WBP_PropertyContainer_C"));
+
+    SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)> del = SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)>();
+    LoadPackageAsync(path, del);
+    SDK::TArray<SDK::FString> arr = SDK::UBlueprintPathsLibrary::GetPropertyNameLocalizationPaths();
+    for (int i = 0; i < arr.Num(); i++)
+    {
+        std::cout << arr[i].ToString() << std::endl;
     }
+    std::cout << SDK::UBlueprintPathsLibrary::RootDir() << std::endl;
+    void* AssetRegistry = SDK::UAssetRegistryHelpers::GetAssetRegistry().GetInterfaceRef();
+    SDK::TAllocatedArray<class SDK::FString> input = SDK::TAllocatedArray<class SDK::FString>(12);
+    SDK::TArray<class SDK::FString> arp = input;
+    CallVTableFunction<void, SDK::TArray<class SDK::FString>*>(0x0F8, AssetRegistry, &arp);
+    std::cout << input.Num() << std::endl;
+    //CallVTableFunction<bool, SDK::TArray<struct SDK::FAssetData>*, bool>(0x60, reg, &input, false);
+   
+    //SDK::IAssetRegistry::
+
     SDK::UWBP_PropertyContainer_C* container = Create(SDK::UWBP_PropertyContainer_C);
     if (!container) {
-        std::cout << "had to load container" << std::endl;
-        GetMenu()->OnClickedAdminSettings();
-        GetMenu()->OnClickedBack();
+        std::cout << "had" << std::endl;
+        GetMenu()->OnClickedGameplaySettings();
+        GetMenu()->StepBack();
         container = Create(SDK::UWBP_PropertyContainer_C);
-        //This is so hacky and stupid i hate this but Unreal Engine leaves me no alternatives what is wrong with you unreal engine.
     }
-  
+    container->NameTextBlock->SetText(TEXT(L"Chat Commands Enabled"));
+
     CustomSettingsPage->AddChild(container);
 
-    //SynchronizeProperties(TextBorder);
-    //SynchronizeProperties(CustomSettingsPage);
-
-    ElementsList.push_back(TextBorder);
-    ElementsList.push_back(container);
+    elements::BRSDBlock = TextBorder;
+    elements::ChatCommandsPC = container;
+    elements::list.push_back(TextBorder);
+    elements::list.push_back(container);
 
     std::cout << "Created UI Elements!" << std::endl;
+
+    //Add to the ClassPool.
+    //classPool.push_back(*SDK::UWBP_PropertyContainer_C::StaticClass())
+
+
+
+
+
     return true;
+}
+
+void psettings::PrepareCustomSettingsPage()
+{
+    std::cout << "preparing page!" << std::endl;
+    std::cout << SDK::UWBP_BoolProperty_C::StaticClass() << std::endl;
+    SDK::UWBP_BoolProperty_C* cb = Create(SDK::UWBP_BoolProperty_C);
+    cb->ComboBox = Create(SDK::UWBP_BrickComboBox_C);
+    cb->ComboBox->InitItems(2, 1);
+    elements::ChatCommandsPC->AddPropertyWidget(nullptr, SDK::EOrientation::Orient_Horizontal);
+    std::cout << "prepared page!" << std::endl;
+}
+
+void psettings::SetHook(bool toggle)
+{
+    toggle ? hooks::S_OnComboBoxMenuItemSelected->Enable() : hooks::S_OnComboBoxMenuItemSelected->Disable();
 }
 
 void psettings::SetVisibility(SDK::ESlateVisibility vis)
@@ -78,9 +121,26 @@ void psettings::Uninitalize()
         static_cast<SDK::UBrickBorder*>(psettings::CustomSettingsPage->Slot->Parent)->SetContent(psettings::MockPage);
     }
 
+    elements::BRSDBlock = nullptr;
+    elements::ChatCommandsPC = nullptr;
+    for (int i = 0; i < elements::list.size(); i++)
+    {
+        elements::list[i]->RemoveFromParent();
+        elements::list[i] = nullptr;
+    }
+
     MockPage = nullptr;
-    ElementsList.clear();
     CustomSettingsPage->ClearChildren();
     CustomSettingsPage->RemoveFromParent();
     CustomSettingsPage == nullptr;
+}
+
+bool psettings::elements::IsComboBox(SDK::UWBP_PropertyContainer_C* propc, SDK::UBrickComboBoxWidget* cbox)
+{
+    if (!propc || !cbox) return false;
+    if (!propc->PropertyWidget) return false;
+    if (!propc->PropertyWidget->IsA(SDK::UWBP_BoolProperty_C::StaticClass())) return false;
+    SDK::UWBP_BoolProperty_C* bp = static_cast<SDK::UWBP_BoolProperty_C*>(propc->PropertyWidget);
+    if (!bp->ComboBox) return false;
+    return bp->ComboBox == cbox;
 }

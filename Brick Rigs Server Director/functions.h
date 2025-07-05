@@ -141,14 +141,16 @@ namespace ConstructorHelpersInternal
 	}
 }
 
-inline SDK::UPackage* LoadPackage(SDK::UPackage* InOuter, const wchar_t* InLongPackageName, unsigned int LoadFlags, void* InReaderOverride, void* InstancingContext)
+inline SDK::UPackage* LoadPackage(SDK::UPackage* InOuter, const wchar_t* InLongPackageName, unsigned int LoadFlags = 0, void* InReaderOverride = nullptr, void* InstancingContext = nullptr)
 {
 	return CallGameFunction<SDK::UPackage*, SDK::UPackage*, const wchar_t*, unsigned int, void*, void*>(FLoadPackage, InOuter, InLongPackageName, LoadFlags, InReaderOverride, InstancingContext);
 }
 
-inline __int64 LoadPackageAsync(const SDK::FString& InName, void* InCompletionDelegate, int InPackagePriority = 0, __int32 InPackageFlags = 0, SDK::int32 InPIEInstanceID = -1)
+typedef SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)> LPADelegate;
+
+inline SDK::int32 LoadPackageAsync(const SDK::FString& InName, LPADelegate InCompletionDelegate, int InPackagePriority = 0, __int32 InPackageFlags = 0, SDK::int32 InPIEInstanceID = -1)
 {
-	return CallGameFunction<__int64, const SDK::FString&, void*, int, __int32, SDK::int32>(FLoadPackageAsync, InName, InCompletionDelegate, InPackagePriority, InPackageFlags, InPIEInstanceID);
+	return CallGameFunction<SDK::int32, const SDK::FString&, LPADelegate, int, __int32, SDK::int32>(FLoadPackageAsync, InName, InCompletionDelegate, InPackagePriority, InPackageFlags, InPIEInstanceID);
 }
 
 namespace FPackageName
@@ -157,4 +159,37 @@ namespace FPackageName
 	{
 		return CallGameFunction<bool, const SDK::FString&, const SDK::FGuid*, SDK::FString*, bool>(FDoesPackageExist, LongPackageName, Guid, OutFilename, InAllowTextFormats);
 	}
+}
+
+namespace UBrickAssetManager
+{
+	inline void LoadAssetsFromPathInternal(SDK::TArray<SDK::UObject*>* OutAssets, const SDK::FString path, SDK::UClass* BaseClass, bool bIsBlueprintClass)
+	{
+		SDK::UBrickAssetManager* manager = CallGameFunction<SDK::UBrickAssetManager*>(FGet_UBAM);
+		if (!manager) std::cout << "incoming explosion!" << std::endl;
+		return CallGameFunction<void, SDK::UBrickAssetManager*, SDK::TArray<SDK::UObject*>*, const SDK::FString, bool>(FLoadAssetsFromPathInternal, manager, OutAssets, path, BaseClass, bIsBlueprintClass);
+	}
+}
+
+namespace FSoftObjectPath
+{
+	inline void SetPath(SDK::FakeSoftObjectPtr::FSoftObjectPath* This, SDK::FName pathname)
+	{
+		return CallGameFunction<void, SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::FName>(FSetPath, This, pathname);
+	}
+}
+
+inline SDK::UObject* LoadSynchronous(SDK::FSoftObjectPtr* This)
+{
+	return CallGameFunction<SDK::UObject*, SDK::FSoftObjectPtr*>(FLoadSynchronous, This);
+}
+
+inline void FlushAsyncLoading(int packageID)
+{
+	return CallGameFunction<void, int>(FFlushAsyncLoading, packageID);
+}
+
+inline SDK::IAssetRegistry* GetAssetRegistry()
+{
+	return CallGameFunction<SDK::IAssetRegistry*, SDK::UAssetManager*>(BASE + 0x2266420, SDK::UBrickAssetManager::Get());
 }
