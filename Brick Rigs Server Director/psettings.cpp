@@ -44,29 +44,17 @@ bool psettings::CreateCustomSettingsPage()
     TextBorder->SetHorizontalAlignment(SDK::EHorizontalAlignment::HAlign_Center);
     TextBorder->SetVerticalAlignment(SDK::EVerticalAlignment::VAlign_Center);
 
-    SDK::FString path = STRING(L"/Game/BrickRigs/UI/Properties/WBP_PropertyContainer");
-
-    SDK::FSoftObjectPtr ptr = SDK::FSoftObjectPtr();
-    FSoftObjectPath::SetPath(&ptr.ObjectID, NAME(L"/Game/BrickRigs/UI/Properties/WBP_PropertyContainer.WBP_PropertyContainer_C"));
-
+    SDK::UWBP_Menu_C::StaticClass();
+    /*
+    SDK::FString path = UC::FString(L"/Game/BrickRigs/UI/Properties/WBP_PropertyContainer");
+    std::cout << path.Num() << std::endl;
     SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)> del = SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)>();
     LoadPackageAsync(path, del);
-    SDK::TArray<SDK::FString> arr = SDK::UBlueprintPathsLibrary::GetPropertyNameLocalizationPaths();
-    for (int i = 0; i < arr.Num(); i++)
-    {
-        std::cout << arr[i].ToString() << std::endl;
-    }
-    std::cout << SDK::UBlueprintPathsLibrary::RootDir() << std::endl;
-    void* AssetRegistry = SDK::UAssetRegistryHelpers::GetAssetRegistry().GetInterfaceRef();
-    SDK::TAllocatedArray<class SDK::FString> input = SDK::TAllocatedArray<class SDK::FString>(12);
-    SDK::TArray<class SDK::FString> arp = input;
-    CallVTableFunction<void, SDK::TArray<class SDK::FString>*>(0x0F8, AssetRegistry, &arp);
-    std::cout << input.Num() << std::endl;
-    //CallVTableFunction<bool, SDK::TArray<struct SDK::FAssetData>*, bool>(0x60, reg, &input, false);
-   
-    //SDK::IAssetRegistry::
+    */
 
-    SDK::UWBP_PropertyContainer_C* container = Create(SDK::UWBP_PropertyContainer_C);
+    std::cout << "spacer" << std::endl;
+
+    SDK::UWBP_PropertyContainer_C* container = static_cast<SDK::UWBP_PropertyContainer_C*>(WidgetU::CreateWidget<SDK::UWBP_PropertyContainer_C>(SDK::UWorld::GetWorld(), SDK::UWBP_PropertyContainer_C::StaticClass(), "SDK::UWBP_PropertyContainer_C"));
     if (!container) {
         std::cout << "had" << std::endl;
         GetMenu()->OnClickedGameplaySettings();

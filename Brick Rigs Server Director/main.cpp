@@ -74,7 +74,7 @@ void MainLoop()
 		if (UninjectPress() || doUninject) break;
 
 		if (TogglePress()) {
-			for (SDK::int32 i = 0; i < SDK::UObject::GObjects->Num(); ++i)
+			for (int i = 0; i < SDK::UObject::GObjects->Num(); ++i)
 			{
 				SDK::UObject* Object = SDK::UObject::GObjects->GetByIndex(i);
 				if (!Object) continue;
@@ -83,9 +83,6 @@ void MainLoop()
 				{
 					SDK::UClass* Package = static_cast<SDK::UClass*>(Object);
 					std::cout << Package->GetName() << std::endl;
-					if (Package->GetName() == "WBP_BoolProperty_C") {
-						std::cout << "WBP_BOOL_PROP loaded!\n";
-					}
 				}
 			}
 			/*
