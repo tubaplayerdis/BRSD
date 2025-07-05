@@ -15,7 +15,6 @@
 #include "global.h"
 #include "functions.h"
 #include "OnComboBoxMenuItemSelected.h"
-#include <SDK/AssetRegistry_classes.hpp>
 
 void __fastcall psettings::LoaderReturn(void* input)
 {
@@ -54,7 +53,7 @@ bool psettings::CreateCustomSettingsPage()
 
     std::cout << "spacer" << std::endl;
 
-    SDK::UWBP_PropertyContainer_C* container = static_cast<SDK::UWBP_PropertyContainer_C*>(WidgetU::CreateWidget<SDK::UWBP_PropertyContainer_C>(SDK::UWorld::GetWorld(), SDK::UWBP_PropertyContainer_C::StaticClass(), "SDK::UWBP_PropertyContainer_C"));
+    SDK::UWBP_PropertyContainer_C* container = Create(SDK::UWBP_PropertyContainer_C);
     if (!container) {
         std::cout << "had" << std::endl;
         GetMenu()->OnClickedGameplaySettings();

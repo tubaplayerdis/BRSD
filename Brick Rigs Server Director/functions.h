@@ -13,7 +13,6 @@
 #pragma once
 #include <SDK.hpp>
 #include "Function.h"
-#include "uibase.h"
 #include "offsets.h"
 
 namespace FLinearColor
@@ -102,14 +101,6 @@ namespace UMainWidgetBase
 	inline void UpdateInputMode(SDK::UMainWidgetBase* Base)
 	{
 		return CallGameFunction<void, SDK::UMainWidgetBase*>(FUpdateInputMode, Base);
-	}
-}
-
-namespace UMenuWidget
-{
-	inline void OpenMenu(SDK::FName InMenu)
-	{
-		return CallGameFunction<void, SDK::UMenuWidget*, SDK::FName>(FOpenMenu, GetMenu(), InMenu);
 	}
 }
 
@@ -211,6 +202,8 @@ inline std::wstring _to_wstring(const std::string& str)
 	return wstr;
 }
 
+inline SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)> del = SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)>();
+
 inline void AttemptLoadClass(const char* classname)
 {
 	std::cout << "raw: " << classname << std::endl;
@@ -219,7 +212,7 @@ inline void AttemptLoadClass(const char* classname)
 	lookfor.pop_back();
 	lookfor.append(L".");
 	std::wcout << "attempting find: " << lookfor << std::endl;
-	SDK::FString res = SDK::FString(L"NONE");
+	std::wstring res = std::wstring(L"NONE");
 	SDK::TArray<SDK::FString> files = GetVFSFiles();
 	for (int i = 0; i < files.Num(); i++)
 	{
@@ -252,17 +245,15 @@ inline void AttemptLoadClass(const char* classname)
 
 			result = L"/Game/" + result;
 
-			res = UC::FString(result.c_str());
-			std::cout << res.Num() << std::endl;
-			std::cout << "result: " << res.ToString() << std::endl;
+			res = result;
 			break;
 		}
 	}
 
-	if (res.ToWString() == L"NONE") { std::cout << "Failed to load Class!" << std::endl; return; }
+	if (res == L"NONE") { std::cout << "Failed to load Class!" << std::endl; return; }
 
-	SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)> del = SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)>();
-	LoadPackageAsync(res, del);
+	const UC::FString path = UC::FString(res.c_str());
+	LoadPackageAsync(path, del);
 	Sleep(100);
 	return;
 }
