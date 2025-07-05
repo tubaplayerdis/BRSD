@@ -12,6 +12,15 @@ inline TRet CallGameFunction(unsigned long long addr, TArgs... args)
 	return OnFunction(std::forward<TArgs>(args)...);
 }
 
+template<typename TRet, typename... TArgs>
+inline TRet CallVTableFunction(int index ,void* Object, TArgs... args)
+{
+    using FunctionFn = TRet(__fastcall*)(void*, TArgs...);
+    void** vtable = *(void***)Object;
+    FunctionFn FunctionFunc = reinterpret_cast<FunctionFn>(index/sizeof(void*));
+    return FunctionFunc(Object, std::forward<TArgs>(args)...);
+}
+
 inline unsigned long long FindPatternF(const char* pattern, const char* mask)
 {
     unsigned long long base = (unsigned long long)GetModuleHandle(NULL);

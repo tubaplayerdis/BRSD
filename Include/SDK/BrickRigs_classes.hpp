@@ -12842,7 +12842,8 @@ static_assert(sizeof(UTrainWheelBrickStaticInfo) == 0x000188, "Wrong size on UTr
 class UMenuWidget : public UMainWidgetBase
 {
 public:
-	uint8                                         Pad_278[0x20];                                     // 0x0278(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8										  AssetLoader_MenuPage[0x10];
+	uint8                                         Pad_278[0x10];                                     // 0x0278(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
 	class UMenuPageWidget*                        CurrentMenuPage;                                   // 0x0298(0x0008)(ExportObject, ZeroConstructor, Transient, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
 	TSoftClassPtr<class UClass>                   JoinSessionPopupClass;                             // 0x02A0(0x0028)(Edit, DisableEditOnInstance, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TSoftClassPtr<class UClass>                   NetworkErrorPopupClass;                            // 0x02C8(0x0028)(Edit, DisableEditOnInstance, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)

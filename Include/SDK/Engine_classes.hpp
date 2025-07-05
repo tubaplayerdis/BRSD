@@ -3795,22 +3795,52 @@ static_assert(offsetof(UInterpTrackVisibility, VisibilityTrack) == 0x000070, "Me
 class UAssetManager : public UObject
 {
 public:
-	uint8                                         Pad_28[0x2B8];                                     // 0x0028(0x02B8)(Fixing Size After Last Property [ Dumper-7 ])
-	TArray<class UObject*>                        ObjectReferenceList;                               // 0x02E0(0x0010)(ZeroConstructor, Protected, NativeAccessSpecifierProtected)
-	bool                                          bIsGlobalAsyncScanEnvironment;                     // 0x02F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bShouldGuessTypeAndName;                           // 0x02F1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bShouldUseSynchronousLoad;                         // 0x02F2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsLoadingFromPakFiles;                            // 0x02F3(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bShouldAcquireMissingChunksOnLoad;                 // 0x02F4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bOnlyCookProductionAssets;                         // 0x02F5(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsBulkScanning;                                   // 0x02F6(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsPrimaryAssetDirectoryCurrent;                   // 0x02F7(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIsManagementDatabaseCurrent;                      // 0x02F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bUpdateManagementDatabaseAfterScan;                // 0x02F9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bIncludeOnlyOnDiskAssets;                          // 0x02FA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	bool                                          bHasCompletedInitialScan;                          // 0x02FB(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	int32                                         NumberOfSpawnedNotifications;                      // 0x02FC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
-	uint8                                         Pad_300[0x178];                                    // 0x0300(0x0178)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8 AssetPathMap[0x50];                  // 0x0028 -> 0x0078
+	uint8 AssetRuleOverrides[0x50];            // 0x0078 -> 0x00C8
+	uint8 ManagementParentMap[0x50];           // 0x00C8 -> 0x0118
+	uint8 CachedAssetBundles[0x50];            // 0x0118 -> 0x0168
+
+	TArray<FString> AlreadyScannedDirectories; // 0x0168 -> 0x0178
+	TArray<FString> AllAssetSearchRoots;       // 0x0178 -> 0x0188
+	TArray<FString> AddedAssetSearchRoots;     // 0x0188 -> 0x0198
+
+	uint8 StreamableManager[0xE8];             // 0x0198 -> 0x0280
+
+	TArray<uint8> PendingChunkInstalls;        // 0x0280 -> 0x0290 (use dummy type)
+
+	uint8 PrimaryAssetEncryptionKeyCache[0x50]; // 0x0290 -> 0x02E0
+
+	TArray<UObject*> ObjectReferenceList;      // 0x02E0 -> 0x02F0
+
+	bool bIsGlobalAsyncScanEnvironment;        // 0x02F0
+	bool bShouldGuessTypeAndName;              // 0x02F1
+	bool bShouldUseSynchronousLoad;            // 0x02F2
+	bool bIsLoadingFromPakFiles;               // 0x02F3
+	bool bShouldAcquireMissingChunksOnLoad;    // 0x02F4
+	bool bOnlyCookProductionAssets;            // 0x02F5
+	bool bIsBulkScanning;                      // 0x02F6
+	bool bIsPrimaryAssetDirectoryCurrent;      // 0x02F7
+	bool bIsManagementDatabaseCurrent;         // 0x02F8
+	bool bUpdateManagementDatabaseAfterScan;   // 0x02F9
+	bool bIncludeOnlyOnDiskAssets;             // 0x02FA
+	bool bHasCompletedInitialScan;             // 0x02FB
+
+	int32 NumberOfSpawnedNotifications;        // 0x02FC -> 0x0300
+
+	uint8 PrimaryAssetTypeRedirects[0x50];     // 0x0300 -> 0x0350
+	uint8 PrimaryAssetIdRedirects[0x50];       // 0x0350 -> 0x03A0
+	uint8 AssetPathRedirects[0x50];            // 0x03A0 -> 0x03F0
+
+	uint8 OnAddedAssetSearchRootDelegate[0x18];// 0x03F0 -> 0x0408
+	uint8 ChunkInstallDelegateHandle[0x8];     // 0x0408 -> 0x0410
+
+	bool bOldTemporaryCachingMode;             // 0x0410
+	uint8 Pad_A[0x7];                          // 0x0411 -> 0x0418
+
+	uint8 AssetTypeMap[0x50];                  // 0x0418 -> 0x0468
+
+	uint8 CachedAssetRegistry[0x8];            // 0x0468 -> 0x0470
+	uint8 CachedSettings[0x8];                  // 0x0470 -> 0x0478
 
 public:
 	static class UClass* StaticClass()

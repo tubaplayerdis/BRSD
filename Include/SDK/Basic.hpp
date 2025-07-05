@@ -164,6 +164,9 @@ class UClass* StaticBPGeneratedClassImpl()
 
 		return ClassObj;
 	}
+
+	//Class was not found. Load it by recursiveley traversing the filesystem tree until finding it
+
 }
 
 template<class ClassType>

@@ -74,7 +74,20 @@ void MainLoop()
 		if (UninjectPress() || doUninject) break;
 
 		if (TogglePress()) {
-			std::cout << psettings::MockPage->Slot->GetName() << "\n";
+			for (SDK::int32 i = 0; i < SDK::UObject::GObjects->Num(); ++i)
+			{
+				SDK::UObject* Object = SDK::UObject::GObjects->GetByIndex(i);
+				if (!Object) continue;
+
+				if (Object->IsA(SDK::UClass::StaticClass()))
+				{
+					SDK::UClass* Package = static_cast<SDK::UClass*>(Object);
+					std::cout << Package->GetName() << std::endl;
+					if (Package->GetName() == "WBP_BoolProperty_C") {
+						std::cout << "WBP_BOOL_PROP loaded!\n";
+					}
+				}
+			}
 			/*
 			if (hooks::S_AddChatMessage->IsEnabled(hooks::S_AddChatMessage)) {
 				hooks::S_AddChatMessage->Disable();
