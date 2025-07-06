@@ -15,6 +15,7 @@
 #include "global.h"
 #include "functions.h"
 #include "OnComboBoxMenuItemSelected.h"
+#include "spawnutils.h"
 
 void __fastcall psettings::LoaderReturn(void* input)
 {

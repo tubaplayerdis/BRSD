@@ -12,8 +12,6 @@
 
 #pragma once
 #include <SDK.hpp>
-#include "functions.h"
-
 
 namespace uibase
 {
@@ -23,22 +21,6 @@ namespace uibase
 	bool IsInGameMenuOpen();
 
 	void Cleanup();
-}
-
-namespace WidgetU
-{
-	template<typename T>
-	inline SDK::UUserWidget* CreateWidget(SDK::UWorld* World, SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClass, const char* WidgetClassName)
-	{
-
-		if (UserWidgetClass == nullptr) {
-			std::string wcn = std::string(WidgetClassName);
-			AttemptLoadClass(wcn.substr(wcn.find_first_of('U')+1).c_str());
-			UserWidgetClass = T::StaticClass();
-		}
-
-		return CallGameFunction<SDK::UUserWidget*, SDK::UWorld*, SDK::TSubclassOf<SDK::UUserWidget>, SDK::FName>(FCreateWidget, World, UserWidgetClass, SDK::FName());
-	}
 }
 
 SDK::UWBP_WindowManager_C* GetWindowManager();

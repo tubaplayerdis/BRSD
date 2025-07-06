@@ -29,8 +29,6 @@
 #define World() SDK::UWorld::GetWorld()
 #define Engine() SDK::UEngine::GetEngine()
 #define Notification(message, icon) global::SendNotificationLocal(message, icon)
-#define Spawn(cls, out) static_cast<cls*>(SDK::UGameplayStatics::SpawnObject(cls::StaticClass(), out))
-#define Create(cls) static_cast<cls*>(WidgetU::CreateWidget<cls>(World(), cls::StaticClass(), ## #cls))
 #define Verify(cls) cls::StaticClass()
 #define WIN32_LEAN_AND_MEAN
 
