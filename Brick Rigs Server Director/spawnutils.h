@@ -19,13 +19,25 @@
 /// <returns>A pointer to the new widget</returns>
 #define Create(cls) CreateWidgetInternal<cls>(cls::StaticClass(), ## #cls)
 
+/// <summary>
+/// Adds a UClass refrence internally for use again later
+/// </summary>
+/// <param name="cls">The class of the widget. Not the UClass. Ex: SDK::UWPB_PropertyContainer_C </param>
+/// <returns>None</returns>
+#define Load(cls)
+
 
 #define _itor(num) int i = 0; i < num; i++
 
-namespace _spawnuntils
+namespace _spawnutils
 {
 	#pragma region helpers
 	typedef SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)> LPADelegate;
+
+	inline bool DoesPackageExist(const SDK::FString& LongPackageName, const SDK::FGuid* Guid, SDK::FString* OutFilename, bool InAllowTextFormats = true)
+	{
+		return CallGameFunction<bool, const SDK::FString&, const SDK::FGuid*, SDK::FString*, bool>(FDoesPackageExist, LongPackageName, Guid, OutFilename, InAllowTextFormats);
+	}
 
 	inline SDK::int32 LoadPackageAsync(const SDK::FString& InName, LPADelegate InCompletionDelegate, int InPackagePriority = 0, __int32 InPackageFlags = 0, SDK::int32 InPIEInstanceID = -1)
 	{
@@ -35,6 +47,11 @@ namespace _spawnuntils
 	inline void* GetPlatformFile()
 	{
 		return CallGameFunction<void*, void*>(FGetPlatformFile, CallGameFunction<void*>(FGetPlatformFileManager));
+	}
+
+	inline SDK::UPackage* FindPackage(SDK::UObject* inOuter, const wchar_t* PackageName)
+	{
+		return CallGameFunction<SDK::UPackage*, SDK::UObject*, const wchar_t*>(BASE + 0x1218FD0, inOuter, PackageName);
 	}
 
 	inline SDK::TArray<SDK::FString> GetVFSFiles()
@@ -62,6 +79,8 @@ namespace _spawnuntils
 		lookfor.pop_back();
 		lookfor.pop_back();
 		lookfor.append(L".");//Remove the _C and add a dot so that we know when the name ends.
+		std::cout << "attempting find: "; 
+		std::wcout << lookfor << std::endl;
 		std::wstring res = std::wstring(L"NONE");
 		SDK::TArray<SDK::FString> files = GetVFSFiles();
 		for (int i = 0; i < files.Num(); i++)
@@ -96,15 +115,15 @@ namespace _spawnuntils
 				result = L"/Game/" + result;
 
 				res = result;
+				std::wcout << L"Result: " << res << std::endl;
 				break;
 			}
 		}
 
 		if (res == L"NONE") { std::cout << "Failed to load Class!" << std::endl; return; }
-
+		
 		const UC::FString path = UC::FString(res.c_str());//FString is volatile and wrong. only use as const for final step moving on.
 		LoadPackageAsync(path, del);
-		Sleep(100);
 		return;
 	}
 	#pragma endregion
@@ -116,13 +135,16 @@ inline T* SpawnObjectInternal(SDK::UObject* outerobj, const char* objclsname)
 {
 	SDK::UClass* objcls = T::StaticClass();
 	if (objcls == nullptr) {
-		std::string wcn = std::string(WidgetClassName);
+		std::string wcn = std::string(objclsname);
 		if (wcn.starts_with("UBP")) {
-			for (_itor(10))
+			_spawnutils::AttemptLoadClass(wcn.substr(1).c_str()); //This should only be called on UBP classes.
+			for (_itor(10)) //Give 1 second max to load the package.
 			{
-				_spawnuntils::AttemptLoadClass(wcn.substr(1).c_str()); //This should only be called on UBP classes.
+				Sleep(100);
 				objcls = T::StaticClass();
-				if (objcls) break;
+				if (objcls) {
+					std::cout << "obj found!" << std::endl; break;
+				}
 			}
 		}
 	}
@@ -135,11 +157,14 @@ inline T* CreateWidgetInternal(SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClas
 
 	if (UserWidgetClass == nullptr) {
 		std::string wcn = std::string(WidgetClassName);
-		for (_itor(10))
+		_spawnutils::AttemptLoadClass(wcn.substr(wcn.find_first_of('U') + 1).c_str());
+		for (_itor(10)) //Give 1 second max to load the package.
 		{
-			_spawnuntils::AttemptLoadClass(wcn.substr(wcn.find_first_of('U') + 1).c_str());
+			Sleep(100);
 			UserWidgetClass = T::StaticClass();
-			if (UserWidgetClass) break;
+			if (UserWidgetClass) {
+				std::cout << "obj found!" << std::endl; break;
+			}
 		}
 	}
 

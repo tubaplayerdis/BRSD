@@ -32,6 +32,18 @@
 #define Verify(cls) cls::StaticClass()
 #define WIN32_LEAN_AND_MEAN
 
+/// <summary>
+/// Runs code if in Release version
+/// </summary>
+/// <param name="arbit">Arbitrary code to run</param>
+#define Release(arbit) if(isRelease()) arbit
+
+/// <summary>
+/// Runs code if in Debug version
+/// </summary>
+/// <param name="arbit">Arbitrary code to run</param>
+#define Debug(arbit) if(!isRelease()) arbit
+
 #undef TEXT
 #define TEXT(text) SDK::UKismetTextLibrary::Conv_StringToText(SDK::FString(text))
 
@@ -122,18 +134,6 @@ namespace global
 	/// <param name="functionname">The name of the function whose bytecode is to be retrieved.</param>
 	/// <returns>A vector of bytes containing the bytecode of the specified function.</returns>
 	std::vector<uint8_t> GetFunctionBytecode(SDK::UClass* objectclass, std::string classname, std::string functionname);
-
-	template<typename T>
-	inline SDK::UObject* SpawnObjectInternal(SDK::TSubclassOf<SDK::UObject> objcls, SDK::UObject* outerobj, const char* objclsname)
-	{
-		if (objcls == nullptr) {
-			std::string wcn = std::string(WidgetClassName);
-			AttemptLoadClass(wcn.substr(wcn.find_first_of('U') + 1).c_str());
-			objcls = T::StaticClass();
-		}
-
-		return 
-	}
 }
 
 SDK::ABrickCharacter* GetBrickCharacter();
@@ -161,8 +161,5 @@ inline bool isRelease()
 	#endif // !_DEBUG
 	return 0;
 }
-
-#define Release(arbit) if(isRelease()) arbit
-#define Debug(arbit) if(!isRelease()) arbit
 
 SDK::TArray<SDK::AActor*>* AllActorsOfClass(SDK::TSubclassOf<SDK::AActor> sub);

@@ -71,6 +71,7 @@ bool hooks::InitHooks()
 	return true;
 }
 
+// Combo box hook is Enabled based off the when the custom settings menu is enabled.
 void hooks::EnableHooks()
 {
 	S_AddChatMessage->Enable();

@@ -24,6 +24,17 @@ void __fastcall psettings::LoaderReturn(void* input)
     isLoaded = true;
 }
 
+struct FModuleManager
+{
+    uint8_t pad[0x3D0];
+};
+
+struct FdepQ
+{
+    uint8_t req;
+    uint8_t exclu;
+};
+
 bool psettings::CreateCustomSettingsPage()
 {
     MockPage = Spawn(SDK::UMenuPageWidget, GetMenu());
@@ -45,12 +56,16 @@ bool psettings::CreateCustomSettingsPage()
     TextBorder->SetVerticalAlignment(SDK::EVerticalAlignment::VAlign_Center);
 
     SDK::UWBP_Menu_C::StaticClass();
-    /*
-    SDK::FString path = UC::FString(L"/Game/BrickRigs/UI/Properties/WBP_PropertyContainer");
-    std::cout << path.Num() << std::endl;
-    SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)> del = SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)>();
-    LoadPackageAsync(path, del);
-    */
+    FModuleManager* manager = &CallGameFunction<SDK::TOptional<FModuleManager, true>*>(BASE + 0x0FF8D80)->GetValueRef();
+    if (CallGameFunction<bool, FModuleManager*, SDK::FName>(BASE + 0x0FFB770, &CallGameFunction<SDK::TOptional<FModuleManager, true>*>(BASE + 0x0FF8D80)->GetValueRef(), NAME(L"AssetRegistry")))
+    {
+        void* FAssetRegistryModule = CallGameFunction<void*, FModuleManager*, const SDK::FName>(BASE + 0x0FF9320, manager, NAME(L"AssetRegistry"));
+        if (FAssetRegistryModule) {
+            SDK::TArray<SDK::FName> ret;
+            CallGameFunction<void, void*, SDK::FName, SDK::TArray<SDK::FName>*, __int64, FdepQ*>(BASE + 0x209F7A0, FAssetRegistryModule, NAME(L"/Game/BrickRigs/UI/Widgets/WBP_BrickComboBox"), &ret, 0x10, nullptr);
+            std::cout << ret.Num() << std::endl;
+        }
+    }
 
     std::cout << "spacer" << std::endl;
 
@@ -72,6 +87,9 @@ bool psettings::CreateCustomSettingsPage()
 
     std::cout << "Created UI Elements!" << std::endl;
 
+    SDK::UWBP_BoolProperty_C* cb = Create(SDK::UWBP_BoolProperty_C);
+    SDK::UWBP_BrickComboBox_C* bb = Create(SDK::UWBP_BrickComboBox_C);
+
     //Add to the ClassPool.
     //classPool.push_back(*SDK::UWBP_PropertyContainer_C::StaticClass())
 
@@ -87,9 +105,8 @@ void psettings::PrepareCustomSettingsPage()
     std::cout << "preparing page!" << std::endl;
     std::cout << SDK::UWBP_BoolProperty_C::StaticClass() << std::endl;
     SDK::UWBP_BoolProperty_C* cb = Create(SDK::UWBP_BoolProperty_C);
-    cb->ComboBox = Create(SDK::UWBP_BrickComboBox_C);
+    elements::ChatCommandsPC->AddPropertyWidget(cb, SDK::EOrientation::Orient_Horizontal);
     cb->ComboBox->InitItems(2, 1);
-    elements::ChatCommandsPC->AddPropertyWidget(nullptr, SDK::EOrientation::Orient_Horizontal);
     std::cout << "prepared page!" << std::endl;
 }
 
