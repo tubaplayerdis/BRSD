@@ -74,16 +74,10 @@ void MainLoop()
 		if (UninjectPress() || doUninject) break;
 
 		if (TogglePress()) {
-			for (int i = 0; i < SDK::UObject::GObjects->Num(); ++i)
+			SDK::TArray<SDK::FString> arr = SDK::UBrickAssetManager::Get()->AllAssetSearchRoots;
+			for (int i = 0; i < arr.Num(); ++i)
 			{
-				SDK::UObject* Object = SDK::UObject::GObjects->GetByIndex(i);
-				if (!Object) continue;
-
-				if (Object->IsA(SDK::UClass::StaticClass()))
-				{
-					SDK::UClass* Package = static_cast<SDK::UClass*>(Object);
-					std::cout << Package->GetName() << std::endl;
-				}
+				std::cout << arr[i].ToString() << std::endl;
 			}
 			/*
 			if (hooks::S_AddChatMessage->IsEnabled(hooks::S_AddChatMessage)) {
