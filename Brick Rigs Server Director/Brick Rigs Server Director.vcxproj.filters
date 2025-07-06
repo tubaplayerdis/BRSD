@@ -399,9 +399,6 @@
     <ClCompile Include="..\Include\SDK\WBP_VideoSettings_functions.cpp">
       <Filter>More Files\SDK\UI</Filter>
     </ClCompile>
-    <ClCompile Include="..\Include\SDK\Helpers.cpp">
-      <Filter>More Files\SDK\Core</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -489,6 +486,12 @@
       <Filter>Header Files\global</Filter>
     </ClInclude>
     <ClInclude Include="OnComboBoxMenuItemSelected.h">
+      <Filter>Header Files\hooks\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="spawnutils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RequestAsyncLoad.h">
       <Filter>Header Files\hooks\ui</Filter>
     </ClInclude>
   </ItemGroup>

@@ -30,6 +30,7 @@ bool hooks::InitHooks()
 	S_LoadMap = new LoadMap();
 	S_OnClicked = new OnClicked();
 	S_OnComboBoxMenuItemSelected = new OnComboBoxMenuItemSelected();
+	S_RequestAsyncLoad = new RequestAsyncLoad();
 	bool ACMHook = S_AddChatMessage->IsInitialized(S_AddChatMessage);
 	bool BPHook = S_BeginPlay->IsInitialized(S_BeginPlay);
 	bool OMHook = S_OpenMenu->IsInitialized(S_OpenMenu);
@@ -81,6 +82,7 @@ void hooks::EnableHooks()
 	S_StartPlay->Enable();
 	S_LoadMap->Enable();
 	S_OnClicked->Enable();
+	S_RequestAsyncLoad->Enable();
 }
 
 void hooks::DestroyHookObjects()
@@ -94,6 +96,7 @@ void hooks::DestroyHookObjects()
 	delete S_LoadMap;
 	delete S_OnClicked;
 	delete S_OnComboBoxMenuItemSelected;
+	delete S_RequestAsyncLoad;
 
 	//Set nullptr
 	S_AddChatMessage = nullptr;
@@ -104,6 +107,7 @@ void hooks::DestroyHookObjects()
 	S_LoadMap = nullptr;
 	S_OnClicked = nullptr;
 	S_OnComboBoxMenuItemSelected = nullptr;
+	S_RequestAsyncLoad = nullptr;
 }
 
 void hooks::OpenCrashFile()

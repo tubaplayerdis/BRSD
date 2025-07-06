@@ -54,6 +54,9 @@
 #define FGetPlatformFile BASE + 0x0F1EDD0
 #define FGetPlatformFileManager BASE + 0x0F19360
 #define FFindFilesRecursively BASE + 0x0EEF8C0
+#define FGetStreamableManager BASE + 0x0CE8250
+#define FRequestSyncLoad BASE + 0x27FC190
+#define FWaitUntilComplete BASE + 0x2805580
 
 //define VTable offsets. 8 is used after the number IDA gives
 
@@ -67,6 +70,7 @@
 #define HLambdaNOP BASE + 0x0D55B30
 #define HSetTitleText BASE + 0x0EA2170
 #define HOnComboBoxMenuItemSelected BASE + 0x0DD7C10
+#define HOnRequestAsyncLoad BASE + 0x27FB690
 
 //define hook signatures/masks
 
