@@ -51,6 +51,9 @@
 #define FSetPath BASE + 0x1226320
 #define FLoadSynchronous BASE + 0x0843330
 #define FFlushAsyncLoading BASE + 0x10A30A0
+#define FGetPlatformFile BASE + 0x0F1EDD0
+#define FGetPlatformFileManager BASE + 0x0F19360
+#define FFindFilesRecursively BASE + 0x0EEF8C0
 
 //define VTable offsets. 8 is used after the number IDA gives
 

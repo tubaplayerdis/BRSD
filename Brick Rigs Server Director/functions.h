@@ -137,13 +137,6 @@ inline SDK::UPackage* LoadPackage(SDK::UPackage* InOuter, const wchar_t* InLongP
 	return CallGameFunction<SDK::UPackage*, SDK::UPackage*, const wchar_t*, unsigned int, void*, void*>(FLoadPackage, InOuter, InLongPackageName, LoadFlags, InReaderOverride, InstancingContext);
 }
 
-typedef SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)> LPADelegate;
-
-inline SDK::int32 LoadPackageAsync(const SDK::FString& InName, LPADelegate InCompletionDelegate, int InPackagePriority = 0, __int32 InPackageFlags = 0, SDK::int32 InPIEInstanceID = -1)
-{
-	return CallGameFunction<SDK::int32, const SDK::FString&, LPADelegate, int, __int32, SDK::int32>(FLoadPackageAsync, InName, InCompletionDelegate, InPackagePriority, InPackageFlags, InPIEInstanceID);
-}
-
 namespace FPackageName
 {
 	inline bool DoesPackageExist(const SDK::FString& LongPackageName, const SDK::FGuid* Guid, SDK::FString* OutFilename, bool InAllowTextFormats = true)
@@ -178,82 +171,4 @@ inline SDK::UObject* LoadSynchronous(SDK::FSoftObjectPtr* This)
 inline void FlushAsyncLoading(int packageID)
 {
 	return CallGameFunction<void, int>(FFlushAsyncLoading, packageID);
-}
-
-inline void* GetPlatformFile()
-{
-	return CallGameFunction<void*, void*>((unsigned long long)GetModuleHandleW(0) + 0x0F1EDD0, CallGameFunction<void*>((unsigned long long)GetModuleHandleW(0) + 0x0F19360));
-}
-
-inline SDK::TArray<SDK::FString> GetVFSFiles()
-{
-	SDK::FString gamepath = SDK::UBlueprintPathsLibrary::ProjectContentDir();
-	SDK::TArray<SDK::FString> ret;
-	CallGameFunction<void, void*, SDK::TArray<SDK::FString>*, const wchar_t*, const wchar_t*>((unsigned long long)GetModuleHandleW(0) + 0x0EEF8C0, GetPlatformFile(), &ret, gamepath.CStr(), L".uasset");
-	return ret;
-}
-
-inline std::wstring _to_wstring(const std::string& str)
-{
-	int size_needed = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, nullptr, 0);
-	std::wstring wstr(size_needed, 0);
-	MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, &wstr[0], size_needed);
-	wstr.pop_back(); // remove null terminator
-	return wstr;
-}
-
-inline SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)> del = SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)>();
-
-inline void AttemptLoadClass(const char* classname)
-{
-	std::cout << "raw: " << classname << std::endl;
-	std::wstring lookfor = _to_wstring(classname);
-	lookfor.pop_back();
-	lookfor.pop_back();
-	lookfor.append(L".");
-	std::wcout << "attempting find: " << lookfor << std::endl;
-	std::wstring res = std::wstring(L"NONE");
-	SDK::TArray<SDK::FString> files = GetVFSFiles();
-	for (int i = 0; i < files.Num(); i++)
-	{
-		if (files[i].ToWString().find(std::wstring(lookfor)) != std::string::npos)
-		{
-			//../../../BrickRigs/Content/BrickRigs/UI/Properties/WBP_PropertiesPanel.uasset
-			std::wstring original = files[i].ToWString();
-			const std::wstring target = L"BrickRigs/";
-
-			// Find the first occurrence of "BrickRigs/"
-			size_t firstBrickRigs = original.find(target);
-			if (firstBrickRigs == std::wstring::npos) {
-				break; // or handle error
-			}
-
-			// Find the next "BrickRigs/" after the first one (skipping "BrickRigs/Content/")
-			size_t secondBrickRigs = original.find(target, firstBrickRigs + target.length());
-			if (secondBrickRigs == std::wstring::npos) {
-				break; // or handle error
-			}
-
-			// Extract from the second "BrickRigs/"
-			std::wstring result = original.substr(secondBrickRigs);
-
-			// Remove the ".uasset" extension
-			size_t dotPos = result.rfind('.');
-			if (dotPos != std::wstring::npos) {
-				result = result.substr(0, dotPos);
-			}
-
-			result = L"/Game/" + result;
-
-			res = result;
-			break;
-		}
-	}
-
-	if (res == L"NONE") { std::cout << "Failed to load Class!" << std::endl; return; }
-
-	const UC::FString path = UC::FString(res.c_str());
-	LoadPackageAsync(path, del);
-	Sleep(100);
-	return;
 }
