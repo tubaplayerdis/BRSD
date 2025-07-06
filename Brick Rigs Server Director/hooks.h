@@ -21,6 +21,7 @@
 #include "StartPlay.h"
 #include "OnClicked.h"
 #include "OnComboBoxMenuItemSelected.h"
+#include "RequestAsyncLoad.h"
 
 namespace hooks
 {

@@ -31,6 +31,11 @@
 
 namespace _spawnutils
 {
+	inline auto cb = new std::function<void()>([]() {
+		std::cout << "Hello from callback!" << std::endl;
+	});
+
+
 	#pragma region helpers
 	typedef SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)> LPADelegate;
 
@@ -44,14 +49,37 @@ namespace _spawnutils
 		return CallGameFunction<SDK::int32, const SDK::FString&, LPADelegate, int, __int32, SDK::int32>(FLoadPackageAsync, InName, InCompletionDelegate, InPackagePriority, InPackageFlags, InPIEInstanceID);
 	}
 
+	inline void* GetStreamableManager()
+	{
+		return CallGameFunction<void*>(FGetStreamableManager);
+	}
+
+
+	struct falseSharedPtr
+	{
+		void* ptr;
+		uint8_t pad[0x8];
+	};
+
+	inline void RequestSyncLoad(SDK::FakeSoftObjectPtr::FSoftObjectPath path)
+	{
+		falseSharedPtr ptr{};
+		ptr.ptr = nullptr;
+		SDK::TAllocatedArray<SDK::FakeSoftObjectPtr::FSoftObjectPath> allo = SDK::TAllocatedArray<SDK::FakeSoftObjectPtr::FSoftObjectPath>(1);
+		allo.Add(path);
+		UC::FString str = UC::FString(L"LoadAssetList");
+		if (GetStreamableManager()) std::cout << "valid!" << std::endl;
+		CallGameFunction<falseSharedPtr*, void*, void*, SDK::TArray<SDK::FakeSoftObjectPtr::FSoftObjectPath>*, bool, SDK::FString*>(FRequestSyncLoad, GetStreamableManager(), &ptr, &allo, true, &str);//FStreamableManager::RequestSyncLoad
+	}
+
 	inline void* GetPlatformFile()
 	{
 		return CallGameFunction<void*, void*>(FGetPlatformFile, CallGameFunction<void*>(FGetPlatformFileManager));
 	}
 
-	inline SDK::UPackage* FindPackage(SDK::UObject* inOuter, const wchar_t* PackageName)
+	inline void SetPath(SDK::FakeSoftObjectPtr::FSoftObjectPath* This, SDK::FName pathname)
 	{
-		return CallGameFunction<SDK::UPackage*, SDK::UObject*, const wchar_t*>(BASE + 0x1218FD0, inOuter, PackageName);
+		return CallGameFunction<void, SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::FName>(FSetPath, This, pathname);
 	}
 
 	inline SDK::TArray<SDK::FString> GetVFSFiles()
@@ -73,6 +101,7 @@ namespace _spawnutils
 
 	inline SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)> del = SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)>();
 
+	//Example WBP_PropertyContainer_C
 	inline void AttemptLoadClass(const char* classname)
 	{
 		std::wstring lookfor = _to_wstring(classname);
@@ -121,7 +150,7 @@ namespace _spawnutils
 		}
 
 		if (res == L"NONE") { std::cout << "Failed to load Class!" << std::endl; return; }
-		
+
 		const UC::FString path = UC::FString(res.c_str());//FString is volatile and wrong. only use as const for final step moving on.
 		LoadPackageAsync(path, del);
 		return;
@@ -140,7 +169,7 @@ inline T* SpawnObjectInternal(SDK::UObject* outerobj, const char* objclsname)
 			_spawnutils::AttemptLoadClass(wcn.substr(1).c_str()); //This should only be called on UBP classes.
 			for (_itor(10)) //Give 1 second max to load the package.
 			{
-				Sleep(100);
+				Sleep(1);
 				objcls = T::StaticClass();
 				if (objcls) {
 					std::cout << "obj found!" << std::endl; break;
@@ -160,7 +189,7 @@ inline T* CreateWidgetInternal(SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClas
 		_spawnutils::AttemptLoadClass(wcn.substr(wcn.find_first_of('U') + 1).c_str());
 		for (_itor(10)) //Give 1 second max to load the package.
 		{
-			Sleep(100);
+			Sleep(1);
 			UserWidgetClass = T::StaticClass();
 			if (UserWidgetClass) {
 				std::cout << "obj found!" << std::endl; break;

@@ -16,6 +16,7 @@
 #include "functions.h"
 #include "OnComboBoxMenuItemSelected.h"
 #include "spawnutils.h"
+#include <chrono>
 
 void __fastcall psettings::LoaderReturn(void* input)
 {
@@ -55,18 +56,6 @@ bool psettings::CreateCustomSettingsPage()
     TextBorder->SetHorizontalAlignment(SDK::EHorizontalAlignment::HAlign_Center);
     TextBorder->SetVerticalAlignment(SDK::EVerticalAlignment::VAlign_Center);
 
-    SDK::UWBP_Menu_C::StaticClass();
-    FModuleManager* manager = &CallGameFunction<SDK::TOptional<FModuleManager, true>*>(BASE + 0x0FF8D80)->GetValueRef();
-    if (CallGameFunction<bool, FModuleManager*, SDK::FName>(BASE + 0x0FFB770, &CallGameFunction<SDK::TOptional<FModuleManager, true>*>(BASE + 0x0FF8D80)->GetValueRef(), NAME(L"AssetRegistry")))
-    {
-        void* FAssetRegistryModule = CallGameFunction<void*, FModuleManager*, const SDK::FName>(BASE + 0x0FF9320, manager, NAME(L"AssetRegistry"));
-        if (FAssetRegistryModule) {
-            SDK::TArray<SDK::FName> ret;
-            CallGameFunction<void, void*, SDK::FName, SDK::TArray<SDK::FName>*, __int64, FdepQ*>(BASE + 0x209F7A0, FAssetRegistryModule, NAME(L"/Game/BrickRigs/UI/Widgets/WBP_BrickComboBox"), &ret, 0x10, nullptr);
-            std::cout << ret.Num() << std::endl;
-        }
-    }
-
     std::cout << "spacer" << std::endl;
 
     SDK::UWBP_PropertyContainer_C* container = Create(SDK::UWBP_PropertyContainer_C);
@@ -86,17 +75,6 @@ bool psettings::CreateCustomSettingsPage()
     elements::list.push_back(container);
 
     std::cout << "Created UI Elements!" << std::endl;
-
-    SDK::UWBP_BoolProperty_C* cb = Create(SDK::UWBP_BoolProperty_C);
-    SDK::UWBP_BrickComboBox_C* bb = Create(SDK::UWBP_BrickComboBox_C);
-
-    //Add to the ClassPool.
-    //classPool.push_back(*SDK::UWBP_PropertyContainer_C::StaticClass())
-
-
-
-
-
     return true;
 }
 
