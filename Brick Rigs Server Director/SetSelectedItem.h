@@ -2,7 +2,7 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     OpenMenu.h                                                  */
+/*    Module:     SetSelectedItem.h                                           */
 /*    Author:     Aaron Wilk                                                  */
 /*    Created:    24 June 2025                                                */
 /*                                                                            */
@@ -19,17 +19,18 @@
 
 namespace hooks
 {
-    class OnComboBoxMenuItemSelected;
-    inline OnComboBoxMenuItemSelected* S_OnComboBoxMenuItemSelected = nullptr; //Non-Inline causes link 2005
+    class SetSelectedItem;
+    inline SetSelectedItem* S_SetSelectedItem = nullptr; //Non-Inline causes link 2005
 
     //Hook should only be enabled when the CustomSettingsMenu is present.
-    class OnComboBoxMenuItemSelected : public Hook<void, SDK::UBrickComboBoxWidget*, int, SDK::EValueChangedEventType>
+    class SetSelectedItem : public Hook<void, SDK::UBrickComboBoxWidget*, int>
     {
     public:
 
-        static void __fastcall HookedFunction(SDK::UBrickComboBoxWidget* This, int Item, SDK::EValueChangedEventType EventType)
+        static void __fastcall HookedFunction(SDK::UBrickComboBoxWidget* This, int Item)
         {
-            S_OnComboBoxMenuItemSelected->OriginalFunction(This, Item, EventType);
+            std::cout << "combo box item selected" << std::endl;
+            S_SetSelectedItem->OriginalFunction(This, Item);
             using namespace psettings::elements;
             if (IsComboBox(ChatCommandsPC, This)) {
                 std::cout << "toggled chat commands from settings menu at index:" << Item << std::endl;
@@ -38,6 +39,6 @@ namespace hooks
             
         }
 
-        OnComboBoxMenuItemSelected() : Hook(HOnComboBoxMenuItemSelected, HookedFunction) {}
+        SetSelectedItem() : Hook(HSetSelectedItem, HookedFunction) {}
     };
 }

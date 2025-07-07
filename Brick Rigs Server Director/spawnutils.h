@@ -169,7 +169,7 @@ inline T* SpawnObjectInternal(SDK::UObject* outerobj, const char* objclsname)
 			{
 				objcls = T::StaticClass();
 				if (objcls) {
-					std::cout << "obj found!" << std::endl; break;
+					break;
 				}
 				Sleep(200);
 			}
@@ -189,7 +189,7 @@ inline T* CreateWidgetInternal(SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClas
 		{
 			UserWidgetClass = T::StaticClass();
 			if (UserWidgetClass) {
-				std::cout << "obj found!" << std::endl; break;
+				break;
 			}
 			Sleep(200);
 		}
