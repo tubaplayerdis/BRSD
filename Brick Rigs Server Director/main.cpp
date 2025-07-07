@@ -54,8 +54,6 @@ void MainLoop()
 
 	global::pointers::InitPointers();
 
-	InitalizeSpawnUtils();
-
 	hooks::EnableHooks();
 
 	watermark::InitalizeWaterMark();

@@ -273,7 +273,6 @@
     <ClInclude Include="PlayerInfo.h" />
     <ClInclude Include="psettings.h" />
     <ClInclude Include="logger.h" />
-    <ClInclude Include="Repair.h" />
     <ClInclude Include="RequestAsyncLoad.h" />
     <ClInclude Include="spawnutils.h" />
     <ClInclude Include="StartPlay.h" />
