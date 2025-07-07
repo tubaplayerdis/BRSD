@@ -1,6 +1,20 @@
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
+/*                                                                            */
+/*    Module:     spawnutils.h					                              */
+/*    Author:     Aaron Wilk                                                  */
+/*    Created:    6 July 2025                                                 */
+/*                                                                            */
+/*    Revisions:  V0.1                                                        */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+
 #pragma once
 #include "Function.h"
 #include "offsets.h"
+#include <windows.h>
+#include <tlhelp32.h>
 #include <SDK.hpp>
 
 /// <summary>
@@ -19,34 +33,19 @@
 /// <returns>A pointer to the new widget</returns>
 #define Create(cls) CreateWidgetInternal<cls>(cls::StaticClass(), ## #cls)
 
-/// <summary>
-/// Adds a UClass refrence internally for use again later
-/// </summary>
-/// <param name="cls">The class of the widget. Not the UClass. Ex: SDK::UWPB_PropertyContainer_C </param>
-/// <returns>None</returns>
-#define Load(cls)
-
-
+//Enabling my laziness
 #define _itor(num) int i = 0; i < num; i++
 
 namespace _spawnutils
 {
-	inline auto cb = new std::function<void()>([]() {
-		std::cout << "Hello from callback!" << std::endl;
-	});
-
+	inline SDK::UGunBrick* PieceOfResistance = nullptr;
+	inline SDK::TDelegate<void __cdecl(void)>* delasync = nullptr;
 
 	#pragma region helpers
-	typedef SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)> LPADelegate;
 
-	inline bool DoesPackageExist(const SDK::FString& LongPackageName, const SDK::FGuid* Guid, SDK::FString* OutFilename, bool InAllowTextFormats = true)
+	inline int GetObjSerialNumber(int index)
 	{
-		return CallGameFunction<bool, const SDK::FString&, const SDK::FGuid*, SDK::FString*, bool>(FDoesPackageExist, LongPackageName, Guid, OutFilename, InAllowTextFormats);
-	}
-
-	inline SDK::int32 LoadPackageAsync(const SDK::FString& InName, LPADelegate InCompletionDelegate, int InPackagePriority = 0, __int32 InPackageFlags = 0, SDK::int32 InPIEInstanceID = -1)
-	{
-		return CallGameFunction<SDK::int32, const SDK::FString&, LPADelegate, int, __int32, SDK::int32>(FLoadPackageAsync, InName, InCompletionDelegate, InPackagePriority, InPackageFlags, InPIEInstanceID);
+		return SDK::UObject::GObjects->SDGetByIndex(index);
 	}
 
 	inline void* GetStreamableManager()
@@ -54,22 +53,18 @@ namespace _spawnutils
 		return CallGameFunction<void*>(FGetStreamableManager);
 	}
 
-
 	struct falseSharedPtr
 	{
 		void* ptr;
 		uint8_t pad[0x8];
 	};
 
-	inline void RequestSyncLoad(SDK::FakeSoftObjectPtr::FSoftObjectPath path)
+	inline void RequestAsyncLoad(SDK::FakeSoftObjectPtr::FSoftObjectPath* path)
 	{
 		falseSharedPtr ptr{};
 		ptr.ptr = nullptr;
-		SDK::TAllocatedArray<SDK::FakeSoftObjectPtr::FSoftObjectPath> allo = SDK::TAllocatedArray<SDK::FakeSoftObjectPtr::FSoftObjectPath>(1);
-		allo.Add(path);
 		UC::FString str = UC::FString(L"LoadAssetList");
-		if (GetStreamableManager()) std::cout << "valid!" << std::endl;
-		CallGameFunction<falseSharedPtr*, void*, void*, SDK::TArray<SDK::FakeSoftObjectPtr::FSoftObjectPath>*, bool, SDK::FString*>(FRequestSyncLoad, GetStreamableManager(), &ptr, &allo, true, &str);//FStreamableManager::RequestSyncLoad
+		CallGameFunction<falseSharedPtr*, void*, falseSharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(BASE + 0x27FB500, GetStreamableManager(), &ptr, path, delasync, 0, true, false, &str);
 	}
 
 	inline void* GetPlatformFile()
@@ -98,8 +93,6 @@ namespace _spawnutils
 		wstr.pop_back(); // remove null terminator
 		return wstr;
 	}
-
-	inline SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)> del = SDK::TDelegate<void __cdecl(SDK::FName const&, SDK::UPackage*, __int32)>();
 
 	//Example WBP_PropertyContainer_C
 	inline void AttemptLoadClass(const char* classname)
@@ -131,7 +124,6 @@ namespace _spawnutils
 				if (secondBrickRigs == std::wstring::npos) {
 					break;
 				}
-
 				// Extract from the second "BrickRigs/"
 				std::wstring result = original.substr(secondBrickRigs);
 
@@ -143,16 +135,21 @@ namespace _spawnutils
 
 				result = L"/Game/" + result;
 
+				result.append(L".");
+				result.append(_to_wstring(classname));
+
 				res = result;
-				std::wcout << L"Result: " << res << std::endl;
 				break;
 			}
 		}
 
 		if (res == L"NONE") { std::cout << "Failed to load Class!" << std::endl; return; }
 
-		const UC::FString path = UC::FString(res.c_str());//FString is volatile and wrong. only use as const for final step moving on.
-		LoadPackageAsync(path, del);
+		SDK::TSoftClassPtr<SDK::UClass> ptr = SDK::TSoftClassPtr<SDK::UClass>();
+		const SDK::FName path = SDK::UKismetStringLibrary::Conv_StringToName(SDK::FString(res.c_str()));//FString is volatile and wrong. only use as const for final step moving on.
+		SetPath(&ptr.ObjectID, path);
+		RequestAsyncLoad(&ptr.ObjectID);
+		//link the delegat to something stupid we can hook.
 		return;
 	}
 	#pragma endregion
@@ -169,7 +166,7 @@ inline T* SpawnObjectInternal(SDK::UObject* outerobj, const char* objclsname)
 			_spawnutils::AttemptLoadClass(wcn.substr(1).c_str()); //This should only be called on UBP classes.
 			for (_itor(10)) //Give 1 second max to load the package.
 			{
-				Sleep(1);
+				Sleep(100);
 				objcls = T::StaticClass();
 				if (objcls) {
 					std::cout << "obj found!" << std::endl; break;
@@ -189,7 +186,7 @@ inline T* CreateWidgetInternal(SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClas
 		_spawnutils::AttemptLoadClass(wcn.substr(wcn.find_first_of('U') + 1).c_str());
 		for (_itor(10)) //Give 1 second max to load the package.
 		{
-			Sleep(1);
+			Sleep(100);
 			UserWidgetClass = T::StaticClass();
 			if (UserWidgetClass) {
 				std::cout << "obj found!" << std::endl; break;
@@ -198,4 +195,13 @@ inline T* CreateWidgetInternal(SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClas
 	}
 
 	return static_cast<T*>(CallGameFunction<SDK::UUserWidget*, SDK::UWorld*, SDK::TSubclassOf<SDK::UUserWidget>, SDK::FName>(FCreateWidget, SDK::UWorld::GetWorld(), UserWidgetClass, SDK::FName()));
+}
+
+/// <summary>
+/// Initializes the spawn utilities by creating a transient object and setting up a delegate for asynchronous operations.
+/// </summary>
+inline void InitalizeSpawnUtils()
+{
+	_spawnutils::PieceOfResistance = Spawn(SDK::UGunBrick, SDK::UEngine::GetEngine());//transient. shouldnt cause a call to load package as it is a cpp class.
+	_spawnutils::delasync = CallGameFunction<SDK::TDelegate<void __cdecl(void)>*, SDK::TDelegate<void __cdecl(void)>*, SDK::UGunBrick*, void*>(BASE + 0x07DD430, &SDK::TDelegate<void __cdecl(void)>(), _spawnutils::PieceOfResistance, &SDK::UGunBrick::Repair);
 }

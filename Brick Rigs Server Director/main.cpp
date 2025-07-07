@@ -48,11 +48,13 @@ void MainLoop()
 	std::cout << reinterpret_cast<const char*>(CommandLineLogo) << std::endl;
 
 	if (!hooks::InitHooks()) {
-		if (MessageBox(GetActiveWindow(), L"Failed To Hook Critical Functions. Uninjecting BCSD. Would you like to look at the crash log?", L"Uninjecting BRSD", MB_YESNO) == IDYES) hooks::OpenCrashFile();
+		if (MessageBox(GetActiveWindow(), L"Failed To Hook Critical Functions. Uninjecting BRSD. Would you like to look at the crash log?", L"Uninjecting BRSD", MB_YESNO) == IDYES) hooks::OpenCrashFile();
 		return;
 	}
 
 	global::pointers::InitPointers();
+
+	InitalizeSpawnUtils();
 
 	hooks::EnableHooks();
 
@@ -78,7 +80,7 @@ void MainLoop()
 			SDK::TSoftClassPtr<SDK::UClass> ptr = SDK::TSoftClassPtr<SDK::UClass>();
 			const SDK::FName path = SDK::UKismetStringLibrary::Conv_StringToName(SDK::FString(L"/Game/BrickRigs/UI/Properties/WBP_BoolProperty.WBP_BoolProperty_C"));
 			_spawnutils::SetPath(&ptr.ObjectID, path);
-			_spawnutils::RequestSyncLoad(ptr.ObjectID);
+			_spawnutils::RequestAsyncLoad(&ptr.ObjectID);
 			/*
 			if (hooks::S_AddChatMessage->IsEnabled(hooks::S_AddChatMessage)) {
 				hooks::S_AddChatMessage->Disable();
@@ -102,8 +104,6 @@ void MainLoop()
 	hooks::DestroyHookObjects();
 
 	uibase::Cleanup();
-
-	delete _spawnutils::cb;
 
 	MessageHost("Uninjecting BRSD!");
 
