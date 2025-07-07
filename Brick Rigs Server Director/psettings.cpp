@@ -74,23 +74,20 @@ bool psettings::CreateCustomSettingsPage()
     elements::list.push_back(TextBorder);
     elements::list.push_back(container);
 
-    std::cout << "Created UI Elements!" << std::endl;
     return true;
 }
 
 void psettings::PrepareCustomSettingsPage()
 {
-    std::cout << "preparing page!" << std::endl;
-    std::cout << SDK::UWBP_BoolProperty_C::StaticClass() << std::endl;
     SDK::UWBP_BoolProperty_C* cb = Create(SDK::UWBP_BoolProperty_C);
     elements::ChatCommandsPC->AddPropertyWidget(cb, SDK::EOrientation::Orient_Horizontal);
     cb->ComboBox->InitItems(2, 1);
-    std::cout << "prepared page!" << std::endl;
 }
 
 void psettings::SetHook(bool toggle)
 {
-    toggle ? hooks::S_OnComboBoxMenuItemSelected->Enable() : hooks::S_OnComboBoxMenuItemSelected->Disable();
+    if (toggle) hooks::S_OnComboBoxMenuItemSelected->Enable();
+    else hooks::S_OnComboBoxMenuItemSelected->Disable();
 }
 
 void psettings::SetVisibility(SDK::ESlateVisibility vis)

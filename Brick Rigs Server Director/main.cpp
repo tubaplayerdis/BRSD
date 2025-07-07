@@ -25,7 +25,6 @@
 #include "functions.h"
 #include "AddChatMessage.h"
 #include "logger.h"
-#include "spawnutils.h"
 
 using namespace global;
 
@@ -75,11 +74,6 @@ void MainLoop()
 		if (UninjectPress() || doUninject) break;
 
 		if (TogglePress()) {
-			SDK::TSoftClassPtr<SDK::UClass> ptr = SDK::TSoftClassPtr<SDK::UClass>();
-			const SDK::FName path = SDK::UKismetStringLibrary::Conv_StringToName(SDK::FString(L"/Game/BrickRigs/UI/Properties/WBP_BoolProperty.WBP_BoolProperty_C"));
-			_spawnutils::SetPath(&ptr.ObjectID, path);
-			_spawnutils::RequestAsyncLoad(&ptr.ObjectID);
-			/*
 			if (hooks::S_AddChatMessage->IsEnabled(hooks::S_AddChatMessage)) {
 				hooks::S_AddChatMessage->Disable();
 				LOG("Disabled Chat Commands");
@@ -90,7 +84,6 @@ void MainLoop()
 				LOG("Enabled Chat Commands");
 				SendNotificationLocal(L"Enabled Chat Commands!", 0);
 			}
-			*/
 		}
 	}
 	
