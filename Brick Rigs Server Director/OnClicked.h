@@ -41,7 +41,7 @@ namespace hooks
 		static void __fastcall HookedFunction(SDK::UMenuButtonWidget* This)
 		{
 			if (GetMenu()->CurrentMenuPage && GetMenu()->CurrentMenuPage == psettings::MockPage) {
-				psettings::SetHook(false);
+				//psettings::SetHook(false);
 				static_cast<SDK::UBrickBorder*>(psettings::CustomSettingsPage->Slot->Parent)->SetContent(psettings::MockPage);
 			}
 			if (This == obutton::CurrentButtonRef) {
@@ -59,7 +59,7 @@ namespace hooks
 				Parent->SetContent(psettings::CustomSettingsPage);
 				psettings::PrepareCustomSettingsPage();
 				psettings::SetVisibility(SDK::ESlateVisibility::Visible);
-				psettings::SetHook(true);
+				//psettings::SetHook(true);
 			}
 			else {
 				S_OnClicked->OriginalFunction(This);

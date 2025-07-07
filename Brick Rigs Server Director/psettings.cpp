@@ -14,7 +14,7 @@
 #include "uibase.h"
 #include "global.h"
 #include "functions.h"
-#include "OnComboBoxMenuItemSelected.h"
+#include "SetSelectedItem.h"
 #include "spawnutils.h"
 #include <chrono>
 
@@ -86,8 +86,8 @@ void psettings::PrepareCustomSettingsPage()
 
 void psettings::SetHook(bool toggle)
 {
-    if (toggle) hooks::S_OnComboBoxMenuItemSelected->Enable();
-    else hooks::S_OnComboBoxMenuItemSelected->Disable();
+    if (toggle) hooks::S_SetSelectedItem->Enable();
+    else hooks::S_SetSelectedItem->Disable();
 }
 
 void psettings::SetVisibility(SDK::ESlateVisibility vis)

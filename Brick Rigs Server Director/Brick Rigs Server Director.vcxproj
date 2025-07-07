@@ -267,7 +267,7 @@
     <ClInclude Include="modules.h" />
     <ClInclude Include="offsets.h" />
     <ClInclude Include="OnClicked.h" />
-    <ClInclude Include="OnComboBoxMenuItemSelected.h" />
+    <ClInclude Include="SetSelectedItem.h" />
     <ClInclude Include="OnPlayerJoined.h" />
     <ClInclude Include="OpenMenu.h" />
     <ClInclude Include="PlayerInfo.h" />

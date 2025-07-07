@@ -485,7 +485,7 @@
     <ClInclude Include="offsets.h">
       <Filter>Header Files\global</Filter>
     </ClInclude>
-    <ClInclude Include="OnComboBoxMenuItemSelected.h">
+    <ClInclude Include="SetSelectedItem.h">
       <Filter>Header Files\hooks\ui</Filter>
     </ClInclude>
     <ClInclude Include="spawnutils.h">

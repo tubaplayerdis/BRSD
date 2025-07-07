@@ -54,10 +54,14 @@ protected:
 	Function_t hookedFunction;
 
 public:
-	static bool IsInitialized(Hook<Ret, Args...>* hook);
-	static bool IsEnabled(Hook<Ret, Args...>* hook);
     void Enable();
     void Disable();
+
+	template <typename Ret, typename... Args>
+	friend bool IsInitialized(Hook<Ret, Args...>* hook);
+
+	template <typename Ret, typename... Args>
+	friend bool IsEnabled(Hook<Ret, Args...>* hook);
 
 protected:
 	static unsigned long long FindPattern(const char* pattern, const char* mask, unsigned long long base, unsigned __int64 size);
@@ -150,14 +154,15 @@ bool Hook<Ret, Args...>::Init() {
 	return ret == MH_OK;
 }
 
-template<typename Ret, typename ...Args>
-inline bool Hook<Ret, Args...>::IsInitialized(Hook<Ret, Args...>* hook)
-{
-	return !hook ? false : hook->initialized;
+
+template<typename Ret, typename ...Args>  
+inline bool IsInitialized(Hook<Ret, Args...>* hook)  
+{  
+    return !hook ? false : hook->initialized;  
 }
 
 template<typename Ret, typename ...Args>
-inline bool Hook<Ret, Args...>::IsEnabled(Hook<Ret, Args...>* hook)
+inline bool IsEnabled(Hook<Ret, Args...>* hook)
 {
 	return !hook ? false : hook->enabled;
 }
