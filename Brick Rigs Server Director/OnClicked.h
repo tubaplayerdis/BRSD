@@ -50,17 +50,10 @@ namespace hooks
 				UMenuWidget::OpenMenu(NAME(L"InGameMenu/BSRD"));
 				GetMenu()->AddMenuPage(psettings::MockPage);
 				GetMenu()->CurrentMenuPage = psettings::MockPage;
-				std::cout << psettings::MockPage->Slot->GetName() << std::endl;
 				SDK::UBorderSlot* slot = static_cast<SDK::UBorderSlot*>(psettings::MockPage->Slot);
-				if (!slot) 
+				if (!slot || !slot->Parent)
 				{
-					std::cout << "slot no" << std::endl;
-					return;
-				}
-				if (!slot->Parent)
-				{
-					std::cout << "parent no" << std::endl;
-					return;
+					return; //silently fail ig.
 				}
 				SDK::UBrickBorder* Parent = static_cast<SDK::UBrickBorder*>(slot->Parent);
 				Parent->SetContent(psettings::CustomSettingsPage);

@@ -104,8 +104,6 @@ namespace _spawnutils
 		lookfor.pop_back();
 		lookfor.pop_back();
 		lookfor.append(L".");//Remove the _C and add a dot so that we know when the name ends.
-		std::cout << "attempting find: "; 
-		std::wcout << lookfor << std::endl;
 		std::wstring res = std::wstring(L"NONE");
 		SDK::TArray<SDK::FString> files = GetVFSFiles();
 		for (int i = 0; i < files.Num(); i++)
