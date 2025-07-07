@@ -71,6 +71,7 @@
 #define HSetTitleText BASE + 0x0EA2170
 #define HOnComboBoxMenuItemSelected BASE + 0x0DD7C10
 #define HOnRequestAsyncLoad BASE + 0x27FB690
+#define HRepair BASE + 0x0E3A890
 
 //define hook signatures/masks
 

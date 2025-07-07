@@ -494,5 +494,8 @@
     <ClInclude Include="RequestAsyncLoad.h">
       <Filter>Header Files\hooks\ui</Filter>
     </ClInclude>
+    <ClInclude Include="Repair.h">
+      <Filter>Header Files\hooks\global</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

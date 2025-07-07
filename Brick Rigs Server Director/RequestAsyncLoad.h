@@ -1,11 +1,10 @@
-#pragma once
 /*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     OpenMenu.h                                                  */
+/*    Module:     RequestAsyncLoad.h                                          */
 /*    Author:     Aaron Wilk                                                  */
-/*    Created:    24 June 2025                                                */
+/*    Created:    7 July 2025                                                 */
 /*                                                                            */
 /*    Revisions:  V0.1                                                        */
 /*                                                                            */
@@ -41,7 +40,7 @@ namespace hooks
     class RequestAsyncLoad;
     inline RequestAsyncLoad* S_RequestAsyncLoad = nullptr; //Non-Inline causes link 2005
 
-    //Hook should only be enabled when the CustomSettingsMenu is present.
+    //Hook is currently not used
     class RequestAsyncLoad : public Hook<void*, FStreamableManager*, void*, void*, void*, int, bool, bool, void*>
     {
     public:
