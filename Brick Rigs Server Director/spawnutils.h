@@ -38,8 +38,7 @@
 
 namespace _spawnutils
 {
-	inline SDK::UGunBrick* PieceOfResistance = nullptr;
-	inline SDK::TDelegate<void __cdecl(void)>* delasync = nullptr;
+	inline SDK::TDelegate<void __cdecl(void)> delasync = SDK::TDelegate<void __cdecl(void)>();
 
 	#pragma region helpers
 
@@ -64,7 +63,11 @@ namespace _spawnutils
 		falseSharedPtr ptr{};
 		ptr.ptr = nullptr;
 		UC::FString str = UC::FString(L"LoadAssetList");
-		CallGameFunction<falseSharedPtr*, void*, falseSharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(BASE + 0x27FB500, GetStreamableManager(), &ptr, path, delasync, 0, true, false, &str);
+		//Returns a shared pointer pointer to the handle
+		falseSharedPtr* ptrret = CallGameFunction<falseSharedPtr*, void*, falseSharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(BASE + 0x27FB500, GetStreamableManager(), &ptr, path, &delasync, 0, true, false, &str);
+		CallGameFunction<void, bool>(FFlushRenderingCommands, true);//FlushRenderingCommands. Force a wait as the package queues.
+		CallGameFunction<__int64, void*, float, bool>(FWaitUntilComplete, ptr.ptr, 0.0, 1);
+		//If this becomes problematic or in need of change maybe try to hook FEngineLoop::Tick and be able to send in lambdas. that should run code on the main thread.
 	}
 
 	inline void* GetPlatformFile()
@@ -164,13 +167,13 @@ inline T* SpawnObjectInternal(SDK::UObject* outerobj, const char* objclsname)
 		std::string wcn = std::string(objclsname);
 		if (wcn.starts_with("UBP")) {
 			_spawnutils::AttemptLoadClass(wcn.substr(1).c_str()); //This should only be called on UBP classes.
-			for (_itor(10)) //Give 1 second max to load the package.
+			for (_itor(5)) //The class should have loaded, but give it some time if not.
 			{
-				Sleep(100);
 				objcls = T::StaticClass();
 				if (objcls) {
 					std::cout << "obj found!" << std::endl; break;
 				}
+				Sleep(200);
 			}
 		}
 	}
@@ -184,24 +187,15 @@ inline T* CreateWidgetInternal(SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClas
 	if (UserWidgetClass == nullptr) {
 		std::string wcn = std::string(WidgetClassName);
 		_spawnutils::AttemptLoadClass(wcn.substr(wcn.find_first_of('U') + 1).c_str());
-		for (_itor(10)) //Give 1 second max to load the package.
+		for (_itor(5)) //The class should have loaded, but give it some time if not.
 		{
-			Sleep(100);
 			UserWidgetClass = T::StaticClass();
 			if (UserWidgetClass) {
 				std::cout << "obj found!" << std::endl; break;
 			}
+			Sleep(200);
 		}
 	}
 
 	return static_cast<T*>(CallGameFunction<SDK::UUserWidget*, SDK::UWorld*, SDK::TSubclassOf<SDK::UUserWidget>, SDK::FName>(FCreateWidget, SDK::UWorld::GetWorld(), UserWidgetClass, SDK::FName()));
-}
-
-/// <summary>
-/// Initializes the spawn utilities by creating a transient object and setting up a delegate for asynchronous operations.
-/// </summary>
-inline void InitalizeSpawnUtils()
-{
-	_spawnutils::PieceOfResistance = Spawn(SDK::UGunBrick, SDK::UEngine::GetEngine());//transient. shouldnt cause a call to load package as it is a cpp class.
-	_spawnutils::delasync = CallGameFunction<SDK::TDelegate<void __cdecl(void)>*, SDK::TDelegate<void __cdecl(void)>*, SDK::UGunBrick*, void*>(BASE + 0x07DD430, &SDK::TDelegate<void __cdecl(void)>(), _spawnutils::PieceOfResistance, &SDK::UGunBrick::Repair);
 }

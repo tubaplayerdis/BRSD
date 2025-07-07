@@ -178,7 +178,6 @@ SDK::TArray<SDK::AActor*>* AllActorsOfClass(SDK::TSubclassOf<SDK::AActor> sub)
 bool global::isMapValid()
 {
 	std::string name = SDK::UGameplayStatics::GetCurrentLevelName(World(), true).ToString();
-	std::cout << "Current Level Name: " << name << std::endl;//also Untitled_1
 	if (name == "City2") return true;
 	else if (name == "Canyon") return true;
 	else if (name == "City") return true;
