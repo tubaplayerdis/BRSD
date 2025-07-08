@@ -60,6 +60,7 @@
 #define FRequestAsyncLoad BASE + 0x27FB500
 #define FFlushRenderingCommands BASE + 0x1CA84B0
 #define FWaitUntilComplete BASE + 0x2805580
+#define FQuaternion BASE + 0x0F98970
 
 //define VTable offsets. 8 is used after the number IDA gives
 

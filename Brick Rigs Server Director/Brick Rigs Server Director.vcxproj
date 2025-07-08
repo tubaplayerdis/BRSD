@@ -278,6 +278,7 @@
     <ClInclude Include="StartPlay.h" />
     <ClInclude Include="stringlist.h" />
     <ClInclude Include="uibase.h" />
+    <ClInclude Include="utils.h" />
     <ClInclude Include="watermark.h" />
     <ClInclude Include="welcome.h" />
   </ItemGroup>

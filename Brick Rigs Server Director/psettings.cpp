@@ -15,7 +15,7 @@
 #include "global.h"
 #include "functions.h"
 #include "SetSelectedItem.h"
-#include "spawnutils.h"
+#include "utils.h"
 #include <chrono>
 
 void __fastcall psettings::LoaderReturn(void* input)
@@ -38,15 +38,15 @@ struct FdepQ
 
 bool psettings::CreateCustomSettingsPage()
 {
-    MockPage = Spawn(SDK::UMenuPageWidget, GetMenu());
-    CustomSettingsPage = Spawn(SDK::UBrickScrollBox, GetWindowManager());
+    MockPage = SpawnObject(SDK::UMenuPageWidget, GetMenu());
+    CustomSettingsPage = SpawnObject(SDK::UBrickScrollBox, GetWindowManager());
     CustomSettingsPage->SetSlotSpacingStyle(SDK::EBrickUISpacingStyle::Large);
 
-    SDK::UBrickTextBlock* TextBlock = Spawn(SDK::UBrickTextBlock, CustomSettingsPage);
+    SDK::UBrickTextBlock* TextBlock = SpawnObject(SDK::UBrickTextBlock, CustomSettingsPage);
     if (!TextBlock) return false;
     TextBlock->SetText(TEXT(L"Brick Rigs Server Director"));
     TextBlock->SetTextStyle(SDK::EBrickUITextStyle::Bold);
-    SDK::UBrickBorder* TextBorder = Spawn(SDK::UBrickBorder, CustomSettingsPage);
+    SDK::UBrickBorder* TextBorder = SpawnObject(SDK::UBrickBorder, CustomSettingsPage);
     if (!TextBorder) return false;
     TextBorder->SetContent(TextBlock);
     TextBorder->ForceLayoutPrepass();
@@ -58,12 +58,12 @@ bool psettings::CreateCustomSettingsPage()
 
     std::cout << "spacer" << std::endl;
 
-    SDK::UWBP_PropertyContainer_C* container = Create(SDK::UWBP_PropertyContainer_C);
+    SDK::UWBP_PropertyContainer_C* container = CreateWidget(SDK::UWBP_PropertyContainer_C);
     if (!container) {
         std::cout << "had" << std::endl;
         GetMenu()->OnClickedGameplaySettings();
         GetMenu()->StepBack();
-        container = Create(SDK::UWBP_PropertyContainer_C);
+        container = CreateWidget(SDK::UWBP_PropertyContainer_C);
     }
     container->NameTextBlock->SetText(TEXT(L"Chat Commands Enabled"));
 
@@ -79,7 +79,7 @@ bool psettings::CreateCustomSettingsPage()
 
 void psettings::PrepareCustomSettingsPage()
 {
-    SDK::UWBP_BoolProperty_C* cb = Create(SDK::UWBP_BoolProperty_C);
+    SDK::UWBP_BoolProperty_C* cb = CreateWidget(SDK::UWBP_BoolProperty_C);
     elements::ChatCommandsPC->AddPropertyWidget(cb, SDK::EOrientation::Orient_Horizontal);
     cb->ComboBox->InitItems(2, 1);
 }

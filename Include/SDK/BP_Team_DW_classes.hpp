@@ -18,7 +18,7 @@ namespace SDK
 
 // BlueprintGeneratedClass BP_Team_DW.BP_Team_DW_C
 // 0x0000 (0x00C8 - 0x00C8)
-class UBP_Team_DW_C final : public UBrickTeam
+class UBP_Team_DW_C : public UBrickTeam
 {
 public:
 	static class UClass* StaticClass()
