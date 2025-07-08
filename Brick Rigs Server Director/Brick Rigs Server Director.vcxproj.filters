@@ -73,6 +73,9 @@
     <Filter Include="Header Files\hooks\ui">
       <UniqueIdentifier>{ef8948ea-28da-4a43-8e30-e3224f9eb269}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\utils">
+      <UniqueIdentifier>{0a6bba05-e6ae-4a06-acf1-fd0a6be1e524}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Include\trampoline.c">
@@ -413,9 +416,6 @@
     <ClInclude Include="global.h">
       <Filter>Header Files\global</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerInfo.h">
-      <Filter>Header Files\global</Filter>
-    </ClInclude>
     <ClInclude Include="messages.h">
       <Filter>Header Files\modules</Filter>
     </ClInclude>
@@ -439,9 +439,6 @@
     </ClInclude>
     <ClInclude Include="welcome.h">
       <Filter>Header Files\modules</Filter>
-    </ClInclude>
-    <ClInclude Include="stringlist.h">
-      <Filter>Header Files\global</Filter>
     </ClInclude>
     <ClInclude Include="interpreter.h">
       <Filter>Header Files\modules</Filter>
@@ -482,17 +479,26 @@
     <ClInclude Include="OpenMenu.h">
       <Filter>Header Files\hooks\ui</Filter>
     </ClInclude>
-    <ClInclude Include="offsets.h">
-      <Filter>Header Files\global</Filter>
-    </ClInclude>
     <ClInclude Include="SetSelectedItem.h">
       <Filter>Header Files\hooks\ui</Filter>
     </ClInclude>
-    <ClInclude Include="spawnutils.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="RequestAsyncLoad.h">
       <Filter>Header Files\hooks\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="spawnutils.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="offsets.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="stringlist.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerInfo.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>Header Files\utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

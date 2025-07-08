@@ -307,7 +307,7 @@ static_assert(offsetof(UBrickBorder, PaddingStyle) == 0x00027B, "Member 'UBrickB
 
 // Class BrickRigs.CameraBrickWidget
 // 0x0018 (0x0278 - 0x0260)
-class UCameraBrickWidget final : public UUserWidget
+class UCameraBrickWidget : public UUserWidget
 {
 public:
 	uint8                                         Pad_260[0xC];                                      // 0x0260(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
@@ -488,7 +488,7 @@ static_assert(offsetof(UHUDIconWidget, IconSize) == 0x000280, "Member 'UHUDIconW
 
 // Class BrickRigs.InteractionIconWidget
 // 0x0000 (0x0288 - 0x0288)
-class UInteractionIconWidget final : public UHUDIconWidget
+class UInteractionIconWidget : public UHUDIconWidget
 {
 public:
 	static class UClass* StaticClass()
@@ -866,7 +866,7 @@ static_assert(offsetof(UBrickButtonWidget, OnUpdateContentStyleDelegate) == 0x00
 
 // Class BrickRigs.CapturePointIconWidget
 // 0x0040 (0x02C8 - 0x0288)
-class UCapturePointIconWidget final : public UHUDIconWidget
+class UCapturePointIconWidget : public UHUDIconWidget
 {
 public:
 	class ABaseCharacter*                         PlayerCharacter;                                   // 0x0288(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -941,7 +941,7 @@ static_assert(offsetof(UPopupWidget, CloseActionName) == 0x00028C, "Member 'UPop
 
 // Class BrickRigs.InventoryPopupWidget
 // 0x0058 (0x02F0 - 0x0298)
-class UInventoryPopupWidget final : public UPopupWidget
+class UInventoryPopupWidget : public UPopupWidget
 {
 public:
 	uint8                                         Pad_298[0x10];                                     // 0x0298(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
@@ -1022,7 +1022,7 @@ static_assert(offsetof(UActuatorBrick, MinLimit) == 0x0001D8, "Member 'UActuator
 
 // Class BrickRigs.MenuSequence
 // 0x0020 (0x0240 - 0x0220)
-class AMenuSequence final : public AActor
+class AMenuSequence : public AActor
 {
 public:
 	struct FMenuSequenceProperties                MenuSequenceProperties;                            // 0x0220(0x0020)(Edit, Protected, NativeAccessSpecifierProtected)
@@ -1264,7 +1264,7 @@ static_assert(offsetof(UAdminMenuWidget, KickedPlayerSearchText) == 0x0002A8, "M
 
 // Class BrickRigs.KickPlayerPopupWidget
 // 0x0010 (0x02A8 - 0x0298)
-class UKickPlayerPopupWidget final : public UPopupWidget
+class UKickPlayerPopupWidget : public UPopupWidget
 {
 public:
 	uint8                                         Pad_298[0x8];                                      // 0x0298(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -1510,7 +1510,7 @@ static_assert(offsetof(UBrickComboBoxItemWidget, IconImage) == 0x0002C0, "Member
 
 // Class BrickRigs.MatchEndWidget
 // 0x0008 (0x0268 - 0x0260)
-class UMatchEndWidget final : public UUserWidget
+class UMatchEndWidget : public UUserWidget
 {
 public:
 	uint8                                         Pad_260[0x8];                                      // 0x0260(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -1863,7 +1863,7 @@ static_assert(offsetof(UObjectPropertyWidget, IconSize) == 0x000290, "Member 'UO
 
 // Class BrickRigs.FlashSequencePropertyWidget
 // 0x0000 (0x0298 - 0x0298)
-class UFlashSequencePropertyWidget final : public UObjectPropertyWidget
+class UFlashSequencePropertyWidget : public UObjectPropertyWidget
 {
 public:
 	static class UClass* StaticClass()
@@ -2664,7 +2664,7 @@ static_assert(sizeof(UBarrelBrickStaticInfo) == 0x000168, "Wrong size on UBarrel
 
 // Class BrickRigs.MapPopupWidget
 // 0x0008 (0x02A0 - 0x0298)
-class UMapPopupWidget final : public UPopupWidget
+class UMapPopupWidget : public UPopupWidget
 {
 public:
 	class UMapWidget*                             MapWidget;                                         // 0x0298(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -3102,7 +3102,7 @@ static_assert(offsetof(UBrickTeam, DefaultLoadout) == 0x000088, "Member 'UBrickT
 
 // Class BrickRigs.BattleGameMode
 // 0x0000 (0x03F8 - 0x03F8)
-class ABattleGameMode final : public ABrickGameMode
+class ABattleGameMode : public ABrickGameMode
 {
 public:
 	static class UClass* StaticClass()
@@ -3306,7 +3306,7 @@ static_assert(offsetof(ABrickVehicleDownloadReplicator, DownloadProgress) == 0x0
 
 // Class BrickRigs.BindKeyPopupWidget
 // 0x0090 (0x0328 - 0x0298)
-class UBindKeyPopupWidget final : public UPopupWidget
+class UBindKeyPopupWidget : public UPopupWidget
 {
 public:
 	uint8                                         Pad_298[0x68];                                     // 0x0298(0x0068)(Fixing Size After Last Property [ Dumper-7 ])
@@ -3799,7 +3799,7 @@ static_assert(sizeof(UCharacterAnimInstance) == 0x0002C0, "Wrong size on UCharac
 
 // Class BrickRigs.JoinSessionPopupWidget
 // 0x0040 (0x02D8 - 0x0298)
-class UJoinSessionPopupWidget final : public UPopupWidget
+class UJoinSessionPopupWidget : public UPopupWidget
 {
 public:
 	uint8                                         Pad_298[0x8];                                      // 0x0298(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -4095,7 +4095,7 @@ static_assert(offsetof(ASpawnArea, HUDIconProperties) == 0x000230, "Member 'ASpa
 
 // Class BrickRigs.CapturePoint
 // 0x0118 (0x0378 - 0x0260)
-class ACapturePoint final : public ASpawnArea
+class ACapturePoint : public ASpawnArea
 {
 public:
 	uint8                                         Pad_260[0x14];                                     // 0x0260(0x0014)(Fixing Size After Last Property [ Dumper-7 ])
@@ -4573,7 +4573,7 @@ static_assert(sizeof(UBrickEditorISMComponent) == 0x000600, "Wrong size on UBric
 
 // Class BrickRigs.BrickEditorMirrorAxisWidget
 // 0x0010 (0x0270 - 0x0260)
-class UBrickEditorMirrorAxisWidget final : public UUserWidget
+class UBrickEditorMirrorAxisWidget : public UUserWidget
 {
 public:
 	uint8                                         Pad_260[0x10];                                     // 0x0260(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -4847,7 +4847,7 @@ static_assert(sizeof(UBrickEditorObjectPropertyPickerMode) == 0x000058, "Wrong s
 
 // Class BrickRigs.DashboardSliderWidget
 // 0x0010 (0x0270 - 0x0260)
-class UDashboardSliderWidget final : public UUserWidget
+class UDashboardSliderWidget : public UUserWidget
 {
 public:
 	uint8                                         Pad_260[0x8];                                      // 0x0260(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -4890,7 +4890,7 @@ static_assert(sizeof(UBrickEditorPropertyPickerMode) == 0x000058, "Wrong size on
 
 // Class BrickRigs.BrickEditorObjectPropertyWidget
 // 0x0000 (0x0280 - 0x0280)
-class UBrickEditorObjectPropertyWidget final : public UPropertyWidget
+class UBrickEditorObjectPropertyWidget : public UPropertyWidget
 {
 public:
 	void ClearSelection();
@@ -5137,7 +5137,7 @@ static_assert(sizeof(UGrilleBrickStaticInfo) == 0x000168, "Wrong size on UGrille
 
 // Class BrickRigs.BrickEditorWidget
 // 0x00C8 (0x0328 - 0x0260)
-class UBrickEditorWidget final : public UUserWidget
+class UBrickEditorWidget : public UUserWidget
 {
 public:
 	uint8                                         Pad_260[0x20];                                     // 0x0260(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
@@ -6020,7 +6020,7 @@ static_assert(offsetof(UBrickPattern, Tiling) == 0x000048, "Member 'UBrickPatter
 
 // Class BrickRigs.ConnectorSpacingPropertyWidget
 // 0x0000 (0x0280 - 0x0280)
-class UConnectorSpacingPropertyWidget final : public UPropertyWidget
+class UConnectorSpacingPropertyWidget : public UPropertyWidget
 {
 public:
 	void SetConnectorSpacing(const struct FScalableBrickConnectorSpacing& NewSpacing);
@@ -6308,7 +6308,7 @@ static_assert(offsetof(ABrickPlayerController, HurtAudioComponent) == 0x000858, 
 
 // Class BrickRigs.Elevator
 // 0x0088 (0x02A8 - 0x0220)
-class AElevator final : public AActor
+class AElevator : public AActor
 {
 public:
 	uint8                                         Pad_220[0xC];                                      // 0x0220(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
@@ -7807,7 +7807,7 @@ static_assert(sizeof(UWingBrick) == 0x0000F8, "Wrong size on UWingBrick");
 
 // Class BrickRigs.CheatMenuWidget
 // 0x0008 (0x02A0 - 0x0298)
-class UCheatMenuWidget final : public UPopupWidget
+class UCheatMenuWidget : public UPopupWidget
 {
 public:
 	class UPropertiesPanelWidget*                 PropertiesPanel;                                   // 0x0298(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -7845,7 +7845,7 @@ static_assert(sizeof(UCockAction) == 0x000098, "Wrong size on UCockAction");
 
 // Class BrickRigs.ColorPaletteWidget
 // 0x0048 (0x02B8 - 0x0270)
-class UColorPaletteWidget final : public UBrickUserWidget
+class UColorPaletteWidget : public UBrickUserWidget
 {
 public:
 	TArray<struct FColor>                         ColorPaletteSamples;                               // 0x0270(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
@@ -7877,7 +7877,7 @@ static_assert(offsetof(UColorPaletteWidget, OnColorChangedDelegate) == 0x0002A8,
 
 // Class BrickRigs.ColorPropertyWidget
 // 0x0000 (0x0280 - 0x0280)
-class UColorPropertyWidget final : public UPropertyWidget
+class UColorPropertyWidget : public UPropertyWidget
 {
 public:
 	void SetColorPropertyValue(const struct FColor& Color, const EValueChangedEventType EventType);
@@ -7900,7 +7900,7 @@ static_assert(sizeof(UColorPropertyWidget) == 0x000280, "Wrong size on UColorPro
 
 // Class BrickRigs.ColorWheelWidget
 // 0x00A8 (0x0308 - 0x0260)
-class UColorWheelWidget final : public UUserWidget
+class UColorWheelWidget : public UUserWidget
 {
 public:
 	uint8                                         Pad_260[0x10];                                     // 0x0260(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
@@ -7966,7 +7966,7 @@ static_assert(sizeof(UConeBrickStaticInfo) == 0x000168, "Wrong size on UConeBric
 
 // Class BrickRigs.ConfirmResolutionPopupWidget
 // 0x0010 (0x02A8 - 0x0298)
-class UConfirmResolutionPopupWidget final : public UPopupWidget
+class UConfirmResolutionPopupWidget : public UPopupWidget
 {
 public:
 	uint8                                         Pad_298[0xC];                                      // 0x0298(0x000C)(Fixing Size After Last Property [ Dumper-7 ])
@@ -8005,7 +8005,7 @@ static_assert(sizeof(ADeathmatchGameMode) == 0x0003F8, "Wrong size on ADeathmatc
 
 // Class BrickRigs.ConquestGameMode
 // 0x0010 (0x0408 - 0x03F8)
-class AConquestGameMode final : public ADeathmatchGameMode
+class AConquestGameMode : public ADeathmatchGameMode
 {
 public:
 	uint8                                         Pad_3F8[0x8];                                      // 0x03F8(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -8311,7 +8311,7 @@ static_assert(sizeof(UDamageType_Melee) == 0x000040, "Wrong size on UDamageType_
 
 // Class BrickRigs.DashboardIconWidget
 // 0x0010 (0x0270 - 0x0260)
-class UDashboardIconWidget final : public UUserWidget
+class UDashboardIconWidget : public UUserWidget
 {
 public:
 	uint8                                         Pad_260[0x10];                                     // 0x0260(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -8334,7 +8334,7 @@ static_assert(sizeof(UDashboardIconWidget) == 0x000270, "Wrong size on UDashboar
 
 // Class BrickRigs.DashboardWidget
 // 0x0058 (0x02B8 - 0x0260)
-class UDashboardWidget final : public UUserWidget
+class UDashboardWidget : public UUserWidget
 {
 public:
 	class ABrickVehicle*                          Vehicle;                                           // 0x0260(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -9478,7 +9478,7 @@ static_assert(sizeof(AFirstAidKit) == 0x000278, "Wrong size on AFirstAidKit");
 
 // Class BrickRigs.PlacableObjectWidget
 // 0x0038 (0x02A8 - 0x0270)
-class UPlacableObjectWidget final : public UBrickUserWidget
+class UPlacableObjectWidget : public UBrickUserWidget
 {
 public:
 	uint8                                         Pad_270[0x20];                                     // 0x0270(0x0020)(Fixing Size After Last Property [ Dumper-7 ])
@@ -9820,7 +9820,7 @@ static_assert(sizeof(UFlareBrickStaticInfo) == 0x0002A0, "Wrong size on UFlareBr
 
 // Class BrickRigs.FlashSequenceItemWidget
 // 0x0010 (0x02D8 - 0x02C8)
-class UFlashSequenceItemWidget final : public UBrickComboBoxItemWidget
+class UFlashSequenceItemWidget : public UBrickComboBoxItemWidget
 {
 public:
 	TSubclassOf<class USirenSequence>             FlashSequenceClass;                                // 0x02C8(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -9845,7 +9845,7 @@ static_assert(offsetof(UFlashSequenceItemWidget, FlashSequenceClass) == 0x0002C8
 
 // Class BrickRigs.PlayerIconWidget
 // 0x0018 (0x02B0 - 0x0298)
-class UPlayerIconWidget final : public UPawnIconWidget
+class UPlayerIconWidget : public UPawnIconWidget
 {
 public:
 	class ABaseCharacter*                         Character;                                         // 0x0298(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -10276,7 +10276,7 @@ static_assert(offsetof(UGrenadeStaticInfo, FuseDelay) == 0x000478, "Member 'UGre
 
 // Class BrickRigs.ReuploadPopupWidget
 // 0x0030 (0x02C8 - 0x0298)
-class UReuploadPopupWidget final : public UPopupWidget
+class UReuploadPopupWidget : public UPopupWidget
 {
 public:
 	uint8                                         Pad_298[0x30];                                     // 0x0298(0x0030)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -10528,7 +10528,7 @@ static_assert(offsetof(UScoreboardPlayerWidget, PingIndicator) == 0x0002C8, "Mem
 
 // Class BrickRigs.HostGamePageWidget
 // 0x0000 (0x0298 - 0x0298)
-class UHostGamePageWidget final : public UMenuSettingsPageWidget
+class UHostGamePageWidget : public UMenuSettingsPageWidget
 {
 public:
 	void StartGame();
@@ -11040,7 +11040,7 @@ static_assert(sizeof(UImpactDecalComponent) == 0x000250, "Wrong size on UImpactD
 
 // Class BrickRigs.ServerBrowserWidget
 // 0x0038 (0x02A8 - 0x0270)
-class UServerBrowserWidget final : public UMenuPageWidget
+class UServerBrowserWidget : public UMenuPageWidget
 {
 public:
 	uint8                                         Pad_270[0x18];                                     // 0x0270(0x0018)(Fixing Size After Last Property [ Dumper-7 ])
@@ -11584,7 +11584,7 @@ static_assert(offsetof(UInteractionComponent, ColorStyle) == 0x000138, "Member '
 
 // Class BrickRigs.SpawnPointPanelWidget
 // 0x0010 (0x0308 - 0x02F8)
-class USpawnPointPanelWidget final : public UHUDIconPanelWidget
+class USpawnPointPanelWidget : public UHUDIconPanelWidget
 {
 public:
 	class UBrickGridPanel*                        GridPanel;                                         // 0x02F8(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -11680,7 +11680,7 @@ static_assert(sizeof(USwitchBrickStaticInfo) == 0x0001A0, "Wrong size on USwitch
 
 // Class BrickRigs.InventoryContainerWidget
 // 0x0010 (0x0270 - 0x0260)
-class UInventoryContainerWidget final : public UUserWidget
+class UInventoryContainerWidget : public UUserWidget
 {
 public:
 	class UInventoryWidget*                       InventoryWidget;                                   // 0x0260(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -11724,7 +11724,7 @@ static_assert(sizeof(USpinnerBrickStaticInfo) == 0x000168, "Wrong size on USpinn
 
 // Class BrickRigs.InventorySlotWidget
 // 0x00A8 (0x0308 - 0x0260)
-class UInventorySlotWidget final : public UUserWidget
+class UInventorySlotWidget : public UUserWidget
 {
 public:
 	uint8                                         Pad_260[0x70];                                     // 0x0260(0x0070)(Fixing Size After Last Property [ Dumper-7 ])
@@ -11761,7 +11761,7 @@ static_assert(offsetof(UInventorySlotWidget, IconImage) == 0x000300, "Member 'UI
 
 // Class BrickRigs.InventoryWidget
 // 0x0038 (0x0298 - 0x0260)
-class UInventoryWidget final : public UUserWidget
+class UInventoryWidget : public UUserWidget
 {
 public:
 	uint8                                         Pad_260[0x10];                                     // 0x0260(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
@@ -11850,7 +11850,7 @@ static_assert(sizeof(USteeringWheelBrickStaticInfo) == 0x000168, "Wrong size on 
 
 // Class BrickRigs.TargetMarkerIconWidget
 // 0x0008 (0x0290 - 0x0288)
-class UTargetMarkerIconWidget final : public UHUDIconWidget
+class UTargetMarkerIconWidget : public UHUDIconWidget
 {
 public:
 	uint8                                         Pad_288[0x8];                                      // 0x0288(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
@@ -12175,7 +12175,7 @@ static_assert(offsetof(ULightBrick, LightConeAngle) == 0x00017C, "Member 'ULight
 
 // Class BrickRigs.TeamBaseIconWidget
 // 0x0008 (0x0290 - 0x0288)
-class UTeamBaseIconWidget final : public UHUDIconWidget
+class UTeamBaseIconWidget : public UHUDIconWidget
 {
 public:
 	class ATeamBase*                              TeamBase;                                          // 0x0288(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -12196,7 +12196,7 @@ static_assert(offsetof(UTeamBaseIconWidget, TeamBase) == 0x000288, "Member 'UTea
 
 // Class BrickRigs.LoadoutContainer
 // 0x0048 (0x0288 - 0x0240)
-class ALoadoutContainer final : public AStaticMeshProp
+class ALoadoutContainer : public AStaticMeshProp
 {
 public:
 	uint8                                         Pad_240[0x8];                                      // 0x0240(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -12269,7 +12269,7 @@ static_assert(offsetof(UTankBrick, FuelType) == 0x000128, "Member 'UTankBrick::F
 
 // Class BrickRigs.MapCrosshairWidget
 // 0x0000 (0x0260 - 0x0260)
-class UMapCrosshairWidget final : public UUserWidget
+class UMapCrosshairWidget : public UUserWidget
 {
 public:
 	void SetColorStyle(EBrickUIColorStyle NewStyle);
@@ -12325,7 +12325,7 @@ static_assert(offsetof(URadioButtonPanel, OnButtonSelectedDelegate) == 0x000178,
 
 // Class BrickRigs.MapWidget
 // 0x0170 (0x0480 - 0x0310)
-class UMapWidget final : public UHUDIconCanvasWidget
+class UMapWidget : public UHUDIconCanvasWidget
 {
 public:
 	uint8                                         Pad_310[0xC8];                                     // 0x0310(0x00C8)(Fixing Size After Last Property [ Dumper-7 ])
@@ -12632,7 +12632,7 @@ static_assert(offsetof(UMenuButtonPanelWidget, NumButtonsPerRow) == 0x000288, "M
 
 // Class BrickRigs.UGCTagsPropertyWidget
 // 0x0018 (0x0298 - 0x0280)
-class UUGCTagsPropertyWidget final : public UPropertyWidget
+class UUGCTagsPropertyWidget : public UPropertyWidget
 {
 public:
 	class UBrickComboBoxWidget*                   TypeComboBox;                                      // 0x0280(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -12665,7 +12665,7 @@ static_assert(offsetof(UUGCTagsPropertyWidget, DepartmentComboBox) == 0x000290, 
 
 // Class BrickRigs.MenuGameMode
 // 0x0070 (0x0330 - 0x02C0)
-class AMenuGameMode final : public AGameModeBase
+class AMenuGameMode : public AGameModeBase
 {
 public:
 	uint8                                         Pad_2C0[0x10];                                     // 0x02C0(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
@@ -12711,7 +12711,7 @@ static_assert(offsetof(UMenuMusic, Sound) == 0x000030, "Member 'UMenuMusic::Soun
 
 // Class BrickRigs.UGCBrowserWidget
 // 0x00B0 (0x0348 - 0x0298)
-class UUGCBrowserWidget final : public UPopupWidget
+class UUGCBrowserWidget : public UPopupWidget
 {
 public:
 	uint8                                         Pad_298[0x80];                                     // 0x0298(0x0080)(Fixing Size After Last Property [ Dumper-7 ])
@@ -12927,7 +12927,7 @@ static_assert(sizeof(UModHook) == 0x000028, "Wrong size on UModHook");
 
 // Class BrickRigs.UGCMetaDataPopupWidget
 // 0x0008 (0x02A0 - 0x0298)
-class UUGCMetaDataPopupWidget final : public UPopupWidget
+class UUGCMetaDataPopupWidget : public UPopupWidget
 {
 public:
 	class UPropertiesPanelWidget*                 PropertiesPanel;                                   // 0x0298(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -13096,7 +13096,7 @@ static_assert(sizeof(UMudguardBrickStaticInfo) == 0x000168, "Wrong size on UMudg
 
 // Class BrickRigs.UGCItemWidget
 // 0x0108 (0x0390 - 0x0288)
-class UUGCItemWidget final : public UPagedListEntryWidget
+class UUGCItemWidget : public UPagedListEntryWidget
 {
 public:
 	struct FUGCFileInfo                           Entry;                                             // 0x0288(0x00E8)(Transient, NativeAccessSpecifierPrivate)
@@ -13146,7 +13146,7 @@ static_assert(sizeof(UNetworkErrorPopupParams) == 0x000068, "Wrong size on UNetw
 
 // Class BrickRigs.NetworkErrorPopupWidget
 // 0x0008 (0x02A0 - 0x0298)
-class UNetworkErrorPopupWidget final : public UPopupWidget
+class UNetworkErrorPopupWidget : public UPopupWidget
 {
 public:
 	class UBrickTextBlock*                        MessageTextBlock;                                  // 0x0298(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
@@ -13167,7 +13167,7 @@ static_assert(offsetof(UNetworkErrorPopupWidget, MessageTextBlock) == 0x000298, 
 
 // Class BrickRigs.UnsavedChangesPopupWidget
 // 0x0000 (0x0298 - 0x0298)
-class UUnsavedChangesPopupWidget final : public UPopupWidget
+class UUnsavedChangesPopupWidget : public UPopupWidget
 {
 public:
 	static class UClass* StaticClass()
@@ -14002,7 +14002,7 @@ static_assert(sizeof(ASandboxGameState) == 0x0005D8, "Wrong size on ASandboxGame
 
 // Class BrickRigs.ScoreboardPopupWidget
 // 0x0000 (0x0298 - 0x0298)
-class UScoreboardPopupWidget final : public UPopupWidget
+class UScoreboardPopupWidget : public UPopupWidget
 {
 public:
 	static class UClass* StaticClass()
@@ -14140,7 +14140,7 @@ static_assert(offsetof(USensorBrick, bReturnToZero) == 0x0001BA, "Member 'USenso
 
 // Class BrickRigs.ServerWidget
 // 0x0198 (0x0420 - 0x0288)
-class UServerWidget final : public UPagedListEntryWidget
+class UServerWidget : public UPagedListEntryWidget
 {
 public:
 	struct FBrickOnlineSessionInfo                Entry;                                             // 0x0288(0x0168)(Transient, NativeAccessSpecifierPrivate)
@@ -14343,7 +14343,7 @@ static_assert(sizeof(ISpawnPointInterface) == 0x000001, "Wrong size on ISpawnPoi
 
 // Class BrickRigs.SpawnScreenWidget
 // 0x0018 (0x0278 - 0x0260)
-class USpawnScreenWidget final : public UUserWidget
+class USpawnScreenWidget : public UUserWidget
 {
 public:
 	uint8                                         Pad_260[0x8];                                      // 0x0260(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -14575,7 +14575,7 @@ static_assert(sizeof(UTargetMarkerBrick) == 0x000190, "Wrong size on UTargetMark
 
 // Class BrickRigs.TeamBase
 // 0x0008 (0x0268 - 0x0260)
-class ATeamBase final : public ASpawnArea
+class ATeamBase : public ASpawnArea
 {
 public:
 	struct FGenericTeamId                         TeamID;                                            // 0x0260(0x0001)(Edit, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
@@ -14964,7 +14964,7 @@ static_assert(offsetof(UUGCMetaDataPopupParams, FileInfo) == 0x000078, "Member '
 
 // Class BrickRigs.UGCPropertyWidget
 // 0x0030 (0x02B0 - 0x0280)
-class UUGCPropertyWidget final : public UPropertyWidget
+class UUGCPropertyWidget : public UPropertyWidget
 {
 public:
 	uint8                                         Pad_280[0x8];                                      // 0x0280(0x0008)(Fixing Size After Last Property [ Dumper-7 ])
@@ -15010,7 +15010,7 @@ static_assert(sizeof(UUGCTaskPopupParams) == 0x000070, "Wrong size on UUGCTaskPo
 
 // Class BrickRigs.UGCTaskPopupWidget
 // 0x0030 (0x02C8 - 0x0298)
-class UUGCTaskPopupWidget final : public UPopupWidget
+class UUGCTaskPopupWidget : public UPopupWidget
 {
 public:
 	uint8                                         Pad_298[0x28];                                     // 0x0298(0x0028)(Fixing Size After Last Property [ Dumper-7 ])
@@ -15091,7 +15091,7 @@ static_assert(sizeof(UUnsavedChangesPopupParams) == 0x000068, "Wrong size on UUn
 
 // Class BrickRigs.UserIdPropertyWidget
 // 0x0070 (0x02F0 - 0x0280)
-class UUserIdPropertyWidget final : public UPropertyWidget
+class UUserIdPropertyWidget : public UPropertyWidget
 {
 public:
 	uint8                                         Pad_280[0x68];                                     // 0x0280(0x0068)(Fixing Size After Last Property [ Dumper-7 ])
@@ -15119,7 +15119,7 @@ static_assert(offsetof(UUserIdPropertyWidget, UserIdTextBox) == 0x0002E8, "Membe
 
 // Class BrickRigs.VehicleIconWidget
 // 0x0010 (0x02A8 - 0x0298)
-class UVehicleIconWidget final : public UPawnIconWidget
+class UVehicleIconWidget : public UPawnIconWidget
 {
 public:
 	class ABrickVehicle*                          Vehicle;                                           // 0x0298(0x0008)(ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
@@ -15400,7 +15400,7 @@ static_assert(sizeof(AZombie) == 0x0007C0, "Wrong size on AZombie");
 
 // Class BrickRigs.ZombieGameMode
 // 0x0040 (0x0438 - 0x03F8)
-class AZombieGameMode final : public ABrickGameMode
+class AZombieGameMode : public ABrickGameMode
 {
 public:
 	uint8                                         Pad_3F8[0x10];                                     // 0x03F8(0x0010)(Fixing Size After Last Property [ Dumper-7 ])

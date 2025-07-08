@@ -25,6 +25,7 @@
 #include "functions.h"
 #include "AddChatMessage.h"
 #include "logger.h"
+#include "utils.h"
 
 using namespace global;
 

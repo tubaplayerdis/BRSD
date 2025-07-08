@@ -17,22 +17,6 @@
 #include <tlhelp32.h>
 #include <SDK.hpp>
 
-/// <summary>
-/// Spawns a new UObject using internal UE systems. Use when creating UObjects 
-/// </summary>
-/// <param name="cls">The class of the new object. Not the UClass. Ex: SDK::UBrickBorder </param>
-/// <param name="out">A pointer to the outer object the new object should be created with</param>
-/// <returns>A pointer to the new object</returns>
-#define Spawn(cls, out) SpawnObjectInternal<cls>(out, ## #cls)
-
-/// <summary>
-/// Creates a new UUserWidget derived object using internal UE systems.
-/// Use Spawn() for UWidget derieved objects 
-/// </summary>
-/// <param name="cls">The class of the new widget. Not the UClass. Ex: SDK::UWPB_PropertyContainer_C </param>
-/// <returns>A pointer to the new widget</returns>
-#define Create(cls) CreateWidgetInternal<cls>(cls::StaticClass(), ## #cls)
-
 //Enabling my laziness
 #define _itor(num) int i = 0; i < num; i++
 
@@ -66,6 +50,18 @@ namespace _spawnutils
 		//Returns a shared pointer pointer to the handle
 		falseSharedPtr* ptrret = CallGameFunction<falseSharedPtr*, void*, falseSharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(BASE + 0x27FB500, GetStreamableManager(), &ptr, path, &delasync, 0, true, false, &str);
 		CallGameFunction<void, bool>(FFlushRenderingCommands, true);//FlushRenderingCommands. Force a wait as the package queues.
+		CallGameFunction<__int64, void*, float, bool>(FWaitUntilComplete, ptr.ptr, 0.0, 1);
+		//If this becomes problematic or in need of change maybe try to hook FEngineLoop::Tick and be able to send in lambdas. that should run code on the main thread.
+	}
+
+	inline void RequestAsyncLoad_D(SDK::FakeSoftObjectPtr::FSoftObjectPath* path, int num)
+	{
+		falseSharedPtr ptr{};
+		ptr.ptr = nullptr;
+		UC::FString str = UC::FString(L"LoadAssetList");
+		//Returns a shared pointer pointer to the handle
+		falseSharedPtr* ptrret = CallGameFunction<falseSharedPtr*, void*, falseSharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(BASE + 0x27FB500, GetStreamableManager(), &ptr, path, &delasync, 0, true, false, &str);
+		Sleep(num);
 		CallGameFunction<__int64, void*, float, bool>(FWaitUntilComplete, ptr.ptr, 0.0, 1);
 		//If this becomes problematic or in need of change maybe try to hook FEngineLoop::Tick and be able to send in lambdas. that should run code on the main thread.
 	}
@@ -150,9 +146,62 @@ namespace _spawnutils
 		const SDK::FName path = SDK::UKismetStringLibrary::Conv_StringToName(SDK::FString(res.c_str()));//FString is volatile and wrong. only use as const for final step moving on.
 		SetPath(&ptr.ObjectID, path);
 		RequestAsyncLoad(&ptr.ObjectID);
-		//link the delegat to something stupid we can hook.
 		return;
 	}
+
+
+	#ifdef _DEBUG
+	inline void LoadEveryClassPossible()
+	{
+		SDK::TArray<SDK::FString> files = GetVFSFiles();
+		for (int i = 0; i < files.Num(); i++)
+		{
+			//../../../BrickRigs/Content/BrickRigs/UI/Properties/WBP_PropertiesPanel.uasset
+			std::wstring original = files[i].ToWString();
+			const std::wstring target = L"BrickRigs/";
+
+			// Find the first occurrence of "BrickRigs/"
+			size_t firstBrickRigs = original.find(target);
+			if (firstBrickRigs == std::wstring::npos) {
+				break;
+			}
+
+			// Find the next "BrickRigs/" after the first one (skipping "BrickRigs/Content/")
+			size_t secondBrickRigs = original.find(target, firstBrickRigs + target.length());
+			if (secondBrickRigs == std::wstring::npos) {
+				break;
+			}
+			// Extract from the second "BrickRigs/"
+			std::wstring result = original.substr(secondBrickRigs);
+
+			// Remove the ".uasset" extension
+			size_t dotPos = result.rfind('.');
+			if (dotPos != std::wstring::npos) {
+				result = result.substr(0, dotPos);
+			}
+
+			size_t clsnamepos = result.rfind(L"/");
+			std::wstring classname = L"";
+			if (dotPos != std::wstring::npos) {
+				classname = result.substr(clsnamepos + 1);
+				classname.append(L"_C");
+			}
+
+			result = L"/Game/" + result;
+
+			result.append(L".");
+			result.append(classname);
+
+			std::wcout << L"attempting load on: " << result << std::endl;
+			
+			SDK::TSoftClassPtr<SDK::UClass> ptr = SDK::TSoftClassPtr<SDK::UClass>();
+			const SDK::FName path = SDK::UKismetStringLibrary::Conv_StringToName(SDK::FString(result.c_str()));//FString is volatile and wrong. only use as const for final step moving on.
+			SetPath(&ptr.ObjectID, path);
+			RequestAsyncLoad_D(&ptr.ObjectID, 50);
+		}
+	}
+	#endif // _DEBUG
+
 	#pragma endregion
 }
 
@@ -196,4 +245,129 @@ inline T* CreateWidgetInternal(SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClas
 	}
 
 	return static_cast<T*>(CallGameFunction<SDK::UUserWidget*, SDK::UWorld*, SDK::TSubclassOf<SDK::UUserWidget>, SDK::FName>(FCreateWidget, SDK::UWorld::GetWorld(), UserWidgetClass, SDK::FName()));
+}
+
+template<typename T>
+inline T* SpawnActorInternal(SDK::AActor* outeract, const char* objclsname)
+{
+	if (outeract == nullptr)
+	{
+		std::cout << "outer was null!" << std::endl;
+		return nullptr;//requires it.
+	}
+	SDK::FTransform transform = outeract->GetTransform();
+	SDK::UClass* objcls = T::StaticClass();
+	if (objcls == nullptr) {
+		std::string wcn = std::string(objclsname);
+		if (wcn.starts_with("ABP")) {
+			_spawnutils::AttemptLoadClass(wcn.substr(1).c_str()); //This should only be called on ABP classes.
+			for (_itor(5)) //The class should have loaded, but give it some time if not.
+			{
+				objcls = T::StaticClass();
+				if (objcls) {
+					std::cout << "obj found!" << std::endl;
+					break;
+				}
+				Sleep(200);
+			}
+		}
+	}
+	else std::cout << "class was present!" << std::endl;
+	SDK::ESpawnActorCollisionHandlingMethod method = SDK::ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+	SDK::AActor* act = SDK::UGameplayStatics::BeginDeferredActorSpawnFromClass(SDK::UWorld::GetWorld(), objcls, transform, method, outeract);
+	return static_cast<T*>(SDK::UGameplayStatics::FinishSpawningActor(act, transform));
+}
+
+template<typename T>
+inline T* SpawnActorInternal(SDK::FTransform transform, SDK::AActor* outeract, const char* objclsname)
+{
+	SDK::UClass* objcls = T::StaticClass();
+	if (objcls == nullptr) {
+		std::string wcn = std::string(objclsname);
+		if (wcn.starts_with("ABP")) {
+			_spawnutils::AttemptLoadClass(wcn.substr(1).c_str()); //This should only be called on ABP classes.
+			for (_itor(5)) //The class should have loaded, but give it some time if not.
+			{
+				objcls = T::StaticClass();
+				if (objcls) {
+					std::cout << "obj found!" << std::endl;
+					break;
+				}
+				Sleep(200);
+			}
+		}
+	}
+	SDK::ESpawnActorCollisionHandlingMethod method = SDK::ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+	SDK::AActor* act = SDK::UGameplayStatics::BeginDeferredActorSpawnFromClass(SDK::UWorld::GetWorld(), objcls, transform, method, outeract);
+	SDK::UGameplayStatics::FinishSpawningActor(act, transform);
+	return static_cast<T*>(act);
+}
+
+template<typename T>
+inline T* SpawnActorInternal(SDK::FVector position, SDK::AActor* outeract, const char* objclsname)
+{
+	SDK::FRotator rotator = SDK::FRotator();
+	if (!outeract)
+	{
+		rotator = SDK::FRotator(0, 0, 0);
+	}
+	else rotator = outeract->K2_GetActorRotation();
+	SDK::FTransform transform = SDK::FTransform();
+	transform.Translation = position;
+	transform.Scale3D = SDK::FVector(1, 1, 1);
+	SDK::FQuat formed = SDK::FQuat();
+	SDK::FQuat* ptr = CallGameFunction<SDK::FQuat*, SDK::FRotator*, SDK::FQuat*>(FQuaternion, &rotator, &formed);
+	formed = *ptr;
+	transform.Rotation = formed;
+	SDK::UClass* objcls = T::StaticClass();
+	if (objcls == nullptr) {
+		std::string wcn = std::string(objclsname);
+		if (wcn.starts_with("ABP")) {
+			_spawnutils::AttemptLoadClass(wcn.substr(1).c_str()); //This should only be called on ABP classes.
+			for (_itor(5)) //The class should have loaded, but give it some time if not.
+			{
+				objcls = T::StaticClass();
+				if (objcls) {
+					std::cout << "obj found!" << std::endl;
+					break;
+				}
+				Sleep(200);
+			}
+		}
+	}
+	SDK::ESpawnActorCollisionHandlingMethod method = SDK::ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+	SDK::AActor* act = SDK::UGameplayStatics::BeginDeferredActorSpawnFromClass(SDK::UWorld::GetWorld(), objcls, transform, method, outeract);
+	SDK::UGameplayStatics::FinishSpawningActor(act, transform);
+	return static_cast<T*>(act);
+}
+
+template<typename T>
+inline T* SpawnActorInternal(SDK::FVector position, SDK::FRotator rotation, SDK::AActor* outeract, const char* objclsname)
+{
+	SDK::FTransform transform = SDK::FTransform();
+	transform.Translation = position;
+	transform.Scale3D = SDK::FVector(1, 1, 1);
+	SDK::FQuat formed = SDK::FQuat();
+	formed = &CallGameFunction<SDK::FQuat*, SDK::FRotator*, SDK::FQuat*>(FQuaternion, &rotation, &formed);
+	transform.Rotation = formed;
+	SDK::UClass* objcls = T::StaticClass();
+	if (objcls == nullptr) {
+		std::string wcn = std::string(objclsname);
+		if (wcn.starts_with("ABP")) {
+			_spawnutils::AttemptLoadClass(wcn.substr(1).c_str()); //This should only be called on ABP classes.
+			for (_itor(5)) //The class should have loaded, but give it some time if not.
+			{
+				objcls = T::StaticClass();
+				if (objcls) {
+					std::cout << "obj found!" << std::endl;
+					break;
+				}
+				Sleep(200);
+			}
+		}
+	}
+	SDK::ESpawnActorCollisionHandlingMethod method = SDK::ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+	SDK::AActor* act = SDK::UGameplayStatics::BeginDeferredActorSpawnFromClass(SDK::UWorld::GetWorld(), objcls, transform, method, outeract);
+	SDK::UGameplayStatics::FinishSpawningActor(act, transform);
+	return static_cast<T*>(act);
 }
