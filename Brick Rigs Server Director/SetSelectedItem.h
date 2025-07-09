@@ -17,28 +17,33 @@
 #include "psettings.h"
 #include "Hook.h"
 
+inline bool isParent(SDK::UPropertyContainerWidget* parent, SDK::UPropertyWidget* child)
+{
+    return parent->PropertyWidget == child;
+}
+
 namespace hooks
 {
     class SetSelectedItem;
     inline SetSelectedItem* S_SetSelectedItem = nullptr; //Non-Inline causes link 2005
 
     //Hook should only be enabled when the CustomSettingsMenu is present.
-    class SetSelectedItem : public Hook<void, SDK::UBrickComboBoxWidget*, int>
+    class SetSelectedItem : public Hook<void, SDK::UBoolPropertyWidget*, int, SDK::EValueChangedEventType>
     {
     public:
 
-        static void __fastcall HookedFunction(SDK::UBrickComboBoxWidget* This, int Item)
+        static void __fastcall HookedFunction(SDK::UBoolPropertyWidget* This, int item, SDK::EValueChangedEventType EventType)
         {
-            std::cout << "combo box item selected" << std::endl;
-            S_SetSelectedItem->OriginalFunction(This, Item);
+            S_SetSelectedItem->OriginalFunction(This, item, EventType);
             using namespace psettings::elements;
-            if (IsComboBox(ChatCommandsPC, This)) {
-                std::cout << "toggled chat commands from settings menu at index:" << Item << std::endl;
+            if (isParent(ChatCommandsPC, This))
+            {
+                std::cout << "toggled chat commands from settings menu at index:" << item << std::endl;
                 //toggle on off chat commands through a module
             }
             
         }
 
-        SetSelectedItem() : Hook(HSetSelectedItem, HookedFunction) {}
+        SetSelectedItem() : Hook(HOnItemSelected, HookedFunction) {}
     };
 }

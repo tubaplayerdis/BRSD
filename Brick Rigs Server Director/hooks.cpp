@@ -97,7 +97,6 @@ void hooks::DestroyHookObjects()
 	delete S_LoadMap;
 	delete S_OnClicked;
 	delete S_SetSelectedItem;
-	delete S_EngineLoopTick;
 	//delete S_EngineLoopTick;
 
 	//Set nullptr
@@ -109,7 +108,6 @@ void hooks::DestroyHookObjects()
 	S_LoadMap = nullptr;
 	S_OnClicked = nullptr;
 	S_SetSelectedItem = nullptr;
-	S_EngineLoopTick = nullptr;
 	//S_EngineLoopTick = nullptr;
 }
 

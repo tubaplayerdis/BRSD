@@ -80,7 +80,7 @@ namespace _spawnutils
 		CallGameFunction<__int64, void*, float, bool>(FWaitUntilComplete, ptr.ptr, 0.0, 1);
 		//If this becomes problematic or in need of change maybe try to hook FEngineLoop::Tick and be able to send in lambdas. that should run code on the main thread.
 	}
-
+ 
 	inline void RequestAsyncLoad_D(SDK::FakeSoftObjectPtr::FSoftObjectPath* path, int num)
 	{
 		falseSharedPtr ptr{};
