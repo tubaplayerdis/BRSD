@@ -16,6 +16,7 @@
 #include <windows.h>
 #include <tlhelp32.h>
 #include <SDK.hpp>
+#include "EngineLoopTick.h"
 
 //Enabling my laziness
 #define _itor(num) int i = 0; i < num; i++
@@ -36,9 +37,34 @@ namespace _spawnutils
 		return CallGameFunction<void*>(FGetStreamableManager);
 	}
 
+	struct FSHFiller
+	{
+		uint8_t padding[0x10];
+	};
+
+	struct mockFStreamableHandle : FSHFiller
+	{
+		bool bLoadCompleted;
+		bool bReleased;
+		bool bCanceled;
+		bool bStalled;
+		bool bReleaseWhenLoaded;
+		bool bIsCombinedHandle;
+		uint8_t pad[50];
+		SDK::FString DebugName;
+		int priority;
+		int StreamablesLoading;
+		int CompletedChildCount;
+		int CanceledChildCount;
+		uint8_t pad1[48];
+		void* OwningManager;
+	};
+
+	static_assert(sizeof(mockFStreamableHandle) == 0xA0);
+
 	struct falseSharedPtr
 	{
-		void* ptr;
+		mockFStreamableHandle* ptr;
 		uint8_t pad[0x8];
 	};
 
@@ -47,9 +73,10 @@ namespace _spawnutils
 		falseSharedPtr ptr{};
 		ptr.ptr = nullptr;
 		UC::FString str = UC::FString(L"LoadAssetList");
-		//Returns a shared pointer pointer to the handle
-		falseSharedPtr* ptrret = CallGameFunction<falseSharedPtr*, void*, falseSharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(BASE + 0x27FB500, GetStreamableManager(), &ptr, path, &delasync, 0, true, false, &str);
+		falseSharedPtr* ptrret = CallGameFunction<falseSharedPtr*, void*, falseSharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(FRequestAsyncLoad, GetStreamableManager(), &ptr, path, &delasync, 0, true, false, &str);
 		CallGameFunction<void, bool>(FFlushRenderingCommands, true);//FlushRenderingCommands. Force a wait as the package queues.
+		CallGameFunction<void, bool>(FFlushRenderingCommands, true);
+		//Sleep(10);//I have no other ideas.
 		CallGameFunction<__int64, void*, float, bool>(FWaitUntilComplete, ptr.ptr, 0.0, 1);
 		//If this becomes problematic or in need of change maybe try to hook FEngineLoop::Tick and be able to send in lambdas. that should run code on the main thread.
 	}
@@ -60,7 +87,7 @@ namespace _spawnutils
 		ptr.ptr = nullptr;
 		UC::FString str = UC::FString(L"LoadAssetList");
 		//Returns a shared pointer pointer to the handle
-		falseSharedPtr* ptrret = CallGameFunction<falseSharedPtr*, void*, falseSharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(BASE + 0x27FB500, GetStreamableManager(), &ptr, path, &delasync, 0, true, false, &str);
+		falseSharedPtr* ptrret = CallGameFunction<falseSharedPtr*, void*, falseSharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(FRequestAsyncLoad, GetStreamableManager(), &ptr, path, &delasync, 0, true, false, &str);
 		Sleep(num);
 		CallGameFunction<__int64, void*, float, bool>(FWaitUntilComplete, ptr.ptr, 0.0, 1);
 		//If this becomes problematic or in need of change maybe try to hook FEngineLoop::Tick and be able to send in lambdas. that should run code on the main thread.
@@ -96,7 +123,10 @@ namespace _spawnutils
 	//Example WBP_PropertyContainer_C
 	inline void AttemptLoadClass(const char* classname)
 	{
-		std::wstring lookfor = _to_wstring(classname);
+		std::wstring universal = _to_wstring(classname);
+		universal = universal.substr(universal.find_first_of('B'));//remove the ABP, UBP, UWBP.
+		std::wcout << "Attempting Load: " << universal << std::endl;
+		std::wstring lookfor = universal;
 		lookfor.pop_back();
 		lookfor.pop_back();
 		lookfor.append(L".");//Remove the _C and add a dot so that we know when the name ends.
@@ -130,10 +160,21 @@ namespace _spawnutils
 					result = result.substr(0, dotPos);
 				}
 
+				//Find the package name. Everything after the last slash
+				size_t slashpos = result.find_last_of('/');
+				std::wstring packname = L"";
+				if (slashpos != std::wstring::npos)
+				{
+					packname = result.substr(slashpos + 1);
+				}
+
 				result = L"/Game/" + result;
 
 				result.append(L".");
-				result.append(_to_wstring(classname));
+				result.append(packname);
+				result.append(L"_C");
+
+				std::wcout << result << std::endl;
 
 				res = result;
 				break;
@@ -211,17 +252,14 @@ inline T* SpawnObjectInternal(SDK::UObject* outerobj, const char* objclsname)
 {
 	SDK::UClass* objcls = T::StaticClass();
 	if (objcls == nullptr) {
-		std::string wcn = std::string(objclsname);
-		if (wcn.starts_with("UBP")) {
-			_spawnutils::AttemptLoadClass(wcn.substr(1).c_str()); //This should only be called on UBP classes.
-			for (_itor(5)) //The class should have loaded, but give it some time if not.
-			{
-				objcls = T::StaticClass();
-				if (objcls) {
-					break;
-				}
-				Sleep(200);
+		_spawnutils::AttemptLoadClass(objclsname); //This should only be called on UBP classes.
+		for (_itor(5)) //The class should have loaded, but give it some time if not.
+		{
+			objcls = T::StaticClass();
+			if (objcls) {
+				break;
 			}
+			Sleep(200);
 		}
 	}
 	return static_cast<T*>(SDK::UGameplayStatics::SpawnObject(objcls, outerobj));
@@ -232,8 +270,7 @@ inline T* CreateWidgetInternal(SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClas
 {
 
 	if (UserWidgetClass == nullptr) {
-		std::string wcn = std::string(WidgetClassName);
-		_spawnutils::AttemptLoadClass(wcn.substr(wcn.find_first_of('U') + 1).c_str());
+		_spawnutils::AttemptLoadClass(WidgetClassName);
 		for (_itor(5)) //The class should have loaded, but give it some time if not.
 		{
 			UserWidgetClass = T::StaticClass();
@@ -258,17 +295,14 @@ inline T* SpawnActorInternal(SDK::AActor* outeract, const char* objclsname)
 	SDK::FTransform transform = outeract->GetTransform();
 	SDK::UClass* objcls = T::StaticClass();
 	if (objcls == nullptr) {
-		std::string wcn = std::string(objclsname);
-		if (wcn.starts_with("ABP")) {
-			_spawnutils::AttemptLoadClass(wcn.substr(1).c_str()); //This should only be called on ABP classes.
-			for (_itor(5)) //The class should have loaded, but give it some time if not.
-			{
-				objcls = T::StaticClass();
-				if (objcls) {
-					break;
-				}
-				Sleep(200);
+		_spawnutils::AttemptLoadClass(objclsname);
+		for (_itor(5)) //The class should have loaded, but give it some time if not.
+		{
+			objcls = T::StaticClass();
+			if (objcls) {
+				break;
 			}
+			Sleep(200);
 		}
 	}
 	else std::cout << "class was present!" << std::endl;
@@ -278,21 +312,18 @@ inline T* SpawnActorInternal(SDK::AActor* outeract, const char* objclsname)
 }
 
 template<typename T>
-inline T* SpawnActorInternal(SDK::FTransform transform, SDK::AActor* outeract, const char* objclsname)
+inline T* SpawnActorInternal(SDK::FTransform transform, SDK::AActor* outeract, const char* objclsname, bool deferred)
 {
 	SDK::UClass* objcls = T::StaticClass();
 	if (objcls == nullptr) {
-		std::string wcn = std::string(objclsname);
-		if (wcn.starts_with("ABP")) {
-			_spawnutils::AttemptLoadClass(wcn.substr(1).c_str()); //This should only be called on ABP classes.
-			for (_itor(5)) //The class should have loaded, but give it some time if not.
-			{
-				objcls = T::StaticClass();
-				if (objcls) {
-					break;
-				}
-				Sleep(200);
+		_spawnutils::AttemptLoadClass(objclsname);
+		for (_itor(5)) //The class should have loaded, but give it some time if not.
+		{
+			objcls = T::StaticClass();
+			if (objcls) {
+				break;
 			}
+			Sleep(200);
 		}
 	}
 	SDK::ESpawnActorCollisionHandlingMethod method = SDK::ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
@@ -319,17 +350,14 @@ inline T* SpawnActorInternal(SDK::FVector position, SDK::AActor* outeract, const
 	transform.Rotation = formed;
 	SDK::UClass* objcls = T::StaticClass();
 	if (objcls == nullptr) {
-		std::string wcn = std::string(objclsname);
-		if (wcn.starts_with("ABP")) {
-			_spawnutils::AttemptLoadClass(wcn.substr(1).c_str()); //This should only be called on ABP classes.
-			for (_itor(5)) //The class should have loaded, but give it some time if not.
-			{
-				objcls = T::StaticClass();
-				if (objcls) {
-					break;
-				}
-				Sleep(200);
+		_spawnutils::AttemptLoadClass(objclsname);
+		for (_itor(5)) //The class should have loaded, but give it some time if not.
+		{
+			objcls = T::StaticClass();
+			if (objcls) {
+				break;
 			}
+			Sleep(200);
 		}
 	}
 	SDK::ESpawnActorCollisionHandlingMethod method = SDK::ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
@@ -349,17 +377,14 @@ inline T* SpawnActorInternal(SDK::FVector position, SDK::FRotator rotation, SDK:
 	transform.Rotation = formed;
 	SDK::UClass* objcls = T::StaticClass();
 	if (objcls == nullptr) {
-		std::string wcn = std::string(objclsname);
-		if (wcn.starts_with("ABP")) {
-			_spawnutils::AttemptLoadClass(wcn.substr(1).c_str()); //This should only be called on ABP classes.
-			for (_itor(5)) //The class should have loaded, but give it some time if not.
-			{
-				objcls = T::StaticClass();
-				if (objcls) {
-					break;
-				}
-				Sleep(200);
+		_spawnutils::AttemptLoadClass(objclsname);
+		for (_itor(5)) //The class should have loaded, but give it some time if not.
+		{
+			objcls = T::StaticClass();
+			if (objcls) {
+				break;
 			}
+			Sleep(200);
 		}
 	}
 	SDK::ESpawnActorCollisionHandlingMethod method = SDK::ESpawnActorCollisionHandlingMethod::AlwaysSpawn;

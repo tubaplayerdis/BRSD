@@ -79,7 +79,7 @@ bool psettings::CreateCustomSettingsPage()
 
 void psettings::PrepareCustomSettingsPage()
 {
-    SDK::UWBP_BoolProperty_C* cb = CreateWidget(SDK::UWBP_BoolProperty_C);
+    SDK::UWBP_BoolProperty_C* cb = CreateWidgetInternal<SDK::UWBP_BoolProperty_C>(SDK::UWBP_BoolProperty_C::StaticClass(), "SDK::UWBP_BoolProperty_C");
     elements::ChatCommandsPC->AddPropertyWidget(cb, SDK::EOrientation::Orient_Horizontal);
     cb->ComboBox->InitItems(2, 1);
 }

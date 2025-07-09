@@ -77,6 +77,7 @@
 #define HOnRequestAsyncLoad BASE + 0x27FB690
 #define HRepair BASE + 0x0E3A890
 #define HSetSelectedItem BASE + 0x0DE5B60
+#define HEngineLoopTick BASE + 0x0EE0750
 
 //define hook signatures/masks
 

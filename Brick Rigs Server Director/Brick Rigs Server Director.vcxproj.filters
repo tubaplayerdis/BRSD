@@ -500,5 +500,11 @@
     <ClInclude Include="utils.h">
       <Filter>Header Files\utils</Filter>
     </ClInclude>
+    <ClInclude Include="actorutils.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineLoopTick.h">
+      <Filter>Header Files\hooks\global</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
