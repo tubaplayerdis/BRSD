@@ -63,7 +63,7 @@ void MainLoop()
 
 	if (IsHost()) welcome::SendWelcomeMessage();
 
-	psettings::CreateCustomSettingsPage();
+	psettings::CreateCustomSettingsPageBase();
 
 	std::cout << "Starting Main Loop!" << std::endl;
 
@@ -76,9 +76,6 @@ void MainLoop()
 		if (UninjectPress() || doUninject) break;
 
 		if (TogglePress()) {
-			MainThreadQueue.push([]() {
-				std::cout << "Hello!" << std::endl;
-				});
 			if (IsEnabled(hooks::S_AddChatMessage)) {
 				hooks::S_AddChatMessage->Disable();
 				LOG("Disabled Chat Commands");

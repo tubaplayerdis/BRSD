@@ -30,7 +30,7 @@ namespace psettings
 	}
 	inline SDK::UMenuPageWidget* MockPage = nullptr; //adds the backround of the menu page that looks correct by forcing a BorderPanel to be added.
 	inline SDK::UBrickScrollBox* CustomSettingsPage = nullptr;
-	bool CreateCustomSettingsPage();
+	bool CreateCustomSettingsPageBase();
 	//Called before setting visibility. 
 	void PrepareCustomSettingsPage();
 	void SetHook(bool toggle);
