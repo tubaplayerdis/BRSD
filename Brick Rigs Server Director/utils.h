@@ -16,8 +16,17 @@
 #include "Function.h"
 
 /*
-* This file is meant to define utility macros for BRSD.
+* This file is meant to define utility macros for the SDK.
 */
+
+//TODO: Complete this macro:
+
+/// <summary>
+/// Gets the UClass from the sdk class. Will load bp classes as necessary
+/// </summary>
+/// <param name="cls">Class of the new object. Not the UClass. Ex: SDK::UBrickBorder </param>
+/// <returns>A pointer to the UClass</returns>
+#define GetUClass(cls)
 
 /// <summary>
 /// Spawns a new UObject using internal UE systems. Use when creating UObjects 
@@ -91,3 +100,9 @@
 /// <param name="transform">Transform of the new actor</param>
 /// <returns>A pointer to the new actor</returns>
 #define SpawnActorTrans(cls, parent, transform) SpawnActorInternal<cls>(transform, parent, #cls)
+
+
+
+//TODO: Finish delayed actor spawn macros.
+
+#define FinishSpawningActor(ptr, transform)
