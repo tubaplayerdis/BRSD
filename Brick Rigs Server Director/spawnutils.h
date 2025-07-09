@@ -265,7 +265,6 @@ inline T* SpawnActorInternal(SDK::AActor* outeract, const char* objclsname)
 			{
 				objcls = T::StaticClass();
 				if (objcls) {
-					std::cout << "obj found!" << std::endl;
 					break;
 				}
 				Sleep(200);
@@ -290,7 +289,6 @@ inline T* SpawnActorInternal(SDK::FTransform transform, SDK::AActor* outeract, c
 			{
 				objcls = T::StaticClass();
 				if (objcls) {
-					std::cout << "obj found!" << std::endl;
 					break;
 				}
 				Sleep(200);
@@ -328,7 +326,6 @@ inline T* SpawnActorInternal(SDK::FVector position, SDK::AActor* outeract, const
 			{
 				objcls = T::StaticClass();
 				if (objcls) {
-					std::cout << "obj found!" << std::endl;
 					break;
 				}
 				Sleep(200);
@@ -359,7 +356,6 @@ inline T* SpawnActorInternal(SDK::FVector position, SDK::FRotator rotation, SDK:
 			{
 				objcls = T::StaticClass();
 				if (objcls) {
-					std::cout << "obj found!" << std::endl;
 					break;
 				}
 				Sleep(200);

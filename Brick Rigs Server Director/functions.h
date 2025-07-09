@@ -172,3 +172,8 @@ inline void FlushAsyncLoading(int packageID)
 {
 	return CallGameFunction<void, int>(FFlushAsyncLoading, packageID);
 }
+
+inline char SetRootComponent(SDK::AActor* This, SDK::USceneComponent* component)
+{
+	return CallGameFunction<char, SDK::AActor*, SDK::USceneComponent*>(BASE + 0x21D9430, This, component);
+}
