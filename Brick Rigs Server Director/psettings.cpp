@@ -81,10 +81,12 @@ void psettings::PrepareCustomSettingsPage()
 {
     SDK::UWBP_BoolProperty_C* cb = CreateWidgetInternal<SDK::UWBP_BoolProperty_C>(SDK::UWBP_BoolProperty_C::StaticClass(), "SDK::UWBP_BoolProperty_C");
     elements::ChatCommandsPC->AddPropertyWidget(cb, SDK::EOrientation::Orient_Horizontal);
+    elements::ChatCommandsPC->PropertyWidget = cb;//Not set manually for some reason.
     cb->ComboBox->InitItems(2, 1);
+    cb->ComboBox->SetSelectedItem(1);
 }
 
-void psettings::SetHook(bool toggle)
+void psettings::SetHook(bool toggle) 
 {
     if (toggle) hooks::S_SetSelectedItem->Enable();
     else hooks::S_SetSelectedItem->Disable();
@@ -115,12 +117,14 @@ void psettings::Uninitalize()
     CustomSettingsPage == nullptr;
 }
 
-bool psettings::elements::IsComboBox(SDK::UWBP_PropertyContainer_C* propc, SDK::UBrickComboBoxWidget* cbox)
+uintptr_t CastPointer(void* ptr)
 {
-    if (!propc || !cbox) return false;
-    if (!propc->PropertyWidget) return false;
-    if (!propc->PropertyWidget->IsA(SDK::UWBP_BoolProperty_C::StaticClass())) return false;
-    SDK::UWBP_BoolProperty_C* bp = static_cast<SDK::UWBP_BoolProperty_C*>(propc->PropertyWidget);
-    if (!bp->ComboBox) return false;
-    return bp->ComboBox == cbox;
+    return (uintptr_t)ptr;
+}
+
+bool psettings::elements::IsSettingsContainer(SDK::UPropertyWidget* comp, SDK::UPropertyWidget* box)
+{
+    if (!box || !comp) return false;
+    
+    return comp == box;
 }
