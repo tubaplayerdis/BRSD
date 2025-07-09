@@ -249,6 +249,7 @@
     <ClCompile Include="watermark.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="actorutils.h" />
     <ClInclude Include="AddChatMessage.h" />
     <ClInclude Include="DrawTransition.h" />
     <ClInclude Include="Function.h" />
@@ -277,6 +278,7 @@
     <ClInclude Include="spawnutils.h" />
     <ClInclude Include="StartPlay.h" />
     <ClInclude Include="stringlist.h" />
+    <ClInclude Include="EngineLoopTick.h" />
     <ClInclude Include="uibase.h" />
     <ClInclude Include="utils.h" />
     <ClInclude Include="watermark.h" />

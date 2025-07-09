@@ -21,6 +21,7 @@
 #include "StartPlay.h"
 #include "OnClicked.h"
 #include "SetSelectedItem.h"
+#include "EngineLoopTick.h"
 
 namespace hooks
 {

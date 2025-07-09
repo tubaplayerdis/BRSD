@@ -26,6 +26,7 @@
 #include "AddChatMessage.h"
 #include "logger.h"
 #include "utils.h"
+#include "EngineLoopTick.h"
 
 using namespace global;
 
@@ -75,22 +76,9 @@ void MainLoop()
 		if (UninjectPress() || doUninject) break;
 
 		if (TogglePress()) {
-			SDK::TArray<SDK::AActor*> actors;
-			SDK::UGameplayStatics::GetAllActorsOfClass(World(), SDK::ABP_ParkingGarage_C::StaticClass(), &actors);
-			for (int i = 0; i < actors.Num(); i++)
-			{
-				std::cout << actors[i]->RootComponent->GetName() << std::endl;
-				SetRootComponent(actors[i], static_cast<SDK::ABP_ParkingGarage_C*>(actors[i])->StaticMeshComponent);
-				static_cast<SDK::ABP_ParkingGarage_C*>(actors[i])->StaticMeshComponent->SetIsReplicated(true);
-				actors[i]->SetReplicates(true);
-				actors[i]->SetReplicateMovement(true);
-				SDK::FVector vec = actors[i]->K2_GetActorLocation();
-				vec.X += 100;
-				vec.Y += 100;
-				vec.Z += 100;
-				actors[i]->K2_SetActorLocation(vec, false, nullptr, true);
-				static_cast<SDK::ABP_ParkingGarage_C*>(actors[i])->ForceNetUpdate();
-			}
+			MainThreadQueue.push([]() {
+				std::cout << "Hello!" << std::endl;
+				});
 			if (IsEnabled(hooks::S_AddChatMessage)) {
 				hooks::S_AddChatMessage->Disable();
 				LOG("Disabled Chat Commands");

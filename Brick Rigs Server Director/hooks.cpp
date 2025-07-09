@@ -30,6 +30,7 @@ bool hooks::InitHooks()
 	S_LoadMap = new LoadMap();
 	S_OnClicked = new OnClicked();
 	S_SetSelectedItem = new SetSelectedItem();
+	//S_EngineLoopTick = new EngineLoopTick();
 	bool ACMHook = IsInitialized(S_AddChatMessage);
 	bool BPHook = IsInitialized(S_BeginPlay);
 	bool OMHook = IsInitialized(S_OpenMenu);
@@ -82,6 +83,7 @@ void hooks::EnableHooks()
 	S_LoadMap->Enable();
 	S_OnClicked->Enable();
 	S_SetSelectedItem->Enable();
+	//S_EngineLoopTick->Enable();
 }
 
 void hooks::DestroyHookObjects()
@@ -95,6 +97,8 @@ void hooks::DestroyHookObjects()
 	delete S_LoadMap;
 	delete S_OnClicked;
 	delete S_SetSelectedItem;
+	delete S_EngineLoopTick;
+	//delete S_EngineLoopTick;
 
 	//Set nullptr
 	S_AddChatMessage = nullptr;
@@ -105,6 +109,8 @@ void hooks::DestroyHookObjects()
 	S_LoadMap = nullptr;
 	S_OnClicked = nullptr;
 	S_SetSelectedItem = nullptr;
+	S_EngineLoopTick = nullptr;
+	//S_EngineLoopTick = nullptr;
 }
 
 void hooks::OpenCrashFile()

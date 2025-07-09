@@ -170,14 +170,16 @@ inline bool IsEnabled(Hook<Ret, Args...>* hook)
 template<typename Ret, typename ...Args>
 void Hook<Ret, Args...>::Enable() {
 	if (!initialized || enabled) return;
-	MH_EnableHook((LPVOID)FunctionPointer);
+	MH_QueueEnableHook((LPVOID)FunctionPointer);
+	MH_ApplyQueued();
 	enabled = true;
 }
 
 template<typename Ret, typename ...Args>
 void Hook<Ret, Args...>::Disable() {
 	if (!initialized || !enabled) return;
-	MH_DisableHook((LPVOID)FunctionPointer);
+	MH_QueueDisableHook((LPVOID)FunctionPointer);
+	MH_ApplyQueued();
 	enabled = false;
 }
 
