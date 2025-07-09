@@ -2,7 +2,7 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     actorutils.h						                                    */
+/*    Module:     actorutils.h						                          */
 /*    Author:     Aaron Wilk                                                  */
 /*    Created:    8 July 2025                                                 */
 /*                                                                            */

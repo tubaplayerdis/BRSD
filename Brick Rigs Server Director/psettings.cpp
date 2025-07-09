@@ -36,7 +36,7 @@ struct FdepQ
     uint8_t exclu;
 };
 
-bool psettings::CreateCustomSettingsPage()
+bool psettings::CreateCustomSettingsPageBase()
 {
     MockPage = SpawnObject(SDK::UMenuPageWidget, GetMenu());
     CustomSettingsPage = SpawnObject(SDK::UBrickScrollBox, GetWindowManager());
