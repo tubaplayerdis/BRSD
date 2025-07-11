@@ -507,4 +507,7 @@
       <Filter>Header Files\hooks\global</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="HookDiagram.cd" />
+  </ItemGroup>
 </Project>

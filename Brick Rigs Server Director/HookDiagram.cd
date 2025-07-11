@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Comment CommentText="Global Hooks">
+    <Position X="3" Y="0.5" Height="0.333" Width="1.512" />
+  </Comment>
+  <Comment CommentText="UI Hooks">
+    <Position X="6.521" Y="0.5" Height="0.333" Width="1.481" />
+  </Comment>
+  <Comment CommentText="Module Hooks">
+    <Position X="8.271" Y="0.5" Height="0.333" Width="1.481" />
+  </Comment>
+  <Class Name="Hook&lt;Ret, ...Args&gt;">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAABIEEAAAAACAiAAAAAEAFBAAAkBiAAAAgAA=</HashCode>
+      <FileName>Hook.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="hooks::BeginPlay">
+    <Position X="3" Y="1" Width="1.5" />
+    <InheritanceLine Type="Hook&lt;Ret, ...Args&gt;" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.5" Y="0.5" />
+        <Point X="1.5" Y="0.308" />
+        <Point X="2.692" Y="0.308" />
+        <Point X="2.692" Y="2.617" />
+        <Point X="3.812" Y="2.617" />
+        <Point X="3.812" Y="2.425" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAgAAA=</HashCode>
+      <FileName>BeginPlay.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="hooks::DrawTransition">
+    <Position X="3" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="Hook&lt;Ret, ...Args&gt;" FixedToPoint="true">
+      <Path>
+        <Point X="1.5" Y="0.5" />
+        <Point X="1.5" Y="0.308" />
+        <Point X="2.692" Y="0.308" />
+        <Point X="2.692" Y="4.367" />
+        <Point X="3.812" Y="4.367" />
+        <Point X="3.812" Y="4.175" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DrawTransition.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="hooks::EngineLoopTick">
+    <Position X="3" Y="4.5" Width="1.5" />
+    <InheritanceLine Type="Hook&lt;Ret, ...Args&gt;" FixedToPoint="true">
+      <Path>
+        <Point X="1.5" Y="0.5" />
+        <Point X="1.5" Y="0.308" />
+        <Point X="2.692" Y="0.308" />
+        <Point X="2.692" Y="6.165" />
+        <Point X="3.812" Y="6.165" />
+        <Point X="3.812" Y="5.925" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EngineLoopTick.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="hooks::LoadMap">
+    <Position X="4.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoadMap.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="hooks::OnPlayerJoined">
+    <Position X="4.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OnPlayerJoined.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="hooks::StartPlay">
+    <Position X="4.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>StartPlay.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="hooks::OnClicked">
+    <Position X="6.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OnClicked.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="hooks::OpenMenu">
+    <Position X="6.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OpenMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="hooks::RequestAsyncLoad">
+    <Position X="6.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RequestAsyncLoad.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="hooks::AddChatMessage">
+    <Position X="8.25" Y="1" Width="1.5" />
+    <InheritanceLine Type="Hook&lt;Ret, ...Args&gt;" ManuallyRouted="true">
+      <Path>
+        <Point X="1.5" Y="0.5" />
+        <Point X="1.5" Y="0.308" />
+        <Point X="10.083" Y="0.308" />
+        <Point X="10.083" Y="2.571" />
+        <Point X="9" Y="2.571" />
+        <Point X="9" Y="2.425" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AddChatMessage.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="SearchType">
+    <Position X="0.5" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Hook.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
