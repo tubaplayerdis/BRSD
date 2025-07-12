@@ -237,6 +237,7 @@
     <ClCompile Include="..\Include\SDK\WBP_WindowManager_functions.cpp" />
     <ClCompile Include="..\Include\trampoline.c" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Module.cpp" />
     <ClCompile Include="obutton.cpp" />
     <ClCompile Include="global.cpp" />
     <ClCompile Include="hooks.cpp" />
@@ -251,11 +252,13 @@
   <ItemGroup>
     <ClInclude Include="actorutils.h" />
     <ClInclude Include="AddChatMessage.h" />
+    <ClInclude Include="blacklist.h" />
     <ClInclude Include="DrawTransition.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="Hook.h" />
     <ClInclude Include="BeginPlay.h" />
     <ClInclude Include="LoggerStream.h" />
+    <ClInclude Include="Module.h" />
     <ClInclude Include="obutton.h" />
     <ClInclude Include="functions.h" />
     <ClInclude Include="global.h" />

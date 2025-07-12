@@ -43,7 +43,10 @@ namespace hooks
 			if (GetMenu()->CurrentMenuPage && GetMenu()->CurrentMenuPage == psettings::MockPage) {
 				//psettings::SetHook(false);
 				static_cast<SDK::UBrickBorder*>(psettings::CustomSettingsPage->Slot->Parent)->SetContent(psettings::MockPage);
+				S_OnClicked->OriginalFunction(This);
+				return;
 			}
+
 			if (This == obutton::CurrentButtonRef) {
 				if (GetMenu()->CurrentMenuPage) GetMenu()->RemoveMenuPage(GetMenu()->CurrentMenuPage);
 				const SDK::FText title = TEXT(L"BRSD");

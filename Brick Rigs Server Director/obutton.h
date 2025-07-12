@@ -15,6 +15,6 @@
 
 namespace obutton
 {
-	inline SDK::UMenuButtonWidget* CurrentButtonRef = nullptr;
+	inline SDK::UWBP_MenuButton_C* CurrentButtonRef = nullptr;
 	void AddToButtonMenu();
 }
