@@ -2,27 +2,28 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     obutton.cpp		                                          */
+/*    Module:     Module.h													  */
 /*    Author:     Aaron Wilk                                                  */
-/*    Created:    25 June 2025                                                */
+/*    Created:    12 July 2025                                                */
 /*                                                                            */
 /*    Revisions:  V0.1                                                        */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
-#include "obutton.h"
-#include "psettings.h"
-#include "global.h"
-#include <SDK.hpp>
-#include "uibase.h"
+#pragma once
 
-void obutton::AddToButtonMenu()
+//The Idea of this class is similar to hooks where modules are singletons and implemented induvidually.
+
+class Module
 {
-	SDK::UWBP_Menu_C* MainMenu = GetMenu();
-	if (!MainMenu) return;
-	if (MainMenu->GetButtonPanel()->Buttons.Num() > 0) {
-		SDK::TDelegate<void()> del = MainMenu->GetButtonPanel()->Buttons[0]->OnClickedDelegate;
-		del.BoundFunction.FunctionName = NAME(L"None");
-		CurrentButtonRef = static_cast<SDK::UWBP_MenuButton_C*>(MainMenu->GetButtonPanel()->CreateButton(TEXT(L"BRSD"), 12, del));
-	}
-}
+private:
+	bool bIsEnabled;
+	bool bIsInitalized;
+	bool bNeedsInitalization;
+
+public:
+	Module(bool NeedsInitalization, bool(*vInitilizationFunction)(void) = nullptr);
+
+	virtual bool Enable() = 0;
+	virtual bool Disable() = 0;
+};

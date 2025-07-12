@@ -76,6 +76,9 @@
     <Filter Include="Header Files\utils">
       <UniqueIdentifier>{0a6bba05-e6ae-4a06-acf1-fd0a6be1e524}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\modules\gameplay">
+      <UniqueIdentifier>{4c4ee975-e306-4d5e-b71e-04b43532a06a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Include\trampoline.c">
@@ -402,6 +405,9 @@
     <ClCompile Include="..\Include\SDK\WBP_VideoSettings_functions.cpp">
       <Filter>More Files\SDK\UI</Filter>
     </ClCompile>
+    <ClCompile Include="Module.cpp">
+      <Filter>Source Files\modules</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -505,6 +511,12 @@
     </ClInclude>
     <ClInclude Include="EngineLoopTick.h">
       <Filter>Header Files\hooks\global</Filter>
+    </ClInclude>
+    <ClInclude Include="blacklist.h">
+      <Filter>Header Files\modules\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="Module.h">
+      <Filter>Header Files\modules</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
