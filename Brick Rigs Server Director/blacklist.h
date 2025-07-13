@@ -11,6 +11,22 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
+#include "Module.h"
+
+class BLModule : public Module
+{
+	BLModule() : Module(false, nullptr) {}
+
+	inline bool Enable() override
+	{
+		//enable what needs to be in blacklist namespace
+	}
+
+	inline bool Disable() override
+	{
+		//disable stuff from blacklist namespace
+	}
+};
 
 namespace blacklist
 {
