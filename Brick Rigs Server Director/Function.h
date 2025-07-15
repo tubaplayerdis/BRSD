@@ -1,8 +1,21 @@
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
+/*                                                                            */
+/*    Module:     Function.h					                              */
+/*    Author:     Aaron Wilk                                                  */
+/*    Created:    6 July 2025                                                 */
+/*                                                                            */
+/*    Revisions:  V0.1                                                        */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+
 #pragma once
 #include <windows.h>
 #include <libloaderapi.h>
 #include <processthreadsapi.h>
 #include <Psapi.h>
+
 
 template<typename TRet, typename... TArgs>
 inline TRet CallGameFunction(unsigned long long addr, TArgs... args) 

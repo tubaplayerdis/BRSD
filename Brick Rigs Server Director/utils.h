@@ -27,7 +27,7 @@
 /// </summary>
 /// <param name="cls">Class of the new object. Not the UClass. Ex: SDK::UBrickBorder </param>
 /// <returns>A pointer to the UClass</returns>
-#define GetUClass(cls)
+#define GetUClass(cls) GetClassInternal<cls>(#cls)
 
 /// <summary>
 /// Spawns a new UObject using internal UE systems. Use when creating UObjects 
