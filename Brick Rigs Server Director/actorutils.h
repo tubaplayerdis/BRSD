@@ -23,14 +23,15 @@
 /// </summary>
 /// <param name="actor">Pointer to the actor to be deleted</param>
 /// <returns>None</returns>
-#define SpawnActor(actor) actor->K2_DestroyActor()
+#define DestroyActor(actor) actor->K2_DestroyActor()
 
 /// <summary>
 /// Spawns a new AActor using internal UE systems. Use when creating AActors
 /// The actor will be created with the specified parent and spawn with its location and rotation
+/// If a parent is not specified, its location and rotation will be 0,0,0
 /// </summary>
 /// <param name="cls">Class of the new actor. Not the UClass. Ex: SDK::ABrickCharacte </param>
-/// <param name="parent">Pointer to the parent of the new actor. most not be null</param>
+/// <param name="parent">Pointer to the parent of the new actor.</param>
 /// <returns>A pointer to the new actor</returns>
 #define SpawnActor(cls, parent) SpawnActorInternal<cls>(parent, #cls)
 

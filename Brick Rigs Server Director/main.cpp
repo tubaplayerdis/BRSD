@@ -67,6 +67,8 @@ void MainLoop()
 
 	std::cout << "Starting Main Loop!" << std::endl;
 
+	GetUClass(SDK::UWBP_AdminLogin_C);
+
 	while (true) {
 
 		Sleep(10);

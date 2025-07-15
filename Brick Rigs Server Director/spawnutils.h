@@ -16,7 +16,6 @@
 #include <windows.h>
 #include <tlhelp32.h>
 #include <SDK.hpp>
-#include "EngineLoopTick.h"
 
 //Enabling my laziness
 #define _itor(num) int i = 0; i < num; i++
@@ -244,6 +243,24 @@ namespace _spawnutils
 	#endif // _DEBUG
 
 	#pragma endregion
+}
+
+template<typename T>
+inline SDK::UClass* GetClassInternal(const char* clsobjname)
+{
+	SDK::UClass* objcls = T::StaticClass();
+	if (objcls == nullptr) {
+		_spawnutils::AttemptLoadClass(clsobjname);
+		for (int i = 0; i < 5; i++) //The class should have loaded, but give it some time if not.
+		{
+			objcls = T::StaticClass();
+			if (objcls) {
+				return objcls;
+			}
+			Sleep(200);
+		}
+	}
+	return nullptr;
 }
 
 //Example parameter UBP_DamageType_FuelExplosion_C

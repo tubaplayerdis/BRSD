@@ -31,4 +31,5 @@ class BLModule : public Module
 namespace blacklist
 {
 	//vehicle blacklist
+	//hook the spawning function
 }
