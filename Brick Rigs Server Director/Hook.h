@@ -22,6 +22,8 @@
 #include <cassert>
 #include <utility>
 
+#define DestroyHook(hook) delete hook; hook = nullptr;
+
 enum SearchType
 {
 	FAST = 0,
