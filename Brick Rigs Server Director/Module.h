@@ -26,4 +26,5 @@ public:
 
 	virtual bool Enable() = 0;
 	virtual bool Disable() = 0;
+
 };
