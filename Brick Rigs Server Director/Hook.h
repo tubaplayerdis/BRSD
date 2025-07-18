@@ -20,6 +20,8 @@
 #include <libloaderapi.h>
 #include <Psapi.h>
 
+#define DestroyHook(hook) delete hook; hook = nullptr;
+
 enum SearchType
 {
 	FAST = 0,
