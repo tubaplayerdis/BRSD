@@ -88,27 +88,14 @@ void hooks::EnableHooks()
 
 void hooks::DestroyHookObjects()
 {
-	//Deletes
-	delete S_AddChatMessage;
-	delete S_BeginPlay;
-	delete S_OpenMenu;
-	delete S_OnPlayerJoined;
-	delete S_StartPlay;
-	delete S_LoadMap;
-	delete S_OnClicked;
-	delete S_SetSelectedItem;
-	//delete S_EngineLoopTick;
-
-	//Set nullptr
-	S_AddChatMessage = nullptr;
-	S_BeginPlay = nullptr;
-	S_OpenMenu = nullptr;
-	S_OnPlayerJoined = nullptr;
-	S_StartPlay = nullptr;
-	S_LoadMap = nullptr;
-	S_OnClicked = nullptr;
-	S_SetSelectedItem = nullptr;
-	//S_EngineLoopTick = nullptr;
+	DestroyHook(S_AddChatMessage);
+	DestroyHook(S_BeginPlay);
+	DestroyHook(S_OpenMenu);
+	DestroyHook(S_OnPlayerJoined);
+	DestroyHook(S_StartPlay);
+	DestroyHook(S_LoadMap);
+	DestroyHook(S_OnClicked);
+	DestroyHook(S_SetSelectedItem);
 }
 
 void hooks::OpenCrashFile()
