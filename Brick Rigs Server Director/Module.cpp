@@ -22,3 +22,4 @@ Module::Module(bool NeedsInitalization, bool(*vInitilizationFunction)(void))
 		bIsInitalized = vInitilizationFunction();
 	}
 }
+

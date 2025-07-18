@@ -79,6 +79,9 @@
     <Filter Include="Header Files\modules\gameplay">
       <UniqueIdentifier>{4c4ee975-e306-4d5e-b71e-04b43532a06a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\hooks\vehicle">
+      <UniqueIdentifier>{6bd2126b-c39a-4dc2-af75-61cbe83c7f04}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Include\trampoline.c">
@@ -517,6 +520,9 @@
     </ClInclude>
     <ClInclude Include="Module.h">
       <Filter>Header Files\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="RestartPlayerAt.h">
+      <Filter>Header Files\hooks\vehicle</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -16,3 +16,4 @@
 #include "welcome.h"
 #include "interpreter.h"
 #include "moderation.h"
+#include "blacklist.h"

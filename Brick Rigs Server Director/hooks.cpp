@@ -22,7 +22,7 @@ bool hooks::InitHooks()
 {
 	std::cout << "Finding Hooks!" << std::endl;
 	auto start = std::chrono::high_resolution_clock::now();
-	S_AddChatMessage = new AddChatMessage();
+	Initialize<AddChatMessage>(S_AddChatMessage);
 	S_BeginPlay = new BeginPlay();
 	S_OpenMenu = new OpenMenu();
 	S_OnPlayerJoined = new OnPlayerJoined();
@@ -30,7 +30,7 @@ bool hooks::InitHooks()
 	S_LoadMap = new LoadMap();
 	S_OnClicked = new OnClicked();
 	S_SetSelectedItem = new SetSelectedItem();
-	//S_EngineLoopTick = new EngineLoopTick();
+	S_RestartPlayerAt = new RestartPlayerAt();
 	bool ACMHook = IsInitialized(S_AddChatMessage);
 	bool BPHook = IsInitialized(S_BeginPlay);
 	bool OMHook = IsInitialized(S_OpenMenu);

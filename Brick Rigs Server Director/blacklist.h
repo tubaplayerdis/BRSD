@@ -13,9 +13,9 @@
 #pragma once
 #include "Module.h"
 
-class BLModule : public Module
+class Blacklist : public Module
 {
-	BLModule() : Module(false, nullptr) {}
+	Blacklist() : Module(false, nullptr) {}
 
 	inline bool Enable() override
 	{
@@ -28,8 +28,4 @@ class BLModule : public Module
 	}
 };
 
-namespace blacklist
-{
-	//vehicle blacklist
-	//hook the spawning function
-}
+Blacklist* M_Blacklist = nullptr;

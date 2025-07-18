@@ -19,6 +19,8 @@
 #include <MinHook.h>
 #include <libloaderapi.h>
 #include <Psapi.h>
+#include <cassert>
+#include <utility>
 
 enum SearchType
 {
@@ -30,7 +32,7 @@ enum SearchType
 template <typename Ret, typename... Args>  
 class Hook  
 {  
-public:  
+protected:  
     Hook(const char* pat, const char* mak, Ret(__fastcall* hookFunc)(Args...), SearchType fsearch = FAST); //pattern and mask, use the \x00 format on sigs, x and ? on masks (? is wildcard)
     Hook(unsigned long long addr, Ret(__fastcall* hookFunc)(Args...));  //The address base is calculated when creating the object. Only the offset
 	Hook(Ret(__fastcall* ptr)(Args...), Ret(__fastcall* hookFunc)(Args...)); //Use reinterpret_cast<Ret(__fastcall*)(Args...)>(vtable[index]) when inputing a vtable entry
@@ -63,6 +65,9 @@ public:
 	template <typename Ret, typename... Args>
 	friend bool IsEnabled(Hook<Ret, Args...>* hook);
 
+	template<typename T>
+	friend void Initialize(T* singleton);
+
 protected:
 	static unsigned long long FindPattern(const char* pattern, const char* mask, unsigned long long base, unsigned __int64 size);
 	static unsigned long long FindPatternS(const char* pattern, const char* mask, unsigned long long base, unsigned __int64 size);
@@ -70,6 +75,10 @@ protected:
 	static unsigned long long GetModuleBase();
 	static unsigned long long GetModuleSize();
 	static bool GetTextSection(unsigned long long& textBase, unsigned __int64& textSize);
+
+
+private:
+	static inline std::vector<void*> vHookVector = std::vector<void*>();
 };
 
 template<typename Ret, typename ...Args>
@@ -165,6 +174,13 @@ template<typename Ret, typename ...Args>
 inline bool IsEnabled(Hook<Ret, Args...>* hook)
 {
 	return !hook ? false : hook->enabled;
+}
+
+template<typename T>
+inline void Initialize(T* singleton)
+{
+	singleton = new T();
+	Hook<void>::vHookVector.push_back(singleton);
 }
 
 template<typename Ret, typename ...Args>
