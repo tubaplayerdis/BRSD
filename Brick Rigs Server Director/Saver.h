@@ -2,7 +2,7 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     Module.h													  */
+/*    Module:     Saver.h				                                      */
 /*    Author:     Aaron Wilk                                                  */
 /*    Created:    12 July 2025                                                */
 /*                                                                            */
@@ -11,25 +11,21 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
+#include "Module.h"
+#include <vector>
 
-//The Idea of this class is similar to hooks where modules are singletons and implemented induvidually.
-
-class Module
+class Saver : public Module
 {
-private:
-	bool bIsEnabled;
-	bool bIsInitalized;
-	bool bNeedsInitalization;
+	Saver() : Module(false) {}
 
-public:
-	/// <summary>
-	/// Creates a module and defines default behavior.
-	/// </summary>
-	/// <param name="NeedsInitalization">Whether the module requires an initalization function</param>
-	/// <param name="vInitilizationFunction">Initalization function if specified</param>
-	Module(bool NeedsInitalization, bool(*vInitilizationFunction)(void) = nullptr);
+	inline bool Enable() override
+	{
+		//enablization function
+	}
 
-	virtual bool Enable() = 0;
-	virtual bool Disable() = 0;
+	inline bool Disable() override
+	{
+		//disable stuff
+	}
 
 };
