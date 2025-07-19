@@ -23,7 +23,7 @@
 namespace messages
 {
 	/*
-	* Send a specified user a message. messages send from user "Command Interpreter" with default message context
+	* Send a specified user a message. messages send from user "BRSD" with default message context
 	* info - Recipient info
 	* message - message context
 	*/

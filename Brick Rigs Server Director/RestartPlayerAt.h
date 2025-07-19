@@ -14,8 +14,10 @@
 #include "offsets.h"
 #include <windows.h>
 #include <SDK.hpp>
-#include "psettings.h"
+#include "messages.h"
+#include "global.h"
 #include "Hook.h"
+#include "Module.h"
 
 enum EPlayerSpawnResult : uint8_t
 {
@@ -50,10 +52,15 @@ namespace hooks
 
         static EPlayerSpawnResult __fastcall HookedFunction(SDK::ABrickGameMode* This, SDK::ABrickPlayerController* Player, SDK::FPlayerSpawnRequest Request)
         {
+            Sleep(10);
             if (Request.VehicleSpawnType == SDK::EPlayerVehicleSpawnType::ReplaceCurrent || Request.VehicleSpawnType == SDK::EPlayerVehicleSpawnType::SpawnNew)
             {
-                std::cout << "Vehicle Spawn Was Called" << std::endl;
-                std::cout << "Vehicle Name" << Request.VehicleFileInfo.Title << std::endl;
+                if (M_Blacklist && M_Blacklist->IsVehicleBannned(Request.VehicleFileInfo))
+                {
+                    std::cout << "Player " << GetPlayerInfoFromController(Player).name << " spawned banned vehicle: " << Request.VehicleFileInfo.Title << std::endl;
+                    Message(GetPlayerInfoFromController(Player), "Your vehicle could not be spawned as it is on the blacklist");
+                    return Failure;
+                }
             }
             return S_RestartPlayerAt->OriginalFunction(This, Player, Request);
         }

@@ -25,7 +25,7 @@ namespace modules
 		CreateModule(Blacklist, M_Blacklist);
 	}
 	
-	inline void DisableModules()
+	inline void DestroyModules()
 	{
 		DestroyModule(M_Blacklist);
 	}

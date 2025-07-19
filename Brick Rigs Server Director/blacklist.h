@@ -13,31 +13,37 @@
 #pragma once
 #include "Module.h"
 #include <vector>
+#include <SDK/BrickRigs_structs.hpp>
 
 //For blacklist, it should be by name, steam link or file.
 
 class Blacklist : public Module
 {
-public:
-	Blacklist() : Module(false, nullptr) {}
+	std::vector<std::string> vBannedVehicleKeywords;
 
-	std::vector<std::string> vBannedVehicleNames;
+public:
+	Blacklist() : Module(false, nullptr) 
+	{
+		vBannedVehicleKeywords.push_back("lol");
+	}
 
 	inline bool Enable() override
 	{
 		SetEnable(true);
+		return true;
 	}
 
 	inline bool Disable() override
 	{
 		SetEnable(false);
+		return true;
 	}
 
-	inline bool IsVehicleBannned(std::string vehiclename)
+	inline bool IsVehicleBannned(SDK::FUGCFileInfo vehicle)
 	{
-		for (std::string veh : vBannedVehicleNames)
+		for (std::string veh : vBannedVehicleKeywords)
 		{
-			if (veh == vehiclename) return true;
+			if (std::string::npos != vehicle.Title.ToString().find(veh)) return true;
 		}
 		return false;
 	}

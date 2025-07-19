@@ -65,6 +65,8 @@ void MainLoop()
 
 	psettings::CreateCustomSettingsPageBase();
 
+	modules::InitalizeModules();
+
 	std::cout << "Starting Main Loop!" << std::endl;
 
 	while (true) {
@@ -93,6 +95,8 @@ void MainLoop()
 	watermark::UnInitalizeWaterMark();
 
 	psettings::Uninitalize();
+
+	modules::DestroyModules();
 
 	hooks::DestroyHookObjects();
 
