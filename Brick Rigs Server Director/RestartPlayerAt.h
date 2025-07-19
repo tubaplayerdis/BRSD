@@ -2,7 +2,7 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     SetSelectedItem.h                                           */
+/*    Module:     RestartPlayerAt.h                                           */
 /*    Author:     Aaron Wilk                                                  */
 /*    Created:    24 June 2025                                                */
 /*                                                                            */
@@ -50,10 +50,14 @@ namespace hooks
 
         static EPlayerSpawnResult __fastcall HookedFunction(SDK::ABrickGameMode* This, SDK::ABrickPlayerController* Player, SDK::FPlayerSpawnRequest Request)
         {
-            std::cout << "Restart At Was Called" << std::endl;
+            if (Request.VehicleSpawnType == SDK::EPlayerVehicleSpawnType::ReplaceCurrent || Request.VehicleSpawnType == SDK::EPlayerVehicleSpawnType::SpawnNew)
+            {
+                std::cout << "Vehicle Spawn Was Called" << std::endl;
+                std::cout << "Vehicle Name" << Request.VehicleFileInfo.Title << std::endl;
+            }
             return S_RestartPlayerAt->OriginalFunction(This, Player, Request);
         }
 
-        RestartPlayerAt() : Hook(HOnItemSelected, HookedFunction) {}
+        RestartPlayerAt() : Hook(HRestartPlayerAt, HookedFunction) {}
     };
 }

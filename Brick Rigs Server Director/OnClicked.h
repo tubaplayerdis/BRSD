@@ -40,7 +40,8 @@ namespace hooks
 
 		static void __fastcall HookedFunction(SDK::UMenuButtonWidget* This)
 		{
-			if (GetMenu()->CurrentMenuPage && GetMenu()->CurrentMenuPage == psettings::MockPage) {
+
+			if (GetMenu() && GetMenu()->CurrentMenuPage && GetMenu()->CurrentMenuPage == psettings::MockPage) {
 				//psettings::SetHook(false);
 				static_cast<SDK::UBrickBorder*>(psettings::CustomSettingsPage->Slot->Parent)->SetContent(psettings::MockPage);
 				S_OnClicked->OriginalFunction(This);
