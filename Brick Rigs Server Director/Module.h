@@ -14,8 +14,12 @@
 
 //The Idea of this class is similar to hooks where modules are singletons and implemented induvidually.
 
+#define CreateModule(cls, mod) mod = new cls()
+#define DestroyModule(mod) delete mod; mod = nullptr
+
 class Module
 {
+
 private:
 	bool bIsEnabled;
 	bool bIsInitalized;
@@ -31,5 +35,8 @@ public:
 
 	virtual bool Enable() = 0;
 	virtual bool Disable() = 0;
+
+	inline void SetEnable(bool toggle) { bIsEnabled = toggle;  }
+	inline bool GetEnable() { return bIsEnabled;  }
 
 };
