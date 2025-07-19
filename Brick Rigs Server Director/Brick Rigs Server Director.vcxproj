@@ -252,7 +252,7 @@
   <ItemGroup>
     <ClInclude Include="actorutils.h" />
     <ClInclude Include="AddChatMessage.h" />
-    <ClInclude Include="blacklist.h" />
+    <ClInclude Include="Blacklist.h" />
     <ClInclude Include="DrawTransition.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="Hook.h" />
@@ -272,7 +272,7 @@
     <ClInclude Include="offsets.h" />
     <ClInclude Include="OnClicked.h" />
     <ClInclude Include="RestartPlayerAt.h" />
-    <ClInclude Include="Saver.h"/>
+    <ClInclude Include="Saver.h" />
     <ClInclude Include="SetSelectedItem.h" />
     <ClInclude Include="OnPlayerJoined.h" />
     <ClInclude Include="OpenMenu.h" />

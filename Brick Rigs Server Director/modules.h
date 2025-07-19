@@ -16,4 +16,17 @@
 #include "welcome.h"
 #include "interpreter.h"
 #include "moderation.h"
-#include "blacklist.h"
+#include "Blacklist.h"
+
+namespace modules
+{
+	inline void InitalizeModules()
+	{
+		CreateModule(Blacklist, M_Blacklist);
+	}
+	
+	inline void DisableModules()
+	{
+		DestroyModule(M_Blacklist);
+	}
+}

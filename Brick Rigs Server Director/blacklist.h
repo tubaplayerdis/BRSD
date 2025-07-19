@@ -2,7 +2,7 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     blacklist.h			                                      */
+/*    Module:     Blacklist.h			                                      */
 /*    Author:     Aaron Wilk                                                  */
 /*    Created:    12 July 2025                                                */
 /*                                                                            */
@@ -12,21 +12,34 @@
 
 #pragma once
 #include "Module.h"
+#include <vector>
 
 //For blacklist, it should be by name, steam link or file.
 
 class Blacklist : public Module
 {
+public:
 	Blacklist() : Module(false, nullptr) {}
+
+	std::vector<std::string> vBannedVehicleNames;
 
 	inline bool Enable() override
 	{
-		//enable what needs to be in blacklist namespace
+		SetEnable(true);
 	}
 
 	inline bool Disable() override
 	{
-		//disable stuff from blacklist namespace
+		SetEnable(false);
+	}
+
+	inline bool IsVehicleBannned(std::string vehiclename)
+	{
+		for (std::string veh : vBannedVehicleNames)
+		{
+			if (veh == vehiclename) return true;
+		}
+		return false;
 	}
 };
 
