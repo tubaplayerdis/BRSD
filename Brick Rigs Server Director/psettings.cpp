@@ -99,7 +99,7 @@ void psettings::SetVisibility(SDK::ESlateVisibility vis)
 
 void psettings::Uninitalize()
 {
-    if (GetMenu()->CurrentMenuPage && GetMenu()->CurrentMenuPage == psettings::MockPage) {
+    if (GetMenu() && GetMenu()->CurrentMenuPage && GetMenu()->CurrentMenuPage == psettings::MockPage) {
         static_cast<SDK::UBrickBorder*>(psettings::CustomSettingsPage->Slot->Parent)->SetContent(psettings::MockPage);
     }
 

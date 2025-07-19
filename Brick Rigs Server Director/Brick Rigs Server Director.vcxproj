@@ -272,6 +272,7 @@
     <ClInclude Include="offsets.h" />
     <ClInclude Include="OnClicked.h" />
     <ClInclude Include="RestartPlayerAt.h" />
+    <ClInclude Include="Saver.h"/>
     <ClInclude Include="SetSelectedItem.h" />
     <ClInclude Include="OnPlayerJoined.h" />
     <ClInclude Include="OpenMenu.h" />

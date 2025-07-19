@@ -13,6 +13,8 @@
 #pragma once
 #include "Module.h"
 
+//For blacklist, it should be by name, steam link or file.
+
 class Blacklist : public Module
 {
 	Blacklist() : Module(false, nullptr) {}
@@ -28,4 +30,4 @@ class Blacklist : public Module
 	}
 };
 
-Blacklist* M_Blacklist = nullptr;
+inline Blacklist* M_Blacklist = nullptr;

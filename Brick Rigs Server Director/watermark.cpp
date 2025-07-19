@@ -14,6 +14,7 @@
 #include "functions.h"
 #include "uibase.h"
 #include "global.h"
+#include <string>
 
 bool watermark::InitalizeWaterMark()
 {
@@ -29,11 +30,13 @@ bool watermark::InitalizeWaterMark()
 	#define TEXT(text) SDK::UKismetTextLibrary::Conv_StringToText(SDK::FString(text))
 
 	#ifdef _DEBUG
-		TextBlock->SetText(TEXT(L"(DEV)Brick Rigs Server Director V1.0 (BRSD)"));
+		std::wstring wDevWatermarkMessage = L"(BRSD DEV): ";
+		wDevWatermarkMessage.append(global::to_wstring_n(__TIME__));
+		TextBlock->SetText(TEXT(wDevWatermarkMessage.c_str()));
 	#else
 		TextBlock->SetText(TEXT(L"Brick Rigs Server Director V1.0 (BRSD)"));
 	#endif // _DEBUG
-
+		
 	TextBlock->SetColorStyle(SDK::EBrickUIColorStyle::Default);
 	TextBlock->SetTextStyle(SDK::EBrickUITextStyle::Bold);
 	TextBlock->SetStyleState(SDK::EBrickUIStyleState::Foreground);

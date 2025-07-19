@@ -22,7 +22,8 @@
 #include <cassert>
 #include <utility>
 
-#define DestroyHook(hook) delete hook; hook = nullptr;
+#define DestroyHook(hook) delete hook; hook = nullptr
+#define InitializeHook(hook, cls) hook = new cls()
 
 enum SearchType
 {
@@ -67,9 +68,6 @@ public:
 	template <typename Ret, typename... Args>
 	friend bool IsEnabled(Hook<Ret, Args...>* hook);
 
-	template<typename T>
-	friend void Initialize(T* singleton);
-
 protected:
 	static unsigned long long FindPattern(const char* pattern, const char* mask, unsigned long long base, unsigned __int64 size);
 	static unsigned long long FindPatternS(const char* pattern, const char* mask, unsigned long long base, unsigned __int64 size);
@@ -78,9 +76,6 @@ protected:
 	static unsigned long long GetModuleSize();
 	static bool GetTextSection(unsigned long long& textBase, unsigned __int64& textSize);
 
-
-private:
-	static inline std::vector<void*> vHookVector = std::vector<void*>();
 };
 
 template<typename Ret, typename ...Args>
@@ -176,13 +171,6 @@ template<typename Ret, typename ...Args>
 inline bool IsEnabled(Hook<Ret, Args...>* hook)
 {
 	return !hook ? false : hook->enabled;
-}
-
-template<typename T>
-inline void Initialize(T* singleton)
-{
-	singleton = new T();
-	Hook<void>::vHookVector.push_back(singleton);
 }
 
 template<typename Ret, typename ...Args>

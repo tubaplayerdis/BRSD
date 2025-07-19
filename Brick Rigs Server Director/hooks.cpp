@@ -22,15 +22,15 @@ bool hooks::InitHooks()
 {
 	std::cout << "Finding Hooks!" << std::endl;
 	auto start = std::chrono::high_resolution_clock::now();
-	Initialize<AddChatMessage>(S_AddChatMessage);
-	S_BeginPlay = new BeginPlay();
-	S_OpenMenu = new OpenMenu();
-	S_OnPlayerJoined = new OnPlayerJoined();
-	S_StartPlay = new StartPlay();
-	S_LoadMap = new LoadMap();
-	S_OnClicked = new OnClicked();
-	S_SetSelectedItem = new SetSelectedItem();
-	S_RestartPlayerAt = new RestartPlayerAt();
+	InitializeHook(S_AddChatMessage, AddChatMessage);
+	InitializeHook(S_BeginPlay, BeginPlay);
+	InitializeHook(S_OpenMenu, OpenMenu);
+	InitializeHook(S_OnPlayerJoined, OnPlayerJoined);
+	InitializeHook(S_StartPlay, StartPlay);
+	InitializeHook(S_LoadMap, LoadMap);
+	InitializeHook(S_OnClicked, OnClicked);
+	InitializeHook(S_SetSelectedItem, SetSelectedItem);
+	InitializeHook(S_RestartPlayerAt, RestartPlayerAt);
 	bool ACMHook = IsInitialized(S_AddChatMessage);
 	bool BPHook = IsInitialized(S_BeginPlay);
 	bool OMHook = IsInitialized(S_OpenMenu);
@@ -83,6 +83,7 @@ void hooks::EnableHooks()
 	S_LoadMap->Enable();
 	S_OnClicked->Enable();
 	S_SetSelectedItem->Enable();
+	S_RestartPlayerAt->Enable();
 	//S_EngineLoopTick->Enable();
 }
 
@@ -96,6 +97,7 @@ void hooks::DestroyHookObjects()
 	DestroyHook(S_LoadMap);
 	DestroyHook(S_OnClicked);
 	DestroyHook(S_SetSelectedItem);
+	DestroyHook(S_RestartPlayerAt);
 }
 
 void hooks::OpenCrashFile()
