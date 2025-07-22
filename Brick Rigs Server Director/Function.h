@@ -16,7 +16,6 @@
 #include <processthreadsapi.h>
 #include <Psapi.h>
 
-
 template<typename TRet, typename... TArgs>
 inline TRet CallGameFunction(unsigned long long addr, TArgs... args) 
 {

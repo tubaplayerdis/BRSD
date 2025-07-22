@@ -124,7 +124,7 @@ namespace _spawnutils
 	{
 		std::wstring universal = _to_wstring(classname);
 		universal = universal.substr(universal.find_first_of('B'));//remove the ABP, UBP, UWBP.
-		std::wcout << "Attempting Load: " << universal << std::endl;
+		//std::wcout << "Attempting Load: " << universal << std::endl;
 		std::wstring lookfor = universal;
 		lookfor.pop_back();
 		lookfor.pop_back();
@@ -173,7 +173,7 @@ namespace _spawnutils
 				result.append(packname);
 				result.append(L"_C");
 
-				std::wcout << result << std::endl;
+				//std::wcout << result << std::endl;
 
 				res = result;
 				break;
