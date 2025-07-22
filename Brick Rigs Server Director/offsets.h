@@ -79,6 +79,7 @@
 #define HOnItemSelected BASE + 0x0DD8C80
 #define HEngineLoopTick BASE + 0x0EE0750
 #define HRestartPlayerAt BASE + 0x0D00530
+#define HOnListEntrySelected BASE + 0x0DD9090
 
 //define hook signatures/masks
 

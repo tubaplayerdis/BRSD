@@ -31,6 +31,7 @@ bool hooks::InitHooks()
 	InitializeHook(S_OnClicked, OnClicked);
 	InitializeHook(S_SetSelectedItem, SetSelectedItem);
 	InitializeHook(S_RestartPlayerAt, RestartPlayerAt);
+	InitializeHook(S_OnListEntrySelected, OnListEntrySelected);
 	bool ACMHook = IsInitialized(S_AddChatMessage);
 	bool BPHook = IsInitialized(S_BeginPlay);
 	bool OMHook = IsInitialized(S_OpenMenu);
@@ -84,6 +85,7 @@ void hooks::EnableHooks()
 	S_OnClicked->Enable();
 	S_SetSelectedItem->Enable();
 	S_RestartPlayerAt->Enable();
+	S_OnListEntrySelected->Enable();
 	//S_EngineLoopTick->Enable();
 }
 
@@ -98,6 +100,7 @@ void hooks::DestroyHookObjects()
 	DestroyHook(S_OnClicked);
 	DestroyHook(S_SetSelectedItem);
 	DestroyHook(S_RestartPlayerAt);
+	DestroyHook(S_OnListEntrySelected);
 }
 
 void hooks::OpenCrashFile()

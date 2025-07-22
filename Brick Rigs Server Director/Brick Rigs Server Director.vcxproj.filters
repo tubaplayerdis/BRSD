@@ -524,6 +524,12 @@
     <ClInclude Include="RestartPlayerAt.h">
       <Filter>Header Files\hooks\vehicle</Filter>
     </ClInclude>
+    <ClInclude Include="Saver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OnListEntrySelected.h">
+      <Filter>Header Files\hooks\ui</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="HookDiagram.cd" />
