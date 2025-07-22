@@ -20,9 +20,11 @@
 
 namespace modules
 {
+	//Also enabled certian default startup modules
 	inline void InitalizeModules()
 	{
 		CreateModule(Blacklist, M_Blacklist);
+		EnableModule(M_Blacklist);
 	}
 	
 	inline void DestroyModules()

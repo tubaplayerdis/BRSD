@@ -52,7 +52,7 @@ namespace hooks
 
         static EPlayerSpawnResult __fastcall HookedFunction(SDK::ABrickGameMode* This, SDK::ABrickPlayerController* Player, SDK::FPlayerSpawnRequest Request)
         {
-            Sleep(10);
+            Sleep(50);
             if (Request.VehicleSpawnType == SDK::EPlayerVehicleSpawnType::ReplaceCurrent || Request.VehicleSpawnType == SDK::EPlayerVehicleSpawnType::SpawnNew)
             {
                 if (M_Blacklist && M_Blacklist->IsVehicleBannned(Request.VehicleFileInfo))
