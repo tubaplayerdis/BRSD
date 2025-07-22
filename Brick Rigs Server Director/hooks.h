@@ -23,6 +23,7 @@
 #include "SetSelectedItem.h"
 #include "EngineLoopTick.h"
 #include "RestartPlayerAt.h"
+#include "OnListEntrySelected.h"
 
 namespace hooks
 {
