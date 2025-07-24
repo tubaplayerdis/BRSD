@@ -276,7 +276,7 @@
     <ClInclude Include="modules.h" />
     <ClInclude Include="offsets.h" />
     <ClInclude Include="OnClicked.h" />
-    <ClInclude Include="OnListEntrySelected.h" />
+    <ClInclude Include="UpdateButtons.h" />
     <ClInclude Include="RestartPlayerAt.h" />
     <ClInclude Include="Saver.h" />
     <ClInclude Include="SetSelectedItem.h" />

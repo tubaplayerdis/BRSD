@@ -177,3 +177,9 @@ inline char SetRootComponent(SDK::AActor* This, SDK::USceneComponent* component)
 {
 	return CallGameFunction<char, SDK::AActor*, SDK::USceneComponent*>(BASE + 0x21D9430, This, component);
 }
+
+inline SDK::FUGCFileInfo* GetSelectedFileInfo(SDK::UUGCBrowserWidget* This)
+{
+	if (!This) return nullptr;
+	return CallGameFunction<SDK::FUGCFileInfo*, SDK::UUGCBrowserWidget*>(FGetSelectedFileInfo, This);
+}

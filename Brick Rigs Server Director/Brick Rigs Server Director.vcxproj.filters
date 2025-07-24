@@ -542,7 +542,7 @@
     <ClInclude Include="Saver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OnListEntrySelected.h">
+    <ClInclude Include="UpdateButtons.h">
       <Filter>Header Files\hooks\ui</Filter>
     </ClInclude>
   </ItemGroup>

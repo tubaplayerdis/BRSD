@@ -20,6 +20,7 @@
 #include "uibase.h"
 #include "psettings.h"
 #include "Function.h"
+#include "UpdateButtons.h"
 
 namespace UMenuWidget
 {
@@ -40,7 +41,7 @@ namespace hooks
 
 		static void __fastcall HookedFunction(SDK::UMenuButtonWidget* This)
 		{
-
+			//Resetting the swapped out page
 			if (GetMenu() && GetMenu()->CurrentMenuPage && GetMenu()->CurrentMenuPage == psettings::MockPage) {
 				//psettings::SetHook(false);
 				static_cast<SDK::UBrickBorder*>(psettings::CustomSettingsPage->Slot->Parent)->SetContent(psettings::MockPage);
@@ -64,6 +65,31 @@ namespace hooks
 				psettings::PrepareCustomSettingsPage();
 				psettings::SetVisibility(SDK::ESlateVisibility::Visible);
 				//psettings::SetHook(true);
+			}
+			else if (This == GetBlacklistButton())
+			{
+				auto* FileInfo = GetSelectedFileInfo(hooks::UpdateButtons::ActiveBrowserRef);
+
+				if (!FileInfo || FileInfo->FileType != SDK::EUGCFileType::Online) {
+					//For some reason the button refrence defualts on other buttons. The extra check should verify that an online file is selected (workshop).
+					S_OnClicked->OriginalFunction(This);
+					return;
+				}
+
+				if (Blacklist::Get()->IsVehicleSteamLinkPositive(*FileInfo))
+				{
+					if (!GetBlacklistButton()) return;
+					Blacklist::Get()->RemoveBannedSteamLink(*FileInfo);
+					GetBlacklistButton()->SetColorStyle(SDK::EBrickUIColorStyle::Default);
+					GetBlacklistButton()->SetDisplayText(TEXT(ADD_VEHICLE_BUTTON_MESSAGE));
+				} 
+				else 
+				{
+					if (!GetBlacklistButton()) return;
+					Blacklist::Get()->AddBannedSteamLink(*FileInfo);
+					GetBlacklistButton()->SetColorStyle(SDK::EBrickUIColorStyle::Negative);
+					GetBlacklistButton()->SetDisplayText(TEXT(REMOVE_VEHICLE_BUTTON_MESSAGE));
+				}
 			}
 			else {
 				S_OnClicked->OriginalFunction(This);

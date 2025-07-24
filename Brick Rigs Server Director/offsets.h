@@ -61,6 +61,8 @@
 #define FFlushRenderingCommands BASE + 0x1CA84B0
 #define FWaitUntilComplete BASE + 0x2805580
 #define FQuaternion BASE + 0x0F98970
+#define FGetSelectedFileInfo BASE + 0x0DBFC00
+#define FFFluUGCItemIdWrapperToString BASE + 0x0B643B0
 
 //define VTable offsets. 8 is used after the number IDA gives
 
@@ -80,6 +82,7 @@
 #define HEngineLoopTick BASE + 0x0EE0750
 #define HRestartPlayerAt BASE + 0x0D00530
 #define HOnListEntrySelected BASE + 0x0DD9090
+#define HUpdateButtons BASE + 0x0DEBA20
 
 //define hook signatures/masks
 
