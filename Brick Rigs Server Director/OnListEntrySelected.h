@@ -20,7 +20,7 @@
 #include "Module.h"
 
 //The idea is that this hook will create a button that will allow a Creation to added to the baclist from the browser
-
+//Maybe switch to UpdateButtons()
 namespace hooks
 {
     class OnListEntrySelected;
@@ -35,8 +35,7 @@ namespace hooks
         {
             S_OnListEntrySelected->OriginalFunction(This, Widget, bDoubleClick);//Call the original function
 
-            //Add the button to the button panel
-            SDK::UWBP_MenuButtonPanel_C* BPanel = static_cast<SDK::UWBP_MenuButtonPanel_C*>(This->GetButtonPanel());
+            static_cast<SDK::UWBP_UGCBrowser_C*>(This)->CreateNewItemButton();
         }
 
         OnListEntrySelected() : Hook(HOnListEntrySelected, HookedFunction) {}
