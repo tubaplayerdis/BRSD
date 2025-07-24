@@ -233,6 +233,11 @@
     <ClCompile Include="..\Include\SDK\WBP_TeamScore_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_TimespanProperty_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_Tooltip_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_UGCBrowser_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_UGCItem_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_UGCMetaDataPopup_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_UGCProperty_functions.cpp" />
+    <ClCompile Include="..\Include\SDK\WBP_UGCTaskPopup_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_VideoSettings_functions.cpp" />
     <ClCompile Include="..\Include\SDK\WBP_WindowManager_functions.cpp" />
     <ClCompile Include="..\Include\trampoline.c" />
