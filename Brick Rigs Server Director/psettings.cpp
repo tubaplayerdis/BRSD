@@ -59,6 +59,7 @@ bool psettings::CreateCustomSettingsPageBase()
     std::cout << "spacer" << std::endl;
 
     SDK::UWBP_PropertyContainer_C* container = CreateWidget(SDK::UWBP_PropertyContainer_C);
+    CreateWidget(SDK::UWBP_BoolProperty_C);
     if (!container) {
         std::cout << "had" << std::endl;
         GetMenu()->OnClickedGameplaySettings();
