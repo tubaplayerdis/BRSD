@@ -72,11 +72,19 @@ namespace _spawnutils
 		falseSharedPtr ptr{};
 		ptr.ptr = nullptr;
 		UC::FString str = UC::FString(L"LoadAssetList");
-		falseSharedPtr* ptrret = CallGameFunction<falseSharedPtr*, void*, falseSharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(FRequestAsyncLoad, GetStreamableManager(), &ptr, path, &delasync, 0, true, false, &str);
-		CallGameFunction<void, bool>(FFlushRenderingCommands, true);//FlushRenderingCommands. Force a wait as the package queues.
-		CallGameFunction<void, bool>(FFlushRenderingCommands, true);
+		falseSharedPtr* ptrret = CallGameFunction<falseSharedPtr*, void*, falseSharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(FRequestAsyncLoad, GetStreamableManager(), &ptr, path, &delasync, 0, false, false, &str);
+		//CallGameFunction<void, void*>(BASE + 0x27F7160, ptr.ptr);
+		
+		while(true)
+		{
+			Sleep(50);
+			if (ptr.ptr->bLoadCompleted) break;
+			std::cout << "Stalled!\n";
+		}
+
 		//Sleep(10);//I have no other ideas.
 		CallGameFunction<__int64, void*, float, bool>(FWaitUntilComplete, ptr.ptr, 0.0, 1);
+		std::cout << "passed wait!" << std::endl;
 		//If this becomes problematic or in need of change maybe try to hook FEngineLoop::Tick and be able to send in lambdas. that should run code on the main thread.
 	}
  

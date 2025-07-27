@@ -59,6 +59,7 @@
 #define FWaitUntilComplete BASE + 0x2805580
 #define FRequestAsyncLoad BASE + 0x27FB500
 #define FFlushRenderingCommands BASE + 0x1CA84B0
+#define FGetLoadedAsset BASE + 0x27FE0A0
 #define FWaitUntilComplete BASE + 0x2805580
 #define FQuaternion BASE + 0x0F98970
 #define FGetSelectedFileInfo BASE + 0x0DBFC00
