@@ -61,6 +61,7 @@
 #define FFlushRenderingCommands BASE + 0x1CA84B0
 #define FGetLoadedAsset BASE + 0x27FE0A0
 #define FWaitUntilComplete BASE + 0x2805580
+#define FHasLoadCompletedOrStalled BASE + 0x27FF380
 #define FQuaternion BASE + 0x0F98970
 #define FGetSelectedFileInfo BASE + 0x0DBFC00
 #define FFFluUGCItemIdWrapperToString BASE + 0x0B643B0
