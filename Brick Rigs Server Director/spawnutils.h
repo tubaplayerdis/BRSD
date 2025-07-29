@@ -33,7 +33,8 @@ namespace _spawnutils
 
 	inline void* GetStreamableManager()
 	{
-		return CallGameFunction<void*>(FGetStreamableManager);
+		if ((void*)SDK::UBrickAssetManager::Get()->StreamableManager == nullptr) std::cout << "dude" << std::endl;
+		return (void*)SDK::UBrickAssetManager::Get()->StreamableManager;
 	}
 
 	struct FSHFiller
@@ -69,22 +70,15 @@ namespace _spawnutils
 
 	inline void RequestAsyncLoad(SDK::FakeSoftObjectPtr::FSoftObjectPath* path)
 	{
+		delasync = SDK::TDelegate<void __cdecl(void)>();//Create new fuckass delegate becuase it most likey got deleted
 		falseSharedPtr ptr{};
 		ptr.ptr = nullptr;
 		UC::FString str = UC::FString(L"LoadAssetList");
 		falseSharedPtr* ptrret = CallGameFunction<falseSharedPtr*, void*, falseSharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(FRequestAsyncLoad, GetStreamableManager(), &ptr, path, &delasync, 0, false, false, &str);
-		//CallGameFunction<void, void*>(BASE + 0x27F7160, ptr.ptr);
-		
-		while(true)
-		{
-			Sleep(50);
-			if (ptr.ptr->bLoadCompleted) break;
-			std::cout << "Stalled!\n";
-		}
 
 		//Sleep(10);//I have no other ideas.
-		CallGameFunction<__int64, void*, float, bool>(FWaitUntilComplete, ptr.ptr, 0.0, 1);
-		std::cout << "passed wait!" << std::endl;
+		if(!ptrret->ptr->bLoadCompleted) CallGameFunction<__int64, void*, float, bool>(FWaitUntilComplete, ptrret->ptr, 1000.0, 0);
+		std::cout << "passed wait with: " << ptrret->ptr->bLoadCompleted << std::endl;
 		//If this becomes problematic or in need of change maybe try to hook FEngineLoop::Tick and be able to send in lambdas. that should run code on the main thread.
 	}
  

@@ -59,7 +59,6 @@ bool psettings::CreateCustomSettingsPageBase()
     std::cout << "spacer" << std::endl;
 
     SDK::UWBP_PropertyContainer_C* container = CreateWidget(SDK::UWBP_PropertyContainer_C);
-    CreateWidget(SDK::UWBP_BoolProperty_C);
     if (!container) {
         std::cout << "had" << std::endl;
         GetMenu()->OnClickedGameplaySettings();
@@ -80,7 +79,7 @@ bool psettings::CreateCustomSettingsPageBase()
 
 void psettings::PrepareCustomSettingsPage()
 {
-    SDK::UWBP_BoolProperty_C* cb = CreateWidgetInternal<SDK::UWBP_BoolProperty_C>(SDK::UWBP_BoolProperty_C::StaticClass(), "SDK::UWBP_BoolProperty_C");
+    SDK::UWBP_BoolProperty_C* cb = CreateWidget(SDK::UWBP_BoolProperty_C);
     elements::ChatCommandsPC->AddPropertyWidget(cb, SDK::EOrientation::Orient_Horizontal);
     elements::ChatCommandsPC->PropertyWidget = cb;//Not set manually for some reason.
     cb->ComboBox->InitItems(2, 1);
