@@ -65,6 +65,7 @@
 #define FQuaternion BASE + 0x0F98970
 #define FGetSelectedFileInfo BASE + 0x0DBFC00
 #define FFFluUGCItemIdWrapperToString BASE + 0x0B643B0
+#define FOperatorEqualsWeak BASE + 0x1235940
 
 //define VTable offsets. 8 is used after the number IDA gives
 
