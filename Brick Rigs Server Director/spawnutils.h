@@ -70,30 +70,11 @@ namespace _spawnutils
 
 	inline void RequestAsyncLoad(SDK::FakeSoftObjectPtr::FSoftObjectPath* path)
 	{
-		SDK::TDelegate<void __cdecl(void)> delasync = SDK::TDelegate<void __cdecl(void)>();//Create new fuckass delegate becuase it most likey got deleted
-		SDK::UBrick* BrickHandler = static_cast<SDK::UBrick*>(SDK::UGameplayStatics::SpawnObject(SDK::UBrick::StaticClass(), SDK::UWorld::GetWorld()));
-		SDK::FWeakObjectPtr objptr = SDK::FWeakObjectPtr();
-		objptr.ObjectIndex = BrickHandler->Index;
-		objptr.ObjectSerialNumber = 123456;
-		std::cout << "Binding Weak OBJ" << std::endl;
-		//CallGameFunction<void, SDK::FWeakObjectPtr*, const SDK::UObject*>(FOperatorEqualsWeak, &objptr, BrickHandler);
-		std::cout << "Binding Weak OBJ" << std::endl;
-		delasync.BoundFunction.Object = objptr;
-		delasync.BoundFunction.FunctionName = NAME(L"MarkBrickBurnt");
 		falseSharedPtr ptr{};
 		ptr.ptr = nullptr;
 		UC::FString str = UC::FString(L"LoadAssetList");
-		falseSharedPtr* ptrret = CallGameFunction<falseSharedPtr*, void*, falseSharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(FRequestAsyncLoad, GetStreamableManager(), &ptr, path, &delasync, 0, false, false, &str);
-		std::cout << "Binding Weak OBJ" << std::endl;
-		int max = 0;
-		while (max < 20)
-		{
-			Sleep(50);
-			if (BrickHandler->IsBrickBurnt()) break;
-			std::cout << "Brick was not burnt" << std::endl;
-			max++;
-		}
-		//Sleep(10);//I have no other ideas.
+		falseSharedPtr* ptrret = CallGameFunction<falseSharedPtr*, void*, falseSharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(FRequestAsyncLoad, GetStreamableManager(), &ptr, path, &delagatesync, 0, false, false, &str);
+		Sleep(100);
 		CallGameFunction<__int64, void*, float, bool>(FWaitUntilComplete, ptrret->ptr, 0.0, 0);
 		//If this becomes problematic or in need of change maybe try to hook FEngineLoop::Tick and be able to send in lambdas. that should run code on the main thread.
 	}
@@ -256,7 +237,8 @@ namespace _spawnutils
 			SDK::TSoftClassPtr<SDK::UClass> ptr = SDK::TSoftClassPtr<SDK::UClass>();
 			const SDK::FName path = SDK::UKismetStringLibrary::Conv_StringToName(SDK::FString(result.c_str()));//FString is volatile and wrong. only use as const for final step moving on.
 			SetPath(&ptr.ObjectID, path);
-			//RequestAsyncLoad_D(&ptr.ObjectID, 50);
+			SDK::UKismetSystemLibrary::GetPrimaryAssetIdFromSoftClassReference(ptr);
+			RequestAsyncLoad_D(&ptr.ObjectID, 50);
 		}
 	}
 	#endif // _DEBUG
