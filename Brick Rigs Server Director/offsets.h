@@ -30,8 +30,18 @@
 * Hooks that use sigs/masks have suffixes as to not interfere with the existing naming conventions regarding singletons for the hooks.
 */
 
-#define ASSERT(exp, msg) \
-if(!(exp)) { MessageBoxA(GetConsoleWindow(), msg, "BR-SDK Assertion FAILED", MB_OK); std::abort(); } \
+//Custom Assertion macro. takes an expression and a const char*. Aborts the game on expression failed.
+#define ASSERT(exp, errmsg) \
+    do { \
+        if (!(exp)) { \
+            char buf[512]; \
+            snprintf(buf, sizeof(buf), \
+                "Assertion failed!\n\nExpression: %s\nMessage: %s\nFile: %s\nLine: %d", \
+                #exp, errmsg, __FILE__, __LINE__); \
+            MessageBoxA(GetConsoleWindow(), buf, "BR-SDK Assertion FAILED", MB_OK); \
+            std::abort(); \
+        } \
+    } while (0) \
 
 #define BASE (unsigned long long )GetModuleHandle(NULL) //Add this to offsets. It is the base of BR: 0x140(IDA)
 
