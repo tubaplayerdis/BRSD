@@ -15,12 +15,16 @@
 #include "spawnutils.h"
 #include "actorutils.h"
 #include "Function.h"
+#include "offsets.h"
 
 /*
 * This file is meant to define utility macros for the SDK.
 */
 
-//TODO: Complete this macro:
+/// <summary>
+/// Expression for whether or not the execution context is the game thread.
+/// </summary>
+#define IsInGameThread() (GetCurrentThreadId() == *reinterpret_cast<unsigned int*>(GGameThreadID))
 
 /// <summary>
 /// Gets the UClass from the sdk class. Will load bp classes as necessary

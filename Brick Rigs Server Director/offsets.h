@@ -30,7 +30,14 @@
 * Hooks that use sigs/masks have suffixes as to not interfere with the existing naming conventions regarding singletons for the hooks.
 */
 
+#define ASSERT(exp, msg) \
+if(!(exp)) { MessageBoxA(GetConsoleWindow(), msg, "BR-SDK Assertion FAILED", MB_OK); std::abort(); } \
+
 #define BASE (unsigned long long )GetModuleHandle(NULL) //Add this to offsets. It is the base of BR: 0x140(IDA)
+
+//define GlobalVarsOffsets
+
+#define GGameThreadID BASE + 0x436DDA8
 
 //Define function offsets
 
@@ -66,6 +73,8 @@
 #define FGetSelectedFileInfo BASE + 0x0DBFC00
 #define FFFluUGCItemIdWrapperToString BASE + 0x0B643B0
 #define FOperatorEqualsWeak BASE + 0x1234770
+#define FCreateUObject BASE + 0x07DD430
+#define FMarkBrickBurnt BASE + 0x0BF8890
 
 //define VTable offsets. 8 is used after the number IDA gives
 
