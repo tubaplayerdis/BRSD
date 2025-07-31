@@ -61,6 +61,7 @@ protected:
 public:
     void Enable();
     void Disable();
+	Ret CallOriginalFunction(Args... args);
 
 	template <typename Ret, typename... Args>
 	friend bool IsInitialized(Hook<Ret, Args...>* hook);
@@ -187,6 +188,12 @@ void Hook<Ret, Args...>::Disable() {
 	MH_QueueDisableHook((LPVOID)FunctionPointer);
 	MH_ApplyQueued();
 	enabled = false;
+}
+
+template<typename Ret, typename ...Args>
+inline Ret Hook<Ret, Args...>::CallOriginalFunction(Args ...args)
+{
+	return OriginalFunction(std::forward<Args>(args)...);
 }
 
 template<typename Ret, typename ...Args>

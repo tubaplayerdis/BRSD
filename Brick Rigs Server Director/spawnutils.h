@@ -159,6 +159,7 @@ namespace _spawnutils
 		uint8_t pad[0x8];
 	};
 
+	//Attempts to load a Class async. Will fail if on the MainThread. do not call directly use the GetUClass macro.
 	inline void RequestAsyncLoad(SDK::FakeSoftObjectPtr::FSoftObjectPath* path)
 	{
 		SDK::UGunBrick* BrickHandeler = static_cast<SDK::UGunBrick*>(SDK::UGameplayStatics::SpawnObject(SDK::UGunBrick::StaticClass(), SDK::UWorld::GetWorld()));
@@ -177,10 +178,8 @@ namespace _spawnutils
 			Sleep(50);
 			if (BrickHandeler->IsBrickBurnt()) break;
 			max++;
-			std::cout << "Brick was not burnt" << std::endl;
 		}
 		CallGameFunction<__int64, void*, float, bool>(FWaitUntilComplete, ptrret->ptr, 0.0, 0);//Safe to call and finalize the load.
-		//If this becomes problematic or in need of change maybe try to hook FEngineLoop::Tick and be able to send in lambdas. that should run code on the main thread.
 	}
 
 	/// <summary>
@@ -189,9 +188,9 @@ namespace _spawnutils
 	/// <param name="classname">String representation of the class the SDK:: will be filtered out if present, IE: SDK::ABP_CarElevator_C, or ABP_CarElevator_C.</param>
 	inline void AttemptLoadClass(const char* classname)
 	{
-		SDK::FString ClassPath = SDK::FString(FindClassAssetPath(classname).c_str());
 		SDK::TSoftClassPtr<SDK::UClass> ptr = SDK::TSoftClassPtr<SDK::UClass>();
-		const SDK::FName path = SDK::UKismetStringLibrary::Conv_StringToName(ClassPath);
+		//For some reason as to which i have no idea, the FString HAS to be created inside the function parmeter that converts it to a SDK::FName
+		const SDK::FName path = SDK::UKismetStringLibrary::Conv_StringToName(SDK::FString(FindClassAssetPath(classname).c_str()));
 		SetPath(&ptr.ObjectID, path);
 		if (GetCurrentThreadId() == *reinterpret_cast<unsigned int*>(GGameThreadID))//IsInGameThreadMacro
 		{
