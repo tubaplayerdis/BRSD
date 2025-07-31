@@ -22,85 +22,21 @@
 
 namespace _spawnutils
 {
-	inline SDK::TDelegate<void __cdecl(void)> delagatesync = SDK::TDelegate<void __cdecl(void)>();
-
 	#pragma region helpers
 
-	inline int GetObjSerialNumber(int index)
-	{
-		return SDK::UObject::GObjects->SDGetByIndex(index);
-	}
-
-	inline void* GetStreamableManager()
-	{
-		if ((void*)SDK::UBrickAssetManager::Get()->StreamableManager == nullptr) std::cout << "dude" << std::endl;
-		return (void*)SDK::UBrickAssetManager::Get()->StreamableManager;
-	}
-
-	struct FSHFiller
-	{
-		uint8_t padding[0x10];
-	};
-
-	struct mockFStreamableHandle : FSHFiller
-	{
-		bool bLoadCompleted;
-		bool bReleased;
-		bool bCanceled;
-		bool bStalled;
-		bool bReleaseWhenLoaded;
-		bool bIsCombinedHandle;
-		uint8_t pad[50];
-		SDK::FString DebugName;
-		int priority;
-		int StreamablesLoading;
-		int CompletedChildCount;
-		int CanceledChildCount;
-		uint8_t pad1[48];
-		void* OwningManager;
-	};
-
-	static_assert(sizeof(mockFStreamableHandle) == 0xA0);
-
-	struct falseSharedPtr
-	{
-		mockFStreamableHandle* ptr;
-		uint8_t pad[0x8];
-	};
-
-	inline void RequestAsyncLoad(SDK::FakeSoftObjectPtr::FSoftObjectPath* path)
-	{
-		falseSharedPtr ptr{};
-		ptr.ptr = nullptr;
-		UC::FString str = UC::FString(L"LoadAssetList");
-		falseSharedPtr* ptrret = CallGameFunction<falseSharedPtr*, void*, falseSharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(FRequestAsyncLoad, GetStreamableManager(), &ptr, path, &delagatesync, 0, false, false, &str);
-		Sleep(100);
-		CallGameFunction<__int64, void*, float, bool>(FWaitUntilComplete, ptrret->ptr, 0.0, 0);
-		//If this becomes problematic or in need of change maybe try to hook FEngineLoop::Tick and be able to send in lambdas. that should run code on the main thread.
-	}
-
-	inline void RequestAsyncLoad_D(SDK::FakeSoftObjectPtr::FSoftObjectPath* path, int num)
-	{
-		falseSharedPtr ptr{};
-		ptr.ptr = nullptr;
-		UC::FString str = UC::FString(L"LoadAssetList");
-		//Returns a shared pointer pointer to the handle
-		falseSharedPtr* ptrret = CallGameFunction<falseSharedPtr*, void*, falseSharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(FRequestAsyncLoad, GetStreamableManager(), &ptr, path, &delagatesync, 0, true, false, &str);
-		Sleep(num);
-		CallGameFunction<__int64, void*, float, bool>(FWaitUntilComplete, ptr.ptr, 0.0, 1);
-		//If this becomes problematic or in need of change maybe try to hook FEngineLoop::Tick and be able to send in lambdas. that should run code on the main thread.
-	}
-
+	//Gets the FPlatformFileManager
 	inline void* GetPlatformFile()
 	{
 		return CallGameFunction<void*, void*>(FGetPlatformFile, CallGameFunction<void*>(FGetPlatformFileManager));
 	}
 
+	//Sets the path of a FSoftObjectPath
 	inline void SetPath(SDK::FakeSoftObjectPtr::FSoftObjectPath* This, SDK::FName pathname)
 	{
 		return CallGameFunction<void, SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::FName>(FSetPath, This, pathname);
 	}
 
+	//Gets every asset file in the virtual file system
 	inline SDK::TArray<SDK::FString> GetVFSFiles()
 	{
 		SDK::FString gamepath = SDK::UBlueprintPathsLibrary::ProjectContentDir();
@@ -109,6 +45,7 @@ namespace _spawnutils
 		return ret;
 	}
 
+	//Basic std::string to std::wstring
 	inline std::wstring _to_wstring(const std::string& str)
 	{
 		int size_needed = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, nullptr, 0);
@@ -118,8 +55,8 @@ namespace _spawnutils
 		return wstr;
 	}
 
-	//Example WBP_PropertyContainer_C
-	inline void AttemptLoadClass(const char* classname)
+	//Finds the asset path of the class in string form
+	inline std::wstring FindClassAssetPath(const char* classname)
 	{
 		std::wstring universal = _to_wstring(classname);
 		universal = universal.substr(universal.find_first_of('B'));//remove the ABP, UBP, UWBP.
@@ -179,13 +116,90 @@ namespace _spawnutils
 			}
 		}
 
-		if (res == L"NONE") { std::cout << "Failed to load Class!" << std::endl; return; }
+		if (res == L"NONE") { std::cout << "Failed to Find Class!" << std::endl; return L"NONE"; }
 
+		return res.c_str();
+	}
+
+	inline void* GetStreamableManager()
+	{
+		if ((void*)SDK::UBrickAssetManager::Get()->StreamableManager == nullptr) std::cout << "dude" << std::endl;
+		return (void*)SDK::UBrickAssetManager::Get()->StreamableManager;
+	}
+
+	struct FSHFiller
+	{
+		uint8_t padding[0x10];
+	};
+
+	struct FStreamableHandle : FSHFiller
+	{
+		bool bLoadCompleted;
+		bool bReleased;
+		bool bCanceled;
+		bool bStalled;
+		bool bReleaseWhenLoaded;
+		bool bIsCombinedHandle;
+		uint8_t pad[50];
+		SDK::FString DebugName;
+		int priority;
+		int StreamablesLoading;
+		int CompletedChildCount;
+		int CanceledChildCount;
+		uint8_t pad1[48];
+		void* OwningManager;
+	};
+
+	static_assert(sizeof(FStreamableHandle) == 0xA0);
+
+	//Mimics TSharedPtr
+	struct SharedPtr
+	{
+		FStreamableHandle* ptr;
+		uint8_t pad[0x8];
+	};
+
+	inline void RequestAsyncLoad(SDK::FakeSoftObjectPtr::FSoftObjectPath* path)
+	{
+		SDK::UGunBrick* BrickHandeler = static_cast<SDK::UGunBrick*>(SDK::UGameplayStatics::SpawnObject(SDK::UGunBrick::StaticClass(), SDK::UWorld::GetWorld()));
+		SDK::TDelegate<void(void)> dele = SDK::TDelegate<void(void)>();
+		uintptr_t fnAddress = FMarkBrickBurnt;//MarkBrickBurnt
+		// Manually build the 16-byte function pointer representation
+		uint64_t funcBlob[2] = { fnAddress, 0 };
+		SDK::TDelegate<void(void)>* delenew = CallGameFunction<SDK::TDelegate<void(void)>*, SDK::TDelegate<void(void)>*, SDK::UGunBrick*, uint64_t*>(FCreateUObject, &dele, BrickHandeler, funcBlob);
+		SharedPtr ptr{};
+		ptr.ptr = nullptr;
+		UC::FString str = UC::FString(L"LoadAssetList");
+		SharedPtr* ptrret = CallGameFunction<SharedPtr*, void*, SharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(FRequestAsyncLoad, GetStreamableManager(), &ptr, path, delenew, 0, false, false, &str);
+		int max = 0;
+		while (max <= 10)
+		{
+			Sleep(50);
+			if (BrickHandeler->IsBrickBurnt()) break;
+			max++;
+			std::cout << "Brick was not burnt" << std::endl;
+		}
+		CallGameFunction<__int64, void*, float, bool>(FWaitUntilComplete, ptrret->ptr, 0.0, 0);//Safe to call and finalize the load.
+		//If this becomes problematic or in need of change maybe try to hook FEngineLoop::Tick and be able to send in lambdas. that should run code on the main thread.
+	}
+
+	/// <summary>
+	/// Loads a blueprint class from the SDK
+	/// </summary>
+	/// <param name="classname">String representation of the class the SDK:: will be filtered out if present, IE: SDK::ABP_CarElevator_C, or ABP_CarElevator_C.</param>
+	inline void AttemptLoadClass(const char* classname)
+	{
+		SDK::FString ClassPath = SDK::FString(FindClassAssetPath(classname).c_str());
 		SDK::TSoftClassPtr<SDK::UClass> ptr = SDK::TSoftClassPtr<SDK::UClass>();
-		const SDK::FName path = SDK::UKismetStringLibrary::Conv_StringToName(SDK::FString(res.c_str()));//FString is volatile and wrong. only use as const for final step moving on.
+		const SDK::FName path = SDK::UKismetStringLibrary::Conv_StringToName(ClassPath);
 		SetPath(&ptr.ObjectID, path);
+		if (GetCurrentThreadId() == *reinterpret_cast<unsigned int*>(GGameThreadID))//IsInGameThreadMacro
+		{
+			//Load the class using the blocking thread.
+			CallGameFunction<SDK::UObject*, SDK::FSoftObjectPtr*>(FLoadSynchronous, &ptr);
+			return;
+		}
 		RequestAsyncLoad(&ptr.ObjectID);
-		std::cout << ptr.Get() << std::endl;
 		return;
 	}
 
@@ -237,8 +251,13 @@ namespace _spawnutils
 			SDK::TSoftClassPtr<SDK::UClass> ptr = SDK::TSoftClassPtr<SDK::UClass>();
 			const SDK::FName path = SDK::UKismetStringLibrary::Conv_StringToName(SDK::FString(result.c_str()));//FString is volatile and wrong. only use as const for final step moving on.
 			SetPath(&ptr.ObjectID, path);
-			SDK::UKismetSystemLibrary::GetPrimaryAssetIdFromSoftClassReference(ptr);
-			RequestAsyncLoad_D(&ptr.ObjectID, 50);
+			if (GetCurrentThreadId() == *reinterpret_cast<unsigned int*>(GGameThreadID))//IsInGameThreadMacro
+			{
+				//Load the class using the blocking thread.
+				CallGameFunction<SDK::UObject*, SDK::FSoftObjectPtr*>(FLoadSynchronous, &ptr);
+				return;
+			}
+			RequestAsyncLoad(&ptr.ObjectID);
 		}
 	}
 	#endif // _DEBUG
@@ -250,36 +269,16 @@ template<typename T>
 inline SDK::UClass* GetClassInternal(const char* clsobjname)
 {
 	SDK::UClass* objcls = T::StaticClass();
-	if (objcls == nullptr) {
-		_spawnutils::AttemptLoadClass(clsobjname);
-		for (int i = 0; i < 10; i++) //The class should have loaded, but give it some time if not.
-		{
-			objcls = T::StaticClass();
-			if (objcls) {
-				return objcls;
-			}
-			Sleep(200);
-		}
-	}
-	return nullptr;
+	if (!objcls) _spawnutils::AttemptLoadClass(clsobjname);
+	objcls = T::StaticClass();
+	return objcls;
 }
 
 //Example parameter UBP_DamageType_FuelExplosion_C
 template<typename T>
 inline T* SpawnObjectInternal(SDK::UObject* outerobj, const char* objclsname)
 {
-	SDK::UClass* objcls = T::StaticClass();
-	if (objcls == nullptr) {
-		_spawnutils::AttemptLoadClass(objclsname); //This should only be called on UBP classes.
-		for (_itor(10)) //The class should have loaded, but give it some time if not.
-		{
-			objcls = T::StaticClass();
-			if (objcls) {
-				break;
-			}
-			Sleep(200);
-		}
-	}
+	SDK::UClass* objcls = GetClassInternal<T>(objclsname);
 	return static_cast<T*>(SDK::UGameplayStatics::SpawnObject(objcls, outerobj));
 }
 
@@ -287,44 +286,16 @@ template<typename T>
 inline T* CreateWidgetInternal(SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClass, const char* WidgetClassName)
 {
 
-	if (UserWidgetClass == nullptr) {
-		_spawnutils::AttemptLoadClass(WidgetClassName);
-		for (_itor(10)) //The class should have loaded, but give it some time if not.
-		{
-			UserWidgetClass = T::StaticClass();
-			if (UserWidgetClass) {
-				break;
-			}
-			std::cout << "Nullobj" << std::endl;
-			Sleep(200);
-		}
-	}
-
+	if (UserWidgetClass == nullptr) UserWidgetClass = GetClassInternal<T>(WidgetClassName);
 	return static_cast<T*>(CallGameFunction<SDK::UUserWidget*, SDK::UWorld*, SDK::TSubclassOf<SDK::UUserWidget>, SDK::FName>(FCreateWidget, SDK::UWorld::GetWorld(), UserWidgetClass, SDK::FName()));
 }
 
 template<typename T>
 inline T* SpawnActorInternal(SDK::AActor* outeract, const char* objclsname)
 {
-	if (outeract == nullptr)
-	{
-		std::cout << "outer was null!" << std::endl;
-		return nullptr;//requires it.
-	}
+	ASSERT(outeract == nullptr, "Actors only spawned in refrence to another actor must not be null!");
 	SDK::FTransform transform = outeract->GetTransform();
-	SDK::UClass* objcls = T::StaticClass();
-	if (objcls == nullptr) {
-		_spawnutils::AttemptLoadClass(objclsname);
-		for (_itor(10)) //The class should have loaded, but give it some time if not.
-		{
-			objcls = T::StaticClass();
-			if (objcls) {
-				break;
-			}
-			Sleep(200);
-		}
-	}
-	else std::cout << "class was present!" << std::endl;
+	SDK::UClass* objcls = GetClassInternal<T>(objclsname);
 	SDK::ESpawnActorCollisionHandlingMethod method = SDK::ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 	SDK::AActor* act = SDK::UGameplayStatics::BeginDeferredActorSpawnFromClass(SDK::UWorld::GetWorld(), objcls, transform, method, outeract);
 	return static_cast<T*>(SDK::UGameplayStatics::FinishSpawningActor(act, transform));
@@ -333,18 +304,7 @@ inline T* SpawnActorInternal(SDK::AActor* outeract, const char* objclsname)
 template<typename T>
 inline T* SpawnActorInternal(SDK::FTransform transform, SDK::AActor* outeract, const char* objclsname, bool deferred)
 {
-	SDK::UClass* objcls = T::StaticClass();
-	if (objcls == nullptr) {
-		_spawnutils::AttemptLoadClass(objclsname);
-		for (_itor(10)) //The class should have loaded, but give it some time if not.
-		{
-			objcls = T::StaticClass();
-			if (objcls) {
-				break;
-			}
-			Sleep(200);
-		}
-	}
+	SDK::UClass* objcls = GetClassInternal<T>(objclsname);
 	SDK::ESpawnActorCollisionHandlingMethod method = SDK::ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 	SDK::AActor* act = SDK::UGameplayStatics::BeginDeferredActorSpawnFromClass(SDK::UWorld::GetWorld(), objcls, transform, method, outeract);
 	SDK::UGameplayStatics::FinishSpawningActor(act, transform);
@@ -367,18 +327,7 @@ inline T* SpawnActorInternal(SDK::FVector position, SDK::AActor* outeract, const
 	SDK::FQuat* ptr = CallGameFunction<SDK::FQuat*, SDK::FRotator*, SDK::FQuat*>(FQuaternion, &rotator, &formed);
 	formed = *ptr;
 	transform.Rotation = formed;
-	SDK::UClass* objcls = T::StaticClass();
-	if (objcls == nullptr) {
-		_spawnutils::AttemptLoadClass(objclsname);
-		for (_itor(10)) //The class should have loaded, but give it some time if not.
-		{
-			objcls = T::StaticClass();
-			if (objcls) {
-				break;
-			}
-			Sleep(200);
-		}
-	}
+	SDK::UClass* objcls = GetClassInternal<T>(objclsname);
 	SDK::ESpawnActorCollisionHandlingMethod method = SDK::ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 	SDK::AActor* act = SDK::UGameplayStatics::BeginDeferredActorSpawnFromClass(SDK::UWorld::GetWorld(), objcls, transform, method, outeract);
 	SDK::UGameplayStatics::FinishSpawningActor(act, transform);
@@ -394,18 +343,7 @@ inline T* SpawnActorInternal(SDK::FVector position, SDK::FRotator rotation, SDK:
 	SDK::FQuat formed = SDK::FQuat();
 	formed = &CallGameFunction<SDK::FQuat*, SDK::FRotator*, SDK::FQuat*>(FQuaternion, &rotation, &formed);
 	transform.Rotation = formed;
-	SDK::UClass* objcls = T::StaticClass();
-	if (objcls == nullptr) {
-		_spawnutils::AttemptLoadClass(objclsname);
-		for (_itor(10)) //The class should have loaded, but give it some time if not.
-		{
-			objcls = T::StaticClass();
-			if (objcls) {
-				break;
-			}
-			Sleep(200);
-		}
-	}
+	SDK::UClass* objcls = GetClassInternal<T>(objclsname);
 	SDK::ESpawnActorCollisionHandlingMethod method = SDK::ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 	SDK::AActor* act = SDK::UGameplayStatics::BeginDeferredActorSpawnFromClass(SDK::UWorld::GetWorld(), objcls, transform, method, outeract);
 	SDK::UGameplayStatics::FinishSpawningActor(act, transform);
