@@ -18,6 +18,17 @@
 #include "utils.h"
 #include <chrono>
 
+
+template<typename T>
+T* psettings::elements::GetWidget(const char* tag)
+{
+    for (UISetting setting : list)
+    {
+        if (strcmp(tag, setting.tag) == 0) return static_cast<T*>(setting.ElementPtr);
+    }
+    ASSERT(false, "Widget could not be found! Aborting!");
+}
+
 void __fastcall psettings::LoaderReturn(void* input)
 {
     std::cout << "loading!\n";
@@ -58,21 +69,19 @@ bool psettings::CreateCustomSettingsPageBase()
 
     std::cout << "spacer" << std::endl;
 
-    SDK::UWBP_PropertyContainer_C* container = CreateWidget(SDK::UWBP_PropertyContainer_C);
-    if (!container) {
-        std::cout << "had" << std::endl;
-        GetMenu()->OnClickedGameplaySettings();
-        GetMenu()->StepBack();
-        container = CreateWidget(SDK::UWBP_PropertyContainer_C);
-    }
-    container->NameTextBlock->SetText(TEXT(L"Chat Commands Enabled"));
+    SDK::UWBP_PropertyContainer_C* CCcontainer = CreateWidget(SDK::UWBP_PropertyContainer_C);
+    CCcontainer->NameTextBlock->SetText(TEXT(L"Chat Commands Enabled"));
+    CustomSettingsPage->AddChild(CCcontainer);
 
-    CustomSettingsPage->AddChild(container);
+    SDK::UWBP_PropertyContainer_C* BLcontainer = CreateWidget(SDK::UWBP_PropertyContainer_C);
+    BLcontainer->NameTextBlock->SetText(TEXT(L"Blacklist Enabled"));
+    CustomSettingsPage->AddChild(BLcontainer);
 
     elements::BRSDBlock = TextBorder;
-    elements::ChatCommandsPC = container;
-    elements::list.push_back(TextBorder);
-    elements::list.push_back(container);
+    elements::ChatCommandsPC = CCcontainer;
+    elements::list.push_back(UISetting(TextBorder, PS_BLOCK));
+    elements::list.push_back(UISetting(CCcontainer, PS_CC_CONTAINER));
+    elements::list.push_back(UISetting(BLcontainer, PS_BL_CONTAINER));
 
     return true;
 }
@@ -80,10 +89,16 @@ bool psettings::CreateCustomSettingsPageBase()
 void psettings::PrepareCustomSettingsPage()
 {
     SDK::UWBP_BoolProperty_C* cb = CreateWidget(SDK::UWBP_BoolProperty_C);
-    elements::ChatCommandsPC->AddPropertyWidget(cb, SDK::EOrientation::Orient_Horizontal);
-    elements::ChatCommandsPC->PropertyWidget = cb;//Not set manually for some reason.
+    elements::GetWidget<SDK::UWBP_PropertyContainer_C>(PS_CC_CONTAINER)->AddPropertyWidget(cb, SDK::EOrientation::Orient_Horizontal);
+    elements::GetWidget<SDK::UWBP_PropertyContainer_C>(PS_CC_CONTAINER)->PropertyWidget = cb;//Not set manually for some reason.
     cb->ComboBox->InitItems(2, 1);
-    cb->ComboBox->SetSelectedItem(1);
+    cb->ComboBox->SetSelectedItem(1);//Set this based off of loaded settings
+
+    SDK::UWBP_BoolProperty_C* blcb = CreateWidget(SDK::UWBP_BoolProperty_C);
+    elements::GetWidget<SDK::UWBP_PropertyContainer_C>(PS_BL_CONTAINER)->AddPropertyWidget(blcb, SDK::EOrientation::Orient_Horizontal);
+    elements::GetWidget<SDK::UWBP_PropertyContainer_C>(PS_BL_CONTAINER)->PropertyWidget = blcb;
+    blcb->ComboBox->InitItems(2, 1);
+    blcb->ComboBox->SetSelectedItem(1);
 }
 
 void psettings::SetHook(bool toggle) 
@@ -107,8 +122,8 @@ void psettings::Uninitalize()
     elements::ChatCommandsPC = nullptr;
     for (int i = 0; i < elements::list.size(); i++)
     {
-        elements::list[i]->RemoveFromParent();
-        elements::list[i] = nullptr;
+        elements::list[i].ElementPtr->RemoveFromParent();
+        elements::list[i].ElementPtr = nullptr;
     }
 
     MockPage = nullptr;

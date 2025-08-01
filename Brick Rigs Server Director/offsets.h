@@ -41,7 +41,7 @@
             MessageBoxA(GetConsoleWindow(), buf, "BR-SDK Assertion FAILED", MB_OK); \
             std::abort(); \
         } \
-    } while (0) \
+    } while (0); \
 
 #define BASE (unsigned long long )GetModuleHandle(NULL) //Add this to offsets. It is the base of BR: 0x140(IDA)
 
