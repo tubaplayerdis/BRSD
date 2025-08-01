@@ -15,6 +15,22 @@
 #pragma once
 #include <SDK.hpp>
 #include <vector>
+
+#define PS_BLOCK "NameBlock"
+#define PS_CC_CONTAINER "CCContainer"
+#define PS_BL_CONTAINER "BLContainer"
+
+struct UISetting
+{
+	SDK::UWidget* ElementPtr;
+	const char* tag;
+	UISetting(SDK::UWidget* ptr, const char* tagname)
+	{
+		ElementPtr = ptr;
+		tag = tagname;
+	}
+};
+
 namespace psettings
 {
 	inline bool isLoaded = false;
@@ -22,9 +38,12 @@ namespace psettings
 	inline std::vector<SDK::UClass> classPool = std::vector<SDK::UClass>();
 	namespace elements
 	{
-		inline std::vector<SDK::UWidget*> list = std::vector<SDK::UWidget*>();
+		inline std::vector<UISetting> list = std::vector<UISetting>();
 		inline SDK::UBrickBorder* BRSDBlock = nullptr;
 		inline SDK::UWBP_PropertyContainer_C* ChatCommandsPC = nullptr;
+
+		template<typename T>
+		T* GetWidget(const char* tag);
 
 		bool IsSettingsContainer(SDK::UPropertyWidget* comp, SDK::UPropertyWidget* box);
 	}
