@@ -10,6 +10,14 @@ Brick Rigs Server Director is an injected mod for brick rigs that adds various a
  - Admin Elevator
  - Saver
 
+## Major Features Planned
+ - Blackisted Vehicles
+ - Blacklisted Bricks
+ - Basic Anti-Cheat
+ - Saver (Restore vehicle layouts for RP Servers)
+ - Enhanced RP Server features. Things like 911 and speed limits.
+ - Elevator (Granting other users Admin to manage your server)
+
 ## Planning:
 
 1. Full functionality of the Brick Rigs Command Interpreter.  
