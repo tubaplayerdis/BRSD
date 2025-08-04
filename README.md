@@ -3,6 +3,8 @@
 Overview:  
 Brick Rigs Server Director is an injected mod for brick rigs that adds various administrative and creative additions to help manage your brick rigs server.
 
+### THIS MOD IS STILL A HEAVY HEAVY WIP. BUGGY AND UNCOMPLETE. A RELEASE WINDOW HAS NOT BEEN SET YET
+
 ## Working On
  - Blackist
  - Admin Elevator
