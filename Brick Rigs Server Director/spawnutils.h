@@ -285,7 +285,6 @@ inline T* SpawnObjectInternal(SDK::UObject* outerobj, const char* objclsname)
 template<typename T>
 inline T* CreateWidgetInternal(SDK::TSubclassOf<SDK::UUserWidget> UserWidgetClass, const char* WidgetClassName)
 {
-
 	if (UserWidgetClass == nullptr) UserWidgetClass = GetClassInternal<T>(WidgetClassName);
 	return static_cast<T*>(CallGameFunction<SDK::UUserWidget*, SDK::UWorld*, SDK::TSubclassOf<SDK::UUserWidget>, SDK::FName>(FCreateWidget, SDK::UWorld::GetWorld(), UserWidgetClass, SDK::FName()));
 }

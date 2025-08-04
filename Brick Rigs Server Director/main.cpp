@@ -27,6 +27,7 @@
 #include "logger.h"
 #include "utils.h"
 #include "EngineLoopTick.h"
+#include "Elevator.h"
 
 using namespace global;
 
@@ -66,6 +67,8 @@ void MainLoop()
 	psettings::CreateCustomSettingsPageBase();
 
 	modules::InitalizeModules();
+
+	Elevator::Get()->CreateButton();
 
 	std::cout << "Starting Main Loop!" << std::endl;
 

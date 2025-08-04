@@ -47,16 +47,6 @@ public:
 		vBannedSteamLinks.push_back(L"https://steamcommunity.com/sharedfiles/filedetails/?id=2994703505");
 	}
 
-	inline bool Enable_Implementation() override
-	{
-		return true;
-	}
-
-	inline bool Disable_Implementation() override
-	{
-		return true;
-	}
-
 	inline void AddBannedKeyword(std::string keyword)
 	{
 		vBannedVehicleKeywords.push_back(keyword);

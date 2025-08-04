@@ -37,9 +37,9 @@ public:
 	Module(bool NeedsInitalization, bool(*vInitilizationFunction)(void) = nullptr);
 
 	//Return true if succeeded. Called during Enable(). Enable will return false and not set Enable value if false is returned
-	virtual bool Enable_Implementation() = 0;
+	virtual bool Enable_Implementation();
 	//Return true if succeeded. Called during Disable(). Disable will return false and not set Disable value if false is returned
-	virtual bool Disable_Implementation() = 0;
+	virtual bool Disable_Implementation();
 
 	inline void SetEnable(bool toggle) { bIsEnabled = toggle;  }
 	inline bool GetEnable() { return bIsEnabled;  }
@@ -48,6 +48,17 @@ public:
 	bool Enable();
 	bool Disable();
 };
+
+inline bool Module::Enable_Implementation()
+{
+	return true;
+}
+
+inline bool Module::Disable_Implementation()
+{
+	return true;
+}
+
 
 inline bool Module::Enable()
 {
@@ -64,3 +75,4 @@ inline bool Module::Disable()
 	bResult ? SetEnable(false) : SetEnable(true);
 	return bResult;
 }
+

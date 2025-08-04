@@ -19,7 +19,9 @@
 	#define InitLogging() logger::Initalize()
 	#define DestroyLogging() logger::Destroy();
 #else
+	//Body is defined in release
 	#define InitLogging()
+	//Body is defined in release
 	#define DestroyLogging()
 #endif // !_DEBUG
 
