@@ -105,6 +105,7 @@
 #define HRestartPlayerAt BASE + 0x0D00530
 #define HOnListEntrySelected BASE + 0x0DD9090
 #define HUpdateButtons BASE + 0x0DEBA20
+#define HOnPlayerClicked BASE + 0x0DDA290
 
 //define hook signatures/masks
 

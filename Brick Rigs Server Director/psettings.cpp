@@ -51,7 +51,7 @@ bool psettings::CreateCustomSettingsPageBase()
 {
     MockPage = SpawnObject(SDK::UMenuPageWidget, GetMenu());
     CustomSettingsPage = SpawnObject(SDK::UBrickScrollBox, GetWindowManager());
-    CustomSettingsPage->SetSlotSpacingStyle(SDK::EBrickUISpacingStyle::Large);
+    CustomSettingsPage->SetSlotSpacingStyle(SDK::EBrickUISpacingStyle::Small);
 
     SDK::UBrickTextBlock* TextBlock = SpawnObject(SDK::UBrickTextBlock, CustomSettingsPage);
     if (!TextBlock) return false;
@@ -67,7 +67,6 @@ bool psettings::CreateCustomSettingsPageBase()
     TextBorder->SetHorizontalAlignment(SDK::EHorizontalAlignment::HAlign_Center);
     TextBorder->SetVerticalAlignment(SDK::EVerticalAlignment::VAlign_Center);
 
-    std::cout << "spacer" << std::endl;
 
     SDK::UWBP_PropertyContainer_C* CCcontainer = CreateWidget(SDK::UWBP_PropertyContainer_C);
     CCcontainer->NameTextBlock->SetText(TEXT(L"Chat Commands Enabled"));
@@ -88,6 +87,7 @@ bool psettings::CreateCustomSettingsPageBase()
 
 void psettings::PrepareCustomSettingsPage()
 {
+    //Add functional elements
     SDK::UWBP_BoolProperty_C* cb = CreateWidget(SDK::UWBP_BoolProperty_C);
     elements::GetWidget<SDK::UWBP_PropertyContainer_C>(PS_CC_CONTAINER)->AddPropertyWidget(cb, SDK::EOrientation::Orient_Horizontal);
     elements::GetWidget<SDK::UWBP_PropertyContainer_C>(PS_CC_CONTAINER)->PropertyWidget = cb;//Not set manually for some reason.
@@ -98,7 +98,9 @@ void psettings::PrepareCustomSettingsPage()
     elements::GetWidget<SDK::UWBP_PropertyContainer_C>(PS_BL_CONTAINER)->AddPropertyWidget(blcb, SDK::EOrientation::Orient_Horizontal);
     elements::GetWidget<SDK::UWBP_PropertyContainer_C>(PS_BL_CONTAINER)->PropertyWidget = blcb;
     blcb->ComboBox->InitItems(2, 1);
-    blcb->ComboBox->SetSelectedItem(1);
+    blcb->ComboBox->SetSelectedItem(1);//Set this based off of loaded settings
+
+
 }
 
 void psettings::SetHook(bool toggle) 

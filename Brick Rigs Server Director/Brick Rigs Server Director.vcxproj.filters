@@ -82,6 +82,9 @@
     <Filter Include="Header Files\hooks\vehicle">
       <UniqueIdentifier>{6bd2126b-c39a-4dc2-af75-61cbe83c7f04}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\modules\gameplay">
+      <UniqueIdentifier>{ceee6b81-211f-48f9-8923-baf9cddf9cbc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Include\trampoline.c">
@@ -426,6 +429,9 @@
     <ClCompile Include="..\Include\SDK\WBP_UGCBrowser_functions.cpp">
       <Filter>More Files\SDK\UI</Filter>
     </ClCompile>
+    <ClCompile Include="Elevator.cpp">
+      <Filter>Source Files\modules\gameplay</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -506,9 +512,6 @@
     <ClInclude Include="SetSelectedItem.h">
       <Filter>Header Files\hooks\ui</Filter>
     </ClInclude>
-    <ClInclude Include="RequestAsyncLoad.h">
-      <Filter>Header Files\hooks\ui</Filter>
-    </ClInclude>
     <ClInclude Include="spawnutils.h">
       <Filter>Header Files\utils</Filter>
     </ClInclude>
@@ -544,6 +547,9 @@
     </ClInclude>
     <ClInclude Include="UpdateButtons.h">
       <Filter>Header Files\hooks\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="Elevator.h">
+      <Filter>Header Files\modules\gameplay</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

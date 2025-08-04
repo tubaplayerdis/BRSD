@@ -129,7 +129,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpp23</LanguageStandard>
       <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -242,6 +242,7 @@
     <ClCompile Include="..\Include\SDK\WBP_WindowManager_functions.cpp" />
     <ClCompile Include="..\Include\trampoline.c" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="Elevator.cpp" />
     <ClCompile Include="Module.cpp" />
     <ClCompile Include="obutton.cpp" />
     <ClCompile Include="global.cpp" />
@@ -259,6 +260,7 @@
     <ClInclude Include="AddChatMessage.h" />
     <ClInclude Include="Blacklist.h" />
     <ClInclude Include="DrawTransition.h" />
+    <ClInclude Include="Elevator.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="Hook.h" />
     <ClInclude Include="BeginPlay.h" />
@@ -285,7 +287,6 @@
     <ClInclude Include="PlayerInfo.h" />
     <ClInclude Include="psettings.h" />
     <ClInclude Include="logger.h" />
-    <ClInclude Include="RequestAsyncLoad.h" />
     <ClInclude Include="spawnutils.h" />
     <ClInclude Include="StartPlay.h" />
     <ClInclude Include="stringlist.h" />

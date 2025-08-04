@@ -25,6 +25,10 @@
 #define DestroyHook(hook) delete hook; hook = nullptr
 #define InitializeHook(hook, cls) hook = new cls()
 
+#define HOOK(hame, addr, lamb, ...) \
+typedef Hook<__VA_ARGS__> hame; \
+hame S_##hame = Hook<__VA_ARGS__>(addr, lamb); \
+
 enum SearchType
 {
 	FAST = 0,
@@ -35,7 +39,7 @@ enum SearchType
 template <typename Ret, typename... Args>  
 class Hook  
 {  
-protected:  
+public:  
     Hook(const char* pat, const char* mak, Ret(__fastcall* hookFunc)(Args...), SearchType fsearch = FAST); //pattern and mask, use the \x00 format on sigs, x and ? on masks (? is wildcard)
     Hook(unsigned long long addr, Ret(__fastcall* hookFunc)(Args...));  //The address base is calculated when creating the object. Only the offset
 	Hook(Ret(__fastcall* ptr)(Args...), Ret(__fastcall* hookFunc)(Args...)); //Use reinterpret_cast<Ret(__fastcall*)(Args...)>(vtable[index]) when inputing a vtable entry
