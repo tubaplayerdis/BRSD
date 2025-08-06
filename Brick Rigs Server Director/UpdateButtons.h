@@ -36,7 +36,7 @@ namespace hooks
     inline UpdateButtons* S_UpdateButtons = nullptr; //Non-Inline causes link 2005
 
     //Hook should only be enabled when the CustomSettingsMenu is present.
-    class UpdateButtons : public Hook<void, SDK::UUGCBrowserWidget*>
+    class UpdateButtons : public Hook<void(SDK::UUGCBrowserWidget*)>
     {
     public:
         static inline SDK::UMenuButtonWidget* ActiveButtonRef = nullptr;

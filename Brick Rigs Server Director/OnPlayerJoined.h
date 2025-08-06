@@ -44,7 +44,7 @@ namespace hooks
     class OnPlayerJoined;
     inline OnPlayerJoined* S_OnPlayerJoined = nullptr; //Non-Inline causes link 2005
 
-    class OnPlayerJoined : public Hook<void, SDK::ABrickGameSession*, SDK::ABrickPlayerController*>
+    class OnPlayerJoined : public Hook<void(SDK::ABrickGameSession*, SDK::ABrickPlayerController*)>
     {
     public:
 

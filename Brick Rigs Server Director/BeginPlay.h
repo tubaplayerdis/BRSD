@@ -26,7 +26,7 @@ namespace hooks
 	class BeginPlay;
 	inline BeginPlay* S_BeginPlay = nullptr; //Non-Inline causes link 2005
 
-	class BeginPlay : public Hook<void, SDK::UWorld*>
+	class BeginPlay : public Hook<void(SDK::UWorld*)>
 	{
 	public:
 

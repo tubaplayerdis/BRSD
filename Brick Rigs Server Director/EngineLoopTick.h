@@ -23,7 +23,7 @@ namespace hooks
     class EngineLoopTick;
     inline EngineLoopTick* S_EngineLoopTick = nullptr; //Non-Inline causes link 2005
 
-    class EngineLoopTick : public Hook<void, void*, float>
+    class EngineLoopTick : public Hook<void(void*, float)>
     {
     public:
 

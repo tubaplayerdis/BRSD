@@ -28,7 +28,7 @@ namespace hooks
     inline SetSelectedItem* S_SetSelectedItem = nullptr; //Non-Inline causes link 2005
 
     //Hook should only be enabled when the CustomSettingsMenu is present.
-    class SetSelectedItem : public Hook<void, SDK::UBoolPropertyWidget*, int, SDK::EValueChangedEventType>
+    class SetSelectedItem : public Hook<void(SDK::UBoolPropertyWidget*, int, SDK::EValueChangedEventType)>
     {
     public:
 

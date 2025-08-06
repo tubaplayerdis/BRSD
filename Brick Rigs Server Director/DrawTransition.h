@@ -22,7 +22,7 @@ namespace hooks
     class DrawTransition;
     inline DrawTransition* S_DrawTransition = nullptr; //Non-Inline causes link 2005
 
-    class DrawTransition : public Hook<void, SDK::UGameViewportClient*, SDK::UCanvas*>
+    class DrawTransition : public Hook<void(SDK::UGameViewportClient*, SDK::UCanvas*)>
     {
     public:
 

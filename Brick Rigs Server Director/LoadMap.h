@@ -23,7 +23,7 @@ namespace hooks
     class LoadMap;
     inline LoadMap* S_LoadMap = nullptr; //Non-Inline causes link 2005
 
-    class LoadMap : public Hook<char, SDK::UEngine*, SDK::FWorldContext*, void*, void*, void*>
+    class LoadMap : public Hook<char(SDK::UEngine*, SDK::FWorldContext*, void*, void*, void*)>
     {
     public:
 
