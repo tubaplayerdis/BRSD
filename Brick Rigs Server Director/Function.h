@@ -16,6 +16,11 @@
 #include <processthreadsapi.h>
 #include <Psapi.h>
 
+// addr: numeric address or pointer
+// sig : function signature, e.g. void(bool,int)
+// ... : arguments to call with
+#define CALL_FUNCTION(addr, sig, ...) ( (reinterpret_cast<sig>(addr))(__VA_ARGS__) )
+
 template<typename TRet, typename... TArgs>
 inline TRet CallGameFunction(unsigned long long addr, TArgs... args) 
 {

@@ -25,9 +25,18 @@
 #define DestroyHook(hook) delete hook; hook = nullptr
 #define InitializeHook(hook, cls) hook = new cls()
 
-#define HOOK(hame, addr, lamb, ...) \
-typedef Hook<__VA_ARGS__> hame; \
-hame S_##hame = Hook<__VA_ARGS__>(addr, lamb); \
+//Defines a hooking objects and it parameters. Does NOT register the hook with MinHook
+#define HOOK(hame, addr, lamb, sig) \
+typedef Hook<sig> hame; \
+hame* H_##hame = new hame(addr, lamb, false); \
+
+//Registers the hook with MinHook
+#define HOOK_INIT(ptr) ptr->Create()
+#define HOOK_DESTROY(ptr) delete ptr; ptr = nullptr
+#define HOOK_ENABLE(ptr) ptr->Enable()
+#define HOOK_DISABLE(ptr) ptr->Disable()
+#define HOOK_IS_INIT(ptr) ptr->IsInitialized()
+#define HOOK_CALL_ORIGINAL(ptr, ...) ptr->CallOriginalFunction(__VA_ARGS__)
 
 enum SearchType
 {
@@ -36,13 +45,16 @@ enum SearchType
 	ALL = 2
 };
 
+template <typename>
+class Hook;
+
 template <typename Ret, typename... Args>  
-class Hook  
+class Hook<Ret(Args...)>
 {  
 public:  
-    Hook(const char* pat, const char* mak, Ret(__fastcall* hookFunc)(Args...), SearchType fsearch = FAST); //pattern and mask, use the \x00 format on sigs, x and ? on masks (? is wildcard)
-    Hook(unsigned long long addr, Ret(__fastcall* hookFunc)(Args...));  //The address base is calculated when creating the object. Only the offset
-	Hook(Ret(__fastcall* ptr)(Args...), Ret(__fastcall* hookFunc)(Args...)); //Use reinterpret_cast<Ret(__fastcall*)(Args...)>(vtable[index]) when inputing a vtable entry
+    Hook(const char* pat, const char* mak, Ret(__fastcall* hookFunc)(Args...), SearchType fsearch = FAST, bool bRunInit = true); //pattern and mask, use the \x00 format on sigs, x and ? on masks (? is wildcard)
+    Hook(unsigned long long addr, Ret(__fastcall* hookFunc)(Args...), bool bRunInit = true);  //The address of the function.
+	Hook(Ret(__fastcall* ptr)(Args...), Ret(__fastcall* hookFunc)(Args...), bool bRunInit = true); //Use reinterpret_cast<Ret(__fastcall*)(Args...)>(vtable[index]) when inputing a vtable entry
     ~Hook();  
 
 private:  
@@ -63,15 +75,14 @@ protected:
 	Function_t hookedFunction;
 
 public:
+	void Create();
     void Enable();
     void Disable();
+
 	Ret CallOriginalFunction(Args... args);
 
-	template <typename Ret, typename... Args>
-	friend bool IsInitialized(Hook<Ret, Args...>* hook);
-
-	template <typename Ret, typename... Args>
-	friend bool IsEnabled(Hook<Ret, Args...>* hook);
+	bool IsInitialized();
+	bool IsEnabled();
 
 protected:
 	static unsigned long long FindPattern(const char* pattern, const char* mask, unsigned long long base, unsigned __int64 size);
@@ -84,7 +95,7 @@ protected:
 };
 
 template<typename Ret, typename ...Args>
-Hook<Ret, Args...>::Hook(const char* pat, const char* mak, Ret(__fastcall* hookFunc)(Args...), SearchType stype)
+Hook<Ret(Args...)>::Hook(const char* pat, const char* mak, Ret(__fastcall* hookFunc)(Args...), SearchType stype, bool bRunInit)
 {
 	pattern = pat;
 	mask = mak;
@@ -95,11 +106,11 @@ Hook<Ret, Args...>::Hook(const char* pat, const char* mak, Ret(__fastcall* hookF
 	hookedFunction = hookFunc;
 	Stype = stype;
 
-	Init();
+	if(bRunInit) Init();
 }
 
 template<typename Ret, typename ...Args>
-Hook<Ret, Args...>::Hook(unsigned long long addr, Ret(__fastcall* hookFunc)(Args...))
+Hook<Ret(Args...)>::Hook(unsigned long long addr, Ret(__fastcall* hookFunc)(Args...), bool bRunInit)
 {
 	pattern = "None";
 	mask = "None";
@@ -110,11 +121,11 @@ Hook<Ret, Args...>::Hook(unsigned long long addr, Ret(__fastcall* hookFunc)(Args
 	hookedFunction = hookFunc;
 	Stype = FAST;
 
-	Init();
+	if(bRunInit) Init();
 }
 
 template<typename Ret, typename ...Args>
-inline Hook<Ret, Args...>::Hook(Ret(__fastcall* ptr)(Args...), Ret(__fastcall* hookFunc)(Args...))
+inline Hook<Ret(Args...)>::Hook(Ret(__fastcall* ptr)(Args...), Ret(__fastcall* hookFunc)(Args...), bool bRunInit)
 {
 	pattern = "None";
 	mask = "None";
@@ -125,11 +136,11 @@ inline Hook<Ret, Args...>::Hook(Ret(__fastcall* ptr)(Args...), Ret(__fastcall* h
 	hookedFunction = hookFunc;
 	Stype = FAST;
 
-	Init();
+	if(bRunInit) Init();
 }
 
 template<typename Ret, typename ...Args>
-Hook<Ret, Args...>::~Hook()
+Hook<Ret(Args...)>::~Hook()
 {
 	Disable();
 	MH_RemoveHook((LPVOID)FunctionPointer);
@@ -137,7 +148,7 @@ Hook<Ret, Args...>::~Hook()
 }
 
 template<typename Ret, typename ...Args>
-bool Hook<Ret, Args...>::Init() {
+bool Hook<Ret(Args...)>::Init() {
 	if (initialized) return false;
 	if (FunctionPointer == 0) {
 		unsigned long long tbase;
@@ -161,25 +172,21 @@ bool Hook<Ret, Args...>::Init() {
 	}
 	if (FunctionPointer == 0) return false;
 	MH_STATUS ret = MH_CreateHook((LPVOID)FunctionPointer, hookedFunction, (void**)&OriginalFunction);
-	initialized = true;
+	initialized = ret == MH_OK;
 	return ret == MH_OK;
 }
 
-
-template<typename Ret, typename ...Args>  
-inline bool IsInitialized(Hook<Ret, Args...>* hook)  
-{  
-    return !hook ? false : hook->initialized;  
-}
-
 template<typename Ret, typename ...Args>
-inline bool IsEnabled(Hook<Ret, Args...>* hook)
+inline void Hook<Ret(Args...)>::Create()
 {
-	return !hook ? false : hook->enabled;
+	if (initialized) return;
+	assert(Init());
 }
 
 template<typename Ret, typename ...Args>
-void Hook<Ret, Args...>::Enable() {
+inline void Hook<Ret(Args...)>::Enable()
+{
+	if (!initialized) Create();
 	if (!initialized || enabled) return;
 	MH_QueueEnableHook((LPVOID)FunctionPointer);
 	MH_ApplyQueued();
@@ -187,7 +194,9 @@ void Hook<Ret, Args...>::Enable() {
 }
 
 template<typename Ret, typename ...Args>
-void Hook<Ret, Args...>::Disable() {
+inline void Hook<Ret(Args...)>::Disable() 
+{
+	if (!initialized) Create();
 	if (!initialized || !enabled) return;
 	MH_QueueDisableHook((LPVOID)FunctionPointer);
 	MH_ApplyQueued();
@@ -195,13 +204,13 @@ void Hook<Ret, Args...>::Disable() {
 }
 
 template<typename Ret, typename ...Args>
-inline Ret Hook<Ret, Args...>::CallOriginalFunction(Args ...args)
+inline Ret Hook<Ret(Args...)>::CallOriginalFunction(Args ...args)
 {
 	return OriginalFunction(std::forward<Args>(args)...);
 }
 
 template<typename Ret, typename ...Args>
-inline unsigned long long Hook<Ret, Args...>::FindPattern(const char* pattern, const char* mask, unsigned long long base, unsigned __int64 size)
+inline unsigned long long Hook<Ret(Args...)>::FindPattern(const char* pattern, const char* mask, unsigned long long base, unsigned __int64 size)
 {
 	const unsigned __int64 patternLen = strlen(mask);
 	if (patternLen == 0) {
@@ -242,7 +251,7 @@ inline unsigned long long Hook<Ret, Args...>::FindPattern(const char* pattern, c
 }
 
 template<typename Ret, typename ...Args>
-inline unsigned long long Hook<Ret, Args...>::FindPatternS(const char* pattern, const char* mask, unsigned long long base, unsigned __int64 size)
+inline unsigned long long Hook<Ret(Args...)>::FindPatternS(const char* pattern, const char* mask, unsigned long long base, unsigned __int64 size)
 {
 	unsigned __int64 patternLen = strlen(mask);
 
@@ -264,7 +273,7 @@ inline unsigned long long Hook<Ret, Args...>::FindPatternS(const char* pattern, 
 }
 
 template<typename Ret, typename ...Args>
-inline unsigned long long Hook<Ret, Args...>::FindPatternAll(const char* signature, const char* mask)
+inline unsigned long long Hook<Ret(Args...)>::FindPatternAll(const char* signature, const char* mask)
 {
 	HMODULE hMods[1024];
 	DWORD cbNeeded;
@@ -307,13 +316,13 @@ inline unsigned long long Hook<Ret, Args...>::FindPatternAll(const char* signatu
 }
 
 template<typename Ret, typename ...Args>
-inline unsigned long long Hook<Ret, Args...>::GetModuleBase()
+inline unsigned long long Hook<Ret(Args...)>::GetModuleBase()
 {
 	return (unsigned long long)GetModuleHandle(NULL);
 }
 
 template<typename Ret, typename ...Args>
-inline unsigned long long Hook<Ret, Args...>::GetModuleSize()
+inline unsigned long long Hook<Ret(Args...)>::GetModuleSize()
 {
 	MODULEINFO info = {};
 	GetModuleInformation(GetCurrentProcess(), GetModuleHandle(NULL), &info, sizeof(info));
@@ -321,7 +330,7 @@ inline unsigned long long Hook<Ret, Args...>::GetModuleSize()
 }
 
 template<typename Ret, typename ...Args>
-inline bool Hook<Ret, Args...>::GetTextSection(unsigned long long& textBase, unsigned __int64& textSize)
+inline bool Hook<Ret(Args...)>::GetTextSection(unsigned long long& textBase, unsigned __int64& textSize)
 {
 	uintptr_t moduleBase = GetModuleBase();
 	auto dos = (PIMAGE_DOS_HEADER)moduleBase;
@@ -339,4 +348,16 @@ inline bool Hook<Ret, Args...>::GetTextSection(unsigned long long& textBase, uns
 	}
 
 	return false;
+}
+
+template<typename Ret, typename ...Args>
+inline bool Hook<Ret(Args...)>::IsInitialized()
+{
+	return initialized;
+}
+
+template<typename Ret, typename ...Args>
+inline bool Hook<Ret(Args...)>::IsEnabled()
+{
+	return enabled;
 }

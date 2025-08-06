@@ -22,7 +22,7 @@ namespace hooks
     class StartPlay;
     inline StartPlay* S_StartPlay = nullptr; //Non-Inline causes link 2005
 
-    class StartPlay : public Hook<void, SDK::AGameMode*>
+    class StartPlay : public Hook<void(SDK::AGameMode*)>
     {
     public:
 

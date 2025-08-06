@@ -35,7 +35,7 @@ namespace hooks
 	class OnClicked;
 	inline OnClicked* S_OnClicked = nullptr; //Non-Inline causes link 2005
 
-	class OnClicked : public Hook<void, SDK::UMenuButtonWidget*>
+	class OnClicked : public Hook<void(SDK::UMenuButtonWidget*)>
 	{
 	public:
 

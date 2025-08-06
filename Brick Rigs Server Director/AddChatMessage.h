@@ -28,7 +28,7 @@ namespace hooks
 	class AddChatMessage;
 	inline AddChatMessage* S_AddChatMessage = nullptr; //Non-Inline causes link 2005
 
-	class AddChatMessage : public Hook<void, SDK::ABrickGameSession*, const SDK::FBrickChatMessage&>
+	class AddChatMessage : public Hook<void(SDK::ABrickGameSession*, const SDK::FBrickChatMessage&)>
 	{
 	public:
 

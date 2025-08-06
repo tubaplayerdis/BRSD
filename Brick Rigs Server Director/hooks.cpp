@@ -18,6 +18,8 @@
 
 #pragma comment(lib, "shell32.lib")
 
+#define _IsInitialized(ptr) ptr->IsInitialized();
+
 bool hooks::InitHooks()
 {
 	std::cout << "Finding Hooks!" << std::endl;
@@ -32,14 +34,14 @@ bool hooks::InitHooks()
 	InitializeHook(S_SetSelectedItem, SetSelectedItem);
 	InitializeHook(S_RestartPlayerAt, RestartPlayerAt);
 	InitializeHook(S_UpdateButtons, UpdateButtons);
-	bool ACMHook = IsInitialized(S_AddChatMessage);
-	bool BPHook = IsInitialized(S_BeginPlay);
-	bool OMHook = IsInitialized(S_OpenMenu);
-	bool ONJHook = IsInitialized(S_OnPlayerJoined);
-	bool RGHook = IsInitialized(S_StartPlay);
-	bool LMHook = IsInitialized(S_LoadMap);
-	bool OCHook = IsInitialized(S_OnClicked);
-	bool SVHook = IsInitialized(S_SetSelectedItem);
+	bool ACMHook = _IsInitialized(S_AddChatMessage);
+	bool BPHook = _IsInitialized(S_BeginPlay);
+	bool OMHook = _IsInitialized(S_OpenMenu);
+	bool ONJHook = _IsInitialized(S_OnPlayerJoined);
+	bool RGHook = _IsInitialized(S_StartPlay);
+	bool LMHook = _IsInitialized(S_LoadMap);
+	bool OCHook = _IsInitialized(S_OnClicked);
+	bool SVHook = _IsInitialized(S_SetSelectedItem);
 	auto end = std::chrono::high_resolution_clock::now();
 	std::cout << "Elapsed Time Finding Hooks: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << std::endl;
 	if (!ACMHook || !BPHook || !OMHook || !ONJHook || !RGHook || !LMHook || !OCHook || !SVHook) {

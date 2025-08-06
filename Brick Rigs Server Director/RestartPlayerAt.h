@@ -46,7 +46,7 @@ namespace hooks
     inline RestartPlayerAt* S_RestartPlayerAt = nullptr; //Non-Inline causes link 2005
 
     //Hook should only be enabled when the CustomSettingsMenu is present.
-    class RestartPlayerAt : public Hook<EPlayerSpawnResult, SDK::ABrickGameMode*, SDK::ABrickPlayerController*, SDK::FPlayerSpawnRequest>
+    class RestartPlayerAt : public Hook<EPlayerSpawnResult(SDK::ABrickGameMode*, SDK::ABrickPlayerController*, SDK::FPlayerSpawnRequest)>
     {
     public:
 

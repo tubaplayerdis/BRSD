@@ -23,7 +23,7 @@ namespace hooks
     class OpenMenu;
     inline OpenMenu* S_OpenMenu = nullptr; //Non-Inline causes link 2005
 
-    class OpenMenu : public Hook<void, SDK::UMenuWidget*, SDK::FName>
+    class OpenMenu : public Hook<void(SDK::UMenuWidget*, SDK::FName)>
     {
     public:
 

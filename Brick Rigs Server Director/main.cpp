@@ -81,7 +81,7 @@ void MainLoop()
 		if (UninjectPress() || doUninject) break;
 
 		if (TogglePress()) {
-			if (IsEnabled(hooks::S_AddChatMessage)) {
+			if (hooks::S_AddChatMessage->IsEnabled()) {
 				hooks::S_AddChatMessage->Disable();
 				LOG("Disabled Chat Commands");
 				SendNotificationLocal(L"Disabled Chat Commands!", 1); //Explore the icon atlas more
