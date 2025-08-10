@@ -68,8 +68,6 @@ void MainLoop()
 
 	modules::InitalizeModules();
 
-	Elevator::Get()->CreateButton();
-
 	std::cout << "Starting Main Loop!" << std::endl;
 
 	while (true) {
