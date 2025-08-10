@@ -33,7 +33,7 @@ struct FFloat16
 	};
 };
 
-//For blacklist, it should be by name, steam link or file.
+//TODO: For blacklist, it should be by steam link or keywords. Also add banned Brick types
 
 class Blacklist : public Module
 {
@@ -145,5 +145,6 @@ inline Blacklist* M_Blacklist = nullptr;
 
 inline Blacklist* Blacklist::Get()
 {
+	if (!M_Blacklist) M_Blacklist = new Blacklist();
 	return M_Blacklist;
 }

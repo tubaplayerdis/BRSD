@@ -17,6 +17,7 @@
 #include "watermark.h"
 #include "obutton.h"
 #include "Hook.h"
+#include "Elevator.h"
 
 namespace hooks
 {
@@ -31,12 +32,16 @@ namespace hooks
         {
             S_OpenMenu->OriginalFunction(This, InMenu);
             obutton::CurrentButtonRef = nullptr;//gets set my AddToButtonMenu. if this is not set to nullptr it will cause odd behavior
+            Elevator::Get()->NullifyRefrence();
             Sleep(10);
             if (!This) return;
             if (InMenu.GetRawString().c_str() == nullptr) return;
             if (InMenu.GetRawString() == "InGameMenu") {
                 watermark::ShowWaterMark();
                 obutton::AddToButtonMenu();
+            }
+            else if (InMenu.GetRawString() == "Players") {
+                Elevator::Get()->CreateButton();
             }
             if (InMenu.GetRawString() == "None" && global::isMapValid()) watermark::HideWaterWark();
         }

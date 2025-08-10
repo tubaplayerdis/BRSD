@@ -15,6 +15,7 @@
 #include <fstream>
 #include <windows.h>
 #include <shellapi.h>
+#include "Elevator.h"
 
 #pragma comment(lib, "shell32.lib")
 
@@ -103,6 +104,7 @@ void hooks::DestroyHookObjects()
 	DestroyHook(S_SetSelectedItem);
 	DestroyHook(S_RestartPlayerAt);
 	DestroyHook(S_UpdateButtons);
+	Elevator::Get()->DestroyHooks();
 }
 
 void hooks::OpenCrashFile()

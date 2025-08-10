@@ -9,6 +9,11 @@ class Elevator : public Module
 	Elevator();
 public:
 	void CreateButton();
+	void DestroyHooks();
+	//Nulls the current button ref
+	void NullifyRefrence();
+	bool DoesButtonRefMatch(void* Ref);
+	void OnElevateButtonClicked();
 
 public:
 	static Elevator* Get();
