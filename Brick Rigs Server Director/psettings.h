@@ -19,6 +19,7 @@
 #define PS_BLOCK "NameBlock"
 #define PS_CC_CONTAINER "CCContainer"
 #define PS_BL_CONTAINER "BLContainer"
+#define PS_BL_ITEMS_CONTAINER "BLITContainer"
 
 struct UISetting
 {

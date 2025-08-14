@@ -85,6 +85,7 @@
 #define FOperatorEqualsWeak BASE + 0x1234770
 #define FCreateUObject BASE + 0x07DD430
 #define FMarkBrickBurnt BASE + 0x0BF8890
+#define FOpenPopup BASE + 0x0DDCD00
 
 //define VTable offsets. 8 is used after the number IDA gives
 
@@ -106,6 +107,7 @@
 #define HOnListEntrySelected BASE + 0x0DD9090
 #define HUpdateButtons BASE + 0x0DEBA20
 #define HOnPlayerClicked BASE + 0x0DDA290
+#define HOnClickedButton BASE + 0x0DD77D0
 
 //define hook signatures/masks
 

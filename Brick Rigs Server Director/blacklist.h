@@ -47,6 +47,8 @@ public:
 		vBannedSteamLinks.push_back(L"https://steamcommunity.com/sharedfiles/filedetails/?id=2994703505");
 	}
 
+	inline std::vector<std::wstring> GetBannedSteamLinks() { return vBannedSteamLinks; }
+
 	inline void AddBannedKeyword(std::string keyword)
 	{
 		vBannedVehicleKeywords.push_back(keyword);
