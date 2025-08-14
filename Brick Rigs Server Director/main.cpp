@@ -64,7 +64,7 @@ void MainLoop()
 
 	if (IsHost()) welcome::SendWelcomeMessage();
 
-	psettings::CreateCustomSettingsPageBase();
+	psettings::CreateCustomSettingsPageBase();//Worked
 
 	modules::InitalizeModules();
 
@@ -90,6 +90,7 @@ void MainLoop()
 				SendNotificationLocal(L"Enabled Chat Commands!", 0);
 			}
 		}
+
 	}
 	
 	watermark::HideWaterWark();
