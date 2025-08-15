@@ -19,6 +19,8 @@ SDK::UWBP_MenuButton_C* MutePlayerRef = nullptr;
 #define MUTE_PLAYER_TEXT TEXT(L"Mute Player")
 #define UNMUTE_PLAYER_TEXT TEXT(L"Un-Mute Player")
 
+//TODO: Implement saving muted and admin players to a file so they can be elevated/muted upon joining.
+
 HOOK(OnPlayerClicked, HOnPlayerClicked, [](SDK::UScoreboardWidget* This, SDK::UScoreboardPlayerWidget* PlayerWidget) -> void
 {
 	HOOK_CALL_ORIGINAL(OnPlayerClicked(), This, PlayerWidget);
@@ -95,7 +97,7 @@ void Elevator::CreateButton()
 //Called in hooking file.
 void Elevator::DestroyHooks()
 {
-	HOOK_DESTROY(OnPlayerClicked());
+	//HOOK_DESTROY(OnPlayerClicked());
 }
 
 void Elevator::NullifyRefrence()
