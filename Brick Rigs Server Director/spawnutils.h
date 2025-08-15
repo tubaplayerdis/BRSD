@@ -159,24 +159,38 @@ namespace _spawnutils
 		uint8_t pad[0x8];
 	};
 
+	inline SDK::UPackage* GetTransientPackage()
+	{
+		return CallGameFunction<SDK::UPackage*>(BASE + 0x11CC5E0);
+	}
+
 	//Attempts to load a Class async. Will fail if on the MainThread. do not call directly use the GetUClass macro.
 	inline void RequestAsyncLoad(SDK::FakeSoftObjectPtr::FSoftObjectPath* path)
 	{
-		SDK::UGunBrick* BrickHandeler = static_cast<SDK::UGunBrick*>(SDK::UGameplayStatics::SpawnObject(SDK::UGunBrick::StaticClass(), SDK::UWorld::GetWorld()));
+		SDK::UObject* Comp = nullptr;
+		if (SDK::UWorld::GetWorld()->OwningGameInstance || SDK::UWorld::GetWorld()->OwningGameInstance->LocalPlayers.Num() >= 1 || SDK::UWorld::GetWorld()->OwningGameInstance->LocalPlayers[0]->PlayerController || SDK::UWorld::GetWorld()->OwningGameInstance->LocalPlayers[0]->PlayerController->IsA(SDK::ABrickPlayerController::StaticClass()) || static_cast<SDK::ABrickPlayerController*>(SDK::UWorld::GetWorld()->OwningGameInstance->LocalPlayers[0]->PlayerController)->AccessedInventory)
+		{
+			Comp = static_cast<SDK::ABrickPlayerController*>(SDK::UWorld::GetWorld()->OwningGameInstance->LocalPlayers[0]->PlayerController)->AccessedInventory;
+		}
+		else {
+			//The outer should be a UActorComponent because it uses it to determine the new level. This is a default route.
+			Comp = SDK::UWorld::GetWorld();
+		}
+		SDK::UGunBrick* BrickHandeler = static_cast<SDK::UGunBrick*>(SDK::UGameplayStatics::SpawnObject(SDK::UGunBrick::StaticClass(), Comp));
 		SDK::TDelegate<void(void)> dele = SDK::TDelegate<void(void)>();
-		uintptr_t fnAddress = FMarkBrickBurnt;//MarkBrickBurnt
+		uintptr_t fnAddress = FUninitializeBrickEditorObject;//Un-init BrickEditorObject
 		// Manually build the 16-byte function pointer representation
 		uint64_t funcBlob[2] = { fnAddress, 0 };
 		SDK::TDelegate<void(void)>* delenew = CallGameFunction<SDK::TDelegate<void(void)>*, SDK::TDelegate<void(void)>*, SDK::UGunBrick*, uint64_t*>(FCreateUObject, &dele, BrickHandeler, funcBlob);
 		SharedPtr ptr{};
 		ptr.ptr = nullptr;
 		UC::FString str = UC::FString(L"LoadAssetList");
-		SharedPtr* ptrret = CallGameFunction<SharedPtr*, void*, SharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(FRequestAsyncLoad, GetStreamableManager(), &ptr, path, delenew, 0, false, false, &str);
+		SharedPtr* ptrret = CallGameFunction<SharedPtr*, void*, SharedPtr*, const SDK::FakeSoftObjectPtr::FSoftObjectPath*, SDK::TDelegate<void __cdecl(void)>*, int, bool, bool, SDK::FString*>(FRequestAsyncLoad, GetStreamableManager(), &ptr, path, delenew, 0, true, false, &str);
 		int max = 0;
 		while (max <= 10)
 		{
 			Sleep(50);
-			if (BrickHandeler->IsBrickBurnt()) break;
+			if (!BrickHandeler || !BrickHandeler->IsBrickEditorObjectInitialized()) break;
 			max++;
 		}
 		CallGameFunction<__int64, void*, float, bool>(FWaitUntilComplete, ptrret->ptr, 0.0, 0);//Safe to call and finalize the load.

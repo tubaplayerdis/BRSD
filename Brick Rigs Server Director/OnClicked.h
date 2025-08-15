@@ -91,9 +91,13 @@ namespace hooks
 					GetBlacklistButton()->SetDisplayText(TEXT(REMOVE_VEHICLE_BUTTON_MESSAGE));
 				}
 			}
-			else if (Elevator::Get()->DoesButtonRefMatch(This))
+			else if (Elevator::Get()->DoesButtonRefMatch(This, ElevateButton))
 			{
 				Elevator::Get()->OnElevateButtonClicked();
+			}
+			else if (Elevator::Get()->DoesButtonRefMatch(This, MuteToggleButton))
+			{
+				Elevator::Get()->OnMuteToggleButtonClicked();
 			}
 			else {
 				S_OnClicked->OriginalFunction(This);

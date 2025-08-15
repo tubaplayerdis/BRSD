@@ -59,7 +59,7 @@ namespace hooks
                 {
                     std::cout << "Player " << GetPlayerInfoFromController(Player).name << " spawned banned vehicle: " << Request.VehicleFileInfo.Title << std::endl;
                     Message(GetPlayerInfoFromController(Player), "Your vehicle could not be spawned as it is on the blacklist");
-                    return Failure;
+                    return VehicleNotWhitelisted;
                 }
             }
             return S_RestartPlayerAt->OriginalFunction(This, Player, Request);

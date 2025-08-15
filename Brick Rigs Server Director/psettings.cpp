@@ -96,28 +96,27 @@ bool psettings::CreateCustomSettingsPageBase()
     TextBorder->SetHorizontalAlignment(SDK::EHorizontalAlignment::HAlign_Center);
     TextBorder->SetVerticalAlignment(SDK::EVerticalAlignment::VAlign_Center);
 
-
     SDK::UWBP_PropertyContainer_C* CCcontainer = CreateWidget(SDK::UWBP_PropertyContainer_C);
     CCcontainer->NameTextBlock->SetText(TEXT(L"Chat Commands Enabled"));
     CustomSettingsPage->AddChild(CCcontainer);
 
-    //SDK::UWBP_PropertyContainer_C* BLcontainer = CreateWidget(SDK::UWBP_PropertyContainer_C);
-    //BLcontainer->NameTextBlock->SetText(TEXT(L"Blacklist Enabled"));
-    //CustomSettingsPage->AddChild(BLcontainer);
+    SDK::UWBP_PropertyContainer_C* BLcontainer = CreateWidget(SDK::UWBP_PropertyContainer_C);
+    BLcontainer->NameTextBlock->SetText(TEXT(L"Blacklist Enabled"));
+    CustomSettingsPage->AddChild(BLcontainer);
 
-    //SDK::UWBP_PropertyContainer_C* BLEntries = CreateWidget(SDK::UWBP_PropertyContainer_C);
-    //BLEntries->NameTextBlock->SetText(TEXT(L"Blacklisted Items"));
-    //CustomSettingsPage->AddChild(BLEntries);
+    SDK::UWBP_PropertyContainer_C* BLEntries = CreateWidget(SDK::UWBP_PropertyContainer_C);
+    BLEntries->NameTextBlock->SetText(TEXT(L"Blacklisted Items"));
+    CustomSettingsPage->AddChild(BLEntries);
 
     elements::BRSDBlock = TextBorder;
     elements::ChatCommandsPC = CCcontainer;
     elements::list.push_back(UISetting(TextBorder, PS_BLOCK));
     elements::list.push_back(UISetting(CCcontainer, PS_CC_CONTAINER));
-    //elements::list.push_back(UISetting(BLcontainer, PS_BL_CONTAINER));
-    //elements::list.push_back(UISetting(BLEntries, PS_BL_ITEMS_CONTAINER));
+    elements::list.push_back(UISetting(BLcontainer, PS_BL_CONTAINER));
+    elements::list.push_back(UISetting(BLEntries, PS_BL_ITEMS_CONTAINER));
 
-    //HOOK_INIT(OnClickedButton());
-    //HOOK_ENABLE(OnClickedButton());
+    HOOK_INIT(OnClickedButton());
+    HOOK_ENABLE(OnClickedButton());
 
     return true;
 }
@@ -131,18 +130,18 @@ void psettings::PrepareCustomSettingsPage()
     cb->ComboBox->InitItems(2, 1);
     cb->ComboBox->SetSelectedItem(1);//Set this based off of loaded settings
 
-    //SDK::UWBP_BoolProperty_C* blcb = CreateWidget(SDK::UWBP_BoolProperty_C);
-    //elements::GetWidget<SDK::UWBP_PropertyContainer_C>(PS_BL_CONTAINER)->AddPropertyWidget(blcb, SDK::EOrientation::Orient_Horizontal);
-    //elements::GetWidget<SDK::UWBP_PropertyContainer_C>(PS_BL_CONTAINER)->PropertyWidget = blcb;
-    //blcb->ComboBox->InitItems(2, 1);
-    //blcb->ComboBox->SetSelectedItem(1);//Set this based off of loaded settings
+    SDK::UWBP_BoolProperty_C* blcb = CreateWidget(SDK::UWBP_BoolProperty_C);
+    elements::GetWidget<SDK::UWBP_PropertyContainer_C>(PS_BL_CONTAINER)->AddPropertyWidget(blcb, SDK::EOrientation::Orient_Horizontal);
+    elements::GetWidget<SDK::UWBP_PropertyContainer_C>(PS_BL_CONTAINER)->PropertyWidget = blcb;
+    blcb->ComboBox->InitItems(2, 1);
+    blcb->ComboBox->SetSelectedItem(1);//Set this based off of loaded settings
 
     
-    //SDK::UWBP_UGCProperty_C* UUGCPropCont = CreateWidget(SDK::UWBP_UGCProperty_C);
-    //elements::GetWidget<SDK::UWBP_PropertyContainer_C>(PS_BL_ITEMS_CONTAINER)->AddPropertyWidget(UUGCPropCont, SDK::EOrientation::Orient_Horizontal);
-    //elements::GetWidget<SDK::UWBP_PropertyContainer_C>(PS_BL_ITEMS_CONTAINER)->PropertyWidget = UUGCPropCont;
-    //UUGCPropCont->UpdateItemsText(1);
-    //CurrentPropRef = UUGCPropCont;
+    SDK::UWBP_UGCProperty_C* UUGCPropCont = CreateWidget(SDK::UWBP_UGCProperty_C);
+    elements::GetWidget<SDK::UWBP_PropertyContainer_C>(PS_BL_ITEMS_CONTAINER)->AddPropertyWidget(UUGCPropCont, SDK::EOrientation::Orient_Horizontal);
+    elements::GetWidget<SDK::UWBP_PropertyContainer_C>(PS_BL_ITEMS_CONTAINER)->PropertyWidget = UUGCPropCont;
+    UUGCPropCont->UpdateItemsText(1);
+    CurrentPropRef = UUGCPropCont;
     
 }
 
@@ -176,8 +175,8 @@ void psettings::Uninitalize()
     CustomSettingsPage->RemoveFromParent();
     CustomSettingsPage == nullptr;
 
-    //HOOK_DISABLE(OnClickedButton());
-    //HOOK_DESTROY(OnClickedButton());
+    HOOK_DISABLE(OnClickedButton());
+    HOOK_DESTROY(OnClickedButton());
 }
 
 uintptr_t CastPointer(void* ptr)
