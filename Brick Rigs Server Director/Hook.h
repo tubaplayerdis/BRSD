@@ -21,20 +21,27 @@
 #include <Psapi.h>
 #include <cassert>
 #include <utility>
+#include <memory>
 
 #define DestroyHook(hook) delete hook; hook = nullptr
 #define InitializeHook(hook, cls) hook = new cls()
 
 //Defines a hooking objects and it parameters. Does NOT register the hook with MinHook
 #define HOOK(name, addr, lamb, sig) \
-Hook<sig>* name##(); \
-inline Hook<sig>* H_##name = new Hook<sig>(addr, lamb, false); \
-inline Hook<sig>* name##() { return H_##name; } \
+std::unique_ptr<Hook<sig>>& name##(); \
+inline std::unique_ptr<Hook<sig>> H_##name = std::make_unique<Hook<sig>>(addr, lamb, false); \
+inline std::unique_ptr<Hook<sig>>& name##() { return H_##name; } \
+
+//Defines a hooking objects and it parameters. Does NOT register the hook with MinHook
+#define HOOK_PATTERN(name, pat, mask, speed, lamb, sig) \
+std::unique_ptr<Hook<sig>>& name##(); \
+inline std::unique_ptr<Hook<sig>> H_##name = std::make_unique<Hook<sig>>(pat, mask, lamb, speed, false); \
+inline std::unique_ptr<Hook<sig>>& name##() { return H_##name; } \
 
 //Registers the hook with MinHook
 #define HOOK_INIT(ptr) ptr->Create()
-//Destroy the hook object to prevent memory leeks
-#define HOOK_DESTROY(ptr) ptr->Disable(); DestroyHookInternal(ptr)
+//Destroy the hook object to prevent memory leaks. This does now have to be used explicitly as the HOOK macro uses unique_ptr
+#define HOOK_DESTROY(ptr) ptr.reset()
 #define HOOK_ENABLE(ptr) ptr->Enable()
 #define HOOK_DISABLE(ptr) ptr->Disable()
 #define HOOK_IS_INIT(ptr) ptr->IsInitialized()
@@ -42,6 +49,7 @@ inline Hook<sig>* name##() { return H_##name; } \
 
 enum SearchType
 {
+	//Uses the Boyer–Moore–Horspool algorithm. Sometimes will not find the signature.
 	FAST = 0,
 	SAFE = 1,
 	ALL = 2
