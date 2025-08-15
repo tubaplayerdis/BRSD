@@ -143,6 +143,11 @@ PlayerInfo GetPlayerInfoFromController(SDK::ABrickPlayerController* controller)
 	return ret;
 }
 
+PlayerInfo GetPlayerInfoFromState(SDK::ABrickPlayerState* State)
+{
+	return GetPlayerInfoFromController(GetBrickPlayerControllerFromID(std::to_string(State->PlayerId)));
+}
+
 std::string GetPlayerNameFromID(std::string ID)
 {
 	return GetPlayerInfoFromController(GetBrickPlayerControllerFromID(ID)).name;

@@ -86,6 +86,8 @@
 #define FCreateUObject BASE + 0x07DD430
 #define FMarkBrickBurnt BASE + 0x0BF8890
 #define FOpenPopup BASE + 0x0DDCD00
+#define FReleaseHandle BASE + 0x27FA250
+#define FUninitializeBrickEditorObject BASE + 0x0C6FFB0
 
 //define VTable offsets. 8 is used after the number IDA gives
 

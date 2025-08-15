@@ -149,6 +149,7 @@ SDK::ABrickPlayerController* GetBrickPlayerControllerFromID(std::string ID);
 bool GetIsPlayerAdminFromName(std::string name);
 bool GetIsPlayerHostFromName(std::string name);
 PlayerInfo GetPlayerInfoFromController(SDK::ABrickPlayerController* controller);
+PlayerInfo GetPlayerInfoFromState(SDK::ABrickPlayerState* State);
 std::string GetPlayerNameFromID(std::string ID);
 std::string GetPlayerNameFromIDORName(std::string input);
 inline SDK::ABrickPlayerController* GetBrickPlayerControllerFromIDORName(std::string input) { return GetBrickPlayerControllerFromName(GetPlayerNameFromIDORName(input)); }
