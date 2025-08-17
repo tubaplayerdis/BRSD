@@ -19,7 +19,16 @@
 
 #pragma comment(lib, "shell32.lib")
 
+//Backwards compatibility macros
 #define _IsInitialized(ptr) ptr->IsInitialized();
+#define InitializeHook(ptr, type) \
+ptr = new type(); \
+ptr->Create(); \
+
+#define DestroyHook(ptr) \
+ptr->Disable(); \
+delete ptr; \
+ptr = nullptr; \
 
 bool hooks::InitHooks()
 {
