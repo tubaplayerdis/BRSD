@@ -97,6 +97,8 @@ void MainLoop()
 
 	uibase::Cleanup();
 
+	gui_manager::shutdown();
+
 	MessageHost("Uninjecting BRSD!");
 
 	Notification(L"Uninjecting BRSD!", 9);

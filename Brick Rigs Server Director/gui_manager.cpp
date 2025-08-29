@@ -15,6 +15,7 @@
 #include "gui_manager.h"
 #include <vector>
 #include <memory>
+#include <iostream>
 
 // ------------------------------------------------------------
 // Typedefs
@@ -116,16 +117,34 @@ gui_manager::gui_manager()
     }
 }
 
-gui_manager::~gui_manager()
-{
-    kiero::shutdown(8); // <-- no args
-}
-
 gui_manager* gui_manager::get()
 {
     if (!manager)
         manager = std::make_unique<gui_manager>();
     return manager.get();
+}
+
+void gui_manager::shutdown()
+{
+    kiero::unbind(8);
+    ImGui_ImplWin32_Shutdown();
+    ImGui_ImplDX11_Shutdown();
+    ImGui::DestroyContext();
+    kiero::shutdown(8);
+
+    if (oWndProc && window)
+    {
+        SetWindowLongPtr(window, GWLP_WNDPROC, (LONG_PTR)oWndProc);
+        oWndProc = nullptr;
+    }
+
+    if (mainRenderTargetView) { mainRenderTargetView->Release(); mainRenderTargetView = nullptr; }
+    if (pContext) { pContext->Release(); pContext = nullptr; }
+    if (pDevice) { pDevice->Release(); pDevice = nullptr; }
+
+    manager.reset();
+
+    _is_init = false;
 }
 
 void gui_manager::remove_menu(gui_menu* menu)
