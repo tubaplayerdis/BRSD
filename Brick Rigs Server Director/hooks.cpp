@@ -40,21 +40,16 @@ bool hooks::InitHooks()
 	InitializeHook(S_OnPlayerJoined, OnPlayerJoined);
 	InitializeHook(S_StartPlay, StartPlay);
 	InitializeHook(S_LoadMap, LoadMap);
-	InitializeHook(S_OnClicked, OnClicked);
-	InitializeHook(S_SetSelectedItem, SetSelectedItem);
 	InitializeHook(S_RestartPlayerAt, RestartPlayerAt);
-	InitializeHook(S_UpdateButtons, UpdateButtons);
 	bool ACMHook = _IsInitialized(S_AddChatMessage);
 	bool BPHook = _IsInitialized(S_BeginPlay);
 	bool OMHook = _IsInitialized(S_OpenMenu);
 	bool ONJHook = _IsInitialized(S_OnPlayerJoined);
 	bool RGHook = _IsInitialized(S_StartPlay);
 	bool LMHook = _IsInitialized(S_LoadMap);
-	bool OCHook = _IsInitialized(S_OnClicked);
-	bool SVHook = _IsInitialized(S_SetSelectedItem);
 	auto end = std::chrono::high_resolution_clock::now();
 	std::cout << "Elapsed Time Finding Hooks: " << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << std::endl;
-	if (!ACMHook || !BPHook || !OMHook || !ONJHook || !RGHook || !LMHook || !OCHook || !SVHook) {
+	if (!ACMHook || !BPHook || !OMHook || !ONJHook || !RGHook || !LMHook) {
 		//print cases
 		std::cout << "ACMHOOK: " << ACMHook << std::endl;
 		std::cout << "BPHOOK: " << BPHook << std::endl;
@@ -62,8 +57,6 @@ bool hooks::InitHooks()
 		std::cout << "ONJHOOK: " << ONJHook << std::endl;
 		std::cout << "RGHOOK: " << RGHook << std::endl;
 		std::cout << "LMHook: " << LMHook << std::endl;
-		std::cout << "CBHook: " << OCHook << std::endl;
-		std::cout << "SVHOOK: " << SVHook << std::endl;
 
 		//Print cases to file
 		std::ofstream saveFile;
@@ -76,8 +69,6 @@ bool hooks::InitHooks()
 			saveFile << "ONJHOOK: " << ONJHook << std::endl;
 			saveFile << "RGHOOK: " << RGHook << std::endl;
 			saveFile << "LMHOOK: " << LMHook << std::endl;
-			saveFile << "OCHOOK: " << OCHook << std::endl;
-			saveFile << "SVHOOK: " << SVHook << std::endl;
 			saveFile.close();
 		}
 		return false;
@@ -94,10 +85,7 @@ void hooks::EnableHooks()
 	S_OnPlayerJoined->Enable();
 	S_StartPlay->Enable();
 	S_LoadMap->Enable();
-	S_OnClicked->Enable();
-	S_SetSelectedItem->Enable();
 	S_RestartPlayerAt->Enable();
-	S_UpdateButtons->Enable();
 	//S_EngineLoopTick->Enable();
 }
 
@@ -109,10 +97,7 @@ void hooks::DestroyHookObjects()
 	DestroyHook(S_OnPlayerJoined);
 	DestroyHook(S_StartPlay);
 	DestroyHook(S_LoadMap);
-	DestroyHook(S_OnClicked);
-	DestroyHook(S_SetSelectedItem);
 	DestroyHook(S_RestartPlayerAt);
-	DestroyHook(S_UpdateButtons);
 	Elevator::Get()->DestroyHooks();
 }
 

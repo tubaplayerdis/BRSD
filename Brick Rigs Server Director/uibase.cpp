@@ -12,7 +12,6 @@
 
 #include "uibase.h"
 #include "global.h"
-#include "Function.h"
 #include "offsets.h"
 
 SDK::UWBP_WindowManager_C* GetWindowManager()

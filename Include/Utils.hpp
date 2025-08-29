@@ -2,23 +2,18 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     watermark.h		                                          */
+/*    Module:     Utils.hpp 				                                  */
 /*    Author:     Aaron Wilk                                                  */
-/*    Created:    24 June 2025                                                */
+/*    Created:    7 July 2025                                                 */
 /*                                                                            */
 /*    Revisions:  V0.1                                                        */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include <BR-SDK.hpp>
 
-namespace watermark
-{
-	inline SDK::UCanvasPanel* panel = nullptr;
-	inline SDK::UBrickBorder* TextBorder = nullptr;
-	bool InitalizeWaterMark();
-	void ShowWaterMark();
-	void HideWaterWark();
-	void UnInitalizeWaterMark();
-}
+//Includes all utils.
+
+#include "Utils/Utilities.hpp"
+#include "Utils/ActorUtilities.hpp"
+#include "Utils/GameFunctions.hpp"

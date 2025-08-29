@@ -12,14 +12,13 @@
 
 
 #pragma once
-#include <SDK.hpp>
+#include <BR-SDK.hpp>
 #include "modules.h"
 #include "global.h"
 #include "AddChatMessage.h"
 #include "OnPlayerJoined.h"
 #include "StartPlay.h"
 #include "watermark.h"
-#include "Hook.h"
 
 namespace hooks
 {

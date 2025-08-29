@@ -11,11 +11,10 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include "Function.h"
 #include "offsets.h"
 #include <windows.h>
 #include <tlhelp32.h>
-#include <SDK.hpp>
+#include <BR-SDK.hpp>
 
 //Enabling my laziness
 #define _itor(num) int i = 0; i < num; i++

@@ -11,8 +11,7 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include <SDK.hpp>
-#include "Function.h"
+#include <BR-SDK.hpp>
 #include "offsets.h"
 
 namespace FLinearColor

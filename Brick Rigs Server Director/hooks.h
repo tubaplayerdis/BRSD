@@ -19,11 +19,8 @@
 #include "OnPlayerJoined.h"
 #include "OpenMenu.h"
 #include "StartPlay.h"
-#include "OnClicked.h"
-#include "SetSelectedItem.h"
 #include "EngineLoopTick.h"
 #include "RestartPlayerAt.h"
-#include "UpdateButtons.h"
 
 namespace hooks
 {

@@ -12,7 +12,7 @@
 
 #pragma once
 #include "PlayerInfo.h"
-#include <SDK.hpp>
+#include <BR-SDK.hpp>
 
 #define Message(info, message) messages::sendUserSpecificMessage(info, message)
 #define ContextMessage(info, message, context, sender) messages::sendUserSpecificMessageWithContext(info,message,context,sender)

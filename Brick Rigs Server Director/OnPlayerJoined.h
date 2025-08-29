@@ -13,11 +13,10 @@
 #pragma once
 #include "offsets.h"
 #include <windows.h>
-#include <SDK.hpp>
+#include <BR-SDK.hpp>
 #include "messages.h"
 #include "stringlist.h"
 #include "global.h"
-#include "Hook.h"
 #include <fstream>
 
 inline void LogPlayerJoining(PlayerInfo info)

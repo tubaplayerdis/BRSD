@@ -11,7 +11,6 @@
 /*----------------------------------------------------------------------------*/
 
 #include <iostream>
-#include <MinHook.h>
 #include <windows.h>
 #include "main.h"
 #include "hooks.h"
@@ -19,13 +18,10 @@
 #include "watermark.h"
 #include "messages.h"
 #include "welcome.h"
-#include "obutton.h"
-#include "psettings.h"
 #include "uibase.h"
 #include "functions.h"
 #include "AddChatMessage.h"
 #include "logger.h"
-#include "utils.h"
 #include "EngineLoopTick.h"
 #include "Elevator.h"
 #include "main_menu.h"

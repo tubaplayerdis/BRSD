@@ -16,24 +16,6 @@
     <Filter Include="More Files">
       <UniqueIdentifier>{ec5a5eb5-a05a-4b2a-bcfa-041f59da7744}</UniqueIdentifier>
     </Filter>
-    <Filter Include="More Files\MinHook">
-      <UniqueIdentifier>{986cd902-7252-498e-b118-4d0e887651c4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="More Files\SDK">
-      <UniqueIdentifier>{9c402f8f-83c4-40ae-bc94-a00f48ab495d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="More Files\SDK\Core">
-      <UniqueIdentifier>{93e059e1-986c-4e9b-a2bb-33560fedaf89}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="More Files\SDK\Blueprint">
-      <UniqueIdentifier>{dc0513bb-f623-4a48-9be2-e9dcd5804cf5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="More Files\SDK\UI">
-      <UniqueIdentifier>{8594e586-0950-4e32-aec4-fc59428078c6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="More Files\SDK\Engine">
-      <UniqueIdentifier>{485c4f9b-b838-4425-8dc5-af8944f11591}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\main">
       <UniqueIdentifier>{5a6d75e4-b621-4667-9a4a-cefe8384becf}</UniqueIdentifier>
     </Filter>
@@ -105,30 +87,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Include\trampoline.c">
-      <Filter>More Files\MinHook</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\hook.c">
-      <Filter>More Files\MinHook</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\buffer.c">
-      <Filter>More Files\MinHook</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\hde\hde32.c">
-      <Filter>More Files\MinHook</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\hde\hde64.c">
-      <Filter>More Files\MinHook</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\CoreUObject_functions.cpp">
-      <Filter>More Files\SDK\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BrickRigs_functions.cpp">
-      <Filter>More Files\SDK\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\Basic.cpp">
-      <Filter>More Files\SDK\Core</Filter>
-    </ClCompile>
     <ClCompile Include="dllmain.cpp">
       <Filter>Source Files\main</Filter>
     </ClCompile>
@@ -150,302 +108,14 @@
     <ClCompile Include="moderation.cpp">
       <Filter>Source Files\modules</Filter>
     </ClCompile>
-    <ClCompile Include="..\Include\SDK\Water_functions.cpp">
-      <Filter>More Files\SDK\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\Engine_functions.cpp">
-      <Filter>More Files\SDK\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\EngineSettings_functions.cpp">
-      <Filter>More Files\SDK\Engine</Filter>
-    </ClCompile>
     <ClCompile Include="watermark.cpp">
-      <Filter>Source Files\modules\ui</Filter>
-    </ClCompile>
-    <ClCompile Include="obutton.cpp">
       <Filter>Source Files\modules\ui</Filter>
     </ClCompile>
     <ClCompile Include="uibase.cpp">
       <Filter>Source Files\modules\ui</Filter>
     </ClCompile>
-    <ClCompile Include="psettings.cpp">
-      <Filter>Source Files\modules\ui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_WindowManager_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_Tooltip_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_TimespanProperty_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_TeamScore_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_StructProperty_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_RestrictedArea_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_PropertyContainerButton_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_PropertyContainer_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_PropertyCategory_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_PropertiesPanel_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_PopupContainer_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_Player_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_PingIndicator_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_NumericProperty_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_MenuButton_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_Menu_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_MatchTimer_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_MatchState_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_MatchMenu_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_LoadingScreen_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_InteractionOption_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_Interaction_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_InputKeySpacer_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_InputKey_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_InputHelp_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_InputChord_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_InputActionList_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_InputActionCategory_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_InputAction_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_HurtMarker_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_HUDNotification_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_HUDIconContainer_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_HUDContainer_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_HealthBar_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_GameOverlay_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_GameLogo_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_CurrentItem_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_Crosshair_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_ControlHint_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_ContextMenu_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_ChatMessage_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_Chat_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_BrickTextBox_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_BrickSliderReadOnly_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_BrickSlider_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_BrickComboBoxItemContainer_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_BrickComboBoxItem_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_BrickComboBox_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\UMG_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BTT_ZombieAttack_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BTS_ZombieFindTarget_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_ZombieAIController_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_UIStyle_White_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_UIStyle_Violet_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_UIStyle_Orange_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_UIStyle_Gray_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_UIStyle_Default_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_UIStyle_Cyan_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_UIStyle_Blue_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_UIFunctionLibrary_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_Sign_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_Shredder_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_PowerPlant_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_MenuFunctionLibrary_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_FuelTank_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_Dumpster_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_DragStrip_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_Construction_Building_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_BrickCharacter_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_Brick_8x8x1s_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\BP_Blender_functions.cpp">
-      <Filter>More Files\SDK\Blueprint</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\AssetTags_functions.cpp">
-      <Filter>More Files\SDK\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\AssetRegistry_functions.cpp">
-      <Filter>More Files\SDK\Engine</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_AdminMenu_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_InputMappingKey_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_InputMappingProperty_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_InputMappings_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_KickedPlayer_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_PagedList_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_PagedListHeader_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_PagedListHeaderField_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_PageSelector_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_PlayersMenu_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_ScoreboardPlayer_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_ScoreboardTeam_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_VideoSettings_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
     <ClCompile Include="Module.cpp">
       <Filter>Source Files\modules</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_UGCTaskPopup_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_UGCProperty_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_UGCMetaDataPopup_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_UGCItem_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Include\SDK\WBP_UGCBrowser_functions.cpp">
-      <Filter>More Files\SDK\UI</Filter>
     </ClCompile>
     <ClCompile Include="Elevator.cpp">
       <Filter>Source Files\modules\gameplay</Filter>
@@ -530,23 +200,8 @@
     <ClInclude Include="watermark.h">
       <Filter>Header Files\modules\ui</Filter>
     </ClInclude>
-    <ClInclude Include="obutton.h">
-      <Filter>Header Files\modules\ui</Filter>
-    </ClInclude>
     <ClInclude Include="uibase.h">
       <Filter>Header Files\modules\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="psettings.h">
-      <Filter>Header Files\modules\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="OnClicked.h">
-      <Filter>Header Files\hooks\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="Hook.h">
-      <Filter>Header Files\hooks</Filter>
-    </ClInclude>
-    <ClInclude Include="Function.h">
-      <Filter>Header Files\functions</Filter>
     </ClInclude>
     <ClInclude Include="BeginPlay.h">
       <Filter>Header Files\hooks\global</Filter>
@@ -560,9 +215,6 @@
     <ClInclude Include="OpenMenu.h">
       <Filter>Header Files\hooks\ui</Filter>
     </ClInclude>
-    <ClInclude Include="SetSelectedItem.h">
-      <Filter>Header Files\hooks\ui</Filter>
-    </ClInclude>
     <ClInclude Include="spawnutils.h">
       <Filter>Header Files\utils</Filter>
     </ClInclude>
@@ -573,9 +225,6 @@
       <Filter>Header Files\utils</Filter>
     </ClInclude>
     <ClInclude Include="PlayerInfo.h">
-      <Filter>Header Files\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="utils.h">
       <Filter>Header Files\utils</Filter>
     </ClInclude>
     <ClInclude Include="actorutils.h">
@@ -595,9 +244,6 @@
     </ClInclude>
     <ClInclude Include="Saver.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UpdateButtons.h">
-      <Filter>Header Files\hooks\ui</Filter>
     </ClInclude>
     <ClInclude Include="Elevator.h">
       <Filter>Header Files\modules\gameplay</Filter>

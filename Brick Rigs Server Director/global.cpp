@@ -11,7 +11,7 @@
 /*----------------------------------------------------------------------------*/
 
 #include "global.h"
-#include "SDK.hpp"
+#include <BR-SDK.hpp>
 #include "windows.h"
 #include <codecvt>
 #include <locale>
@@ -19,7 +19,6 @@
 #include <fstream>
 #include <sstream>
 #include <chrono>
-#include "Function.h"
 
 void global::pointers::InitPointers()
 {
