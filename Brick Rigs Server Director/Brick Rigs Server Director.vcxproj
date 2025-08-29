@@ -255,14 +255,12 @@
     <ClCompile Include="gui_manager.cpp" />
     <ClCompile Include="kiero.cpp" />
     <ClCompile Include="Module.cpp" />
-    <ClCompile Include="obutton.cpp" />
     <ClCompile Include="global.cpp" />
     <ClCompile Include="hooks.cpp" />
     <ClCompile Include="interpreter.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="messages.cpp" />
     <ClCompile Include="moderation.cpp" />
-    <ClCompile Include="psettings.cpp" />
     <ClCompile Include="uibase.cpp" />
     <ClCompile Include="watermark.cpp" />
   </ItemGroup>
@@ -280,7 +278,6 @@
     <ClInclude Include="LoggerStream.h" />
     <ClInclude Include="main_menu.h" />
     <ClInclude Include="Module.h" />
-    <ClInclude Include="obutton.h" />
     <ClInclude Include="functions.h" />
     <ClInclude Include="global.h" />
     <ClInclude Include="hooks.h" />
@@ -291,15 +288,11 @@
     <ClInclude Include="moderation.h" />
     <ClInclude Include="modules.h" />
     <ClInclude Include="offsets.h" />
-    <ClInclude Include="OnClicked.h" />
-    <ClInclude Include="UpdateButtons.h" />
     <ClInclude Include="RestartPlayerAt.h" />
     <ClInclude Include="Saver.h" />
-    <ClInclude Include="SetSelectedItem.h" />
     <ClInclude Include="OnPlayerJoined.h" />
     <ClInclude Include="OpenMenu.h" />
     <ClInclude Include="PlayerInfo.h" />
-    <ClInclude Include="psettings.h" />
     <ClInclude Include="logger.h" />
     <ClInclude Include="spawnutils.h" />
     <ClInclude Include="StartPlay.h" />
