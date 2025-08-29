@@ -143,6 +143,15 @@
     <ClCompile Include="..\Include\hde\hde32.c" />
     <ClCompile Include="..\Include\hde\hde64.c" />
     <ClCompile Include="..\Include\hook.c" />
+    <ClCompile Include="..\Include\imgui\imgui.cpp" />
+    <ClCompile Include="..\Include\imgui\imgui_demo.cpp" />
+    <ClCompile Include="..\Include\imgui\imgui_draw.cpp" />
+    <ClCompile Include="..\Include\imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="..\Include\imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="..\Include\imgui\imgui_tables.cpp" />
+    <ClCompile Include="..\Include\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="..\Include\imgui\implot.cpp" />
+    <ClCompile Include="..\Include\imgui\implot_items.cpp" />
     <ClCompile Include="..\Include\SDK\AssetRegistry_functions.cpp" />
     <ClCompile Include="..\Include\SDK\AssetTags_functions.cpp" />
     <ClCompile Include="..\Include\SDK\Basic.cpp" />
@@ -243,6 +252,8 @@
     <ClCompile Include="..\Include\trampoline.c" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Elevator.cpp" />
+    <ClCompile Include="gui_manager.cpp" />
+    <ClCompile Include="kiero.cpp" />
     <ClCompile Include="Module.cpp" />
     <ClCompile Include="obutton.cpp" />
     <ClCompile Include="global.cpp" />
@@ -262,9 +273,12 @@
     <ClInclude Include="DrawTransition.h" />
     <ClInclude Include="Elevator.h" />
     <ClInclude Include="Function.h" />
+    <ClInclude Include="gui_manager.h" />
     <ClInclude Include="Hook.h" />
     <ClInclude Include="BeginPlay.h" />
+    <ClInclude Include="kiero.h" />
     <ClInclude Include="LoggerStream.h" />
+    <ClInclude Include="main_menu.h" />
     <ClInclude Include="Module.h" />
     <ClInclude Include="obutton.h" />
     <ClInclude Include="functions.h" />

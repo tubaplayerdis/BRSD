@@ -32,7 +32,7 @@ HOOK(OnClickedButton, HOnClickedButton, [](SDK::UUGCPropertyWidget* This) -> voi
     }
     SDK::UBrickGameInstance* Instance = SDK::UBrickGameInstance::Get(SDK::UWorld::GetWorld());
     SDK::UPopupParams* PopupParms = Instance->CreatePopupParams(SDK::UUGCBrowserPopupParams::StaticClass());
-    SDK::FPopupHandle Handle = GetMember<SDK::FPopupHandle>(This, 0x280);
+    SDK::FPopupHandle Handle = GetMember<SDK::FPopupHandle>(SDK::UWindowManagerWidget::Get(World()), 0x3C0);
     for (SDK::UWidget* Widget : GetCanvasPanel()->GetAllChildren())
     {
         if (Widget->IsA(SDK::UWindowManagerWidget::StaticClass()))
@@ -42,7 +42,7 @@ HOOK(OnClickedButton, HOnClickedButton, [](SDK::UUGCPropertyWidget* This) -> voi
             std::cout << "yay!" << std::endl;
         }
     }
-    bool didopen = Instance->OpenPopup(Handle, PopupParms, 1);
+    bool didopen = Instance->OpenPopup(Handle, PopupParms, 0);
     if (!didopen) std::cout << "bruh" << std::endl;
 }, void(SDK::UUGCPropertyWidget*));
 

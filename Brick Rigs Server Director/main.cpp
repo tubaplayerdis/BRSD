@@ -28,6 +28,7 @@
 #include "utils.h"
 #include "EngineLoopTick.h"
 #include "Elevator.h"
+#include "main_menu.h"
 
 using namespace global;
 
@@ -60,11 +61,9 @@ void MainLoop()
 
 	watermark::InitalizeWaterMark();
 
-	if(uibase::IsInGameMenuOpen()) obutton::AddToButtonMenu();
+	main_menu->display();
 
 	if (IsHost()) welcome::SendWelcomeMessage();
-
-	psettings::CreateCustomSettingsPageBase();//Worked
 
 	modules::InitalizeModules();
 
@@ -95,8 +94,6 @@ void MainLoop()
 	
 	watermark::HideWaterWark();
 	watermark::UnInitalizeWaterMark();
-
-	psettings::Uninitalize();
 
 	modules::DestroyModules();
 

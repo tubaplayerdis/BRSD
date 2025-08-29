@@ -85,6 +85,24 @@
     <Filter Include="Source Files\modules\gameplay">
       <UniqueIdentifier>{ceee6b81-211f-48f9-8923-baf9cddf9cbc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="More Files\ImGUI">
+      <UniqueIdentifier>{10d1fb18-5b11-4f29-b7b6-984f7021cdc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui">
+      <UniqueIdentifier>{aabd1080-729f-4ac0-8758-61af752f2fbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui">
+      <UniqueIdentifier>{07c9c106-7ef6-4fb8-a123-c2dbf0e805d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\kiero">
+      <UniqueIdentifier>{29c7d154-0e63-4fd1-9549-577bc9c39607}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gui\kiero">
+      <UniqueIdentifier>{b5c9d1bd-6f8f-4d46-bbcb-1127d40f9f39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\menus">
+      <UniqueIdentifier>{ab7a3a01-6a60-464e-a676-f4f26c678bc0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Include\trampoline.c">
@@ -432,6 +450,39 @@
     <ClCompile Include="Elevator.cpp">
       <Filter>Source Files\modules\gameplay</Filter>
     </ClCompile>
+    <ClCompile Include="..\Include\imgui\imgui.cpp">
+      <Filter>More Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\imgui\imgui_demo.cpp">
+      <Filter>More Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\imgui\imgui_draw.cpp">
+      <Filter>More Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\imgui\imgui_impl_dx11.cpp">
+      <Filter>More Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\imgui\imgui_impl_win32.cpp">
+      <Filter>More Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\imgui\imgui_tables.cpp">
+      <Filter>More Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\imgui\imgui_widgets.cpp">
+      <Filter>More Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\imgui\implot.cpp">
+      <Filter>More Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Include\imgui\implot_items.cpp">
+      <Filter>More Files\ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="gui_manager.cpp">
+      <Filter>Source Files\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="kiero.cpp">
+      <Filter>Source Files\gui\kiero</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">
@@ -550,6 +601,15 @@
     </ClInclude>
     <ClInclude Include="Elevator.h">
       <Filter>Header Files\modules\gameplay</Filter>
+    </ClInclude>
+    <ClInclude Include="gui_manager.h">
+      <Filter>Header Files\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="kiero.h">
+      <Filter>Header Files\gui\kiero</Filter>
+    </ClInclude>
+    <ClInclude Include="main_menu.h">
+      <Filter>Header Files\gui\menus</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
