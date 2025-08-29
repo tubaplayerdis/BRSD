@@ -14,13 +14,8 @@ class Elevator : public Module
 {
 	Elevator();
 public:
-	void CreateButton();
-	void DestroyHooks();
-	//Nulls the current button ref
-	void NullifyRefrence();
-	bool DoesButtonRefMatch(void* Ref, ElevatorButtons but);
-	void OnElevateButtonClicked();
-	void OnMuteToggleButtonClicked();
+	void CreateMenu();
+	void RemoveMenu();
 
 public:
 	static Elevator* Get();
