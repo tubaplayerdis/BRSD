@@ -117,6 +117,8 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>BR-SDK_Debug.lib;d3d11.lib;dxgi.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -136,13 +138,11 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>BR-SDK_Release.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Include\buffer.c" />
-    <ClCompile Include="..\Include\hde\hde32.c" />
-    <ClCompile Include="..\Include\hde\hde64.c" />
-    <ClCompile Include="..\Include\hook.c" />
     <ClCompile Include="..\Include\imgui\imgui.cpp" />
     <ClCompile Include="..\Include\imgui\imgui_demo.cpp" />
     <ClCompile Include="..\Include\imgui\imgui_draw.cpp" />
@@ -152,117 +152,17 @@
     <ClCompile Include="..\Include\imgui\imgui_widgets.cpp" />
     <ClCompile Include="..\Include\imgui\implot.cpp" />
     <ClCompile Include="..\Include\imgui\implot_items.cpp" />
-    <ClCompile Include="..\Include\SDK\AssetRegistry_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\AssetTags_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\Basic.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_Blender_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_BrickCharacter_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_Brick_8x8x1s_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_Construction_Building_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_DragStrip_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_Dumpster_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_FuelTank_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_MenuFunctionLibrary_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_PowerPlant_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_Shredder_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_Sign_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_UIFunctionLibrary_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_UIStyle_Blue_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_UIStyle_Cyan_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_UIStyle_Default_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_UIStyle_Gray_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_UIStyle_Orange_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_UIStyle_Violet_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_UIStyle_White_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BP_ZombieAIController_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BrickRigs_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BTS_ZombieFindTarget_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\BTT_ZombieAttack_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\CoreUObject_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\EngineSettings_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\Engine_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\UMG_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\Water_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_AdminMenu_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_BrickComboBoxItemContainer_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_BrickComboBoxItem_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_BrickComboBox_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_BrickSliderReadOnly_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_BrickSlider_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_BrickTextBox_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_ChatMessage_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_Chat_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_ContextMenu_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_ControlHint_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_Crosshair_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_CurrentItem_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_GameLogo_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_GameOverlay_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_HealthBar_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_HUDContainer_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_HUDIconContainer_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_HUDNotification_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_HurtMarker_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_InputActionCategory_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_InputActionList_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_InputAction_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_InputChord_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_InputHelp_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_InputKeySpacer_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_InputKey_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_InputMappingKey_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_InputMappingProperty_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_InputMappings_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_InteractionOption_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_Interaction_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_KickedPlayer_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_LoadingScreen_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_MatchMenu_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_MatchState_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_MatchTimer_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_MenuButton_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_Menu_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_NumericProperty_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_PagedListHeaderField_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_PagedListHeader_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_PagedList_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_PageSelector_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_PingIndicator_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_PlayersMenu_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_Player_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_PopupContainer_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_PropertiesPanel_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_PropertyCategory_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_PropertyContainerButton_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_PropertyContainer_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_RestrictedArea_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_ScoreboardPlayer_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_ScoreboardTeam_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_StructProperty_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_TeamScore_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_TimespanProperty_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_Tooltip_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_UGCBrowser_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_UGCItem_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_UGCMetaDataPopup_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_UGCProperty_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_UGCTaskPopup_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_VideoSettings_functions.cpp" />
-    <ClCompile Include="..\Include\SDK\WBP_WindowManager_functions.cpp" />
-    <ClCompile Include="..\Include\trampoline.c" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Elevator.cpp" />
     <ClCompile Include="gui_manager.cpp" />
     <ClCompile Include="kiero.cpp" />
     <ClCompile Include="Module.cpp" />
-    <ClCompile Include="obutton.cpp" />
     <ClCompile Include="global.cpp" />
     <ClCompile Include="hooks.cpp" />
     <ClCompile Include="interpreter.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="messages.cpp" />
     <ClCompile Include="moderation.cpp" />
-    <ClCompile Include="psettings.cpp" />
     <ClCompile Include="uibase.cpp" />
     <ClCompile Include="watermark.cpp" />
   </ItemGroup>
@@ -272,15 +172,12 @@
     <ClInclude Include="Blacklist.h" />
     <ClInclude Include="DrawTransition.h" />
     <ClInclude Include="Elevator.h" />
-    <ClInclude Include="Function.h" />
     <ClInclude Include="gui_manager.h" />
-    <ClInclude Include="Hook.h" />
     <ClInclude Include="BeginPlay.h" />
     <ClInclude Include="kiero.h" />
     <ClInclude Include="LoggerStream.h" />
     <ClInclude Include="main_menu.h" />
     <ClInclude Include="Module.h" />
-    <ClInclude Include="obutton.h" />
     <ClInclude Include="functions.h" />
     <ClInclude Include="global.h" />
     <ClInclude Include="hooks.h" />
@@ -291,22 +188,17 @@
     <ClInclude Include="moderation.h" />
     <ClInclude Include="modules.h" />
     <ClInclude Include="offsets.h" />
-    <ClInclude Include="OnClicked.h" />
-    <ClInclude Include="UpdateButtons.h" />
     <ClInclude Include="RestartPlayerAt.h" />
     <ClInclude Include="Saver.h" />
-    <ClInclude Include="SetSelectedItem.h" />
     <ClInclude Include="OnPlayerJoined.h" />
     <ClInclude Include="OpenMenu.h" />
     <ClInclude Include="PlayerInfo.h" />
-    <ClInclude Include="psettings.h" />
     <ClInclude Include="logger.h" />
     <ClInclude Include="spawnutils.h" />
     <ClInclude Include="StartPlay.h" />
     <ClInclude Include="stringlist.h" />
     <ClInclude Include="EngineLoopTick.h" />
     <ClInclude Include="uibase.h" />
-    <ClInclude Include="utils.h" />
     <ClInclude Include="watermark.h" />
     <ClInclude Include="welcome.h" />
   </ItemGroup>

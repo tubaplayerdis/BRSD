@@ -2,7 +2,7 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     watermark.h		                                          */
+/*    Module:     UNetDriver.h                                                */
 /*    Author:     Aaron Wilk                                                  */
 /*    Created:    24 June 2025                                                */
 /*                                                                            */
@@ -11,14 +11,9 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include <BR-SDK.hpp>
+#include <SDK.hpp>
 
-namespace watermark
+namespace UNetDriver
 {
-	inline SDK::UCanvasPanel* panel = nullptr;
-	inline SDK::UBrickBorder* TextBorder = nullptr;
-	bool InitalizeWaterMark();
-	void ShowWaterMark();
-	void HideWaterWark();
-	void UnInitalizeWaterMark();
+    bool isServer(SDK::UNetDriver* driver);
 }

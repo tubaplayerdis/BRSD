@@ -13,7 +13,7 @@
 #pragma once
 #include "offsets.h"
 #include <windows.h>
-#include "Hook.h"
+#include "Hooking/Hook.hpp"
 #include <queue>
 
 inline std::queue<std::function<void()>> MainThreadQueue;

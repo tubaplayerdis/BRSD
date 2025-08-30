@@ -5,7 +5,10 @@
 
 GUI_MENU(main_menu, []() -> void
 {
-	ImGui::Begin("Window A");
-	ImGui::Text("This is the first window!");
-	ImGui::End();
+	ImGui::SetNextWindowSize(ImVec2(800, 600), ImGuiCond_Appearing);
+	if (ImGui::Begin("Brick Rigs Server Director"))
+	{
+		ImGui::Text("This is the first window!");
+		ImGui::End();
+	}
 });

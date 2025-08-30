@@ -10,9 +10,9 @@ class gui_manager
 {
 public:
 	gui_manager();
-	~gui_manager();
 
 	static gui_manager* get();
+	static void shutdown();
 
 	void add_menu(gui_menu* menu);
 	void remove_menu(gui_menu* menu);

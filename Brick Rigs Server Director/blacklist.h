@@ -12,11 +12,10 @@
 
 #pragma once
 #include "Module.h"
-#include "Function.h"
 #include "offsets.h"
 #include <vector>
 #include <string>
-#include <SDK.hpp>
+#include <BR-SDK.hpp>
 
 struct FFloat16
 {

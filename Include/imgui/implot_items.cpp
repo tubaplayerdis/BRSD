@@ -1,3 +1,4 @@
+#include <windows.h>
 // MIT License
 
 // Copyright (c) 2023 Evan Pezent

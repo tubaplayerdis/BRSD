@@ -12,7 +12,7 @@
 
 #pragma once
 #include "offsets.h"
-#include <SDK.hpp>
+#include <BR-SDK.hpp>
 #include <windows.h>
 #include <vector>
 #include <string>
@@ -21,7 +21,6 @@
 #include "interpreter.h"
 #include "moderation.h"
 #include "global.h"
-#include "Hook.h"
 
 namespace hooks
 {

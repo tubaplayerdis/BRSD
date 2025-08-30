@@ -2,7 +2,7 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     watermark.h		                                          */
+/*    Module:     FBrickChatMessage.h                                         */
 /*    Author:     Aaron Wilk                                                  */
 /*    Created:    24 June 2025                                                */
 /*                                                                            */
@@ -11,14 +11,10 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include <BR-SDK.hpp>
+#include <SDK.hpp>
 
-namespace watermark
+namespace FBrickChatMessage
 {
-	inline SDK::UCanvasPanel* panel = nullptr;
-	inline SDK::UBrickBorder* TextBorder = nullptr;
-	bool InitalizeWaterMark();
-	void ShowWaterMark();
-	void HideWaterWark();
-	void UnInitalizeWaterMark();
+	//Use this by passing a valid structure created with the default constructor. The last player controller is the intended recipiet of the message.
+	void FBrickChatMessageConstructor(SDK::FBrickChatMessage* This, SDK::EChatMessageType ChatType, SDK::ABrickPlayerController* PC);
 }

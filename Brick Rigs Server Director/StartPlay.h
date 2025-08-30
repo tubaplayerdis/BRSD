@@ -13,9 +13,8 @@
 #pragma once
 #include "offsets.h"
 #include <windows.h>
-#include <SDK.hpp>
+#include <BR-SDK.hpp>
 #include "global.h"
-#include "Hook.h"
 
 namespace hooks
 {

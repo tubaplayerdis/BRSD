@@ -13,10 +13,7 @@
 #pragma once
 #include "offsets.h"
 #include <windows.h>
-#include <SDK.hpp>
-#include "watermark.h"
-#include "obutton.h"
-#include "Hook.h"
+#include <BR-SDK.hpp>
 #include "Elevator.h"
 
 namespace hooks
@@ -31,14 +28,12 @@ namespace hooks
         static void __fastcall HookedFunction(SDK::UMenuWidget* This, SDK::FName InMenu)
         {
             S_OpenMenu->OriginalFunction(This, InMenu);
-            obutton::CurrentButtonRef = nullptr;//gets set my AddToButtonMenu. if this is not set to nullptr it will cause odd behavior
             Elevator::Get()->NullifyRefrence();
             Sleep(10);
             if (!This) return;
             if (InMenu.GetRawString().c_str() == nullptr) return;
             if (InMenu.GetRawString() == "InGameMenu") {
                 watermark::ShowWaterMark();
-                obutton::AddToButtonMenu();
             }
             else if (InMenu.GetRawString() == "Players") {
                 Elevator::Get()->CreateButton();

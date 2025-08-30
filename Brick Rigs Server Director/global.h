@@ -15,8 +15,7 @@
 #include <Psapi.h>
 #include <string>
 #include "PlayerInfo.h"
-#include <SDK.hpp>
-#include <SDK/Engine_classes.hpp>
+#include <BR-SDK.hpp>
 
 #define STRING(string) UC::FString(string)
 #define NAME(text) SDK::UKismetStringLibrary::Conv_StringToName(SDK::FString(text))

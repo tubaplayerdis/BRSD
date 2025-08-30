@@ -16,6 +16,8 @@
 #include "global.h"
 #include <string>
 
+#undef SpawnObject
+
 bool watermark::InitalizeWaterMark()
 {
 	//Basic Init
