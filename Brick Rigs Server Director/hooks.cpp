@@ -98,7 +98,6 @@ void hooks::DestroyHookObjects()
 	DestroyHook(S_StartPlay);
 	DestroyHook(S_LoadMap);
 	DestroyHook(S_RestartPlayerAt);
-	Elevator::Get()->DestroyHooks();
 }
 
 void hooks::OpenCrashFile()

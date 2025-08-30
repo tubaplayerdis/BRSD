@@ -26,11 +26,6 @@
 /// @param ... Arguments to pass
 #define CALL_GAME_FUNCTION(addr, sig, ...) ( (reinterpret_cast<sig>(addr))(__VA_ARGS__) )
 
-// addr: numeric address or pointer
-// sig : function signature, e.g. void(bool,int)
-// ... : arguments to call with
-#define CALL_FUNCTION(addr, sig, ...) ( (reinterpret_cast<sig>(addr))(__VA_ARGS__) )
-
 /// Call an internal game function using its address.
 /// @tparam TRet Return type of the function
 /// @tparam TArgs Argument types of the function

@@ -14023,8 +14023,7 @@ class UScoreboardWidget : public UUserWidget
 {
 public:
 	TArray<class UScoreboardTeamWidget*>          TeamWidgets;                                       // 0x0260(0x0010)(ExportObject, ZeroConstructor, Transient, ContainsInstancedReference, NativeAccessSpecifierPrivate)
-	TWeakObjectPtr<ABrickPlayerState>			  SelectedPlayerState;
-	FGenericTeamId								  OwnTeam;
+	uint8                                         Pad_270[0x10];                                     // 0x0270(0x0010)(Fixing Size After Last Property [ Dumper-7 ])
 	class UBrickGridPanel*                        TeamsPanel;                                        // 0x0280(0x0008)(BlueprintVisible, ExportObject, BlueprintReadOnly, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, Protected, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TSubclassOf<class UScoreboardTeamWidget>      TeamWidgetClass;                                   // 0x0288(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)
 	TSubclassOf<class UScoreboardPlayerWidget>    PlayerWidgetClass;                                 // 0x0290(0x0008)(Edit, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor, Protected, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierProtected)

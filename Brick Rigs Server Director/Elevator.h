@@ -12,8 +12,9 @@ enum ElevatorButtons
 
 class Elevator : public Module
 {
-	Elevator();
 public:
+	Elevator();
+
 	void CreateMenu();
 	void RemoveMenu();
 

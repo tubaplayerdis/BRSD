@@ -28,7 +28,6 @@ namespace hooks
         static void __fastcall HookedFunction(SDK::UMenuWidget* This, SDK::FName InMenu)
         {
             S_OpenMenu->OriginalFunction(This, InMenu);
-            Elevator::Get()->NullifyRefrence();
             Sleep(10);
             if (!This) return;
             if (InMenu.GetRawString().c_str() == nullptr) return;
@@ -36,7 +35,6 @@ namespace hooks
                 watermark::ShowWaterMark();
             }
             else if (InMenu.GetRawString() == "Players") {
-                Elevator::Get()->CreateButton();
             }
             if (InMenu.GetRawString() == "None" && global::isMapValid()) watermark::HideWaterWark();
         }

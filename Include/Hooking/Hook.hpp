@@ -158,6 +158,9 @@ public:
 	/// Disables the Hook.
 	void Disable();
 
+	/// Destroys the Hook.
+	void Destroy();
+
 	/// Calls the original function of the Hook, bypassing the trampoline
 	/// @param args Args of the function as defined in the Hook objects template signature
 	/// @return The return type defined in the Hook objects template signature
@@ -254,7 +257,7 @@ template<typename Ret, typename ...Args>
 Hook<Ret(Args...)>::~Hook()
 {
 	Disable();
-	MH_RemoveHook((LPVOID)FunctionPointer);
+	Destroy();
 	OriginalFunction = nullptr;
 }
 
@@ -307,10 +310,19 @@ inline void Hook<Ret(Args...)>::Enable()
 template<typename Ret, typename ...Args>
 inline void Hook<Ret(Args...)>::Disable()
 {
-	if (!initialized) Create();
 	if (!initialized || !enabled) return;
 	MH_QueueDisableHook((LPVOID)FunctionPointer);
 	MH_ApplyQueued();
+	enabled = false;
+}
+
+template<typename Ret, typename ...Args>
+inline void Hook<Ret(Args...)>::Destroy()
+{
+	if (!initialized) return;
+	if (!enabled) Disable();
+	MH_RemoveHook((LPVOID)FunctionPointer);
+	initialized = false;
 	enabled = false;
 }
 
