@@ -15,9 +15,12 @@
 #include "PlayerInfo.h"
 #include <string>
 #include <vector>
+#include <cstdarg>
 
 namespace interpreter
 {
+	extern bool is_enabled;
+
 	namespace Commands
 	{
 		//Management
@@ -44,6 +47,8 @@ namespace interpreter
 
 		namespace Moderation
 		{
+			void ToggleMute_S(PlayerInfo info, std::string arg, bool on_off);
+			void ToggleBlock_S(PlayerInfo info, std::string arg, bool on_off);
 			void ToggleMute(PlayerInfo info, std::string originalMessage, bool on_of);
 			void ToggleBlock(PlayerInfo info, std::string originalMessage, bool on_off);
 			void ToggleSilence(PlayerInfo info, bool on_off);

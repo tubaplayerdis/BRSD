@@ -57,7 +57,7 @@ void MainLoop()
 
 	watermark::InitalizeWaterMark();
 
-	main_menu->display();
+	menus::main_menu->display();
 
 	if (IsHost()) welcome::SendWelcomeMessage();
 
@@ -74,15 +74,12 @@ void MainLoop()
 		if (UninjectPress() || doUninject) break;
 
 		if (TogglePress()) {
-			if (hooks::S_AddChatMessage->IsEnabled()) {
-				hooks::S_AddChatMessage->Disable();
-				LOG("Disabled Chat Commands");
-				SendNotificationLocal(L"Disabled Chat Commands!", 1); //Explore the icon atlas more
+			gui_manager* manager = gui_manager::get();
+			if (manager->are_all_hidden()) {
+				manager->display_all_previous();
 			}
 			else {
-				hooks::S_AddChatMessage->Enable();
-				LOG("Enabled Chat Commands");
-				SendNotificationLocal(L"Enabled Chat Commands!", 0);
+				manager->hide_all();
 			}
 		}
 

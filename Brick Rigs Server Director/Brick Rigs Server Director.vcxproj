@@ -152,10 +152,16 @@
     <ClCompile Include="..\Include\imgui\imgui_widgets.cpp" />
     <ClCompile Include="..\Include\imgui\implot.cpp" />
     <ClCompile Include="..\Include\imgui\implot_items.cpp" />
+    <ClCompile Include="command_engine_menu.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Elevator.cpp" />
+    <ClCompile Include="enviroment_commands.cpp" />
     <ClCompile Include="gui_manager.cpp" />
     <ClCompile Include="kiero.cpp" />
+    <ClCompile Include="main_commands.cpp" />
+    <ClCompile Include="main_menu.cpp" />
+    <ClCompile Include="master_commands.cpp" />
+    <ClCompile Include="moderation_commands.cpp" />
     <ClCompile Include="Module.cpp" />
     <ClCompile Include="global.cpp" />
     <ClCompile Include="hooks.cpp" />
@@ -163,13 +169,17 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="messages.cpp" />
     <ClCompile Include="moderation.cpp" />
+    <ClCompile Include="movement_commands.cpp" />
     <ClCompile Include="uibase.cpp" />
     <ClCompile Include="watermark.cpp" />
+    <ClCompile Include="weapons_commands.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="actorutils.h" />
     <ClInclude Include="AddChatMessage.h" />
     <ClInclude Include="Blacklist.h" />
+    <ClInclude Include="commands.h" />
+    <ClInclude Include="command_engine_menu.h" />
     <ClInclude Include="DrawTransition.h" />
     <ClInclude Include="Elevator.h" />
     <ClInclude Include="gui_manager.h" />

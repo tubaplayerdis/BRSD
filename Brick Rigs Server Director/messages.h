@@ -53,4 +53,10 @@ namespace messages
 	/// </summary>
 	/// <param name="message">The message to be sent to the host as an administrator.</param>
 	void sendMessageAdmin(std::string message);
+
+	/// <summary>
+	/// Sends a message to the admins as the administrator.
+	/// </summary>
+	/// <param name="message">The message to be sent to the admins as an administrator.</param>
+	void sendMessageToAdmins(std::string message);
 }

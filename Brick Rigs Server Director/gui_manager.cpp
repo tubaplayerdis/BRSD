@@ -16,6 +16,8 @@
 #include <vector>
 #include <memory>
 #include <iostream>
+#include <mutex>
+#include <shared_mutex>
 
 // ------------------------------------------------------------
 // Typedefs
@@ -35,6 +37,8 @@ static ID3D11DeviceContext* pContext = nullptr;
 static ID3D11RenderTargetView* mainRenderTargetView = nullptr;
 
 static std::vector<gui_menu*> menus;
+static std::shared_mutex menus_mutex;
+static std::vector<gui_menu*> prev_menus = std::vector<gui_menu*>();
 static std::unique_ptr<gui_manager> manager = nullptr;
 
 // ------------------------------------------------------------
@@ -92,9 +96,10 @@ HRESULT __stdcall hooked_present(IDXGISwapChain* pSwapChain, UINT SyncInterval, 
     ImGui::NewFrame();
 
     // Render all registered menus
+    std::shared_lock<std::shared_mutex> lock(menus_mutex);
     for (gui_menu* menu : menus)
     {
-        if (menu)
+        if (menu && menu->is_visible)
             menu->menu();
     }
 
@@ -120,7 +125,7 @@ gui_manager::gui_manager()
 gui_manager* gui_manager::get()
 {
     if (!manager)
-        manager = std::make_unique<gui_manager>();
+        manager = std::unique_ptr<gui_manager>(new gui_manager());
     return manager.get();
 }
 
@@ -149,6 +154,7 @@ void gui_manager::shutdown()
 
 void gui_manager::remove_menu(gui_menu* menu)
 {
+    std::unique_lock<std::shared_mutex> lock(menus_mutex);
     for (size_t i = 0; i < menus.size(); i++)
     {
         if (menus[i] == menu)
@@ -159,7 +165,35 @@ void gui_manager::remove_menu(gui_menu* menu)
     }
 }
 
+void gui_manager::hide_all()
+{
+    std::unique_lock<std::shared_mutex> lock(menus_mutex);
+    for (gui_menu* menu : menus)
+    {
+        if (menu->is_visible) prev_menus.push_back(menu);
+        menu->is_visible = false;
+    }
+}
+
+bool gui_manager::are_all_hidden()
+{
+    return prev_menus.size() > 0;
+}
+
+void gui_manager::display_all_previous()
+{
+    for (gui_menu* menu : prev_menus)
+    {
+        menu->is_visible = true;
+    }
+    prev_menus.clear();
+}
+
 void gui_manager::add_menu(gui_menu* menu)
 {
+    for (gui_menu* menu_itor: menus)
+    {
+        if (menu_itor == menu) return;
+    }
     menus.push_back(menu);
 }

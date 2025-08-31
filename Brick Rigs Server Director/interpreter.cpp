@@ -30,6 +30,8 @@
 #define sendMessageToAdmin(message) MessageHost(message, L"BSRD")
 #define ToFewArgs(info, commandstr, group) messages::ToFewArgs(info, commandstr, group)
 
+bool interpreter::is_enabled = true;
+
 bool interpreter::Commands::Night(PlayerInfo info)
 {
     if (!isNight) { sendUserSpecificMessageCommandFailed(info, "The /night command is currently disabled!"); RETF; }
@@ -157,6 +159,8 @@ constexpr size_t hs(const char* str) {
 
 void interpreter::interpretCommand(std::string command, std::vector<std::string> args, PlayerInfo info, std::string originalMessage)
 {
+    if (!is_enabled) return;
+
     size_t hash_val = hash_string(command);
 
     Release({
@@ -179,7 +183,7 @@ void interpreter::interpretCommand(std::string command, std::vector<std::string>
         Commands::Help(info, args[0]);
         break;
     case hs("/info"):
-        sendUserSpecificMessageWithContext(info, InfoMessage, SDK::EChatContext::Global, L"Info ABout BRSD:");
+        sendUserSpecificMessageWithContext(info, InfoMessage, SDK::EChatContext::Global, L"Info About BRSD:");
         break;
     case hs("/on"):
         if (args.size() < 1) { ToFewArgs(info, "/on", "moderation"); break; }
@@ -528,6 +532,46 @@ void interpreter::Commands::Uninject(PlayerInfo info)
 * zoom
 * slomo
 */
+
+void interpreter::Commands::Moderation::ToggleMute_S(PlayerInfo info, std::string arg, bool on_off)
+{
+    using namespace moderation;
+    if (!GetIsPlayerAdminFromName(info.name)) { sendUserSpecificMessageCommandFailed(info, "Only admins can use this command!"); return; }
+    std::string input = arg;
+    SDK::ABrickPlayerController* controller = nullptr;
+    controller = GetBrickPlayerControllerFromName(input);
+    if (!controller) controller = GetBrickPlayerControllerFromID(input);
+    if (!controller) { sendUserSpecificMessageCommandFailed(info, "The user you wanted to mute was not found!"); return; }
+    PlayerInfo other = GetPlayerInfoFromController(controller);
+    if (info == other) { sendUserSpecificMessageCommandFailed(info, "You cannot mute yourself!"); return; }
+    if (on_off) {
+        if (!AddMutedPlayer(other)) sendUserSpecificMessageWithContext(info, other.name + " is already muted!", SDK::EChatContext::Admin, L"Admin");
+        else sendUserSpecificMessageWithContext(info, std::string("Successfully Muted: ") + other.name, SDK::EChatContext::Admin, L"Admin");
+    }
+    else {
+        if (!RemoveMutedPlayer(other)) sendUserSpecificMessageWithContext(info, other.name + "is already unmuted", SDK::EChatContext::Admin, L"Admin");
+        else sendUserSpecificMessageWithContext(info, std::string("Successfully Unmuted: ") + other.name, SDK::EChatContext::Admin, L"Admin");
+    }
+}
+
+void interpreter::Commands::Moderation::ToggleBlock_S(PlayerInfo info, std::string arg, bool on_off)
+{
+    using namespace moderation;
+    std::string input = arg;
+    SDK::ABrickPlayerController* controller = nullptr;
+    controller = GetBrickPlayerControllerFromName(input);
+    if (!controller) controller = GetBrickPlayerControllerFromID(input);
+    if (!controller) { sendUserSpecificMessageCommandFailed(info, "The user you wanted to block was not found!"); return; }
+    PlayerInfo other = GetPlayerInfoFromController(controller);
+    if (on_off) {
+        if (!AddBlockedPlayer(BlockedPlayer(info, other))) sendUserSpecificMessageWithContext(info, std::string("You have already blocked: ") + other.name, SDK::EChatContext::Admin, L"Admin");
+        else sendUserSpecificMessageWithContext(info, std::string("Successfully Blocked: ") + other.name, SDK::EChatContext::Admin, L"Admin");
+    }
+    else {
+        if (!RemoveBlockedPlayer(BlockedPlayer(info, other)))  sendUserSpecificMessageWithContext(info, std::string("You have already unblocked: ") + other.name, SDK::EChatContext::Admin, L"Admin");
+        else sendUserSpecificMessageWithContext(info, std::string("Successfully Unblocked: ") + other.name, SDK::EChatContext::Admin, L"Admin");
+    }
+}
 
 void interpreter::Commands::Moderation::ToggleMute(PlayerInfo info, std::string originalMessage, bool on_off)
 {

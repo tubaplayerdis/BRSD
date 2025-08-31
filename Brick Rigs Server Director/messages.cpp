@@ -71,3 +71,15 @@ void messages::sendMessageAdmin(std::string message)
     if (!global::isMapValid()) return;
     sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), message, SDK::EChatContext::Admin, BRSD);
 }
+
+void messages::sendMessageToAdmins(std::string message)
+{
+    if (!global::isMapValid()) return;
+    for (SDK::APlayerState* astate : GetBrickGameState()->PlayerArray)
+    {
+        SDK::ABrickPlayerState* state = static_cast<SDK::ABrickPlayerState*>(astate);
+        if (!state->bIsAdmin) continue;
+        PlayerInfo info = PlayerInfo(state->PlayerNamePrivate.ToString());
+        sendUserSpecificMessageWithContext(info, message, SDK::EChatContext::Admin, BRSD);
+    }
+}
