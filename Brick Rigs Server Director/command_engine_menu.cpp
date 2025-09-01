@@ -48,12 +48,12 @@ void command_engine_menu_function()
 
                     if (command->togglable)
                     {
-                        ImGui::Checkbox(command->GetDisplayString(), &command->enabled);
+                        ImGui::Checkbox(command->display_string.c_str(), &command->enabled);
                     }
                     else
                     {
                         ImGui::BeginDisabled();
-                        ImGui::Checkbox(command->GetDisplayString(), &checked);
+                        ImGui::Checkbox(command->display_string.c_str(), &checked);
                         ImGui::EndDisabled();
                     }
 
@@ -78,12 +78,12 @@ void command_engine_menu_function()
 
                     if (command->togglable)
                     {
-                        ImGui::Checkbox(command->GetDisplayString(), &command->enabled);
+                        ImGui::Checkbox(command->display_string.c_str(), &command->enabled);
                     }
                     else
                     {
                         ImGui::BeginDisabled();
-                        ImGui::Checkbox(command->GetDisplayString(), &checked);
+                        ImGui::Checkbox(command->display_string.c_str(), &checked);
                         ImGui::EndDisabled();
                     }
 
@@ -108,12 +108,12 @@ void command_engine_menu_function()
 
                     if (command->togglable)
                     {
-                        ImGui::Checkbox(command->GetDisplayString(), &command->enabled);
+                        ImGui::Checkbox(command->display_string.c_str(), &command->enabled);
                     }
                     else
                     {
                         ImGui::BeginDisabled();
-                        ImGui::Checkbox(command->GetDisplayString(), &checked);
+                        ImGui::Checkbox(command->display_string.c_str(), &checked);
                         ImGui::EndDisabled();
                     }
 
@@ -138,12 +138,12 @@ void command_engine_menu_function()
 
                     if (command->togglable)
                     {
-                        ImGui::Checkbox(command->GetDisplayString(), &command->enabled);
+                        ImGui::Checkbox(command->display_string.c_str(), &command->enabled);
                     }
                     else
                     {
                         ImGui::BeginDisabled();
-                        ImGui::Checkbox(command->GetDisplayString(), &checked);
+                        ImGui::Checkbox(command->display_string.c_str(), &checked);
                         ImGui::EndDisabled();
                     }
 
@@ -168,12 +168,12 @@ void command_engine_menu_function()
 
                     if (command->togglable)
                     {
-                        ImGui::Checkbox(command->GetDisplayString(), &command->enabled);
+                        ImGui::Checkbox(command->display_string.c_str(), &command->enabled);
                     }
                     else
                     {
                         ImGui::BeginDisabled();
-                        ImGui::Checkbox(command->GetDisplayString(), &checked);
+                        ImGui::Checkbox(command->display_string.c_str(), &checked);
                         ImGui::EndDisabled();
                     }
 
@@ -198,12 +198,12 @@ void command_engine_menu_function()
 
                     if (command->togglable)
                     {
-                        ImGui::Checkbox(command->GetDisplayString(), &command->enabled);
+                        ImGui::Checkbox(command->display_string.c_str(), &command->enabled);
                     }
                     else
                     {
                         ImGui::BeginDisabled();
-                        ImGui::Checkbox(command->GetDisplayString(), &checked);
+                        ImGui::Checkbox(command->display_string.c_str(), &checked);
                         ImGui::EndDisabled();
                     }
 

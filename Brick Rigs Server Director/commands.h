@@ -35,6 +35,7 @@ struct Command
 	const bool togglable; //Whether the command can be turned off
 	bool enabled;
 	bool(*function)(PlayerInfo, std::vector<std::string> args);
+	std::string display_string;
 
 	Command(ECommandGroup group, std::string Name, std::string About, bool admin, bool Toggleable, bool(*Function)(PlayerInfo, std::vector<std::string> args)) :
 		name(Name),
@@ -46,19 +47,15 @@ struct Command
 	{
 		enabled = true;
 		command_registry.push_back(this);
+		display_string = Name;
+		display_string.append(" - ");
+		display_string.append(About);;
 	}
 
 	bool Execute(PlayerInfo info, std::vector<std::string> args)
 	{
 		if (!enabled) return false;
 		return function(info, args);
-	}
-
-	const char* GetDisplayString()
-	{
-		std::stringstream ret;
-		ret << name << " - " << about;
-		return ret.str().c_str();
 	}
 };
 
