@@ -20,6 +20,7 @@
 #include "PlayerInfo.h"
 #include "main.h"
 #include "moderation.h"
+#include "commands.h"
 
 #define MIF(cond, info, message) (cond ? sendUserSpecificMessage(info, message) : (void)0)
 
@@ -159,8 +160,6 @@ constexpr size_t hs(const char* str) {
 
 void interpreter::interpretCommand(std::string command, std::vector<std::string> args, PlayerInfo info, std::string originalMessage)
 {
-    if (!is_enabled) return;
-
     size_t hash_val = hash_string(command);
 
     Release({
@@ -171,104 +170,25 @@ void interpreter::interpretCommand(std::string command, std::vector<std::string>
         std::cout << std::endl;
     });
 
-    switch (hash_val) {
-    case hs("/uninject"):
-        Commands::Uninject(info);
-        break;
-    case hs("/help"):
-        if (args.size() < 1) {
-            Commands::Help(info, "master");
-            break;
+    for (Command* _command : Command::command_registry)
+    {
+        std::string command_no_slash = command.substr(1);
+        if (_command && _command->name == command_no_slash)
+        {
+            if (!is_enabled && _command->admin_only)
+            {
+                _command->Execute(info, args);
+                return;
+            }
+
+            if (!is_enabled) return;
+
+            _command->Execute(info, args);
+            return;
         }
-        Commands::Help(info, args[0]);
-        break;
-    case hs("/info"):
-        sendUserSpecificMessageWithContext(info, InfoMessage, SDK::EChatContext::Global, L"Info About BRSD:");
-        break;
-    case hs("/on"):
-        if (args.size() < 1) { ToFewArgs(info, "/on", "moderation"); break; }
-        Commands::Toggle(info, args[0], true);
-        break;
-    case hs("/off"):
-        if (args.size() < 1) { ToFewArgs(info, "/off", "moderation"); break; }
-        Commands::Toggle(info, args[0], false);
-        break;
-    case hs("/night"):
-        MIF(Commands::Night(info), info, "Set the time to night!");
-        break;
-    case hs("/day"):
-        MIF(Commands::Day(info), info, "Set the time to day!");
-        break;
-    case hs("/rain"):
-        MIF(Commands::Rain(info), info, "Set the weather to rain!");
-        break;
-    case hs("/sun"):
-        MIF(Commands::Sun(info), info, "Set the weather to sunny!");
-        break;
-    case hs("/fly"):
-        MIF(Commands::Fly(info), info, "You feel lighter...");
-        break;
-    case hs("/walk"):
-        MIF(Commands::Walk(info), info, "Your feet are heavy...");
-        break;
-    case hs("/pm"):
-        Commands::PersonalMessage(info, originalMessage);
-        break;
-    case hs("/mute"):
-        if (args.size() < 1) { ToFewArgs(info, "/mute", "moderation"); break; }
-        Commands::Moderation::ToggleMute(info, originalMessage, true);
-        break;
-    case hs("/unmute"):
-        if (args.size() < 1) { ToFewArgs(info, "/unmute", "moderation"); break; }
-        Commands::Moderation::ToggleMute(info, originalMessage, false);
-        break;
-    case hs("/silence"):
-        Commands::Moderation::ToggleSilence(info, true);
-        break;
-    case hs("/unsilence"):
-        Commands::Moderation::ToggleSilence(info, false);
-        break;
-    case hs("/block"):
-        if (args.size() < 1) { ToFewArgs(info, "/block", "main"); break; }
-        Commands::Moderation::ToggleBlock(info, originalMessage, true);
-        break;
-    case hs("/unblock"):
-        if (args.size() < 1) { ToFewArgs(info, "/unblock", "main"); break; }
-        Commands::Moderation::ToggleBlock(info, originalMessage, false);
-        break;
-    case hs("/ghost"):
-        MIF(Commands::Ghost(info), info, "Set the movement mode to ghost!");
-        break;
-    case hs("/save"):
-        Commands::Moderation::Save(info);
-        break;
-    case hs("/load"):
-        Commands::Moderation::Load(info);
-        break;
-    case hs("/blocked"):
-        Commands::Moderation::ListBlocked(info);
-        break;
-    case hs("/muted"):
-        Commands::Moderation::ListMuted(info);
-        break;
-    case hs("/silenced"):
-        Commands::Moderation::IsOnSilence(info);
-        break;
-    case hs("/pid"):
-        Commands::Moderation::ListPlayerIDS(info);
-        break;
-    case hs("/ammotype"):
-        if (args.size() < 1) { ToFewArgs(info, "/ammotype", "weapons"); break; }
-        MIF(Commands::AmmoType(info, args[0]), info, "Changed ammo type on your active weapon to: " + getAmmoTypeString(args[0]));
-        break;
-    case hs("/tp"):
-        if (args.size() < 1) { ToFewArgs(info, "/tp", "movement"); break; }
-        MIF(Commands::Teleport(info, args[0]), info, "Teleported to: " + GetPlayerNameFromIDORName(args[0]));
-        break;
-    default:
-        sendUserSpecificMessageCommandFailed(info, "The command: " + command + " was not found! Use /help to view all commands!");
-        break;
     }
+
+    sendUserSpecificMessageCommandFailed(info, "The command: " + command + " was not found! Use /help to view all commands!");
 }
 
 std::string interpreter::getAmmoTypeString(std::string ammotype)

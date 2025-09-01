@@ -1,4 +1,4 @@
-#include "command_engine_menu.h"
+#include "menus.h"
 #include "interpreter.h"
 #include "messages.h"
 #include "commands.h"
@@ -9,15 +9,30 @@ constexpr int COMMAND_ENGINE_MENU_HEIGHT = 200;
 
 bool checked = true;
 
+std::vector<Command*> cashed_vector = std::vector<Command*>();
+
+void custom_toggle_command_engine(bool toggle)
+{
+    if (toggle) //going to be turned on
+    {
+        cashed_vector.clear();
+
+        for (Command* command : Command::command_registry)
+        {
+            cashed_vector.push_back(command);
+        }
+    }
+}
+
 void command_engine_menu_function()
 {
 	ImGui::SetNextWindowSize(ImVec2(COMMAND_ENGINE_MENU_WIDTH, COMMAND_ENGINE_MENU_HEIGHT), ImGuiCond_Appearing);
 	ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 5.0f); // round window
 	if (ImGui::Begin("Command Engine"))
 	{
-		if(ImGui::Checkbox("Enabled", &interpreter::is_enabled))
+		if(ImGui::Checkbox("Commands Enabled", &interpreter::is_enabled))
 		{
-			if (interpreter::is_enabled)
+			if (!interpreter::is_enabled)
 			{
 				messages::sendMessageToAdmins("Chat commands were disabled");
 			}
@@ -26,6 +41,8 @@ void command_engine_menu_function()
 				messages::sendMessageToAdmins("Chat commands were enabled");
 			}
 		}
+
+        ImGui::Text("*Admin only commands can still be used when commands are disabled");
 
         ImGui::Separator();
 
@@ -37,7 +54,7 @@ void command_engine_menu_function()
 
             if (ImGui::TreeNode("Master"))
             {
-                for (Command* command : Command::command_registry)
+                for (Command* command : cashed_vector)
                 {
                     if (command->command_group != Master) continue;
 
@@ -67,7 +84,7 @@ void command_engine_menu_function()
 
             if (ImGui::TreeNode("Main"))
             {
-                for (Command* command : Command::command_registry)
+                for (Command* command : cashed_vector)
                 {
                     if (command->command_group != Main) continue;
 
@@ -97,7 +114,7 @@ void command_engine_menu_function()
 
             if (ImGui::TreeNode("Moderation"))
             {
-                for (Command* command : Command::command_registry)
+                for (Command* command : cashed_vector)
                 {
                     if (command->command_group != Moderation) continue;
 
@@ -127,7 +144,7 @@ void command_engine_menu_function()
 
             if (ImGui::TreeNode("Movement"))
             {
-                for (Command* command : Command::command_registry)
+                for (Command* command : cashed_vector)
                 {
                     if (command->command_group != Movement) continue;
 
@@ -157,7 +174,7 @@ void command_engine_menu_function()
 
             if (ImGui::TreeNode("Enviroment"))
             {
-                for (Command* command : Command::command_registry)
+                for (Command* command : cashed_vector)
                 {
                     if (command->command_group != Enviroment) continue;
 
@@ -187,7 +204,7 @@ void command_engine_menu_function()
 
             if (ImGui::TreeNode("Weapons"))
             {
-                for (Command* command : Command::command_registry)
+                for (Command* command : cashed_vector)
                 {
                     if (command->command_group != Weapons) continue;
 
@@ -222,4 +239,4 @@ void command_engine_menu_function()
     ImGui::PopStyleVar();
 }
 
-DEFINE_GUI_MENU(menus::command_engine_menu, command_engine_menu_function);
+DEFINE_GUI_MENU(menus::command_engine_menu, command_engine_menu_function, custom_toggle_command_engine);

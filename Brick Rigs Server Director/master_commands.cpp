@@ -1,12 +1,17 @@
 #include "commands.h"
 
-COMMAND_IMMUTABLE(Master, info, "Info about BRCE", [](PlayerInfo info, std::vector<std::string>) -> bool {
+COMMAND_IMMUTABLE(Master, info, "Info about BRSD", [](PlayerInfo info, std::vector<std::string>) -> bool {
 	messages::sendUserSpecificMessageWithContext(info, InfoMessage, SDK::EChatContext::Global, L"Info About BRSD:");
 	return true;
 });
 
 COMMAND_IMMUTABLE(Master, help, "Command Lists", [](PlayerInfo info, std::vector<std::string> args) -> bool {
-	if (args.size() < 1) return false;
+	if (args.size() < 1) { messages::ToFewArgs(info, "/help", Command::get_command_string(Master)); return false; }
 	interpreter::Commands::Help(info, args[0]);
 	return true;
 });
+
+COMMAND_ADMIN_IMMUTABLE(Master, uninject, "Uninjects BRSD", [](PlayerInfo info, std::vector<std::string> args) -> bool {
+	interpreter::Commands::Uninject(info);
+	return true;
+})

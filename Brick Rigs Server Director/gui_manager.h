@@ -2,7 +2,7 @@
 #include <memory>
 
 #define DECLARE_GUI_MENU(name) extern std::unique_ptr<gui_menu> name;
-#define DEFINE_GUI_MENU(name, lamb) std::unique_ptr<gui_menu> name = std::make_unique<gui_menu>(lamb);
+#define DEFINE_GUI_MENU(name, lamb, ...) std::unique_ptr<gui_menu> name = std::make_unique<gui_menu>(lamb, __VA_ARGS__);
 
 struct gui_menu;
 
@@ -28,16 +28,19 @@ public:
 struct gui_menu
 {
 	void(*menu)();
+	void(*custom_toggle)(bool);
 	bool is_visible;
 
-	gui_menu(void(*in_menu)())
+	gui_menu(void(*in_menu)(), void(*in_custom_toggle)(bool) = nullptr)
 	{
 		menu = in_menu;
 		is_visible = false;
+		custom_toggle = in_custom_toggle;
 	}
 
 	void toggle()
 	{
+		if (custom_toggle != nullptr) custom_toggle(!is_visible);
 		gui_manager::get()->add_menu(this);
 		is_visible = !is_visible;
 	}

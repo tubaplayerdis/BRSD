@@ -1,5 +1,4 @@
-#include "main_menu.h"
-#include "command_engine_menu.h"
+#include "menus.h"
 #include <imgui/imgui.h>
 
 #ifdef _DEBUG
