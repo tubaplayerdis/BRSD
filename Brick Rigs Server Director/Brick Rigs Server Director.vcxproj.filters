@@ -183,6 +183,9 @@
     <ClCompile Include="weapons_commands.cpp">
       <Filter>Source Files\modules\commands</Filter>
     </ClCompile>
+    <ClCompile Include="moderation_menu.cpp">
+      <Filter>Source Files\gui\menus</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main.h">

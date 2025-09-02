@@ -162,6 +162,7 @@
     <ClCompile Include="main_menu.cpp" />
     <ClCompile Include="master_commands.cpp" />
     <ClCompile Include="moderation_commands.cpp" />
+    <ClCompile Include="moderation_menu.cpp" />
     <ClCompile Include="Module.cpp" />
     <ClCompile Include="global.cpp" />
     <ClCompile Include="hooks.cpp" />
