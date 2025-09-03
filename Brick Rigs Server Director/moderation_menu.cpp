@@ -44,20 +44,21 @@ void moderation_menu_function()
         ImGui::BeginChild("players view", ImVec2(0, -ImGui::GetFrameHeightWithSpacing())); // Leave room for 1 line below us
         ImGui::Text("%s", player_states[selected]->GetPlayerName().ToString().c_str());
         ImGui::Separator();
-        if (ImGui::BeginTabBar("##Tabs", ImGuiTabBarFlags_None))
+
         {
-            if (ImGui::BeginTabItem("Description"))
-            {
-                ImGui::TextWrapped("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ");
-                ImGui::EndTabItem();
-            }
-            if (ImGui::BeginTabItem("Details"))
-            {
-                ImGui::Text("ID: 0123456789");
-                ImGui::EndTabItem();
-            }
-            ImGui::EndTabBar();
+            SDK::ABrickPlayerState* current = player_states[selected];
+            SDK::FString input_string = SDK::FString();
+            SDK::FString* net_id = CallGameFunction<SDK::FString*, SDK::FUniqueNetIdRepl*, SDK::FString*>(BASE + 0x0815AF0, &current->UniqueId, &input_string);
+            ImGui::Text("SteamID: %s", input_string.ToString().c_str());
+
+            bool is_host = current->Ping == 0;
+
+            ImGui::BeginDisabled();
+            ImGui::Checkbox("Is Host", &is_host);
+            ImGui::EndDisabled();
         }
+
+
         ImGui::EndChild();
         if (ImGui::Button("Revert")) {}
         ImGui::SameLine();
