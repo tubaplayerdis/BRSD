@@ -45,24 +45,77 @@ void moderation_menu_function()
         ImGui::Text("%s", player_states[selected]->GetPlayerName().ToString().c_str());
         ImGui::Separator();
 
+        SDK::ABrickPlayerState* current = player_states[selected];
+
         {
-            SDK::ABrickPlayerState* current = player_states[selected];
             SDK::FString input_string = SDK::FString();
             SDK::FString* net_id = CallGameFunction<SDK::FString*, SDK::FUniqueNetIdRepl*, SDK::FString*>(BASE + 0x0815AF0, &current->UniqueId, &input_string);
             ImGui::Text("SteamID: %s", input_string.ToString().c_str());
 
             bool is_host = current->Ping == 0;
+            bool is_admin = current->bIsAdmin;
+            bool is_team_leader = current->bIsTeamLeader;
+            float money = current->Money;
+            int kills = current->Kills;
+            int deaths = current->Deaths;
 
             ImGui::BeginDisabled();
             ImGui::Checkbox("Is Host", &is_host);
             ImGui::EndDisabled();
+
+            if(ImGui::Checkbox("Is Admin", &is_admin))
+            {
+                if (current != GetBrickPlayerState())
+                {
+                    current->SetIsAdmin(is_admin);
+                }
+            }
+            
+            if (ImGui::Checkbox("Is Team Leader", &is_team_leader))
+            {
+                if (current != GetBrickPlayerState())
+                {
+                    current->SetIsTeamLeader(is_admin);
+                }
+            }
         }
 
 
         ImGui::EndChild();
-        if (ImGui::Button("Revert")) {}
+        if (ImGui::Button("Kill")) 
+        {
+            current->SetIsAlive(false);
+        }
         ImGui::SameLine();
-        if (ImGui::Button("Save")) {}
+        if (ImGui::Button("Revive")) 
+        {
+            current->SetIsAlive(true);
+        }
+        ImGui::SameLine();
+        if (ImGui::Button("Destroy Vehicle")) 
+        {
+            SDK::ABP_BrickVehicle_C* vehicle = static_cast<SDK::ABP_BrickVehicle_C*>(current->Owner);
+            if (vehicle)
+            {
+                static_cast<SDK::ABP_BrickCharacter_C*>(current->InactiveCharacter)->ForceEjectFromVehicle();
+                vehicle->ScrapVehicle();
+            }
+        }
+        ImGui::SameLine();
+        if (ImGui::Button("Empty Inventory")) 
+        {
+            static_cast<SDK::ABP_BrickCharacter_C*>(current->InactiveCharacter)->InventoryComponent->EmptyInventory(true);
+        }
+        ImGui::SameLine();
+        if (ImGui::Button("Teleport To Player")) 
+        {
+            GetBrickCharacter()->K2_TeleportTo(current->K2_GetActorLocation(), current->K2_GetActorRotation());
+        }
+        ImGui::SameLine();
+        if (ImGui::Button("Teleport Player To You")) 
+        {
+            current->K2_TeleportTo(GetBrickCharacter()->K2_GetActorLocation(), current->K2_GetActorRotation());
+        }
         ImGui::EndGroup();
 	}
 	ImGui::End();
