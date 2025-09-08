@@ -122,7 +122,10 @@ void moderation_menu_function()
         ImGui::SameLine();
         if (ImGui::Button("Revive")) 
         {
-            current->SetIsAlive(true);
+            SDK::FTransform transform = static_cast<SDK::ABrickPlayerController*>(current->Owner)->Character->GetTransform();
+            SDK::ABrickGameMode* game_mode = SDK::ABrickGameMode::Get(World());
+            SDK::ABrickPlayerController* controller = static_cast<SDK::ABrickPlayerController*>(current->Owner);
+            game_mode->RestartPlayerAtTransform(controller, transform);
         }
         ImGui::SameLine();
         if (ImGui::Button("Destroy Vehicle")) 
