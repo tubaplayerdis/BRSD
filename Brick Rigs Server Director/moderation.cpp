@@ -11,8 +11,16 @@
 /*----------------------------------------------------------------------------*/
 
 #include "moderation.h"
+#include "global.h"
 #include <fstream>
 #include <iostream>
+
+bool isPlayerHost(PlayerInfo info)
+{
+	auto p_cont = GetBrickPlayerControllerFromName(info.name);
+	if (!p_cont || !p_cont->PlayerState) return false;
+	return p_cont->PlayerState->Ping == 0;
+}
 
 bool moderation::isPlayerBlockedBy(PlayerInfo blocker, PlayerInfo blocked)
 {
@@ -42,7 +50,7 @@ bool moderation::isPlayerOnSilence(PlayerInfo player)
 
 bool moderation::AddMutedPlayer(PlayerInfo info)
 {
-	if (isPlayerMuted(info)) return false;
+	if (isPlayerMuted(info) || isPlayerHost(info)) return false;
 	MutedPlayers.push_back(info);
 	return true;
 }

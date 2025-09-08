@@ -2,9 +2,10 @@
 #include <BR-SDK.hpp>
 #include "global.h"
 #include "imgui/imgui.h"
+#include "moderation.h"
 
-constexpr int MODERATION_MENU_WIDTH = 350;
-constexpr int MODERATION_MENU_HEIGHT = 200;
+constexpr int MODERATION_MENU_WIDTH = 400;
+constexpr int MODERATION_MENU_HEIGHT = 250;
 
 std::vector<SDK::ABrickPlayerState*> player_states = std::vector<SDK::ABrickPlayerState*>();
 
@@ -23,6 +24,8 @@ void custom_toggle_moderation(bool toggle)
 
 void moderation_menu_function()
 {
+    using namespace ImGui;
+
 	ImGui::SetNextWindowSize(ImVec2(MODERATION_MENU_WIDTH, MODERATION_MENU_HEIGHT), ImGuiCond_Appearing);
 	ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 5.0f); // round window
 	if (ImGui::Begin("Moderation"))
@@ -42,19 +45,20 @@ void moderation_menu_function()
 
         ImGui::BeginGroup();
         ImGui::BeginChild("players view", ImVec2(0, -ImGui::GetFrameHeightWithSpacing())); // Leave room for 1 line below us
-        ImGui::Text("%s", player_states[selected]->GetPlayerName().ToString().c_str());
+        SDK::FString input_string = SDK::FString();
+        SDK::FString* net_id = CallGameFunction<SDK::FString*, SDK::FUniqueNetIdRepl*, SDK::FString*>(BASE + 0x0815AF0, &player_states[selected]->UniqueId, &input_string);
+        ImGui::Text("%s: %s", player_states[selected]->GetPlayerName().ToString().c_str(), input_string.ToString().c_str());
         ImGui::Separator();
 
         SDK::ABrickPlayerState* current = player_states[selected];
 
         {
-            SDK::FString input_string = SDK::FString();
-            SDK::FString* net_id = CallGameFunction<SDK::FString*, SDK::FUniqueNetIdRepl*, SDK::FString*>(BASE + 0x0815AF0, &current->UniqueId, &input_string);
-            ImGui::Text("SteamID: %s", input_string.ToString().c_str());
-
+            PlayerInfo info = PlayerInfo(current->GetPlayerName().ToString().c_str());
             bool is_host = current->Ping == 0;
             bool is_admin = current->bIsAdmin;
             bool is_team_leader = current->bIsTeamLeader;
+            bool is_muted = moderation::isPlayerMuted(info);
+            int player_id = current->PlayerId;
             float money = current->Money;
             int kills = current->Kills;
             int deaths = current->Deaths;
@@ -63,6 +67,8 @@ void moderation_menu_function()
             ImGui::Checkbox("Is Host", &is_host);
             ImGui::EndDisabled();
 
+            ImGui::SameLine();
+
             if(ImGui::Checkbox("Is Admin", &is_admin))
             {
                 if (current != GetBrickPlayerState())
@@ -70,6 +76,8 @@ void moderation_menu_function()
                     current->SetIsAdmin(is_admin);
                 }
             }
+
+            ImGui::SameLine();
             
             if (ImGui::Checkbox("Is Team Leader", &is_team_leader))
             {
@@ -78,13 +86,38 @@ void moderation_menu_function()
                     current->SetIsTeamLeader(is_admin);
                 }
             }
+
+            ImGui::SameLine();
+
+            if (ImGui::Checkbox("Is Muted", &is_muted))
+            {
+                if (is_muted)
+                {
+                    moderation::AddMutedPlayer(info);
+                }
+                else
+                {
+                    moderation::RemoveMutedPlayer(info);
+                }
+            }
+
+            BeginDisabled();
+
+            InputInt("Player ID", &player_id);
+            SameLine();
+            InputInt("Kills", &kills);
+            SameLine();
+            InputInt("Deaths", &deaths);
+
+            EndDisabled();
         }
 
 
         ImGui::EndChild();
         if (ImGui::Button("Kill")) 
         {
-            current->SetIsAlive(false);
+            SDK::ABrickPlayerController* controller = static_cast<SDK::ABrickPlayerController*>(current->Owner);
+            controller->KillCharacter();
         }
         ImGui::SameLine();
         if (ImGui::Button("Revive")) 
@@ -94,17 +127,19 @@ void moderation_menu_function()
         ImGui::SameLine();
         if (ImGui::Button("Destroy Vehicle")) 
         {
-            SDK::ABP_BrickVehicle_C* vehicle = static_cast<SDK::ABP_BrickVehicle_C*>(current->Owner);
-            if (vehicle)
+            SDK::ABrickPlayerController* controller = static_cast<SDK::ABrickPlayerController*>(current->Owner);
+            std::cout << controller->GetName() << std::endl;
+            if (controller && controller->GetPlayerVehicle())
             {
-                static_cast<SDK::ABP_BrickCharacter_C*>(current->InactiveCharacter)->ForceEjectFromVehicle();
+                SDK::ABrickVehicle* vehicle = controller->GetPlayerVehicle();
+                static_cast<SDK::ABrickCharacter*>(controller->GetPlayerCharacter())->ForceEjectFromVehicle();
                 vehicle->ScrapVehicle();
             }
         }
         ImGui::SameLine();
         if (ImGui::Button("Empty Inventory")) 
         {
-            static_cast<SDK::ABP_BrickCharacter_C*>(current->InactiveCharacter)->InventoryComponent->EmptyInventory(true);
+            static_cast<SDK::ABrickPlayerController*>(current->Owner)->AccessedInventory->EmptyInventory(true);
         }
         ImGui::SameLine();
         if (ImGui::Button("Teleport To Player")) 
