@@ -44,11 +44,12 @@ void moderation_menu_function()
         ImGui::SameLine();
 
         ImGui::BeginGroup();
-        ImGui::BeginChild("players view", ImVec2(0, -ImGui::GetFrameHeightWithSpacing())); // Leave room for 1 line below us
         SDK::FString input_string = SDK::FString();
         SDK::FString* net_id = CallGameFunction<SDK::FString*, SDK::FUniqueNetIdRepl*, SDK::FString*>(BASE + 0x0815AF0, &player_states[selected]->UniqueId, &input_string);
         ImGui::Text("%s: %s", player_states[selected]->GetPlayerName().ToString().c_str(), input_string.ToString().c_str());
         ImGui::Separator();
+
+        ImGui::BeginChild("items_pane", ImVec2(150, 0), true); // Max Width, Full Height
 
         SDK::ABrickPlayerState* current = player_states[selected];
 
@@ -67,8 +68,6 @@ void moderation_menu_function()
             ImGui::Checkbox("Is Host", &is_host);
             ImGui::EndDisabled();
 
-            ImGui::SameLine();
-
             if(ImGui::Checkbox("Is Admin", &is_admin))
             {
                 if (current != GetBrickPlayerState())
@@ -76,8 +75,6 @@ void moderation_menu_function()
                     current->SetIsAdmin(is_admin);
                 }
             }
-
-            ImGui::SameLine();
             
             if (ImGui::Checkbox("Is Team Leader", &is_team_leader))
             {
@@ -86,8 +83,6 @@ void moderation_menu_function()
                     current->SetIsTeamLeader(is_admin);
                 }
             }
-
-            ImGui::SameLine();
 
             if (ImGui::Checkbox("Is Muted", &is_muted))
             {
@@ -101,25 +96,22 @@ void moderation_menu_function()
                 }
             }
 
-            BeginDisabled();
-
-            InputInt("Player ID", &player_id);
-            SameLine();
-            InputInt("Kills", &kills);
-            SameLine();
-            InputInt("Deaths", &deaths);
-
-            EndDisabled();
+            Text("Player ID: %d", player_id);
+            Text("Kills: % d", kills);
+            Text("Deaths: % d", deaths);
         }
 
-
         ImGui::EndChild();
+
+        ImGui::SameLine();
+
+        ImGui::BeginChild("action_pane", ImVec2(0,0), true);
+
         if (ImGui::Button("Kill")) 
         {
             SDK::ABrickPlayerController* controller = static_cast<SDK::ABrickPlayerController*>(current->Owner);
             controller->KillCharacter();
         }
-        ImGui::SameLine();
         if (ImGui::Button("Revive")) 
         {
             SDK::FTransform transform = static_cast<SDK::ABrickPlayerController*>(current->Owner)->Character->GetTransform();
@@ -127,7 +119,6 @@ void moderation_menu_function()
             SDK::ABrickPlayerController* controller = static_cast<SDK::ABrickPlayerController*>(current->Owner);
             game_mode->RestartPlayerAtTransform(controller, transform);
         }
-        ImGui::SameLine();
         if (ImGui::Button("Destroy Vehicle")) 
         {
             SDK::ABrickPlayerController* controller = static_cast<SDK::ABrickPlayerController*>(current->Owner);
@@ -139,21 +130,21 @@ void moderation_menu_function()
                 vehicle->ScrapVehicle();
             }
         }
-        ImGui::SameLine();
         if (ImGui::Button("Empty Inventory")) 
         {
             static_cast<SDK::ABrickPlayerController*>(current->Owner)->AccessedInventory->EmptyInventory(true);
         }
-        ImGui::SameLine();
         if (ImGui::Button("Teleport To Player")) 
         {
             GetBrickCharacter()->K2_TeleportTo(current->K2_GetActorLocation(), current->K2_GetActorRotation());
         }
-        ImGui::SameLine();
         if (ImGui::Button("Teleport Player To You")) 
         {
             current->K2_TeleportTo(GetBrickCharacter()->K2_GetActorLocation(), current->K2_GetActorRotation());
         }
+
+        ImGui::EndChild();
+
         ImGui::EndGroup();
 	}
 	ImGui::End();
