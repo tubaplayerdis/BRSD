@@ -18,6 +18,7 @@
 #include <iostream>
 #include <mutex>
 #include <shared_mutex>
+#include <atomic>
 
 // ------------------------------------------------------------
 // Typedefs

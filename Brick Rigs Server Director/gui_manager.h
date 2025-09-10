@@ -1,5 +1,6 @@
 #pragma once
 #include <memory>
+#include <atomic>
 
 #define DECLARE_GUI_MENU(name) extern gui_menu name;
 #define DEFINE_GUI_MENU(name, lamb, ...) gui_menu name = gui_menu(lamb, __VA_ARGS__);
@@ -33,7 +34,7 @@ struct gui_menu
 {
 	void(*menu)();
 	void(*custom_toggle)(bool);
-	bool is_visible;
+	std::atomic<bool> is_visible;
 
 	gui_menu(void(*in_menu)(), void(*in_custom_toggle)(bool) = nullptr)
 	{
