@@ -19,7 +19,7 @@ void main_menu_function()
 		if (ImGui::BeginTabBar("ShortcutsMenuBar")) {
 
 			if (ImGui::TabItemButton("Moderation", ImGuiTabItemFlags_None)) {
-				menus::moderation_menu->toggle();
+				menus::moderation_menu.toggle();
 			}
 
 			if (ImGui::TabItemButton("Blacklist", ImGuiTabItemFlags_None)) {
@@ -31,7 +31,7 @@ void main_menu_function()
 			}
 
 			if (ImGui::TabItemButton("Command Engine", ImGuiTabItemFlags_None)) {
-				menus::command_engine_menu->toggle();
+				menus::command_engine_menu.toggle();
 			}
 
 			ImGui::EndTabBar();

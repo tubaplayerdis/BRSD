@@ -15,8 +15,11 @@ void custom_toggle_moderation(bool toggle)
     {
         player_states.clear();
 
+        if (GetBrickGameState() == nullptr || GetBrickGameState()->GameModeClass.Get() == nullptr ||GetBrickGameState()->GameModeClass.Get()->IsA(SDK::AMenuGameMode::StaticClass()) || GetBrickGameState()->PlayerArray.Num() == 0) return;
+
         for (SDK::APlayerState* state : GetBrickGameState()->PlayerArray)
         {
+            if (!state->IsA(SDK::ABrickPlayerState::StaticClass())) continue;
             player_states.push_back(static_cast<SDK::ABrickPlayerState*>(state));
         }
     }
@@ -30,6 +33,13 @@ void moderation_menu_function()
 	ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 5.0f); // round window
 	if (ImGui::Begin("Moderation"))
 	{
+        if (player_states.size() == 0)
+        {
+            ImGui::End();
+            ImGui::PopStyleVar();
+            return;
+        }
+
         static int selected = 0;
         {
             ImGui::BeginChild("players", ImVec2(150, 0), ImGuiChildFlags_Borders | ImGuiChildFlags_ResizeX);

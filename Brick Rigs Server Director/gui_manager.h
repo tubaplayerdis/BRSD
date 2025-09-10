@@ -1,8 +1,8 @@
 #pragma once
 #include <memory>
 
-#define DECLARE_GUI_MENU(name) extern std::unique_ptr<gui_menu> name;
-#define DEFINE_GUI_MENU(name, lamb, ...) std::unique_ptr<gui_menu> name = std::make_unique<gui_menu>(lamb, __VA_ARGS__);
+#define DECLARE_GUI_MENU(name) extern volatile gui_menu name;
+#define DEFINE_GUI_MENU(name, lamb, ...) volatile gui_menu name = gui_menu(lamb, __VA_ARGS__);
 
 struct gui_menu;
 
