@@ -37,9 +37,9 @@ static ID3D11Device* pDevice = nullptr;
 static ID3D11DeviceContext* pContext = nullptr;
 static ID3D11RenderTargetView* mainRenderTargetView = nullptr;
 
-static std::vector<gui_menu*> menus;
+static std::vector<std::shared_ptr<gui_menu>> menus;
 static std::shared_mutex menus_mutex;
-static std::vector<gui_menu*> prev_menus = std::vector<gui_menu*>();
+static std::vector<std::shared_ptr<gui_menu>> prev_menus = std::vector<std::shared_ptr<gui_menu>>();
 static std::unique_ptr<gui_manager> manager = nullptr;
 
 // ------------------------------------------------------------
@@ -97,8 +97,14 @@ HRESULT __stdcall hooked_present(IDXGISwapChain* pSwapChain, UINT SyncInterval, 
     ImGui::NewFrame();
 
     // Render all registered menus
-    std::shared_lock<std::shared_mutex> lock(menus_mutex);
-    for (gui_menu* menu : menus)
+    std::vector<std::shared_ptr<gui_menu>> snapshot;
+    {
+        std::shared_lock<std::shared_mutex> lock(menus_mutex);
+        snapshot = menus; // shallow copy of shared_ptrs, cheap
+    }
+
+
+    for (std::shared_ptr<gui_menu> menu : snapshot)
     {
         if (menu && menu->is_visible)
             menu->menu();
@@ -153,9 +159,10 @@ void gui_manager::shutdown()
     _is_init = false;
 }
 
-void gui_manager::remove_menu(gui_menu* menu)
+void gui_manager::remove_menu(std::shared_ptr<gui_menu> menu)
 {
-    for (size_t i = 0; i < menus.size(); i++)
+    std::unique_lock<std::shared_mutex> lock(menus_mutex);
+    for (size_t i = 0; i < menus.size(); ++i)
     {
         if (menus[i] == menu)
         {
@@ -165,7 +172,7 @@ void gui_manager::remove_menu(gui_menu* menu)
     }
 }
 
-void gui_manager::set_menu_visibility(gui_menu* menu, bool visibility)
+void gui_manager::set_menu_visibility(std::shared_ptr<gui_menu> menu, bool visibility)
 {
     if (visibility)
     {
@@ -181,14 +188,16 @@ void gui_manager::set_menu_visibility(gui_menu* menu, bool visibility)
 
 }
 
-void gui_manager::toggle_menu_visibility(gui_menu* menu)
+void gui_manager::toggle_menu_visibility(std::shared_ptr<gui_menu> menu)
 {
     set_menu_visibility(menu, !menu->is_visible);
 }
 
 void gui_manager::hide_all()
 {
-    for (gui_menu* menu : menus)
+    std::unique_lock<std::shared_mutex> lock(menus_mutex);
+    prev_menus.clear();
+    for (std::shared_ptr<gui_menu> menu : menus)
     {
         if (menu->is_visible) prev_menus.push_back(menu);
         menu->is_visible = false;
@@ -202,16 +211,17 @@ bool gui_manager::are_all_hidden()
 
 void gui_manager::display_all_previous()
 {
-    for (gui_menu* menu : prev_menus)
+    for (std::shared_ptr<gui_menu> menu : prev_menus)
     {
         menu->is_visible = true;
     }
     prev_menus.clear();
 }
 
-void gui_manager::add_menu(gui_menu* menu)
+void gui_manager::add_menu(std::shared_ptr<gui_menu> menu)
 {
-    for (gui_menu* menu_itor: menus)
+    std::unique_lock<std::shared_mutex> lock(menus_mutex);
+    for (std::shared_ptr<gui_menu> menu_itor : menus)
     {
         if (menu_itor == menu) return;
     }

@@ -8,10 +8,10 @@
 #include "stringlist.h"
 
 #define DECLARE_COMMAND(name) extern Command c_##name;
-#define COMMAND(group, name, about, func, ...) Command command_##name = Command(group, #name, about, false, true, func, __VA_ARGS__);
-#define COMMAND_IMMUTABLE(group, name, about, func, ...) Command command_##name = Command(group, #name, about, false, false, func, __VA_ARGS__);
-#define COMMAND_ADMIN(group, name, about, func, ...) Command command_##name = Command(group, #name, about, true, true, func, __VA_ARGS__);
-#define COMMAND_ADMIN_IMMUTABLE(group, name, about, func, ...) Command command_##name = Command(group, #name, about, true, false, func, __VA_ARGS__);
+#define COMMAND(group, name, about, func, ...) Command command_##name = Command(group, #name, about, ECommandFlags::NONE, func, __VA_ARGS__);
+#define COMMAND_IMMUTABLE(group, name, about, func, ...) Command command_##name = Command(group, #name, about, (ECommandFlags::IMMUTABLE), func, __VA_ARGS__);
+#define COMMAND_ADMIN(group, name, about, func, ...) Command command_##name = Command(group, #name, about, (ECommandFlags::ADMIN_ONLY), func, __VA_ARGS__);
+#define COMMAND_ADMIN_IMMUTABLE(group, name, about, func, ...) Command command_##name = Command(group, #name, about, (ECommandFlags::ADMIN_ONLY | ECommandFlags::IMMUTABLE), func, __VA_ARGS__);
 
 enum ECommandGroup
 {
@@ -23,6 +23,13 @@ enum ECommandGroup
 	Weapons
 };
 
+enum ECommandFlags
+{
+	NONE = 0,
+	ADMIN_ONLY = 1 << 0,
+	IMMUTABLE = 1 << 1,
+};
+
 struct Command
 {
 	inline static std::vector<Command*> command_registry = std::vector<Command*>();
@@ -30,22 +37,20 @@ struct Command
 	const std::string name;
 	const std::string about;
 	const ECommandGroup command_group;
-	const bool admin_only;
-	const bool togglable; //Whether the command can be turned off
 	const char* success_message;
 	bool enabled;
 	bool(*function)(PlayerInfo, std::vector<std::string> args);
 	std::string display_string;
+	ECommandFlags flags;
 
-	Command(ECommandGroup group, std::string Name, std::string About, bool admin, bool Toggleable, bool(*Function)(PlayerInfo, std::vector<std::string> args), const char* SuccessMessage = nullptr) :
+	Command(ECommandGroup group, std::string Name, std::string About, int Flags, bool(*Function)(PlayerInfo, std::vector<std::string> args), const char* SuccessMessage = nullptr) :
 		name(Name),
 		about(About),
 		command_group(group),
-		admin_only(admin),
 		function(Function),
-		togglable(Toggleable),
 		success_message(SuccessMessage)
 	{
+		flags = (ECommandFlags)Flags;
 		enabled = true;
 		command_registry.push_back(this);
 		display_string = Name;
@@ -95,6 +100,17 @@ struct Command
 		}
 	}
 
+	bool admin_only()
+	{
+		return flags & ECommandFlags::ADMIN_ONLY;
+	}
+
+	bool togglable()
+	{
+		return !(flags & ECommandFlags::IMMUTABLE);
+	}
+
+
 	bool Execute(PlayerInfo info, std::vector<std::string> args)
 	{
 		if (!enabled) {
@@ -106,7 +122,6 @@ struct Command
 		}
 		bool ret = function(info, args);
 		if (success_message && ret) messages::sendUserSpecificMessage(info, success_message);
-		if (!ret) messages::sendUserSpecificMessageCommandFailed(info, name);
 		return ret;
 	}
 };

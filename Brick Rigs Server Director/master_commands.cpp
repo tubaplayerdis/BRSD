@@ -6,7 +6,11 @@ COMMAND_IMMUTABLE(Master, info, "Info about BRSD", [](PlayerInfo info, std::vect
 });
 
 COMMAND_IMMUTABLE(Master, help, "Command Lists", [](PlayerInfo info, std::vector<std::string> args) -> bool {
-	if (args.size() < 1) { messages::ToFewArgs(info, "/help", Command::get_command_string(Master)); return false; }
+	if (args.size() < 1) 
+	{
+		messages::sendUserSpecificMessage(info, MasterHelpMessage);
+		return true;
+	}
 	interpreter::Commands::Help(info, args[0]);
 	return true;
 });

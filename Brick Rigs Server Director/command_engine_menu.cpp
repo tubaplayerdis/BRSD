@@ -4,8 +4,8 @@
 #include "commands.h"
 #include <imgui/imgui.h>
 
-constexpr int COMMAND_ENGINE_MENU_WIDTH = 350;
-constexpr int COMMAND_ENGINE_MENU_HEIGHT = 200;
+constexpr int COMMAND_ENGINE_MENU_WIDTH = 550;
+constexpr int COMMAND_ENGINE_MENU_HEIGHT = 400;
 
 bool checked = true;
 
@@ -58,12 +58,12 @@ void command_engine_menu_function()
                 {
                     if (command->command_group != Master) continue;
 
-                    if (command->admin_only)
+                    if (command->admin_only())
                     {
                         ImGui::PushStyleColor(ImGuiCol_Text, IM_COL32(255, 0, 0, 255));
                     }
 
-                    if (command->togglable)
+                    if (command->togglable())
                     {
                         ImGui::Checkbox(command->display_string.c_str(), &command->enabled);
                     }
@@ -74,7 +74,7 @@ void command_engine_menu_function()
                         ImGui::EndDisabled();
                     }
 
-                    if (command->admin_only)
+                    if (command->admin_only())
                     {
                         ImGui::PopStyleColor();
                     }
@@ -88,12 +88,12 @@ void command_engine_menu_function()
                 {
                     if (command->command_group != Main) continue;
 
-                    if (command->admin_only)
+                    if (command->admin_only())
                     {
                         ImGui::PushStyleColor(ImGuiCol_Text, IM_COL32(255, 0, 0, 255));
                     }
 
-                    if (command->togglable)
+                    if (command->togglable())
                     {
                         ImGui::Checkbox(command->display_string.c_str(), &command->enabled);
                     }
@@ -104,7 +104,7 @@ void command_engine_menu_function()
                         ImGui::EndDisabled();
                     }
 
-                    if (command->admin_only)
+                    if (command->admin_only())
                     {
                         ImGui::PopStyleColor();
                     }
@@ -118,12 +118,12 @@ void command_engine_menu_function()
                 {
                     if (command->command_group != Moderation) continue;
 
-                    if (command->admin_only)
+                    if (command->admin_only())
                     {
                         ImGui::PushStyleColor(ImGuiCol_Text, IM_COL32(255, 0, 0, 255));
                     }
 
-                    if (command->togglable)
+                    if (command->togglable())
                     {
                         ImGui::Checkbox(command->display_string.c_str(), &command->enabled);
                     }
@@ -134,7 +134,7 @@ void command_engine_menu_function()
                         ImGui::EndDisabled();
                     }
 
-                    if (command->admin_only)
+                    if (command->admin_only())
                     {
                         ImGui::PopStyleColor();
                     }
@@ -148,12 +148,12 @@ void command_engine_menu_function()
                 {
                     if (command->command_group != Movement) continue;
 
-                    if (command->admin_only)
+                    if (command->admin_only())
                     {
                         ImGui::PushStyleColor(ImGuiCol_Text, IM_COL32(255, 0, 0, 255));
                     }
 
-                    if (command->togglable)
+                    if (command->togglable())
                     {
                         ImGui::Checkbox(command->display_string.c_str(), &command->enabled);
                     }
@@ -164,7 +164,7 @@ void command_engine_menu_function()
                         ImGui::EndDisabled();
                     }
 
-                    if (command->admin_only)
+                    if (command->admin_only())
                     {
                         ImGui::PopStyleColor();
                     }
@@ -178,12 +178,12 @@ void command_engine_menu_function()
                 {
                     if (command->command_group != Enviroment) continue;
 
-                    if (command->admin_only)
+                    if (command->admin_only())
                     {
                         ImGui::PushStyleColor(ImGuiCol_Text, IM_COL32(255, 0, 0, 255));
                     }
 
-                    if (command->togglable)
+                    if (command->togglable())
                     {
                         ImGui::Checkbox(command->display_string.c_str(), &command->enabled);
                     }
@@ -194,7 +194,7 @@ void command_engine_menu_function()
                         ImGui::EndDisabled();
                     }
 
-                    if (command->admin_only)
+                    if (command->admin_only())
                     {
                         ImGui::PopStyleColor();
                     }
@@ -208,12 +208,12 @@ void command_engine_menu_function()
                 {
                     if (command->command_group != Weapons) continue;
 
-                    if (command->admin_only)
+                    if (command->admin_only())
                     {
                         ImGui::PushStyleColor(ImGuiCol_Text, IM_COL32(255, 0, 0, 255));
                     }
 
-                    if (command->togglable)
+                    if (command->togglable())
                     {
                         ImGui::Checkbox(command->display_string.c_str(), &command->enabled);
                     }
@@ -224,7 +224,7 @@ void command_engine_menu_function()
                         ImGui::EndDisabled();
                     }
 
-                    if (command->admin_only)
+                    if (command->admin_only())
                     {
                         ImGui::PopStyleColor();
                     }

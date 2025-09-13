@@ -56,7 +56,7 @@ void MainLoop()
 
 	watermark::InitalizeWaterMark();
 
-	menus::main_menu.display();
+	menus::main_menu->display();
 
 	if (IsHost()) welcome::SendWelcomeMessage();
 

@@ -175,7 +175,7 @@ void interpreter::interpretCommand(std::string command, std::vector<std::string>
         std::string command_no_slash = command.substr(1);
         if (_command && _command->name == command_no_slash)
         {
-            if (!is_enabled && _command->admin_only)
+            if (!is_enabled && _command->admin_only())
             {
                 _command->Execute(info, args);
                 return;
