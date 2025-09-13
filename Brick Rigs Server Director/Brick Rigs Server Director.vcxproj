@@ -154,7 +154,6 @@
     <ClCompile Include="..\Include\imgui\implot_items.cpp" />
     <ClCompile Include="command_engine_menu.cpp" />
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="Elevator.cpp" />
     <ClCompile Include="enviroment_commands.cpp" />
     <ClCompile Include="gui_manager.cpp" />
     <ClCompile Include="kiero.cpp" />
@@ -181,7 +180,6 @@
     <ClInclude Include="Blacklist.h" />
     <ClInclude Include="commands.h" />
     <ClInclude Include="DrawTransition.h" />
-    <ClInclude Include="Elevator.h" />
     <ClInclude Include="gui_manager.h" />
     <ClInclude Include="BeginPlay.h" />
     <ClInclude Include="kiero.h" />

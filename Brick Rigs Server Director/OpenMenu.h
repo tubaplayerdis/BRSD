@@ -14,7 +14,6 @@
 #include "offsets.h"
 #include <windows.h>
 #include <BR-SDK.hpp>
-#include "Elevator.h"
 
 namespace hooks
 {

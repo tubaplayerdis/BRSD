@@ -15,7 +15,6 @@
 #include <fstream>
 #include <windows.h>
 #include <shellapi.h>
-#include "Elevator.h"
 
 #pragma comment(lib, "shell32.lib")
 

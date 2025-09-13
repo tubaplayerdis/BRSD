@@ -23,7 +23,6 @@
 #include "AddChatMessage.h"
 #include "logger.h"
 #include "EngineLoopTick.h"
-#include "Elevator.h"
 #include "menus.h"
 
 using namespace global;
