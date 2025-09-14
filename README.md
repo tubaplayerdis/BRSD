@@ -18,6 +18,11 @@ Brick Rigs Server Director is an injected mod for brick rigs that adds various a
 
 ## Planning:
 
+### Spawning Menu
+ - Spawn Zombies
+ - Spawn Buildings
+ - Spawn all actor based assets
+
 ### Added Commands:
  - kill [who] - kills a player
  - revive [who] - revives a player
