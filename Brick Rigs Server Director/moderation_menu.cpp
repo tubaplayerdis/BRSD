@@ -3,9 +3,13 @@
 #include "global.h"
 #include "imgui/imgui.h"
 #include "moderation.h"
+#include "offsets.h"
+#include "commands.h"
 
 constexpr int MODERATION_MENU_WIDTH = 400;
 constexpr int MODERATION_MENU_HEIGHT = 250;
+
+#define ADMIN_CONTROLLER() GetPlayerInfoFromController(GetBrickPlayerController())
 
 std::vector<SDK::ABrickPlayerState*> player_states = std::vector<SDK::ABrickPlayerState*>();
 
@@ -53,10 +57,11 @@ void moderation_menu_function()
         }
         ImGui::SameLine();
 
-        ImGui::BeginGroup();
         SDK::FString input_string = SDK::FString();
-        SDK::FString* net_id = CallGameFunction<SDK::FString*, SDK::FUniqueNetIdRepl*, SDK::FString*>(BASE + 0x0815AF0, &player_states[selected]->UniqueId, &input_string);
-        ImGui::Text("%s: %s", player_states[selected]->GetPlayerName().ToString().c_str(), input_string.ToString().c_str());
+        SDK::FString* net_id = CallGameFunction<SDK::FString*, SDK::FUniqueNetIdRepl*, SDK::FString*>(FUniqueNetIdWrapper_ToString, &player_states[selected]->UniqueId, &input_string);
+
+        ImGui::BeginGroup();
+        ImGui::Text("%s: ID: %d, SteamID: %s", player_states[selected]->GetPlayerName().ToString().c_str(),player_states[selected]->PlayerId, input_string.ToString().c_str());
         ImGui::Separator();
 
         ImGui::BeginChild("items_pane", ImVec2(150, 0), true); // Max Width, Full Height
@@ -69,7 +74,6 @@ void moderation_menu_function()
             bool is_admin = current->bIsAdmin;
             bool is_team_leader = current->bIsTeamLeader;
             bool is_muted = moderation::isPlayerMuted(info);
-            int player_id = current->PlayerId;
             float money = current->Money;
             int kills = current->Kills;
             int deaths = current->Deaths;
@@ -106,7 +110,6 @@ void moderation_menu_function()
                 }
             }
 
-            Text("Player ID: %d", player_id);
             Text("Kills: % d", kills);
             Text("Deaths: % d", deaths);
         }
@@ -119,30 +122,35 @@ void moderation_menu_function()
 
         if (ImGui::Button("Kill")) 
         {
-            SDK::ABrickPlayerController* controller = static_cast<SDK::ABrickPlayerController*>(current->Owner);
-            controller->KillCharacter();
+            Command* command = Command::get_command_by_name("kill");
+            if (command)
+            {
+                command->Execute(ADMIN_CONTROLLER(), std::vector<std::string>{player_states[selected]->GetPlayerName().ToString()});
+            }
         }
         if (ImGui::Button("Revive")) 
         {
-            SDK::FTransform transform = static_cast<SDK::ABrickPlayerController*>(current->Owner)->Character->GetTransform();
-            SDK::ABrickGameMode* game_mode = SDK::ABrickGameMode::Get(World());
-            SDK::ABrickPlayerController* controller = static_cast<SDK::ABrickPlayerController*>(current->Owner);
-            game_mode->RestartPlayerAtTransform(controller, transform);
+            Command* command = Command::get_command_by_name("revive");
+            if (command)
+            {
+                command->Execute(ADMIN_CONTROLLER(), std::vector<std::string>{player_states[selected]->GetPlayerName().ToString()});
+            }
         }
         if (ImGui::Button("Destroy Vehicle")) 
         {
-            SDK::ABrickPlayerController* controller = static_cast<SDK::ABrickPlayerController*>(current->Owner);
-            std::cout << controller->GetName() << std::endl;
-            if (controller && controller->GetPlayerVehicle())
+            Command* command = Command::get_command_by_name("vehdel");
+            if (command)
             {
-                SDK::ABrickVehicle* vehicle = controller->GetPlayerVehicle();
-                static_cast<SDK::ABrickCharacter*>(controller->GetPlayerCharacter())->ForceEjectFromVehicle();
-                vehicle->ScrapVehicle();
+                command->Execute(ADMIN_CONTROLLER(), std::vector<std::string>{player_states[selected]->GetPlayerName().ToString()});
             }
         }
         if (ImGui::Button("Empty Inventory")) 
         {
-            static_cast<SDK::ABrickPlayerController*>(current->Owner)->AccessedInventory->EmptyInventory(true);
+            Command* command = Command::get_command_by_name("empty");
+            if (command)
+            {
+                command->Execute(ADMIN_CONTROLLER(), std::vector<std::string>{player_states[selected]->GetPlayerName().ToString()});
+            }
         }
         if (ImGui::Button("Teleport To Player")) 
         {

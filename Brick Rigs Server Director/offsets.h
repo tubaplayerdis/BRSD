@@ -88,6 +88,7 @@
 #define FOpenPopup BASE + 0x0DDCD00
 #define FReleaseHandle BASE + 0x27FA250
 #define FUninitializeBrickEditorObject BASE + 0x0C6FFB0
+#define FUniqueNetIdWrapper_ToString BASE + 0x0815AF0
 
 //define VTable offsets. 8 is used after the number IDA gives
 

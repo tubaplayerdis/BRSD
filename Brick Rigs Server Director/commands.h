@@ -100,6 +100,16 @@ struct Command
 		}
 	}
 
+	static Command* get_command_by_name(std::string name)
+	{
+		for (Command* command : command_registry)
+		{
+			if (command->name == name) return command;
+		}
+
+		return nullptr;
+	}
+
 	bool admin_only()
 	{
 		return flags & ECommandFlags::ADMIN_ONLY;
@@ -126,6 +136,8 @@ struct Command
 	}
 };
 
+//These declarations do not technically need to be here
+
 //Master
 DECLARE_COMMAND(info);
 DECLARE_COMMAND(help);
@@ -147,6 +159,11 @@ DECLARE_COMMAND(mute);
 DECLARE_COMMAND(unmute);
 DECLARE_COMMAND(save);
 DECLARE_COMMAND(load);
+DECLARE_COMMAND(kill);
+DECLARE_COMMAND(revive);
+DECLARE_COMMAND(vehdel);
+DECLARE_COMMAND(saver);
+DECLARE_COMMAND(loader);
 
 //Movement
 DECLARE_COMMAND(fly);
