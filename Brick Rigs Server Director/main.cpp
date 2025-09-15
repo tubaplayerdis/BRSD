@@ -73,6 +73,8 @@ void MainLoop()
 		if (UninjectPress() || doUninject) break;
 
 		if (TogglePress()) {
+			CallGameFunction<void, SDK::UMenuWidget*, SDK::FName>(FOpenMenu, uibase::GetBaseMenu(), NAME(L"BRSD"));
+
 			gui_manager* manager = gui_manager::get();
 			if (manager->are_all_hidden()) {
 				manager->display_all_previous();

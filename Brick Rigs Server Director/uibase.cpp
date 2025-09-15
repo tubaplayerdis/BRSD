@@ -90,6 +90,11 @@ bool uibase::IsInGameMenuOpen()
 	return IsButtonMenuVisible && global::isMapValid();
 }
 
+SDK::UWBP_Menu_C* uibase::GetBaseMenu()
+{
+	return GetMenu();
+}
+
 void uibase::Cleanup()
 {
 	SDK::UWBP_Menu_C* menu = GetMenu();

@@ -19,7 +19,7 @@ namespace uibase
 	std::string GetCurrentMenu();
 	bool IsButtonMenuVisible();
 	bool IsInGameMenuOpen();
-
+	SDK::UWBP_Menu_C* GetBaseMenu();//Same as GetMenu()
 	void Cleanup();
 }
 
