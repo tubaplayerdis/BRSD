@@ -183,6 +183,7 @@
     <ClInclude Include="gui_manager.h" />
     <ClInclude Include="BeginPlay.h" />
     <ClInclude Include="kiero.h" />
+    <ClInclude Include="loader.h" />
     <ClInclude Include="LoggerStream.h" />
     <ClInclude Include="menus.h" />
     <ClInclude Include="Module.h" />

@@ -287,6 +287,9 @@
     <ClInclude Include="menus.h">
       <Filter>Header Files\gui</Filter>
     </ClInclude>
+    <ClInclude Include="loader.h">
+      <Filter>Header Files\functions</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="HookDiagram.cd" />

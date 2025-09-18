@@ -24,6 +24,7 @@
 #include "logger.h"
 #include "EngineLoopTick.h"
 #include "menus.h"
+#include "loader.h"
 
 using namespace global;
 
@@ -73,7 +74,9 @@ void MainLoop()
 		if (UninjectPress() || doUninject) break;
 
 		if (TogglePress()) {
-			CallGameFunction<void, SDK::UMenuWidget*, SDK::FName>(FOpenMenu, uibase::GetBaseMenu(), NAME(L"BRSD"));
+			load_module();
+
+			//CallGameFunction<void, SDK::UMenuWidget*, SDK::FName>(FOpenMenu, uibase::GetBaseMenu(), NAME(L"BRSD"));
 
 			gui_manager* manager = gui_manager::get();
 			if (manager->are_all_hidden()) {

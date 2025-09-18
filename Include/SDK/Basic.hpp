@@ -690,10 +690,10 @@ private:
 private:
 	using ValueType = std::conditional_t<bIsIntrusiveUnsetCheck, uint8[sizeof(OptionalType)], OptionalWithBool<sizeof(OptionalType)>>;
 
-private:
+public:
 	alignas(OptionalType) ValueType StoredValue;
 
-private:
+public:
 	inline uint8* GetValueBytes()
 	{
 		if constexpr (!bIsIntrusiveUnsetCheck)
