@@ -1,0 +1,10 @@
+{
+  "functions": [
+    {
+      "name": "AddChatMessage",
+      "off": 0,
+      "sig": "48897C241841564883EC40488BFA4C8BF1E80000000084C00F8400000000",
+      "mask": "xxxxxxxxxxxxxxxxxx????xxxx????"
+    }
+  ]
+}

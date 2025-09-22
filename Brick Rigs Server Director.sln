@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.14.36202.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Brick Rigs Server Director", "Brick Rigs Server Director\Brick Rigs Server Director.vcxproj", "{926F77EE-06BE-4AFA-AD71-29438C8F0828}"
+	ProjectSection(ProjectDependencies) = postProject
+		{77622B36-914F-4A23-8776-49C15CC37744} = {77622B36-914F-4A23-8776-49C15CC37744}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FunctionLib", "FunctionLib\FunctionLib.vcxproj", "{77622B36-914F-4A23-8776-49C15CC37744}"
 EndProject
