@@ -2,8 +2,7 @@
   "functions": [
     {
       "name": "ABrickGameSession::AddChatMessage(FBrickChatMessage const &)",
-      "sig": "48 89 7C 24 18 41 56 48 83 EC 40 48 8B FA 4C 8B F1 E8 2A 91 01 00",
-      "pat": "xxxx?xxxxx?xxxxxxx????"
+      "sig": "48 89 7C 24 ?? 41 56 48 83 EC ?? 48 8B FA 4C 8B F1 E8 ?? ?? ?? ?? 84 C0 0F 84 ?? ?? ?? ??"
     },
     {
       "name": "UMenuWidget::OpenMenu(FName)",

@@ -26,6 +26,24 @@
 /// @param ... Arguments to pass
 #define CALL_GAME_FUNCTION(addr, sig, ...) ( (reinterpret_cast<sig>(addr))(__VA_ARGS__) )
 
+/// Resolve a signature to an address. Uses the format: "48 89 7C 24 ?? 41 56 48 83 EC ?? 48 8B FA 4C 8B F1 E8 ?? ?? ?? ??"
+/// @param signature signature to resolve
+/// @return address of the function representing the signature. 0 if not found.
+unsigned long long ResolveSignature(const char* signature);
+
+/// Call an internal game function using its address.
+/// @tparam TRet Return type of the function
+/// @tparam TArgs Argument types of the function
+/// @param signature Signature of the function.
+/// @param args Arguments to pass
+/// @return TRet
+template<typename TRet, typename... TArgs>
+TRet CallGameFunction(const char* signature, TArgs... args)
+{
+    unsigned long long addr = ResolveSignature(signature);
+    return CallGameFunction<TRet, TArgs...>(addr, args...);
+}
+
 /// Call an internal game function using its address.
 /// @tparam TRet Return type of the function
 /// @tparam TArgs Argument types of the function

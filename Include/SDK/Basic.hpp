@@ -693,7 +693,7 @@ private:
 public:
 	alignas(OptionalType) ValueType StoredValue;
 
-public:
+private:
 	inline uint8* GetValueBytes()
 	{
 		if constexpr (!bIsIntrusiveUnsetCheck)

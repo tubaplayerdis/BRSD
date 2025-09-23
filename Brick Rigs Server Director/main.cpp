@@ -40,6 +40,22 @@ using namespace global;
 
 #define ContinuePress() (IsActiveWindow() && (GetAsyncKeyState(VK_RETURN) & 1))
 
+void printHexValues(const std::string& str, int bytesPerLine = 16) {
+	for (size_t i = 0; i < str.length(); ++i) {
+		std::cout << std::hex << std::setw(2) << std::setfill('0')
+			<< static_cast<int>(static_cast<unsigned char>(str[i]));
+
+		if (i < str.length() - 1) {
+			std::cout << " ";
+		}
+
+		if ((i + 1) % bytesPerLine == 0) {
+			std::cout << std::endl;
+		}
+	}
+	std::cout << std::dec << std::endl;
+}
+
 void MainLoop()
 {
 	InitLogging();
@@ -75,6 +91,12 @@ void MainLoop()
 
 		if (TogglePress()) {
 			load_module();
+
+			std::string hexStr = AddChatMessage_S;
+			printHexValues(hexStr);
+
+			//									    48 89 7C 24 00 41 56 48 83 EC 00 48 8B FA 4C 8B F1 E8 00 00 00 00 84 C0 0F 84 00 00 00 00
+			std::cout << testing::ResolveSignature(/*"48 89 7C 24 ?? 41 56 48 83 EC ?? 48 8B FA 4C 8B F1 E8 ?? ?? ?? ?? 84 C0 0F 84 ?? ?? ?? ??"*/"48 89 7C 24 18 41 56 48 83 EC 40 48 8B FA 4C 8B F1 E8 2A 91 01 00") << "\n";
 
 			//CallGameFunction<void, SDK::UMenuWidget*, SDK::FName>(FOpenMenu, uibase::GetBaseMenu(), NAME(L"BRSD"));
 
