@@ -69,6 +69,12 @@ void MainLoop()
 
 	global::pointers::InitPointers();
 
+	SDK::FText FmessageN = SDK::UKismetTextLibrary::Conv_StringToText(UC::FString(L"Hooray"));
+	auto SMessageN = SDK::FBrickChatMessage();
+	SMessageN.TextOption = FmessageN;
+	CallGameFunction<void, SDK::ABrickGameSession*, SDK::FBrickChatMessage*>("48 89 7C 24 ?? 41 56 48 83 EC ?? 48 8B FA 4C 8B F1 E8 ?? ?? ?? ?? 84 C0 0F 84 ?? ?? ?? ??", SDK::ABrickGameSession::Get(World()), &SMessageN);
+
+
 	hooks::EnableHooks();
 
 	watermark::InitalizeWaterMark();
@@ -92,11 +98,11 @@ void MainLoop()
 		if (TogglePress()) {
 			load_module();
 
-			std::string hexStr = AddChatMessage_S;
-			printHexValues(hexStr);
 
-			//									    48 89 7C 24 00 41 56 48 83 EC 00 48 8B FA 4C 8B F1 E8 00 00 00 00 84 C0 0F 84 00 00 00 00
-			std::cout << testing::ResolveSignature(/*"48 89 7C 24 ?? 41 56 48 83 EC ?? 48 8B FA 4C 8B F1 E8 ?? ?? ?? ?? 84 C0 0F 84 ?? ?? ?? ??"*/"48 89 7C 24 18 41 56 48 83 EC 40 48 8B FA 4C 8B F1 E8 2A 91 01 00") << "\n";
+			SDK::FText FmessageN = SDK::UKismetTextLibrary::Conv_StringToText(UC::FString(L"Message Failed To Send To: "));
+			auto SMessageN = SDK::FBrickChatMessage();
+			SMessageN.TextOption = FmessageN;
+			//CallGameFunction<void, SDK::ABrickGameSession*, SDK::FBrickChatMessage*>(testing::ResolveSignature("48 89 7C 24 ?? 41 56 48 83 EC ?? 48 8B FA 4C 8B F1 E8 ?? ?? ?? ?? 84 C0 0F 84 ?? ?? ?? ??"), SDK::ABrickGameSession::Get(World()), &SMessageN);
 
 			//CallGameFunction<void, SDK::UMenuWidget*, SDK::FName>(FOpenMenu, uibase::GetBaseMenu(), NAME(L"BRSD"));
 
