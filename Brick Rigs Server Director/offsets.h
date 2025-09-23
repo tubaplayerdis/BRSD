@@ -132,6 +132,6 @@
 #define OpenMenu_S "\x48\x89\x54\x24\x10\x55\x53\x56\x57\x41\x54\x41\x55\x48\x8D\x6C\x24\xD1\x48\x81\xEC"
 #define OpenMenu_M "xxxxxxxxxxxxxxxxxxxx"
 
-//                          48  89  7C  24  18  41  56  48  83  EC  40  48  8B  FA  4C  8B  F1  E8  00  00  00  00  84  C0  0F  84  00  00  00  00
+
 #define AddChatMessage_S "\x48\x89\x7C\x24\x18\x41\x56\x48\x83\xEC\x40\x48\x8B\xFA\x4C\x8B\xF1\xE8\x00\x00\x00\x00\x84\xC0\x0F\x84\x00\x00\x00\x00"
 #define AddChatMessage_M "xxxxxxxxxxxxxxxxxx????xxxx????"

@@ -25,7 +25,6 @@
 #include "EngineLoopTick.h"
 #include "menus.h"
 #include "loader.h"
-#include <function_api.hpp>
 
 using namespace global;
 
@@ -65,17 +64,6 @@ void MainLoop()
 	modules::InitalizeModules();
 
 	std::cout << "Starting Main Loop!" << std::endl;
-
-	try {
-		function_cache* cache = function_cache::get();
-		std::cout << "Got function ptr!\n";
-		std::cout << cache->get_function_pointer("AddChatMessage") << "\n";
-	}
-	catch (function_exception e)
-	{
-		std::cout << e.what();
-
-	}
 
 	while (true) {
 
