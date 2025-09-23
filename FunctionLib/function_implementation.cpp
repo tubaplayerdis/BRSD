@@ -20,161 +20,206 @@ struct function
 };
 
 std::vector<function> internal_cache;
-static std::shared_mutex cache_mutex;
 std::unique_ptr<function_cache> cashe_class_ptr;
 
-std::string convert_to_hex(const std::string& hex) {
-	std::ostringstream oss;
-	for (size_t i = 0; i < hex.size(); i += 2) {
-		oss << "\\x" << hex.substr(i, 2);
-	}
-	return oss.str();
-}
-
-// Convert hex string ("4889...") into bytes
-std::vector<uint8_t> convert_to_bytes(const std::string& hex)
+HMODULE get_target_module()
 {
-	std::vector<uint8_t> bytes;
-	bytes.reserve(hex.size() / 2);
-	for (size_t i = 0; i < hex.size(); i += 2) {
-		std::string byteString = hex.substr(i, 2);
-		uint8_t byte = (uint8_t)strtol(byteString.c_str(), nullptr, 16);
-		bytes.push_back(byte);
+	// Replace "YourGame.exe" with the actual game executable name
+	HMODULE game_module = GetModuleHandleW(L"BrickRigs-Win64-Shipping.exe");
+	if (game_module) {
+		return game_module;
 	}
-	return bytes;
+
+	// Fallback
+	return GetModuleHandle(NULL);
 }
 
-
-// Convert hex string ("48897C...") into bytes {0x48, 0x89, 0x7C, ...}
 std::vector<uint8_t> hex_to_bytes(const std::string& hex)
 {
-	std::vector<uint8_t> bytes;
-	bytes.reserve(hex.size() / 2);
-	for (size_t i = 0; i < hex.size(); i += 2) {
-		std::string byteString = hex.substr(i, 2);
-		uint8_t byte = static_cast<uint8_t>(strtol(byteString.c_str(), nullptr, 16));
-		bytes.push_back(byte);
-	}
-	return bytes;
+    std::vector<uint8_t> bytes;
+    std::string clean_hex;
+
+    for (char c : hex) {
+        if (isxdigit(static_cast<unsigned char>(c))) {
+            clean_hex += c;
+        }
+    }
+
+    if (clean_hex.length() % 2 != 0) {
+        throw std::invalid_argument("Hex string must have even length");
+    }
+
+    bytes.reserve(clean_hex.length() / 2);
+
+    for (size_t i = 0; i < clean_hex.length(); i += 2) {
+        std::string byteString = clean_hex.substr(i, 2);
+        uint8_t byte = static_cast<uint8_t>(strtol(byteString.c_str(), nullptr, 16));
+        bytes.push_back(byte);
+    }
+
+    return bytes;
 }
 
-// Safe pattern scan
-unsigned long long find_pattern_safe(const uint8_t* pattern, const char* mask,
-	unsigned long long base, unsigned __int64 size)
+// Your exact algorithm
+unsigned long long find_pattern(const char* pattern, const char* mask,
+    unsigned long long base, unsigned long long size)
 {
-	const size_t patternLen = strlen(mask);
+    unsigned long long patternLen = strlen(mask);
 
-	for (unsigned __int64 i = 0; i <= size - patternLen; i++) {
-		bool found = true;
+    for (unsigned long long i = 0; i < size - patternLen; i++) {
+        bool found = true;
 
-		for (size_t j = 0; j < patternLen; j++) {
-			if (mask[j] != '?' && pattern[j] != *(uint8_t*)(base + i + j)) {
-				found = false;
-				break;
-			}
-		}
+        for (unsigned long long j = 0; j < patternLen; j++) {
+            if (mask[j] != '?' && pattern[j] != *(char*)(base + i + j)) {
+                found = false;
+                break;
+            }
+        }
 
-		if (found)
-			return base + i;
-	}
+        if (found)
+            return base + i;
+    }
 
-	return 0;
+    return 0;
 }
 
-// Fast Boyer-Moore-Horspool pattern scan
-unsigned long long find_pattern_fast(const uint8_t* pattern, const char* mask,
-	unsigned long long base, unsigned __int64 size)
-{
-	const size_t patternLen = strlen(mask);
-	if (patternLen == 0) return 0;
-
-	// bad-character skip table
-	std::vector<size_t> skipTable(256, patternLen);
-	for (size_t i = 0; i < patternLen - 1; ++i) {
-		if (mask[i] != '?') {
-			skipTable[pattern[i]] = patternLen - 1 - i;
-		}
-	}
-
-	const unsigned long long searchEnd = base + size - patternLen;
-	unsigned long long currentPos = base;
-
-	while (currentPos <= searchEnd) {
-		bool match = true;
-
-		for (int j = static_cast<int>(patternLen) - 1; j >= 0; --j) {
-			if (mask[j] != '?' && pattern[j] != *(uint8_t*)(currentPos + j)) {
-				const uint8_t mismatched = *(uint8_t*)(currentPos + patternLen - 1);
-				currentPos += skipTable[mismatched];
-				match = false;
-				break;
-			}
-		}
-
-		if (match) return currentPos;
-	}
-
-	return 0;
-}
-
-// Resolve a function by pattern
 unsigned long long resolve_function(function& func)
 {
-	// Convert hex string into real bytes
-	std::vector<uint8_t> bytes = hex_to_bytes(func.sig);
-	const char* mask = func.mask.c_str();
+    std::cout << "Resolving function: " << func.name << std::endl;
 
-	unsigned long long base = (unsigned long long)GetModuleHandle(NULL);
-	MODULEINFO info{};
-	GetModuleInformation(GetCurrentProcess(), (HMODULE)base, &info, sizeof(info));
-	unsigned long long size = (unsigned long long)info.SizeOfImage;
+    try {
+        // Get the CORRECT target module
+        HMODULE target_module = get_target_module();
+        if (!target_module) {
+            std::cerr << "Failed to get target module" << std::endl;
+            return 0;
+        }
 
-	unsigned long long address = find_pattern_fast(bytes.data(), mask, base, size);
-	if (address != 0) return address;
-	return find_pattern_safe(bytes.data(), mask, base, size);
+        // Get module information for the correct module
+        MODULEINFO info{};
+        if (!GetModuleInformation(GetCurrentProcess(), target_module, &info, sizeof(info))) {
+            std::cerr << "Failed to get module information" << std::endl;
+            return 0;
+        }
+
+        unsigned long long base = reinterpret_cast<unsigned long long>(target_module);
+        unsigned long long size = info.SizeOfImage;
+
+        std::cout << "Target module base: 0x" << std::hex << base
+            << ", Size: 0x" << size << std::dec << std::endl;
+
+        // Convert hex pattern
+        std::vector<uint8_t> bytes = hex_to_bytes(func.sig);
+        const char* mask = func.mask.c_str();
+
+        // Auto-correct mask length if needed
+        if (bytes.size() != strlen(mask)) {
+            std::string corrected_mask = func.mask;
+            corrected_mask.resize(bytes.size(), '?');
+            mask = corrected_mask.c_str();
+            std::cout << "Corrected mask length to: " << corrected_mask.length() << std::endl;
+        }
+
+        const char* pattern = reinterpret_cast<const char*>(bytes.data());
+
+        // Search in the correct module
+        unsigned long long address = find_pattern(pattern, mask, base, size);
+
+        if (address) {
+            std::cout << "Found " << func.name << " at: 0x" << std::hex << address
+                << " (offset: 0x" << (address - base) << ")" << std::dec << std::endl;
+        }
+        else {
+            std::cerr << "Pattern not found for: " << func.name << std::endl;
+
+            // Debug: dump what we're searching for
+            std::cout << "Pattern (" << bytes.size() << " bytes): ";
+            for (size_t i = 0; i < bytes.size(); ++i) {
+                printf("%02X ", bytes[i]);
+            }
+            std::cout << std::endl;
+            std::cout << "Mask: " << mask << std::endl;
+        }
+
+        return address;
+
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+        return 0;
+    }
 }
 
 bool compare_bytes(const uint8_t* data, const uint8_t* sig, const char* mask, size_t len)
 {
-	for (size_t i = 0; i < len; i++) {
-		if (mask[i] == 'x' && data[i] != sig[i])
-			return false;
-		if (mask[i] == '?') continue;
-	}
-	return true;
+    for (size_t i = 0; i < len; i++) {
+        if (mask[i] == 'x' && data[i] != sig[i])
+            return false;
+    }
+    return true;
 }
 
 bool verify_function(function* func)
 {
-	if (!func) return false;
+    if (!func) return false;
 
-	//Compare opcodes
-	if (func->offset != 0)
-	{
+    // Get correct module base
+    HMODULE target_module = get_target_module();
+    if (!target_module) return false;
 
-		std::vector<uint8_t> sig_bytes = convert_to_bytes(func->sig);
-		size_t sig_len = sig_bytes.size();
+    uintptr_t module_base = reinterpret_cast<uintptr_t>(target_module);
 
-		std::uintptr_t addr = (std::uintptr_t)GetModuleHandle(NULL) + func->offset;
-		uint8_t* data = reinterpret_cast<uint8_t*>(addr);
+    if (func->offset != 0) {
+        // Verify against correct module
+        std::vector<uint8_t> sig_bytes = hex_to_bytes(func->sig);
+        uint8_t* data = reinterpret_cast<uint8_t*>(module_base + func->offset);
 
-		//byte comparison failed. rescan and set the new offset
-		if (!compare_bytes(data, sig_bytes.data(), func->mask.c_str(), sig_len))
-		{
-			func->offset = resolve_function(*func) - (std::uintptr_t)GetModuleHandle(NULL);
-		}
-	}
+        if (!compare_bytes(data, sig_bytes.data(), func->mask.c_str(), sig_bytes.size())) {
+            std::cout << "Signature mismatch, rescanning..." << std::endl;
+            func->offset = 0;
+        }
+    }
 
-	//Populate offset
-	if (func->offset == 0)
-	{
-		func->offset = resolve_function(*func) - (std::uintptr_t)GetModuleHandle(NULL);
-	}
+    if (func->offset == 0) {
+        unsigned long long absolute_addr = resolve_function(*func);
+        if (absolute_addr) {
+            func->offset = absolute_addr - module_base;
+        }
+        else {
+            return false;
+        }
+    }
 
-	if (func->offset == 0) return false;
-
-	return true;
+    return true;
 }
+
+// Test function to diagnose the issue
+void diagnose_scanning_issue()
+{
+    std::cout << "=== Diagnosis ===" << std::endl;
+
+    // Test with your working pattern
+    function test_func;
+    test_func.name = "AddChatMessage";
+    test_func.sig = "48897C241841564883EC40488BFA4C8BF1E80000000084C00F8400000000";
+    test_func.mask = "xxxxxxxxxxxxxxxxxx????xxxx????";
+
+    // Get target module info
+    HMODULE target_module = get_target_module();
+    if (target_module) {
+        MODULEINFO info{};
+        if (GetModuleInformation(GetCurrentProcess(), target_module, &info, sizeof(info))) {
+            std::cout << "Target module range: 0x" << std::hex
+                << reinterpret_cast<uintptr_t>(target_module) << " - 0x"
+                << (reinterpret_cast<uintptr_t>(target_module) + info.SizeOfImage)
+                << std::dec << std::endl;
+        }
+    }
+
+    resolve_function(test_func);
+    std::cout << "=== End Diagnosis ===" << std::endl;
+}
+
 
 bool does_json_obj_contain_func(const nlohmann::json obj)
 {
@@ -226,38 +271,43 @@ void load_cache()
 	using json = nlohmann::json;
 
 	std::string path = get_function_json_path();
-	std::cout << path << std::endl;
+	std::cout << "Loading cache from: " << path << std::endl;
 
 	std::ifstream function_file(path, std::ios::binary);
 	if (!function_file.is_open()) {
-		// create empty file (optional)
+		std::cout << "Cache file not found, creating empty one" << std::endl;
 		std::ofstream new_function_file(path, std::ios::trunc);
 		return;
 	}
 
-	// check if file empty
+	// Check if file is empty
 	function_file.seekg(0, std::ios::end);
 	if (function_file.tellg() == 0) {
-		// nothing to parse
+		std::cout << "Cache file is empty" << std::endl;
 		return;
 	}
 	function_file.seekg(0);
 
-
 	json json_data;
 	try {
 		function_file >> json_data;
+		std::cout << "Successfully parsed JSON" << std::endl;
 	}
 	catch (const std::exception& e) {
 		std::cerr << "JSON parse error: " << e.what() << "\n";
 		return;
 	}
 
-	if (json_data.is_null() || !json_data.contains("functions") || !json_data["functions"].is_array()) return;
+	if (json_data.is_null() || !json_data.contains("functions") || !json_data["functions"].is_array()) {
+		std::cerr << "Invalid JSON structure" << std::endl;
+		return;
+	}
 
-	std::unique_lock lock(cache_mutex);
 	for (const auto& funcObj : json_data["functions"]) {
-		if (!does_json_obj_contain_func(funcObj)) continue;
+		if (!does_json_obj_contain_func(funcObj)) {
+			std::cerr << "Invalid function object in JSON" << std::endl;
+			continue;
+		}
 
 		function input;
 		input.name = funcObj["name"].get<std::string>();
@@ -265,23 +315,50 @@ void load_cache()
 		input.mask = funcObj["mask"].get<std::string>();
 		input.offset = funcObj["off"].get<std::uint64_t>();
 
-		verify_function(&input);
-		internal_cache.push_back(std::move(input));
-		
+		std::cout << "Processing function: " << input.name << std::endl;
+
+		if (verify_function(&input)) {
+			internal_cache.push_back(std::move(input));
+			std::cout << "Successfully added function to cache" << std::endl;
+		}
+		else {
+			std::cerr << "Failed to verify function: " << input.name << std::endl;
+		}
 	}
+
+	std::cout << "Cache loading complete. Total functions: " << internal_cache.size() << std::endl;
+}
+
+// Add this debug function to help troubleshoot
+void debug_pattern_search()
+{
+	function test_func;
+	test_func.name = "AddChatMessage";
+	test_func.sig = "48897C241841564883EC40488BFA4C8BF1E80000000084C00F8400000000";
+	test_func.mask = "xxxxxxxxxxxxxxxxxx????xxxx????";
+	test_func.offset = 0;
+
+	// Fix the mask length to match the signature
+	std::vector<uint8_t> bytes = hex_to_bytes(test_func.sig);
+	if (test_func.mask.length() != bytes.size()) {
+		std::cout << "Correcting mask length from " << test_func.mask.length()
+			<< " to " << bytes.size() << std::endl;
+		// Pad or truncate mask to match pattern length
+		test_func.mask.resize(bytes.size(), '?');
+	}
+
+	verify_function(&test_func);
 }
 
 void save_cache()
 {
 	std::string path = get_function_json_path();
-	std::string tmp = path + ".tmp";
 
 	using json = nlohmann::json;
 	json obj;
 	obj["functions"] = json::array();
 
 	{   // lock while we read internal_cache
-		std::shared_lock lock(cache_mutex);
 		for (const auto& funct : internal_cache) {
 			obj["functions"].push_back({
 				{"name", funct.name},
@@ -294,30 +371,17 @@ void save_cache()
 
 	// write to temp file
 	{
-		std::ofstream ofs(tmp, std::ios::binary | std::ios::trunc);
-		if (!ofs.is_open()) {
-			std::cerr << "Failed to open temp file for writing: " << tmp << "\n";
-			return;
-		}
 		std::string out = obj.dump(4);
-		ofs << out;
-		if (!ofs) {
-			std::cerr << "Write failed to " << tmp << "\n";
-			return;
-		}
-	}
-
-	// rename (std::filesystem::rename replaces on most platforms)
-	try {
-		std::filesystem::rename(tmp, path);
-	}
-	catch (const std::exception& e) {
-		std::cerr << "Failed to replace original file: " << e.what() << "\n";
+		std::ofstream stream(path);
+		stream << out;
 	}
 }
 
 function_cache::function_cache()
 {
+	char path[MAX_PATH];
+	GetModuleFileNameA(NULL, path, MAX_PATH);
+	std::cout << "Current module path: " << path << std::endl;
 	load_cache();
 }
 
