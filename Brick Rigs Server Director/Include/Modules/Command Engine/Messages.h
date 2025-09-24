@@ -2,7 +2,7 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     messages.h                                                  */
+/*    Module:     Messages.h                                                  */
 /*    Author:     Aaron Wilk                                                  */
 /*    Created:    24 June 2025                                                */
 /*                                                                            */

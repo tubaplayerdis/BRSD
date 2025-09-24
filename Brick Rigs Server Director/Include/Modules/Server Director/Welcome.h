@@ -2,7 +2,7 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     welcome.h			                                          */
+/*    Module:     Welcome.h			                                          */
 /*    Author:     Aaron Wilk                                                  */
 /*    Created:    24 June 2025                                                */
 /*                                                                            */
@@ -11,9 +11,9 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include "../../Global/global.h"
-#include "../Command Engine/messages.h"
-#include "../../Utils/stringlist.h"
+#include "../../Global/Global.h"
+#include "../Command Engine/Messages.h"
+#include "../../Utils/StringLiterals.h"
 
 namespace welcome
 {

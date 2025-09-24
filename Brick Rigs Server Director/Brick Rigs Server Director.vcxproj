@@ -111,7 +111,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -132,7 +132,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp23</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -229,7 +229,7 @@
       <AdditionalIncludeDirectories>C:\Users\aaron\source\repos\Brick Rigs Server Director\include;;C:\dev\VCPKG\vcpkg\installed\x64-windows\include</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Global\global.cpp">
+    <ClCompile Include="Source\Global\Global.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <Optimization>Disabled</Optimization>
@@ -383,7 +383,7 @@
       <AdditionalIncludeDirectories>C:\Users\aaron\source\repos\Brick Rigs Server Director\include;;C:\dev\VCPKG\vcpkg\installed\x64-windows\include</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\GUI\gui_manager.cpp">
+    <ClCompile Include="Source\GUI\GuiManager.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <Optimization>Disabled</Optimization>
@@ -691,7 +691,7 @@
       <AdditionalIncludeDirectories>C:\Users\aaron\source\repos\Brick Rigs Server Director\include;;C:\dev\VCPKG\vcpkg\installed\x64-windows\include</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Hooks\hooks.cpp">
+    <ClCompile Include="Source\Hooks\Hooks.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <Optimization>Disabled</Optimization>
@@ -768,7 +768,7 @@
       <AdditionalIncludeDirectories>C:\Users\aaron\source\repos\Brick Rigs Server Director\include;;C:\dev\VCPKG\vcpkg\installed\x64-windows\include</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\main.cpp">
+    <ClCompile Include="Source\Main.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <Optimization>Disabled</Optimization>
@@ -922,7 +922,7 @@
       <AdditionalIncludeDirectories>C:\Users\aaron\source\repos\Brick Rigs Server Director\include;;C:\dev\VCPKG\vcpkg\installed\x64-windows\include</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Modules\Command Engine\interpreter.cpp">
+    <ClCompile Include="Source\Modules\Command Engine\Interpreter.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <Optimization>Disabled</Optimization>
@@ -1461,7 +1461,7 @@
       <AdditionalIncludeDirectories>C:\Users\aaron\source\repos\Brick Rigs Server Director\include;;C:\dev\VCPKG\vcpkg\installed\x64-windows\include</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Modules\Server Director\messages.cpp">
+    <ClCompile Include="Source\Modules\Server Director\Messages.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <Optimization>Disabled</Optimization>
@@ -1538,7 +1538,7 @@
       <AdditionalIncludeDirectories>C:\Users\aaron\source\repos\Brick Rigs Server Director\include;;C:\dev\VCPKG\vcpkg\installed\x64-windows\include</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Modules\Server Director\moderation.cpp">
+    <ClCompile Include="Source\Modules\Server Director\Moderation.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <Optimization>Disabled</Optimization>
@@ -1615,7 +1615,7 @@
       <AdditionalIncludeDirectories>C:\Users\aaron\source\repos\Brick Rigs Server Director\include;;C:\dev\VCPKG\vcpkg\installed\x64-windows\include</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Modules\UI\uibase.cpp">
+    <ClCompile Include="Source\Modules\UI\UIBase.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <Optimization>Disabled</Optimization>
@@ -1692,7 +1692,7 @@
       <AdditionalIncludeDirectories>C:\Users\aaron\source\repos\Brick Rigs Server Director\include;;C:\dev\VCPKG\vcpkg\installed\x64-windows\include</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Modules\UI\watermark.cpp">
+    <ClCompile Include="Source\Modules\UI\Watermark.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <Optimization>Disabled</Optimization>
@@ -1771,37 +1771,36 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Include\Functions\functions.h" />
-    <ClInclude Include="Include\Functions\loader.h" />
-    <ClInclude Include="Include\Global\global.h" />
-    <ClInclude Include="Include\GUI\gui_manager.h" />
+    <ClInclude Include="Include\Functions\Functions.h" />
+    <ClInclude Include="Include\Global\Global.h" />
+    <ClInclude Include="Include\GUI\GuiManager.h" />
     <ClInclude Include="Include\GUI\Kiero\kiero.h" />
-    <ClInclude Include="Include\GUI\menus.h" />
+    <ClInclude Include="Include\GUI\GuiMenus.h" />
     <ClInclude Include="Include\Hooks\General\AddChatMessage.h" />
     <ClInclude Include="Include\Hooks\General\BeginPlay.h" />
     <ClInclude Include="Include\Hooks\General\LoadMap.h" />
     <ClInclude Include="Include\Hooks\General\OnPlayerJoined.h" />
     <ClInclude Include="Include\Hooks\General\StartPlay.h" />
-    <ClInclude Include="Include\Hooks\hooks.h" />
+    <ClInclude Include="Include\Hooks\Hooks.h" />
     <ClInclude Include="Include\Hooks\UI\OpenMenu.h" />
     <ClInclude Include="Include\Hooks\Vehicle\RestartPlayerAt.h" />
     <ClInclude Include="Include\Logging\logger.h" />
     <ClInclude Include="Include\Logging\LoggerStream.h" />
-    <ClInclude Include="Include\main.h" />
-    <ClInclude Include="Include\Modules\Command Engine\commands.h" />
-    <ClInclude Include="Include\Modules\Command Engine\interpreter.h" />
-    <ClInclude Include="Include\Modules\Command Engine\messages.h" />
+    <ClInclude Include="Include\Main.h" />
+    <ClInclude Include="Include\Modules\Command Engine\Commands.h" />
+    <ClInclude Include="Include\Modules\Command Engine\Interpreter.h" />
+    <ClInclude Include="Include\Modules\Command Engine\Messages.h" />
     <ClInclude Include="Include\Modules\Module.h" />
-    <ClInclude Include="Include\Modules\modules.h" />
+    <ClInclude Include="Include\Modules\Modules.h" />
     <ClInclude Include="Include\Modules\Server Director\Blacklist.h" />
-    <ClInclude Include="Include\Modules\Server Director\moderation.h" />
+    <ClInclude Include="Include\Modules\Server Director\Moderation.h" />
     <ClInclude Include="Include\Modules\Server Director\Saver.h" />
-    <ClInclude Include="Include\Modules\Server Director\welcome.h" />
-    <ClInclude Include="Include\Modules\UI\uibase.h" />
-    <ClInclude Include="Include\Modules\UI\watermark.h" />
-    <ClInclude Include="Include\Utils\offsets.h" />
+    <ClInclude Include="Include\Modules\Server Director\Welcome.h" />
+    <ClInclude Include="Include\Modules\UI\UIBase.h" />
+    <ClInclude Include="Include\Modules\UI\Watermark.h" />
+    <ClInclude Include="Include\Utils\Offsets.h" />
     <ClInclude Include="Include\Utils\PlayerInfo.h" />
-    <ClInclude Include="Include\Utils\stringlist.h" />
+    <ClInclude Include="Include\Utils\StringLiterals.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="HookDiagram.cd" />

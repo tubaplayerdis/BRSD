@@ -2,28 +2,32 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     uibase.h			                                          */
+/*    Module:     Hooks.h			                                          */
 /*    Author:     Aaron Wilk                                                  */
-/*    Created:    12 July 2025                                                */
+/*    Created:    24 June 2025                                                */
 /*                                                                            */
 /*    Revisions:  V0.1                                                        */
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include <BR-SDK.hpp>
 
-namespace uibase
+//Include all hook files
+#include "General/AddChatMessage.h"
+#include "General/BeginPlay.h"
+#include "General/LoadMap.h"
+#include "General/OnPlayerJoined.h"
+#include "UI/OpenMenu.h"
+#include "General/StartPlay.h"
+#include "Vehicle/RestartPlayerAt.h"
+
+namespace hooks
 {
-	void PrintButtonsInfo();
-	std::string GetCurrentMenu();
-	bool IsButtonMenuVisible();
-	bool IsInGameMenuOpen();
-	SDK::UWBP_Menu_C* GetBaseMenu();//Same as GetMenu()
-	void Cleanup();
-}
+	bool InitHooks();
 
-SDK::UWBP_WindowManager_C* GetWindowManager();
-SDK::UPanelWidget* GetRootWidgetPanel();
-SDK::UCanvasPanel* GetCanvasPanel();
-SDK::UWBP_Menu_C* GetMenu();
+	void EnableHooks();
+
+	void DestroyHookObjects();
+
+	void OpenCrashFile();
+}

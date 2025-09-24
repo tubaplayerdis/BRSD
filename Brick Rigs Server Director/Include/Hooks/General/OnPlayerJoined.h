@@ -11,12 +11,12 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include "../../Utils/offsets.h"
+#include "../../Utils/Offsets.h"
 #include <windows.h>
 #include <BR-SDK.hpp>
-#include "../../Modules/Command Engine/messages.h"
-#include "../../Utils/stringlist.h"
-#include "../../Global/global.h"
+#include "../../Modules/Command Engine/Messages.h"
+#include "../../Utils/StringLiterals.h"
+#include "../../Global/Global.h"
 #include <fstream>
 
 inline void LogPlayerJoining(PlayerInfo info)

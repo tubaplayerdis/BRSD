@@ -10,8 +10,8 @@
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
-#include "../../../Include/Modules/Server Director/moderation.h"
-#include "../../../Include/Global/global.h"
+#include "../../../Include/Modules/Server Director/Moderation.h"
+#include "../../../Include/Global/Global.h"
 #include <fstream>
 #include <iostream>
 

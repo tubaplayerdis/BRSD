@@ -15,12 +15,12 @@
 #include <BR-SDK.hpp>
 #include <thread>
 
-#include "../../Modules/modules.h"
-#include "../../Global/global.h"
+#include "../../Modules/Modules.h"
+#include "../../Global/Global.h"
 #include "AddChatMessage.h"
 #include "OnPlayerJoined.h"
 #include "StartPlay.h"
-#include "../../Modules/UI/watermark.h"
+#include "../../Modules/UI/Watermark.h"
 
 namespace hooks
 {

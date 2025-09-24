@@ -10,10 +10,10 @@
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
-#include "../../../Include/Modules/UI/watermark.h"
-#include "../../../Include/Functions/functions.h"
-#include "../../../Include/Modules/UI/uibase.h"
-#include "../../../Include/Global/global.h"
+#include "../../../Include/Modules/UI/Watermark.h"
+#include "../../../Include/Functions/Functions.h"
+#include "../../../Include/Modules/UI/UIBase.h"
+#include "../../../Include/Global/Global.h"
 #include <string>
 
 #undef SpawnObject

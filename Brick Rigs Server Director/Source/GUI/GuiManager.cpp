@@ -12,7 +12,7 @@
 #include <imgui/imgui_impl_win32.h>
 #include <imgui/imgui_impl_dx11.h>
 
-#include "../../Include/GUI/gui_manager.h"
+#include "../../Include/GUI/GuiManager.h"
 #include <vector>
 #include <memory>
 #include <iostream>
@@ -40,7 +40,7 @@ static ID3D11RenderTargetView* mainRenderTargetView = nullptr;
 static std::vector<std::shared_ptr<gui_menu>> menus;
 static std::shared_mutex menus_mutex;
 static std::vector<std::shared_ptr<gui_menu>> prev_menus = std::vector<std::shared_ptr<gui_menu>>();
-static std::unique_ptr<gui_manager> manager = nullptr;
+static std::unique_ptr<GuiManager> manager = nullptr;
 
 // ------------------------------------------------------------
 // WndProc Hook
@@ -119,9 +119,9 @@ HRESULT __stdcall hooked_present(IDXGISwapChain* pSwapChain, UINT SyncInterval, 
 }
 
 // ------------------------------------------------------------
-// gui_manager implementation
+// GuiManager implementation
 // ------------------------------------------------------------
-gui_manager::gui_manager()
+GuiManager::GuiManager()
 {
     if (kiero::init(kiero::RenderType::D3D11) == kiero::Status::Success)
     {
@@ -129,14 +129,14 @@ gui_manager::gui_manager()
     }
 }
 
-gui_manager* gui_manager::get()
+GuiManager* GuiManager::get()
 {
     if (!manager)
-        manager = std::unique_ptr<gui_manager>(new gui_manager());
+        manager = std::unique_ptr<GuiManager>(new GuiManager());
     return manager.get();
 }
 
-void gui_manager::shutdown()
+void GuiManager::shutdown()
 {
     kiero::unbind(8);
     ImGui_ImplWin32_Shutdown();
@@ -159,7 +159,7 @@ void gui_manager::shutdown()
     _is_init = false;
 }
 
-void gui_manager::remove_menu(std::shared_ptr<gui_menu> menu)
+void GuiManager::remove_menu(std::shared_ptr<gui_menu> menu)
 {
     std::unique_lock<std::shared_mutex> lock(menus_mutex);
     for (size_t i = 0; i < menus.size(); ++i)
@@ -172,7 +172,7 @@ void gui_manager::remove_menu(std::shared_ptr<gui_menu> menu)
     }
 }
 
-void gui_manager::set_menu_visibility(std::shared_ptr<gui_menu> menu, bool visibility)
+void GuiManager::set_menu_visibility(std::shared_ptr<gui_menu> menu, bool visibility)
 {
     if (visibility)
     {
@@ -188,12 +188,12 @@ void gui_manager::set_menu_visibility(std::shared_ptr<gui_menu> menu, bool visib
 
 }
 
-void gui_manager::toggle_menu_visibility(std::shared_ptr<gui_menu> menu)
+void GuiManager::toggle_menu_visibility(std::shared_ptr<gui_menu> menu)
 {
     set_menu_visibility(menu, !menu->is_visible);
 }
 
-void gui_manager::hide_all()
+void GuiManager::hide_all()
 {
     std::unique_lock<std::shared_mutex> lock(menus_mutex);
     prev_menus.clear();
@@ -204,12 +204,12 @@ void gui_manager::hide_all()
     }
 }
 
-bool gui_manager::are_all_hidden()
+bool GuiManager::are_all_hidden()
 {
     return prev_menus.size() > 0;
 }
 
-void gui_manager::display_all_previous()
+void GuiManager::display_all_previous()
 {
     for (std::shared_ptr<gui_menu> menu : prev_menus)
     {
@@ -218,7 +218,7 @@ void gui_manager::display_all_previous()
     prev_menus.clear();
 }
 
-void gui_manager::add_menu(std::shared_ptr<gui_menu> menu)
+void GuiManager::add_menu(std::shared_ptr<gui_menu> menu)
 {
     std::unique_lock<std::shared_mutex> lock(menus_mutex);
     for (std::shared_ptr<gui_menu> menu_itor : menus)

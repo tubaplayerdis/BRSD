@@ -2,7 +2,7 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     hooks.h			                                          */
+/*    Module:     Functions.h			                                      */
 /*    Author:     Aaron Wilk                                                  */
 /*    Created:    24 June 2025                                                */
 /*                                                                            */
@@ -11,23 +11,18 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
+#include <BR-SDK.hpp>
+#include "../Utils/Offsets.h"
 
-//Include all hook files
-#include "General/AddChatMessage.h"
-#include "General/BeginPlay.h"
-#include "General/LoadMap.h"
-#include "General/OnPlayerJoined.h"
-#include "UI/OpenMenu.h"
-#include "General/StartPlay.h"
-#include "Vehicle/RestartPlayerAt.h"
-
-namespace hooks
+namespace FBrickChatMessage
 {
-	bool InitHooks();
+	inline void FBrickChatMessageConstructor(SDK::FBrickChatMessage* This, SDK::EChatMessageType ChatType, SDK::ABrickPlayerController* PC)
+	{
+		return CallGameFunction<void, SDK::FBrickChatMessage*, SDK::EChatMessageType, SDK::ABrickPlayerController*>(FFBrickChatMessageConstructor, This, ChatType, PC);
+	}
+}
 
-	void EnableHooks();
-
-	void DestroyHookObjects();
-
-	void OpenCrashFile();
+inline void SynchronizeProperties(SDK::UBrickBorder* This)
+{
+	return CallGameFunction<void, SDK::UBrickBorder*>(UBRICKBORDER_SYNCHRONIZEPROPERTIES, This);
 }

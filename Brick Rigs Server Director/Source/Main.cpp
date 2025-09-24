@@ -12,16 +12,16 @@
 
 #include <iostream>
 #include <windows.h>
-#include "../Include/main.h"
-#include "../Include/Hooks/hooks.h"
-#include "../Include/Global/global.h"
-#include "../Include/Modules/UI/watermark.h"
-#include "../Include/Modules/Command Engine/messages.h"
-#include "../Include/Modules/Server Director/welcome.h"
-#include "../Include/Modules/UI/uibase.h"
+#include "../Include/Main.h"
+#include "../Include/Hooks/Hooks.h"
+#include "../Include/Global/Global.h"
+#include "../Include/Modules/UI/Watermark.h"
+#include "../Include/Modules/Command Engine/Messages.h"
+#include "../Include/Modules/Server Director/Welcome.h"
+#include "../Include/Modules/UI/UIBase.h"
 #include "../Include/Hooks/General/AddChatMessage.h"
 #include "../Include/Logging/logger.h"
-#include "../Include/GUI/menus.h"
+#include "../Include/GUI/GuiMenus.h"
 #include "../Include/FUnctions/loader.h"
 
 using namespace global;
@@ -90,7 +90,7 @@ void MainLoop()
 		if (TogglePress()) {
 			//load_module();
 
-			gui_manager* manager = gui_manager::get();
+			GuiManager* manager = GuiManager::get();
 			if (manager->are_all_hidden()) {
 				manager->display_all_previous();
 			}
@@ -110,7 +110,7 @@ void MainLoop()
 
 	uibase::Cleanup();
 
-	gui_manager::shutdown();
+	GuiManager::shutdown();
 
 	MessageHost("Uninjecting BRSD!");
 

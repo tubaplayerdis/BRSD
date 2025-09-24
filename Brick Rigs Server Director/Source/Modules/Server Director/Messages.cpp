@@ -10,9 +10,10 @@
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
-#include "../../../Include/Modules/Command Engine/messages.h"
-#include "../../../Include/Functions/functions.h"
-#include "../../../Include/Global/global.h"
+#include "../../../Include/Modules/Command Engine/Messages.h"
+#include "../../../Include/Functions/Functions.h"
+#include "../../../Include/Global/Global.h"
+#include <BR-SDK.hpp>
 
 #define TEXT(text) SDK::UKismetTextLibrary::Conv_StringToText(SDK::FString(text))
 

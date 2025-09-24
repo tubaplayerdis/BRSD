@@ -1,5 +1,5 @@
-#include "../../../Include/Modules/Command Engine/commands.h"
-#include "../../../Include/Global/global.h"
+#include "../../../Include/Modules/Command Engine/Commands.h"
+#include "../../../Include/Global/Global.h"
 
 COMMAND_ADMIN_IMMUTABLE(Moderation, on, "Enables Command", [](PlayerInfo info, std::vector<std::string> args) -> bool {
 	if (args.size() < 1) { messages::ToFewArgs(info, "/on", Command::get_command_string(Moderation)); return false; }

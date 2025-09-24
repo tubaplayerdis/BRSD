@@ -2,10 +2,10 @@
 #include <string>
 #include <cstdarg>
 #include <sstream>
-#include "interpreter.h"
-#include "messages.h"
+#include "Interpreter.h"
+#include "Messages.h"
 #include "../../Utils/PlayerInfo.h"
-#include "../../Utils/stringlist.h"
+#include "../../Utils/StringLiterals.h"
 
 #define DECLARE_COMMAND(name) extern Command c_##name;
 #define COMMAND(group, name, about, func, ...) Command command_##name = Command(group, #name, about, ECommandFlags::NONE, func, __VA_ARGS__);

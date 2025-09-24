@@ -11,11 +11,11 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include "../../Utils/offsets.h"
+#include "../../Utils/Offsets.h"
 #include <windows.h>
 #include <BR-SDK.hpp>
-#include "../../Modules/Command Engine/messages.h"
-#include "../../Global/global.h"
+#include "../../Modules/Command Engine/Messages.h"
+#include "../../Global/Global.h"
 #include "../../Modules/Server Director/blacklist.h"
 
 enum EPlayerSpawnResult : uint8_t

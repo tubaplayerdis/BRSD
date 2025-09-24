@@ -11,16 +11,16 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include "../../Utils/offsets.h"
+#include "../../Utils/Offsets.h"
 #include <BR-SDK.hpp>
 #include <windows.h>
 #include <vector>
 #include <string>
 #include <sstream>
-#include "../../Modules/Command Engine/messages.h"
-#include "../../Modules/Command Engine/interpreter.h"
-#include "../../Modules/Server Director/moderation.h"
-#include "../../Global/global.h"
+#include "../../Modules/Command Engine/Messages.h"
+#include "../../Modules/Command Engine/Interpreter.h"
+#include "../../Modules/Server Director/Moderation.h"
+#include "../../Global/Global.h"
 
 namespace hooks
 {

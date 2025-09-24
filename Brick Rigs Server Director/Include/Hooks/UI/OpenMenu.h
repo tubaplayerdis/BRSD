@@ -11,7 +11,7 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include "../../Utils/offsets.h"
+#include "../../Utils/Offsets.h"
 #include <windows.h>
 #include <BR-SDK.hpp>
 

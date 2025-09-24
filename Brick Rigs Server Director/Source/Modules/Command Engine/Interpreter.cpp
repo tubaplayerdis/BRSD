@@ -10,17 +10,17 @@
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
-#include "../../../Include/Modules/Command Engine/interpreter.h"
-#include "../../../Include/Modules/Command Engine/messages.h"
-#include "../../../Include/Utils/stringlist.h"
+#include "../../../Include/Modules/Command Engine/Interpreter.h"
+#include "../../../Include/Modules/Command Engine/Messages.h"
+#include "../../../Include/Utils/StringLiterals.h"
 #include <thread>
 #include <functional>
 #include <BR-SDK.hpp>
-#include "../../../Include/Global/global.h"
+#include "../../../Include/Global/Global.h"
 #include "../../../Include/Utils/PlayerInfo.h"
-#include "../../../Include/main.h"
-#include "../../../Include/Modules/Server Director/moderation.h"
-#include "../../../Include/Modules/Command Engine/commands.h"
+#include "../../../Include/Main.h"
+#include "../../../Include/Modules/Server Director/Moderation.h"
+#include "../../../Include/Modules/Command Engine/Commands.h"
 
 #define MIF(cond, info, message) (cond ? sendUserSpecificMessage(info, message) : (void)0)
 

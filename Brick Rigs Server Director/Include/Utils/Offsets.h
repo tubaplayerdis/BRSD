@@ -2,7 +2,7 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     offsets.h											          */
+/*    Module:     Offsets.h											          */
 /*    Author:     Aaron Wilk                                                  */
 /*    Created:    7 July 2025                                                 */
 /*                                                                            */

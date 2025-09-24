@@ -1,5 +1,5 @@
 #pragma once
-#include "gui_manager.h"
+#include "GuiManager.h"
 
 namespace menus
 {

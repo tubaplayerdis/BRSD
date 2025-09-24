@@ -2,7 +2,7 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     modules.h			                                          */
+/*    Module:     Modules.h			                                          */
 /*    Author:     Aaron Wilk                                                  */
 /*    Created:    24 June 2025                                                */
 /*                                                                            */
@@ -12,10 +12,10 @@
 
 #pragma once
 
-#include "Command Engine/messages.h"
-#include "Server Director/welcome.h"
-#include "Command Engine/interpreter.h"
-#include "Server Director/moderation.h"
+#include "Command Engine/Messages.h"
+#include "Server Director/Welcome.h"
+#include "Command Engine/Interpreter.h"
+#include "Server Director/Moderation.h"
 #include "Server Director/Blacklist.h"
 
 namespace modules

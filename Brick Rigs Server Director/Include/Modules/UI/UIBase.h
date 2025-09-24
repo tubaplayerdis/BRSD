@@ -2,9 +2,9 @@
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
-/*    Module:     watermark.h		                                          */
+/*    Module:     UIUtils.h			                                          */
 /*    Author:     Aaron Wilk                                                  */
-/*    Created:    24 June 2025                                                */
+/*    Created:    12 July 2025                                                */
 /*                                                                            */
 /*    Revisions:  V0.1                                                        */
 /*                                                                            */
@@ -13,12 +13,17 @@
 #pragma once
 #include <BR-SDK.hpp>
 
-namespace watermark
+namespace uibase
 {
-	inline SDK::UCanvasPanel* panel = nullptr;
-	inline SDK::UBrickBorder* TextBorder = nullptr;
-	bool InitalizeWaterMark();
-	void ShowWaterMark();
-	void HideWaterWark();
-	void UnInitalizeWaterMark();
+	void PrintButtonsInfo();
+	std::string GetCurrentMenu();
+	bool IsButtonMenuVisible();
+	bool IsInGameMenuOpen();
+	SDK::UWBP_Menu_C* GetBaseMenu();//Same as GetMenu()
+	void Cleanup();
 }
+
+SDK::UWBP_WindowManager_C* GetWindowManager();
+SDK::UPanelWidget* GetRootWidgetPanel();
+SDK::UCanvasPanel* GetCanvasPanel();
+SDK::UWBP_Menu_C* GetMenu();

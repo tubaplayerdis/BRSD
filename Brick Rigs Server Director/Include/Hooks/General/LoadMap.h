@@ -11,11 +11,11 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include "../../Utils/offsets.h"
+#include "../../Utils/Offsets.h"
 #include <Windows.h>
 #include <BR-SDK.hpp>
-#include "../../Global/global.h"
-#include "../../Modules/UI/watermark.h"
+#include "../../Global/Global.h"
+#include "../../Modules/UI/Watermark.h"
 
 
 namespace hooks

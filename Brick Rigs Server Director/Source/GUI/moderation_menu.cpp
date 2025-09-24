@@ -1,10 +1,10 @@
-#include "../../Include/GUI/menus.h"
+#include "../../Include/GUI/GuiMenus.h"
 #include <BR-SDK.hpp>
-#include "../../Include/Global/global.h"
+#include "../../Include/Global/Global.h"
 #include "imgui/imgui.h"
-#include "../../Include/Modules/Server Director/moderation.h"
-#include "../../Include/Utils/offsets.h"
-#include "../../Include/Modules/Command Engine/commands.h"
+#include "../../Include/Modules/Server Director/Moderation.h"
+#include "../../Include/Utils/Offsets.h"
+#include "../../Include/Modules/Command Engine/Commands.h"
 
 constexpr int MODERATION_MENU_WIDTH = 400;
 constexpr int MODERATION_MENU_HEIGHT = 250;

@@ -10,7 +10,7 @@
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
-#include "../../Include/Hooks/hooks.h"
+#include "../../Include/Hooks/Hooks.h"
 #include <chrono>
 #include <fstream>
 #include <windows.h>

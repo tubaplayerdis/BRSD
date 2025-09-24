@@ -1,7 +1,7 @@
-#include "../../Include/GUI/menus.h"
-#include "../../Include/Modules/Command Engine/interpreter.h"
-#include "../../Include/Modules/Command Engine/messages.h"
-#include "../../Include/Modules/Command Engine/commands.h"
+#include "../../Include/GUI/GuiMenus.h"
+#include "../../Include/Modules/Command Engine/Interpreter.h"
+#include "../../Include/Modules/Command Engine/Messages.h"
+#include "../../Include/Modules/Command Engine/Commands.h"
 #include <imgui/imgui.h>
 
 constexpr int COMMAND_ENGINE_MENU_WIDTH = 550;

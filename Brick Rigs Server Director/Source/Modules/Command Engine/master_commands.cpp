@@ -1,4 +1,4 @@
-#include "../../../Include/Modules/Command Engine/commands.h"
+#include "../../../Include/Modules/Command Engine/Commands.h"
 
 COMMAND_IMMUTABLE(Master, info, "Info about BRSD", [](PlayerInfo info, std::vector<std::string>) -> bool {
 	messages::sendUserSpecificMessageWithContext(info, InfoMessage, SDK::EChatContext::Global, L"Info About BRSD:");

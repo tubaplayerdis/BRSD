@@ -10,9 +10,9 @@
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
-#include "../../../Include/Modules/UI/uibase.h"
-#include "../../../Include/Global/global.h"
-#include "../../../Include/Utils/offsets.h"
+#include "../../../Include/Modules/UI/UIBase.h"
+#include "../../../Include/Global/Global.h"
+#include "../../../Include/Utils/Offsets.h"
 
 SDK::UWBP_WindowManager_C* GetWindowManager()
 {

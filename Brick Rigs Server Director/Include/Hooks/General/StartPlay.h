@@ -11,10 +11,10 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include "../../Utils/offsets.h"
+#include "../../Utils/Offsets.h"
 #include <windows.h>
 #include <BR-SDK.hpp>
-#include "../../Global/global.h"
+#include "../../Global/Global.h"
 
 namespace hooks
 {

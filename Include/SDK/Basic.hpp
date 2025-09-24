@@ -690,7 +690,7 @@ private:
 private:
 	using ValueType = std::conditional_t<bIsIntrusiveUnsetCheck, uint8[sizeof(OptionalType)], OptionalWithBool<sizeof(OptionalType)>>;
 
-public:
+private:
 	alignas(OptionalType) ValueType StoredValue;
 
 private:

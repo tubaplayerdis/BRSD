@@ -7,15 +7,15 @@
 
 struct gui_menu;
 
-class gui_manager
+class GuiManager
 {
-	friend class std::unique_ptr<gui_manager>;
+	friend class std::unique_ptr<GuiManager>;
 
-	gui_manager();
+	GuiManager();
 
 public:
 
-	static gui_manager* get();
+	static GuiManager* get();
 	static void shutdown();
 
 	void hide_all();
@@ -40,16 +40,16 @@ struct gui_menu : public std::enable_shared_from_this<gui_menu>
 
 	void toggle()
 	{
-		gui_manager::get()->toggle_menu_visibility(shared_from_this());
+		GuiManager::get()->toggle_menu_visibility(shared_from_this());
 	}
 
 	void display()
 	{
-		gui_manager::get()->set_menu_visibility(shared_from_this(), true);
+		GuiManager::get()->set_menu_visibility(shared_from_this(), true);
 	}
 
 	void hide()
 	{
-		gui_manager::get()->set_menu_visibility(shared_from_this(), false);
+		GuiManager::get()->set_menu_visibility(shared_from_this(), false);
 	}
 };

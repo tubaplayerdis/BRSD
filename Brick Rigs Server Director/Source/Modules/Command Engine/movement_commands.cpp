@@ -1,5 +1,5 @@
-#include "../../../Include/Modules/Command Engine/commands.h"
-#include "../../../Include/Global/global.h"
+#include "../../../Include/Modules/Command Engine/Commands.h"
+#include "../../../Include/Global/Global.h"
 
 COMMAND(Movement, fly, "Fly around (slow)", [](PlayerInfo info, std::vector<std::string> args) -> bool {
 	return interpreter::Commands::Fly(info);

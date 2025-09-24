@@ -12,7 +12,7 @@
 
 #pragma once
 #include "Module.h"
-#include "../../Utils/offsets.h"
+#include "../../Utils/Offsets.h"
 #include <vector>
 #include <string>
 #include <BR-SDK.hpp>

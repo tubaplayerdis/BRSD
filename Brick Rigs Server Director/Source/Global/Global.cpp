@@ -10,7 +10,7 @@
 /*                                                                            */
 /*----------------------------------------------------------------------------*/
 
-#include "../../Include/Global/global.h"
+#include "../../Include/Global/Global.h"
 #include <BR-SDK.hpp>
 #include "windows.h"
 #include <codecvt>
