@@ -69,7 +69,6 @@ namespace hooks
             S_AddChatMessage->OriginalFunction(This, ChatMessage);
 		}
 
-        //Dosent work with the optimized search algo
-		AddChatMessage() : Hook(AddChatMessage_S, AddChatMessage_M, HookedFunction, SAFE) {}
+		AddChatMessage() : Hook(ABRICKGAMESESSION_ADDCHATMESSAGE, HookedFunction) {}
 	};
 }

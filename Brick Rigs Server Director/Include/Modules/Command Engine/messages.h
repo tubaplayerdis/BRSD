@@ -29,6 +29,8 @@ namespace messages
 	*/
 	void sendUserSpecificMessage(PlayerInfo info, std::string message);
 
+	void sendUserSpecificMessageWithContext(SDK::ABrickPlayerController* cont, std::string message, SDK::EChatContext context, const wchar_t* sender);
+
 	/*
 	* Send a specified user a message with context and sender options.
 	* info - Recipient info

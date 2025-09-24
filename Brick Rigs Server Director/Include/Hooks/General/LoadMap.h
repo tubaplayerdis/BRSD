@@ -36,6 +36,6 @@ namespace hooks
             return ret;
         }
 
-        LoadMap() : Hook(LoadMap_S, LoadMap_M, HookedFunction) {}
+        LoadMap() : Hook(UENGINE_LOADMAP, HookedFunction) {}
     };
 }

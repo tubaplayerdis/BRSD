@@ -41,6 +41,22 @@ void messages::sendUserSpecificMessage(PlayerInfo info, std::string message)
     }
 }
 
+void messages::sendUserSpecificMessageWithContext(SDK::ABrickPlayerController* cont, std::string message, SDK::EChatContext context, const wchar_t* sender)
+{
+    if (!global::isMapValid()) return;
+    SDK::FText Fmessage = TEXT(global::to_wstring_n(message).c_str());
+    SDK::FBrickChatMessage SMessage;
+    if (cont != nullptr) {
+        FBrickChatMessage::FBrickChatMessageConstructor(&SMessage, SDK::EChatMessageType::Message, cont);
+        SMessage.TextOption = Fmessage;
+        SMessage.Type = SDK::EChatMessageType::Message;
+        SMessage.IntOption = (int)context;
+        SMessage.Player.PlayerId = cont->GetPlayerId();
+        SMessage.Player.PlayerName = STRING(sender);
+        cont->ClientReceiveChatMessage(SMessage);
+    }
+}
+
 void messages::sendUserSpecificMessageWithContext(PlayerInfo info, std::string message, SDK::EChatContext context, const wchar_t* sender)
 {
     if (!global::isMapValid()) return;

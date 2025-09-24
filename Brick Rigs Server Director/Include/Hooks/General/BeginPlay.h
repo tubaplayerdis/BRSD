@@ -13,6 +13,8 @@
 
 #pragma once
 #include <BR-SDK.hpp>
+#include <thread>
+
 #include "../../Modules/modules.h"
 #include "../../Global/global.h"
 #include "AddChatMessage.h"
@@ -49,11 +51,10 @@ namespace hooks
 			global::pointers::UpdatePointers(This);
 			if (global::isMapValid()) watermark::HideWaterWark();
 			else { watermark::ShowWaterMark(); }
-			Sleep(50); //This is janky but allows for execution of other systems to prevent freezes
 			welcome::SendWelcomeMessageA();
-			std::cout << "Started server on map: " << SDK::UGameplayStatics::GetCurrentLevelName(This, true).ToString() << std::endl;
+			//std::cout << "Started server on map: " << SDK::UGameplayStatics::GetCurrentLevelName(This, true).ToString() << std::endl;
 		}
 
-		BeginPlay() : Hook(BeginPlay_S, BeginPlay_M, HookedFunction) {}
+		BeginPlay() : Hook(UWORLD_BEGINPLAY, HookedFunction) {}
 	};
 }

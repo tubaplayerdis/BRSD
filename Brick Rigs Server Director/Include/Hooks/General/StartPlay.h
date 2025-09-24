@@ -31,6 +31,6 @@ namespace hooks
             global::pointers::UpdatePointers(SDK::UWorld::GetWorld());
         }
 
-        StartPlay() : Hook(StartPlay_S, StartPlay_M, HookedFunction) {}
+        StartPlay() : Hook(AGAMEMODE_STARTPLAY, HookedFunction) {}
     };
 }

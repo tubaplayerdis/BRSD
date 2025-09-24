@@ -47,7 +47,7 @@
 
 //define GlobalVarsOffsets
 
-#define GGameThreadID BASE + 0x436DDA8
+#define GGameThreadID (BASE + 0x436DDA8)
 
 //Define function offsets
 
@@ -64,11 +64,15 @@
 
 //define hook signatures/masks
 
+#define ABRICKGAMESESSION_ADDCHATMESSAGE "48 89 7C 24 ?? 41 56 48 83 EC ?? 48 8B FA 4C 8B F1 E8 ?? ?? ?? ?? 84 C0 0F 84 ?? ?? ?? ??"
+#define UWORLD_BEGINPLAY "40 53 48 83 EC ?? 48 8B D9 48 8B 89 ?? ?? ?? ?? 48 85 C9 74 ?? 48 8B 01 FF 90 ?? ?? ?? ?? 48 8B 8B ?? ?? ?? ?? 48 85 C9 74 ?? 48 8B 01"
+#define UENGINE_LOADMAP "48 89 5C 24 ?? 55 56 57 41 54 41 55 41 56 41 57 48 8D 6C 24 ?? 48 81 EC ?? ?? ?? ?? 0F 29 BC 24 ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4"
+#define ABRICKGAMESESSION_ONPLAYERJOINED "48 83 EC ?? 48 89 5C 24 ?? 33 DB 48 89 74 24 ?? 48 89 7C 24 ?? 4C 89 74 24 ??"
+#define AGAMEMODE_STARTPLAY "40 53 48 83 EC ?? 48 8B D9 48 8B 89 ?? ?? ?? ?? 48 8B 01 FF 90 ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 39 83 ?? ?? ?? ?? 75 ?? 48 8B 03 48 8B CB"
+#define UMENUWIDGET_OPENMENU "48 89 54 24 ?? 55 53 56 57 41 54 41 55 48 8D 6C 24 ?? 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4"
+
 #define BeginPlay_S "\x40\x53\x48\x83\xEC\x20\x48\x8B\xD9\x48\x8B\x89\x18\x01\x00\x00\x48\x85\xC9\x74\x1E\x48\x8B\x01"
 #define BeginPlay_M "xxxxxxxxxxxxxxxxxxxxxxx"
-
-#define DrawTransition_S "\x48\x89\x74\x24\x18\x57\x48\x83\xEC\x40\x80\xB9\x88\x00\x00\x00\x00\x48\x8B\xF2\x48\x8B\xF9\x0F\x85\x00\x00\x00\x00\x8B\x41\x08\x45\x33\xC0\xC1\xE8\x04\xA8\x01\x41\x8B\xC0"
-#define DrawTransition_M "xxxxxxxxxxxxxxxxxxxxxxxxx????xxxxxxxxxxxxxx"
 
 #define LoadMap_S "\x48\x89\x5C\x24\x20\x55\x56\x57\x41\x54\x41\x55\x41\x56\x41\x57\x48\x8D\x6C\x24\x80\x48\x81\xEC\x80\x01\x00\x00\x0F\x29\xBC\x24\x60\x01\x00\x00\x48\x8B\x05\x65\x77\xA7\x01"
 #define LoadMap_M "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
@@ -81,7 +85,6 @@
 
 #define OpenMenu_S "\x48\x89\x54\x24\x10\x55\x53\x56\x57\x41\x54\x41\x55\x48\x8D\x6C\x24\xD1\x48\x81\xEC"
 #define OpenMenu_M "xxxxxxxxxxxxxxxxxxxx"
-
 
 #define AddChatMessage_S "\x48\x89\x7C\x24\x18\x41\x56\x48\x83\xEC\x40\x48\x8B\xFA\x4C\x8B\xF1\xE8\x00\x00\x00\x00\x84\xC0\x0F\x84\x00\x00\x00\x00"
 #define AddChatMessage_M "xxxxxxxxxxxxxxxxxx????xxxx????"

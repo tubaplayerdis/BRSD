@@ -38,6 +38,6 @@ namespace hooks
             if (InMenu.GetRawString() == "None" && global::isMapValid()) watermark::HideWaterWark();
         }
 
-        OpenMenu() : Hook(OpenMenu_S, OpenMenu_M, HookedFunction) {}
+        OpenMenu() : Hook(UMENUWIDGET_OPENMENU, HookedFunction) {}
     };
 }

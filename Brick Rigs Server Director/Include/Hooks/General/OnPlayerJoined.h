@@ -55,6 +55,6 @@ namespace hooks
 
         }
 
-        OnPlayerJoined() : Hook(OnPlayerJoined_S, OnPlayerJoined_M, HookedFunction) {}
+        OnPlayerJoined() : Hook(ABRICKGAMESESSION_ONPLAYERJOINED, HookedFunction) {}
     };
 }
