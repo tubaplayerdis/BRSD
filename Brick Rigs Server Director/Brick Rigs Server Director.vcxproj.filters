@@ -206,9 +206,6 @@
     <ClInclude Include="functions.h">
       <Filter>Header Files\functions</Filter>
     </ClInclude>
-    <ClInclude Include="DrawTransition.h">
-      <Filter>Header Files\hooks\global</Filter>
-    </ClInclude>
     <ClInclude Include="OnPlayerJoined.h">
       <Filter>Header Files\hooks\global</Filter>
     </ClInclude>
@@ -244,9 +241,6 @@
     </ClInclude>
     <ClInclude Include="OpenMenu.h">
       <Filter>Header Files\hooks\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="spawnutils.h">
-      <Filter>Header Files\utils</Filter>
     </ClInclude>
     <ClInclude Include="offsets.h">
       <Filter>Header Files\utils</Filter>
@@ -293,5 +287,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="HookDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="..\functions.json" />
   </ItemGroup>
 </Project>

@@ -15,6 +15,7 @@
 #include <cstring>
 #include <vector>
 #include "MinHook/MinHook.h"
+#include "../Utils/GameFunctions.hpp"
 #include <libloaderapi.h>
 #include <Psapi.h>
 #include <cassert>
@@ -106,6 +107,12 @@ template <typename Ret, typename... Args>
 class Hook<Ret(Args...)>
 {
 public:
+
+	/// Creates a Hook object using the specified BR-SDK compatible signature.
+	/// @param signature BR-SDK compatible signature. See UsingBRSDK.MD Signature Formatting
+	/// @param trampFunc Valid trampoline function pointer matching the signature specified in the Hook objects template signature.
+	/// @param typeSearch Search algorithm to be used for pattern scanning. Default is FAST.
+	Hook(const char* signature, Ret (*trampFunc)(Args...), SearchType typeSearch = SearchType::FAST);
 
 	/// Creates a Hook object using the specified pattern, mask, trampoline function pointer, and SearchType. Does not register the Hook with MinHook. Use Create() to register with MinHook.
 	/// @param pattern Pattern of the signature to scan for, in format: \x00.
@@ -213,6 +220,20 @@ public:
 	static bool GetTextSection(unsigned long long& textBase, unsigned __int64& textSize);
 
 };
+
+template <typename Ret, typename ... Args>
+Hook<Ret(Args...)>::Hook(const char* signature, Ret(* trampFunc)(Args...), SearchType typeSearch)
+{
+	pattern = "None";
+	mask = "None";
+	enabled = false;
+	initialized = false;
+	FunctionPointer = ResolveSignature(signature);
+	OriginalFunction = nullptr;
+	hookedFunction = trampFunc;
+	Stype = FAST;
+	assert(FunctionPointer != 0);
+}
 
 template<typename Ret, typename ...Args>
 Hook<Ret(Args...)>::Hook(const char* pat, const char* mak, Ret(__fastcall* hookFunc)(Args...), SearchType stype)

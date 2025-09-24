@@ -1,4 +1,4 @@
-/*----------------------------------------------------------------------------*/
+﻿/*----------------------------------------------------------------------------*/
 /*                                                                            */
 /*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
 /*                                                                            */
@@ -51,66 +51,16 @@
 
 //Define function offsets
 
-#define FCreateWidget BASE + 0x0CC6140
-#define FSynchronizeProperties_UBB BASE + 0x0DE8030
-#define FSynchronizeProperties_UBSB BASE + 0x0DE9250
-#define FUpdateInputMode BASE + 0x0DEEB70
-#define FOpenMenu BASE + 0x0D7AD00
-#define FGetModHookSubsystem BASE + 0x0D20EE0
-#define FFBrickChatMessageConstructor BASE + 0x0D0EA10
-#define FFindOrLoadClass BASE + 0x0C33890
-#define FLoadPackage BASE + 0x121D710
-#define FLoadPackageAsync BASE + 0x10A8AA0
-#define FDoesPackageExist BASE + 0x105F8A0
-#define FStaticLoadClass BASE + 0x1229020
-#define FLoadAssetsFromPathInternal BASE + 0x0CCB090
-#define FGet_UBAM BASE + 0x0CE05A0
-#define FSetPath BASE + 0x1226320
-#define FLoadSynchronous BASE + 0x0843330
-#define FFlushAsyncLoading BASE + 0x10A30A0
-#define FGetPlatformFile BASE + 0x0F1EDD0
-#define FGetPlatformFileManager BASE + 0x0F19360
-#define FFindFilesRecursively BASE + 0x0EEF8C0
-#define FGetStreamableManager BASE + 0x0CE8250
-#define FRequestSyncLoad BASE + 0x27FC190
-#define FWaitUntilComplete BASE + 0x2805580
-#define FRequestAsyncLoad BASE + 0x27FB500
-#define FFlushRenderingCommands BASE + 0x1CA84B0
-#define FGetLoadedAsset BASE + 0x27FE0A0
-#define FWaitUntilComplete BASE + 0x2805580
-#define FHasLoadCompletedOrStalled BASE + 0x27FF380
-#define FQuaternion BASE + 0x0F98970
-#define FGetSelectedFileInfo BASE + 0x0DBFC00
-#define FFFluUGCItemIdWrapperToString BASE + 0x0B643B0
-#define FOperatorEqualsWeak BASE + 0x1234770
-#define FCreateUObject BASE + 0x07DD430
-#define FMarkBrickBurnt BASE + 0x0BF8890
-#define FOpenPopup BASE + 0x0DDCD00
-#define FReleaseHandle BASE + 0x27FA250
-#define FUninitializeBrickEditorObject BASE + 0x0C6FFB0
-#define FUniqueNetIdWrapper_ToString BASE + 0x0815AF0
+#define UBRICKBORDER_SYNCHRONIZEPROPERTIES "48 89 5C 24 ?? 48 89 74 24 ?? 55 57 41 54 41 56 41 57 48 8B EC 48 83 EC ?? 48 8B F1 E8 ?? ?? ?? ?? 45 33 E4 45 33 C0 BA ?? ?? ?? ??"
+#define FFBrickChatMessageConstructor "48 89 5C 24 ?? 57 48 83 EC ?? 88 11 48 8B D9 48 83 C1 ?? 49 8B D0 33 FF E8 ?? ?? ?? ??"
+#define FFFluUGCItemIdWrapperToString "48 8B C4 55 53 56 57 41 56 48 8B EC 48 83 EC ?? 48 8B 31 48 8B DA 48 85 F6"
+#define FUniqueNetIdWrapper_ToString "48 89 5C 24 ?? 48 89 74 24 ?? 57 48 83 EC ?? 33 F6 48 8B F9 48 8B 49 ?? 48 8B DA"
 
-//define VTable offsets. 8 is used after the number IDA gives
-
-#define VInitalize 0x2D0 / 8
-#define VisServer 0x378 / 8
 //VTable funcs after this now dont need 8
 
 //define hook offsets
 
-#define HOnClicked BASE + 0x0D76780
-#define HLambdaNOP BASE + 0x0D55B30
-#define HSetTitleText BASE + 0x0EA2170
-#define HOnComboBoxMenuItemSelected BASE + 0x0DD7C10
-#define HOnRequestAsyncLoad BASE + 0x27FB690
-#define HRepair BASE + 0x0E3A890
-#define HOnItemSelected BASE + 0x0DD8C80
-#define HEngineLoopTick BASE + 0x0EE0750
-#define HRestartPlayerAt BASE + 0x0D00530
-#define HOnListEntrySelected BASE + 0x0DD9090
-#define HUpdateButtons BASE + 0x0DEBA20
-#define HOnPlayerClicked BASE + 0x0DDA290
-#define HOnClickedButton BASE + 0x0DD77D0
+#define HRestartPlayerAt "40 55 53 56 57 48 8D AC 24 ?? ?? ?? ?? 48 81 EC ?? ?? ?? ?? 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 85 ?? ?? ?? ?? 49 8B F8 48 89 54 24 ?? 48 8B C2 48 8B F1"
 
 //define hook signatures/masks
 

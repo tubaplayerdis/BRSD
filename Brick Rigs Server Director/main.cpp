@@ -69,12 +69,6 @@ void MainLoop()
 
 	global::pointers::InitPointers();
 
-	SDK::FText FmessageN = SDK::UKismetTextLibrary::Conv_StringToText(UC::FString(L"Hooray"));
-	auto SMessageN = SDK::FBrickChatMessage();
-	SMessageN.TextOption = FmessageN;
-	CallGameFunction<void, SDK::ABrickGameSession*, SDK::FBrickChatMessage*>("48 89 7C 24 ?? 41 56 48 83 EC ?? 48 8B FA 4C 8B F1 E8 ?? ?? ?? ?? 84 C0 0F 84 ?? ?? ?? ??", SDK::ABrickGameSession::Get(World()), &SMessageN);
-
-
 	hooks::EnableHooks();
 
 	watermark::InitalizeWaterMark();

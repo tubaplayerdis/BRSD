@@ -179,7 +179,6 @@
     <ClInclude Include="AddChatMessage.h" />
     <ClInclude Include="Blacklist.h" />
     <ClInclude Include="commands.h" />
-    <ClInclude Include="DrawTransition.h" />
     <ClInclude Include="gui_manager.h" />
     <ClInclude Include="BeginPlay.h" />
     <ClInclude Include="kiero.h" />
@@ -203,7 +202,6 @@
     <ClInclude Include="OpenMenu.h" />
     <ClInclude Include="PlayerInfo.h" />
     <ClInclude Include="logger.h" />
-    <ClInclude Include="spawnutils.h" />
     <ClInclude Include="StartPlay.h" />
     <ClInclude Include="stringlist.h" />
     <ClInclude Include="EngineLoopTick.h" />
