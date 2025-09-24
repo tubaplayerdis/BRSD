@@ -251,12 +251,6 @@
     <ClInclude Include="PlayerInfo.h">
       <Filter>Header Files\utils</Filter>
     </ClInclude>
-    <ClInclude Include="actorutils.h">
-      <Filter>Header Files\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="EngineLoopTick.h">
-      <Filter>Header Files\hooks\global</Filter>
-    </ClInclude>
     <ClInclude Include="blacklist.h">
       <Filter>Header Files\modules\gameplay</Filter>
     </ClInclude>

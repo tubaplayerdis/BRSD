@@ -1,0 +1,108 @@
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Copyright (c) Aaron Wilk 2025, All rights reserved.                     */
+/*                                                                            */
+/*    Module:     uibase.cpp			                                      */
+/*    Author:     Aaron Wilk                                                  */
+/*    Created:    24 June 2025                                                */
+/*                                                                            */
+/*    Revisions:  V0.1                                                        */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
+
+#include "../../../Include/Modules/UI/uibase.h"
+#include "../../../Include/Global/global.h"
+#include "../../../Include/Utils/offsets.h"
+
+SDK::UWBP_WindowManager_C* GetWindowManager()
+{
+	return static_cast<SDK::UWBP_WindowManager_C*>(SDK::UWindowManagerWidget::Get(World()));
+}
+
+SDK::UPanelWidget* GetRootWidgetPanel()
+{
+	return static_cast<SDK::UPanelWidget*>(GetWindowManager()->WidgetTree->RootWidget);
+}
+
+SDK::UCanvasPanel* GetCanvasPanel()
+{
+	if (!global::World) return nullptr;
+	SDK::UCanvasPanel* panel = nullptr;
+	SDK::UPanelWidget* RootPanel = GetRootWidgetPanel();
+	if (!RootPanel) return nullptr;
+	for (int i = 0; i < RootPanel->GetChildrenCount(); ++i) {
+		SDK::UWidget* child = RootPanel->GetChildAt(i);
+		if (child->IsA(SDK::UCanvasPanel::StaticClass())) {
+			panel = static_cast<SDK::UCanvasPanel*>(child);
+			return panel;
+		}
+	}
+	return nullptr;
+}
+
+SDK::UWBP_Menu_C* GetMenu()
+{
+	if (!global::World) return nullptr;
+	SDK::UWBP_Menu_C* MainMenu = nullptr;
+	SDK::UCanvasPanel* panel = GetCanvasPanel();
+	if (!panel) return nullptr;
+	for (int i = 0; i < panel->GetChildrenCount(); i++) {
+		if (panel->GetChildAt(i)->IsA(SDK::UWBP_Menu_C::StaticClass())) {
+			MainMenu = static_cast<SDK::UWBP_Menu_C*>(panel->GetChildAt(i));
+			return MainMenu;
+		}
+	}
+	return nullptr;
+}
+
+void uibase::PrintButtonsInfo()
+{
+	SDK::UWBP_Menu_C* menu = GetMenu();
+	if (menu) {
+		std::cout << "Buttons Used: " << menu->GetButtonPanel()->NumButtonsUsed << std::endl;
+		std::cout << "Buttons Per Row: " << menu->GetButtonPanel()->NumButtonsPerRow << std::endl;
+		std::cout << "Num Buttons Array: " << menu->GetButtonPanel()->Buttons.Num() << std::endl;
+	}
+}
+
+std::string uibase::GetCurrentMenu()
+{
+	if (!GetMenu()) return std::string("None");
+	if (GetMenu()->CurrentMenuPage != nullptr)
+	{
+		std::cout << "CMenuPageNotNull" << std::endl;
+		return GetMenu()->CurrentMenuPage->GetName();
+	}
+	else return std::string("None");
+}
+
+bool uibase::IsButtonMenuVisible()
+{
+	SDK::UWBP_Menu_C* menu = GetMenu();
+	if (!menu) return false;
+	SDK::UMenuButtonPanelWidget* panel = menu->GetButtonPanel();
+	if (!panel) return false;
+	return panel->GetIsVisible();
+}
+
+bool uibase::IsInGameMenuOpen()
+{
+	return IsButtonMenuVisible && global::isMapValid();
+}
+
+SDK::UWBP_Menu_C* uibase::GetBaseMenu()
+{
+	return GetMenu();
+}
+
+void uibase::Cleanup()
+{
+	SDK::UWBP_Menu_C* menu = GetMenu();
+	if (menu) {
+		SDK::UMenuButtonPanelWidget* panel = menu->GetButtonPanel();
+		if (panel && panel->Buttons.Num() == 8) {
+			panel->NumButtonsUsed = 7;
+			panel->RemoveUnusedButtons();
+		}
+	}
+}
