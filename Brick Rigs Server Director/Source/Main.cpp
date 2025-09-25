@@ -22,7 +22,6 @@
 #include "../Include/Hooks/General/AddChatMessage.h"
 #include "../Include/Logging/logger.h"
 #include "../Include/GUI/GuiMenus.h"
-#include "../Include/FUnctions/loader.h"
 
 using namespace global;
 
@@ -37,22 +36,6 @@ using namespace global;
 #endif
 
 #define ContinuePress() (IsActiveWindow() && (GetAsyncKeyState(VK_RETURN) & 1))
-
-void printHexValues(const std::string& str, int bytesPerLine = 16) {
-	for (size_t i = 0; i < str.length(); ++i) {
-		std::cout << std::hex << std::setw(2) << std::setfill('0')
-			<< static_cast<int>(static_cast<unsigned char>(str[i]));
-
-		if (i < str.length() - 1) {
-			std::cout << " ";
-		}
-
-		if ((i + 1) % bytesPerLine == 0) {
-			std::cout << std::endl;
-		}
-	}
-	std::cout << std::dec << std::endl;
-}
 
 void MainLoop()
 {
@@ -88,8 +71,6 @@ void MainLoop()
 		if (UninjectPress() || doUninject) break;
 
 		if (TogglePress()) {
-			//load_module();
-
 			GuiManager* manager = GuiManager::get();
 			if (manager->are_all_hidden()) {
 				manager->display_all_previous();
