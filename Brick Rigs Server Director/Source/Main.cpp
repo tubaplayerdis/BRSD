@@ -58,11 +58,12 @@ void MainLoop()
 
 	if (IsHost()) welcome::SendWelcomeMessage();
 
-	modules::InitalizeModules();
+	Module::EnableModules();
 
 	std::cout << "Starting Main Loop!" << std::endl;
 
-	while (true) {
+	while (true)
+	{
 
 		Sleep(10);
 
@@ -85,7 +86,7 @@ void MainLoop()
 	watermark::HideWaterWark();
 	watermark::UnInitalizeWaterMark();
 
-	modules::DestroyModules();
+	Module::DisableModules();
 
 	hooks::DestroyHookObjects();
 

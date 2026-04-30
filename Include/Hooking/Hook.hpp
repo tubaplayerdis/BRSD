@@ -232,7 +232,7 @@ Hook<Ret(Args...)>::Hook(const char* signature, Ret(* trampFunc)(Args...), Searc
 	OriginalFunction = nullptr;
 	hookedFunction = trampFunc;
 	Stype = FAST;
-	assert(FunctionPointer != 0);
+	//assert(FunctionPointer != 0);
 }
 
 template<typename Ret, typename ...Args>
@@ -315,8 +315,8 @@ template<typename Ret, typename ...Args>
 inline void Hook<Ret(Args...)>::Create()
 {
 	if (initialized) return;
-	//assert(Init());
 	Init();
+	//assert(Init());
 }
 
 template<typename Ret, typename ...Args>

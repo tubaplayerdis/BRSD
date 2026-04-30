@@ -19,6 +19,7 @@
 #include "../Include/Main.h"
 #include <Hooking/MinHook/MinHook.h>
 
+// These are not called right now as they are not needed.
 namespace {
     static void load_dependencies(HMODULE self)
     {
@@ -28,20 +29,24 @@ namespace {
         path = path.substr(0, path.find_last_of('\\')).append(L"\\");
         //Path is now where the DLL is located
 
+        /*
         if (GetModuleHandle(L"dpp.dll") == NULL)                LoadLibrary(std::wstring(path + L"dpp.dll").c_str());
         if (GetModuleHandle(L"libcrypto-1_1-x64.dll") == NULL)  LoadLibrary(std::wstring(path + L"libcrypto-1_1-x64.dll").c_str());
         if (GetModuleHandle(L"libssl-1_1-x64.dll") == NULL)     LoadLibrary(std::wstring(path + L"libssl-1_1-x64.dll").c_str());
         if (GetModuleHandle(L"opus.dll") == NULL)               LoadLibrary(std::wstring(path + L"opus.dll").c_str());
         if (GetModuleHandle(L"zlib1.dll") == NULL)              LoadLibrary(std::wstring(path + L"zlib1.dll").c_str());
+        */
     }
 
     static void release_dependencies(HMODULE self)
     {
+        /*
         if (GetModuleHandle(L"dpp.dll") != NULL)                FreeLibrary(GetModuleHandle(L"dpp.dll"));
         if (GetModuleHandle(L"libcrypto-1_1-x64.dll") != NULL)  FreeLibrary(GetModuleHandle(L"libcrypto-1_1-x64.dll"));
         if (GetModuleHandle(L"libssl-1_1-x64.dll") != NULL)     FreeLibrary(GetModuleHandle(L"libssl-1_1-x64.dll"));
         if (GetModuleHandle(L"opus.dll") != NULL)               FreeLibrary(GetModuleHandle(L"opus.dll"));
         if (GetModuleHandle(L"zlib1.dll") != NULL)              FreeLibrary(GetModuleHandle(L"zlib1.dll"));
+        */
     }
 }
 
@@ -66,22 +71,11 @@ DWORD WINAPI MainThread(LPVOID lpReserved)
 
     SetThreadPriority(GetCurrentThread(), THREAD_PRIORITY_LOWEST); //Prevent random freezes
 
-    load_dependencies(hModule);
-
-    //MainLoop();
-
-    while (true)
-    {
-        if (GetAsyncKeyState(VK_ESCAPE) & 1) break;
-
-        Sleep(10);
-    }
+    MainLoop();
 
     MH_DisableHook(MH_ALL_HOOKS);
     MH_RemoveHook(MH_ALL_HOOKS);
     MH_Uninitialize();
-
-    release_dependencies(hModule);
 
 #ifdef _DEBUG
     fclose(pStdIn);

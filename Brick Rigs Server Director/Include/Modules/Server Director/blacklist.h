@@ -40,7 +40,7 @@ class Blacklist : public Module
 	std::vector<std::wstring> vBannedSteamLinks;
 
 public:
-	Blacklist() : Module(false, nullptr) 
+	Blacklist() : Module()
 	{
 		vBannedVehicleKeywords.push_back("lol");
 		vBannedSteamLinks.push_back(L"https://steamcommunity.com/sharedfiles/filedetails/?id=2994703505");

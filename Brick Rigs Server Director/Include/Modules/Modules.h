@@ -17,18 +17,3 @@
 #include "Command Engine/Interpreter.h"
 #include "Server Director/Moderation.h"
 #include "Server Director/Blacklist.h"
-
-namespace modules
-{
-	//Also enabled certian default startup modules
-	inline void InitalizeModules()
-	{
-		CreateModule(Blacklist, M_Blacklist);
-		EnableModule(M_Blacklist);
-	}
-	
-	inline void DestroyModules()
-	{
-		DestroyModule(M_Blacklist);
-	}
-}
