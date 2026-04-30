@@ -15,13 +15,9 @@
 #include "../Include/Main.h"
 #include "../Include/Hooks/Hooks.h"
 #include "../Include/Global/Global.h"
-#include "../Include/Modules/UI/Watermark.h"
-#include "../Include/Modules/Command Engine/Messages.h"
-#include "../Include/Modules/Server Director/Welcome.h"
-#include "../Include/Modules/UI/UIBase.h"
+#include "../Include/Modules/Messages.h"
 #include "../Include/Hooks/General/AddChatMessage.h"
 #include "../Include/Logging/logger.h"
-#include "../Include/GUI/GuiMenus.h"
 
 using namespace global;
 
@@ -52,12 +48,6 @@ void MainLoop()
 
 	hooks::EnableHooks();
 
-	watermark::InitalizeWaterMark();
-
-	menus::main_menu->display();
-
-	if (IsHost()) welcome::SendWelcomeMessage();
-
 	Module::EnableModules();
 
 	std::cout << "Starting Main Loop!" << std::endl;
@@ -71,28 +61,11 @@ void MainLoop()
 
 		if (UninjectPress() || doUninject) break;
 
-		if (TogglePress()) {
-			GuiManager* manager = GuiManager::get();
-			if (manager->are_all_hidden()) {
-				manager->display_all_previous();
-			}
-			else {
-				manager->hide_all();
-			}
-		}
-
 	}
-	
-	watermark::HideWaterWark();
-	watermark::UnInitalizeWaterMark();
 
 	Module::DisableModules();
 
 	hooks::DestroyHookObjects();
-
-	uibase::Cleanup();
-
-	GuiManager::shutdown();
 
 	MessageHost("Uninjecting BRSD!");
 

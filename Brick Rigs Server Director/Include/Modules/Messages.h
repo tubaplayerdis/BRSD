@@ -11,7 +11,7 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
-#include "../../Utils/PlayerInfo.h"
+#include "../Utils/PlayerInfo.h"
 #include <BR-SDK.hpp>
 
 #define Message(info, message) messages::sendUserSpecificMessage(info, message)
