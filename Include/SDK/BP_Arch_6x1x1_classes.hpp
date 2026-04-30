@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Arch_6x1x1.BP_Arch_6x1x1_C
-// 0x0000 (0x0168 - 0x0168)
+// 0x0000 (0x0190 - 0x0190)
 class UBP_Arch_6x1x1_C final : public UArchBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_Arch_6x1x1_C) == 0x000008, "Wrong alignment on UBP_Arch_6x1x1_C");
-static_assert(sizeof(UBP_Arch_6x1x1_C) == 0x000168, "Wrong size on UBP_Arch_6x1x1_C");
+static_assert(sizeof(UBP_Arch_6x1x1_C) == 0x000190, "Wrong size on UBP_Arch_6x1x1_C");
 
 }
 

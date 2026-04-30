@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BrickVehicle.BP_BrickVehicle_C
-// 0x0000 (0x0A70 - 0x0A70)
+// 0x0000 (0x0AC0 - 0x0AC0)
 class ABP_BrickVehicle_C final : public ABrickVehicle
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_BrickVehicle_C) == 0x000010, "Wrong alignment on ABP_BrickVehicle_C");
-static_assert(sizeof(ABP_BrickVehicle_C) == 0x000A70, "Wrong size on ABP_BrickVehicle_C");
+static_assert(sizeof(ABP_BrickVehicle_C) == 0x000AC0, "Wrong size on ABP_BrickVehicle_C");
 
 }
 

@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
+#include "BrickRigs_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "SlateCore_structs.hpp"
-#include "BrickRigs_structs.hpp"
 
 
 namespace SDK::Params
@@ -153,7 +153,7 @@ static_assert(offsetof(BP_UIStyle_Default_C_SetBrushStyle, SelectedBrush) == 0x0
 static_assert(offsetof(BP_UIStyle_Default_C_SetBrushStyle, MarqueeBrush) == 0x000228, "Member 'BP_UIStyle_Default_C_SetBrushStyle::MarqueeBrush' has a wrong offset!");
 
 // Function BP_UIStyle_Default.BP_UIStyle_Default_C.BuildDefaultStyle
-// 0x2BC0 (0x2BC0 - 0x0000)
+// 0x4538 (0x4538 - 0x0000)
 struct BP_UIStyle_Default_C_BuildDefaultStyle final
 {
 public:
@@ -171,9 +171,9 @@ public:
 	float                                         CallFunc_MakeLiteralFloat_ReturnValue;             // 0x00B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FLinearColor                           CallFunc_LinearColor_White_ReturnValue_2;          // 0x00B4(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue;                 // 0x00C4(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_1;           // 0x00CC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue;              // 0x00D0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_D1[0x3];                                       // 0x00D1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue;              // 0x00CC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_CD[0x3];                                       // 0x00CD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_1;           // 0x00D0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FMargin                                K2Node_MakeStruct_Margin;                          // 0x00D4(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
 	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_1;            // 0x00E4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_2;            // 0x00E5(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
@@ -193,120 +193,122 @@ public:
 	float                                         CallFunc_MakeLiteralFloat_ReturnValue_5;           // 0x0118(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_2;               // 0x011C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_3;               // 0x0124(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_7;            // 0x012C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_12D[0x3];                                      // 0x012D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_6;           // 0x0130(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_4;               // 0x0134(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_7;           // 0x013C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_8;            // 0x0140(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_141[0x3];                                      // 0x0141(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FMargin                                K2Node_MakeStruct_Margin_2;                        // 0x0144(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FMargin                                K2Node_SetFieldsInStruct_StructOut;                // 0x0154(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_9;            // 0x0164(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_6;           // 0x012C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_7;            // 0x0130(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_131[0x3];                                      // 0x0131(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMargin                                K2Node_MakeStruct_Margin_2;                        // 0x0134(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_7;           // 0x0144(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_8;           // 0x0148(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_4;               // 0x014C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMargin                                K2Node_MakeStruct_Margin_3;                        // 0x0154(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_8;            // 0x0164(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_165[0x3];                                      // 0x0165(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_8;           // 0x0168(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMargin                                K2Node_MakeStruct_Margin_3;                        // 0x016C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_10;           // 0x017C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_11;           // 0x017D(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_17E[0x2];                                      // 0x017E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_9;           // 0x0180(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_10;          // 0x0184(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMargin                                K2Node_MakeStruct_Margin_4;                        // 0x0188(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_5;               // 0x0198(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_12;           // 0x01A0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1A1[0x3];                                      // 0x01A1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_11;          // 0x01A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_6;               // 0x01A8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_13;           // 0x01B0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_14;           // 0x01B1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1B2[0x2];                                      // 0x01B2(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_12;          // 0x01B4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush;                      // 0x01B8(0x0088)()
-	struct FMargin                                K2Node_MakeStruct_Margin_5;                        // 0x0240(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_15;           // 0x0250(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_16;           // 0x0251(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_252[0x6];                                      // 0x0252(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_1;                    // 0x0258(0x0088)()
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_2;                    // 0x02E0(0x0088)()
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_13;          // 0x0368(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_14;          // 0x036C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_7;               // 0x0370(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_8;               // 0x0378(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_3;                    // 0x0380(0x0088)()
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_15;          // 0x0408(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_16;          // 0x040C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMargin                                K2Node_MakeStruct_Margin_6;                        // 0x0410(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_9;               // 0x0420(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_17;           // 0x0428(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_429[0x7];                                      // 0x0429(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_4;                    // 0x0430(0x0088)()
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_17;          // 0x04B8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_4BC[0x4];                                      // 0x04BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_5;                    // 0x04C0(0x0088)()
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_10;              // 0x0548(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_18;          // 0x0550(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_18;           // 0x0554(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_555[0x3];                                      // 0x0555(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_11;              // 0x0558(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_19;           // 0x0560(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_561[0x7];                                      // 0x0561(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_6;                    // 0x0568(0x0088)()
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_19;          // 0x05F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_GetColor_ReturnValue;                     // 0x05F4(0x0010)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMargin                                K2Node_MakeStruct_Margin_7;                        // 0x0604(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_614[0x4];                                      // 0x0614(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateColor                            K2Node_MakeStruct_SlateColor;                      // 0x0618(0x0028)()
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_20;          // 0x0640(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_20;           // 0x0644(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_645[0x3];                                      // 0x0645(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_12;              // 0x0648(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_7;                    // 0x0650(0x0088)()
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_21;           // 0x06D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_6D9[0x3];                                      // 0x06D9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_21;          // 0x06DC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_GetColor_ReturnValue_1;                   // 0x06E0(0x0010)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_13;              // 0x06F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSlateColor                            K2Node_MakeStruct_SlateColor_1;                    // 0x06F8(0x0028)()
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_22;           // 0x0720(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_721[0x3];                                      // 0x0721(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_22;          // 0x0724(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_14;              // 0x0728(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_23;          // 0x0730(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_734[0x4];                                      // 0x0734(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_8;                    // 0x0738(0x0088)()
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_15;              // 0x07C0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_24;          // 0x07C8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_25;          // 0x07CC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMargin                                K2Node_MakeStruct_Margin_8;                        // 0x07D0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FMargin                                K2Node_SetFieldsInStruct_StructOut;                // 0x0168(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_9;            // 0x0178(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_179[0x3];                                      // 0x0179(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_9;           // 0x017C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMargin                                K2Node_MakeStruct_Margin_4;                        // 0x0180(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_10;           // 0x0190(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_11;           // 0x0191(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_192[0x2];                                      // 0x0192(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_10;          // 0x0194(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_11;          // 0x0198(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_5;               // 0x019C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_6;               // 0x01A4(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_12;           // 0x01AC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1AD[0x3];                                      // 0x01AD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_12;          // 0x01B0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_7;               // 0x01B4(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_13;           // 0x01BC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_14;           // 0x01BD(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1BE[0x2];                                      // 0x01BE(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_13;          // 0x01C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1C4[0x4];                                      // 0x01C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush;                      // 0x01C8(0x0088)()
+	struct FMargin                                K2Node_MakeStruct_Margin_5;                        // 0x0250(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_15;           // 0x0260(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_16;           // 0x0261(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_262[0x6];                                      // 0x0262(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_1;                    // 0x0268(0x0088)()
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_2;                    // 0x02F0(0x0088)()
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_14;          // 0x0378(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_15;          // 0x037C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_8;               // 0x0380(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_9;               // 0x0388(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_3;                    // 0x0390(0x0088)()
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_16;          // 0x0418(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_17;           // 0x041C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_41D[0x3];                                      // 0x041D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_10;              // 0x0420(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_4;                    // 0x0428(0x0088)()
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_5;                    // 0x04B0(0x0088)()
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_17;          // 0x0538(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_18;           // 0x053C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_53D[0x3];                                      // 0x053D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_11;              // 0x0540(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_19;           // 0x0548(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_549[0x7];                                      // 0x0549(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_6;                    // 0x0550(0x0088)()
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_18;          // 0x05D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_GetColor_ReturnValue;                     // 0x05DC(0x0010)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMargin                                K2Node_MakeStruct_Margin_6;                        // 0x05EC(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_5FC[0x4];                                      // 0x05FC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateColor                            K2Node_MakeStruct_SlateColor;                      // 0x0600(0x0028)()
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_19;          // 0x0628(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_20;           // 0x062C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_62D[0x3];                                      // 0x062D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_12;              // 0x0630(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_7;                    // 0x0638(0x0088)()
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_21;           // 0x06C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_6C1[0x3];                                      // 0x06C1(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_20;          // 0x06C4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_GetColor_ReturnValue_1;                   // 0x06C8(0x0010)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMargin                                K2Node_MakeStruct_Margin_7;                        // 0x06D8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FSlateColor                            K2Node_MakeStruct_SlateColor_1;                    // 0x06E8(0x0028)()
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_21;          // 0x0710(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_22;          // 0x0714(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_13;              // 0x0718(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMargin                                K2Node_MakeStruct_Margin_8;                        // 0x0720(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_22;           // 0x0730(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_731[0x3];                                      // 0x0731(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_23;          // 0x0734(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_14;              // 0x0738(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_24;          // 0x0740(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_744[0x4];                                      // 0x0744(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_8;                    // 0x0748(0x0088)()
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_15;              // 0x07D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_25;          // 0x07D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_23;           // 0x07DC(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_7DD[0x3];                                      // 0x07DD(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_16;              // 0x07E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_23;           // 0x07E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_7E9[0x3];                                      // 0x07E9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_26;          // 0x07EC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_17;              // 0x07F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_GetColor_ReturnValue_2;                   // 0x07F8(0x0010)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_24;           // 0x0808(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_809[0x7];                                      // 0x0809(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateColor                            K2Node_MakeStruct_SlateColor_2;                    // 0x0810(0x0028)()
-	struct FMargin                                K2Node_MakeStruct_Margin_9;                        // 0x0838(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_27;          // 0x0848(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_28;          // 0x084C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_29;          // 0x0850(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_30;          // 0x0854(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_31;          // 0x0858(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMargin                                K2Node_MakeStruct_Margin_10;                       // 0x085C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	float                                         CallFunc_Add_FloatFloat_ReturnValue;               // 0x086C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Add_FloatFloat_ReturnValue_1;             // 0x0870(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_32;          // 0x0874(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMargin                                K2Node_MakeStruct_Margin_11;                       // 0x0878(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	float                                         CallFunc_Add_FloatFloat_ReturnValue_2;             // 0x0888(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Add_FloatFloat_ReturnValue_3;             // 0x088C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_33;          // 0x0890(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMargin                                K2Node_MakeStruct_Margin_12;                       // 0x0894(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	float                                         CallFunc_Add_FloatFloat_ReturnValue_4;             // 0x08A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Add_FloatFloat_ReturnValue_5;             // 0x08A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_34;          // 0x08AC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMargin                                K2Node_MakeStruct_Margin_13;                       // 0x08B0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FMargin                                K2Node_MakeStruct_Margin_14;                       // 0x08C0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_26;          // 0x07E8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_GetColor_ReturnValue_2;                   // 0x07EC(0x0010)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_17;              // 0x07FC(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_804[0x4];                                      // 0x0804(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateColor                            K2Node_MakeStruct_SlateColor_2;                    // 0x0808(0x0028)()
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_24;           // 0x0830(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_831[0x3];                                      // 0x0831(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FMargin                                K2Node_MakeStruct_Margin_9;                        // 0x0834(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_27;          // 0x0844(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_28;          // 0x0848(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_29;          // 0x084C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_30;          // 0x0850(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_31;          // 0x0854(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMargin                                K2Node_MakeStruct_Margin_10;                       // 0x0858(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         CallFunc_Add_FloatFloat_ReturnValue;               // 0x0868(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Add_FloatFloat_ReturnValue_1;             // 0x086C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_32;          // 0x0870(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMargin                                K2Node_MakeStruct_Margin_11;                       // 0x0874(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         CallFunc_Add_FloatFloat_ReturnValue_2;             // 0x0884(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Add_FloatFloat_ReturnValue_3;             // 0x0888(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_33;          // 0x088C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMargin                                K2Node_MakeStruct_Margin_12;                       // 0x0890(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         CallFunc_Add_FloatFloat_ReturnValue_4;             // 0x08A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Add_FloatFloat_ReturnValue_5;             // 0x08A4(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_34;          // 0x08A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMargin                                K2Node_MakeStruct_Margin_13;                       // 0x08AC(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FMargin                                K2Node_MakeStruct_Margin_14;                       // 0x08BC(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_8CC[0x4];                                      // 0x08CC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	struct FTextBlockStyle                        CallFunc_MakeTextStyle_ReturnValue;                // 0x08D0(0x0270)()
 	float                                         CallFunc_MakeLiteralFloat_ReturnValue_35;          // 0x0B40(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_B44[0x4];                                      // 0x0B44(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
@@ -314,123 +316,139 @@ public:
 	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_18;              // 0x0DB8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	struct FTextBlockStyle                        K2Node_SetFieldsInStruct_StructOut_2;              // 0x0DC0(0x0270)()
 	struct FTextBlockStyle                        K2Node_SetFieldsInStruct_StructOut_3;              // 0x1030(0x0270)()
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_36;          // 0x12A0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_12A4[0x4];                                     // 0x12A4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTextBlockStyle                        CallFunc_MakeTextStyle_ReturnValue_1;              // 0x12A8(0x0270)()
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_19;              // 0x1518(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_25;           // 0x1520(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1521[0x7];                                     // 0x1521(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTextBlockStyle                        CallFunc_MakeTextStyle_ReturnValue_2;              // 0x1528(0x0270)()
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_9;                    // 0x1798(0x0088)()
-	struct FTextBlockStyle                        CallFunc_MakeTextStyle_ReturnValue_3;              // 0x1820(0x0270)()
-	struct FTextBlockStyle                        CallFunc_MakeTextStyle_ReturnValue_4;              // 0x1A90(0x0270)()
-	struct FTextBlockStyle                        CallFunc_MakeTextStyle_ReturnValue_5;              // 0x1D00(0x0270)()
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_37;          // 0x1F70(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_20;              // 0x1F74(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_26;           // 0x1F7C(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1F7D[0x3];                                     // 0x1F7D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_10;                   // 0x1F80(0x0088)()
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_38;          // 0x2008(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_39;          // 0x200C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMargin                                K2Node_MakeStruct_Margin_15;                       // 0x2010(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FMargin                                K2Node_MakeStruct_Margin_16;                       // 0x2020(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_27;           // 0x2030(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2031[0x3];                                     // 0x2031(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_40;          // 0x2034(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_21;              // 0x2038(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_11;                   // 0x2040(0x0088)()
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_12;                   // 0x20C8(0x0088)()
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_41;          // 0x2150(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_42;          // 0x2154(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMargin                                K2Node_MakeStruct_Margin_17;                       // 0x2158(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FMargin                                K2Node_MakeStruct_Margin_18;                       // 0x2168(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_13;                   // 0x2178(0x0088)()
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_28;           // 0x2200(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2201[0x7];                                     // 0x2201(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            K2Node_SetFieldsInStruct_StructOut_4;              // 0x2208(0x0088)()
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_14;                   // 0x2290(0x0088)()
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_43;          // 0x2318(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_22;              // 0x231C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_44;          // 0x2324(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_15;                   // 0x2328(0x0088)()
-	struct FMargin                                K2Node_MakeStruct_Margin_19;                       // 0x23B0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_45;          // 0x23C0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_23C4[0x4];                                     // 0x23C4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_16;                   // 0x23C8(0x0088)()
-	struct FMargin                                K2Node_MakeStruct_Margin_20;                       // 0x2450(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_29;           // 0x2460(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2461[0x3];                                     // 0x2461(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_46;          // 0x2464(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FMargin                                K2Node_MakeStruct_Margin_21;                       // 0x2468(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_17;                   // 0x2478(0x0088)()
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_18;                   // 0x2500(0x0088)()
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_47;          // 0x2588(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_23;              // 0x258C(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_MakeLiteralFloat_ReturnValue_48;          // 0x2594(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_19;                   // 0x2598(0x0088)()
-	struct FMargin                                K2Node_MakeStruct_Margin_22;                       // 0x2620(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_20;                   // 0x2630(0x0088)()
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_21;                   // 0x26B8(0x0088)()
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_22;                   // 0x2740(0x0088)()
-	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_23;                   // 0x27C8(0x0088)()
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Dark;                   // 0x2850(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Medium;                 // 0x2860(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Bright;                 // 0x2870(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Negative;               // 0x2880(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Positive;               // 0x2890(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Background;             // 0x28A0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_BrightBackground;       // 0x28B0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Border;                 // 0x28C0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_BrickRigs;              // 0x28D0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Fluppisoft;             // 0x28E0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_FluppisoftForeground;   // 0x28F0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Dark_1;                 // 0x2900(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Medium_1;               // 0x2910(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Bright_1;               // 0x2920(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Negative_1;             // 0x2930(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Positive_1;             // 0x2940(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Background_1;           // 0x2950(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_BrightBackground_1;     // 0x2960(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Border_1;               // 0x2970(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_BrickRigs_1;            // 0x2980(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Fluppisoft_1;           // 0x2990(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_FluppisoftForeground_1; // 0x29A0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Dark_2;                 // 0x29B0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Medium_2;               // 0x29C0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Bright_2;               // 0x29D0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Negative_2;             // 0x29E0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Positive_2;             // 0x29F0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Background_2;           // 0x2A00(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_BrightBackground_2;     // 0x2A10(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Border_2;               // 0x2A20(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_BrickRigs_2;            // 0x2A30(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Fluppisoft_2;           // 0x2A40(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_FluppisoftForeground_2; // 0x2A50(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Dark_3;                 // 0x2A60(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Medium_3;               // 0x2A70(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Bright_3;               // 0x2A80(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Negative_3;             // 0x2A90(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Positive_3;             // 0x2AA0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Background_3;           // 0x2AB0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_BrightBackground_3;     // 0x2AC0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Border_3;               // 0x2AD0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_BrickRigs_3;            // 0x2AE0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Fluppisoft_3;           // 0x2AF0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_FluppisoftForeground_3; // 0x2B00(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Dark_4;                 // 0x2B10(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Medium_4;               // 0x2B20(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Bright_4;               // 0x2B30(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Negative_4;             // 0x2B40(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Positive_4;             // 0x2B50(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Background_4;           // 0x2B60(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_BrightBackground_4;     // 0x2B70(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Border_4;               // 0x2B80(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_BrickRigs_4;            // 0x2B90(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_Fluppisoft_4;           // 0x2BA0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FLinearColor                           CallFunc_MakeDefaultColors_FluppisoftForeground_4; // 0x2BB0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTextBlockStyle                        CallFunc_MakeTextStyle_ReturnValue_1;              // 0x12A0(0x0270)()
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_25;           // 0x1510(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1511[0x3];                                     // 0x1511(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_36;          // 0x1514(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_9;                    // 0x1518(0x0088)()
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_19;              // 0x15A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTextBlockStyle                        CallFunc_MakeTextStyle_ReturnValue_2;              // 0x15A8(0x0270)()
+	struct FTextBlockStyle                        CallFunc_MakeTextStyle_ReturnValue_3;              // 0x1818(0x0270)()
+	struct FTextBlockStyle                        CallFunc_MakeTextStyle_ReturnValue_4;              // 0x1A88(0x0270)()
+	struct FTextBlockStyle                        CallFunc_MakeTextStyle_ReturnValue_5;              // 0x1CF8(0x0270)()
+	struct FTextBlockStyle                        CallFunc_MakeTextStyle_ReturnValue_6;              // 0x1F68(0x0270)()
+	struct FTextBlockStyle                        CallFunc_MakeTextStyle_ReturnValue_7;              // 0x21D8(0x0270)()
+	struct FTextBlockStyle                        CallFunc_MakeTextStyle_ReturnValue_8;              // 0x2448(0x0270)()
+	struct FTextBlockStyle                        CallFunc_MakeTextStyle_ReturnValue_9;              // 0x26B8(0x0270)()
+	struct FTextBlockStyle                        CallFunc_MakeTextStyle_ReturnValue_10;             // 0x2928(0x0270)()
+	struct FTextBlockStyle                        CallFunc_MakeTextStyle_ReturnValue_11;             // 0x2B98(0x0270)()
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_37;          // 0x2E08(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMargin                                K2Node_MakeStruct_Margin_15;                       // 0x2E0C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FMargin                                K2Node_MakeStruct_Margin_16;                       // 0x2E1C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FMargin                                K2Node_MakeStruct_Margin_17;                       // 0x2E2C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FLinearColor                           CallFunc_MakeLiteralColor_ReturnValue;             // 0x2E3C(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_38;          // 0x2E4C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateColor                            K2Node_MakeStruct_SlateColor_3;                    // 0x2E50(0x0028)()
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_20;              // 0x2E78(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_10;                   // 0x2E80(0x0088)()
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_11;                   // 0x2F08(0x0088)()
+	struct FButtonStyle                           K2Node_MakeStruct_ButtonStyle;                     // 0x2F90(0x0278)()
+	struct FTextBlockStyle                        CallFunc_MakeTextStyle_ReturnValue_12;             // 0x3208(0x0270)()
+	struct FHyperlinkStyle                        K2Node_MakeStruct_HyperlinkStyle;                  // 0x3478(0x0500)()
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_26;           // 0x3978(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3979[0x3];                                     // 0x3979(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_39;          // 0x397C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_40;          // 0x3980(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMargin                                K2Node_MakeStruct_Margin_18;                       // 0x3984(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FMargin                                K2Node_MakeStruct_Margin_19;                       // 0x3994(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_27;           // 0x39A4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_39A5[0x3];                                     // 0x39A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_41;          // 0x39A8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_21;              // 0x39AC(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_39B4[0x4];                                     // 0x39B4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_12;                   // 0x39B8(0x0088)()
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_13;                   // 0x3A40(0x0088)()
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_42;          // 0x3AC8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_43;          // 0x3ACC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMargin                                K2Node_MakeStruct_Margin_20;                       // 0x3AD0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FMargin                                K2Node_MakeStruct_Margin_21;                       // 0x3AE0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_14;                   // 0x3AF0(0x0088)()
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_28;           // 0x3B78(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3B79[0x7];                                     // 0x3B79(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            K2Node_SetFieldsInStruct_StructOut_4;              // 0x3B80(0x0088)()
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_15;                   // 0x3C08(0x0088)()
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_44;          // 0x3C90(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_22;              // 0x3C94(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_45;          // 0x3C9C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_16;                   // 0x3CA0(0x0088)()
+	struct FMargin                                K2Node_MakeStruct_Margin_22;                       // 0x3D28(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_46;          // 0x3D38(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3D3C[0x4];                                     // 0x3D3C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_17;                   // 0x3D40(0x0088)()
+	struct FMargin                                K2Node_MakeStruct_Margin_23;                       // 0x3DC8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         CallFunc_MakeLiteralByte_ReturnValue_29;           // 0x3DD8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_3DD9[0x3];                                     // 0x3DD9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_47;          // 0x3DDC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FMargin                                K2Node_MakeStruct_Margin_24;                       // 0x3DE0(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_18;                   // 0x3DF0(0x0088)()
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_19;                   // 0x3E78(0x0088)()
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_48;          // 0x3F00(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector2D                              CallFunc_MakeVector2D_ReturnValue_23;              // 0x3F04(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_MakeLiteralFloat_ReturnValue_49;          // 0x3F0C(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_20;                   // 0x3F10(0x0088)()
+	struct FMargin                                K2Node_MakeStruct_Margin_25;                       // 0x3F98(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_21;                   // 0x3FA8(0x0088)()
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_22;                   // 0x4030(0x0088)()
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_23;                   // 0x40B8(0x0088)()
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_24;                   // 0x4140(0x0088)()
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Dark;                   // 0x41C8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Medium;                 // 0x41D8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Bright;                 // 0x41E8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Negative;               // 0x41F8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Positive;               // 0x4208(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Background;             // 0x4218(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_BrightBackground;       // 0x4228(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Border;                 // 0x4238(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_BrickRigs;              // 0x4248(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Fluppisoft;             // 0x4258(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_FluppisoftForeground;   // 0x4268(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Dark_1;                 // 0x4278(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Medium_1;               // 0x4288(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Bright_1;               // 0x4298(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Negative_1;             // 0x42A8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Positive_1;             // 0x42B8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Background_1;           // 0x42C8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_BrightBackground_1;     // 0x42D8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Border_1;               // 0x42E8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_BrickRigs_1;            // 0x42F8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Fluppisoft_1;           // 0x4308(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_FluppisoftForeground_1; // 0x4318(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Dark_2;                 // 0x4328(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Medium_2;               // 0x4338(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Bright_2;               // 0x4348(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Negative_2;             // 0x4358(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Positive_2;             // 0x4368(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Background_2;           // 0x4378(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_BrightBackground_2;     // 0x4388(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Border_2;               // 0x4398(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_BrickRigs_2;            // 0x43A8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Fluppisoft_2;           // 0x43B8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_FluppisoftForeground_2; // 0x43C8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Dark_3;                 // 0x43D8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Medium_3;               // 0x43E8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Bright_3;               // 0x43F8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Negative_3;             // 0x4408(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Positive_3;             // 0x4418(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Background_3;           // 0x4428(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_BrightBackground_3;     // 0x4438(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Border_3;               // 0x4448(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_BrickRigs_3;            // 0x4458(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Fluppisoft_3;           // 0x4468(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_FluppisoftForeground_3; // 0x4478(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Dark_4;                 // 0x4488(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Medium_4;               // 0x4498(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Bright_4;               // 0x44A8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Negative_4;             // 0x44B8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Positive_4;             // 0x44C8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Background_4;           // 0x44D8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_BrightBackground_4;     // 0x44E8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Border_4;               // 0x44F8(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_BrickRigs_4;            // 0x4508(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_Fluppisoft_4;           // 0x4518(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FLinearColor                           CallFunc_MakeDefaultColors_FluppisoftForeground_4; // 0x4528(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(BP_UIStyle_Default_C_BuildDefaultStyle) == 0x000008, "Wrong alignment on BP_UIStyle_Default_C_BuildDefaultStyle");
-static_assert(sizeof(BP_UIStyle_Default_C_BuildDefaultStyle) == 0x002BC0, "Wrong size on BP_UIStyle_Default_C_BuildDefaultStyle");
+static_assert(sizeof(BP_UIStyle_Default_C_BuildDefaultStyle) == 0x004538, "Wrong size on BP_UIStyle_Default_C_BuildDefaultStyle");
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, DefaultColor) == 0x000000, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::DefaultColor' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, ForegroundColor) == 0x000010, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::ForegroundColor' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, HighlightColor) == 0x000020, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::HighlightColor' has a wrong offset!");
@@ -445,8 +463,8 @@ static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_LinearCo
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue) == 0x0000B0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_LinearColor_White_ReturnValue_2) == 0x0000B4, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_LinearColor_White_ReturnValue_2' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue) == 0x0000C4, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_1) == 0x0000CC, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue) == 0x0000D0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue) == 0x0000CC, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_1) == 0x0000D0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin) == 0x0000D4, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_1) == 0x0000E4, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_2) == 0x0000E5, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_2' has a wrong offset!");
@@ -462,218 +480,234 @@ static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLite
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_5) == 0x000118, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_5' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_2) == 0x00011C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_2' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_3) == 0x000124, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_7) == 0x00012C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_6) == 0x000130, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_4) == 0x000134, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_7) == 0x00013C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_8) == 0x000140, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_8' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_2) == 0x000144, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_2' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_SetFieldsInStruct_StructOut) == 0x000154, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_SetFieldsInStruct_StructOut' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_9) == 0x000164, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_9' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_8) == 0x000168, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_8' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_3) == 0x00016C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_3' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_10) == 0x00017C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_10' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_11) == 0x00017D, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_11' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_9) == 0x000180, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_9' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_10) == 0x000184, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_10' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_4) == 0x000188, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_4' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_5) == 0x000198, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_12) == 0x0001A0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_12' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_11) == 0x0001A4, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_11' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_6) == 0x0001A8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_13) == 0x0001B0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_13' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_14) == 0x0001B1, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_14' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_12) == 0x0001B4, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_12' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush) == 0x0001B8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_5) == 0x000240, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_5' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_15) == 0x000250, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_15' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_16) == 0x000251, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_16' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_1) == 0x000258, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_1' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_2) == 0x0002E0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_2' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_13) == 0x000368, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_13' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_14) == 0x00036C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_14' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_7) == 0x000370, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_8) == 0x000378, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_8' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_3) == 0x000380, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_3' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_15) == 0x000408, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_15' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_16) == 0x00040C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_16' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_6) == 0x000410, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_6' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_9) == 0x000420, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_9' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_17) == 0x000428, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_17' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_4) == 0x000430, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_4' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_17) == 0x0004B8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_17' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_5) == 0x0004C0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_5' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_10) == 0x000548, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_10' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_18) == 0x000550, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_18' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_18) == 0x000554, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_18' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_11) == 0x000558, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_11' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_19) == 0x000560, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_19' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_6) == 0x000568, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_6' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_19) == 0x0005F0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_19' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_GetColor_ReturnValue) == 0x0005F4, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_GetColor_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_7) == 0x000604, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_7' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateColor) == 0x000618, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateColor' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_20) == 0x000640, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_20' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_20) == 0x000644, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_20' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_12) == 0x000648, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_12' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_7) == 0x000650, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_7' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_21) == 0x0006D8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_21' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_21) == 0x0006DC, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_21' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_GetColor_ReturnValue_1) == 0x0006E0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_GetColor_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_13) == 0x0006F0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_13' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateColor_1) == 0x0006F8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateColor_1' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_22) == 0x000720, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_22' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_22) == 0x000724, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_22' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_14) == 0x000728, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_14' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_23) == 0x000730, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_23' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_8) == 0x000738, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_8' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_15) == 0x0007C0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_15' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_24) == 0x0007C8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_24' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_25) == 0x0007CC, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_25' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_8) == 0x0007D0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_8' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_6) == 0x00012C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_7) == 0x000130, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_2) == 0x000134, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_2' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_7) == 0x000144, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_8) == 0x000148, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_4) == 0x00014C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_3) == 0x000154, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_3' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_8) == 0x000164, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_SetFieldsInStruct_StructOut) == 0x000168, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_SetFieldsInStruct_StructOut' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_9) == 0x000178, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_9' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_9) == 0x00017C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_9' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_4) == 0x000180, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_4' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_10) == 0x000190, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_10' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_11) == 0x000191, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_11' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_10) == 0x000194, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_10' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_11) == 0x000198, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_11' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_5) == 0x00019C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_6) == 0x0001A4, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_12) == 0x0001AC, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_12' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_12) == 0x0001B0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_12' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_7) == 0x0001B4, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_13) == 0x0001BC, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_13' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_14) == 0x0001BD, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_14' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_13) == 0x0001C0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_13' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush) == 0x0001C8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_5) == 0x000250, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_5' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_15) == 0x000260, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_15' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_16) == 0x000261, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_16' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_1) == 0x000268, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_2) == 0x0002F0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_2' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_14) == 0x000378, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_14' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_15) == 0x00037C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_15' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_8) == 0x000380, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_9) == 0x000388, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_9' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_3) == 0x000390, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_3' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_16) == 0x000418, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_16' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_17) == 0x00041C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_17' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_10) == 0x000420, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_10' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_4) == 0x000428, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_4' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_5) == 0x0004B0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_5' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_17) == 0x000538, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_17' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_18) == 0x00053C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_18' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_11) == 0x000540, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_11' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_19) == 0x000548, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_19' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_6) == 0x000550, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_6' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_18) == 0x0005D8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_18' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_GetColor_ReturnValue) == 0x0005DC, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_GetColor_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_6) == 0x0005EC, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_6' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateColor) == 0x000600, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateColor' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_19) == 0x000628, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_19' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_20) == 0x00062C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_20' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_12) == 0x000630, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_12' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_7) == 0x000638, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_7' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_21) == 0x0006C0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_21' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_20) == 0x0006C4, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_20' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_GetColor_ReturnValue_1) == 0x0006C8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_GetColor_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_7) == 0x0006D8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_7' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateColor_1) == 0x0006E8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateColor_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_21) == 0x000710, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_21' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_22) == 0x000714, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_22' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_13) == 0x000718, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_13' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_8) == 0x000720, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_8' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_22) == 0x000730, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_22' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_23) == 0x000734, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_23' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_14) == 0x000738, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_14' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_24) == 0x000740, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_24' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_8) == 0x000748, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_8' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_15) == 0x0007D0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_15' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_25) == 0x0007D8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_25' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_23) == 0x0007DC, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_23' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_16) == 0x0007E0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_16' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_23) == 0x0007E8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_23' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_26) == 0x0007EC, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_26' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_17) == 0x0007F0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_17' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_GetColor_ReturnValue_2) == 0x0007F8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_GetColor_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_24) == 0x000808, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_24' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateColor_2) == 0x000810, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateColor_2' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_9) == 0x000838, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_9' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_27) == 0x000848, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_27' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_28) == 0x00084C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_28' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_29) == 0x000850, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_29' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_30) == 0x000854, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_30' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_31) == 0x000858, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_31' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_10) == 0x00085C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_10' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_Add_FloatFloat_ReturnValue) == 0x00086C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_Add_FloatFloat_ReturnValue_1) == 0x000870, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_Add_FloatFloat_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_32) == 0x000874, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_32' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_11) == 0x000878, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_11' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_Add_FloatFloat_ReturnValue_2) == 0x000888, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_Add_FloatFloat_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_Add_FloatFloat_ReturnValue_3) == 0x00088C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_Add_FloatFloat_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_33) == 0x000890, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_33' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_12) == 0x000894, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_12' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_Add_FloatFloat_ReturnValue_4) == 0x0008A4, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_Add_FloatFloat_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_Add_FloatFloat_ReturnValue_5) == 0x0008A8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_Add_FloatFloat_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_34) == 0x0008AC, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_34' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_13) == 0x0008B0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_13' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_14) == 0x0008C0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_14' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_26) == 0x0007E8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_26' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_GetColor_ReturnValue_2) == 0x0007EC, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_GetColor_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_17) == 0x0007FC, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_17' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateColor_2) == 0x000808, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateColor_2' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_24) == 0x000830, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_24' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_9) == 0x000834, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_9' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_27) == 0x000844, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_27' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_28) == 0x000848, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_28' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_29) == 0x00084C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_29' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_30) == 0x000850, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_30' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_31) == 0x000854, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_31' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_10) == 0x000858, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_10' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_Add_FloatFloat_ReturnValue) == 0x000868, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_Add_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_Add_FloatFloat_ReturnValue_1) == 0x00086C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_Add_FloatFloat_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_32) == 0x000870, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_32' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_11) == 0x000874, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_11' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_Add_FloatFloat_ReturnValue_2) == 0x000884, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_Add_FloatFloat_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_Add_FloatFloat_ReturnValue_3) == 0x000888, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_Add_FloatFloat_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_33) == 0x00088C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_33' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_12) == 0x000890, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_12' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_Add_FloatFloat_ReturnValue_4) == 0x0008A0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_Add_FloatFloat_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_Add_FloatFloat_ReturnValue_5) == 0x0008A4, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_Add_FloatFloat_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_34) == 0x0008A8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_34' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_13) == 0x0008AC, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_13' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_14) == 0x0008BC, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_14' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeTextStyle_ReturnValue) == 0x0008D0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeTextStyle_ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_35) == 0x000B40, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_35' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_SetFieldsInStruct_StructOut_1) == 0x000B48, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_SetFieldsInStruct_StructOut_1' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_18) == 0x000DB8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_18' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_SetFieldsInStruct_StructOut_2) == 0x000DC0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_SetFieldsInStruct_StructOut_2' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_SetFieldsInStruct_StructOut_3) == 0x001030, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_SetFieldsInStruct_StructOut_3' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_36) == 0x0012A0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_36' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeTextStyle_ReturnValue_1) == 0x0012A8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeTextStyle_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_19) == 0x001518, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_19' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_25) == 0x001520, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_25' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeTextStyle_ReturnValue_2) == 0x001528, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeTextStyle_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_9) == 0x001798, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_9' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeTextStyle_ReturnValue_3) == 0x001820, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeTextStyle_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeTextStyle_ReturnValue_4) == 0x001A90, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeTextStyle_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeTextStyle_ReturnValue_5) == 0x001D00, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeTextStyle_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_37) == 0x001F70, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_37' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_20) == 0x001F74, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_20' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_26) == 0x001F7C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_26' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_10) == 0x001F80, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_10' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_38) == 0x002008, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_38' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_39) == 0x00200C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_39' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_15) == 0x002010, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_15' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_16) == 0x002020, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_16' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_27) == 0x002030, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_27' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_40) == 0x002034, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_40' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_21) == 0x002038, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_21' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_11) == 0x002040, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_11' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_12) == 0x0020C8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_12' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_41) == 0x002150, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_41' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_42) == 0x002154, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_42' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_17) == 0x002158, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_17' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_18) == 0x002168, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_18' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_13) == 0x002178, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_13' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_28) == 0x002200, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_28' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_SetFieldsInStruct_StructOut_4) == 0x002208, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_SetFieldsInStruct_StructOut_4' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_14) == 0x002290, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_14' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_43) == 0x002318, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_43' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_22) == 0x00231C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_22' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_44) == 0x002324, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_44' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_15) == 0x002328, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_15' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_19) == 0x0023B0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_19' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_45) == 0x0023C0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_45' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_16) == 0x0023C8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_16' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_20) == 0x002450, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_20' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_29) == 0x002460, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_29' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_46) == 0x002464, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_46' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_21) == 0x002468, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_21' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_17) == 0x002478, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_17' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_18) == 0x002500, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_18' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_47) == 0x002588, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_47' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_23) == 0x00258C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_23' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_48) == 0x002594, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_48' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_19) == 0x002598, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_19' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_22) == 0x002620, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_22' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_20) == 0x002630, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_20' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_21) == 0x0026B8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_21' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_22) == 0x002740, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_22' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_23) == 0x0027C8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_23' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Dark) == 0x002850, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Dark' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Medium) == 0x002860, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Medium' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Bright) == 0x002870, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Bright' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Negative) == 0x002880, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Negative' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Positive) == 0x002890, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Positive' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Background) == 0x0028A0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Background' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrightBackground) == 0x0028B0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrightBackground' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Border) == 0x0028C0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Border' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrickRigs) == 0x0028D0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrickRigs' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Fluppisoft) == 0x0028E0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Fluppisoft' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_FluppisoftForeground) == 0x0028F0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_FluppisoftForeground' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Dark_1) == 0x002900, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Dark_1' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Medium_1) == 0x002910, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Medium_1' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Bright_1) == 0x002920, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Bright_1' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Negative_1) == 0x002930, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Negative_1' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Positive_1) == 0x002940, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Positive_1' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Background_1) == 0x002950, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Background_1' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrightBackground_1) == 0x002960, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrightBackground_1' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Border_1) == 0x002970, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Border_1' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrickRigs_1) == 0x002980, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrickRigs_1' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Fluppisoft_1) == 0x002990, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Fluppisoft_1' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_FluppisoftForeground_1) == 0x0029A0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_FluppisoftForeground_1' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Dark_2) == 0x0029B0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Dark_2' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Medium_2) == 0x0029C0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Medium_2' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Bright_2) == 0x0029D0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Bright_2' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Negative_2) == 0x0029E0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Negative_2' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Positive_2) == 0x0029F0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Positive_2' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Background_2) == 0x002A00, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Background_2' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrightBackground_2) == 0x002A10, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrightBackground_2' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Border_2) == 0x002A20, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Border_2' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrickRigs_2) == 0x002A30, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrickRigs_2' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Fluppisoft_2) == 0x002A40, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Fluppisoft_2' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_FluppisoftForeground_2) == 0x002A50, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_FluppisoftForeground_2' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Dark_3) == 0x002A60, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Dark_3' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Medium_3) == 0x002A70, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Medium_3' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Bright_3) == 0x002A80, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Bright_3' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Negative_3) == 0x002A90, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Negative_3' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Positive_3) == 0x002AA0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Positive_3' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Background_3) == 0x002AB0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Background_3' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrightBackground_3) == 0x002AC0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrightBackground_3' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Border_3) == 0x002AD0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Border_3' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrickRigs_3) == 0x002AE0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrickRigs_3' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Fluppisoft_3) == 0x002AF0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Fluppisoft_3' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_FluppisoftForeground_3) == 0x002B00, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_FluppisoftForeground_3' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Dark_4) == 0x002B10, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Dark_4' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Medium_4) == 0x002B20, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Medium_4' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Bright_4) == 0x002B30, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Bright_4' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Negative_4) == 0x002B40, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Negative_4' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Positive_4) == 0x002B50, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Positive_4' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Background_4) == 0x002B60, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Background_4' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrightBackground_4) == 0x002B70, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrightBackground_4' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Border_4) == 0x002B80, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Border_4' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrickRigs_4) == 0x002B90, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrickRigs_4' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Fluppisoft_4) == 0x002BA0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Fluppisoft_4' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_FluppisoftForeground_4) == 0x002BB0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_FluppisoftForeground_4' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeTextStyle_ReturnValue_1) == 0x0012A0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeTextStyle_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_25) == 0x001510, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_25' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_36) == 0x001514, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_36' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_9) == 0x001518, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_9' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_19) == 0x0015A0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_19' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeTextStyle_ReturnValue_2) == 0x0015A8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeTextStyle_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeTextStyle_ReturnValue_3) == 0x001818, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeTextStyle_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeTextStyle_ReturnValue_4) == 0x001A88, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeTextStyle_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeTextStyle_ReturnValue_5) == 0x001CF8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeTextStyle_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeTextStyle_ReturnValue_6) == 0x001F68, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeTextStyle_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeTextStyle_ReturnValue_7) == 0x0021D8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeTextStyle_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeTextStyle_ReturnValue_8) == 0x002448, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeTextStyle_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeTextStyle_ReturnValue_9) == 0x0026B8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeTextStyle_ReturnValue_9' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeTextStyle_ReturnValue_10) == 0x002928, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeTextStyle_ReturnValue_10' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeTextStyle_ReturnValue_11) == 0x002B98, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeTextStyle_ReturnValue_11' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_37) == 0x002E08, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_37' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_15) == 0x002E0C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_15' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_16) == 0x002E1C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_16' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_17) == 0x002E2C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_17' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralColor_ReturnValue) == 0x002E3C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralColor_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_38) == 0x002E4C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_38' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateColor_3) == 0x002E50, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateColor_3' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_20) == 0x002E78, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_20' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_10) == 0x002E80, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_10' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_11) == 0x002F08, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_11' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_ButtonStyle) == 0x002F90, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_ButtonStyle' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeTextStyle_ReturnValue_12) == 0x003208, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeTextStyle_ReturnValue_12' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_HyperlinkStyle) == 0x003478, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_HyperlinkStyle' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_26) == 0x003978, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_26' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_39) == 0x00397C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_39' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_40) == 0x003980, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_40' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_18) == 0x003984, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_18' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_19) == 0x003994, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_19' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_27) == 0x0039A4, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_27' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_41) == 0x0039A8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_41' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_21) == 0x0039AC, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_21' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_12) == 0x0039B8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_12' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_13) == 0x003A40, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_13' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_42) == 0x003AC8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_42' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_43) == 0x003ACC, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_43' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_20) == 0x003AD0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_20' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_21) == 0x003AE0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_21' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_14) == 0x003AF0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_14' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_28) == 0x003B78, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_28' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_SetFieldsInStruct_StructOut_4) == 0x003B80, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_SetFieldsInStruct_StructOut_4' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_15) == 0x003C08, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_15' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_44) == 0x003C90, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_44' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_22) == 0x003C94, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_22' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_45) == 0x003C9C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_45' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_16) == 0x003CA0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_16' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_22) == 0x003D28, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_22' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_46) == 0x003D38, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_46' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_17) == 0x003D40, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_17' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_23) == 0x003DC8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_23' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralByte_ReturnValue_29) == 0x003DD8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralByte_ReturnValue_29' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_47) == 0x003DDC, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_47' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_24) == 0x003DE0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_24' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_18) == 0x003DF0, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_18' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_19) == 0x003E78, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_19' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_48) == 0x003F00, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_48' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeVector2D_ReturnValue_23) == 0x003F04, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeVector2D_ReturnValue_23' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeLiteralFloat_ReturnValue_49) == 0x003F0C, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeLiteralFloat_ReturnValue_49' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_20) == 0x003F10, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_20' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_Margin_25) == 0x003F98, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_Margin_25' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_21) == 0x003FA8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_21' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_22) == 0x004030, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_22' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_23) == 0x0040B8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_23' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, K2Node_MakeStruct_SlateBrush_24) == 0x004140, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::K2Node_MakeStruct_SlateBrush_24' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Dark) == 0x0041C8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Dark' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Medium) == 0x0041D8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Medium' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Bright) == 0x0041E8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Bright' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Negative) == 0x0041F8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Negative' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Positive) == 0x004208, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Positive' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Background) == 0x004218, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Background' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrightBackground) == 0x004228, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrightBackground' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Border) == 0x004238, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Border' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrickRigs) == 0x004248, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrickRigs' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Fluppisoft) == 0x004258, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Fluppisoft' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_FluppisoftForeground) == 0x004268, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_FluppisoftForeground' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Dark_1) == 0x004278, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Dark_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Medium_1) == 0x004288, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Medium_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Bright_1) == 0x004298, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Bright_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Negative_1) == 0x0042A8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Negative_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Positive_1) == 0x0042B8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Positive_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Background_1) == 0x0042C8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Background_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrightBackground_1) == 0x0042D8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrightBackground_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Border_1) == 0x0042E8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Border_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrickRigs_1) == 0x0042F8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrickRigs_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Fluppisoft_1) == 0x004308, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Fluppisoft_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_FluppisoftForeground_1) == 0x004318, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_FluppisoftForeground_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Dark_2) == 0x004328, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Dark_2' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Medium_2) == 0x004338, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Medium_2' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Bright_2) == 0x004348, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Bright_2' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Negative_2) == 0x004358, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Negative_2' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Positive_2) == 0x004368, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Positive_2' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Background_2) == 0x004378, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Background_2' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrightBackground_2) == 0x004388, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrightBackground_2' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Border_2) == 0x004398, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Border_2' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrickRigs_2) == 0x0043A8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrickRigs_2' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Fluppisoft_2) == 0x0043B8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Fluppisoft_2' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_FluppisoftForeground_2) == 0x0043C8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_FluppisoftForeground_2' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Dark_3) == 0x0043D8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Dark_3' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Medium_3) == 0x0043E8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Medium_3' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Bright_3) == 0x0043F8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Bright_3' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Negative_3) == 0x004408, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Negative_3' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Positive_3) == 0x004418, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Positive_3' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Background_3) == 0x004428, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Background_3' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrightBackground_3) == 0x004438, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrightBackground_3' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Border_3) == 0x004448, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Border_3' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrickRigs_3) == 0x004458, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrickRigs_3' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Fluppisoft_3) == 0x004468, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Fluppisoft_3' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_FluppisoftForeground_3) == 0x004478, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_FluppisoftForeground_3' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Dark_4) == 0x004488, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Dark_4' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Medium_4) == 0x004498, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Medium_4' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Bright_4) == 0x0044A8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Bright_4' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Negative_4) == 0x0044B8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Negative_4' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Positive_4) == 0x0044C8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Positive_4' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Background_4) == 0x0044D8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Background_4' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrightBackground_4) == 0x0044E8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrightBackground_4' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Border_4) == 0x0044F8, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Border_4' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_BrickRigs_4) == 0x004508, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_BrickRigs_4' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_Fluppisoft_4) == 0x004518, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_Fluppisoft_4' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_BuildDefaultStyle, CallFunc_MakeDefaultColors_FluppisoftForeground_4) == 0x004528, "Member 'BP_UIStyle_Default_C_BuildDefaultStyle::CallFunc_MakeDefaultColors_FluppisoftForeground_4' has a wrong offset!");
 
 // Function BP_UIStyle_Default.BP_UIStyle_Default_C.MakeTextStyle
-// 0x05A8 (0x05A8 - 0x0000)
+// 0x0710 (0x0710 - 0x0000)
 struct BP_UIStyle_Default_C_MakeTextStyle final
 {
 public:
@@ -682,28 +716,58 @@ public:
 	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
 	class UObject*                                Font_Material;                                     // 0x0010(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	int32                                         OutlineSize;                                       // 0x0018(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTextBlockStyle                        ReturnValue;                                       // 0x0020(0x0270)(Parm, OutParm, ReturnParm)
-	struct FSlateColor                            K2Node_MakeStruct_SlateColor;                      // 0x0290(0x0028)()
-	struct FFontOutlineSettings                   K2Node_MakeStruct_FontOutlineSettings;             // 0x02B8(0x0020)(NoDestructor, HasGetValueTypeHash)
-	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x02D8(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         CallFunc_FTrunc_ReturnValue;                       // 0x02DC(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FSlateFontInfo                         K2Node_MakeStruct_SlateFontInfo;                   // 0x02E0(0x0058)(HasGetValueTypeHash)
-	struct FTextBlockStyle                        K2Node_MakeStruct_TextBlockStyle;                  // 0x0338(0x0270)()
+	bool                                          bStrike;                                           // 0x001C(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bUnderline;                                        // 0x001D(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1E[0x2];                                       // 0x001E(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FLinearColor                           ColorMultiplier;                                   // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FTextBlockStyle                        ReturnValue;                                       // 0x0030(0x0270)(Parm, OutParm, ReturnParm)
+	class UObject*                                Temp_object_Variable;                              // 0x02A0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateColor                            K2Node_MakeStruct_SlateColor;                      // 0x02A8(0x0028)()
+	struct FFontOutlineSettings                   K2Node_MakeStruct_FontOutlineSettings;             // 0x02D0(0x0020)(NoDestructor, HasGetValueTypeHash)
+	float                                         CallFunc_Multiply_FloatFloat_ReturnValue;          // 0x02F0(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2F4[0x4];                                      // 0x02F4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                Temp_object_Variable_1;                            // 0x02F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         CallFunc_FTrunc_ReturnValue;                       // 0x0300(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_304[0x4];                                      // 0x0304(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FSlateFontInfo                         K2Node_MakeStruct_SlateFontInfo;                   // 0x0308(0x0058)(HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable;                                // 0x0360(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_361[0x7];                                      // 0x0361(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                Temp_object_Variable_2;                            // 0x0368(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                Temp_object_Variable_3;                            // 0x0370(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          Temp_bool_Variable_1;                              // 0x0378(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_379[0x7];                                      // 0x0379(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UObject*                                K2Node_Select_Default;                             // 0x0380(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UObject*                                K2Node_Select_Default_1;                           // 0x0388(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush;                      // 0x0390(0x0088)()
+	struct FSlateBrush                            K2Node_MakeStruct_SlateBrush_1;                    // 0x0418(0x0088)()
+	struct FTextBlockStyle                        K2Node_MakeStruct_TextBlockStyle;                  // 0x04A0(0x0270)()
 };
 static_assert(alignof(BP_UIStyle_Default_C_MakeTextStyle) == 0x000008, "Wrong alignment on BP_UIStyle_Default_C_MakeTextStyle");
-static_assert(sizeof(BP_UIStyle_Default_C_MakeTextStyle) == 0x0005A8, "Wrong size on BP_UIStyle_Default_C_MakeTextStyle");
+static_assert(sizeof(BP_UIStyle_Default_C_MakeTextStyle) == 0x000710, "Wrong size on BP_UIStyle_Default_C_MakeTextStyle");
 static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, Typeface) == 0x000000, "Member 'BP_UIStyle_Default_C_MakeTextStyle::Typeface' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, Scale) == 0x000008, "Member 'BP_UIStyle_Default_C_MakeTextStyle::Scale' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, Font_Material) == 0x000010, "Member 'BP_UIStyle_Default_C_MakeTextStyle::Font_Material' has a wrong offset!");
 static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, OutlineSize) == 0x000018, "Member 'BP_UIStyle_Default_C_MakeTextStyle::OutlineSize' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, ReturnValue) == 0x000020, "Member 'BP_UIStyle_Default_C_MakeTextStyle::ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, K2Node_MakeStruct_SlateColor) == 0x000290, "Member 'BP_UIStyle_Default_C_MakeTextStyle::K2Node_MakeStruct_SlateColor' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, K2Node_MakeStruct_FontOutlineSettings) == 0x0002B8, "Member 'BP_UIStyle_Default_C_MakeTextStyle::K2Node_MakeStruct_FontOutlineSettings' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, CallFunc_Multiply_FloatFloat_ReturnValue) == 0x0002D8, "Member 'BP_UIStyle_Default_C_MakeTextStyle::CallFunc_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, CallFunc_FTrunc_ReturnValue) == 0x0002DC, "Member 'BP_UIStyle_Default_C_MakeTextStyle::CallFunc_FTrunc_ReturnValue' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, K2Node_MakeStruct_SlateFontInfo) == 0x0002E0, "Member 'BP_UIStyle_Default_C_MakeTextStyle::K2Node_MakeStruct_SlateFontInfo' has a wrong offset!");
-static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, K2Node_MakeStruct_TextBlockStyle) == 0x000338, "Member 'BP_UIStyle_Default_C_MakeTextStyle::K2Node_MakeStruct_TextBlockStyle' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, bStrike) == 0x00001C, "Member 'BP_UIStyle_Default_C_MakeTextStyle::bStrike' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, bUnderline) == 0x00001D, "Member 'BP_UIStyle_Default_C_MakeTextStyle::bUnderline' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, ColorMultiplier) == 0x000020, "Member 'BP_UIStyle_Default_C_MakeTextStyle::ColorMultiplier' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, ReturnValue) == 0x000030, "Member 'BP_UIStyle_Default_C_MakeTextStyle::ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, Temp_object_Variable) == 0x0002A0, "Member 'BP_UIStyle_Default_C_MakeTextStyle::Temp_object_Variable' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, K2Node_MakeStruct_SlateColor) == 0x0002A8, "Member 'BP_UIStyle_Default_C_MakeTextStyle::K2Node_MakeStruct_SlateColor' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, K2Node_MakeStruct_FontOutlineSettings) == 0x0002D0, "Member 'BP_UIStyle_Default_C_MakeTextStyle::K2Node_MakeStruct_FontOutlineSettings' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, CallFunc_Multiply_FloatFloat_ReturnValue) == 0x0002F0, "Member 'BP_UIStyle_Default_C_MakeTextStyle::CallFunc_Multiply_FloatFloat_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, Temp_object_Variable_1) == 0x0002F8, "Member 'BP_UIStyle_Default_C_MakeTextStyle::Temp_object_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, CallFunc_FTrunc_ReturnValue) == 0x000300, "Member 'BP_UIStyle_Default_C_MakeTextStyle::CallFunc_FTrunc_ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, K2Node_MakeStruct_SlateFontInfo) == 0x000308, "Member 'BP_UIStyle_Default_C_MakeTextStyle::K2Node_MakeStruct_SlateFontInfo' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, Temp_bool_Variable) == 0x000360, "Member 'BP_UIStyle_Default_C_MakeTextStyle::Temp_bool_Variable' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, Temp_object_Variable_2) == 0x000368, "Member 'BP_UIStyle_Default_C_MakeTextStyle::Temp_object_Variable_2' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, Temp_object_Variable_3) == 0x000370, "Member 'BP_UIStyle_Default_C_MakeTextStyle::Temp_object_Variable_3' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, Temp_bool_Variable_1) == 0x000378, "Member 'BP_UIStyle_Default_C_MakeTextStyle::Temp_bool_Variable_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, K2Node_Select_Default) == 0x000380, "Member 'BP_UIStyle_Default_C_MakeTextStyle::K2Node_Select_Default' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, K2Node_Select_Default_1) == 0x000388, "Member 'BP_UIStyle_Default_C_MakeTextStyle::K2Node_Select_Default_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, K2Node_MakeStruct_SlateBrush) == 0x000390, "Member 'BP_UIStyle_Default_C_MakeTextStyle::K2Node_MakeStruct_SlateBrush' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, K2Node_MakeStruct_SlateBrush_1) == 0x000418, "Member 'BP_UIStyle_Default_C_MakeTextStyle::K2Node_MakeStruct_SlateBrush_1' has a wrong offset!");
+static_assert(offsetof(BP_UIStyle_Default_C_MakeTextStyle, K2Node_MakeStruct_TextBlockStyle) == 0x0004A0, "Member 'BP_UIStyle_Default_C_MakeTextStyle::K2Node_MakeStruct_TextBlockStyle' has a wrong offset!");
 
 // Function BP_UIStyle_Default.BP_UIStyle_Default_C.MakeLiteralColor
 // 0x0020 (0x0020 - 0x0000)

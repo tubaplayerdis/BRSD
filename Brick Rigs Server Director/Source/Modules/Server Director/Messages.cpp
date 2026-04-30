@@ -95,7 +95,7 @@ void messages::sendMessageToAdmins(std::string message)
     for (SDK::APlayerState* astate : GetBrickGameState()->PlayerArray)
     {
         SDK::ABrickPlayerState* state = static_cast<SDK::ABrickPlayerState*>(astate);
-        if (!state->bIsAdmin) continue;
+        if (state->AdminRole != SDK::EAdminRole::Admin) continue;
         PlayerInfo info = PlayerInfo(state->PlayerNamePrivate.ToString());
         sendUserSpecificMessageWithContext(info, message, SDK::EChatContext::Admin, BRSD);
     }

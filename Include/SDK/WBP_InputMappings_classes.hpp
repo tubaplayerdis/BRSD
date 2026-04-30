@@ -27,10 +27,10 @@ public:
 	struct FPopupHandle                           ResetPopupHandle;                                  // 0x02A0(0x0004)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
 
 public:
-	void Construct();
-	void OnClickedRevertInput();
-	void OnRevertInputPopupClosed(EPopupResult Result);
 	void ExecuteUbergraph_WBP_InputMappings(int32 EntryPoint);
+	void OnRevertInputPopupClosed(EPopupResult Result);
+	void OnClickedRevertInput();
+	void Construct();
 
 public:
 	static class UClass* StaticClass()

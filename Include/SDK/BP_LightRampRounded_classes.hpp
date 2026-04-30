@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_LightRampRounded.BP_LightRampRounded_C
-// 0x0000 (0x01A8 - 0x01A8)
+// 0x0000 (0x01D8 - 0x01D8)
 class UBP_LightRampRounded_C final : public ULightBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_LightRampRounded_C) == 0x000008, "Wrong alignment on UBP_LightRampRounded_C");
-static_assert(sizeof(UBP_LightRampRounded_C) == 0x0001A8, "Wrong size on UBP_LightRampRounded_C");
+static_assert(sizeof(UBP_LightRampRounded_C) == 0x0001D8, "Wrong size on UBP_LightRampRounded_C");
 
 }
 

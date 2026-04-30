@@ -28,8 +28,8 @@ public:
 	class UBrickImage*                            IconImage;                                         // 0x0280(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void UpdateIconImage(bool bInVisible, EBrickUIColorStyle InColorStyle, int32 InIconIndex);
 	void ExecuteUbergraph_WBP_DashboardIcon(int32 EntryPoint);
+	void UpdateIconImage(bool bInVisible, EBrickUIColorStyle InColorStyle, int32 InIconIndex);
 
 public:
 	static class UClass* StaticClass()

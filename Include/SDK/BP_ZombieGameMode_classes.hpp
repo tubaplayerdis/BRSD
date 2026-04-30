@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ZombieGameMode.BP_ZombieGameMode_C
-// 0x0008 (0x0440 - 0x0438)
+// 0x0008 (0x0490 - 0x0488)
 class ABP_ZombieGameMode_C final : public AZombieGameMode
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0438(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0488(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -34,8 +34,8 @@ public:
 	}
 };
 static_assert(alignof(ABP_ZombieGameMode_C) == 0x000008, "Wrong alignment on ABP_ZombieGameMode_C");
-static_assert(sizeof(ABP_ZombieGameMode_C) == 0x000440, "Wrong size on ABP_ZombieGameMode_C");
-static_assert(offsetof(ABP_ZombieGameMode_C, DefaultSceneRoot) == 0x000438, "Member 'ABP_ZombieGameMode_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(sizeof(ABP_ZombieGameMode_C) == 0x000490, "Wrong size on ABP_ZombieGameMode_C");
+static_assert(offsetof(ABP_ZombieGameMode_C, DefaultSceneRoot) == 0x000488, "Member 'ABP_ZombieGameMode_C::DefaultSceneRoot' has a wrong offset!");
 
 }
 

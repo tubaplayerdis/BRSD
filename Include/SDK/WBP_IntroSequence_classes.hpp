@@ -10,9 +10,9 @@
 
 #include "Basic.hpp"
 
-#include "GameLogoEnum_structs.hpp"
 #include "Engine_structs.hpp"
 #include "BrickRigs_classes.hpp"
+#include "GameLogoEnum_structs.hpp"
 
 
 namespace SDK

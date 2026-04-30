@@ -17,6 +17,31 @@
 namespace SDK::Params
 {
 
+// Function WBP_NumericProperty.WBP_NumericProperty_C.AddSliderWidget
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_NumericProperty_C_AddSliderWidget final
+{
+public:
+	class UBrickSliderWidget*                     Slider;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_NumericProperty_C_AddSliderWidget) == 0x000008, "Wrong alignment on WBP_NumericProperty_C_AddSliderWidget");
+static_assert(sizeof(WBP_NumericProperty_C_AddSliderWidget) == 0x000008, "Wrong size on WBP_NumericProperty_C_AddSliderWidget");
+static_assert(offsetof(WBP_NumericProperty_C_AddSliderWidget, Slider) == 0x000000, "Member 'WBP_NumericProperty_C_AddSliderWidget::Slider' has a wrong offset!");
+
+// Function WBP_NumericProperty.WBP_NumericProperty_C.UpdateNumericProperty
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_NumericProperty_C_UpdateNumericProperty final
+{
+public:
+	ENumericValueType                             ValueType;                                         // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         NumAxes;                                           // 0x0004(0x0004)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_NumericProperty_C_UpdateNumericProperty) == 0x000004, "Wrong alignment on WBP_NumericProperty_C_UpdateNumericProperty");
+static_assert(sizeof(WBP_NumericProperty_C_UpdateNumericProperty) == 0x000008, "Wrong size on WBP_NumericProperty_C_UpdateNumericProperty");
+static_assert(offsetof(WBP_NumericProperty_C_UpdateNumericProperty, ValueType) == 0x000000, "Member 'WBP_NumericProperty_C_UpdateNumericProperty::ValueType' has a wrong offset!");
+static_assert(offsetof(WBP_NumericProperty_C_UpdateNumericProperty, NumAxes) == 0x000004, "Member 'WBP_NumericProperty_C_UpdateNumericProperty::NumAxes' has a wrong offset!");
+
 // Function WBP_NumericProperty.WBP_NumericProperty_C.ExecuteUbergraph_WBP_NumericProperty
 // 0x00A8 (0x00A8 - 0x0000)
 struct WBP_NumericProperty_C_ExecuteUbergraph_WBP_NumericProperty final
@@ -101,31 +126,6 @@ static_assert(offsetof(WBP_NumericProperty_C_ExecuteUbergraph_WBP_NumericPropert
 static_assert(offsetof(WBP_NumericProperty_C_ExecuteUbergraph_WBP_NumericProperty, CallFunc_Not_PreBool_ReturnValue) == 0x00009B, "Member 'WBP_NumericProperty_C_ExecuteUbergraph_WBP_NumericProperty::CallFunc_Not_PreBool_ReturnValue' has a wrong offset!");
 static_assert(offsetof(WBP_NumericProperty_C_ExecuteUbergraph_WBP_NumericProperty, Temp_bool_Variable_3) == 0x00009C, "Member 'WBP_NumericProperty_C_ExecuteUbergraph_WBP_NumericProperty::Temp_bool_Variable_3' has a wrong offset!");
 static_assert(offsetof(WBP_NumericProperty_C_ExecuteUbergraph_WBP_NumericProperty, K2Node_Select_Default_3) == 0x0000A0, "Member 'WBP_NumericProperty_C_ExecuteUbergraph_WBP_NumericProperty::K2Node_Select_Default_3' has a wrong offset!");
-
-// Function WBP_NumericProperty.WBP_NumericProperty_C.UpdateNumericProperty
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_NumericProperty_C_UpdateNumericProperty final
-{
-public:
-	ENumericValueType                             ValueType;                                         // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         NumAxes;                                           // 0x0004(0x0004)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_NumericProperty_C_UpdateNumericProperty) == 0x000004, "Wrong alignment on WBP_NumericProperty_C_UpdateNumericProperty");
-static_assert(sizeof(WBP_NumericProperty_C_UpdateNumericProperty) == 0x000008, "Wrong size on WBP_NumericProperty_C_UpdateNumericProperty");
-static_assert(offsetof(WBP_NumericProperty_C_UpdateNumericProperty, ValueType) == 0x000000, "Member 'WBP_NumericProperty_C_UpdateNumericProperty::ValueType' has a wrong offset!");
-static_assert(offsetof(WBP_NumericProperty_C_UpdateNumericProperty, NumAxes) == 0x000004, "Member 'WBP_NumericProperty_C_UpdateNumericProperty::NumAxes' has a wrong offset!");
-
-// Function WBP_NumericProperty.WBP_NumericProperty_C.AddSliderWidget
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_NumericProperty_C_AddSliderWidget final
-{
-public:
-	class UBrickSliderWidget*                     Slider;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_NumericProperty_C_AddSliderWidget) == 0x000008, "Wrong alignment on WBP_NumericProperty_C_AddSliderWidget");
-static_assert(sizeof(WBP_NumericProperty_C_AddSliderWidget) == 0x000008, "Wrong size on WBP_NumericProperty_C_AddSliderWidget");
-static_assert(offsetof(WBP_NumericProperty_C_AddSliderWidget, Slider) == 0x000000, "Member 'WBP_NumericProperty_C_AddSliderWidget::Slider' has a wrong offset!");
 
 }
 

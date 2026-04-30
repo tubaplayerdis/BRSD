@@ -16,20 +16,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_CameraBrick.WBP_CameraBrick_C.UpdateTargetRange
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_CameraBrick_C_UpdateTargetRange final
-{
-public:
-	bool                                          bHitSomething;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         Distance;                                          // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_CameraBrick_C_UpdateTargetRange) == 0x000004, "Wrong alignment on WBP_CameraBrick_C_UpdateTargetRange");
-static_assert(sizeof(WBP_CameraBrick_C_UpdateTargetRange) == 0x000008, "Wrong size on WBP_CameraBrick_C_UpdateTargetRange");
-static_assert(offsetof(WBP_CameraBrick_C_UpdateTargetRange, bHitSomething) == 0x000000, "Member 'WBP_CameraBrick_C_UpdateTargetRange::bHitSomething' has a wrong offset!");
-static_assert(offsetof(WBP_CameraBrick_C_UpdateTargetRange, Distance) == 0x000004, "Member 'WBP_CameraBrick_C_UpdateTargetRange::Distance' has a wrong offset!");
-
 // Function WBP_CameraBrick.WBP_CameraBrick_C.ExecuteUbergraph_WBP_CameraBrick
 // 0x0060 (0x0060 - 0x0000)
 struct WBP_CameraBrick_C_ExecuteUbergraph_WBP_CameraBrick final
@@ -61,6 +47,20 @@ static_assert(offsetof(WBP_CameraBrick_C_ExecuteUbergraph_WBP_CameraBrick, K2Nod
 static_assert(offsetof(WBP_CameraBrick_C_ExecuteUbergraph_WBP_CameraBrick, CallFunc_NumberToText_ReturnValue) == 0x000028, "Member 'WBP_CameraBrick_C_ExecuteUbergraph_WBP_CameraBrick::CallFunc_NumberToText_ReturnValue' has a wrong offset!");
 static_assert(offsetof(WBP_CameraBrick_C_ExecuteUbergraph_WBP_CameraBrick, K2Node_Select_Default) == 0x000040, "Member 'WBP_CameraBrick_C_ExecuteUbergraph_WBP_CameraBrick::K2Node_Select_Default' has a wrong offset!");
 static_assert(offsetof(WBP_CameraBrick_C_ExecuteUbergraph_WBP_CameraBrick, K2Node_Select_Default_1) == 0x000058, "Member 'WBP_CameraBrick_C_ExecuteUbergraph_WBP_CameraBrick::K2Node_Select_Default_1' has a wrong offset!");
+
+// Function WBP_CameraBrick.WBP_CameraBrick_C.UpdateTargetRange
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_CameraBrick_C_UpdateTargetRange final
+{
+public:
+	bool                                          bHitSomething;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         Distance;                                          // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_CameraBrick_C_UpdateTargetRange) == 0x000004, "Wrong alignment on WBP_CameraBrick_C_UpdateTargetRange");
+static_assert(sizeof(WBP_CameraBrick_C_UpdateTargetRange) == 0x000008, "Wrong size on WBP_CameraBrick_C_UpdateTargetRange");
+static_assert(offsetof(WBP_CameraBrick_C_UpdateTargetRange, bHitSomething) == 0x000000, "Member 'WBP_CameraBrick_C_UpdateTargetRange::bHitSomething' has a wrong offset!");
+static_assert(offsetof(WBP_CameraBrick_C_UpdateTargetRange, Distance) == 0x000004, "Member 'WBP_CameraBrick_C_UpdateTargetRange::Distance' has a wrong offset!");
 
 }
 

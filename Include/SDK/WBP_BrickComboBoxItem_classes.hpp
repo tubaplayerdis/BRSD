@@ -25,8 +25,8 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_WBP_BrickComboBoxItem(int32 EntryPoint);
 	void SetNoItemBrush();
+	void ExecuteUbergraph_WBP_BrickComboBoxItem(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

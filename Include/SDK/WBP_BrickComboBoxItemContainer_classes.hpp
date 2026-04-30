@@ -25,10 +25,10 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0290(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void ExecuteUbergraph_WBP_BrickComboBoxItemContainer(int32 EntryPoint);
-	void BndEvt__Button_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
-	void UpdateIsSelected(bool bNewSelected);
 	void AddItemWidget(class UBrickComboBoxItemWidget* Widget);
+	void UpdateIsSelected(bool bNewSelected);
+	void BndEvt__Button_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
+	void ExecuteUbergraph_WBP_BrickComboBoxItemContainer(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Camera_2x1x1.BP_Camera_2x1x1_C
-// 0x0000 (0x0740 - 0x0740)
+// 0x0000 (0x0770 - 0x0770)
 class UBP_Camera_2x1x1_C final : public UCameraBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_Camera_2x1x1_C) == 0x000010, "Wrong alignment on UBP_Camera_2x1x1_C");
-static_assert(sizeof(UBP_Camera_2x1x1_C) == 0x000740, "Wrong size on UBP_Camera_2x1x1_C");
+static_assert(sizeof(UBP_Camera_2x1x1_C) == 0x000770, "Wrong size on UBP_Camera_2x1x1_C");
 
 }
 

@@ -11,8 +11,8 @@
 #include "Basic.hpp"
 
 #include "GameLogoEnum_structs.hpp"
-#include "BrickRigs_structs.hpp"
 #include "CoreUObject_structs.hpp"
+#include "BrickRigs_structs.hpp"
 
 
 namespace SDK::Params

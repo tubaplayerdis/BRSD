@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Seat_5x2x1s.BP_Seat_5x2x1s_C
-// 0x0000 (0x01B8 - 0x01B8)
+// 0x0000 (0x01E8 - 0x01E8)
 class UBP_Seat_5x2x1s_C final : public USeatBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_Seat_5x2x1s_C) == 0x000008, "Wrong alignment on UBP_Seat_5x2x1s_C");
-static_assert(sizeof(UBP_Seat_5x2x1s_C) == 0x0001B8, "Wrong size on UBP_Seat_5x2x1s_C");
+static_assert(sizeof(UBP_Seat_5x2x1s_C) == 0x0001E8, "Wrong size on UBP_Seat_5x2x1s_C");
 
 }
 

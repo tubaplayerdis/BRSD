@@ -17,6 +17,41 @@
 namespace SDK::Params
 {
 
+// Function WBP_BrickComboBox.WBP_BrickComboBox_C.BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature
+// 0x0002 (0x0002 - 0x0000)
+struct WBP_BrickComboBox_C_BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature final
+{
+public:
+	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EBrickUIStyleState                            InContentStyleState;                               // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_BrickComboBox_C_BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature) == 0x000001, "Wrong alignment on WBP_BrickComboBox_C_BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature");
+static_assert(sizeof(WBP_BrickComboBox_C_BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature) == 0x000002, "Wrong size on WBP_BrickComboBox_C_BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature");
+static_assert(offsetof(WBP_BrickComboBox_C_BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature, InColorStyle) == 0x000000, "Member 'WBP_BrickComboBox_C_BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature::InColorStyle' has a wrong offset!");
+static_assert(offsetof(WBP_BrickComboBox_C_BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature, InContentStyleState) == 0x000001, "Member 'WBP_BrickComboBox_C_BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature::InContentStyleState' has a wrong offset!");
+
+// Function WBP_BrickComboBox.WBP_BrickComboBox_C.AddSelectedItemWidget
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_BrickComboBox_C_AddSelectedItemWidget final
+{
+public:
+	class UBrickComboBoxItemWidget*               Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_BrickComboBox_C_AddSelectedItemWidget) == 0x000008, "Wrong alignment on WBP_BrickComboBox_C_AddSelectedItemWidget");
+static_assert(sizeof(WBP_BrickComboBox_C_AddSelectedItemWidget) == 0x000008, "Wrong size on WBP_BrickComboBox_C_AddSelectedItemWidget");
+static_assert(offsetof(WBP_BrickComboBox_C_AddSelectedItemWidget, Widget) == 0x000000, "Member 'WBP_BrickComboBox_C_AddSelectedItemWidget::Widget' has a wrong offset!");
+
+// Function WBP_BrickComboBox.WBP_BrickComboBox_C.UpdateUseItemList
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_BrickComboBox_C_UpdateUseItemList final
+{
+public:
+	bool                                          bInUseItemList;                                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_BrickComboBox_C_UpdateUseItemList) == 0x000001, "Wrong alignment on WBP_BrickComboBox_C_UpdateUseItemList");
+static_assert(sizeof(WBP_BrickComboBox_C_UpdateUseItemList) == 0x000001, "Wrong size on WBP_BrickComboBox_C_UpdateUseItemList");
+static_assert(offsetof(WBP_BrickComboBox_C_UpdateUseItemList, bInUseItemList) == 0x000000, "Member 'WBP_BrickComboBox_C_UpdateUseItemList::bInUseItemList' has a wrong offset!");
+
 // Function WBP_BrickComboBox.WBP_BrickComboBox_C.ExecuteUbergraph_WBP_BrickComboBox
 // 0x0028 (0x0028 - 0x0000)
 struct WBP_BrickComboBox_C_ExecuteUbergraph_WBP_BrickComboBox final
@@ -56,41 +91,6 @@ static_assert(offsetof(WBP_BrickComboBox_C_ExecuteUbergraph_WBP_BrickComboBox, C
 static_assert(offsetof(WBP_BrickComboBox_C_ExecuteUbergraph_WBP_BrickComboBox, K2Node_Event_bInUseItemList) == 0x000020, "Member 'WBP_BrickComboBox_C_ExecuteUbergraph_WBP_BrickComboBox::K2Node_Event_bInUseItemList' has a wrong offset!");
 static_assert(offsetof(WBP_BrickComboBox_C_ExecuteUbergraph_WBP_BrickComboBox, K2Node_Select_Default) == 0x000021, "Member 'WBP_BrickComboBox_C_ExecuteUbergraph_WBP_BrickComboBox::K2Node_Select_Default' has a wrong offset!");
 static_assert(offsetof(WBP_BrickComboBox_C_ExecuteUbergraph_WBP_BrickComboBox, K2Node_Select_Default_1) == 0x000022, "Member 'WBP_BrickComboBox_C_ExecuteUbergraph_WBP_BrickComboBox::K2Node_Select_Default_1' has a wrong offset!");
-
-// Function WBP_BrickComboBox.WBP_BrickComboBox_C.UpdateUseItemList
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_BrickComboBox_C_UpdateUseItemList final
-{
-public:
-	bool                                          bInUseItemList;                                    // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_BrickComboBox_C_UpdateUseItemList) == 0x000001, "Wrong alignment on WBP_BrickComboBox_C_UpdateUseItemList");
-static_assert(sizeof(WBP_BrickComboBox_C_UpdateUseItemList) == 0x000001, "Wrong size on WBP_BrickComboBox_C_UpdateUseItemList");
-static_assert(offsetof(WBP_BrickComboBox_C_UpdateUseItemList, bInUseItemList) == 0x000000, "Member 'WBP_BrickComboBox_C_UpdateUseItemList::bInUseItemList' has a wrong offset!");
-
-// Function WBP_BrickComboBox.WBP_BrickComboBox_C.AddSelectedItemWidget
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_BrickComboBox_C_AddSelectedItemWidget final
-{
-public:
-	class UBrickComboBoxItemWidget*               Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_BrickComboBox_C_AddSelectedItemWidget) == 0x000008, "Wrong alignment on WBP_BrickComboBox_C_AddSelectedItemWidget");
-static_assert(sizeof(WBP_BrickComboBox_C_AddSelectedItemWidget) == 0x000008, "Wrong size on WBP_BrickComboBox_C_AddSelectedItemWidget");
-static_assert(offsetof(WBP_BrickComboBox_C_AddSelectedItemWidget, Widget) == 0x000000, "Member 'WBP_BrickComboBox_C_AddSelectedItemWidget::Widget' has a wrong offset!");
-
-// Function WBP_BrickComboBox.WBP_BrickComboBox_C.BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature
-// 0x0002 (0x0002 - 0x0000)
-struct WBP_BrickComboBox_C_BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature final
-{
-public:
-	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EBrickUIStyleState                            InContentStyleState;                               // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_BrickComboBox_C_BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature) == 0x000001, "Wrong alignment on WBP_BrickComboBox_C_BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature");
-static_assert(sizeof(WBP_BrickComboBox_C_BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature) == 0x000002, "Wrong size on WBP_BrickComboBox_C_BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature");
-static_assert(offsetof(WBP_BrickComboBox_C_BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature, InColorStyle) == 0x000000, "Member 'WBP_BrickComboBox_C_BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature::InColorStyle' has a wrong offset!");
-static_assert(offsetof(WBP_BrickComboBox_C_BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature, InContentStyleState) == 0x000001, "Member 'WBP_BrickComboBox_C_BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature::InContentStyleState' has a wrong offset!");
 
 }
 

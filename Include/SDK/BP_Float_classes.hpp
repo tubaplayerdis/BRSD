@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Float.BP_Float_C
-// 0x0000 (0x01A0 - 0x01A0)
+// 0x0000 (0x01D0 - 0x01D0)
 class UBP_Float_C final : public UFloatBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_Float_C) == 0x000008, "Wrong alignment on UBP_Float_C");
-static_assert(sizeof(UBP_Float_C) == 0x0001A0, "Wrong size on UBP_Float_C");
+static_assert(sizeof(UBP_Float_C) == 0x0001D0, "Wrong size on UBP_Float_C");
 
 }
 

@@ -16,22 +16,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_DashboardIcon.WBP_DashboardIcon_C.UpdateIconImage
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_DashboardIcon_C_UpdateIconImage final
-{
-public:
-	bool                                          bInVisible;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	EBrickUIColorStyle                            InColorStyle;                                      // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	int32                                         InIconIndex;                                       // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_DashboardIcon_C_UpdateIconImage) == 0x000004, "Wrong alignment on WBP_DashboardIcon_C_UpdateIconImage");
-static_assert(sizeof(WBP_DashboardIcon_C_UpdateIconImage) == 0x000008, "Wrong size on WBP_DashboardIcon_C_UpdateIconImage");
-static_assert(offsetof(WBP_DashboardIcon_C_UpdateIconImage, bInVisible) == 0x000000, "Member 'WBP_DashboardIcon_C_UpdateIconImage::bInVisible' has a wrong offset!");
-static_assert(offsetof(WBP_DashboardIcon_C_UpdateIconImage, InColorStyle) == 0x000001, "Member 'WBP_DashboardIcon_C_UpdateIconImage::InColorStyle' has a wrong offset!");
-static_assert(offsetof(WBP_DashboardIcon_C_UpdateIconImage, InIconIndex) == 0x000004, "Member 'WBP_DashboardIcon_C_UpdateIconImage::InIconIndex' has a wrong offset!");
-
 // Function WBP_DashboardIcon.WBP_DashboardIcon_C.ExecuteUbergraph_WBP_DashboardIcon
 // 0x0028 (0x0028 - 0x0000)
 struct WBP_DashboardIcon_C_ExecuteUbergraph_WBP_DashboardIcon final
@@ -65,6 +49,22 @@ static_assert(offsetof(WBP_DashboardIcon_C_ExecuteUbergraph_WBP_DashboardIcon, K
 static_assert(offsetof(WBP_DashboardIcon_C_ExecuteUbergraph_WBP_DashboardIcon, K2Node_MakeStruct_BrickUIIconSlot) == 0x000018, "Member 'WBP_DashboardIcon_C_ExecuteUbergraph_WBP_DashboardIcon::K2Node_MakeStruct_BrickUIIconSlot' has a wrong offset!");
 static_assert(offsetof(WBP_DashboardIcon_C_ExecuteUbergraph_WBP_DashboardIcon, K2Node_Select_Default) == 0x000020, "Member 'WBP_DashboardIcon_C_ExecuteUbergraph_WBP_DashboardIcon::K2Node_Select_Default' has a wrong offset!");
 static_assert(offsetof(WBP_DashboardIcon_C_ExecuteUbergraph_WBP_DashboardIcon, K2Node_Select_Default_1) == 0x000024, "Member 'WBP_DashboardIcon_C_ExecuteUbergraph_WBP_DashboardIcon::K2Node_Select_Default_1' has a wrong offset!");
+
+// Function WBP_DashboardIcon.WBP_DashboardIcon_C.UpdateIconImage
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_DashboardIcon_C_UpdateIconImage final
+{
+public:
+	bool                                          bInVisible;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	EBrickUIColorStyle                            InColorStyle;                                      // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	int32                                         InIconIndex;                                       // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_DashboardIcon_C_UpdateIconImage) == 0x000004, "Wrong alignment on WBP_DashboardIcon_C_UpdateIconImage");
+static_assert(sizeof(WBP_DashboardIcon_C_UpdateIconImage) == 0x000008, "Wrong size on WBP_DashboardIcon_C_UpdateIconImage");
+static_assert(offsetof(WBP_DashboardIcon_C_UpdateIconImage, bInVisible) == 0x000000, "Member 'WBP_DashboardIcon_C_UpdateIconImage::bInVisible' has a wrong offset!");
+static_assert(offsetof(WBP_DashboardIcon_C_UpdateIconImage, InColorStyle) == 0x000001, "Member 'WBP_DashboardIcon_C_UpdateIconImage::InColorStyle' has a wrong offset!");
+static_assert(offsetof(WBP_DashboardIcon_C_UpdateIconImage, InIconIndex) == 0x000004, "Member 'WBP_DashboardIcon_C_UpdateIconImage::InIconIndex' has a wrong offset!");
 
 }
 

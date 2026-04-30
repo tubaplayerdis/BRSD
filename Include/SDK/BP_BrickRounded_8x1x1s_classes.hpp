@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BrickRounded_8x1x1s.BP_BrickRounded_8x1x1s_C
-// 0x0000 (0x0168 - 0x0168)
+// 0x0000 (0x0190 - 0x0190)
 class UBP_BrickRounded_8x1x1s_C final : public UBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_BrickRounded_8x1x1s_C) == 0x000008, "Wrong alignment on UBP_BrickRounded_8x1x1s_C");
-static_assert(sizeof(UBP_BrickRounded_8x1x1s_C) == 0x000168, "Wrong size on UBP_BrickRounded_8x1x1s_C");
+static_assert(sizeof(UBP_BrickRounded_8x1x1s_C) == 0x000190, "Wrong size on UBP_BrickRounded_8x1x1s_C");
 
 }
 

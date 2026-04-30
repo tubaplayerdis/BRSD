@@ -10,19 +10,19 @@
 
 #include "Basic.hpp"
 
-#include "Engine_structs.hpp"
 #include "BP_UIStyle_Default_classes.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK
 {
 
 // BlueprintGeneratedClass BP_UIStyle_Blue.BP_UIStyle_Blue_C
-// 0x0008 (0x5AF0 - 0x5AE8)
+// 0x0008 (0x7100 - 0x70F8)
 class UBP_UIStyle_Blue_C final : public UBP_UIStyle_Default_C
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame_BP_UIStyle_Blue_C;                  // 0x5AE8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame_BP_UIStyle_Blue_C;                  // 0x70F8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_BP_UIStyle_Blue(int32 EntryPoint);
@@ -39,8 +39,8 @@ public:
 	}
 };
 static_assert(alignof(UBP_UIStyle_Blue_C) == 0x000008, "Wrong alignment on UBP_UIStyle_Blue_C");
-static_assert(sizeof(UBP_UIStyle_Blue_C) == 0x005AF0, "Wrong size on UBP_UIStyle_Blue_C");
-static_assert(offsetof(UBP_UIStyle_Blue_C, UberGraphFrame_BP_UIStyle_Blue_C) == 0x005AE8, "Member 'UBP_UIStyle_Blue_C::UberGraphFrame_BP_UIStyle_Blue_C' has a wrong offset!");
+static_assert(sizeof(UBP_UIStyle_Blue_C) == 0x007100, "Wrong size on UBP_UIStyle_Blue_C");
+static_assert(offsetof(UBP_UIStyle_Blue_C, UberGraphFrame_BP_UIStyle_Blue_C) == 0x0070F8, "Member 'UBP_UIStyle_Blue_C::UberGraphFrame_BP_UIStyle_Blue_C' has a wrong offset!");
 
 }
 

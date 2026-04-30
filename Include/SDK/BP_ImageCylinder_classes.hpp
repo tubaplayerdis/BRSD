@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ImageCylinder.BP_ImageCylinder_C
-// 0x0000 (0x01B0 - 0x01B0)
+// 0x0000 (0x01E0 - 0x01E0)
 class UBP_ImageCylinder_C final : public UImageBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_ImageCylinder_C) == 0x000008, "Wrong alignment on UBP_ImageCylinder_C");
-static_assert(sizeof(UBP_ImageCylinder_C) == 0x0001B0, "Wrong size on UBP_ImageCylinder_C");
+static_assert(sizeof(UBP_ImageCylinder_C) == 0x0001E0, "Wrong size on UBP_ImageCylinder_C");
 
 }
 

@@ -10,13 +10,119 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "BrickRigs_structs.hpp"
+#include "CoreUObject_structs.hpp"
 #include "Engine_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function WBP_PagedListHeader.WBP_PagedListHeader_C.UpdateEntry
+// 0x0020 (0x0020 - 0x0000)
+struct WBP_PagedListHeader_C_UpdateEntry final
+{
+public:
+	class FText                                   InTitleText;                                       // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+	bool                                          bInHasEntry;                                       // 0x0018(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bInHasUnsavedChanges;                              // 0x0019(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_PagedListHeader_C_UpdateEntry) == 0x000008, "Wrong alignment on WBP_PagedListHeader_C_UpdateEntry");
+static_assert(sizeof(WBP_PagedListHeader_C_UpdateEntry) == 0x000020, "Wrong size on WBP_PagedListHeader_C_UpdateEntry");
+static_assert(offsetof(WBP_PagedListHeader_C_UpdateEntry, InTitleText) == 0x000000, "Member 'WBP_PagedListHeader_C_UpdateEntry::InTitleText' has a wrong offset!");
+static_assert(offsetof(WBP_PagedListHeader_C_UpdateEntry, bInHasEntry) == 0x000018, "Member 'WBP_PagedListHeader_C_UpdateEntry::bInHasEntry' has a wrong offset!");
+static_assert(offsetof(WBP_PagedListHeader_C_UpdateEntry, bInHasUnsavedChanges) == 0x000019, "Member 'WBP_PagedListHeader_C_UpdateEntry::bInHasUnsavedChanges' has a wrong offset!");
+
+// Function WBP_PagedListHeader.WBP_PagedListHeader_C.UpdateNumObjects
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_PagedListHeader_C_UpdateNumObjects final
+{
+public:
+	int32                                         InNumObjects;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         InMaxNumObjects;                                   // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         InNumHiddenObjects;                                // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         InNumObjectsWithAerodynamics;                      // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_PagedListHeader_C_UpdateNumObjects) == 0x000004, "Wrong alignment on WBP_PagedListHeader_C_UpdateNumObjects");
+static_assert(sizeof(WBP_PagedListHeader_C_UpdateNumObjects) == 0x000010, "Wrong size on WBP_PagedListHeader_C_UpdateNumObjects");
+static_assert(offsetof(WBP_PagedListHeader_C_UpdateNumObjects, InNumObjects) == 0x000000, "Member 'WBP_PagedListHeader_C_UpdateNumObjects::InNumObjects' has a wrong offset!");
+static_assert(offsetof(WBP_PagedListHeader_C_UpdateNumObjects, InMaxNumObjects) == 0x000004, "Member 'WBP_PagedListHeader_C_UpdateNumObjects::InMaxNumObjects' has a wrong offset!");
+static_assert(offsetof(WBP_PagedListHeader_C_UpdateNumObjects, InNumHiddenObjects) == 0x000008, "Member 'WBP_PagedListHeader_C_UpdateNumObjects::InNumHiddenObjects' has a wrong offset!");
+static_assert(offsetof(WBP_PagedListHeader_C_UpdateNumObjects, InNumObjectsWithAerodynamics) == 0x00000C, "Member 'WBP_PagedListHeader_C_UpdateNumObjects::InNumObjectsWithAerodynamics' has a wrong offset!");
+
+// Function WBP_PagedListHeader.WBP_PagedListHeader_C.UpdateDimensions
+// 0x0018 (0x0018 - 0x0000)
+struct WBP_PagedListHeader_C_UpdateDimensions final
+{
+public:
+	struct FVector                                InDimensions;                                      // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	struct FVector                                InMaxDimensions;                                   // 0x000C(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_PagedListHeader_C_UpdateDimensions) == 0x000004, "Wrong alignment on WBP_PagedListHeader_C_UpdateDimensions");
+static_assert(sizeof(WBP_PagedListHeader_C_UpdateDimensions) == 0x000018, "Wrong size on WBP_PagedListHeader_C_UpdateDimensions");
+static_assert(offsetof(WBP_PagedListHeader_C_UpdateDimensions, InDimensions) == 0x000000, "Member 'WBP_PagedListHeader_C_UpdateDimensions::InDimensions' has a wrong offset!");
+static_assert(offsetof(WBP_PagedListHeader_C_UpdateDimensions, InMaxDimensions) == 0x00000C, "Member 'WBP_PagedListHeader_C_UpdateDimensions::InMaxDimensions' has a wrong offset!");
+
+// Function WBP_PagedListHeader.WBP_PagedListHeader_C.UpdatePrice
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_PagedListHeader_C_UpdatePrice final
+{
+public:
+	float                                         InPrice;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         InMoney;                                           // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_PagedListHeader_C_UpdatePrice) == 0x000004, "Wrong alignment on WBP_PagedListHeader_C_UpdatePrice");
+static_assert(sizeof(WBP_PagedListHeader_C_UpdatePrice) == 0x000008, "Wrong size on WBP_PagedListHeader_C_UpdatePrice");
+static_assert(offsetof(WBP_PagedListHeader_C_UpdatePrice, InPrice) == 0x000000, "Member 'WBP_PagedListHeader_C_UpdatePrice::InPrice' has a wrong offset!");
+static_assert(offsetof(WBP_PagedListHeader_C_UpdatePrice, InMoney) == 0x000004, "Member 'WBP_PagedListHeader_C_UpdatePrice::InMoney' has a wrong offset!");
+
+// Function WBP_PagedListHeader.WBP_PagedListHeader_C.UpdateMass
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_PagedListHeader_C_UpdateMass final
+{
+public:
+	float                                         InMass;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	float                                         InMaxMass;                                         // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_PagedListHeader_C_UpdateMass) == 0x000004, "Wrong alignment on WBP_PagedListHeader_C_UpdateMass");
+static_assert(sizeof(WBP_PagedListHeader_C_UpdateMass) == 0x000008, "Wrong size on WBP_PagedListHeader_C_UpdateMass");
+static_assert(offsetof(WBP_PagedListHeader_C_UpdateMass, InMass) == 0x000000, "Member 'WBP_PagedListHeader_C_UpdateMass::InMass' has a wrong offset!");
+static_assert(offsetof(WBP_PagedListHeader_C_UpdateMass, InMaxMass) == 0x000004, "Member 'WBP_PagedListHeader_C_UpdateMass::InMaxMass' has a wrong offset!");
+
+// Function WBP_PagedListHeader.WBP_PagedListHeader_C.PreConstruct
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_PagedListHeader_C_PreConstruct final
+{
+public:
+	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_PagedListHeader_C_PreConstruct) == 0x000001, "Wrong alignment on WBP_PagedListHeader_C_PreConstruct");
+static_assert(sizeof(WBP_PagedListHeader_C_PreConstruct) == 0x000001, "Wrong size on WBP_PagedListHeader_C_PreConstruct");
+static_assert(offsetof(WBP_PagedListHeader_C_PreConstruct, IsDesignTime) == 0x000000, "Member 'WBP_PagedListHeader_C_PreConstruct::IsDesignTime' has a wrong offset!");
+
+// Function WBP_PagedListHeader.WBP_PagedListHeader_C.BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature
+// 0x0002 (0x0002 - 0x0000)
+struct WBP_PagedListHeader_C_BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature final
+{
+public:
+	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EBrickUIStyleState                            InContentStyleState;                               // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_PagedListHeader_C_BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000001, "Wrong alignment on WBP_PagedListHeader_C_BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
+static_assert(sizeof(WBP_PagedListHeader_C_BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000002, "Wrong size on WBP_PagedListHeader_C_BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
+static_assert(offsetof(WBP_PagedListHeader_C_BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InColorStyle) == 0x000000, "Member 'WBP_PagedListHeader_C_BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InColorStyle' has a wrong offset!");
+static_assert(offsetof(WBP_PagedListHeader_C_BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InContentStyleState) == 0x000001, "Member 'WBP_PagedListHeader_C_BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InContentStyleState' has a wrong offset!");
+
+// Function WBP_PagedListHeader.WBP_PagedListHeader_C.UpdateClearButton
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_PagedListHeader_C_UpdateClearButton final
+{
+public:
+	bool                                          bInIsEnabled;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_PagedListHeader_C_UpdateClearButton) == 0x000001, "Wrong alignment on WBP_PagedListHeader_C_UpdateClearButton");
+static_assert(sizeof(WBP_PagedListHeader_C_UpdateClearButton) == 0x000001, "Wrong size on WBP_PagedListHeader_C_UpdateClearButton");
+static_assert(offsetof(WBP_PagedListHeader_C_UpdateClearButton, bInIsEnabled) == 0x000000, "Member 'WBP_PagedListHeader_C_UpdateClearButton::bInIsEnabled' has a wrong offset!");
 
 // Function WBP_PagedListHeader.WBP_PagedListHeader_C.ExecuteUbergraph_WBP_PagedListHeader
 // 0x0A30 (0x0A30 - 0x0000)
@@ -406,112 +512,6 @@ static_assert(offsetof(WBP_PagedListHeader_C_ExecuteUbergraph_WBP_PagedListHeade
 static_assert(offsetof(WBP_PagedListHeader_C_ExecuteUbergraph_WBP_PagedListHeader, K2Node_ComponentBoundEvent_InColorStyle) == 0x000A28, "Member 'WBP_PagedListHeader_C_ExecuteUbergraph_WBP_PagedListHeader::K2Node_ComponentBoundEvent_InColorStyle' has a wrong offset!");
 static_assert(offsetof(WBP_PagedListHeader_C_ExecuteUbergraph_WBP_PagedListHeader, K2Node_ComponentBoundEvent_InContentStyleState) == 0x000A29, "Member 'WBP_PagedListHeader_C_ExecuteUbergraph_WBP_PagedListHeader::K2Node_ComponentBoundEvent_InContentStyleState' has a wrong offset!");
 static_assert(offsetof(WBP_PagedListHeader_C_ExecuteUbergraph_WBP_PagedListHeader, K2Node_CustomEvent_bInIsEnabled) == 0x000A2A, "Member 'WBP_PagedListHeader_C_ExecuteUbergraph_WBP_PagedListHeader::K2Node_CustomEvent_bInIsEnabled' has a wrong offset!");
-
-// Function WBP_PagedListHeader.WBP_PagedListHeader_C.UpdateClearButton
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_PagedListHeader_C_UpdateClearButton final
-{
-public:
-	bool                                          bInIsEnabled;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_PagedListHeader_C_UpdateClearButton) == 0x000001, "Wrong alignment on WBP_PagedListHeader_C_UpdateClearButton");
-static_assert(sizeof(WBP_PagedListHeader_C_UpdateClearButton) == 0x000001, "Wrong size on WBP_PagedListHeader_C_UpdateClearButton");
-static_assert(offsetof(WBP_PagedListHeader_C_UpdateClearButton, bInIsEnabled) == 0x000000, "Member 'WBP_PagedListHeader_C_UpdateClearButton::bInIsEnabled' has a wrong offset!");
-
-// Function WBP_PagedListHeader.WBP_PagedListHeader_C.BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature
-// 0x0002 (0x0002 - 0x0000)
-struct WBP_PagedListHeader_C_BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature final
-{
-public:
-	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EBrickUIStyleState                            InContentStyleState;                               // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_PagedListHeader_C_BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000001, "Wrong alignment on WBP_PagedListHeader_C_BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
-static_assert(sizeof(WBP_PagedListHeader_C_BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000002, "Wrong size on WBP_PagedListHeader_C_BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
-static_assert(offsetof(WBP_PagedListHeader_C_BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InColorStyle) == 0x000000, "Member 'WBP_PagedListHeader_C_BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InColorStyle' has a wrong offset!");
-static_assert(offsetof(WBP_PagedListHeader_C_BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InContentStyleState) == 0x000001, "Member 'WBP_PagedListHeader_C_BndEvt__WBP_PagedListHeader_ClearButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InContentStyleState' has a wrong offset!");
-
-// Function WBP_PagedListHeader.WBP_PagedListHeader_C.PreConstruct
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_PagedListHeader_C_PreConstruct final
-{
-public:
-	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_PagedListHeader_C_PreConstruct) == 0x000001, "Wrong alignment on WBP_PagedListHeader_C_PreConstruct");
-static_assert(sizeof(WBP_PagedListHeader_C_PreConstruct) == 0x000001, "Wrong size on WBP_PagedListHeader_C_PreConstruct");
-static_assert(offsetof(WBP_PagedListHeader_C_PreConstruct, IsDesignTime) == 0x000000, "Member 'WBP_PagedListHeader_C_PreConstruct::IsDesignTime' has a wrong offset!");
-
-// Function WBP_PagedListHeader.WBP_PagedListHeader_C.UpdateMass
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_PagedListHeader_C_UpdateMass final
-{
-public:
-	float                                         InMass;                                            // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         InMaxMass;                                         // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_PagedListHeader_C_UpdateMass) == 0x000004, "Wrong alignment on WBP_PagedListHeader_C_UpdateMass");
-static_assert(sizeof(WBP_PagedListHeader_C_UpdateMass) == 0x000008, "Wrong size on WBP_PagedListHeader_C_UpdateMass");
-static_assert(offsetof(WBP_PagedListHeader_C_UpdateMass, InMass) == 0x000000, "Member 'WBP_PagedListHeader_C_UpdateMass::InMass' has a wrong offset!");
-static_assert(offsetof(WBP_PagedListHeader_C_UpdateMass, InMaxMass) == 0x000004, "Member 'WBP_PagedListHeader_C_UpdateMass::InMaxMass' has a wrong offset!");
-
-// Function WBP_PagedListHeader.WBP_PagedListHeader_C.UpdatePrice
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_PagedListHeader_C_UpdatePrice final
-{
-public:
-	float                                         InPrice;                                           // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	float                                         InMoney;                                           // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_PagedListHeader_C_UpdatePrice) == 0x000004, "Wrong alignment on WBP_PagedListHeader_C_UpdatePrice");
-static_assert(sizeof(WBP_PagedListHeader_C_UpdatePrice) == 0x000008, "Wrong size on WBP_PagedListHeader_C_UpdatePrice");
-static_assert(offsetof(WBP_PagedListHeader_C_UpdatePrice, InPrice) == 0x000000, "Member 'WBP_PagedListHeader_C_UpdatePrice::InPrice' has a wrong offset!");
-static_assert(offsetof(WBP_PagedListHeader_C_UpdatePrice, InMoney) == 0x000004, "Member 'WBP_PagedListHeader_C_UpdatePrice::InMoney' has a wrong offset!");
-
-// Function WBP_PagedListHeader.WBP_PagedListHeader_C.UpdateDimensions
-// 0x0018 (0x0018 - 0x0000)
-struct WBP_PagedListHeader_C_UpdateDimensions final
-{
-public:
-	struct FVector                                InDimensions;                                      // 0x0000(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	struct FVector                                InMaxDimensions;                                   // 0x000C(0x000C)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_PagedListHeader_C_UpdateDimensions) == 0x000004, "Wrong alignment on WBP_PagedListHeader_C_UpdateDimensions");
-static_assert(sizeof(WBP_PagedListHeader_C_UpdateDimensions) == 0x000018, "Wrong size on WBP_PagedListHeader_C_UpdateDimensions");
-static_assert(offsetof(WBP_PagedListHeader_C_UpdateDimensions, InDimensions) == 0x000000, "Member 'WBP_PagedListHeader_C_UpdateDimensions::InDimensions' has a wrong offset!");
-static_assert(offsetof(WBP_PagedListHeader_C_UpdateDimensions, InMaxDimensions) == 0x00000C, "Member 'WBP_PagedListHeader_C_UpdateDimensions::InMaxDimensions' has a wrong offset!");
-
-// Function WBP_PagedListHeader.WBP_PagedListHeader_C.UpdateNumObjects
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_PagedListHeader_C_UpdateNumObjects final
-{
-public:
-	int32                                         InNumObjects;                                      // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         InMaxNumObjects;                                   // 0x0004(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         InNumHiddenObjects;                                // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         InNumObjectsWithAerodynamics;                      // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_PagedListHeader_C_UpdateNumObjects) == 0x000004, "Wrong alignment on WBP_PagedListHeader_C_UpdateNumObjects");
-static_assert(sizeof(WBP_PagedListHeader_C_UpdateNumObjects) == 0x000010, "Wrong size on WBP_PagedListHeader_C_UpdateNumObjects");
-static_assert(offsetof(WBP_PagedListHeader_C_UpdateNumObjects, InNumObjects) == 0x000000, "Member 'WBP_PagedListHeader_C_UpdateNumObjects::InNumObjects' has a wrong offset!");
-static_assert(offsetof(WBP_PagedListHeader_C_UpdateNumObjects, InMaxNumObjects) == 0x000004, "Member 'WBP_PagedListHeader_C_UpdateNumObjects::InMaxNumObjects' has a wrong offset!");
-static_assert(offsetof(WBP_PagedListHeader_C_UpdateNumObjects, InNumHiddenObjects) == 0x000008, "Member 'WBP_PagedListHeader_C_UpdateNumObjects::InNumHiddenObjects' has a wrong offset!");
-static_assert(offsetof(WBP_PagedListHeader_C_UpdateNumObjects, InNumObjectsWithAerodynamics) == 0x00000C, "Member 'WBP_PagedListHeader_C_UpdateNumObjects::InNumObjectsWithAerodynamics' has a wrong offset!");
-
-// Function WBP_PagedListHeader.WBP_PagedListHeader_C.UpdateEntry
-// 0x0020 (0x0020 - 0x0000)
-struct WBP_PagedListHeader_C_UpdateEntry final
-{
-public:
-	class FText                                   InTitleText;                                       // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-	bool                                          bInHasEntry;                                       // 0x0018(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bInHasUnsavedChanges;                              // 0x0019(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_PagedListHeader_C_UpdateEntry) == 0x000008, "Wrong alignment on WBP_PagedListHeader_C_UpdateEntry");
-static_assert(sizeof(WBP_PagedListHeader_C_UpdateEntry) == 0x000020, "Wrong size on WBP_PagedListHeader_C_UpdateEntry");
-static_assert(offsetof(WBP_PagedListHeader_C_UpdateEntry, InTitleText) == 0x000000, "Member 'WBP_PagedListHeader_C_UpdateEntry::InTitleText' has a wrong offset!");
-static_assert(offsetof(WBP_PagedListHeader_C_UpdateEntry, bInHasEntry) == 0x000018, "Member 'WBP_PagedListHeader_C_UpdateEntry::bInHasEntry' has a wrong offset!");
-static_assert(offsetof(WBP_PagedListHeader_C_UpdateEntry, bInHasUnsavedChanges) == 0x000019, "Member 'WBP_PagedListHeader_C_UpdateEntry::bInHasUnsavedChanges' has a wrong offset!");
 
 }
 

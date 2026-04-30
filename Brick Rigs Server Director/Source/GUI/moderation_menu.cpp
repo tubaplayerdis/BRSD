@@ -71,7 +71,7 @@ void moderation_menu_function()
         {
             PlayerInfo info = PlayerInfo(current->GetPlayerName().ToString().c_str());
             bool is_host = current->Ping == 0;
-            bool is_admin = current->bIsAdmin;
+            bool is_admin = current->AdminRole == SDK::EAdminRole::Admin;
             bool is_team_leader = current->bIsTeamLeader;
             bool is_muted = moderation::isPlayerMuted(info);
             float money = current->Money;
@@ -86,7 +86,11 @@ void moderation_menu_function()
             {
                 if (current != GetBrickPlayerState())
                 {
-                    current->SetIsAdmin(is_admin);
+                    if (is_admin) current->SetAdminRole(SDK::EAdminRole::Admin);
+                    else
+                    {
+                        current->SetAdminRole(SDK::EAdminRole::None);
+                    }
                 }
             }
             

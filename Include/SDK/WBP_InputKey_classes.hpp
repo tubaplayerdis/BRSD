@@ -11,6 +11,7 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
+#include "UMG_structs.hpp"
 #include "BrickRigs_structs.hpp"
 #include "BrickRigs_classes.hpp"
 
@@ -19,18 +20,19 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_InputKey.WBP_InputKey_C
-// 0x0020 (0x02A8 - 0x0288)
+// 0x0028 (0x02B0 - 0x0288)
 class UWBP_InputKey_C final : public UInputKeyWidget
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0288(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBrickBorder*                           KeyBorder;                                         // 0x0290(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UBrickImage*                            KeyImage;                                          // 0x0298(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UBrickTextBlock*                        KeyTextBlock;                                      // 0x02A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UBrickImage*                            HoldImage;                                         // 0x0290(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UBrickBorder*                           KeyBorder;                                         // 0x0298(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UBrickImage*                            KeyImage;                                          // 0x02A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UBrickTextBlock*                        KeyTextBlock;                                      // 0x02A8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	void ExecuteUbergraph_WBP_InputKey(int32 EntryPoint);
-	void UpdateDisplayInfo(const struct FKeyDisplayTableRow& DisplayInfo, bool bIsGamepadKey);
+	void UpdateKey(const struct FKeyDisplayTableRow& DisplayInfo, const bool bIsGamepadKey);
 
 public:
 	static class UClass* StaticClass()
@@ -43,11 +45,12 @@ public:
 	}
 };
 static_assert(alignof(UWBP_InputKey_C) == 0x000008, "Wrong alignment on UWBP_InputKey_C");
-static_assert(sizeof(UWBP_InputKey_C) == 0x0002A8, "Wrong size on UWBP_InputKey_C");
+static_assert(sizeof(UWBP_InputKey_C) == 0x0002B0, "Wrong size on UWBP_InputKey_C");
 static_assert(offsetof(UWBP_InputKey_C, UberGraphFrame) == 0x000288, "Member 'UWBP_InputKey_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UWBP_InputKey_C, KeyBorder) == 0x000290, "Member 'UWBP_InputKey_C::KeyBorder' has a wrong offset!");
-static_assert(offsetof(UWBP_InputKey_C, KeyImage) == 0x000298, "Member 'UWBP_InputKey_C::KeyImage' has a wrong offset!");
-static_assert(offsetof(UWBP_InputKey_C, KeyTextBlock) == 0x0002A0, "Member 'UWBP_InputKey_C::KeyTextBlock' has a wrong offset!");
+static_assert(offsetof(UWBP_InputKey_C, HoldImage) == 0x000290, "Member 'UWBP_InputKey_C::HoldImage' has a wrong offset!");
+static_assert(offsetof(UWBP_InputKey_C, KeyBorder) == 0x000298, "Member 'UWBP_InputKey_C::KeyBorder' has a wrong offset!");
+static_assert(offsetof(UWBP_InputKey_C, KeyImage) == 0x0002A0, "Member 'UWBP_InputKey_C::KeyImage' has a wrong offset!");
+static_assert(offsetof(UWBP_InputKey_C, KeyTextBlock) == 0x0002A8, "Member 'UWBP_InputKey_C::KeyTextBlock' has a wrong offset!");
 
 }
 

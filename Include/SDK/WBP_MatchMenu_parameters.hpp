@@ -16,41 +16,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_MatchMenu.WBP_MatchMenu_C.OnConfirmRestartPopupClosed
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_MatchMenu_C_OnConfirmRestartPopupClosed final
-{
-public:
-	EPopupResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_MatchMenu_C_OnConfirmRestartPopupClosed) == 0x000001, "Wrong alignment on WBP_MatchMenu_C_OnConfirmRestartPopupClosed");
-static_assert(sizeof(WBP_MatchMenu_C_OnConfirmRestartPopupClosed) == 0x000001, "Wrong size on WBP_MatchMenu_C_OnConfirmRestartPopupClosed");
-static_assert(offsetof(WBP_MatchMenu_C_OnConfirmRestartPopupClosed, Result) == 0x000000, "Member 'WBP_MatchMenu_C_OnConfirmRestartPopupClosed::Result' has a wrong offset!");
-
-// Function WBP_MatchMenu.WBP_MatchMenu_C.UpdateCanApplyMatchSettings
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_MatchMenu_C_UpdateCanApplyMatchSettings final
-{
-public:
-	bool                                          bCanApply;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_MatchMenu_C_UpdateCanApplyMatchSettings) == 0x000001, "Wrong alignment on WBP_MatchMenu_C_UpdateCanApplyMatchSettings");
-static_assert(sizeof(WBP_MatchMenu_C_UpdateCanApplyMatchSettings) == 0x000001, "Wrong size on WBP_MatchMenu_C_UpdateCanApplyMatchSettings");
-static_assert(offsetof(WBP_MatchMenu_C_UpdateCanApplyMatchSettings, bCanApply) == 0x000000, "Member 'WBP_MatchMenu_C_UpdateCanApplyMatchSettings::bCanApply' has a wrong offset!");
-
-// Function WBP_MatchMenu.WBP_MatchMenu_C.UpdateRestartMatchButton
-// 0x0002 (0x0002 - 0x0000)
-struct WBP_MatchMenu_C_UpdateRestartMatchButton final
-{
-public:
-	bool                                          bCanRestart;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bSameLevelAndMode;                                 // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_MatchMenu_C_UpdateRestartMatchButton) == 0x000001, "Wrong alignment on WBP_MatchMenu_C_UpdateRestartMatchButton");
-static_assert(sizeof(WBP_MatchMenu_C_UpdateRestartMatchButton) == 0x000002, "Wrong size on WBP_MatchMenu_C_UpdateRestartMatchButton");
-static_assert(offsetof(WBP_MatchMenu_C_UpdateRestartMatchButton, bCanRestart) == 0x000000, "Member 'WBP_MatchMenu_C_UpdateRestartMatchButton::bCanRestart' has a wrong offset!");
-static_assert(offsetof(WBP_MatchMenu_C_UpdateRestartMatchButton, bSameLevelAndMode) == 0x000001, "Member 'WBP_MatchMenu_C_UpdateRestartMatchButton::bSameLevelAndMode' has a wrong offset!");
-
 // Function WBP_MatchMenu.WBP_MatchMenu_C.ExecuteUbergraph_WBP_MatchMenu
 // 0x00C8 (0x00C8 - 0x0000)
 struct WBP_MatchMenu_C_ExecuteUbergraph_WBP_MatchMenu final
@@ -110,6 +75,41 @@ static_assert(offsetof(WBP_MatchMenu_C_ExecuteUbergraph_WBP_MatchMenu, K2Node_Ev
 static_assert(offsetof(WBP_MatchMenu_C_ExecuteUbergraph_WBP_MatchMenu, K2Node_Event_bSameLevelAndMode) == 0x0000A3, "Member 'WBP_MatchMenu_C_ExecuteUbergraph_WBP_MatchMenu::K2Node_Event_bSameLevelAndMode' has a wrong offset!");
 static_assert(offsetof(WBP_MatchMenu_C_ExecuteUbergraph_WBP_MatchMenu, K2Node_Select_Default) == 0x0000A8, "Member 'WBP_MatchMenu_C_ExecuteUbergraph_WBP_MatchMenu::K2Node_Select_Default' has a wrong offset!");
 static_assert(offsetof(WBP_MatchMenu_C_ExecuteUbergraph_WBP_MatchMenu, K2Node_Select_Default_1) == 0x0000C0, "Member 'WBP_MatchMenu_C_ExecuteUbergraph_WBP_MatchMenu::K2Node_Select_Default_1' has a wrong offset!");
+
+// Function WBP_MatchMenu.WBP_MatchMenu_C.UpdateRestartMatchButton
+// 0x0002 (0x0002 - 0x0000)
+struct WBP_MatchMenu_C_UpdateRestartMatchButton final
+{
+public:
+	bool                                          bCanRestart;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bSameLevelAndMode;                                 // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_MatchMenu_C_UpdateRestartMatchButton) == 0x000001, "Wrong alignment on WBP_MatchMenu_C_UpdateRestartMatchButton");
+static_assert(sizeof(WBP_MatchMenu_C_UpdateRestartMatchButton) == 0x000002, "Wrong size on WBP_MatchMenu_C_UpdateRestartMatchButton");
+static_assert(offsetof(WBP_MatchMenu_C_UpdateRestartMatchButton, bCanRestart) == 0x000000, "Member 'WBP_MatchMenu_C_UpdateRestartMatchButton::bCanRestart' has a wrong offset!");
+static_assert(offsetof(WBP_MatchMenu_C_UpdateRestartMatchButton, bSameLevelAndMode) == 0x000001, "Member 'WBP_MatchMenu_C_UpdateRestartMatchButton::bSameLevelAndMode' has a wrong offset!");
+
+// Function WBP_MatchMenu.WBP_MatchMenu_C.UpdateCanApplyMatchSettings
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_MatchMenu_C_UpdateCanApplyMatchSettings final
+{
+public:
+	bool                                          bCanApply;                                         // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_MatchMenu_C_UpdateCanApplyMatchSettings) == 0x000001, "Wrong alignment on WBP_MatchMenu_C_UpdateCanApplyMatchSettings");
+static_assert(sizeof(WBP_MatchMenu_C_UpdateCanApplyMatchSettings) == 0x000001, "Wrong size on WBP_MatchMenu_C_UpdateCanApplyMatchSettings");
+static_assert(offsetof(WBP_MatchMenu_C_UpdateCanApplyMatchSettings, bCanApply) == 0x000000, "Member 'WBP_MatchMenu_C_UpdateCanApplyMatchSettings::bCanApply' has a wrong offset!");
+
+// Function WBP_MatchMenu.WBP_MatchMenu_C.OnConfirmRestartPopupClosed
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_MatchMenu_C_OnConfirmRestartPopupClosed final
+{
+public:
+	EPopupResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_MatchMenu_C_OnConfirmRestartPopupClosed) == 0x000001, "Wrong alignment on WBP_MatchMenu_C_OnConfirmRestartPopupClosed");
+static_assert(sizeof(WBP_MatchMenu_C_OnConfirmRestartPopupClosed) == 0x000001, "Wrong size on WBP_MatchMenu_C_OnConfirmRestartPopupClosed");
+static_assert(offsetof(WBP_MatchMenu_C_OnConfirmRestartPopupClosed, Result) == 0x000000, "Member 'WBP_MatchMenu_C_OnConfirmRestartPopupClosed::Result' has a wrong offset!");
 
 }
 

@@ -11,12 +11,112 @@
 #include "Basic.hpp"
 
 #include "BrickRigs_structs.hpp"
-#include "FluUGC_structs.hpp"
 #include "Engine_structs.hpp"
+#include "FluUGC_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function WBP_UGCBrowser.WBP_UGCBrowser_C.GetSpawnButtonTooltipContent
+// 0x0088 (0x0088 - 0x0000)
+struct WBP_UGCBrowser_C_GetSpawnButtonTooltipContent final
+{
+public:
+	struct FTooltipContent                        OutContent;                                        // 0x0000(0x0040)(Parm, OutParm)
+	bool                                          ReturnValue;                                       // 0x0040(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FTooltipContent                        K2Node_MakeStruct_TooltipContent;                  // 0x0048(0x0040)()
+};
+static_assert(alignof(WBP_UGCBrowser_C_GetSpawnButtonTooltipContent) == 0x000008, "Wrong alignment on WBP_UGCBrowser_C_GetSpawnButtonTooltipContent");
+static_assert(sizeof(WBP_UGCBrowser_C_GetSpawnButtonTooltipContent) == 0x000088, "Wrong size on WBP_UGCBrowser_C_GetSpawnButtonTooltipContent");
+static_assert(offsetof(WBP_UGCBrowser_C_GetSpawnButtonTooltipContent, OutContent) == 0x000000, "Member 'WBP_UGCBrowser_C_GetSpawnButtonTooltipContent::OutContent' has a wrong offset!");
+static_assert(offsetof(WBP_UGCBrowser_C_GetSpawnButtonTooltipContent, ReturnValue) == 0x000040, "Member 'WBP_UGCBrowser_C_GetSpawnButtonTooltipContent::ReturnValue' has a wrong offset!");
+static_assert(offsetof(WBP_UGCBrowser_C_GetSpawnButtonTooltipContent, K2Node_MakeStruct_TooltipContent) == 0x000048, "Member 'WBP_UGCBrowser_C_GetSpawnButtonTooltipContent::K2Node_MakeStruct_TooltipContent' has a wrong offset!");
+
+// Function WBP_UGCBrowser.WBP_UGCBrowser_C.CreateClearItemsButton
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_UGCBrowser_C_CreateClearItemsButton final
+{
+public:
+	bool                                          bIsArrayProperty;                                  // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_UGCBrowser_C_CreateClearItemsButton) == 0x000001, "Wrong alignment on WBP_UGCBrowser_C_CreateClearItemsButton");
+static_assert(sizeof(WBP_UGCBrowser_C_CreateClearItemsButton) == 0x000001, "Wrong size on WBP_UGCBrowser_C_CreateClearItemsButton");
+static_assert(offsetof(WBP_UGCBrowser_C_CreateClearItemsButton, bIsArrayProperty) == 0x000000, "Member 'WBP_UGCBrowser_C_CreateClearItemsButton::bIsArrayProperty' has a wrong offset!");
+
+// Function WBP_UGCBrowser.WBP_UGCBrowser_C.CreateFavoriteButton
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_UGCBrowser_C_CreateFavoriteButton final
+{
+public:
+	bool                                          bIsFavorited;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_UGCBrowser_C_CreateFavoriteButton) == 0x000001, "Wrong alignment on WBP_UGCBrowser_C_CreateFavoriteButton");
+static_assert(sizeof(WBP_UGCBrowser_C_CreateFavoriteButton) == 0x000001, "Wrong size on WBP_UGCBrowser_C_CreateFavoriteButton");
+static_assert(offsetof(WBP_UGCBrowser_C_CreateFavoriteButton, bIsFavorited) == 0x000000, "Member 'WBP_UGCBrowser_C_CreateFavoriteButton::bIsFavorited' has a wrong offset!");
+
+// Function WBP_UGCBrowser.WBP_UGCBrowser_C.CreateSpawnButton
+// 0x0020 (0x0020 - 0x0000)
+struct WBP_UGCBrowser_C_CreateSpawnButton final
+{
+public:
+	bool                                          bCanReplaceCurrent;                                // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bCanSpawn;                                         // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   SpawnFailureText;                                  // 0x0008(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+static_assert(alignof(WBP_UGCBrowser_C_CreateSpawnButton) == 0x000008, "Wrong alignment on WBP_UGCBrowser_C_CreateSpawnButton");
+static_assert(sizeof(WBP_UGCBrowser_C_CreateSpawnButton) == 0x000020, "Wrong size on WBP_UGCBrowser_C_CreateSpawnButton");
+static_assert(offsetof(WBP_UGCBrowser_C_CreateSpawnButton, bCanReplaceCurrent) == 0x000000, "Member 'WBP_UGCBrowser_C_CreateSpawnButton::bCanReplaceCurrent' has a wrong offset!");
+static_assert(offsetof(WBP_UGCBrowser_C_CreateSpawnButton, bCanSpawn) == 0x000001, "Member 'WBP_UGCBrowser_C_CreateSpawnButton::bCanSpawn' has a wrong offset!");
+static_assert(offsetof(WBP_UGCBrowser_C_CreateSpawnButton, SpawnFailureText) == 0x000008, "Member 'WBP_UGCBrowser_C_CreateSpawnButton::SpawnFailureText' has a wrong offset!");
+
+// Function WBP_UGCBrowser.WBP_UGCBrowser_C.CreateSubscribeButton
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_UGCBrowser_C_CreateSubscribeButton final
+{
+public:
+	bool                                          bIsSubscribed;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_UGCBrowser_C_CreateSubscribeButton) == 0x000001, "Wrong alignment on WBP_UGCBrowser_C_CreateSubscribeButton");
+static_assert(sizeof(WBP_UGCBrowser_C_CreateSubscribeButton) == 0x000001, "Wrong size on WBP_UGCBrowser_C_CreateSubscribeButton");
+static_assert(offsetof(WBP_UGCBrowser_C_CreateSubscribeButton, bIsSubscribed) == 0x000000, "Member 'WBP_UGCBrowser_C_CreateSubscribeButton::bIsSubscribed' has a wrong offset!");
+
+// Function WBP_UGCBrowser.WBP_UGCBrowser_C.CreateVoteButtons
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_UGCBrowser_C_CreateVoteButtons final
+{
+public:
+	EFluUGCItemVote                               Vote;                                              // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_UGCBrowser_C_CreateVoteButtons) == 0x000001, "Wrong alignment on WBP_UGCBrowser_C_CreateVoteButtons");
+static_assert(sizeof(WBP_UGCBrowser_C_CreateVoteButtons) == 0x000001, "Wrong size on WBP_UGCBrowser_C_CreateVoteButtons");
+static_assert(offsetof(WBP_UGCBrowser_C_CreateVoteButtons, Vote) == 0x000000, "Member 'WBP_UGCBrowser_C_CreateVoteButtons::Vote' has a wrong offset!");
+
+// Function WBP_UGCBrowser.WBP_UGCBrowser_C.CreateSpawnInvincibilityButton
+// 0x0018 (0x0018 - 0x0000)
+struct WBP_UGCBrowser_C_CreateSpawnInvincibilityButton final
+{
+public:
+	class FText                                   CurrentInvincibilityText;                          // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
+};
+static_assert(alignof(WBP_UGCBrowser_C_CreateSpawnInvincibilityButton) == 0x000008, "Wrong alignment on WBP_UGCBrowser_C_CreateSpawnInvincibilityButton");
+static_assert(sizeof(WBP_UGCBrowser_C_CreateSpawnInvincibilityButton) == 0x000018, "Wrong size on WBP_UGCBrowser_C_CreateSpawnInvincibilityButton");
+static_assert(offsetof(WBP_UGCBrowser_C_CreateSpawnInvincibilityButton, CurrentInvincibilityText) == 0x000000, "Member 'WBP_UGCBrowser_C_CreateSpawnInvincibilityButton::CurrentInvincibilityText' has a wrong offset!");
+
+// Function WBP_UGCBrowser.WBP_UGCBrowser_C.CreateAddOrRemoveItemButton
+// 0x0002 (0x0002 - 0x0000)
+struct WBP_UGCBrowser_C_CreateAddOrRemoveItemButton final
+{
+public:
+	bool                                          bIsArrayProperty;                                  // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bIsSelected;                                       // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_UGCBrowser_C_CreateAddOrRemoveItemButton) == 0x000001, "Wrong alignment on WBP_UGCBrowser_C_CreateAddOrRemoveItemButton");
+static_assert(sizeof(WBP_UGCBrowser_C_CreateAddOrRemoveItemButton) == 0x000002, "Wrong size on WBP_UGCBrowser_C_CreateAddOrRemoveItemButton");
+static_assert(offsetof(WBP_UGCBrowser_C_CreateAddOrRemoveItemButton, bIsArrayProperty) == 0x000000, "Member 'WBP_UGCBrowser_C_CreateAddOrRemoveItemButton::bIsArrayProperty' has a wrong offset!");
+static_assert(offsetof(WBP_UGCBrowser_C_CreateAddOrRemoveItemButton, bIsSelected) == 0x000001, "Member 'WBP_UGCBrowser_C_CreateAddOrRemoveItemButton::bIsSelected' has a wrong offset!");
 
 // Function WBP_UGCBrowser.WBP_UGCBrowser_C.ExecuteUbergraph_WBP_UGCBrowser
 // 0x0520 (0x0520 - 0x0000)
@@ -269,106 +369,6 @@ static_assert(offsetof(WBP_UGCBrowser_C_ExecuteUbergraph_WBP_UGCBrowser, K2Node_
 static_assert(offsetof(WBP_UGCBrowser_C_ExecuteUbergraph_WBP_UGCBrowser, CallFunc_CreateButton_ReturnValue_18) == 0x000500, "Member 'WBP_UGCBrowser_C_ExecuteUbergraph_WBP_UGCBrowser::CallFunc_CreateButton_ReturnValue_18' has a wrong offset!");
 static_assert(offsetof(WBP_UGCBrowser_C_ExecuteUbergraph_WBP_UGCBrowser, K2Node_CreateDelegate_OutputDelegate_25) == 0x000508, "Member 'WBP_UGCBrowser_C_ExecuteUbergraph_WBP_UGCBrowser::K2Node_CreateDelegate_OutputDelegate_25' has a wrong offset!");
 static_assert(offsetof(WBP_UGCBrowser_C_ExecuteUbergraph_WBP_UGCBrowser, CallFunc_CreateButton_ReturnValue_19) == 0x000518, "Member 'WBP_UGCBrowser_C_ExecuteUbergraph_WBP_UGCBrowser::CallFunc_CreateButton_ReturnValue_19' has a wrong offset!");
-
-// Function WBP_UGCBrowser.WBP_UGCBrowser_C.CreateAddOrRemoveItemButton
-// 0x0002 (0x0002 - 0x0000)
-struct WBP_UGCBrowser_C_CreateAddOrRemoveItemButton final
-{
-public:
-	bool                                          bIsArrayProperty;                                  // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bIsSelected;                                       // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_UGCBrowser_C_CreateAddOrRemoveItemButton) == 0x000001, "Wrong alignment on WBP_UGCBrowser_C_CreateAddOrRemoveItemButton");
-static_assert(sizeof(WBP_UGCBrowser_C_CreateAddOrRemoveItemButton) == 0x000002, "Wrong size on WBP_UGCBrowser_C_CreateAddOrRemoveItemButton");
-static_assert(offsetof(WBP_UGCBrowser_C_CreateAddOrRemoveItemButton, bIsArrayProperty) == 0x000000, "Member 'WBP_UGCBrowser_C_CreateAddOrRemoveItemButton::bIsArrayProperty' has a wrong offset!");
-static_assert(offsetof(WBP_UGCBrowser_C_CreateAddOrRemoveItemButton, bIsSelected) == 0x000001, "Member 'WBP_UGCBrowser_C_CreateAddOrRemoveItemButton::bIsSelected' has a wrong offset!");
-
-// Function WBP_UGCBrowser.WBP_UGCBrowser_C.CreateSpawnInvincibilityButton
-// 0x0018 (0x0018 - 0x0000)
-struct WBP_UGCBrowser_C_CreateSpawnInvincibilityButton final
-{
-public:
-	class FText                                   CurrentInvincibilityText;                          // 0x0000(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-};
-static_assert(alignof(WBP_UGCBrowser_C_CreateSpawnInvincibilityButton) == 0x000008, "Wrong alignment on WBP_UGCBrowser_C_CreateSpawnInvincibilityButton");
-static_assert(sizeof(WBP_UGCBrowser_C_CreateSpawnInvincibilityButton) == 0x000018, "Wrong size on WBP_UGCBrowser_C_CreateSpawnInvincibilityButton");
-static_assert(offsetof(WBP_UGCBrowser_C_CreateSpawnInvincibilityButton, CurrentInvincibilityText) == 0x000000, "Member 'WBP_UGCBrowser_C_CreateSpawnInvincibilityButton::CurrentInvincibilityText' has a wrong offset!");
-
-// Function WBP_UGCBrowser.WBP_UGCBrowser_C.CreateVoteButtons
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_UGCBrowser_C_CreateVoteButtons final
-{
-public:
-	EFluUGCItemVote                               Vote;                                              // 0x0000(0x0001)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_UGCBrowser_C_CreateVoteButtons) == 0x000001, "Wrong alignment on WBP_UGCBrowser_C_CreateVoteButtons");
-static_assert(sizeof(WBP_UGCBrowser_C_CreateVoteButtons) == 0x000001, "Wrong size on WBP_UGCBrowser_C_CreateVoteButtons");
-static_assert(offsetof(WBP_UGCBrowser_C_CreateVoteButtons, Vote) == 0x000000, "Member 'WBP_UGCBrowser_C_CreateVoteButtons::Vote' has a wrong offset!");
-
-// Function WBP_UGCBrowser.WBP_UGCBrowser_C.CreateSubscribeButton
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_UGCBrowser_C_CreateSubscribeButton final
-{
-public:
-	bool                                          bIsSubscribed;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_UGCBrowser_C_CreateSubscribeButton) == 0x000001, "Wrong alignment on WBP_UGCBrowser_C_CreateSubscribeButton");
-static_assert(sizeof(WBP_UGCBrowser_C_CreateSubscribeButton) == 0x000001, "Wrong size on WBP_UGCBrowser_C_CreateSubscribeButton");
-static_assert(offsetof(WBP_UGCBrowser_C_CreateSubscribeButton, bIsSubscribed) == 0x000000, "Member 'WBP_UGCBrowser_C_CreateSubscribeButton::bIsSubscribed' has a wrong offset!");
-
-// Function WBP_UGCBrowser.WBP_UGCBrowser_C.CreateSpawnButton
-// 0x0020 (0x0020 - 0x0000)
-struct WBP_UGCBrowser_C_CreateSpawnButton final
-{
-public:
-	bool                                          bCanReplaceCurrent;                                // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bCanSpawn;                                         // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_2[0x6];                                        // 0x0002(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   SpawnFailureText;                                  // 0x0008(0x0018)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ReferenceParm)
-};
-static_assert(alignof(WBP_UGCBrowser_C_CreateSpawnButton) == 0x000008, "Wrong alignment on WBP_UGCBrowser_C_CreateSpawnButton");
-static_assert(sizeof(WBP_UGCBrowser_C_CreateSpawnButton) == 0x000020, "Wrong size on WBP_UGCBrowser_C_CreateSpawnButton");
-static_assert(offsetof(WBP_UGCBrowser_C_CreateSpawnButton, bCanReplaceCurrent) == 0x000000, "Member 'WBP_UGCBrowser_C_CreateSpawnButton::bCanReplaceCurrent' has a wrong offset!");
-static_assert(offsetof(WBP_UGCBrowser_C_CreateSpawnButton, bCanSpawn) == 0x000001, "Member 'WBP_UGCBrowser_C_CreateSpawnButton::bCanSpawn' has a wrong offset!");
-static_assert(offsetof(WBP_UGCBrowser_C_CreateSpawnButton, SpawnFailureText) == 0x000008, "Member 'WBP_UGCBrowser_C_CreateSpawnButton::SpawnFailureText' has a wrong offset!");
-
-// Function WBP_UGCBrowser.WBP_UGCBrowser_C.CreateFavoriteButton
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_UGCBrowser_C_CreateFavoriteButton final
-{
-public:
-	bool                                          bIsFavorited;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_UGCBrowser_C_CreateFavoriteButton) == 0x000001, "Wrong alignment on WBP_UGCBrowser_C_CreateFavoriteButton");
-static_assert(sizeof(WBP_UGCBrowser_C_CreateFavoriteButton) == 0x000001, "Wrong size on WBP_UGCBrowser_C_CreateFavoriteButton");
-static_assert(offsetof(WBP_UGCBrowser_C_CreateFavoriteButton, bIsFavorited) == 0x000000, "Member 'WBP_UGCBrowser_C_CreateFavoriteButton::bIsFavorited' has a wrong offset!");
-
-// Function WBP_UGCBrowser.WBP_UGCBrowser_C.CreateClearItemsButton
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_UGCBrowser_C_CreateClearItemsButton final
-{
-public:
-	bool                                          bIsArrayProperty;                                  // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_UGCBrowser_C_CreateClearItemsButton) == 0x000001, "Wrong alignment on WBP_UGCBrowser_C_CreateClearItemsButton");
-static_assert(sizeof(WBP_UGCBrowser_C_CreateClearItemsButton) == 0x000001, "Wrong size on WBP_UGCBrowser_C_CreateClearItemsButton");
-static_assert(offsetof(WBP_UGCBrowser_C_CreateClearItemsButton, bIsArrayProperty) == 0x000000, "Member 'WBP_UGCBrowser_C_CreateClearItemsButton::bIsArrayProperty' has a wrong offset!");
-
-// Function WBP_UGCBrowser.WBP_UGCBrowser_C.GetSpawnButtonTooltipContent
-// 0x0088 (0x0088 - 0x0000)
-struct WBP_UGCBrowser_C_GetSpawnButtonTooltipContent final
-{
-public:
-	struct FTooltipContent                        OutContent;                                        // 0x0000(0x0040)(Parm, OutParm)
-	bool                                          ReturnValue;                                       // 0x0040(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FTooltipContent                        K2Node_MakeStruct_TooltipContent;                  // 0x0048(0x0040)()
-};
-static_assert(alignof(WBP_UGCBrowser_C_GetSpawnButtonTooltipContent) == 0x000008, "Wrong alignment on WBP_UGCBrowser_C_GetSpawnButtonTooltipContent");
-static_assert(sizeof(WBP_UGCBrowser_C_GetSpawnButtonTooltipContent) == 0x000088, "Wrong size on WBP_UGCBrowser_C_GetSpawnButtonTooltipContent");
-static_assert(offsetof(WBP_UGCBrowser_C_GetSpawnButtonTooltipContent, OutContent) == 0x000000, "Member 'WBP_UGCBrowser_C_GetSpawnButtonTooltipContent::OutContent' has a wrong offset!");
-static_assert(offsetof(WBP_UGCBrowser_C_GetSpawnButtonTooltipContent, ReturnValue) == 0x000040, "Member 'WBP_UGCBrowser_C_GetSpawnButtonTooltipContent::ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_UGCBrowser_C_GetSpawnButtonTooltipContent, K2Node_MakeStruct_TooltipContent) == 0x000048, "Member 'WBP_UGCBrowser_C_GetSpawnButtonTooltipContent::K2Node_MakeStruct_TooltipContent' has a wrong offset!");
 
 }
 

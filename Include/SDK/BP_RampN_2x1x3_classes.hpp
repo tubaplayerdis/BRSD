@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_RampN_2x1x3.BP_RampN_2x1x3_C
-// 0x0000 (0x0168 - 0x0168)
+// 0x0000 (0x0190 - 0x0190)
 class UBP_RampN_2x1x3_C final : public URampBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_RampN_2x1x3_C) == 0x000008, "Wrong alignment on UBP_RampN_2x1x3_C");
-static_assert(sizeof(UBP_RampN_2x1x3_C) == 0x000168, "Wrong size on UBP_RampN_2x1x3_C");
+static_assert(sizeof(UBP_RampN_2x1x3_C) == 0x000190, "Wrong size on UBP_RampN_2x1x3_C");
 
 }
 

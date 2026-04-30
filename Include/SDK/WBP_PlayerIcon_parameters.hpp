@@ -16,23 +16,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_PlayerIcon.WBP_PlayerIcon_C.UpdatePlayerIcon
-// 0x0004 (0x0004 - 0x0000)
-struct WBP_PlayerIcon_C_UpdatePlayerIcon final
-{
-public:
-	bool                                          bNewIsLocalPlayer;                                 // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bNewIsTeamLeader;                                  // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	ECharacterStateOfHealth                       NewStateOfHealth;                                  // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          bNewCanBeDamaged;                                  // 0x0003(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_PlayerIcon_C_UpdatePlayerIcon) == 0x000001, "Wrong alignment on WBP_PlayerIcon_C_UpdatePlayerIcon");
-static_assert(sizeof(WBP_PlayerIcon_C_UpdatePlayerIcon) == 0x000004, "Wrong size on WBP_PlayerIcon_C_UpdatePlayerIcon");
-static_assert(offsetof(WBP_PlayerIcon_C_UpdatePlayerIcon, bNewIsLocalPlayer) == 0x000000, "Member 'WBP_PlayerIcon_C_UpdatePlayerIcon::bNewIsLocalPlayer' has a wrong offset!");
-static_assert(offsetof(WBP_PlayerIcon_C_UpdatePlayerIcon, bNewIsTeamLeader) == 0x000001, "Member 'WBP_PlayerIcon_C_UpdatePlayerIcon::bNewIsTeamLeader' has a wrong offset!");
-static_assert(offsetof(WBP_PlayerIcon_C_UpdatePlayerIcon, NewStateOfHealth) == 0x000002, "Member 'WBP_PlayerIcon_C_UpdatePlayerIcon::NewStateOfHealth' has a wrong offset!");
-static_assert(offsetof(WBP_PlayerIcon_C_UpdatePlayerIcon, bNewCanBeDamaged) == 0x000003, "Member 'WBP_PlayerIcon_C_UpdatePlayerIcon::bNewCanBeDamaged' has a wrong offset!");
-
 // Function WBP_PlayerIcon.WBP_PlayerIcon_C.ExecuteUbergraph_WBP_PlayerIcon
 // 0x0048 (0x0048 - 0x0000)
 struct WBP_PlayerIcon_C_ExecuteUbergraph_WBP_PlayerIcon final
@@ -89,6 +72,23 @@ static_assert(offsetof(WBP_PlayerIcon_C_ExecuteUbergraph_WBP_PlayerIcon, K2Node_
 static_assert(offsetof(WBP_PlayerIcon_C_ExecuteUbergraph_WBP_PlayerIcon, Temp_byte_Variable_1) == 0x000038, "Member 'WBP_PlayerIcon_C_ExecuteUbergraph_WBP_PlayerIcon::Temp_byte_Variable_1' has a wrong offset!");
 static_assert(offsetof(WBP_PlayerIcon_C_ExecuteUbergraph_WBP_PlayerIcon, K2Node_MakeStruct_BrickUIIconSlot) == 0x00003C, "Member 'WBP_PlayerIcon_C_ExecuteUbergraph_WBP_PlayerIcon::K2Node_MakeStruct_BrickUIIconSlot' has a wrong offset!");
 static_assert(offsetof(WBP_PlayerIcon_C_ExecuteUbergraph_WBP_PlayerIcon, K2Node_Select_Default_3) == 0x000044, "Member 'WBP_PlayerIcon_C_ExecuteUbergraph_WBP_PlayerIcon::K2Node_Select_Default_3' has a wrong offset!");
+
+// Function WBP_PlayerIcon.WBP_PlayerIcon_C.UpdatePlayerIcon
+// 0x0004 (0x0004 - 0x0000)
+struct WBP_PlayerIcon_C_UpdatePlayerIcon final
+{
+public:
+	bool                                          bNewIsLocalPlayer;                                 // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bNewIsTeamLeader;                                  // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	ECharacterStateOfHealth                       NewStateOfHealth;                                  // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          bNewCanBeDamaged;                                  // 0x0003(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_PlayerIcon_C_UpdatePlayerIcon) == 0x000001, "Wrong alignment on WBP_PlayerIcon_C_UpdatePlayerIcon");
+static_assert(sizeof(WBP_PlayerIcon_C_UpdatePlayerIcon) == 0x000004, "Wrong size on WBP_PlayerIcon_C_UpdatePlayerIcon");
+static_assert(offsetof(WBP_PlayerIcon_C_UpdatePlayerIcon, bNewIsLocalPlayer) == 0x000000, "Member 'WBP_PlayerIcon_C_UpdatePlayerIcon::bNewIsLocalPlayer' has a wrong offset!");
+static_assert(offsetof(WBP_PlayerIcon_C_UpdatePlayerIcon, bNewIsTeamLeader) == 0x000001, "Member 'WBP_PlayerIcon_C_UpdatePlayerIcon::bNewIsTeamLeader' has a wrong offset!");
+static_assert(offsetof(WBP_PlayerIcon_C_UpdatePlayerIcon, NewStateOfHealth) == 0x000002, "Member 'WBP_PlayerIcon_C_UpdatePlayerIcon::NewStateOfHealth' has a wrong offset!");
+static_assert(offsetof(WBP_PlayerIcon_C_UpdatePlayerIcon, bNewCanBeDamaged) == 0x000003, "Member 'WBP_PlayerIcon_C_UpdatePlayerIcon::bNewCanBeDamaged' has a wrong offset!");
 
 }
 

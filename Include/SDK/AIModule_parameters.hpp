@@ -20,256 +20,6 @@
 namespace SDK::Params
 {
 
-// Function AIModule.AIBlueprintHelperLibrary.CreateMoveToProxyObject
-// 0x0038 (0x0038 - 0x0000)
-struct AIBlueprintHelperLibrary_CreateMoveToProxyObject final
-{
-public:
-	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class APawn*                                  Pawn;                                              // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Destination;                                       // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 TargetActor;                                       // 0x0020(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         AcceptanceRadius;                                  // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bStopOnOverlap;                                    // 0x002C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class UAIAsyncTaskBlueprintProxy*             ReturnValue;                                       // 0x0030(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(AIBlueprintHelperLibrary_CreateMoveToProxyObject) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_CreateMoveToProxyObject");
-static_assert(sizeof(AIBlueprintHelperLibrary_CreateMoveToProxyObject) == 0x000038, "Wrong size on AIBlueprintHelperLibrary_CreateMoveToProxyObject");
-static_assert(offsetof(AIBlueprintHelperLibrary_CreateMoveToProxyObject, WorldContextObject) == 0x000000, "Member 'AIBlueprintHelperLibrary_CreateMoveToProxyObject::WorldContextObject' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_CreateMoveToProxyObject, Pawn) == 0x000008, "Member 'AIBlueprintHelperLibrary_CreateMoveToProxyObject::Pawn' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_CreateMoveToProxyObject, Destination) == 0x000010, "Member 'AIBlueprintHelperLibrary_CreateMoveToProxyObject::Destination' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_CreateMoveToProxyObject, TargetActor) == 0x000020, "Member 'AIBlueprintHelperLibrary_CreateMoveToProxyObject::TargetActor' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_CreateMoveToProxyObject, AcceptanceRadius) == 0x000028, "Member 'AIBlueprintHelperLibrary_CreateMoveToProxyObject::AcceptanceRadius' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_CreateMoveToProxyObject, bStopOnOverlap) == 0x00002C, "Member 'AIBlueprintHelperLibrary_CreateMoveToProxyObject::bStopOnOverlap' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_CreateMoveToProxyObject, ReturnValue) == 0x000030, "Member 'AIBlueprintHelperLibrary_CreateMoveToProxyObject::ReturnValue' has a wrong offset!");
-
-// Function AIModule.AIBlueprintHelperLibrary.GetAIController
-// 0x0010 (0x0010 - 0x0000)
-struct AIBlueprintHelperLibrary_GetAIController final
-{
-public:
-	class AActor*                                 ControlledActor;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AAIController*                          ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(AIBlueprintHelperLibrary_GetAIController) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_GetAIController");
-static_assert(sizeof(AIBlueprintHelperLibrary_GetAIController) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_GetAIController");
-static_assert(offsetof(AIBlueprintHelperLibrary_GetAIController, ControlledActor) == 0x000000, "Member 'AIBlueprintHelperLibrary_GetAIController::ControlledActor' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_GetAIController, ReturnValue) == 0x000008, "Member 'AIBlueprintHelperLibrary_GetAIController::ReturnValue' has a wrong offset!");
-
-// Function AIModule.AIBlueprintHelperLibrary.GetBlackboard
-// 0x0010 (0x0010 - 0x0000)
-struct AIBlueprintHelperLibrary_GetBlackboard final
-{
-public:
-	class AActor*                                 Target;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UBlackboardComponent*                   ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(AIBlueprintHelperLibrary_GetBlackboard) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_GetBlackboard");
-static_assert(sizeof(AIBlueprintHelperLibrary_GetBlackboard) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_GetBlackboard");
-static_assert(offsetof(AIBlueprintHelperLibrary_GetBlackboard, Target) == 0x000000, "Member 'AIBlueprintHelperLibrary_GetBlackboard::Target' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_GetBlackboard, ReturnValue) == 0x000008, "Member 'AIBlueprintHelperLibrary_GetBlackboard::ReturnValue' has a wrong offset!");
-
-// Function AIModule.AIBlueprintHelperLibrary.GetCurrentPath
-// 0x0010 (0x0010 - 0x0000)
-struct AIBlueprintHelperLibrary_GetCurrentPath final
-{
-public:
-	class AController*                            Controller;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UNavigationPath*                        ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(AIBlueprintHelperLibrary_GetCurrentPath) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_GetCurrentPath");
-static_assert(sizeof(AIBlueprintHelperLibrary_GetCurrentPath) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_GetCurrentPath");
-static_assert(offsetof(AIBlueprintHelperLibrary_GetCurrentPath, Controller) == 0x000000, "Member 'AIBlueprintHelperLibrary_GetCurrentPath::Controller' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_GetCurrentPath, ReturnValue) == 0x000008, "Member 'AIBlueprintHelperLibrary_GetCurrentPath::ReturnValue' has a wrong offset!");
-
-// Function AIModule.AIBlueprintHelperLibrary.GetCurrentPathIndex
-// 0x0010 (0x0010 - 0x0000)
-struct AIBlueprintHelperLibrary_GetCurrentPathIndex final
-{
-public:
-	const class AController*                      Controller;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(AIBlueprintHelperLibrary_GetCurrentPathIndex) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_GetCurrentPathIndex");
-static_assert(sizeof(AIBlueprintHelperLibrary_GetCurrentPathIndex) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_GetCurrentPathIndex");
-static_assert(offsetof(AIBlueprintHelperLibrary_GetCurrentPathIndex, Controller) == 0x000000, "Member 'AIBlueprintHelperLibrary_GetCurrentPathIndex::Controller' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_GetCurrentPathIndex, ReturnValue) == 0x000008, "Member 'AIBlueprintHelperLibrary_GetCurrentPathIndex::ReturnValue' has a wrong offset!");
-
-// Function AIModule.AIBlueprintHelperLibrary.GetCurrentPathPoints
-// 0x0018 (0x0018 - 0x0000)
-struct AIBlueprintHelperLibrary_GetCurrentPathPoints final
-{
-public:
-	class AController*                            Controller;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        ReturnValue;                                       // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(AIBlueprintHelperLibrary_GetCurrentPathPoints) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_GetCurrentPathPoints");
-static_assert(sizeof(AIBlueprintHelperLibrary_GetCurrentPathPoints) == 0x000018, "Wrong size on AIBlueprintHelperLibrary_GetCurrentPathPoints");
-static_assert(offsetof(AIBlueprintHelperLibrary_GetCurrentPathPoints, Controller) == 0x000000, "Member 'AIBlueprintHelperLibrary_GetCurrentPathPoints::Controller' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_GetCurrentPathPoints, ReturnValue) == 0x000008, "Member 'AIBlueprintHelperLibrary_GetCurrentPathPoints::ReturnValue' has a wrong offset!");
-
-// Function AIModule.AIBlueprintHelperLibrary.GetNextNavLinkIndex
-// 0x0010 (0x0010 - 0x0000)
-struct AIBlueprintHelperLibrary_GetNextNavLinkIndex final
-{
-public:
-	const class AController*                      Controller;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(AIBlueprintHelperLibrary_GetNextNavLinkIndex) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_GetNextNavLinkIndex");
-static_assert(sizeof(AIBlueprintHelperLibrary_GetNextNavLinkIndex) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_GetNextNavLinkIndex");
-static_assert(offsetof(AIBlueprintHelperLibrary_GetNextNavLinkIndex, Controller) == 0x000000, "Member 'AIBlueprintHelperLibrary_GetNextNavLinkIndex::Controller' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_GetNextNavLinkIndex, ReturnValue) == 0x000008, "Member 'AIBlueprintHelperLibrary_GetNextNavLinkIndex::ReturnValue' has a wrong offset!");
-
-// Function AIModule.AIBlueprintHelperLibrary.IsValidAIDirection
-// 0x0010 (0x0010 - 0x0000)
-struct AIBlueprintHelperLibrary_IsValidAIDirection final
-{
-public:
-	struct FVector                                DirectionVector;                                   // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(AIBlueprintHelperLibrary_IsValidAIDirection) == 0x000004, "Wrong alignment on AIBlueprintHelperLibrary_IsValidAIDirection");
-static_assert(sizeof(AIBlueprintHelperLibrary_IsValidAIDirection) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_IsValidAIDirection");
-static_assert(offsetof(AIBlueprintHelperLibrary_IsValidAIDirection, DirectionVector) == 0x000000, "Member 'AIBlueprintHelperLibrary_IsValidAIDirection::DirectionVector' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_IsValidAIDirection, ReturnValue) == 0x00000C, "Member 'AIBlueprintHelperLibrary_IsValidAIDirection::ReturnValue' has a wrong offset!");
-
-// Function AIModule.AIBlueprintHelperLibrary.IsValidAILocation
-// 0x0010 (0x0010 - 0x0000)
-struct AIBlueprintHelperLibrary_IsValidAILocation final
-{
-public:
-	struct FVector                                Location;                                          // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(AIBlueprintHelperLibrary_IsValidAILocation) == 0x000004, "Wrong alignment on AIBlueprintHelperLibrary_IsValidAILocation");
-static_assert(sizeof(AIBlueprintHelperLibrary_IsValidAILocation) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_IsValidAILocation");
-static_assert(offsetof(AIBlueprintHelperLibrary_IsValidAILocation, Location) == 0x000000, "Member 'AIBlueprintHelperLibrary_IsValidAILocation::Location' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_IsValidAILocation, ReturnValue) == 0x00000C, "Member 'AIBlueprintHelperLibrary_IsValidAILocation::ReturnValue' has a wrong offset!");
-
-// Function AIModule.AIBlueprintHelperLibrary.IsValidAIRotation
-// 0x0010 (0x0010 - 0x0000)
-struct AIBlueprintHelperLibrary_IsValidAIRotation final
-{
-public:
-	struct FRotator                               Rotation;                                          // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(AIBlueprintHelperLibrary_IsValidAIRotation) == 0x000004, "Wrong alignment on AIBlueprintHelperLibrary_IsValidAIRotation");
-static_assert(sizeof(AIBlueprintHelperLibrary_IsValidAIRotation) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_IsValidAIRotation");
-static_assert(offsetof(AIBlueprintHelperLibrary_IsValidAIRotation, Rotation) == 0x000000, "Member 'AIBlueprintHelperLibrary_IsValidAIRotation::Rotation' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_IsValidAIRotation, ReturnValue) == 0x00000C, "Member 'AIBlueprintHelperLibrary_IsValidAIRotation::ReturnValue' has a wrong offset!");
-
-// Function AIModule.AIBlueprintHelperLibrary.LockAIResourcesWithAnimation
-// 0x0010 (0x0010 - 0x0000)
-struct AIBlueprintHelperLibrary_LockAIResourcesWithAnimation final
-{
-public:
-	class UAnimInstance*                          AnimInstance;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bLockMovement;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          LockAILogic;                                       // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(AIBlueprintHelperLibrary_LockAIResourcesWithAnimation) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_LockAIResourcesWithAnimation");
-static_assert(sizeof(AIBlueprintHelperLibrary_LockAIResourcesWithAnimation) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_LockAIResourcesWithAnimation");
-static_assert(offsetof(AIBlueprintHelperLibrary_LockAIResourcesWithAnimation, AnimInstance) == 0x000000, "Member 'AIBlueprintHelperLibrary_LockAIResourcesWithAnimation::AnimInstance' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_LockAIResourcesWithAnimation, bLockMovement) == 0x000008, "Member 'AIBlueprintHelperLibrary_LockAIResourcesWithAnimation::bLockMovement' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_LockAIResourcesWithAnimation, LockAILogic) == 0x000009, "Member 'AIBlueprintHelperLibrary_LockAIResourcesWithAnimation::LockAILogic' has a wrong offset!");
-
-// Function AIModule.AIBlueprintHelperLibrary.SendAIMessage
-// 0x0020 (0x0020 - 0x0000)
-struct AIBlueprintHelperLibrary_SendAIMessage final
-{
-public:
-	class APawn*                                  Target;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FName                                   Message;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                MessageSource;                                     // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bSuccess;                                          // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(AIBlueprintHelperLibrary_SendAIMessage) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_SendAIMessage");
-static_assert(sizeof(AIBlueprintHelperLibrary_SendAIMessage) == 0x000020, "Wrong size on AIBlueprintHelperLibrary_SendAIMessage");
-static_assert(offsetof(AIBlueprintHelperLibrary_SendAIMessage, Target) == 0x000000, "Member 'AIBlueprintHelperLibrary_SendAIMessage::Target' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_SendAIMessage, Message) == 0x000008, "Member 'AIBlueprintHelperLibrary_SendAIMessage::Message' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_SendAIMessage, MessageSource) == 0x000010, "Member 'AIBlueprintHelperLibrary_SendAIMessage::MessageSource' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_SendAIMessage, bSuccess) == 0x000018, "Member 'AIBlueprintHelperLibrary_SendAIMessage::bSuccess' has a wrong offset!");
-
-// Function AIModule.AIBlueprintHelperLibrary.SimpleMoveToActor
-// 0x0010 (0x0010 - 0x0000)
-struct AIBlueprintHelperLibrary_SimpleMoveToActor final
-{
-public:
-	class AController*                            Controller;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	const class AActor*                           Goal;                                              // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(AIBlueprintHelperLibrary_SimpleMoveToActor) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_SimpleMoveToActor");
-static_assert(sizeof(AIBlueprintHelperLibrary_SimpleMoveToActor) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_SimpleMoveToActor");
-static_assert(offsetof(AIBlueprintHelperLibrary_SimpleMoveToActor, Controller) == 0x000000, "Member 'AIBlueprintHelperLibrary_SimpleMoveToActor::Controller' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_SimpleMoveToActor, Goal) == 0x000008, "Member 'AIBlueprintHelperLibrary_SimpleMoveToActor::Goal' has a wrong offset!");
-
-// Function AIModule.AIBlueprintHelperLibrary.SimpleMoveToLocation
-// 0x0018 (0x0018 - 0x0000)
-struct AIBlueprintHelperLibrary_SimpleMoveToLocation final
-{
-public:
-	class AController*                            Controller;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Goal;                                              // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(AIBlueprintHelperLibrary_SimpleMoveToLocation) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_SimpleMoveToLocation");
-static_assert(sizeof(AIBlueprintHelperLibrary_SimpleMoveToLocation) == 0x000018, "Wrong size on AIBlueprintHelperLibrary_SimpleMoveToLocation");
-static_assert(offsetof(AIBlueprintHelperLibrary_SimpleMoveToLocation, Controller) == 0x000000, "Member 'AIBlueprintHelperLibrary_SimpleMoveToLocation::Controller' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_SimpleMoveToLocation, Goal) == 0x000008, "Member 'AIBlueprintHelperLibrary_SimpleMoveToLocation::Goal' has a wrong offset!");
-
-// Function AIModule.AIBlueprintHelperLibrary.SpawnAIFromClass
-// 0x0048 (0x0048 - 0x0000)
-struct AIBlueprintHelperLibrary_SpawnAIFromClass final
-{
-public:
-	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class APawn>                      PawnClass;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UBehaviorTree*                          BehaviorTree;                                      // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                Location;                                          // 0x0018(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FRotator                               Rotation;                                          // 0x0024(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	bool                                          bNoCollisionFail;                                  // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class AActor*                                 Owner;                                             // 0x0038(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class APawn*                                  ReturnValue;                                       // 0x0040(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(AIBlueprintHelperLibrary_SpawnAIFromClass) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_SpawnAIFromClass");
-static_assert(sizeof(AIBlueprintHelperLibrary_SpawnAIFromClass) == 0x000048, "Wrong size on AIBlueprintHelperLibrary_SpawnAIFromClass");
-static_assert(offsetof(AIBlueprintHelperLibrary_SpawnAIFromClass, WorldContextObject) == 0x000000, "Member 'AIBlueprintHelperLibrary_SpawnAIFromClass::WorldContextObject' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_SpawnAIFromClass, PawnClass) == 0x000008, "Member 'AIBlueprintHelperLibrary_SpawnAIFromClass::PawnClass' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_SpawnAIFromClass, BehaviorTree) == 0x000010, "Member 'AIBlueprintHelperLibrary_SpawnAIFromClass::BehaviorTree' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_SpawnAIFromClass, Location) == 0x000018, "Member 'AIBlueprintHelperLibrary_SpawnAIFromClass::Location' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_SpawnAIFromClass, Rotation) == 0x000024, "Member 'AIBlueprintHelperLibrary_SpawnAIFromClass::Rotation' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_SpawnAIFromClass, bNoCollisionFail) == 0x000030, "Member 'AIBlueprintHelperLibrary_SpawnAIFromClass::bNoCollisionFail' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_SpawnAIFromClass, Owner) == 0x000038, "Member 'AIBlueprintHelperLibrary_SpawnAIFromClass::Owner' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_SpawnAIFromClass, ReturnValue) == 0x000040, "Member 'AIBlueprintHelperLibrary_SpawnAIFromClass::ReturnValue' has a wrong offset!");
-
-// Function AIModule.AIBlueprintHelperLibrary.UnlockAIResourcesWithAnimation
-// 0x0010 (0x0010 - 0x0000)
-struct AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation final
-{
-public:
-	class UAnimInstance*                          AnimInstance;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bUnlockMovement;                                   // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          UnlockAILogic;                                     // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation");
-static_assert(sizeof(AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation");
-static_assert(offsetof(AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation, AnimInstance) == 0x000000, "Member 'AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation::AnimInstance' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation, bUnlockMovement) == 0x000008, "Member 'AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation::bUnlockMovement' has a wrong offset!");
-static_assert(offsetof(AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation, UnlockAILogic) == 0x000009, "Member 'AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation::UnlockAILogic' has a wrong offset!");
-
 // Function AIModule.AIController.ClaimTaskResource
 // 0x0008 (0x0008 - 0x0000)
 struct AIController_ClaimTaskResource final
@@ -539,6 +289,81 @@ static_assert(alignof(AIController_HasPartialPath) == 0x000001, "Wrong alignment
 static_assert(sizeof(AIController_HasPartialPath) == 0x000001, "Wrong size on AIController_HasPartialPath");
 static_assert(offsetof(AIController_HasPartialPath, ReturnValue) == 0x000000, "Member 'AIController_HasPartialPath::ReturnValue' has a wrong offset!");
 
+// Function AIModule.BrainComponent.StopLogic
+// 0x0010 (0x0010 - 0x0000)
+struct BrainComponent_StopLogic final
+{
+public:
+	class FString                                 Reason;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrainComponent_StopLogic) == 0x000008, "Wrong alignment on BrainComponent_StopLogic");
+static_assert(sizeof(BrainComponent_StopLogic) == 0x000010, "Wrong size on BrainComponent_StopLogic");
+static_assert(offsetof(BrainComponent_StopLogic, Reason) == 0x000000, "Member 'BrainComponent_StopLogic::Reason' has a wrong offset!");
+
+// Function AIModule.BrainComponent.IsPaused
+// 0x0001 (0x0001 - 0x0000)
+struct BrainComponent_IsPaused final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrainComponent_IsPaused) == 0x000001, "Wrong alignment on BrainComponent_IsPaused");
+static_assert(sizeof(BrainComponent_IsPaused) == 0x000001, "Wrong size on BrainComponent_IsPaused");
+static_assert(offsetof(BrainComponent_IsPaused, ReturnValue) == 0x000000, "Member 'BrainComponent_IsPaused::ReturnValue' has a wrong offset!");
+
+// Function AIModule.BrainComponent.IsRunning
+// 0x0001 (0x0001 - 0x0000)
+struct BrainComponent_IsRunning final
+{
+public:
+	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BrainComponent_IsRunning) == 0x000001, "Wrong alignment on BrainComponent_IsRunning");
+static_assert(sizeof(BrainComponent_IsRunning) == 0x000001, "Wrong size on BrainComponent_IsRunning");
+static_assert(offsetof(BrainComponent_IsRunning, ReturnValue) == 0x000000, "Member 'BrainComponent_IsRunning::ReturnValue' has a wrong offset!");
+
+// Function AIModule.BehaviorTreeComponent.AddCooldownTagDuration
+// 0x0010 (0x0010 - 0x0000)
+struct BehaviorTreeComponent_AddCooldownTagDuration final
+{
+public:
+	struct FGameplayTag                           CooldownTag;                                       // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         CooldownDuration;                                  // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bAddToExistingDuration;                            // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(BehaviorTreeComponent_AddCooldownTagDuration) == 0x000004, "Wrong alignment on BehaviorTreeComponent_AddCooldownTagDuration");
+static_assert(sizeof(BehaviorTreeComponent_AddCooldownTagDuration) == 0x000010, "Wrong size on BehaviorTreeComponent_AddCooldownTagDuration");
+static_assert(offsetof(BehaviorTreeComponent_AddCooldownTagDuration, CooldownTag) == 0x000000, "Member 'BehaviorTreeComponent_AddCooldownTagDuration::CooldownTag' has a wrong offset!");
+static_assert(offsetof(BehaviorTreeComponent_AddCooldownTagDuration, CooldownDuration) == 0x000008, "Member 'BehaviorTreeComponent_AddCooldownTagDuration::CooldownDuration' has a wrong offset!");
+static_assert(offsetof(BehaviorTreeComponent_AddCooldownTagDuration, bAddToExistingDuration) == 0x00000C, "Member 'BehaviorTreeComponent_AddCooldownTagDuration::bAddToExistingDuration' has a wrong offset!");
+
+// Function AIModule.BehaviorTreeComponent.SetDynamicSubtree
+// 0x0010 (0x0010 - 0x0000)
+struct BehaviorTreeComponent_SetDynamicSubtree final
+{
+public:
+	struct FGameplayTag                           InjectTag;                                         // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UBehaviorTree*                          BehaviorAsset;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BehaviorTreeComponent_SetDynamicSubtree) == 0x000008, "Wrong alignment on BehaviorTreeComponent_SetDynamicSubtree");
+static_assert(sizeof(BehaviorTreeComponent_SetDynamicSubtree) == 0x000010, "Wrong size on BehaviorTreeComponent_SetDynamicSubtree");
+static_assert(offsetof(BehaviorTreeComponent_SetDynamicSubtree, InjectTag) == 0x000000, "Member 'BehaviorTreeComponent_SetDynamicSubtree::InjectTag' has a wrong offset!");
+static_assert(offsetof(BehaviorTreeComponent_SetDynamicSubtree, BehaviorAsset) == 0x000008, "Member 'BehaviorTreeComponent_SetDynamicSubtree::BehaviorAsset' has a wrong offset!");
+
+// Function AIModule.BehaviorTreeComponent.GetTagCooldownEndTime
+// 0x000C (0x000C - 0x0000)
+struct BehaviorTreeComponent_GetTagCooldownEndTime final
+{
+public:
+	struct FGameplayTag                           CooldownTag;                                       // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(BehaviorTreeComponent_GetTagCooldownEndTime) == 0x000004, "Wrong alignment on BehaviorTreeComponent_GetTagCooldownEndTime");
+static_assert(sizeof(BehaviorTreeComponent_GetTagCooldownEndTime) == 0x00000C, "Wrong size on BehaviorTreeComponent_GetTagCooldownEndTime");
+static_assert(offsetof(BehaviorTreeComponent_GetTagCooldownEndTime, CooldownTag) == 0x000000, "Member 'BehaviorTreeComponent_GetTagCooldownEndTime::CooldownTag' has a wrong offset!");
+static_assert(offsetof(BehaviorTreeComponent_GetTagCooldownEndTime, ReturnValue) == 0x000008, "Member 'BehaviorTreeComponent_GetTagCooldownEndTime::ReturnValue' has a wrong offset!");
+
 // Function AIModule.AIAsyncTaskBlueprintProxy.OnMoveCompleted
 // 0x0008 (0x0008 - 0x0000)
 struct AIAsyncTaskBlueprintProxy_OnMoveCompleted final
@@ -552,6 +377,256 @@ static_assert(alignof(AIAsyncTaskBlueprintProxy_OnMoveCompleted) == 0x000004, "W
 static_assert(sizeof(AIAsyncTaskBlueprintProxy_OnMoveCompleted) == 0x000008, "Wrong size on AIAsyncTaskBlueprintProxy_OnMoveCompleted");
 static_assert(offsetof(AIAsyncTaskBlueprintProxy_OnMoveCompleted, RequestID) == 0x000000, "Member 'AIAsyncTaskBlueprintProxy_OnMoveCompleted::RequestID' has a wrong offset!");
 static_assert(offsetof(AIAsyncTaskBlueprintProxy_OnMoveCompleted, MovementResult) == 0x000004, "Member 'AIAsyncTaskBlueprintProxy_OnMoveCompleted::MovementResult' has a wrong offset!");
+
+// Function AIModule.AIBlueprintHelperLibrary.CreateMoveToProxyObject
+// 0x0038 (0x0038 - 0x0000)
+struct AIBlueprintHelperLibrary_CreateMoveToProxyObject final
+{
+public:
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APawn*                                  Pawn;                                              // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Destination;                                       // 0x0010(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 TargetActor;                                       // 0x0020(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         AcceptanceRadius;                                  // 0x0028(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bStopOnOverlap;                                    // 0x002C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2D[0x3];                                       // 0x002D(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UAIAsyncTaskBlueprintProxy*             ReturnValue;                                       // 0x0030(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(AIBlueprintHelperLibrary_CreateMoveToProxyObject) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_CreateMoveToProxyObject");
+static_assert(sizeof(AIBlueprintHelperLibrary_CreateMoveToProxyObject) == 0x000038, "Wrong size on AIBlueprintHelperLibrary_CreateMoveToProxyObject");
+static_assert(offsetof(AIBlueprintHelperLibrary_CreateMoveToProxyObject, WorldContextObject) == 0x000000, "Member 'AIBlueprintHelperLibrary_CreateMoveToProxyObject::WorldContextObject' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_CreateMoveToProxyObject, Pawn) == 0x000008, "Member 'AIBlueprintHelperLibrary_CreateMoveToProxyObject::Pawn' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_CreateMoveToProxyObject, Destination) == 0x000010, "Member 'AIBlueprintHelperLibrary_CreateMoveToProxyObject::Destination' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_CreateMoveToProxyObject, TargetActor) == 0x000020, "Member 'AIBlueprintHelperLibrary_CreateMoveToProxyObject::TargetActor' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_CreateMoveToProxyObject, AcceptanceRadius) == 0x000028, "Member 'AIBlueprintHelperLibrary_CreateMoveToProxyObject::AcceptanceRadius' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_CreateMoveToProxyObject, bStopOnOverlap) == 0x00002C, "Member 'AIBlueprintHelperLibrary_CreateMoveToProxyObject::bStopOnOverlap' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_CreateMoveToProxyObject, ReturnValue) == 0x000030, "Member 'AIBlueprintHelperLibrary_CreateMoveToProxyObject::ReturnValue' has a wrong offset!");
+
+// Function AIModule.AIBlueprintHelperLibrary.GetAIController
+// 0x0010 (0x0010 - 0x0000)
+struct AIBlueprintHelperLibrary_GetAIController final
+{
+public:
+	class AActor*                                 ControlledActor;                                   // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AAIController*                          ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(AIBlueprintHelperLibrary_GetAIController) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_GetAIController");
+static_assert(sizeof(AIBlueprintHelperLibrary_GetAIController) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_GetAIController");
+static_assert(offsetof(AIBlueprintHelperLibrary_GetAIController, ControlledActor) == 0x000000, "Member 'AIBlueprintHelperLibrary_GetAIController::ControlledActor' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_GetAIController, ReturnValue) == 0x000008, "Member 'AIBlueprintHelperLibrary_GetAIController::ReturnValue' has a wrong offset!");
+
+// Function AIModule.AIBlueprintHelperLibrary.GetBlackboard
+// 0x0010 (0x0010 - 0x0000)
+struct AIBlueprintHelperLibrary_GetBlackboard final
+{
+public:
+	class AActor*                                 Target;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UBlackboardComponent*                   ReturnValue;                                       // 0x0008(0x0008)(ExportObject, Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(AIBlueprintHelperLibrary_GetBlackboard) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_GetBlackboard");
+static_assert(sizeof(AIBlueprintHelperLibrary_GetBlackboard) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_GetBlackboard");
+static_assert(offsetof(AIBlueprintHelperLibrary_GetBlackboard, Target) == 0x000000, "Member 'AIBlueprintHelperLibrary_GetBlackboard::Target' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_GetBlackboard, ReturnValue) == 0x000008, "Member 'AIBlueprintHelperLibrary_GetBlackboard::ReturnValue' has a wrong offset!");
+
+// Function AIModule.AIBlueprintHelperLibrary.GetCurrentPath
+// 0x0010 (0x0010 - 0x0000)
+struct AIBlueprintHelperLibrary_GetCurrentPath final
+{
+public:
+	class AController*                            Controller;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UNavigationPath*                        ReturnValue;                                       // 0x0008(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(AIBlueprintHelperLibrary_GetCurrentPath) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_GetCurrentPath");
+static_assert(sizeof(AIBlueprintHelperLibrary_GetCurrentPath) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_GetCurrentPath");
+static_assert(offsetof(AIBlueprintHelperLibrary_GetCurrentPath, Controller) == 0x000000, "Member 'AIBlueprintHelperLibrary_GetCurrentPath::Controller' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_GetCurrentPath, ReturnValue) == 0x000008, "Member 'AIBlueprintHelperLibrary_GetCurrentPath::ReturnValue' has a wrong offset!");
+
+// Function AIModule.AIBlueprintHelperLibrary.GetCurrentPathIndex
+// 0x0010 (0x0010 - 0x0000)
+struct AIBlueprintHelperLibrary_GetCurrentPathIndex final
+{
+public:
+	const class AController*                      Controller;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(AIBlueprintHelperLibrary_GetCurrentPathIndex) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_GetCurrentPathIndex");
+static_assert(sizeof(AIBlueprintHelperLibrary_GetCurrentPathIndex) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_GetCurrentPathIndex");
+static_assert(offsetof(AIBlueprintHelperLibrary_GetCurrentPathIndex, Controller) == 0x000000, "Member 'AIBlueprintHelperLibrary_GetCurrentPathIndex::Controller' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_GetCurrentPathIndex, ReturnValue) == 0x000008, "Member 'AIBlueprintHelperLibrary_GetCurrentPathIndex::ReturnValue' has a wrong offset!");
+
+// Function AIModule.AIBlueprintHelperLibrary.GetCurrentPathPoints
+// 0x0018 (0x0018 - 0x0000)
+struct AIBlueprintHelperLibrary_GetCurrentPathPoints final
+{
+public:
+	class AController*                            Controller;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        ReturnValue;                                       // 0x0008(0x0010)(ConstParm, Parm, OutParm, ZeroConstructor, ReturnParm, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(AIBlueprintHelperLibrary_GetCurrentPathPoints) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_GetCurrentPathPoints");
+static_assert(sizeof(AIBlueprintHelperLibrary_GetCurrentPathPoints) == 0x000018, "Wrong size on AIBlueprintHelperLibrary_GetCurrentPathPoints");
+static_assert(offsetof(AIBlueprintHelperLibrary_GetCurrentPathPoints, Controller) == 0x000000, "Member 'AIBlueprintHelperLibrary_GetCurrentPathPoints::Controller' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_GetCurrentPathPoints, ReturnValue) == 0x000008, "Member 'AIBlueprintHelperLibrary_GetCurrentPathPoints::ReturnValue' has a wrong offset!");
+
+// Function AIModule.AIBlueprintHelperLibrary.GetNextNavLinkIndex
+// 0x0010 (0x0010 - 0x0000)
+struct AIBlueprintHelperLibrary_GetNextNavLinkIndex final
+{
+public:
+	const class AController*                      Controller;                                        // 0x0000(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_C[0x4];                                        // 0x000C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(AIBlueprintHelperLibrary_GetNextNavLinkIndex) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_GetNextNavLinkIndex");
+static_assert(sizeof(AIBlueprintHelperLibrary_GetNextNavLinkIndex) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_GetNextNavLinkIndex");
+static_assert(offsetof(AIBlueprintHelperLibrary_GetNextNavLinkIndex, Controller) == 0x000000, "Member 'AIBlueprintHelperLibrary_GetNextNavLinkIndex::Controller' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_GetNextNavLinkIndex, ReturnValue) == 0x000008, "Member 'AIBlueprintHelperLibrary_GetNextNavLinkIndex::ReturnValue' has a wrong offset!");
+
+// Function AIModule.AIBlueprintHelperLibrary.IsValidAIDirection
+// 0x0010 (0x0010 - 0x0000)
+struct AIBlueprintHelperLibrary_IsValidAIDirection final
+{
+public:
+	struct FVector                                DirectionVector;                                   // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(AIBlueprintHelperLibrary_IsValidAIDirection) == 0x000004, "Wrong alignment on AIBlueprintHelperLibrary_IsValidAIDirection");
+static_assert(sizeof(AIBlueprintHelperLibrary_IsValidAIDirection) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_IsValidAIDirection");
+static_assert(offsetof(AIBlueprintHelperLibrary_IsValidAIDirection, DirectionVector) == 0x000000, "Member 'AIBlueprintHelperLibrary_IsValidAIDirection::DirectionVector' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_IsValidAIDirection, ReturnValue) == 0x00000C, "Member 'AIBlueprintHelperLibrary_IsValidAIDirection::ReturnValue' has a wrong offset!");
+
+// Function AIModule.AIBlueprintHelperLibrary.IsValidAILocation
+// 0x0010 (0x0010 - 0x0000)
+struct AIBlueprintHelperLibrary_IsValidAILocation final
+{
+public:
+	struct FVector                                Location;                                          // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(AIBlueprintHelperLibrary_IsValidAILocation) == 0x000004, "Wrong alignment on AIBlueprintHelperLibrary_IsValidAILocation");
+static_assert(sizeof(AIBlueprintHelperLibrary_IsValidAILocation) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_IsValidAILocation");
+static_assert(offsetof(AIBlueprintHelperLibrary_IsValidAILocation, Location) == 0x000000, "Member 'AIBlueprintHelperLibrary_IsValidAILocation::Location' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_IsValidAILocation, ReturnValue) == 0x00000C, "Member 'AIBlueprintHelperLibrary_IsValidAILocation::ReturnValue' has a wrong offset!");
+
+// Function AIModule.AIBlueprintHelperLibrary.IsValidAIRotation
+// 0x0010 (0x0010 - 0x0000)
+struct AIBlueprintHelperLibrary_IsValidAIRotation final
+{
+public:
+	struct FRotator                               Rotation;                                          // 0x0000(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          ReturnValue;                                       // 0x000C(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(AIBlueprintHelperLibrary_IsValidAIRotation) == 0x000004, "Wrong alignment on AIBlueprintHelperLibrary_IsValidAIRotation");
+static_assert(sizeof(AIBlueprintHelperLibrary_IsValidAIRotation) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_IsValidAIRotation");
+static_assert(offsetof(AIBlueprintHelperLibrary_IsValidAIRotation, Rotation) == 0x000000, "Member 'AIBlueprintHelperLibrary_IsValidAIRotation::Rotation' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_IsValidAIRotation, ReturnValue) == 0x00000C, "Member 'AIBlueprintHelperLibrary_IsValidAIRotation::ReturnValue' has a wrong offset!");
+
+// Function AIModule.AIBlueprintHelperLibrary.LockAIResourcesWithAnimation
+// 0x0010 (0x0010 - 0x0000)
+struct AIBlueprintHelperLibrary_LockAIResourcesWithAnimation final
+{
+public:
+	class UAnimInstance*                          AnimInstance;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bLockMovement;                                     // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          LockAILogic;                                       // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(AIBlueprintHelperLibrary_LockAIResourcesWithAnimation) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_LockAIResourcesWithAnimation");
+static_assert(sizeof(AIBlueprintHelperLibrary_LockAIResourcesWithAnimation) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_LockAIResourcesWithAnimation");
+static_assert(offsetof(AIBlueprintHelperLibrary_LockAIResourcesWithAnimation, AnimInstance) == 0x000000, "Member 'AIBlueprintHelperLibrary_LockAIResourcesWithAnimation::AnimInstance' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_LockAIResourcesWithAnimation, bLockMovement) == 0x000008, "Member 'AIBlueprintHelperLibrary_LockAIResourcesWithAnimation::bLockMovement' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_LockAIResourcesWithAnimation, LockAILogic) == 0x000009, "Member 'AIBlueprintHelperLibrary_LockAIResourcesWithAnimation::LockAILogic' has a wrong offset!");
+
+// Function AIModule.AIBlueprintHelperLibrary.SendAIMessage
+// 0x0020 (0x0020 - 0x0000)
+struct AIBlueprintHelperLibrary_SendAIMessage final
+{
+public:
+	class APawn*                                  Target;                                            // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   Message;                                           // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                MessageSource;                                     // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bSuccess;                                          // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(AIBlueprintHelperLibrary_SendAIMessage) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_SendAIMessage");
+static_assert(sizeof(AIBlueprintHelperLibrary_SendAIMessage) == 0x000020, "Wrong size on AIBlueprintHelperLibrary_SendAIMessage");
+static_assert(offsetof(AIBlueprintHelperLibrary_SendAIMessage, Target) == 0x000000, "Member 'AIBlueprintHelperLibrary_SendAIMessage::Target' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_SendAIMessage, Message) == 0x000008, "Member 'AIBlueprintHelperLibrary_SendAIMessage::Message' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_SendAIMessage, MessageSource) == 0x000010, "Member 'AIBlueprintHelperLibrary_SendAIMessage::MessageSource' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_SendAIMessage, bSuccess) == 0x000018, "Member 'AIBlueprintHelperLibrary_SendAIMessage::bSuccess' has a wrong offset!");
+
+// Function AIModule.AIBlueprintHelperLibrary.SimpleMoveToActor
+// 0x0010 (0x0010 - 0x0000)
+struct AIBlueprintHelperLibrary_SimpleMoveToActor final
+{
+public:
+	class AController*                            Controller;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	const class AActor*                           Goal;                                              // 0x0008(0x0008)(ConstParm, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(AIBlueprintHelperLibrary_SimpleMoveToActor) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_SimpleMoveToActor");
+static_assert(sizeof(AIBlueprintHelperLibrary_SimpleMoveToActor) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_SimpleMoveToActor");
+static_assert(offsetof(AIBlueprintHelperLibrary_SimpleMoveToActor, Controller) == 0x000000, "Member 'AIBlueprintHelperLibrary_SimpleMoveToActor::Controller' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_SimpleMoveToActor, Goal) == 0x000008, "Member 'AIBlueprintHelperLibrary_SimpleMoveToActor::Goal' has a wrong offset!");
+
+// Function AIModule.AIBlueprintHelperLibrary.SimpleMoveToLocation
+// 0x0018 (0x0018 - 0x0000)
+struct AIBlueprintHelperLibrary_SimpleMoveToLocation final
+{
+public:
+	class AController*                            Controller;                                        // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Goal;                                              // 0x0008(0x000C)(ConstParm, Parm, OutParm, ZeroConstructor, ReferenceParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_14[0x4];                                       // 0x0014(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(AIBlueprintHelperLibrary_SimpleMoveToLocation) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_SimpleMoveToLocation");
+static_assert(sizeof(AIBlueprintHelperLibrary_SimpleMoveToLocation) == 0x000018, "Wrong size on AIBlueprintHelperLibrary_SimpleMoveToLocation");
+static_assert(offsetof(AIBlueprintHelperLibrary_SimpleMoveToLocation, Controller) == 0x000000, "Member 'AIBlueprintHelperLibrary_SimpleMoveToLocation::Controller' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_SimpleMoveToLocation, Goal) == 0x000008, "Member 'AIBlueprintHelperLibrary_SimpleMoveToLocation::Goal' has a wrong offset!");
+
+// Function AIModule.AIBlueprintHelperLibrary.SpawnAIFromClass
+// 0x0048 (0x0048 - 0x0000)
+struct AIBlueprintHelperLibrary_SpawnAIFromClass final
+{
+public:
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class APawn>                      PawnClass;                                         // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UBehaviorTree*                          BehaviorTree;                                      // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                Location;                                          // 0x0018(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FRotator                               Rotation;                                          // 0x0024(0x000C)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	bool                                          bNoCollisionFail;                                  // 0x0030(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_31[0x7];                                       // 0x0031(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class AActor*                                 Owner;                                             // 0x0038(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class APawn*                                  ReturnValue;                                       // 0x0040(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(AIBlueprintHelperLibrary_SpawnAIFromClass) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_SpawnAIFromClass");
+static_assert(sizeof(AIBlueprintHelperLibrary_SpawnAIFromClass) == 0x000048, "Wrong size on AIBlueprintHelperLibrary_SpawnAIFromClass");
+static_assert(offsetof(AIBlueprintHelperLibrary_SpawnAIFromClass, WorldContextObject) == 0x000000, "Member 'AIBlueprintHelperLibrary_SpawnAIFromClass::WorldContextObject' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_SpawnAIFromClass, PawnClass) == 0x000008, "Member 'AIBlueprintHelperLibrary_SpawnAIFromClass::PawnClass' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_SpawnAIFromClass, BehaviorTree) == 0x000010, "Member 'AIBlueprintHelperLibrary_SpawnAIFromClass::BehaviorTree' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_SpawnAIFromClass, Location) == 0x000018, "Member 'AIBlueprintHelperLibrary_SpawnAIFromClass::Location' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_SpawnAIFromClass, Rotation) == 0x000024, "Member 'AIBlueprintHelperLibrary_SpawnAIFromClass::Rotation' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_SpawnAIFromClass, bNoCollisionFail) == 0x000030, "Member 'AIBlueprintHelperLibrary_SpawnAIFromClass::bNoCollisionFail' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_SpawnAIFromClass, Owner) == 0x000038, "Member 'AIBlueprintHelperLibrary_SpawnAIFromClass::Owner' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_SpawnAIFromClass, ReturnValue) == 0x000040, "Member 'AIBlueprintHelperLibrary_SpawnAIFromClass::ReturnValue' has a wrong offset!");
+
+// Function AIModule.AIBlueprintHelperLibrary.UnlockAIResourcesWithAnimation
+// 0x0010 (0x0010 - 0x0000)
+struct AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation final
+{
+public:
+	class UAnimInstance*                          AnimInstance;                                      // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bUnlockMovement;                                   // 0x0008(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          UnlockAILogic;                                     // 0x0009(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_A[0x6];                                        // 0x000A(0x0006)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation) == 0x000008, "Wrong alignment on AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation");
+static_assert(sizeof(AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation) == 0x000010, "Wrong size on AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation");
+static_assert(offsetof(AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation, AnimInstance) == 0x000000, "Member 'AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation::AnimInstance' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation, bUnlockMovement) == 0x000008, "Member 'AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation::bUnlockMovement' has a wrong offset!");
+static_assert(offsetof(AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation, UnlockAILogic) == 0x000009, "Member 'AIBlueprintHelperLibrary_UnlockAIResourcesWithAnimation::UnlockAILogic' has a wrong offset!");
 
 // Function AIModule.EnvQueryGenerator_BlueprintBase.AddGeneratedActor
 // 0x0008 (0x0008 - 0x0000)
@@ -962,27 +1037,42 @@ static_assert(offsetof(AISense_Prediction_RequestPawnPredictionEvent, Requestor)
 static_assert(offsetof(AISense_Prediction_RequestPawnPredictionEvent, PredictedActor) == 0x000008, "Member 'AISense_Prediction_RequestPawnPredictionEvent::PredictedActor' has a wrong offset!");
 static_assert(offsetof(AISense_Prediction_RequestPawnPredictionEvent, PredictionTime) == 0x000010, "Member 'AISense_Prediction_RequestPawnPredictionEvent::PredictionTime' has a wrong offset!");
 
-// Function AIModule.EnvQueryManager.RunEQSQuery
-// 0x0030 (0x0030 - 0x0000)
-struct EnvQueryManager_RunEQSQuery final
+// Function AIModule.PawnAction.CreateActionInstance
+// 0x0018 (0x0018 - 0x0000)
+struct PawnAction_CreateActionInstance final
 {
 public:
 	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UEnvQuery*                              QueryTemplate;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UObject*                                Querier;                                           // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	EEnvQueryRunMode                              RunMode;                                           // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	TSubclassOf<class UEnvQueryInstanceBlueprintWrapper> WrapperClass;                               // 0x0020(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UEnvQueryInstanceBlueprintWrapper*      ReturnValue;                                       // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TSubclassOf<class UPawnAction>                ActionClass;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UPawnAction*                            ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(EnvQueryManager_RunEQSQuery) == 0x000008, "Wrong alignment on EnvQueryManager_RunEQSQuery");
-static_assert(sizeof(EnvQueryManager_RunEQSQuery) == 0x000030, "Wrong size on EnvQueryManager_RunEQSQuery");
-static_assert(offsetof(EnvQueryManager_RunEQSQuery, WorldContextObject) == 0x000000, "Member 'EnvQueryManager_RunEQSQuery::WorldContextObject' has a wrong offset!");
-static_assert(offsetof(EnvQueryManager_RunEQSQuery, QueryTemplate) == 0x000008, "Member 'EnvQueryManager_RunEQSQuery::QueryTemplate' has a wrong offset!");
-static_assert(offsetof(EnvQueryManager_RunEQSQuery, Querier) == 0x000010, "Member 'EnvQueryManager_RunEQSQuery::Querier' has a wrong offset!");
-static_assert(offsetof(EnvQueryManager_RunEQSQuery, RunMode) == 0x000018, "Member 'EnvQueryManager_RunEQSQuery::RunMode' has a wrong offset!");
-static_assert(offsetof(EnvQueryManager_RunEQSQuery, WrapperClass) == 0x000020, "Member 'EnvQueryManager_RunEQSQuery::WrapperClass' has a wrong offset!");
-static_assert(offsetof(EnvQueryManager_RunEQSQuery, ReturnValue) == 0x000028, "Member 'EnvQueryManager_RunEQSQuery::ReturnValue' has a wrong offset!");
+static_assert(alignof(PawnAction_CreateActionInstance) == 0x000008, "Wrong alignment on PawnAction_CreateActionInstance");
+static_assert(sizeof(PawnAction_CreateActionInstance) == 0x000018, "Wrong size on PawnAction_CreateActionInstance");
+static_assert(offsetof(PawnAction_CreateActionInstance, WorldContextObject) == 0x000000, "Member 'PawnAction_CreateActionInstance::WorldContextObject' has a wrong offset!");
+static_assert(offsetof(PawnAction_CreateActionInstance, ActionClass) == 0x000008, "Member 'PawnAction_CreateActionInstance::ActionClass' has a wrong offset!");
+static_assert(offsetof(PawnAction_CreateActionInstance, ReturnValue) == 0x000010, "Member 'PawnAction_CreateActionInstance::ReturnValue' has a wrong offset!");
+
+// Function AIModule.PawnAction.Finish
+// 0x0001 (0x0001 - 0x0000)
+struct PawnAction_Finish final
+{
+public:
+	EPawnActionResult                             WithResult;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PawnAction_Finish) == 0x000001, "Wrong alignment on PawnAction_Finish");
+static_assert(sizeof(PawnAction_Finish) == 0x000001, "Wrong size on PawnAction_Finish");
+static_assert(offsetof(PawnAction_Finish, WithResult) == 0x000000, "Member 'PawnAction_Finish::WithResult' has a wrong offset!");
+
+// Function AIModule.PawnAction.GetActionPriority
+// 0x0001 (0x0001 - 0x0000)
+struct PawnAction_GetActionPriority final
+{
+public:
+	EAIRequestPriority                            ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(PawnAction_GetActionPriority) == 0x000001, "Wrong alignment on PawnAction_GetActionPriority");
+static_assert(sizeof(PawnAction_GetActionPriority) == 0x000001, "Wrong size on PawnAction_GetActionPriority");
+static_assert(offsetof(PawnAction_GetActionPriority, ReturnValue) == 0x000000, "Member 'PawnAction_GetActionPriority::ReturnValue' has a wrong offset!");
 
 // Function AIModule.PawnSensingComponent.SetPeripheralVisionAngle
 // 0x0004 (0x0004 - 0x0000)
@@ -1097,42 +1187,66 @@ static_assert(alignof(NavLinkProxy_IsSmartLinkEnabled) == 0x000001, "Wrong align
 static_assert(sizeof(NavLinkProxy_IsSmartLinkEnabled) == 0x000001, "Wrong size on NavLinkProxy_IsSmartLinkEnabled");
 static_assert(offsetof(NavLinkProxy_IsSmartLinkEnabled, ReturnValue) == 0x000000, "Member 'NavLinkProxy_IsSmartLinkEnabled::ReturnValue' has a wrong offset!");
 
-// Function AIModule.PawnAction.CreateActionInstance
+// Function AIModule.EnvQueryContext_BlueprintBase.ProvideActorsSet
+// 0x0020 (0x0020 - 0x0000)
+struct EnvQueryContext_BlueprintBase_ProvideActorsSet final
+{
+public:
+	class UObject*                                QuerierObject;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 QuerierActor;                                      // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<class AActor*>                         ResultingActorsSet;                                // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(EnvQueryContext_BlueprintBase_ProvideActorsSet) == 0x000008, "Wrong alignment on EnvQueryContext_BlueprintBase_ProvideActorsSet");
+static_assert(sizeof(EnvQueryContext_BlueprintBase_ProvideActorsSet) == 0x000020, "Wrong size on EnvQueryContext_BlueprintBase_ProvideActorsSet");
+static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideActorsSet, QuerierObject) == 0x000000, "Member 'EnvQueryContext_BlueprintBase_ProvideActorsSet::QuerierObject' has a wrong offset!");
+static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideActorsSet, QuerierActor) == 0x000008, "Member 'EnvQueryContext_BlueprintBase_ProvideActorsSet::QuerierActor' has a wrong offset!");
+static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideActorsSet, ResultingActorsSet) == 0x000010, "Member 'EnvQueryContext_BlueprintBase_ProvideActorsSet::ResultingActorsSet' has a wrong offset!");
+
+// Function AIModule.EnvQueryContext_BlueprintBase.ProvideLocationsSet
+// 0x0020 (0x0020 - 0x0000)
+struct EnvQueryContext_BlueprintBase_ProvideLocationsSet final
+{
+public:
+	class UObject*                                QuerierObject;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 QuerierActor;                                      // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	TArray<struct FVector>                        ResultingLocationSet;                              // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(EnvQueryContext_BlueprintBase_ProvideLocationsSet) == 0x000008, "Wrong alignment on EnvQueryContext_BlueprintBase_ProvideLocationsSet");
+static_assert(sizeof(EnvQueryContext_BlueprintBase_ProvideLocationsSet) == 0x000020, "Wrong size on EnvQueryContext_BlueprintBase_ProvideLocationsSet");
+static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideLocationsSet, QuerierObject) == 0x000000, "Member 'EnvQueryContext_BlueprintBase_ProvideLocationsSet::QuerierObject' has a wrong offset!");
+static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideLocationsSet, QuerierActor) == 0x000008, "Member 'EnvQueryContext_BlueprintBase_ProvideLocationsSet::QuerierActor' has a wrong offset!");
+static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideLocationsSet, ResultingLocationSet) == 0x000010, "Member 'EnvQueryContext_BlueprintBase_ProvideLocationsSet::ResultingLocationSet' has a wrong offset!");
+
+// Function AIModule.EnvQueryContext_BlueprintBase.ProvideSingleActor
 // 0x0018 (0x0018 - 0x0000)
-struct PawnAction_CreateActionInstance final
+struct EnvQueryContext_BlueprintBase_ProvideSingleActor final
 {
 public:
-	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TSubclassOf<class UPawnAction>                ActionClass;                                       // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UPawnAction*                            ReturnValue;                                       // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                QuerierObject;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 QuerierActor;                                      // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 ResultingActor;                                    // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
 };
-static_assert(alignof(PawnAction_CreateActionInstance) == 0x000008, "Wrong alignment on PawnAction_CreateActionInstance");
-static_assert(sizeof(PawnAction_CreateActionInstance) == 0x000018, "Wrong size on PawnAction_CreateActionInstance");
-static_assert(offsetof(PawnAction_CreateActionInstance, WorldContextObject) == 0x000000, "Member 'PawnAction_CreateActionInstance::WorldContextObject' has a wrong offset!");
-static_assert(offsetof(PawnAction_CreateActionInstance, ActionClass) == 0x000008, "Member 'PawnAction_CreateActionInstance::ActionClass' has a wrong offset!");
-static_assert(offsetof(PawnAction_CreateActionInstance, ReturnValue) == 0x000010, "Member 'PawnAction_CreateActionInstance::ReturnValue' has a wrong offset!");
+static_assert(alignof(EnvQueryContext_BlueprintBase_ProvideSingleActor) == 0x000008, "Wrong alignment on EnvQueryContext_BlueprintBase_ProvideSingleActor");
+static_assert(sizeof(EnvQueryContext_BlueprintBase_ProvideSingleActor) == 0x000018, "Wrong size on EnvQueryContext_BlueprintBase_ProvideSingleActor");
+static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideSingleActor, QuerierObject) == 0x000000, "Member 'EnvQueryContext_BlueprintBase_ProvideSingleActor::QuerierObject' has a wrong offset!");
+static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideSingleActor, QuerierActor) == 0x000008, "Member 'EnvQueryContext_BlueprintBase_ProvideSingleActor::QuerierActor' has a wrong offset!");
+static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideSingleActor, ResultingActor) == 0x000010, "Member 'EnvQueryContext_BlueprintBase_ProvideSingleActor::ResultingActor' has a wrong offset!");
 
-// Function AIModule.PawnAction.Finish
-// 0x0001 (0x0001 - 0x0000)
-struct PawnAction_Finish final
+// Function AIModule.EnvQueryContext_BlueprintBase.ProvideSingleLocation
+// 0x0020 (0x0020 - 0x0000)
+struct EnvQueryContext_BlueprintBase_ProvideSingleLocation final
 {
 public:
-	EPawnActionResult                             WithResult;                                        // 0x0000(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                QuerierObject;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class AActor*                                 QuerierActor;                                      // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                ResultingLocation;                                 // 0x0010(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(PawnAction_Finish) == 0x000001, "Wrong alignment on PawnAction_Finish");
-static_assert(sizeof(PawnAction_Finish) == 0x000001, "Wrong size on PawnAction_Finish");
-static_assert(offsetof(PawnAction_Finish, WithResult) == 0x000000, "Member 'PawnAction_Finish::WithResult' has a wrong offset!");
-
-// Function AIModule.PawnAction.GetActionPriority
-// 0x0001 (0x0001 - 0x0000)
-struct PawnAction_GetActionPriority final
-{
-public:
-	EAIRequestPriority                            ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(PawnAction_GetActionPriority) == 0x000001, "Wrong alignment on PawnAction_GetActionPriority");
-static_assert(sizeof(PawnAction_GetActionPriority) == 0x000001, "Wrong size on PawnAction_GetActionPriority");
-static_assert(offsetof(PawnAction_GetActionPriority, ReturnValue) == 0x000000, "Member 'PawnAction_GetActionPriority::ReturnValue' has a wrong offset!");
+static_assert(alignof(EnvQueryContext_BlueprintBase_ProvideSingleLocation) == 0x000008, "Wrong alignment on EnvQueryContext_BlueprintBase_ProvideSingleLocation");
+static_assert(sizeof(EnvQueryContext_BlueprintBase_ProvideSingleLocation) == 0x000020, "Wrong size on EnvQueryContext_BlueprintBase_ProvideSingleLocation");
+static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideSingleLocation, QuerierObject) == 0x000000, "Member 'EnvQueryContext_BlueprintBase_ProvideSingleLocation::QuerierObject' has a wrong offset!");
+static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideSingleLocation, QuerierActor) == 0x000008, "Member 'EnvQueryContext_BlueprintBase_ProvideSingleLocation::QuerierActor' has a wrong offset!");
+static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideSingleLocation, ResultingLocation) == 0x000010, "Member 'EnvQueryContext_BlueprintBase_ProvideSingleLocation::ResultingLocation' has a wrong offset!");
 
 // Function AIModule.AITask_MoveTo.AIMoveTo
 // 0x0038 (0x0038 - 0x0000)
@@ -1181,81 +1295,6 @@ static_assert(sizeof(AITask_RunEQS_RunEQS) == 0x000018, "Wrong size on AITask_Ru
 static_assert(offsetof(AITask_RunEQS_RunEQS, Controller) == 0x000000, "Member 'AITask_RunEQS_RunEQS::Controller' has a wrong offset!");
 static_assert(offsetof(AITask_RunEQS_RunEQS, QueryTemplate) == 0x000008, "Member 'AITask_RunEQS_RunEQS::QueryTemplate' has a wrong offset!");
 static_assert(offsetof(AITask_RunEQS_RunEQS, ReturnValue) == 0x000010, "Member 'AITask_RunEQS_RunEQS::ReturnValue' has a wrong offset!");
-
-// Function AIModule.BrainComponent.StopLogic
-// 0x0010 (0x0010 - 0x0000)
-struct BrainComponent_StopLogic final
-{
-public:
-	class FString                                 Reason;                                            // 0x0000(0x0010)(Parm, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrainComponent_StopLogic) == 0x000008, "Wrong alignment on BrainComponent_StopLogic");
-static_assert(sizeof(BrainComponent_StopLogic) == 0x000010, "Wrong size on BrainComponent_StopLogic");
-static_assert(offsetof(BrainComponent_StopLogic, Reason) == 0x000000, "Member 'BrainComponent_StopLogic::Reason' has a wrong offset!");
-
-// Function AIModule.BrainComponent.IsPaused
-// 0x0001 (0x0001 - 0x0000)
-struct BrainComponent_IsPaused final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrainComponent_IsPaused) == 0x000001, "Wrong alignment on BrainComponent_IsPaused");
-static_assert(sizeof(BrainComponent_IsPaused) == 0x000001, "Wrong size on BrainComponent_IsPaused");
-static_assert(offsetof(BrainComponent_IsPaused, ReturnValue) == 0x000000, "Member 'BrainComponent_IsPaused::ReturnValue' has a wrong offset!");
-
-// Function AIModule.BrainComponent.IsRunning
-// 0x0001 (0x0001 - 0x0000)
-struct BrainComponent_IsRunning final
-{
-public:
-	bool                                          ReturnValue;                                       // 0x0000(0x0001)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BrainComponent_IsRunning) == 0x000001, "Wrong alignment on BrainComponent_IsRunning");
-static_assert(sizeof(BrainComponent_IsRunning) == 0x000001, "Wrong size on BrainComponent_IsRunning");
-static_assert(offsetof(BrainComponent_IsRunning, ReturnValue) == 0x000000, "Member 'BrainComponent_IsRunning::ReturnValue' has a wrong offset!");
-
-// Function AIModule.BehaviorTreeComponent.AddCooldownTagDuration
-// 0x0010 (0x0010 - 0x0000)
-struct BehaviorTreeComponent_AddCooldownTagDuration final
-{
-public:
-	struct FGameplayTag                           CooldownTag;                                       // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         CooldownDuration;                                  // 0x0008(0x0004)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bAddToExistingDuration;                            // 0x000C(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_D[0x3];                                        // 0x000D(0x0003)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(BehaviorTreeComponent_AddCooldownTagDuration) == 0x000004, "Wrong alignment on BehaviorTreeComponent_AddCooldownTagDuration");
-static_assert(sizeof(BehaviorTreeComponent_AddCooldownTagDuration) == 0x000010, "Wrong size on BehaviorTreeComponent_AddCooldownTagDuration");
-static_assert(offsetof(BehaviorTreeComponent_AddCooldownTagDuration, CooldownTag) == 0x000000, "Member 'BehaviorTreeComponent_AddCooldownTagDuration::CooldownTag' has a wrong offset!");
-static_assert(offsetof(BehaviorTreeComponent_AddCooldownTagDuration, CooldownDuration) == 0x000008, "Member 'BehaviorTreeComponent_AddCooldownTagDuration::CooldownDuration' has a wrong offset!");
-static_assert(offsetof(BehaviorTreeComponent_AddCooldownTagDuration, bAddToExistingDuration) == 0x00000C, "Member 'BehaviorTreeComponent_AddCooldownTagDuration::bAddToExistingDuration' has a wrong offset!");
-
-// Function AIModule.BehaviorTreeComponent.SetDynamicSubtree
-// 0x0010 (0x0010 - 0x0000)
-struct BehaviorTreeComponent_SetDynamicSubtree final
-{
-public:
-	struct FGameplayTag                           InjectTag;                                         // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class UBehaviorTree*                          BehaviorAsset;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BehaviorTreeComponent_SetDynamicSubtree) == 0x000008, "Wrong alignment on BehaviorTreeComponent_SetDynamicSubtree");
-static_assert(sizeof(BehaviorTreeComponent_SetDynamicSubtree) == 0x000010, "Wrong size on BehaviorTreeComponent_SetDynamicSubtree");
-static_assert(offsetof(BehaviorTreeComponent_SetDynamicSubtree, InjectTag) == 0x000000, "Member 'BehaviorTreeComponent_SetDynamicSubtree::InjectTag' has a wrong offset!");
-static_assert(offsetof(BehaviorTreeComponent_SetDynamicSubtree, BehaviorAsset) == 0x000008, "Member 'BehaviorTreeComponent_SetDynamicSubtree::BehaviorAsset' has a wrong offset!");
-
-// Function AIModule.BehaviorTreeComponent.GetTagCooldownEndTime
-// 0x000C (0x000C - 0x0000)
-struct BehaviorTreeComponent_GetTagCooldownEndTime final
-{
-public:
-	struct FGameplayTag                           CooldownTag;                                       // 0x0000(0x0008)(Parm, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ReturnValue;                                       // 0x0008(0x0004)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(BehaviorTreeComponent_GetTagCooldownEndTime) == 0x000004, "Wrong alignment on BehaviorTreeComponent_GetTagCooldownEndTime");
-static_assert(sizeof(BehaviorTreeComponent_GetTagCooldownEndTime) == 0x00000C, "Wrong size on BehaviorTreeComponent_GetTagCooldownEndTime");
-static_assert(offsetof(BehaviorTreeComponent_GetTagCooldownEndTime, CooldownTag) == 0x000000, "Member 'BehaviorTreeComponent_GetTagCooldownEndTime::CooldownTag' has a wrong offset!");
-static_assert(offsetof(BehaviorTreeComponent_GetTagCooldownEndTime, ReturnValue) == 0x000008, "Member 'BehaviorTreeComponent_GetTagCooldownEndTime::ReturnValue' has a wrong offset!");
 
 // Function AIModule.BlackboardAssetProvider.GetBlackboardAsset
 // 0x0008 (0x0008 - 0x0000)
@@ -2547,67 +2586,6 @@ static_assert(alignof(CrowdFollowingComponent_SuspendCrowdSteering) == 0x000001,
 static_assert(sizeof(CrowdFollowingComponent_SuspendCrowdSteering) == 0x000001, "Wrong size on CrowdFollowingComponent_SuspendCrowdSteering");
 static_assert(offsetof(CrowdFollowingComponent_SuspendCrowdSteering, bSuspend) == 0x000000, "Member 'CrowdFollowingComponent_SuspendCrowdSteering::bSuspend' has a wrong offset!");
 
-// Function AIModule.EnvQueryContext_BlueprintBase.ProvideActorsSet
-// 0x0020 (0x0020 - 0x0000)
-struct EnvQueryContext_BlueprintBase_ProvideActorsSet final
-{
-public:
-	class UObject*                                QuerierObject;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 QuerierActor;                                      // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<class AActor*>                         ResultingActorsSet;                                // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(EnvQueryContext_BlueprintBase_ProvideActorsSet) == 0x000008, "Wrong alignment on EnvQueryContext_BlueprintBase_ProvideActorsSet");
-static_assert(sizeof(EnvQueryContext_BlueprintBase_ProvideActorsSet) == 0x000020, "Wrong size on EnvQueryContext_BlueprintBase_ProvideActorsSet");
-static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideActorsSet, QuerierObject) == 0x000000, "Member 'EnvQueryContext_BlueprintBase_ProvideActorsSet::QuerierObject' has a wrong offset!");
-static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideActorsSet, QuerierActor) == 0x000008, "Member 'EnvQueryContext_BlueprintBase_ProvideActorsSet::QuerierActor' has a wrong offset!");
-static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideActorsSet, ResultingActorsSet) == 0x000010, "Member 'EnvQueryContext_BlueprintBase_ProvideActorsSet::ResultingActorsSet' has a wrong offset!");
-
-// Function AIModule.EnvQueryContext_BlueprintBase.ProvideLocationsSet
-// 0x0020 (0x0020 - 0x0000)
-struct EnvQueryContext_BlueprintBase_ProvideLocationsSet final
-{
-public:
-	class UObject*                                QuerierObject;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 QuerierActor;                                      // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	TArray<struct FVector>                        ResultingLocationSet;                              // 0x0010(0x0010)(Parm, OutParm, ZeroConstructor, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(EnvQueryContext_BlueprintBase_ProvideLocationsSet) == 0x000008, "Wrong alignment on EnvQueryContext_BlueprintBase_ProvideLocationsSet");
-static_assert(sizeof(EnvQueryContext_BlueprintBase_ProvideLocationsSet) == 0x000020, "Wrong size on EnvQueryContext_BlueprintBase_ProvideLocationsSet");
-static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideLocationsSet, QuerierObject) == 0x000000, "Member 'EnvQueryContext_BlueprintBase_ProvideLocationsSet::QuerierObject' has a wrong offset!");
-static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideLocationsSet, QuerierActor) == 0x000008, "Member 'EnvQueryContext_BlueprintBase_ProvideLocationsSet::QuerierActor' has a wrong offset!");
-static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideLocationsSet, ResultingLocationSet) == 0x000010, "Member 'EnvQueryContext_BlueprintBase_ProvideLocationsSet::ResultingLocationSet' has a wrong offset!");
-
-// Function AIModule.EnvQueryContext_BlueprintBase.ProvideSingleActor
-// 0x0018 (0x0018 - 0x0000)
-struct EnvQueryContext_BlueprintBase_ProvideSingleActor final
-{
-public:
-	class UObject*                                QuerierObject;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 QuerierActor;                                      // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 ResultingActor;                                    // 0x0010(0x0008)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(EnvQueryContext_BlueprintBase_ProvideSingleActor) == 0x000008, "Wrong alignment on EnvQueryContext_BlueprintBase_ProvideSingleActor");
-static_assert(sizeof(EnvQueryContext_BlueprintBase_ProvideSingleActor) == 0x000018, "Wrong size on EnvQueryContext_BlueprintBase_ProvideSingleActor");
-static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideSingleActor, QuerierObject) == 0x000000, "Member 'EnvQueryContext_BlueprintBase_ProvideSingleActor::QuerierObject' has a wrong offset!");
-static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideSingleActor, QuerierActor) == 0x000008, "Member 'EnvQueryContext_BlueprintBase_ProvideSingleActor::QuerierActor' has a wrong offset!");
-static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideSingleActor, ResultingActor) == 0x000010, "Member 'EnvQueryContext_BlueprintBase_ProvideSingleActor::ResultingActor' has a wrong offset!");
-
-// Function AIModule.EnvQueryContext_BlueprintBase.ProvideSingleLocation
-// 0x0020 (0x0020 - 0x0000)
-struct EnvQueryContext_BlueprintBase_ProvideSingleLocation final
-{
-public:
-	class UObject*                                QuerierObject;                                     // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class AActor*                                 QuerierActor;                                      // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                ResultingLocation;                                 // 0x0010(0x000C)(Parm, OutParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1C[0x4];                                       // 0x001C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(EnvQueryContext_BlueprintBase_ProvideSingleLocation) == 0x000008, "Wrong alignment on EnvQueryContext_BlueprintBase_ProvideSingleLocation");
-static_assert(sizeof(EnvQueryContext_BlueprintBase_ProvideSingleLocation) == 0x000020, "Wrong size on EnvQueryContext_BlueprintBase_ProvideSingleLocation");
-static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideSingleLocation, QuerierObject) == 0x000000, "Member 'EnvQueryContext_BlueprintBase_ProvideSingleLocation::QuerierObject' has a wrong offset!");
-static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideSingleLocation, QuerierActor) == 0x000008, "Member 'EnvQueryContext_BlueprintBase_ProvideSingleLocation::QuerierActor' has a wrong offset!");
-static_assert(offsetof(EnvQueryContext_BlueprintBase_ProvideSingleLocation, ResultingLocation) == 0x000010, "Member 'EnvQueryContext_BlueprintBase_ProvideSingleLocation::ResultingLocation' has a wrong offset!");
-
 // Function AIModule.EnvQueryInstanceBlueprintWrapper.SetNamedParam
 // 0x000C (0x000C - 0x0000)
 struct EnvQueryInstanceBlueprintWrapper_SetNamedParam final
@@ -2683,6 +2661,28 @@ public:
 static_assert(alignof(EnvQueryInstanceBlueprintWrapper_GetResultsAsLocations) == 0x000008, "Wrong alignment on EnvQueryInstanceBlueprintWrapper_GetResultsAsLocations");
 static_assert(sizeof(EnvQueryInstanceBlueprintWrapper_GetResultsAsLocations) == 0x000010, "Wrong size on EnvQueryInstanceBlueprintWrapper_GetResultsAsLocations");
 static_assert(offsetof(EnvQueryInstanceBlueprintWrapper_GetResultsAsLocations, ReturnValue) == 0x000000, "Member 'EnvQueryInstanceBlueprintWrapper_GetResultsAsLocations::ReturnValue' has a wrong offset!");
+
+// Function AIModule.EnvQueryManager.RunEQSQuery
+// 0x0030 (0x0030 - 0x0000)
+struct EnvQueryManager_RunEQSQuery final
+{
+public:
+	class UObject*                                WorldContextObject;                                // 0x0000(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEnvQuery*                              QueryTemplate;                                     // 0x0008(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UObject*                                Querier;                                           // 0x0010(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	EEnvQueryRunMode                              RunMode;                                           // 0x0018(0x0001)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_19[0x7];                                       // 0x0019(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	TSubclassOf<class UEnvQueryInstanceBlueprintWrapper> WrapperClass;                               // 0x0020(0x0008)(Parm, ZeroConstructor, IsPlainOldData, NoDestructor, AdvancedDisplay, UObjectWrapper, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class UEnvQueryInstanceBlueprintWrapper*      ReturnValue;                                       // 0x0028(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(EnvQueryManager_RunEQSQuery) == 0x000008, "Wrong alignment on EnvQueryManager_RunEQSQuery");
+static_assert(sizeof(EnvQueryManager_RunEQSQuery) == 0x000030, "Wrong size on EnvQueryManager_RunEQSQuery");
+static_assert(offsetof(EnvQueryManager_RunEQSQuery, WorldContextObject) == 0x000000, "Member 'EnvQueryManager_RunEQSQuery::WorldContextObject' has a wrong offset!");
+static_assert(offsetof(EnvQueryManager_RunEQSQuery, QueryTemplate) == 0x000008, "Member 'EnvQueryManager_RunEQSQuery::QueryTemplate' has a wrong offset!");
+static_assert(offsetof(EnvQueryManager_RunEQSQuery, Querier) == 0x000010, "Member 'EnvQueryManager_RunEQSQuery::Querier' has a wrong offset!");
+static_assert(offsetof(EnvQueryManager_RunEQSQuery, RunMode) == 0x000018, "Member 'EnvQueryManager_RunEQSQuery::RunMode' has a wrong offset!");
+static_assert(offsetof(EnvQueryManager_RunEQSQuery, WrapperClass) == 0x000020, "Member 'EnvQueryManager_RunEQSQuery::WrapperClass' has a wrong offset!");
+static_assert(offsetof(EnvQueryManager_RunEQSQuery, ReturnValue) == 0x000028, "Member 'EnvQueryManager_RunEQSQuery::ReturnValue' has a wrong offset!");
 
 // Function AIModule.NavLocalGridManager.AddLocalNavigationGridForBox
 // 0x0040 (0x0040 - 0x0000)

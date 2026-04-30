@@ -25,10 +25,10 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0298(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void Construct();
-	void DiscardChanges();
-	void SaveChanges();
 	void ExecuteUbergraph_WBP_UnsavedChangesPopup(int32 EntryPoint);
+	void SaveChanges();
+	void DiscardChanges();
+	void Construct();
 
 public:
 	static class UClass* StaticClass()

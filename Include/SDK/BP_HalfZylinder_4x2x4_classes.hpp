@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_HalfZylinder_4x2x4.BP_HalfZylinder_4x2x4_C
-// 0x0000 (0x0168 - 0x0168)
+// 0x0000 (0x0190 - 0x0190)
 class UBP_HalfZylinder_4x2x4_C final : public UCylinderBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_HalfZylinder_4x2x4_C) == 0x000008, "Wrong alignment on UBP_HalfZylinder_4x2x4_C");
-static_assert(sizeof(UBP_HalfZylinder_4x2x4_C) == 0x000168, "Wrong size on UBP_HalfZylinder_4x2x4_C");
+static_assert(sizeof(UBP_HalfZylinder_4x2x4_C) == 0x000190, "Wrong size on UBP_HalfZylinder_4x2x4_C");
 
 }
 

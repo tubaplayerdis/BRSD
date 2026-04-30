@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BrickEditorArrowComponent.BP_BrickEditorArrowComponent_C
-// 0x0000 (0x0590 - 0x0590)
+// 0x0000 (0x0580 - 0x0580)
 class UBP_BrickEditorArrowComponent_C final : public UBrickEditorArrowComponent
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_BrickEditorArrowComponent_C) == 0x000010, "Wrong alignment on UBP_BrickEditorArrowComponent_C");
-static_assert(sizeof(UBP_BrickEditorArrowComponent_C) == 0x000590, "Wrong size on UBP_BrickEditorArrowComponent_C");
+static_assert(sizeof(UBP_BrickEditorArrowComponent_C) == 0x000580, "Wrong size on UBP_BrickEditorArrowComponent_C");
 
 }
 

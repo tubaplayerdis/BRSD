@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_FlapBrick.BP_FlapBrick_C
-// 0x0000 (0x01A8 - 0x01A8)
+// 0x0000 (0x01D8 - 0x01D8)
 class UBP_FlapBrick_C final : public UFlapBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_FlapBrick_C) == 0x000008, "Wrong alignment on UBP_FlapBrick_C");
-static_assert(sizeof(UBP_FlapBrick_C) == 0x0001A8, "Wrong size on UBP_FlapBrick_C");
+static_assert(sizeof(UBP_FlapBrick_C) == 0x0001D8, "Wrong size on UBP_FlapBrick_C");
 
 }
 

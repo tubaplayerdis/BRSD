@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ThrusterBrick.BP_ThrusterBrick_C
-// 0x0000 (0x0208 - 0x0208)
+// 0x0000 (0x0238 - 0x0238)
 class UBP_ThrusterBrick_C final : public UThrusterBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_ThrusterBrick_C) == 0x000008, "Wrong alignment on UBP_ThrusterBrick_C");
-static_assert(sizeof(UBP_ThrusterBrick_C) == 0x000208, "Wrong size on UBP_ThrusterBrick_C");
+static_assert(sizeof(UBP_ThrusterBrick_C) == 0x000238, "Wrong size on UBP_ThrusterBrick_C");
 
 }
 

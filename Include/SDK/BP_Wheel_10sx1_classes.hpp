@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Wheel_10sx1.BP_Wheel_10sx1_C
-// 0x0000 (0x01A8 - 0x01A8)
+// 0x0000 (0x01D0 - 0x01D0)
 class UBP_Wheel_10sx1_C final : public UCarWheelBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_Wheel_10sx1_C) == 0x000008, "Wrong alignment on UBP_Wheel_10sx1_C");
-static_assert(sizeof(UBP_Wheel_10sx1_C) == 0x0001A8, "Wrong size on UBP_Wheel_10sx1_C");
+static_assert(sizeof(UBP_Wheel_10sx1_C) == 0x0001D0, "Wrong size on UBP_Wheel_10sx1_C");
 
 }
 

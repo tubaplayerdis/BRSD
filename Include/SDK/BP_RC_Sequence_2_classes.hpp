@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_RC_Sequence_2.BP_RC_Sequence_2_C
-// 0x0008 (0x0290 - 0x0288)
+// 0x0008 (0x02A0 - 0x0298)
 class ABP_RC_Sequence_2_C : public ABP_RC_Sequence_C
 {
 public:
-	class USkeletalMeshComponent*                 Parent;                                            // 0x0288(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMeshComponent*                 Parent;                                            // 0x0298(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	struct FVector GetHandTargetLocation() const;
@@ -37,8 +37,8 @@ public:
 	}
 };
 static_assert(alignof(ABP_RC_Sequence_2_C) == 0x000008, "Wrong alignment on ABP_RC_Sequence_2_C");
-static_assert(sizeof(ABP_RC_Sequence_2_C) == 0x000290, "Wrong size on ABP_RC_Sequence_2_C");
-static_assert(offsetof(ABP_RC_Sequence_2_C, Parent) == 0x000288, "Member 'ABP_RC_Sequence_2_C::Parent' has a wrong offset!");
+static_assert(sizeof(ABP_RC_Sequence_2_C) == 0x0002A0, "Wrong size on ABP_RC_Sequence_2_C");
+static_assert(offsetof(ABP_RC_Sequence_2_C, Parent) == 0x000298, "Member 'ABP_RC_Sequence_2_C::Parent' has a wrong offset!");
 
 }
 

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Default_Projectile.BP_Default_Projectile_C
-// 0x0000 (0x03F0 - 0x03F0)
+// 0x0000 (0x0400 - 0x0400)
 class ABP_Default_Projectile_C final : public ABrickProjectile
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_Default_Projectile_C) == 0x000010, "Wrong alignment on ABP_Default_Projectile_C");
-static_assert(sizeof(ABP_Default_Projectile_C) == 0x0003F0, "Wrong size on ABP_Default_Projectile_C");
+static_assert(sizeof(ABP_Default_Projectile_C) == 0x000400, "Wrong size on ABP_Default_Projectile_C");
 
 }
 

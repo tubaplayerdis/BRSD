@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Gun_4x2x2.BP_Gun_4x2x2_C
-// 0x0000 (0x02A0 - 0x02A0)
+// 0x0000 (0x02C0 - 0x02C0)
 class UBP_Gun_4x2x2_C final : public UGunBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_Gun_4x2x2_C) == 0x000010, "Wrong alignment on UBP_Gun_4x2x2_C");
-static_assert(sizeof(UBP_Gun_4x2x2_C) == 0x0002A0, "Wrong size on UBP_Gun_4x2x2_C");
+static_assert(sizeof(UBP_Gun_4x2x2_C) == 0x0002C0, "Wrong size on UBP_Gun_4x2x2_C");
 
 }
 

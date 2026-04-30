@@ -315,7 +315,8 @@ template<typename Ret, typename ...Args>
 inline void Hook<Ret(Args...)>::Create()
 {
 	if (initialized) return;
-	assert(Init());
+	//assert(Init());
+	Init();
 }
 
 template<typename Ret, typename ...Args>

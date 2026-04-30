@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_VehicleEditor.BP_VehicleEditor_C
-// 0x0000 (0x0530 - 0x0530)
+// 0x0000 (0x0538 - 0x0538)
 class ABP_VehicleEditor_C final : public AVehicleEditor
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_VehicleEditor_C) == 0x000008, "Wrong alignment on ABP_VehicleEditor_C");
-static_assert(sizeof(ABP_VehicleEditor_C) == 0x000530, "Wrong size on ABP_VehicleEditor_C");
+static_assert(sizeof(ABP_VehicleEditor_C) == 0x000538, "Wrong size on ABP_VehicleEditor_C");
 
 }
 

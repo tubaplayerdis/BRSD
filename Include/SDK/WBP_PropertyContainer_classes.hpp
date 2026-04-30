@@ -20,13 +20,13 @@ namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_PropertyContainer.WBP_PropertyContainer_C
-// 0x0018 (0x02E0 - 0x02C8)
+// 0x0018 (0x02E8 - 0x02D0)
 class UWBP_PropertyContainer_C final : public UPropertyContainerWidget
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02C8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	class UBrickBorder*                           Border;                                            // 0x02D0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UBrickGridPanel*                        GridPanel;                                         // 0x02D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02D0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBrickBorder*                           Border;                                            // 0x02D8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UBrickGridPanel*                        GridPanel;                                         // 0x02E0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
 	struct FEventReply OnMouseButtonUp(const struct FGeometry& MyGeometry, const struct FPointerEvent& MouseEvent);
@@ -48,10 +48,10 @@ public:
 	}
 };
 static_assert(alignof(UWBP_PropertyContainer_C) == 0x000008, "Wrong alignment on UWBP_PropertyContainer_C");
-static_assert(sizeof(UWBP_PropertyContainer_C) == 0x0002E0, "Wrong size on UWBP_PropertyContainer_C");
-static_assert(offsetof(UWBP_PropertyContainer_C, UberGraphFrame) == 0x0002C8, "Member 'UWBP_PropertyContainer_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UWBP_PropertyContainer_C, Border) == 0x0002D0, "Member 'UWBP_PropertyContainer_C::Border' has a wrong offset!");
-static_assert(offsetof(UWBP_PropertyContainer_C, GridPanel) == 0x0002D8, "Member 'UWBP_PropertyContainer_C::GridPanel' has a wrong offset!");
+static_assert(sizeof(UWBP_PropertyContainer_C) == 0x0002E8, "Wrong size on UWBP_PropertyContainer_C");
+static_assert(offsetof(UWBP_PropertyContainer_C, UberGraphFrame) == 0x0002D0, "Member 'UWBP_PropertyContainer_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(UWBP_PropertyContainer_C, Border) == 0x0002D8, "Member 'UWBP_PropertyContainer_C::Border' has a wrong offset!");
+static_assert(offsetof(UWBP_PropertyContainer_C, GridPanel) == 0x0002E0, "Member 'UWBP_PropertyContainer_C::GridPanel' has a wrong offset!");
 
 }
 

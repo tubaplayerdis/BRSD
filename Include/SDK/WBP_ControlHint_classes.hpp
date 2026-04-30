@@ -27,6 +27,7 @@ public:
 
 public:
 	void ExecuteUbergraph_WBP_ControlHint(int32 EntryPoint);
+	void UpdateTextVisibility(bool bNewVisible);
 	void UpdateInputChordVisibility(bool bNewVisible);
 	void SetIconSize(float NewSize);
 

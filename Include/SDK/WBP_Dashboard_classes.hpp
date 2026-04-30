@@ -27,10 +27,10 @@ public:
 	class UBrickGridPanel*                        SlidersPanel;                                      // 0x02C8(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void AddSliderWidget(class UDashboardSliderWidget* Widget);
-	void AddIconWidget(class UDashboardIconWidget* Widget, int32 Index_0);
-	void UpdateSliderWidgetSlot(class UDashboardSliderWidget* Widget, int32 Index_0, int32 NumSliders);
 	void ExecuteUbergraph_WBP_Dashboard(int32 EntryPoint);
+	void UpdateSliderWidgetSlot(class UDashboardSliderWidget* Widget, int32 Index_0, int32 NumSliders);
+	void AddIconWidget(class UDashboardIconWidget* Widget, int32 Index_0);
+	void AddSliderWidget(class UDashboardSliderWidget* Widget);
 
 public:
 	static class UClass* StaticClass()

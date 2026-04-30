@@ -17,6 +17,24 @@
 namespace SDK::Params
 {
 
+// Function WBP_PagedListHeaderField.WBP_PagedListHeaderField_C.UpdateItem
+// 0x0028 (0x0028 - 0x0000)
+struct WBP_PagedListHeaderField_C_UpdateItem final
+{
+public:
+	bool                                          bNewVisible;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   NewText;                                           // 0x0008(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm)
+	EBrickUIColorStyle                            NewColorStyle;                                     // 0x0020(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EBrickUITextStyle                             NewTextStyle;                                      // 0x0021(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_PagedListHeaderField_C_UpdateItem) == 0x000008, "Wrong alignment on WBP_PagedListHeaderField_C_UpdateItem");
+static_assert(sizeof(WBP_PagedListHeaderField_C_UpdateItem) == 0x000028, "Wrong size on WBP_PagedListHeaderField_C_UpdateItem");
+static_assert(offsetof(WBP_PagedListHeaderField_C_UpdateItem, bNewVisible) == 0x000000, "Member 'WBP_PagedListHeaderField_C_UpdateItem::bNewVisible' has a wrong offset!");
+static_assert(offsetof(WBP_PagedListHeaderField_C_UpdateItem, NewText) == 0x000008, "Member 'WBP_PagedListHeaderField_C_UpdateItem::NewText' has a wrong offset!");
+static_assert(offsetof(WBP_PagedListHeaderField_C_UpdateItem, NewColorStyle) == 0x000020, "Member 'WBP_PagedListHeaderField_C_UpdateItem::NewColorStyle' has a wrong offset!");
+static_assert(offsetof(WBP_PagedListHeaderField_C_UpdateItem, NewTextStyle) == 0x000021, "Member 'WBP_PagedListHeaderField_C_UpdateItem::NewTextStyle' has a wrong offset!");
+
 // Function WBP_PagedListHeaderField.WBP_PagedListHeaderField_C.ExecuteUbergraph_WBP_PagedListHeaderField
 // 0x0028 (0x0028 - 0x0000)
 struct WBP_PagedListHeaderField_C_ExecuteUbergraph_WBP_PagedListHeaderField final
@@ -43,24 +61,6 @@ static_assert(offsetof(WBP_PagedListHeaderField_C_ExecuteUbergraph_WBP_PagedList
 static_assert(offsetof(WBP_PagedListHeaderField_C_ExecuteUbergraph_WBP_PagedListHeaderField, K2Node_CustomEvent_NewColorStyle) == 0x000020, "Member 'WBP_PagedListHeaderField_C_ExecuteUbergraph_WBP_PagedListHeaderField::K2Node_CustomEvent_NewColorStyle' has a wrong offset!");
 static_assert(offsetof(WBP_PagedListHeaderField_C_ExecuteUbergraph_WBP_PagedListHeaderField, K2Node_CustomEvent_NewTextStyle) == 0x000021, "Member 'WBP_PagedListHeaderField_C_ExecuteUbergraph_WBP_PagedListHeaderField::K2Node_CustomEvent_NewTextStyle' has a wrong offset!");
 static_assert(offsetof(WBP_PagedListHeaderField_C_ExecuteUbergraph_WBP_PagedListHeaderField, K2Node_Select_Default) == 0x000022, "Member 'WBP_PagedListHeaderField_C_ExecuteUbergraph_WBP_PagedListHeaderField::K2Node_Select_Default' has a wrong offset!");
-
-// Function WBP_PagedListHeaderField.WBP_PagedListHeaderField_C.UpdateItem
-// 0x0028 (0x0028 - 0x0000)
-struct WBP_PagedListHeaderField_C_UpdateItem final
-{
-public:
-	bool                                          bNewVisible;                                       // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1[0x7];                                        // 0x0001(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   NewText;                                           // 0x0008(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm)
-	EBrickUIColorStyle                            NewColorStyle;                                     // 0x0020(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EBrickUITextStyle                             NewTextStyle;                                      // 0x0021(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_PagedListHeaderField_C_UpdateItem) == 0x000008, "Wrong alignment on WBP_PagedListHeaderField_C_UpdateItem");
-static_assert(sizeof(WBP_PagedListHeaderField_C_UpdateItem) == 0x000028, "Wrong size on WBP_PagedListHeaderField_C_UpdateItem");
-static_assert(offsetof(WBP_PagedListHeaderField_C_UpdateItem, bNewVisible) == 0x000000, "Member 'WBP_PagedListHeaderField_C_UpdateItem::bNewVisible' has a wrong offset!");
-static_assert(offsetof(WBP_PagedListHeaderField_C_UpdateItem, NewText) == 0x000008, "Member 'WBP_PagedListHeaderField_C_UpdateItem::NewText' has a wrong offset!");
-static_assert(offsetof(WBP_PagedListHeaderField_C_UpdateItem, NewColorStyle) == 0x000020, "Member 'WBP_PagedListHeaderField_C_UpdateItem::NewColorStyle' has a wrong offset!");
-static_assert(offsetof(WBP_PagedListHeaderField_C_UpdateItem, NewTextStyle) == 0x000021, "Member 'WBP_PagedListHeaderField_C_UpdateItem::NewTextStyle' has a wrong offset!");
 
 }
 

@@ -28,10 +28,10 @@ public:
 	class UBrickImage*                            Throbber;                                          // 0x0310(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_WBP_PagedList(int32 EntryPoint);
-	void BndEvt__WBP_PagedList_SelectedEntryHeaderWidget_K2Node_ComponentBoundEvent_2_OnClickedClear__DelegateSignature();
-	void UpdateIsEntrySelected(bool bIsEntrySelected);
 	void UpdateIsLoading(bool bNewLoading);
+	void UpdateIsEntrySelected(bool bIsEntrySelected);
+	void BndEvt__WBP_PagedList_SelectedEntryHeaderWidget_K2Node_ComponentBoundEvent_2_OnClickedClear__DelegateSignature();
+	void ExecuteUbergraph_WBP_PagedList(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

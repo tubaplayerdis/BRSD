@@ -124,7 +124,7 @@ SDK::ABrickPlayerController* GetBrickPlayerControllerFromID(std::string ID)
 bool GetIsPlayerAdminFromName(std::string name)
 {
 	if (GetBrickPlayerControllerFromName(name) == nullptr) return false;
-	return static_cast<SDK::ABrickPlayerState*>(GetBrickPlayerControllerFromName(name)->PlayerState)->IsAdmin();
+	return static_cast<SDK::ABrickPlayerState*>(GetBrickPlayerControllerFromName(name)->PlayerState)->AdminRole == SDK::EAdminRole::Admin;
 }
 
 bool GetIsPlayerHostFromName(std::string name)
@@ -244,23 +244,9 @@ bool global::IsInMainMenu()
 	return SDK::UGameplayStatics::GetCurrentLevelName(World(), true).ToString() == "MainMenu";
 }
 
-std::vector<uint8_t> global::GetFunctionBytecode(SDK::UClass* objectclass,std::string classname, std::string functionname)
+std::vector<uint8_t> global::GetFunctionBytecode(SDK::UClass* objectclass, std::string classname, std::string functionname)
 {
 	std::vector<uint8_t> ret = std::vector<uint8_t>();
-	SDK::UFunction* Fn = objectclass->GetFunction(classname, functionname);
-	if (Fn) std::cout << "Function Flags: " << Fn->FunctionFlags << std::endl;
-	if (!Fn || Fn->Script.Num() == 0) {
-		if (!Fn) std::cout << "Function was not found!" << std::endl;
-		std::cout << "Script was not found!" << std::endl;
-		return ret;
-	}
-	std::cout << "Bytecode for" << Fn->GetName() << std::endl;
-	for (int i = 0; i < Fn->Script.Num(); ++i)
-	{
-		std::string s = std::format("{:02X} ", Fn->Script[i]);
-		std::cout << s << std::endl;
-		ret.push_back(Fn->Script[i]);
-	}
-	std::cout << std::endl;
+	//Implementation removed
 	return ret;
 }

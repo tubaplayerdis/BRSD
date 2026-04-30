@@ -10,13 +10,106 @@
 
 #include "Basic.hpp"
 
-#include "CoreUObject_structs.hpp"
 #include "UMG_structs.hpp"
 #include "BrickRigs_structs.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK::Params
 {
+
+// Function WBP_TimespanProperty.WBP_TimespanProperty_C.UpdateTimespanProperty
+// 0x0020 (0x0020 - 0x0000)
+struct WBP_TimespanProperty_C_UpdateTimespanProperty final
+{
+public:
+	struct FTimespan                              Timespan;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+	struct FTimespan                              MinValue_0;                                        // 0x0008(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+	struct FTimespan                              MaxValue_0;                                        // 0x0010(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash)
+	bool                                          bAllowInfinite;                                    // 0x0018(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_TimespanProperty_C_UpdateTimespanProperty) == 0x000008, "Wrong alignment on WBP_TimespanProperty_C_UpdateTimespanProperty");
+static_assert(sizeof(WBP_TimespanProperty_C_UpdateTimespanProperty) == 0x000020, "Wrong size on WBP_TimespanProperty_C_UpdateTimespanProperty");
+static_assert(offsetof(WBP_TimespanProperty_C_UpdateTimespanProperty, Timespan) == 0x000000, "Member 'WBP_TimespanProperty_C_UpdateTimespanProperty::Timespan' has a wrong offset!");
+static_assert(offsetof(WBP_TimespanProperty_C_UpdateTimespanProperty, MinValue_0) == 0x000008, "Member 'WBP_TimespanProperty_C_UpdateTimespanProperty::MinValue_0' has a wrong offset!");
+static_assert(offsetof(WBP_TimespanProperty_C_UpdateTimespanProperty, MaxValue_0) == 0x000010, "Member 'WBP_TimespanProperty_C_UpdateTimespanProperty::MaxValue_0' has a wrong offset!");
+static_assert(offsetof(WBP_TimespanProperty_C_UpdateTimespanProperty, bAllowInfinite) == 0x000018, "Member 'WBP_TimespanProperty_C_UpdateTimespanProperty::bAllowInfinite' has a wrong offset!");
+
+// Function WBP_TimespanProperty.WBP_TimespanProperty_C.BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature
+// 0x0002 (0x0002 - 0x0000)
+struct WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature final
+{
+public:
+	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EBrickUIStyleState                            InContentStyleState;                               // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000001, "Wrong alignment on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
+static_assert(sizeof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000002, "Wrong size on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
+static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InColorStyle) == 0x000000, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InColorStyle' has a wrong offset!");
+static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InContentStyleState) == 0x000001, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InContentStyleState' has a wrong offset!");
+
+// Function WBP_TimespanProperty.WBP_TimespanProperty_C.BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature final
+{
+public:
+	float                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature) == 0x000004, "Wrong alignment on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature");
+static_assert(sizeof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature) == 0x000008, "Wrong size on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature");
+static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature, Value) == 0x000000, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature::Value' has a wrong offset!");
+static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature, EventType) == 0x000004, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature::EventType' has a wrong offset!");
+
+// Function WBP_TimespanProperty.WBP_TimespanProperty_C.BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature final
+{
+public:
+	float                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature) == 0x000004, "Wrong alignment on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature");
+static_assert(sizeof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature) == 0x000008, "Wrong size on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature");
+static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature, Value) == 0x000000, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature::Value' has a wrong offset!");
+static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature, EventType) == 0x000004, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature::EventType' has a wrong offset!");
+
+// Function WBP_TimespanProperty.WBP_TimespanProperty_C.BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature final
+{
+public:
+	float                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature) == 0x000004, "Wrong alignment on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature");
+static_assert(sizeof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature) == 0x000008, "Wrong size on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature");
+static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature, Value) == 0x000000, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature::Value' has a wrong offset!");
+static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature, EventType) == 0x000004, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature::EventType' has a wrong offset!");
+
+// Function WBP_TimespanProperty.WBP_TimespanProperty_C.BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature final
+{
+public:
+	float                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature) == 0x000004, "Wrong alignment on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature");
+static_assert(sizeof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature) == 0x000008, "Wrong size on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature");
+static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature, Value) == 0x000000, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature::Value' has a wrong offset!");
+static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature, EventType) == 0x000004, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature::EventType' has a wrong offset!");
+
+// Function WBP_TimespanProperty.WBP_TimespanProperty_C.PreConstruct
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_TimespanProperty_C_PreConstruct final
+{
+public:
+	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_TimespanProperty_C_PreConstruct) == 0x000001, "Wrong alignment on WBP_TimespanProperty_C_PreConstruct");
+static_assert(sizeof(WBP_TimespanProperty_C_PreConstruct) == 0x000001, "Wrong size on WBP_TimespanProperty_C_PreConstruct");
+static_assert(offsetof(WBP_TimespanProperty_C_PreConstruct, IsDesignTime) == 0x000000, "Member 'WBP_TimespanProperty_C_PreConstruct::IsDesignTime' has a wrong offset!");
 
 // Function WBP_TimespanProperty.WBP_TimespanProperty_C.ExecuteUbergraph_WBP_TimespanProperty
 // 0x01E8 (0x01E8 - 0x0000)
@@ -289,99 +382,6 @@ static_assert(offsetof(WBP_TimespanProperty_C_ExecuteUbergraph_WBP_TimespanPrope
 static_assert(offsetof(WBP_TimespanProperty_C_ExecuteUbergraph_WBP_TimespanProperty, CallFunc_TimespanAsText_ReturnValue) == 0x0001C0, "Member 'WBP_TimespanProperty_C_ExecuteUbergraph_WBP_TimespanProperty::CallFunc_TimespanAsText_ReturnValue' has a wrong offset!");
 static_assert(offsetof(WBP_TimespanProperty_C_ExecuteUbergraph_WBP_TimespanProperty, CallFunc_EqualEqual_TimespanTimespan_ReturnValue_5) == 0x0001D8, "Member 'WBP_TimespanProperty_C_ExecuteUbergraph_WBP_TimespanProperty::CallFunc_EqualEqual_TimespanTimespan_ReturnValue_5' has a wrong offset!");
 static_assert(offsetof(WBP_TimespanProperty_C_ExecuteUbergraph_WBP_TimespanProperty, K2Node_Select_Default_9) == 0x0001E0, "Member 'WBP_TimespanProperty_C_ExecuteUbergraph_WBP_TimespanProperty::K2Node_Select_Default_9' has a wrong offset!");
-
-// Function WBP_TimespanProperty.WBP_TimespanProperty_C.PreConstruct
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_TimespanProperty_C_PreConstruct final
-{
-public:
-	bool                                          IsDesignTime;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_TimespanProperty_C_PreConstruct) == 0x000001, "Wrong alignment on WBP_TimespanProperty_C_PreConstruct");
-static_assert(sizeof(WBP_TimespanProperty_C_PreConstruct) == 0x000001, "Wrong size on WBP_TimespanProperty_C_PreConstruct");
-static_assert(offsetof(WBP_TimespanProperty_C_PreConstruct, IsDesignTime) == 0x000000, "Member 'WBP_TimespanProperty_C_PreConstruct::IsDesignTime' has a wrong offset!");
-
-// Function WBP_TimespanProperty.WBP_TimespanProperty_C.BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature final
-{
-public:
-	float                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature) == 0x000004, "Wrong alignment on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature");
-static_assert(sizeof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature) == 0x000008, "Wrong size on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature");
-static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature, Value) == 0x000000, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature::Value' has a wrong offset!");
-static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature, EventType) == 0x000004, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature::EventType' has a wrong offset!");
-
-// Function WBP_TimespanProperty.WBP_TimespanProperty_C.BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature final
-{
-public:
-	float                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature) == 0x000004, "Wrong alignment on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature");
-static_assert(sizeof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature) == 0x000008, "Wrong size on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature");
-static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature, Value) == 0x000000, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature::Value' has a wrong offset!");
-static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature, EventType) == 0x000004, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature::EventType' has a wrong offset!");
-
-// Function WBP_TimespanProperty.WBP_TimespanProperty_C.BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature final
-{
-public:
-	float                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature) == 0x000004, "Wrong alignment on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature");
-static_assert(sizeof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature) == 0x000008, "Wrong size on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature");
-static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature, Value) == 0x000000, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature::Value' has a wrong offset!");
-static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature, EventType) == 0x000004, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature::EventType' has a wrong offset!");
-
-// Function WBP_TimespanProperty.WBP_TimespanProperty_C.BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature final
-{
-public:
-	float                                         Value;                                             // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EValueChangedEventType                        EventType;                                         // 0x0004(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature) == 0x000004, "Wrong alignment on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature");
-static_assert(sizeof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature) == 0x000008, "Wrong size on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature");
-static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature, Value) == 0x000000, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature::Value' has a wrong offset!");
-static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature, EventType) == 0x000004, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature::EventType' has a wrong offset!");
-
-// Function WBP_TimespanProperty.WBP_TimespanProperty_C.BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature
-// 0x0002 (0x0002 - 0x0000)
-struct WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature final
-{
-public:
-	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EBrickUIStyleState                            InContentStyleState;                               // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000001, "Wrong alignment on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
-static_assert(sizeof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000002, "Wrong size on WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
-static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InColorStyle) == 0x000000, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InColorStyle' has a wrong offset!");
-static_assert(offsetof(WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InContentStyleState) == 0x000001, "Member 'WBP_TimespanProperty_C_BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InContentStyleState' has a wrong offset!");
-
-// Function WBP_TimespanProperty.WBP_TimespanProperty_C.UpdateTimespanProperty
-// 0x0020 (0x0020 - 0x0000)
-struct WBP_TimespanProperty_C_UpdateTimespanProperty final
-{
-public:
-	struct FTimespan                              Timespan;                                          // 0x0000(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-	struct FTimespan                              MinValue_0;                                        // 0x0008(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-	struct FTimespan                              MaxValue_0;                                        // 0x0010(0x0008)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor, HasGetValueTypeHash)
-	bool                                          bAllowInfinite;                                    // 0x0018(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_TimespanProperty_C_UpdateTimespanProperty) == 0x000008, "Wrong alignment on WBP_TimespanProperty_C_UpdateTimespanProperty");
-static_assert(sizeof(WBP_TimespanProperty_C_UpdateTimespanProperty) == 0x000020, "Wrong size on WBP_TimespanProperty_C_UpdateTimespanProperty");
-static_assert(offsetof(WBP_TimespanProperty_C_UpdateTimespanProperty, Timespan) == 0x000000, "Member 'WBP_TimespanProperty_C_UpdateTimespanProperty::Timespan' has a wrong offset!");
-static_assert(offsetof(WBP_TimespanProperty_C_UpdateTimespanProperty, MinValue_0) == 0x000008, "Member 'WBP_TimespanProperty_C_UpdateTimespanProperty::MinValue_0' has a wrong offset!");
-static_assert(offsetof(WBP_TimespanProperty_C_UpdateTimespanProperty, MaxValue_0) == 0x000010, "Member 'WBP_TimespanProperty_C_UpdateTimespanProperty::MaxValue_0' has a wrong offset!");
-static_assert(offsetof(WBP_TimespanProperty_C_UpdateTimespanProperty, bAllowInfinite) == 0x000018, "Member 'WBP_TimespanProperty_C_UpdateTimespanProperty::bAllowInfinite' has a wrong offset!");
 
 }
 

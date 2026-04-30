@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_CornerRampN_2x2x1.BP_CornerRampN_2x2x1_C
-// 0x0000 (0x0168 - 0x0168)
+// 0x0000 (0x0190 - 0x0190)
 class UBP_CornerRampN_2x2x1_C final : public URampBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_CornerRampN_2x2x1_C) == 0x000008, "Wrong alignment on UBP_CornerRampN_2x2x1_C");
-static_assert(sizeof(UBP_CornerRampN_2x2x1_C) == 0x000168, "Wrong size on UBP_CornerRampN_2x2x1_C");
+static_assert(sizeof(UBP_CornerRampN_2x2x1_C) == 0x000190, "Wrong size on UBP_CornerRampN_2x2x1_C");
 
 }
 

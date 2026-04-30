@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ExhaustBrick.BP_ExhaustBrick_C
-// 0x0000 (0x01A8 - 0x01A8)
+// 0x0000 (0x01D8 - 0x01D8)
 class UBP_ExhaustBrick_C final : public UExhaustBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_ExhaustBrick_C) == 0x000008, "Wrong alignment on UBP_ExhaustBrick_C");
-static_assert(sizeof(UBP_ExhaustBrick_C) == 0x0001A8, "Wrong size on UBP_ExhaustBrick_C");
+static_assert(sizeof(UBP_ExhaustBrick_C) == 0x0001D8, "Wrong size on UBP_ExhaustBrick_C");
 
 }
 

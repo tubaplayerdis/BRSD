@@ -16,21 +16,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_VehicleIcon.WBP_VehicleIcon_C.UpdateVehicleIcon
-// 0x0003 (0x0003 - 0x0000)
-struct WBP_VehicleIcon_C_UpdateVehicleIcon final
-{
-public:
-	bool                                          bNewIsLocalPlayer;                                 // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bNewCanBeDamaged;                                  // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	EVehiclePinMode                               NewPinMode;                                        // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_VehicleIcon_C_UpdateVehicleIcon) == 0x000001, "Wrong alignment on WBP_VehicleIcon_C_UpdateVehicleIcon");
-static_assert(sizeof(WBP_VehicleIcon_C_UpdateVehicleIcon) == 0x000003, "Wrong size on WBP_VehicleIcon_C_UpdateVehicleIcon");
-static_assert(offsetof(WBP_VehicleIcon_C_UpdateVehicleIcon, bNewIsLocalPlayer) == 0x000000, "Member 'WBP_VehicleIcon_C_UpdateVehicleIcon::bNewIsLocalPlayer' has a wrong offset!");
-static_assert(offsetof(WBP_VehicleIcon_C_UpdateVehicleIcon, bNewCanBeDamaged) == 0x000001, "Member 'WBP_VehicleIcon_C_UpdateVehicleIcon::bNewCanBeDamaged' has a wrong offset!");
-static_assert(offsetof(WBP_VehicleIcon_C_UpdateVehicleIcon, NewPinMode) == 0x000002, "Member 'WBP_VehicleIcon_C_UpdateVehicleIcon::NewPinMode' has a wrong offset!");
-
 // Function WBP_VehicleIcon.WBP_VehicleIcon_C.ExecuteUbergraph_WBP_VehicleIcon
 // 0x0030 (0x0030 - 0x0000)
 struct WBP_VehicleIcon_C_ExecuteUbergraph_WBP_VehicleIcon final
@@ -73,6 +58,21 @@ static_assert(offsetof(WBP_VehicleIcon_C_ExecuteUbergraph_WBP_VehicleIcon, Temp_
 static_assert(offsetof(WBP_VehicleIcon_C_ExecuteUbergraph_WBP_VehicleIcon, K2Node_MakeStruct_BrickUIIconSlot) == 0x000024, "Member 'WBP_VehicleIcon_C_ExecuteUbergraph_WBP_VehicleIcon::K2Node_MakeStruct_BrickUIIconSlot' has a wrong offset!");
 static_assert(offsetof(WBP_VehicleIcon_C_ExecuteUbergraph_WBP_VehicleIcon, Temp_byte_Variable_1) == 0x00002C, "Member 'WBP_VehicleIcon_C_ExecuteUbergraph_WBP_VehicleIcon::Temp_byte_Variable_1' has a wrong offset!");
 static_assert(offsetof(WBP_VehicleIcon_C_ExecuteUbergraph_WBP_VehicleIcon, K2Node_Select_Default_1) == 0x00002D, "Member 'WBP_VehicleIcon_C_ExecuteUbergraph_WBP_VehicleIcon::K2Node_Select_Default_1' has a wrong offset!");
+
+// Function WBP_VehicleIcon.WBP_VehicleIcon_C.UpdateVehicleIcon
+// 0x0003 (0x0003 - 0x0000)
+struct WBP_VehicleIcon_C_UpdateVehicleIcon final
+{
+public:
+	bool                                          bNewIsLocalPlayer;                                 // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bNewCanBeDamaged;                                  // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	EVehiclePinMode                               NewPinMode;                                        // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_VehicleIcon_C_UpdateVehicleIcon) == 0x000001, "Wrong alignment on WBP_VehicleIcon_C_UpdateVehicleIcon");
+static_assert(sizeof(WBP_VehicleIcon_C_UpdateVehicleIcon) == 0x000003, "Wrong size on WBP_VehicleIcon_C_UpdateVehicleIcon");
+static_assert(offsetof(WBP_VehicleIcon_C_UpdateVehicleIcon, bNewIsLocalPlayer) == 0x000000, "Member 'WBP_VehicleIcon_C_UpdateVehicleIcon::bNewIsLocalPlayer' has a wrong offset!");
+static_assert(offsetof(WBP_VehicleIcon_C_UpdateVehicleIcon, bNewCanBeDamaged) == 0x000001, "Member 'WBP_VehicleIcon_C_UpdateVehicleIcon::bNewCanBeDamaged' has a wrong offset!");
+static_assert(offsetof(WBP_VehicleIcon_C_UpdateVehicleIcon, NewPinMode) == 0x000002, "Member 'WBP_VehicleIcon_C_UpdateVehicleIcon::NewPinMode' has a wrong offset!");
 
 }
 

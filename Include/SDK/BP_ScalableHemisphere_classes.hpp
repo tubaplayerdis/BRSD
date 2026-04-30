@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ScalableHemisphere.BP_ScalableHemisphere_C
-// 0x0000 (0x01A0 - 0x01A0)
+// 0x0000 (0x01D0 - 0x01D0)
 class UBP_ScalableHemisphere_C final : public UScalableBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_ScalableHemisphere_C) == 0x000008, "Wrong alignment on UBP_ScalableHemisphere_C");
-static_assert(sizeof(UBP_ScalableHemisphere_C) == 0x0001A0, "Wrong size on UBP_ScalableHemisphere_C");
+static_assert(sizeof(UBP_ScalableHemisphere_C) == 0x0001D0, "Wrong size on UBP_ScalableHemisphere_C");
 
 }
 

@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ConquestGameMode.BP_ConquestGameMode_C
-// 0x0008 (0x0410 - 0x0408)
+// 0x0008 (0x0460 - 0x0458)
 class ABP_ConquestGameMode_C final : public AConquestGameMode
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0408(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0458(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -34,8 +34,8 @@ public:
 	}
 };
 static_assert(alignof(ABP_ConquestGameMode_C) == 0x000008, "Wrong alignment on ABP_ConquestGameMode_C");
-static_assert(sizeof(ABP_ConquestGameMode_C) == 0x000410, "Wrong size on ABP_ConquestGameMode_C");
-static_assert(offsetof(ABP_ConquestGameMode_C, DefaultSceneRoot) == 0x000408, "Member 'ABP_ConquestGameMode_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(sizeof(ABP_ConquestGameMode_C) == 0x000460, "Wrong size on ABP_ConquestGameMode_C");
+static_assert(offsetof(ABP_ConquestGameMode_C, DefaultSceneRoot) == 0x000458, "Member 'ABP_ConquestGameMode_C::DefaultSceneRoot' has a wrong offset!");
 
 }
 

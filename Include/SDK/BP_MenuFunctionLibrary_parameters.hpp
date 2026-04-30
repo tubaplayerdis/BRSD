@@ -280,5 +280,26 @@ static_assert(offsetof(BP_MenuFunctionLibrary_C_CreateDisplayModeButton, __World
 static_assert(offsetof(BP_MenuFunctionLibrary_C_CreateDisplayModeButton, ReturnValue) == 0x000020, "Member 'BP_MenuFunctionLibrary_C_CreateDisplayModeButton::ReturnValue' has a wrong offset!");
 static_assert(offsetof(BP_MenuFunctionLibrary_C_CreateDisplayModeButton, CallFunc_CreateButton_ReturnValue) == 0x000028, "Member 'BP_MenuFunctionLibrary_C_CreateDisplayModeButton::CallFunc_CreateButton_ReturnValue' has a wrong offset!");
 
+// Function BP_MenuFunctionLibrary.BP_MenuFunctionLibrary_C.CreateLinkButton
+// 0x0048 (0x0048 - 0x0000)
+struct BP_MenuFunctionLibrary_C_CreateLinkButton final
+{
+public:
+	class UMenuButtonPanelWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FText                                   DisplayText;                                       // 0x0008(0x0018)(BlueprintVisible, BlueprintReadOnly, Parm)
+	TDelegate<void()>                             Delegate;                                          // 0x0020(0x0010)(ConstParm, BlueprintVisible, BlueprintReadOnly, Parm, OutParm, ZeroConstructor, ReferenceParm, NoDestructor)
+	class UObject*                                __WorldContext;                                    // 0x0030(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMenuButtonWidget*                      ReturnValue;                                       // 0x0038(0x0008)(Parm, OutParm, ZeroConstructor, ReturnParm, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue;                 // 0x0040(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(BP_MenuFunctionLibrary_C_CreateLinkButton) == 0x000008, "Wrong alignment on BP_MenuFunctionLibrary_C_CreateLinkButton");
+static_assert(sizeof(BP_MenuFunctionLibrary_C_CreateLinkButton) == 0x000048, "Wrong size on BP_MenuFunctionLibrary_C_CreateLinkButton");
+static_assert(offsetof(BP_MenuFunctionLibrary_C_CreateLinkButton, Widget) == 0x000000, "Member 'BP_MenuFunctionLibrary_C_CreateLinkButton::Widget' has a wrong offset!");
+static_assert(offsetof(BP_MenuFunctionLibrary_C_CreateLinkButton, DisplayText) == 0x000008, "Member 'BP_MenuFunctionLibrary_C_CreateLinkButton::DisplayText' has a wrong offset!");
+static_assert(offsetof(BP_MenuFunctionLibrary_C_CreateLinkButton, Delegate) == 0x000020, "Member 'BP_MenuFunctionLibrary_C_CreateLinkButton::Delegate' has a wrong offset!");
+static_assert(offsetof(BP_MenuFunctionLibrary_C_CreateLinkButton, __WorldContext) == 0x000030, "Member 'BP_MenuFunctionLibrary_C_CreateLinkButton::__WorldContext' has a wrong offset!");
+static_assert(offsetof(BP_MenuFunctionLibrary_C_CreateLinkButton, ReturnValue) == 0x000038, "Member 'BP_MenuFunctionLibrary_C_CreateLinkButton::ReturnValue' has a wrong offset!");
+static_assert(offsetof(BP_MenuFunctionLibrary_C_CreateLinkButton, CallFunc_CreateButton_ReturnValue) == 0x000040, "Member 'BP_MenuFunctionLibrary_C_CreateLinkButton::CallFunc_CreateButton_ReturnValue' has a wrong offset!");
+
 }
 

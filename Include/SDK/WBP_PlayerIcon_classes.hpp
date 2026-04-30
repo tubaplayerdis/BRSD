@@ -26,8 +26,8 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02B0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void UpdatePlayerIcon(bool bNewIsLocalPlayer, bool bNewIsTeamLeader, ECharacterStateOfHealth NewStateOfHealth, bool bNewCanBeDamaged);
 	void ExecuteUbergraph_WBP_PlayerIcon(int32 EntryPoint);
+	void UpdatePlayerIcon(bool bNewIsLocalPlayer, bool bNewIsTeamLeader, ECharacterStateOfHealth NewStateOfHealth, bool bNewCanBeDamaged);
 
 public:
 	static class UClass* StaticClass()

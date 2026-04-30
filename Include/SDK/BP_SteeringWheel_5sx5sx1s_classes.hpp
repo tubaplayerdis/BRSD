@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SteeringWheel_5sx5sx1s.BP_SteeringWheel_5sx5sx1s_C
-// 0x0000 (0x0168 - 0x0168)
+// 0x0000 (0x0190 - 0x0190)
 class UBP_SteeringWheel_5sx5sx1s_C final : public USteeringWheelBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_SteeringWheel_5sx5sx1s_C) == 0x000008, "Wrong alignment on UBP_SteeringWheel_5sx5sx1s_C");
-static_assert(sizeof(UBP_SteeringWheel_5sx5sx1s_C) == 0x000168, "Wrong size on UBP_SteeringWheel_5sx5sx1s_C");
+static_assert(sizeof(UBP_SteeringWheel_5sx5sx1s_C) == 0x000190, "Wrong size on UBP_SteeringWheel_5sx5sx1s_C");
 
 }
 

@@ -30,12 +30,12 @@ public:
 	class UBrickImage*                            PrevImage;                                         // 0x02A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_WBP_PageSelector(int32 EntryPoint);
-	void UpdateButtons(bool bCanGoBack, bool bCanGoForward);
-	void BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InContentStyleState);
-	void BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InContentStyleState);
-	void BndEvt__NextButton_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
 	void BndEvt__PrevButton_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
+	void BndEvt__NextButton_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
+	void BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InContentStyleState);
+	void BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InContentStyleState);
+	void UpdateButtons(bool bCanGoBack, bool bCanGoForward);
+	void ExecuteUbergraph_WBP_PageSelector(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

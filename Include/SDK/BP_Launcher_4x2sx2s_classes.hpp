@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Launcher_4x2sx2s.BP_Launcher_4x2sx2s_C
-// 0x0000 (0x02A0 - 0x02A0)
+// 0x0000 (0x02C0 - 0x02C0)
 class UBP_Launcher_4x2sx2s_C final : public ULauncherBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_Launcher_4x2sx2s_C) == 0x000010, "Wrong alignment on UBP_Launcher_4x2sx2s_C");
-static_assert(sizeof(UBP_Launcher_4x2sx2s_C) == 0x0002A0, "Wrong size on UBP_Launcher_4x2sx2s_C");
+static_assert(sizeof(UBP_Launcher_4x2sx2s_C) == 0x0002C0, "Wrong size on UBP_Launcher_4x2sx2s_C");
 
 }
 

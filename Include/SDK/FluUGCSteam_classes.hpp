@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // Class FluUGCSteam.FluUGCSubsystemSteam
-// 0x0020 (0x0080 - 0x0060)
+// 0x0008 (0x0068 - 0x0060)
 class UFluUGCSubsystemSteam final : public UFluUGCSubsystem
 {
 public:
-	uint8                                         Pad_60[0x20];                                      // 0x0060(0x0020)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_60[0x8];                                       // 0x0060(0x0008)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -34,7 +34,7 @@ public:
 	}
 };
 static_assert(alignof(UFluUGCSubsystemSteam) == 0x000008, "Wrong alignment on UFluUGCSubsystemSteam");
-static_assert(sizeof(UFluUGCSubsystemSteam) == 0x000080, "Wrong size on UFluUGCSubsystemSteam");
+static_assert(sizeof(UFluUGCSubsystemSteam) == 0x000068, "Wrong size on UFluUGCSubsystemSteam");
 
 }
 

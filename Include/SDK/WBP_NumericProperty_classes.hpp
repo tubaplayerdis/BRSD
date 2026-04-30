@@ -28,12 +28,12 @@ public:
 	class UMenuButtonWidget*                      LockButton;                                        // 0x02C0(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_WBP_NumericProperty(int32 EntryPoint);
-	void Destruct();
-	void OnLockButtonClicked();
-	void UpdateNumericProperty(const ENumericValueType ValueType, const int32 NumAxes);
-	void OnBrickUnitsButtonClicked();
 	void AddSliderWidget(class UBrickSliderWidget* Slider);
+	void OnBrickUnitsButtonClicked();
+	void UpdateNumericProperty(const ENumericValueType ValueType, const int32 NumAxes);
+	void OnLockButtonClicked();
+	void Destruct();
+	void ExecuteUbergraph_WBP_NumericProperty(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

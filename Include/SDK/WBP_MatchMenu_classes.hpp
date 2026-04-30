@@ -29,12 +29,12 @@ public:
 	struct FPopupHandle                           ExitPopupHandle;                                   // 0x0290(0x0004)(Edit, BlueprintVisible, DisableEditOnInstance, NoDestructor)
 
 public:
-	void Construct();
-	void OnClickedRestart();
-	void OnConfirmRestartPopupClosed(EPopupResult Result);
-	void UpdateCanApplyMatchSettings(bool bCanApply);
-	void UpdateRestartMatchButton(bool bCanRestart, bool bSameLevelAndMode);
 	void ExecuteUbergraph_WBP_MatchMenu(int32 EntryPoint);
+	void UpdateRestartMatchButton(bool bCanRestart, bool bSameLevelAndMode);
+	void UpdateCanApplyMatchSettings(bool bCanApply);
+	void OnConfirmRestartPopupClosed(EPopupResult Result);
+	void OnClickedRestart();
+	void Construct();
 
 public:
 	static class UClass* StaticClass()

@@ -16,17 +16,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_InputMappings.WBP_InputMappings_C.OnRevertInputPopupClosed
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_InputMappings_C_OnRevertInputPopupClosed final
-{
-public:
-	EPopupResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_InputMappings_C_OnRevertInputPopupClosed) == 0x000001, "Wrong alignment on WBP_InputMappings_C_OnRevertInputPopupClosed");
-static_assert(sizeof(WBP_InputMappings_C_OnRevertInputPopupClosed) == 0x000001, "Wrong size on WBP_InputMappings_C_OnRevertInputPopupClosed");
-static_assert(offsetof(WBP_InputMappings_C_OnRevertInputPopupClosed, Result) == 0x000000, "Member 'WBP_InputMappings_C_OnRevertInputPopupClosed::Result' has a wrong offset!");
-
 // Function WBP_InputMappings.WBP_InputMappings_C.ExecuteUbergraph_WBP_InputMappings
 // 0x0060 (0x0060 - 0x0000)
 struct WBP_InputMappings_C_ExecuteUbergraph_WBP_InputMappings final
@@ -60,6 +49,17 @@ static_assert(offsetof(WBP_InputMappings_C_ExecuteUbergraph_WBP_InputMappings, C
 static_assert(offsetof(WBP_InputMappings_C_ExecuteUbergraph_WBP_InputMappings, K2Node_DynamicCast_AsBrick_Game_Instance) == 0x000050, "Member 'WBP_InputMappings_C_ExecuteUbergraph_WBP_InputMappings::K2Node_DynamicCast_AsBrick_Game_Instance' has a wrong offset!");
 static_assert(offsetof(WBP_InputMappings_C_ExecuteUbergraph_WBP_InputMappings, K2Node_DynamicCast_bSuccess) == 0x000058, "Member 'WBP_InputMappings_C_ExecuteUbergraph_WBP_InputMappings::K2Node_DynamicCast_bSuccess' has a wrong offset!");
 static_assert(offsetof(WBP_InputMappings_C_ExecuteUbergraph_WBP_InputMappings, CallFunc_OpenMessagePopup_ReturnValue) == 0x000059, "Member 'WBP_InputMappings_C_ExecuteUbergraph_WBP_InputMappings::CallFunc_OpenMessagePopup_ReturnValue' has a wrong offset!");
+
+// Function WBP_InputMappings.WBP_InputMappings_C.OnRevertInputPopupClosed
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_InputMappings_C_OnRevertInputPopupClosed final
+{
+public:
+	EPopupResult                                  Result;                                            // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_InputMappings_C_OnRevertInputPopupClosed) == 0x000001, "Wrong alignment on WBP_InputMappings_C_OnRevertInputPopupClosed");
+static_assert(sizeof(WBP_InputMappings_C_OnRevertInputPopupClosed) == 0x000001, "Wrong size on WBP_InputMappings_C_OnRevertInputPopupClosed");
+static_assert(offsetof(WBP_InputMappings_C_OnRevertInputPopupClosed, Result) == 0x000000, "Member 'WBP_InputMappings_C_OnRevertInputPopupClosed::Result' has a wrong offset!");
 
 }
 

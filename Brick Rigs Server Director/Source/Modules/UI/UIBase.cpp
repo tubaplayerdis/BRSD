@@ -59,7 +59,7 @@ void uibase::PrintButtonsInfo()
 {
 	SDK::UWBP_Menu_C* menu = GetMenu();
 	if (menu) {
-		std::cout << "Buttons Used: " << menu->GetButtonPanel()->NumButtonsUsed << std::endl;
+		//std::cout << "Buttons Used: " << menu->GetButtonPanel()->NumButtonsUsed << std::endl;
 		std::cout << "Buttons Per Row: " << menu->GetButtonPanel()->NumButtonsPerRow << std::endl;
 		std::cout << "Num Buttons Array: " << menu->GetButtonPanel()->Buttons.Num() << std::endl;
 	}
@@ -101,7 +101,7 @@ void uibase::Cleanup()
 	if (menu) {
 		SDK::UMenuButtonPanelWidget* panel = menu->GetButtonPanel();
 		if (panel && panel->Buttons.Num() == 8) {
-			panel->NumButtonsUsed = 7;
+			//panel->NumButtonsUsed = 7;
 			panel->RemoveUnusedButtons();
 		}
 	}

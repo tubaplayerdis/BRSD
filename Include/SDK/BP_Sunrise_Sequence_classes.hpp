@@ -17,12 +17,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Sunrise_Sequence.BP_Sunrise_Sequence_C
-// 0x0010 (0x0250 - 0x0240)
+// 0x0010 (0x0260 - 0x0250)
 class ABP_Sunrise_Sequence_C final : public AMenuSequence
 {
 public:
-	class UCameraComponent*                       Camera;                                            // 0x0240(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0248(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCameraComponent*                       Camera;                                            // 0x0250(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0258(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -35,9 +35,9 @@ public:
 	}
 };
 static_assert(alignof(ABP_Sunrise_Sequence_C) == 0x000008, "Wrong alignment on ABP_Sunrise_Sequence_C");
-static_assert(sizeof(ABP_Sunrise_Sequence_C) == 0x000250, "Wrong size on ABP_Sunrise_Sequence_C");
-static_assert(offsetof(ABP_Sunrise_Sequence_C, Camera) == 0x000240, "Member 'ABP_Sunrise_Sequence_C::Camera' has a wrong offset!");
-static_assert(offsetof(ABP_Sunrise_Sequence_C, DefaultSceneRoot) == 0x000248, "Member 'ABP_Sunrise_Sequence_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(sizeof(ABP_Sunrise_Sequence_C) == 0x000260, "Wrong size on ABP_Sunrise_Sequence_C");
+static_assert(offsetof(ABP_Sunrise_Sequence_C, Camera) == 0x000250, "Member 'ABP_Sunrise_Sequence_C::Camera' has a wrong offset!");
+static_assert(offsetof(ABP_Sunrise_Sequence_C, DefaultSceneRoot) == 0x000258, "Member 'ABP_Sunrise_Sequence_C::DefaultSceneRoot' has a wrong offset!");
 
 }
 

@@ -382,7 +382,7 @@ static_assert(offsetof(UNiagaraBakerSettings, CameraAspectRatio) == 0x00010C, "M
 
 // Class Niagara.NiagaraComponent
 // 0x01B0 (0x0660 - 0x04B0)
-class UNiagaraComponent final : public UFXSystemComponent
+class UNiagaraComponent : public UFXSystemComponent
 {
 public:
 	class UNiagaraSystem*                         Asset;                                             // 0x04B0(0x0008)(Edit, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)

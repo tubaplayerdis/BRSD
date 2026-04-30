@@ -17,6 +17,36 @@
 namespace SDK::Params
 {
 
+// Function WBP_UGCItem.WBP_UGCItem_C.BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature
+// 0x0002 (0x0002 - 0x0000)
+struct WBP_UGCItem_C_BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature final
+{
+public:
+	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EBrickUIStyleState                            InContentStyleState;                               // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_UGCItem_C_BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000001, "Wrong alignment on WBP_UGCItem_C_BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
+static_assert(sizeof(WBP_UGCItem_C_BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000002, "Wrong size on WBP_UGCItem_C_BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
+static_assert(offsetof(WBP_UGCItem_C_BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InColorStyle) == 0x000000, "Member 'WBP_UGCItem_C_BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InColorStyle' has a wrong offset!");
+static_assert(offsetof(WBP_UGCItem_C_BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InContentStyleState) == 0x000001, "Member 'WBP_UGCItem_C_BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InContentStyleState' has a wrong offset!");
+
+// Function WBP_UGCItem.WBP_UGCItem_C.UpdateItemWidget
+// 0x0004 (0x0004 - 0x0000)
+struct WBP_UGCItem_C_UpdateItemWidget final
+{
+public:
+	bool                                          bInIsSelected;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bInIsLegacyFile;                                   // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bInHasAutoSave;                                    // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bInIsDedicatedAutoSave;                            // 0x0003(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_UGCItem_C_UpdateItemWidget) == 0x000001, "Wrong alignment on WBP_UGCItem_C_UpdateItemWidget");
+static_assert(sizeof(WBP_UGCItem_C_UpdateItemWidget) == 0x000004, "Wrong size on WBP_UGCItem_C_UpdateItemWidget");
+static_assert(offsetof(WBP_UGCItem_C_UpdateItemWidget, bInIsSelected) == 0x000000, "Member 'WBP_UGCItem_C_UpdateItemWidget::bInIsSelected' has a wrong offset!");
+static_assert(offsetof(WBP_UGCItem_C_UpdateItemWidget, bInIsLegacyFile) == 0x000001, "Member 'WBP_UGCItem_C_UpdateItemWidget::bInIsLegacyFile' has a wrong offset!");
+static_assert(offsetof(WBP_UGCItem_C_UpdateItemWidget, bInHasAutoSave) == 0x000002, "Member 'WBP_UGCItem_C_UpdateItemWidget::bInHasAutoSave' has a wrong offset!");
+static_assert(offsetof(WBP_UGCItem_C_UpdateItemWidget, bInIsDedicatedAutoSave) == 0x000003, "Member 'WBP_UGCItem_C_UpdateItemWidget::bInIsDedicatedAutoSave' has a wrong offset!");
+
 // Function WBP_UGCItem.WBP_UGCItem_C.ExecuteUbergraph_WBP_UGCItem
 // 0x0010 (0x0010 - 0x0000)
 struct WBP_UGCItem_C_ExecuteUbergraph_WBP_UGCItem final
@@ -47,36 +77,6 @@ static_assert(offsetof(WBP_UGCItem_C_ExecuteUbergraph_WBP_UGCItem, K2Node_Event_
 static_assert(offsetof(WBP_UGCItem_C_ExecuteUbergraph_WBP_UGCItem, K2Node_Event_bInHasAutoSave) == 0x00000B, "Member 'WBP_UGCItem_C_ExecuteUbergraph_WBP_UGCItem::K2Node_Event_bInHasAutoSave' has a wrong offset!");
 static_assert(offsetof(WBP_UGCItem_C_ExecuteUbergraph_WBP_UGCItem, K2Node_Event_bInIsDedicatedAutoSave) == 0x00000C, "Member 'WBP_UGCItem_C_ExecuteUbergraph_WBP_UGCItem::K2Node_Event_bInIsDedicatedAutoSave' has a wrong offset!");
 static_assert(offsetof(WBP_UGCItem_C_ExecuteUbergraph_WBP_UGCItem, K2Node_Select_Default) == 0x00000D, "Member 'WBP_UGCItem_C_ExecuteUbergraph_WBP_UGCItem::K2Node_Select_Default' has a wrong offset!");
-
-// Function WBP_UGCItem.WBP_UGCItem_C.UpdateItemWidget
-// 0x0004 (0x0004 - 0x0000)
-struct WBP_UGCItem_C_UpdateItemWidget final
-{
-public:
-	bool                                          bInIsSelected;                                     // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bInIsLegacyFile;                                   // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bInHasAutoSave;                                    // 0x0002(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bInIsDedicatedAutoSave;                            // 0x0003(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_UGCItem_C_UpdateItemWidget) == 0x000001, "Wrong alignment on WBP_UGCItem_C_UpdateItemWidget");
-static_assert(sizeof(WBP_UGCItem_C_UpdateItemWidget) == 0x000004, "Wrong size on WBP_UGCItem_C_UpdateItemWidget");
-static_assert(offsetof(WBP_UGCItem_C_UpdateItemWidget, bInIsSelected) == 0x000000, "Member 'WBP_UGCItem_C_UpdateItemWidget::bInIsSelected' has a wrong offset!");
-static_assert(offsetof(WBP_UGCItem_C_UpdateItemWidget, bInIsLegacyFile) == 0x000001, "Member 'WBP_UGCItem_C_UpdateItemWidget::bInIsLegacyFile' has a wrong offset!");
-static_assert(offsetof(WBP_UGCItem_C_UpdateItemWidget, bInHasAutoSave) == 0x000002, "Member 'WBP_UGCItem_C_UpdateItemWidget::bInHasAutoSave' has a wrong offset!");
-static_assert(offsetof(WBP_UGCItem_C_UpdateItemWidget, bInIsDedicatedAutoSave) == 0x000003, "Member 'WBP_UGCItem_C_UpdateItemWidget::bInIsDedicatedAutoSave' has a wrong offset!");
-
-// Function WBP_UGCItem.WBP_UGCItem_C.BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature
-// 0x0002 (0x0002 - 0x0000)
-struct WBP_UGCItem_C_BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature final
-{
-public:
-	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EBrickUIStyleState                            InContentStyleState;                               // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_UGCItem_C_BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000001, "Wrong alignment on WBP_UGCItem_C_BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
-static_assert(sizeof(WBP_UGCItem_C_BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature) == 0x000002, "Wrong size on WBP_UGCItem_C_BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature");
-static_assert(offsetof(WBP_UGCItem_C_BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InColorStyle) == 0x000000, "Member 'WBP_UGCItem_C_BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InColorStyle' has a wrong offset!");
-static_assert(offsetof(WBP_UGCItem_C_BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature, InContentStyleState) == 0x000001, "Member 'WBP_UGCItem_C_BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature::InContentStyleState' has a wrong offset!");
 
 }
 

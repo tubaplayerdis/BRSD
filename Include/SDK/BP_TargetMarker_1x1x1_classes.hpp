@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_TargetMarker_1x1x1.BP_TargetMarker_1x1x1_C
-// 0x0000 (0x0780 - 0x0780)
+// 0x0000 (0x07B0 - 0x07B0)
 class UBP_TargetMarker_1x1x1_C final : public UTargetMarkerBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_TargetMarker_1x1x1_C) == 0x000010, "Wrong alignment on UBP_TargetMarker_1x1x1_C");
-static_assert(sizeof(UBP_TargetMarker_1x1x1_C) == 0x000780, "Wrong size on UBP_TargetMarker_1x1x1_C");
+static_assert(sizeof(UBP_TargetMarker_1x1x1_C) == 0x0007B0, "Wrong size on UBP_TargetMarker_1x1x1_C");
 
 }
 

@@ -27,8 +27,8 @@ public:
 	class UBrickTextBlock*                        TargetRangeTextBlock;                              // 0x0280(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void UpdateTargetRange(bool bHitSomething, float Distance);
 	void ExecuteUbergraph_WBP_CameraBrick(int32 EntryPoint);
+	void UpdateTargetRange(bool bHitSomething, float Distance);
 
 public:
 	static class UClass* StaticClass()

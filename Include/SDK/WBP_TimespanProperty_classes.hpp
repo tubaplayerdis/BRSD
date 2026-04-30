@@ -11,10 +11,10 @@
 #include "Basic.hpp"
 
 #include "Engine_structs.hpp"
-#include "CoreUObject_structs.hpp"
 #include "UMG_structs.hpp"
 #include "BrickRigs_structs.hpp"
 #include "BrickRigs_classes.hpp"
+#include "CoreUObject_structs.hpp"
 
 
 namespace SDK
@@ -37,15 +37,15 @@ public:
 	struct FTimespan                              MaxValue;                                          // 0x02C8(0x0008)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, NoDestructor, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_WBP_TimespanProperty(int32 EntryPoint);
-	void PreConstruct(bool IsDesignTime);
-	void BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature(float Value, EValueChangedEventType EventType);
-	void BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature(float Value, EValueChangedEventType EventType);
-	void BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature(float Value, EValueChangedEventType EventType);
-	void BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature(float Value, EValueChangedEventType EventType);
-	void BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
-	void BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InContentStyleState);
 	void UpdateTimespanProperty(const struct FTimespan& Timespan, const struct FTimespan& MinValue_0, const struct FTimespan& MaxValue_0, bool bAllowInfinite);
+	void BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InContentStyleState);
+	void BndEvt__WBP_TimespanProperty_InfiniteButton_K2Node_ComponentBoundEvent_1_OnClicked__DelegateSignature();
+	void BndEvt__WBP_TimespanProperty_SecondsSlider_K2Node_ComponentBoundEvent_2_OnSliderValueChanged__DelegateSignature(float Value, EValueChangedEventType EventType);
+	void BndEvt__WBP_TimespanProperty_MinutesSlider_K2Node_ComponentBoundEvent_3_OnSliderValueChanged__DelegateSignature(float Value, EValueChangedEventType EventType);
+	void BndEvt__WBP_TimespanProperty_HoursSlider_K2Node_ComponentBoundEvent_4_OnSliderValueChanged__DelegateSignature(float Value, EValueChangedEventType EventType);
+	void BndEvt__WBP_TimespanProperty_DaysSlider_K2Node_ComponentBoundEvent_5_OnSliderValueChanged__DelegateSignature(float Value, EValueChangedEventType EventType);
+	void PreConstruct(bool IsDesignTime);
+	void ExecuteUbergraph_WBP_TimespanProperty(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_EMotor_2x2x2.BP_EMotor_2x2x2_C
-// 0x0000 (0x01E8 - 0x01E8)
+// 0x0000 (0x0208 - 0x0208)
 class UBP_EMotor_2x2x2_C final : public UMotorBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_EMotor_2x2x2_C) == 0x000008, "Wrong alignment on UBP_EMotor_2x2x2_C");
-static_assert(sizeof(UBP_EMotor_2x2x2_C) == 0x0001E8, "Wrong size on UBP_EMotor_2x2x2_C");
+static_assert(sizeof(UBP_EMotor_2x2x2_C) == 0x000208, "Wrong size on UBP_EMotor_2x2x2_C");
 
 }
 

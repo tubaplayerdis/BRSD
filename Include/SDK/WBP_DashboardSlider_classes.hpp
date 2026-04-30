@@ -28,9 +28,9 @@ public:
 	class UBrickImage*                            IconImage;                                         // 0x0280(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void UpdateIcon(int32 IconIndex);
-	void UpdateColorStyle(EBrickUIColorStyle NewStyle);
 	void ExecuteUbergraph_WBP_DashboardSlider(int32 EntryPoint);
+	void UpdateColorStyle(EBrickUIColorStyle NewStyle);
+	void UpdateIcon(int32 IconIndex);
 
 public:
 	static class UClass* StaticClass()

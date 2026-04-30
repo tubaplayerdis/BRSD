@@ -19,7 +19,7 @@ namespace SDK
 
 // BlueprintGeneratedClass BP_CarElevator.BP_CarElevator_C
 // 0x0058 (0x0300 - 0x02A8)
-class ABP_CarElevator_C : public AElevator
+class ABP_CarElevator_C final : public AElevator
 {
 public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02A8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)

@@ -67,25 +67,49 @@ enum class EWaterBrushFalloffMode : uint8
 	EWaterBrushFalloffMode_MAX               = 2,
 };
 
-// ScriptStruct Water.WaterFalloffSettings
-// 0x0014 (0x0014 - 0x0000)
-struct FWaterFalloffSettings final
+// ScriptStruct Water.SphericalPontoon
+// 0x0220 (0x0220 - 0x0000)
+struct FSphericalPontoon final
 {
 public:
-	EWaterBrushFalloffMode                        FalloffMode;                                       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         FalloffAngle;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         FalloffWidth;                                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         EdgeOffset;                                        // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ZOffset;                                           // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FName                                   CenterSocket;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                RelativeLocation;                                  // 0x0008(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         Radius;                                            // 0x0014(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                LocalForce;                                        // 0x0018(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                CenterLocation;                                    // 0x0024(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FQuat                                  SocketRotation;                                    // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
+	struct FVector                                Offset;                                            // 0x0040(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         WaterHeight;                                       // 0x0050(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         WaterDepth;                                        // 0x0054(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ImmersionDepth;                                    // 0x0058(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                WaterPlaneLocation;                                // 0x005C(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                WaterPlaneNormal;                                  // 0x0068(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                WaterSurfacePosition;                              // 0x0074(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	struct FVector                                WaterVelocity;                                     // 0x0080(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	int32                                         WaterBodyIndex;                                    // 0x008C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_90[0x178];                                     // 0x0090(0x0178)(Fixing Size After Last Property [ Dumper-7 ])
+	class AWaterBody*                             CurrentWaterBody;                                  // 0x0208(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_210[0x10];                                     // 0x0210(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
-static_assert(alignof(FWaterFalloffSettings) == 0x000004, "Wrong alignment on FWaterFalloffSettings");
-static_assert(sizeof(FWaterFalloffSettings) == 0x000014, "Wrong size on FWaterFalloffSettings");
-static_assert(offsetof(FWaterFalloffSettings, FalloffMode) == 0x000000, "Member 'FWaterFalloffSettings::FalloffMode' has a wrong offset!");
-static_assert(offsetof(FWaterFalloffSettings, FalloffAngle) == 0x000004, "Member 'FWaterFalloffSettings::FalloffAngle' has a wrong offset!");
-static_assert(offsetof(FWaterFalloffSettings, FalloffWidth) == 0x000008, "Member 'FWaterFalloffSettings::FalloffWidth' has a wrong offset!");
-static_assert(offsetof(FWaterFalloffSettings, EdgeOffset) == 0x00000C, "Member 'FWaterFalloffSettings::EdgeOffset' has a wrong offset!");
-static_assert(offsetof(FWaterFalloffSettings, ZOffset) == 0x000010, "Member 'FWaterFalloffSettings::ZOffset' has a wrong offset!");
+static_assert(alignof(FSphericalPontoon) == 0x000010, "Wrong alignment on FSphericalPontoon");
+static_assert(sizeof(FSphericalPontoon) == 0x000220, "Wrong size on FSphericalPontoon");
+static_assert(offsetof(FSphericalPontoon, CenterSocket) == 0x000000, "Member 'FSphericalPontoon::CenterSocket' has a wrong offset!");
+static_assert(offsetof(FSphericalPontoon, RelativeLocation) == 0x000008, "Member 'FSphericalPontoon::RelativeLocation' has a wrong offset!");
+static_assert(offsetof(FSphericalPontoon, Radius) == 0x000014, "Member 'FSphericalPontoon::Radius' has a wrong offset!");
+static_assert(offsetof(FSphericalPontoon, LocalForce) == 0x000018, "Member 'FSphericalPontoon::LocalForce' has a wrong offset!");
+static_assert(offsetof(FSphericalPontoon, CenterLocation) == 0x000024, "Member 'FSphericalPontoon::CenterLocation' has a wrong offset!");
+static_assert(offsetof(FSphericalPontoon, SocketRotation) == 0x000030, "Member 'FSphericalPontoon::SocketRotation' has a wrong offset!");
+static_assert(offsetof(FSphericalPontoon, Offset) == 0x000040, "Member 'FSphericalPontoon::Offset' has a wrong offset!");
+static_assert(offsetof(FSphericalPontoon, WaterHeight) == 0x000050, "Member 'FSphericalPontoon::WaterHeight' has a wrong offset!");
+static_assert(offsetof(FSphericalPontoon, WaterDepth) == 0x000054, "Member 'FSphericalPontoon::WaterDepth' has a wrong offset!");
+static_assert(offsetof(FSphericalPontoon, ImmersionDepth) == 0x000058, "Member 'FSphericalPontoon::ImmersionDepth' has a wrong offset!");
+static_assert(offsetof(FSphericalPontoon, WaterPlaneLocation) == 0x00005C, "Member 'FSphericalPontoon::WaterPlaneLocation' has a wrong offset!");
+static_assert(offsetof(FSphericalPontoon, WaterPlaneNormal) == 0x000068, "Member 'FSphericalPontoon::WaterPlaneNormal' has a wrong offset!");
+static_assert(offsetof(FSphericalPontoon, WaterSurfacePosition) == 0x000074, "Member 'FSphericalPontoon::WaterSurfacePosition' has a wrong offset!");
+static_assert(offsetof(FSphericalPontoon, WaterVelocity) == 0x000080, "Member 'FSphericalPontoon::WaterVelocity' has a wrong offset!");
+static_assert(offsetof(FSphericalPontoon, WaterBodyIndex) == 0x00008C, "Member 'FSphericalPontoon::WaterBodyIndex' has a wrong offset!");
+static_assert(offsetof(FSphericalPontoon, CurrentWaterBody) == 0x000208, "Member 'FSphericalPontoon::CurrentWaterBody' has a wrong offset!");
 
 // ScriptStruct Water.WaterBrushEffectBlurring
 // 0x0008 (0x0008 - 0x0000)
@@ -190,71 +214,6 @@ static_assert(offsetof(FWaterBrushEffects, CurlNoise) == 0x000008, "Member 'FWat
 static_assert(offsetof(FWaterBrushEffects, Displacement) == 0x000018, "Member 'FWaterBrushEffects::Displacement' has a wrong offset!");
 static_assert(offsetof(FWaterBrushEffects, SmoothBlending) == 0x000040, "Member 'FWaterBrushEffects::SmoothBlending' has a wrong offset!");
 static_assert(offsetof(FWaterBrushEffects, Terracing) == 0x000048, "Member 'FWaterBrushEffects::Terracing' has a wrong offset!");
-
-// ScriptStruct Water.WaterBodyHeightmapSettings
-// 0x0080 (0x0080 - 0x0000)
-struct FWaterBodyHeightmapSettings final
-{
-public:
-	EWaterBrushBlendType                          BlendMode;                                         // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	bool                                          bInvertShape;                                      // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FWaterFalloffSettings                  FalloffSettings;                                   // 0x0004(0x0014)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	struct FWaterBrushEffects                     Effects;                                           // 0x0018(0x0060)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
-	int32                                         Priority;                                          // 0x0078(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FWaterBodyHeightmapSettings) == 0x000008, "Wrong alignment on FWaterBodyHeightmapSettings");
-static_assert(sizeof(FWaterBodyHeightmapSettings) == 0x000080, "Wrong size on FWaterBodyHeightmapSettings");
-static_assert(offsetof(FWaterBodyHeightmapSettings, BlendMode) == 0x000000, "Member 'FWaterBodyHeightmapSettings::BlendMode' has a wrong offset!");
-static_assert(offsetof(FWaterBodyHeightmapSettings, bInvertShape) == 0x000001, "Member 'FWaterBodyHeightmapSettings::bInvertShape' has a wrong offset!");
-static_assert(offsetof(FWaterBodyHeightmapSettings, FalloffSettings) == 0x000004, "Member 'FWaterBodyHeightmapSettings::FalloffSettings' has a wrong offset!");
-static_assert(offsetof(FWaterBodyHeightmapSettings, Effects) == 0x000018, "Member 'FWaterBodyHeightmapSettings::Effects' has a wrong offset!");
-static_assert(offsetof(FWaterBodyHeightmapSettings, Priority) == 0x000078, "Member 'FWaterBodyHeightmapSettings::Priority' has a wrong offset!");
-
-// ScriptStruct Water.SphericalPontoon
-// 0x0220 (0x0220 - 0x0000)
-struct FSphericalPontoon final
-{
-public:
-	class FName                                   CenterSocket;                                      // 0x0000(0x0008)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                RelativeLocation;                                  // 0x0008(0x000C)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         Radius;                                            // 0x0014(0x0004)(Edit, BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                LocalForce;                                        // 0x0018(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                CenterLocation;                                    // 0x0024(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FQuat                                  SocketRotation;                                    // 0x0030(0x0010)(BlueprintVisible, BlueprintReadOnly, IsPlainOldData, NoDestructor, NativeAccessSpecifierPublic)
-	struct FVector                                Offset;                                            // 0x0040(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_4C[0x4];                                       // 0x004C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	float                                         WaterHeight;                                       // 0x0050(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         WaterDepth;                                        // 0x0054(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	float                                         ImmersionDepth;                                    // 0x0058(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                WaterPlaneLocation;                                // 0x005C(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                WaterPlaneNormal;                                  // 0x0068(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                WaterSurfacePosition;                              // 0x0074(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	struct FVector                                WaterVelocity;                                     // 0x0080(0x000C)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	int32                                         WaterBodyIndex;                                    // 0x008C(0x0004)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_90[0x178];                                     // 0x0090(0x0178)(Fixing Size After Last Property [ Dumper-7 ])
-	class AWaterBody*                             CurrentWaterBody;                                  // 0x0208(0x0008)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, Transient, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_210[0x10];                                     // 0x0210(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
-};
-static_assert(alignof(FSphericalPontoon) == 0x000010, "Wrong alignment on FSphericalPontoon");
-static_assert(sizeof(FSphericalPontoon) == 0x000220, "Wrong size on FSphericalPontoon");
-static_assert(offsetof(FSphericalPontoon, CenterSocket) == 0x000000, "Member 'FSphericalPontoon::CenterSocket' has a wrong offset!");
-static_assert(offsetof(FSphericalPontoon, RelativeLocation) == 0x000008, "Member 'FSphericalPontoon::RelativeLocation' has a wrong offset!");
-static_assert(offsetof(FSphericalPontoon, Radius) == 0x000014, "Member 'FSphericalPontoon::Radius' has a wrong offset!");
-static_assert(offsetof(FSphericalPontoon, LocalForce) == 0x000018, "Member 'FSphericalPontoon::LocalForce' has a wrong offset!");
-static_assert(offsetof(FSphericalPontoon, CenterLocation) == 0x000024, "Member 'FSphericalPontoon::CenterLocation' has a wrong offset!");
-static_assert(offsetof(FSphericalPontoon, SocketRotation) == 0x000030, "Member 'FSphericalPontoon::SocketRotation' has a wrong offset!");
-static_assert(offsetof(FSphericalPontoon, Offset) == 0x000040, "Member 'FSphericalPontoon::Offset' has a wrong offset!");
-static_assert(offsetof(FSphericalPontoon, WaterHeight) == 0x000050, "Member 'FSphericalPontoon::WaterHeight' has a wrong offset!");
-static_assert(offsetof(FSphericalPontoon, WaterDepth) == 0x000054, "Member 'FSphericalPontoon::WaterDepth' has a wrong offset!");
-static_assert(offsetof(FSphericalPontoon, ImmersionDepth) == 0x000058, "Member 'FSphericalPontoon::ImmersionDepth' has a wrong offset!");
-static_assert(offsetof(FSphericalPontoon, WaterPlaneLocation) == 0x00005C, "Member 'FSphericalPontoon::WaterPlaneLocation' has a wrong offset!");
-static_assert(offsetof(FSphericalPontoon, WaterPlaneNormal) == 0x000068, "Member 'FSphericalPontoon::WaterPlaneNormal' has a wrong offset!");
-static_assert(offsetof(FSphericalPontoon, WaterSurfacePosition) == 0x000074, "Member 'FSphericalPontoon::WaterSurfacePosition' has a wrong offset!");
-static_assert(offsetof(FSphericalPontoon, WaterVelocity) == 0x000080, "Member 'FSphericalPontoon::WaterVelocity' has a wrong offset!");
-static_assert(offsetof(FSphericalPontoon, WaterBodyIndex) == 0x00008C, "Member 'FSphericalPontoon::WaterBodyIndex' has a wrong offset!");
-static_assert(offsetof(FSphericalPontoon, CurrentWaterBody) == 0x000208, "Member 'FSphericalPontoon::CurrentWaterBody' has a wrong offset!");
 
 // ScriptStruct Water.BuoyancyData
 // 0x0050 (0x0050 - 0x0000)
@@ -367,6 +326,47 @@ static_assert(offsetof(FUnderwaterPostProcessSettings, BlendRadius) == 0x000008,
 static_assert(offsetof(FUnderwaterPostProcessSettings, BlendWeight) == 0x00000C, "Member 'FUnderwaterPostProcessSettings::BlendWeight' has a wrong offset!");
 static_assert(offsetof(FUnderwaterPostProcessSettings, PostProcessSettings) == 0x000010, "Member 'FUnderwaterPostProcessSettings::PostProcessSettings' has a wrong offset!");
 static_assert(offsetof(FUnderwaterPostProcessSettings, UnderwaterPostProcessMaterial) == 0x000570, "Member 'FUnderwaterPostProcessSettings::UnderwaterPostProcessMaterial' has a wrong offset!");
+
+// ScriptStruct Water.WaterFalloffSettings
+// 0x0014 (0x0014 - 0x0000)
+struct FWaterFalloffSettings final
+{
+public:
+	EWaterBrushFalloffMode                        FalloffMode;                                       // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_1[0x3];                                        // 0x0001(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	float                                         FalloffAngle;                                      // 0x0004(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         FalloffWidth;                                      // 0x0008(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         EdgeOffset;                                        // 0x000C(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	float                                         ZOffset;                                           // 0x0010(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FWaterFalloffSettings) == 0x000004, "Wrong alignment on FWaterFalloffSettings");
+static_assert(sizeof(FWaterFalloffSettings) == 0x000014, "Wrong size on FWaterFalloffSettings");
+static_assert(offsetof(FWaterFalloffSettings, FalloffMode) == 0x000000, "Member 'FWaterFalloffSettings::FalloffMode' has a wrong offset!");
+static_assert(offsetof(FWaterFalloffSettings, FalloffAngle) == 0x000004, "Member 'FWaterFalloffSettings::FalloffAngle' has a wrong offset!");
+static_assert(offsetof(FWaterFalloffSettings, FalloffWidth) == 0x000008, "Member 'FWaterFalloffSettings::FalloffWidth' has a wrong offset!");
+static_assert(offsetof(FWaterFalloffSettings, EdgeOffset) == 0x00000C, "Member 'FWaterFalloffSettings::EdgeOffset' has a wrong offset!");
+static_assert(offsetof(FWaterFalloffSettings, ZOffset) == 0x000010, "Member 'FWaterFalloffSettings::ZOffset' has a wrong offset!");
+
+// ScriptStruct Water.WaterBodyHeightmapSettings
+// 0x0080 (0x0080 - 0x0000)
+struct FWaterBodyHeightmapSettings final
+{
+public:
+	EWaterBrushBlendType                          BlendMode;                                         // 0x0000(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	bool                                          bInvertShape;                                      // 0x0001(0x0001)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_2[0x2];                                        // 0x0002(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FWaterFalloffSettings                  FalloffSettings;                                   // 0x0004(0x0014)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	struct FWaterBrushEffects                     Effects;                                           // 0x0018(0x0060)(Edit, BlueprintVisible, NoDestructor, NativeAccessSpecifierPublic)
+	int32                                         Priority;                                          // 0x0078(0x0004)(Edit, BlueprintVisible, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_7C[0x4];                                       // 0x007C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
+};
+static_assert(alignof(FWaterBodyHeightmapSettings) == 0x000008, "Wrong alignment on FWaterBodyHeightmapSettings");
+static_assert(sizeof(FWaterBodyHeightmapSettings) == 0x000080, "Wrong size on FWaterBodyHeightmapSettings");
+static_assert(offsetof(FWaterBodyHeightmapSettings, BlendMode) == 0x000000, "Member 'FWaterBodyHeightmapSettings::BlendMode' has a wrong offset!");
+static_assert(offsetof(FWaterBodyHeightmapSettings, bInvertShape) == 0x000001, "Member 'FWaterBodyHeightmapSettings::bInvertShape' has a wrong offset!");
+static_assert(offsetof(FWaterBodyHeightmapSettings, FalloffSettings) == 0x000004, "Member 'FWaterBodyHeightmapSettings::FalloffSettings' has a wrong offset!");
+static_assert(offsetof(FWaterBodyHeightmapSettings, Effects) == 0x000018, "Member 'FWaterBodyHeightmapSettings::Effects' has a wrong offset!");
+static_assert(offsetof(FWaterBodyHeightmapSettings, Priority) == 0x000078, "Member 'FWaterBodyHeightmapSettings::Priority' has a wrong offset!");
 
 // ScriptStruct Water.WaterBodyWeightmapSettings
 // 0x0020 (0x0020 - 0x0000)

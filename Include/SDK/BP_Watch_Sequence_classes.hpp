@@ -17,13 +17,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Watch_Sequence.BP_Watch_Sequence_C
-// 0x0018 (0x0258 - 0x0240)
+// 0x0018 (0x0268 - 0x0250)
 class ABP_Watch_Sequence_C final : public AMenuSequence
 {
 public:
-	class UCameraComponent*                       Camera;                                            // 0x0240(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USceneComponent*                        Scene;                                             // 0x0248(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class USkeletalMeshComponent*                 SkeletalMesh;                                      // 0x0250(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UCameraComponent*                       Camera;                                            // 0x0250(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        Scene;                                             // 0x0258(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USkeletalMeshComponent*                 SkeletalMesh;                                      // 0x0260(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -36,10 +36,10 @@ public:
 	}
 };
 static_assert(alignof(ABP_Watch_Sequence_C) == 0x000008, "Wrong alignment on ABP_Watch_Sequence_C");
-static_assert(sizeof(ABP_Watch_Sequence_C) == 0x000258, "Wrong size on ABP_Watch_Sequence_C");
-static_assert(offsetof(ABP_Watch_Sequence_C, Camera) == 0x000240, "Member 'ABP_Watch_Sequence_C::Camera' has a wrong offset!");
-static_assert(offsetof(ABP_Watch_Sequence_C, Scene) == 0x000248, "Member 'ABP_Watch_Sequence_C::Scene' has a wrong offset!");
-static_assert(offsetof(ABP_Watch_Sequence_C, SkeletalMesh) == 0x000250, "Member 'ABP_Watch_Sequence_C::SkeletalMesh' has a wrong offset!");
+static_assert(sizeof(ABP_Watch_Sequence_C) == 0x000268, "Wrong size on ABP_Watch_Sequence_C");
+static_assert(offsetof(ABP_Watch_Sequence_C, Camera) == 0x000250, "Member 'ABP_Watch_Sequence_C::Camera' has a wrong offset!");
+static_assert(offsetof(ABP_Watch_Sequence_C, Scene) == 0x000258, "Member 'ABP_Watch_Sequence_C::Scene' has a wrong offset!");
+static_assert(offsetof(ABP_Watch_Sequence_C, SkeletalMesh) == 0x000260, "Member 'ABP_Watch_Sequence_C::SkeletalMesh' has a wrong offset!");
 
 }
 

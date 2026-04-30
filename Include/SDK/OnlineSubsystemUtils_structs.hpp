@@ -150,21 +150,6 @@ static_assert(sizeof(FInAppPurchaseProductRequest2) == 0x000018, "Wrong size on 
 static_assert(offsetof(FInAppPurchaseProductRequest2, ProductIdentifier) == 0x000000, "Member 'FInAppPurchaseProductRequest2::ProductIdentifier' has a wrong offset!");
 static_assert(offsetof(FInAppPurchaseProductRequest2, bIsConsumable) == 0x000010, "Member 'FInAppPurchaseProductRequest2::bIsConsumable' has a wrong offset!");
 
-// ScriptStruct OnlineSubsystemUtils.InAppPurchaseReceiptInfo
-// 0x0030 (0x0030 - 0x0000)
-struct FInAppPurchaseReceiptInfo final
-{
-public:
-	class FString                                 ItemName;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ItemId;                                            // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	class FString                                 ValidationInfo;                                    // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-};
-static_assert(alignof(FInAppPurchaseReceiptInfo) == 0x000008, "Wrong alignment on FInAppPurchaseReceiptInfo");
-static_assert(sizeof(FInAppPurchaseReceiptInfo) == 0x000030, "Wrong size on FInAppPurchaseReceiptInfo");
-static_assert(offsetof(FInAppPurchaseReceiptInfo, ItemName) == 0x000000, "Member 'FInAppPurchaseReceiptInfo::ItemName' has a wrong offset!");
-static_assert(offsetof(FInAppPurchaseReceiptInfo, ItemId) == 0x000010, "Member 'FInAppPurchaseReceiptInfo::ItemId' has a wrong offset!");
-static_assert(offsetof(FInAppPurchaseReceiptInfo, ValidationInfo) == 0x000020, "Member 'FInAppPurchaseReceiptInfo::ValidationInfo' has a wrong offset!");
-
 // ScriptStruct OnlineSubsystemUtils.InAppPurchaseReceiptInfo2
 // 0x0030 (0x0030 - 0x0000)
 struct FInAppPurchaseReceiptInfo2 final
@@ -232,6 +217,21 @@ static_assert(offsetof(FOnlineProxyStoreOffer, ReleaseDate) == 0x0000A8, "Member
 static_assert(offsetof(FOnlineProxyStoreOffer, ExpirationDate) == 0x0000B0, "Member 'FOnlineProxyStoreOffer::ExpirationDate' has a wrong offset!");
 static_assert(offsetof(FOnlineProxyStoreOffer, DiscountType) == 0x0000B8, "Member 'FOnlineProxyStoreOffer::DiscountType' has a wrong offset!");
 static_assert(offsetof(FOnlineProxyStoreOffer, DynamicFields) == 0x0000C0, "Member 'FOnlineProxyStoreOffer::DynamicFields' has a wrong offset!");
+
+// ScriptStruct OnlineSubsystemUtils.InAppPurchaseReceiptInfo
+// 0x0030 (0x0030 - 0x0000)
+struct FInAppPurchaseReceiptInfo final
+{
+public:
+	class FString                                 ItemName;                                          // 0x0000(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ItemId;                                            // 0x0010(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	class FString                                 ValidationInfo;                                    // 0x0020(0x0010)(BlueprintVisible, BlueprintReadOnly, ZeroConstructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+};
+static_assert(alignof(FInAppPurchaseReceiptInfo) == 0x000008, "Wrong alignment on FInAppPurchaseReceiptInfo");
+static_assert(sizeof(FInAppPurchaseReceiptInfo) == 0x000030, "Wrong size on FInAppPurchaseReceiptInfo");
+static_assert(offsetof(FInAppPurchaseReceiptInfo, ItemName) == 0x000000, "Member 'FInAppPurchaseReceiptInfo::ItemName' has a wrong offset!");
+static_assert(offsetof(FInAppPurchaseReceiptInfo, ItemId) == 0x000010, "Member 'FInAppPurchaseReceiptInfo::ItemId' has a wrong offset!");
+static_assert(offsetof(FInAppPurchaseReceiptInfo, ValidationInfo) == 0x000020, "Member 'FInAppPurchaseReceiptInfo::ValidationInfo' has a wrong offset!");
 
 // ScriptStruct OnlineSubsystemUtils.InAppPurchaseProductInfo2
 // 0x00F8 (0x00F8 - 0x0000)

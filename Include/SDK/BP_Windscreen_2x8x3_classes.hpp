@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Windscreen_2x8x3.BP_Windscreen_2x8x3_C
-// 0x0000 (0x0168 - 0x0168)
+// 0x0000 (0x0190 - 0x0190)
 class UBP_Windscreen_2x8x3_C final : public UWindowBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_Windscreen_2x8x3_C) == 0x000008, "Wrong alignment on UBP_Windscreen_2x8x3_C");
-static_assert(sizeof(UBP_Windscreen_2x8x3_C) == 0x000168, "Wrong size on UBP_Windscreen_2x8x3_C");
+static_assert(sizeof(UBP_Windscreen_2x8x3_C) == 0x000190, "Wrong size on UBP_Windscreen_2x8x3_C");
 
 }
 

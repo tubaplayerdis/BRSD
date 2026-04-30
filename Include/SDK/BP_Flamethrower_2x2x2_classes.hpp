@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Flamethrower_2x2x2.BP_Flamethrower_2x2x2_C
-// 0x0000 (0x01A0 - 0x01A0)
+// 0x0000 (0x01C8 - 0x01C8)
 class UBP_Flamethrower_2x2x2_C final : public UFlamethrowerBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_Flamethrower_2x2x2_C) == 0x000008, "Wrong alignment on UBP_Flamethrower_2x2x2_C");
-static_assert(sizeof(UBP_Flamethrower_2x2x2_C) == 0x0001A0, "Wrong size on UBP_Flamethrower_2x2x2_C");
+static_assert(sizeof(UBP_Flamethrower_2x2x2_C) == 0x0001C8, "Wrong size on UBP_Flamethrower_2x2x2_C");
 
 }
 

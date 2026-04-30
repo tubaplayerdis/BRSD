@@ -14,45 +14,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_Dashboard.WBP_Dashboard_C.AddSliderWidget
-// 0x0008 (0x0008 - 0x0000)
-struct WBP_Dashboard_C_AddSliderWidget final
-{
-public:
-	class UDashboardSliderWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_Dashboard_C_AddSliderWidget) == 0x000008, "Wrong alignment on WBP_Dashboard_C_AddSliderWidget");
-static_assert(sizeof(WBP_Dashboard_C_AddSliderWidget) == 0x000008, "Wrong size on WBP_Dashboard_C_AddSliderWidget");
-static_assert(offsetof(WBP_Dashboard_C_AddSliderWidget, Widget) == 0x000000, "Member 'WBP_Dashboard_C_AddSliderWidget::Widget' has a wrong offset!");
-
-// Function WBP_Dashboard.WBP_Dashboard_C.AddIconWidget
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_Dashboard_C_AddIconWidget final
-{
-public:
-	class UDashboardIconWidget*                   Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Index_0;                                           // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_Dashboard_C_AddIconWidget) == 0x000008, "Wrong alignment on WBP_Dashboard_C_AddIconWidget");
-static_assert(sizeof(WBP_Dashboard_C_AddIconWidget) == 0x000010, "Wrong size on WBP_Dashboard_C_AddIconWidget");
-static_assert(offsetof(WBP_Dashboard_C_AddIconWidget, Widget) == 0x000000, "Member 'WBP_Dashboard_C_AddIconWidget::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_Dashboard_C_AddIconWidget, Index_0) == 0x000008, "Member 'WBP_Dashboard_C_AddIconWidget::Index_0' has a wrong offset!");
-
-// Function WBP_Dashboard.WBP_Dashboard_C.UpdateSliderWidgetSlot
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_Dashboard_C_UpdateSliderWidgetSlot final
-{
-public:
-	class UDashboardSliderWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         Index_0;                                           // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	int32                                         NumSliders;                                        // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_Dashboard_C_UpdateSliderWidgetSlot) == 0x000008, "Wrong alignment on WBP_Dashboard_C_UpdateSliderWidgetSlot");
-static_assert(sizeof(WBP_Dashboard_C_UpdateSliderWidgetSlot) == 0x000010, "Wrong size on WBP_Dashboard_C_UpdateSliderWidgetSlot");
-static_assert(offsetof(WBP_Dashboard_C_UpdateSliderWidgetSlot, Widget) == 0x000000, "Member 'WBP_Dashboard_C_UpdateSliderWidgetSlot::Widget' has a wrong offset!");
-static_assert(offsetof(WBP_Dashboard_C_UpdateSliderWidgetSlot, Index_0) == 0x000008, "Member 'WBP_Dashboard_C_UpdateSliderWidgetSlot::Index_0' has a wrong offset!");
-static_assert(offsetof(WBP_Dashboard_C_UpdateSliderWidgetSlot, NumSliders) == 0x00000C, "Member 'WBP_Dashboard_C_UpdateSliderWidgetSlot::NumSliders' has a wrong offset!");
-
 // Function WBP_Dashboard.WBP_Dashboard_C.ExecuteUbergraph_WBP_Dashboard
 // 0x0078 (0x0078 - 0x0000)
 struct WBP_Dashboard_C_ExecuteUbergraph_WBP_Dashboard final
@@ -112,6 +73,45 @@ static_assert(offsetof(WBP_Dashboard_C_ExecuteUbergraph_WBP_Dashboard, CallFunc_
 static_assert(offsetof(WBP_Dashboard_C_ExecuteUbergraph_WBP_Dashboard, CallFunc_BooleanAND_ReturnValue) == 0x000068, "Member 'WBP_Dashboard_C_ExecuteUbergraph_WBP_Dashboard::CallFunc_BooleanAND_ReturnValue' has a wrong offset!");
 static_assert(offsetof(WBP_Dashboard_C_ExecuteUbergraph_WBP_Dashboard, K2Node_Select_Default) == 0x00006C, "Member 'WBP_Dashboard_C_ExecuteUbergraph_WBP_Dashboard::K2Node_Select_Default' has a wrong offset!");
 static_assert(offsetof(WBP_Dashboard_C_ExecuteUbergraph_WBP_Dashboard, CallFunc_AddChildToHorizontalBox_ReturnValue) == 0x000070, "Member 'WBP_Dashboard_C_ExecuteUbergraph_WBP_Dashboard::CallFunc_AddChildToHorizontalBox_ReturnValue' has a wrong offset!");
+
+// Function WBP_Dashboard.WBP_Dashboard_C.UpdateSliderWidgetSlot
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_Dashboard_C_UpdateSliderWidgetSlot final
+{
+public:
+	class UDashboardSliderWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Index_0;                                           // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         NumSliders;                                        // 0x000C(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_Dashboard_C_UpdateSliderWidgetSlot) == 0x000008, "Wrong alignment on WBP_Dashboard_C_UpdateSliderWidgetSlot");
+static_assert(sizeof(WBP_Dashboard_C_UpdateSliderWidgetSlot) == 0x000010, "Wrong size on WBP_Dashboard_C_UpdateSliderWidgetSlot");
+static_assert(offsetof(WBP_Dashboard_C_UpdateSliderWidgetSlot, Widget) == 0x000000, "Member 'WBP_Dashboard_C_UpdateSliderWidgetSlot::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_Dashboard_C_UpdateSliderWidgetSlot, Index_0) == 0x000008, "Member 'WBP_Dashboard_C_UpdateSliderWidgetSlot::Index_0' has a wrong offset!");
+static_assert(offsetof(WBP_Dashboard_C_UpdateSliderWidgetSlot, NumSliders) == 0x00000C, "Member 'WBP_Dashboard_C_UpdateSliderWidgetSlot::NumSliders' has a wrong offset!");
+
+// Function WBP_Dashboard.WBP_Dashboard_C.AddIconWidget
+// 0x0010 (0x0010 - 0x0000)
+struct WBP_Dashboard_C_AddIconWidget final
+{
+public:
+	class UDashboardIconWidget*                   Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	int32                                         Index_0;                                           // 0x0008(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_Dashboard_C_AddIconWidget) == 0x000008, "Wrong alignment on WBP_Dashboard_C_AddIconWidget");
+static_assert(sizeof(WBP_Dashboard_C_AddIconWidget) == 0x000010, "Wrong size on WBP_Dashboard_C_AddIconWidget");
+static_assert(offsetof(WBP_Dashboard_C_AddIconWidget, Widget) == 0x000000, "Member 'WBP_Dashboard_C_AddIconWidget::Widget' has a wrong offset!");
+static_assert(offsetof(WBP_Dashboard_C_AddIconWidget, Index_0) == 0x000008, "Member 'WBP_Dashboard_C_AddIconWidget::Index_0' has a wrong offset!");
+
+// Function WBP_Dashboard.WBP_Dashboard_C.AddSliderWidget
+// 0x0008 (0x0008 - 0x0000)
+struct WBP_Dashboard_C_AddSliderWidget final
+{
+public:
+	class UDashboardSliderWidget*                 Widget;                                            // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_Dashboard_C_AddSliderWidget) == 0x000008, "Wrong alignment on WBP_Dashboard_C_AddSliderWidget");
+static_assert(sizeof(WBP_Dashboard_C_AddSliderWidget) == 0x000008, "Wrong size on WBP_Dashboard_C_AddSliderWidget");
+static_assert(offsetof(WBP_Dashboard_C_AddSliderWidget, Widget) == 0x000000, "Member 'WBP_Dashboard_C_AddSliderWidget::Widget' has a wrong offset!");
 
 }
 

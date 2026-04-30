@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_ScalableCylinder90R0.BP_ScalableCylinder90R0_C
-// 0x0000 (0x01A0 - 0x01A0)
+// 0x0000 (0x01D0 - 0x01D0)
 class UBP_ScalableCylinder90R0_C final : public UScalableBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_ScalableCylinder90R0_C) == 0x000008, "Wrong alignment on UBP_ScalableCylinder90R0_C");
-static_assert(sizeof(UBP_ScalableCylinder90R0_C) == 0x0001A0, "Wrong size on UBP_ScalableCylinder90R0_C");
+static_assert(sizeof(UBP_ScalableCylinder90R0_C) == 0x0001D0, "Wrong size on UBP_ScalableCylinder90R0_C");
 
 }
 

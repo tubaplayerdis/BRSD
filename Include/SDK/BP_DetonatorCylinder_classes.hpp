@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_DetonatorCylinder.BP_DetonatorCylinder_C
-// 0x0000 (0x01B8 - 0x01B8)
+// 0x0000 (0x01E8 - 0x01E8)
 class UBP_DetonatorCylinder_C final : public UDetonatorBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_DetonatorCylinder_C) == 0x000008, "Wrong alignment on UBP_DetonatorCylinder_C");
-static_assert(sizeof(UBP_DetonatorCylinder_C) == 0x0001B8, "Wrong size on UBP_DetonatorCylinder_C");
+static_assert(sizeof(UBP_DetonatorCylinder_C) == 0x0001E8, "Wrong size on UBP_DetonatorCylinder_C");
 
 }
 

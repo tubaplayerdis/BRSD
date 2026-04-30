@@ -28,9 +28,9 @@ public:
 	class UBrickImage*                            AutoSaveIcon;                                      // 0x0398(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_WBP_UGCItem(int32 EntryPoint);
-	void UpdateItemWidget(bool bInIsSelected, bool bInIsLegacyFile, bool bInHasAutoSave, bool bInIsDedicatedAutoSave);
 	void BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InContentStyleState);
+	void UpdateItemWidget(bool bInIsSelected, bool bInIsLegacyFile, bool bInHasAutoSave, bool bInIsDedicatedAutoSave);
+	void ExecuteUbergraph_WBP_UGCItem(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -19,12 +19,12 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_UIStyle_Default.BP_UIStyle_Default_C
-// 0x0010 (0x5AE8 - 0x5AD8)
+// 0x0010 (0x70F8 - 0x70E8)
 class UBP_UIStyle_Default_C : public UBrickUIStyle
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x5AD8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
-	bool                                          bUseBrightBackground;                              // 0x5AE0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x70E8(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	bool                                          bUseBrightBackground;                              // 0x70F0(0x0001)(Edit, BlueprintVisible, ZeroConstructor, DisableEditOnInstance, IsPlainOldData, NoDestructor)
 
 public:
 	void ExecuteUbergraph_BP_UIStyle_Default(int32 EntryPoint);
@@ -33,7 +33,7 @@ public:
 	void SetBrushStyle(EBrickUIBrushStyle BrushStyle, const struct FSlateBrush& Brush, const struct FSlateBrush& FocusedBrush, const struct FSlateBrush& PressedBrush, const struct FSlateBrush& SelectedBrush, const struct FSlateBrush& MarqueeBrush);
 	void BuildDefaultStyle(const struct FLinearColor& DefaultColor, const struct FLinearColor& ForegroundColor, const struct FLinearColor& HighlightColor, const struct FLinearColor& HighlightForegroundColor, const struct FLinearColor& SelectedColor, const struct FLinearColor& SelectedForegroundColor, const struct FLinearColor& LogoColor, const struct FLinearColor& LogoForegroundColor, const struct FLinearColor& LogoForegroundContrastColor);
 
-	struct FTextBlockStyle MakeTextStyle(class FName Typeface, float Scale, class UObject* Font_Material, int32 OutlineSize) const;
+	struct FTextBlockStyle MakeTextStyle(class FName Typeface, float Scale, class UObject* Font_Material, int32 OutlineSize, bool bStrike, bool bUnderline, const struct FLinearColor& ColorMultiplier) const;
 	struct FLinearColor MakeLiteralColor(const struct FLinearColor& Color) const;
 	void MakeDefaultColors(struct FLinearColor* Dark, struct FLinearColor* Medium, struct FLinearColor* Bright, struct FLinearColor* Negative, struct FLinearColor* Positive, struct FLinearColor* Background, struct FLinearColor* BrightBackground, struct FLinearColor* Border, struct FLinearColor* BrickRigs, struct FLinearColor* Fluppisoft, struct FLinearColor* FluppisoftForeground) const;
 
@@ -48,9 +48,9 @@ public:
 	}
 };
 static_assert(alignof(UBP_UIStyle_Default_C) == 0x000008, "Wrong alignment on UBP_UIStyle_Default_C");
-static_assert(sizeof(UBP_UIStyle_Default_C) == 0x005AE8, "Wrong size on UBP_UIStyle_Default_C");
-static_assert(offsetof(UBP_UIStyle_Default_C, UberGraphFrame) == 0x005AD8, "Member 'UBP_UIStyle_Default_C::UberGraphFrame' has a wrong offset!");
-static_assert(offsetof(UBP_UIStyle_Default_C, bUseBrightBackground) == 0x005AE0, "Member 'UBP_UIStyle_Default_C::bUseBrightBackground' has a wrong offset!");
+static_assert(sizeof(UBP_UIStyle_Default_C) == 0x0070F8, "Wrong size on UBP_UIStyle_Default_C");
+static_assert(offsetof(UBP_UIStyle_Default_C, UberGraphFrame) == 0x0070E8, "Member 'UBP_UIStyle_Default_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(UBP_UIStyle_Default_C, bUseBrightBackground) == 0x0070F0, "Member 'UBP_UIStyle_Default_C::bUseBrightBackground' has a wrong offset!");
 
 }
 

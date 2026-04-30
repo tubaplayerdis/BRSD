@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SandboxGameMode.BP_SandboxGameMode_C
-// 0x0008 (0x0400 - 0x03F8)
+// 0x0008 (0x0450 - 0x0448)
 class ABP_SandboxGameMode_C final : public ASandboxGameMode
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x03F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0448(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -34,8 +34,8 @@ public:
 	}
 };
 static_assert(alignof(ABP_SandboxGameMode_C) == 0x000008, "Wrong alignment on ABP_SandboxGameMode_C");
-static_assert(sizeof(ABP_SandboxGameMode_C) == 0x000400, "Wrong size on ABP_SandboxGameMode_C");
-static_assert(offsetof(ABP_SandboxGameMode_C, DefaultSceneRoot) == 0x0003F8, "Member 'ABP_SandboxGameMode_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(sizeof(ABP_SandboxGameMode_C) == 0x000450, "Wrong size on ABP_SandboxGameMode_C");
+static_assert(offsetof(ABP_SandboxGameMode_C, DefaultSceneRoot) == 0x000448, "Member 'ABP_SandboxGameMode_C::DefaultSceneRoot' has a wrong offset!");
 
 }
 

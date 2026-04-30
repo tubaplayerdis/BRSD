@@ -32,11 +32,11 @@ using namespace UC;
 */
 namespace Offsets
 {
-	constexpr int32 GObjects          = 0x043D2600;
-	constexpr int32 AppendString      = 0x01016590;
-	constexpr int32 GNames            = 0x04396180;
-	constexpr int32 GWorld            = 0x04515F18;
-	constexpr int32 ProcessEvent      = 0x012207E0;
+	constexpr int32 GObjects          = 0x04A36A00;
+	constexpr int32 AppendString      = 0x0114AA30;
+	constexpr int32 GNames            = 0x049FA580;
+	constexpr int32 GWorld            = 0x04B7A1F8;
+	constexpr int32 ProcessEvent      = 0x01354710;
 	constexpr int32 ProcessEventIdx   = 0x00000044;
 }
 
@@ -164,9 +164,6 @@ class UClass* StaticBPGeneratedClassImpl()
 
 		return ClassObj;
 	}
-
-	//Class was not found. Load it by recursiveley traversing the filesystem tree until finding it
-
 }
 
 template<class ClassType>
@@ -182,10 +179,7 @@ struct FUObjectItem final
 {
 public:
 	class UObject*                                Object;                                            // 0x0000(0x0008)(NOT AUTO-GENERATED PROPERTY)
-	int Flags;
-	int ClusterRootIndex;
-	int SerialNumber;
-	uint8 pad[4];
+	uint8                                         Pad_8[0x10];                                       // 0x0008(0x0010)(Fixing Struct Size After Last Property [ Dumper-7 ])
 };
 static_assert(alignof(FUObjectItem) == 0x000008, "Wrong alignment on FUObjectItem");
 static_assert(sizeof(FUObjectItem) == 0x000018, "Wrong size on FUObjectItem");
@@ -215,38 +209,24 @@ public:
 	{
 		return NumElements;
 	}
-
+	
 	FUObjectItem** GetDecrytedObjPtr() const
 	{
 		return reinterpret_cast<FUObjectItem**>(DecryptPtr(Objects));
 	}
-
+	
 	inline class UObject* GetByIndex(const int32 Index) const
 	{
 		const int32 ChunkIndex = Index / ElementsPerChunk;
 		const int32 InChunkIdx = Index % ElementsPerChunk;
-
+		
 		if (Index < 0 || ChunkIndex >= NumChunks || Index >= NumElements)
 		    return nullptr;
-
+		
 		FUObjectItem* ChunkPtr = GetDecrytedObjPtr()[ChunkIndex];
 		if (!ChunkPtr) return nullptr;
-
+		
 		return ChunkPtr[InChunkIdx].Object;
-	}
-
-	inline int32 SDGetByIndex(const int32 Index) const
-	{
-		const int32 ChunkIndex = Index / ElementsPerChunk;
-		const int32 InChunkIdx = Index % ElementsPerChunk;
-
-		if (Index < 0 || ChunkIndex >= NumChunks || Index >= NumElements)
-			return -1;
-
-		FUObjectItem* ChunkPtr = GetDecrytedObjPtr()[ChunkIndex];
-		if (!ChunkPtr) return -1;
-
-		return ChunkPtr[InChunkIdx].SerialNumber;
 	}
 };
 static_assert(alignof(TUObjectArray) == 0x000008, "Wrong alignment on TUObjectArray");
@@ -341,34 +321,34 @@ public:
 	{
 		return ComparisonIndex;
 	}
-
+	
 	std::string GetRawString() const
 	{
 		thread_local FAllocatedString TempString(1024);
-
+	
 		if (!AppendString)
 			InitInternal();
-
+	
 		InSDKUtils::CallGameFunction(reinterpret_cast<void(*)(const FName*, FString&)>(AppendString), this, TempString);
-
+	
 		std::string OutputString = TempString.ToString();
 		TempString.Clear();
-
+	
 		return OutputString;
 	}
-
+	
 	std::string ToString() const
 	{
 		std::string OutputString = GetRawString();
-
+	
 		size_t pos = OutputString.rfind('/');
-
+	
 		if (pos == std::string::npos)
 			return OutputString;
-
+	
 		return OutputString.substr(pos + 1);
 	}
-
+	
 	bool operator==(const FName& Other) const
 	{
 		return ComparisonIndex == Other.ComparisonIndex && Number == Other.Number;
@@ -632,12 +612,12 @@ public:
 	{
 		return ObjectPointer;
 	}
-
+	
 	void* GetInterfaceRef() const
 	{
 		return InterfacePointer;
 	}
-
+	
 };
 static_assert(alignof(FScriptInterface) == 0x000008, "Wrong alignment on FScriptInterface");
 static_assert(sizeof(FScriptInterface) == 0x000010, "Wrong size on FScriptInterface");
@@ -803,7 +783,7 @@ inline constexpr EEnumClass& operator|=(EEnumClass& Left, EEnumClass Right)					
 inline bool operator&(EEnumClass Left, EEnumClass Right)																												\
 {																																										\
 	return (((std::underlying_type<EEnumClass>::type)(Left) & (std::underlying_type<EEnumClass>::type)(Right)) == (std::underlying_type<EEnumClass>::type)(Right));		\
-}
+}																																										
 
 enum class EObjectFlags : int32
 {
@@ -852,32 +832,32 @@ enum class EFunctionFlags : uint32
 
 	Final							= 0x00000001,
 	RequiredAPI						= 0x00000002,
-	BlueprintAuthorityOnly			= 0x00000004,
-	BlueprintCosmetic				= 0x00000008,
-	Net								= 0x00000040,
-	NetReliable						= 0x00000080,
-	NetRequest						= 0x00000100,
-	Exec							= 0x00000200,
-	Native							= 0x00000400,
-	Event							= 0x00000800,
-	NetResponse						= 0x00001000,
-	Static							= 0x00002000,
-	NetMulticast					= 0x00004000,
-	UbergraphFunction				= 0x00008000,
+	BlueprintAuthorityOnly			= 0x00000004, 
+	BlueprintCosmetic				= 0x00000008, 
+	Net								= 0x00000040,  
+	NetReliable						= 0x00000080, 
+	NetRequest						= 0x00000100,	
+	Exec							= 0x00000200,	
+	Native							= 0x00000400,	
+	Event							= 0x00000800,   
+	NetResponse						= 0x00001000,  
+	Static							= 0x00002000,   
+	NetMulticast					= 0x00004000,	
+	UbergraphFunction				= 0x00008000,  
 	MulticastDelegate				= 0x00010000,
-	Public							= 0x00020000,
-	Private							= 0x00040000,
+	Public							= 0x00020000,	
+	Private							= 0x00040000,	
 	Protected						= 0x00080000,
-	Delegate						= 0x00100000,
-	NetServer						= 0x00200000,
-	HasOutParms						= 0x00400000,
+	Delegate						= 0x00100000,	
+	NetServer						= 0x00200000,	
+	HasOutParms						= 0x00400000,	
 	HasDefaults						= 0x00800000,
 	NetClient						= 0x01000000,
 	DLLImport						= 0x02000000,
 	BlueprintCallable				= 0x04000000,
 	BlueprintEvent					= 0x08000000,
-	BlueprintPure					= 0x10000000,
-	EditorOnly						= 0x20000000,
+	BlueprintPure					= 0x10000000,	
+	EditorOnly						= 0x20000000,	
 	Const							= 0x40000000,
 	NetValidate						= 0x80000000,
 
@@ -1008,10 +988,10 @@ enum class EPropertyFlags : uint64
 	DisableEditOnInstance				= 0x0000000000010000,
 	EditConst							= 0x0000000000020000,
 	GlobalConfig						= 0x0000000000040000,
-	InstancedReference					= 0x0000000000080000,
+	InstancedReference					= 0x0000000000080000,	
 
-	DuplicateTransient					= 0x0000000000200000,
-	SubobjectReference					= 0x0000000000400000,
+	DuplicateTransient					= 0x0000000000200000,	
+	SubobjectReference					= 0x0000000000400000,	
 
 	SaveGame							= 0x0000000001000000,
 	NoClear								= 0x0000000002000000,
@@ -1021,14 +1001,14 @@ enum class EPropertyFlags : uint64
 	Deprecated							= 0x0000000020000000,
 	IsPlainOldData						= 0x0000000040000000,
 	RepSkip								= 0x0000000080000000,
-	RepNotify							= 0x0000000100000000,
+	RepNotify							= 0x0000000100000000, 
 	Interp								= 0x0000000200000000,
 	NonTransactional					= 0x0000000400000000,
 	EditorOnly							= 0x0000000800000000,
 	NoDestructor						= 0x0000001000000000,
 
 	AutoWeak							= 0x0000004000000000,
-	ContainsInstancedReference			= 0x0000008000000000,
+	ContainsInstancedReference			= 0x0000008000000000,	
 	AssetRegistrySearchable				= 0x0000010000000000,
 	SimpleDisplay						= 0x0000020000000000,
 	AdvancedDisplay						= 0x0000040000000000,
@@ -1039,12 +1019,12 @@ enum class EPropertyFlags : uint64
 	NonPIEDuplicateTransient			= 0x0000800000000000,
 	ExposeOnSpawn						= 0x0001000000000000,
 	PersistentInstance					= 0x0002000000000000,
-	UObjectWrapper						= 0x0004000000000000,
-	HasGetValueTypeHash					= 0x0008000000000000,
-	NativeAccessSpecifierPublic			= 0x0010000000000000,
+	UObjectWrapper						= 0x0004000000000000, 
+	HasGetValueTypeHash					= 0x0008000000000000, 
+	NativeAccessSpecifierPublic			= 0x0010000000000000,	
 	NativeAccessSpecifierProtected		= 0x0020000000000000,
-	NativeAccessSpecifierPrivate		= 0x0040000000000000,
-	SkipSerialization					= 0x0080000000000000,
+	NativeAccessSpecifierPrivate		= 0x0040000000000000,	
+	SkipSerialization					= 0x0080000000000000, 
 };
 
 UE_ENUM_OPERATORS(EObjectFlags);

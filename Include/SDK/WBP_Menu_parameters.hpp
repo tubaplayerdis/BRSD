@@ -11,177 +11,180 @@
 #include "Basic.hpp"
 
 #include "BrickRigs_structs.hpp"
-#include "Engine_structs.hpp"
 #include "GameLogoEnum_structs.hpp"
+#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
 {
 
 // Function WBP_Menu.WBP_Menu_C.ExecuteUbergraph_WBP_Menu
-// 0x0300 (0x0300 - 0x0000)
+// 0x0318 (0x0318 - 0x0000)
 struct WBP_Menu_C_ExecuteUbergraph_WBP_Menu final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0004(0x0010)(ZeroConstructor, NoDestructor)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_1;            // 0x0014(0x0010)(ZeroConstructor, NoDestructor)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_2;            // 0x0024(0x0010)(ZeroConstructor, NoDestructor)
-	uint8                                         Pad_34[0x4];                                       // 0x0034(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue;                 // 0x0038(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_1;               // 0x0040(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_2;               // 0x0048(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void(EPopupResult Result)>          K2Node_CreateDelegate_OutputDelegate_3;            // 0x0050(0x0010)(ZeroConstructor, NoDestructor)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_4;            // 0x0060(0x0010)(ZeroConstructor, NoDestructor)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_5;            // 0x0070(0x0010)(ZeroConstructor, NoDestructor)
-	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_3;               // 0x0080(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMenuButtonWidget*                      CallFunc_CreateContinueButton_ReturnValue;         // 0x0088(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_6;            // 0x0090(0x0010)(ZeroConstructor, NoDestructor)
-	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_4;               // 0x00A0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_7;            // 0x00A8(0x0010)(ZeroConstructor, NoDestructor)
-	bool                                          CallFunc_IsStandalone_ReturnValue;                 // 0x00B8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_B9[0x7];                                       // 0x00B9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_5;               // 0x00C0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_8;            // 0x00C8(0x0010)(ZeroConstructor, NoDestructor)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_9;            // 0x00D8(0x0010)(ZeroConstructor, NoDestructor)
-	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_6;               // 0x00E8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_7;               // 0x00F0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_10;           // 0x00F8(0x0010)(ZeroConstructor, NoDestructor)
-	TDelegate<void(EPopupResult Result)>          K2Node_CreateDelegate_OutputDelegate_11;           // 0x0108(0x0010)(ZeroConstructor, NoDestructor)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_12;           // 0x0118(0x0010)(ZeroConstructor, NoDestructor)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_13;           // 0x0128(0x0010)(ZeroConstructor, NoDestructor)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_14;           // 0x0138(0x0010)(ZeroConstructor, NoDestructor)
-	EGameLogoEnum                                 Temp_byte_Variable;                                // 0x0148(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_149[0x7];                                      // 0x0149(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_8;               // 0x0150(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_9;               // 0x0158(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_10;              // 0x0160(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_11;              // 0x0168(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EGameLogoEnum                                 Temp_byte_Variable_1;                              // 0x0170(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_171[0x3];                                      // 0x0171(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_15;           // 0x0174(0x0010)(ZeroConstructor, NoDestructor)
-	uint8                                         Pad_184[0x4];                                      // 0x0184(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBrickPropertyReflectionFilter         K2Node_MakeStruct_BrickPropertyReflectionFilter;   // 0x0008(0x0020)()
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0028(0x0010)(ZeroConstructor, NoDestructor)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_1;            // 0x0038(0x0010)(ZeroConstructor, NoDestructor)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_2;            // 0x0048(0x0010)(ZeroConstructor, NoDestructor)
+	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue;                 // 0x0058(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(EPopupResult Result)>          K2Node_CreateDelegate_OutputDelegate_3;            // 0x0060(0x0010)(ZeroConstructor, NoDestructor)
+	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_1;               // 0x0070(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_4;            // 0x0078(0x0010)(ZeroConstructor, NoDestructor)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_5;            // 0x0088(0x0010)(ZeroConstructor, NoDestructor)
+	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_2;               // 0x0098(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMenuButtonWidget*                      CallFunc_CreateContinueButton_ReturnValue;         // 0x00A0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_6;            // 0x00A8(0x0010)(ZeroConstructor, NoDestructor)
+	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_3;               // 0x00B8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_4;               // 0x00C0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_7;            // 0x00C8(0x0010)(ZeroConstructor, NoDestructor)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_8;            // 0x00D8(0x0010)(ZeroConstructor, NoDestructor)
+	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_5;               // 0x00E8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_6;               // 0x00F0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_IsStandalone_ReturnValue;                 // 0x00F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_F9[0x3];                                       // 0x00F9(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_9;            // 0x00FC(0x0010)(ZeroConstructor, NoDestructor)
+	uint8                                         Pad_10C[0x4];                                      // 0x010C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_7;               // 0x0110(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_10;           // 0x0118(0x0010)(ZeroConstructor, NoDestructor)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_11;           // 0x0128(0x0010)(ZeroConstructor, NoDestructor)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_12;           // 0x0138(0x0010)(ZeroConstructor, NoDestructor)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_13;           // 0x0148(0x0010)(ZeroConstructor, NoDestructor)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_14;           // 0x0158(0x0010)(ZeroConstructor, NoDestructor)
+	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_8;               // 0x0168(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_9;               // 0x0170(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_10;              // 0x0178(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_11;              // 0x0180(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_12;              // 0x0188(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          Temp_bool_Variable;                                // 0x0190(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_191[0x3];                                      // 0x0191(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
-	class FName                                   K2Node_Event_NewContext;                           // 0x0194(0x0008)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_19C[0x4];                                      // 0x019C(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMenuPageWidget*                        K2Node_Event_Widget_1;                             // 0x01A0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_NameName_ReturnValue;          // 0x01A8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          K2Node_SwitchName_CmpSuccess;                      // 0x01A9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	EGameLogoEnum                                 K2Node_Select_Default;                             // 0x01AA(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1AB[0x1];                                      // 0x01AB(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_16;           // 0x01AC(0x0010)(ZeroConstructor, NoDestructor)
-	uint8                                         Pad_1BC[0x4];                                      // 0x01BC(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_13;              // 0x01C0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EPopupResult                                  K2Node_CustomEvent_Result_1;                       // 0x01C8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_1C9[0x7];                                      // 0x01C9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x01D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x01D8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1D9[0x7];                                      // 0x01D9(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBrickGameInstance*                     K2Node_DynamicCast_AsBrick_Game_Instance;          // 0x01E0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x01E8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_QuitGame_ReturnValue;                     // 0x01E9(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_1EA[0x6];                                      // 0x01EA(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_1;            // 0x01F0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UBrickGameInstance*                     K2Node_DynamicCast_AsBrick_Game_Instance_1;        // 0x01F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0200(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	EPopupResult                                  K2Node_CustomEvent_Result;                         // 0x0201(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_202[0x6];                                      // 0x0202(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_2;            // 0x0208(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x0210(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_211[0x7];                                      // 0x0211(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBrickGameInstance*                     K2Node_DynamicCast_AsBrick_Game_Instance_2;        // 0x0218(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x0220(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_221[0x7];                                      // 0x0221(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_3;            // 0x0228(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UBrickGameInstance*                     K2Node_DynamicCast_AsBrick_Game_Instance_3;        // 0x0230(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          K2Node_DynamicCast_bSuccess_3;                     // 0x0238(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          CallFunc_OpenMessagePopup_ReturnValue;             // 0x0239(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_23A[0x6];                                      // 0x023A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x0240(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class UMenuPageWidget*                        K2Node_Event_Widget;                               // 0x0248(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	class FString                                 CallFunc_GetProjectVersion_ReturnValue;            // 0x0250(0x0010)(ZeroConstructor, HasGetValueTypeHash)
-	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0260(0x0018)()
-	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0278(0x0040)(HasGetValueTypeHash)
-	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x02B8(0x0010)(ReferenceParm)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_17;           // 0x02C8(0x0010)(ZeroConstructor, NoDestructor)
-	class FText                                   CallFunc_Format_ReturnValue;                       // 0x02D8(0x0018)()
-	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_14;              // 0x02F0(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_OpenMessagePopup_ReturnValue_1;           // 0x02F8(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	EGameLogoEnum                                 Temp_byte_Variable;                                // 0x0190(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EGameLogoEnum                                 Temp_byte_Variable_1;                              // 0x0191(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_192[0x2];                                      // 0x0192(0x0002)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_15;           // 0x0194(0x0010)(ZeroConstructor, NoDestructor)
+	bool                                          Temp_bool_Variable;                                // 0x01A4(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_1A5[0x3];                                      // 0x01A5(0x0003)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_13;              // 0x01A8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FName                                   K2Node_Event_NewContext;                           // 0x01B0(0x0008)(ConstParm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMenuPageWidget*                        K2Node_Event_Widget_1;                             // 0x01B8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_NameName_ReturnValue;          // 0x01C0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          K2Node_SwitchName_CmpSuccess;                      // 0x01C1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	EGameLogoEnum                                 K2Node_Select_Default;                             // 0x01C2(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1C3[0x1];                                      // 0x01C3(0x0001)(Fixing Size After Last Property [ Dumper-7 ])
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate_16;           // 0x01C4(0x0010)(ZeroConstructor, NoDestructor)
+	uint8                                         Pad_1D4[0x4];                                      // 0x01D4(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMenuButtonWidget*                      CallFunc_CreateButton_ReturnValue_14;              // 0x01D8(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void(EPopupResult Result)>          K2Node_CreateDelegate_OutputDelegate_17;           // 0x01E0(0x0010)(ZeroConstructor, NoDestructor)
+	EPopupResult                                  K2Node_CustomEvent_Result_1;                       // 0x01F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_1F1[0x7];                                      // 0x01F1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue;              // 0x01F8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0200(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_201[0x7];                                      // 0x0201(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBrickGameInstance*                     K2Node_DynamicCast_AsBrick_Game_Instance;          // 0x0208(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess;                       // 0x0210(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_QuitGame_ReturnValue;                     // 0x0211(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_212[0x6];                                      // 0x0212(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_1;            // 0x0218(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UBrickGameInstance*                     K2Node_DynamicCast_AsBrick_Game_Instance_1;        // 0x0220(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x0228(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	EPopupResult                                  K2Node_CustomEvent_Result;                         // 0x0229(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	uint8                                         Pad_22A[0x6];                                      // 0x022A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_2;            // 0x0230(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue_1;        // 0x0238(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_239[0x7];                                      // 0x0239(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBrickGameInstance*                     K2Node_DynamicCast_AsBrick_Game_Instance_2;        // 0x0240(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_2;                     // 0x0248(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_249[0x7];                                      // 0x0249(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_3;            // 0x0250(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UBrickGameInstance*                     K2Node_DynamicCast_AsBrick_Game_Instance_3;        // 0x0258(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          K2Node_DynamicCast_bSuccess_3;                     // 0x0260(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_261[0x7];                                      // 0x0261(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMenuPageWidget*                        K2Node_Event_Widget;                               // 0x0268(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UPanelSlot*                             CallFunc_AddChild_ReturnValue;                     // 0x0270(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class FString                                 CallFunc_GetProjectVersion_ReturnValue;            // 0x0278(0x0010)(ZeroConstructor, HasGetValueTypeHash)
+	class FText                                   CallFunc_Conv_StringToText_ReturnValue;            // 0x0288(0x0018)()
+	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x02A0(0x0040)(HasGetValueTypeHash)
+	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x02E0(0x0010)(ReferenceParm)
+	class FText                                   CallFunc_Format_ReturnValue;                       // 0x02F0(0x0018)()
+	bool                                          CallFunc_OpenMessagePopup_ReturnValue;             // 0x0308(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          CallFunc_OpenMessagePopup_ReturnValue_1;           // 0x0309(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_30A[0x6];                                      // 0x030A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UBrickUserSettings*                     CallFunc_GetUserSettings_ReturnValue;              // 0x0310(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 };
 static_assert(alignof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu) == 0x000008, "Wrong alignment on WBP_Menu_C_ExecuteUbergraph_WBP_Menu");
-static_assert(sizeof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu) == 0x000300, "Wrong size on WBP_Menu_C_ExecuteUbergraph_WBP_Menu");
+static_assert(sizeof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu) == 0x000318, "Wrong size on WBP_Menu_C_ExecuteUbergraph_WBP_Menu");
 static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, EntryPoint) == 0x000000, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::EntryPoint' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate) == 0x000004, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_1) == 0x000014, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_1' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_2) == 0x000024, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_2' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue) == 0x000038, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_1) == 0x000040, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_2) == 0x000048, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_3) == 0x000050, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_3' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_4) == 0x000060, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_4' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_5) == 0x000070, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_5' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_3) == 0x000080, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateContinueButton_ReturnValue) == 0x000088, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateContinueButton_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_6) == 0x000090, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_6' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_4) == 0x0000A0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_4' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_7) == 0x0000A8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_7' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_IsStandalone_ReturnValue) == 0x0000B8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_IsStandalone_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_5) == 0x0000C0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_5' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_8) == 0x0000C8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_8' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_9) == 0x0000D8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_9' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_6) == 0x0000E8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_6' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_7) == 0x0000F0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_7' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_10) == 0x0000F8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_10' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_11) == 0x000108, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_11' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_12) == 0x000118, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_12' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_13) == 0x000128, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_13' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_14) == 0x000138, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_14' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, Temp_byte_Variable) == 0x000148, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::Temp_byte_Variable' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_8) == 0x000150, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_8' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_9) == 0x000158, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_9' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_10) == 0x000160, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_10' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_11) == 0x000168, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_11' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, Temp_byte_Variable_1) == 0x000170, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::Temp_byte_Variable_1' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_15) == 0x000174, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_15' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_MakeStruct_BrickPropertyReflectionFilter) == 0x000008, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_MakeStruct_BrickPropertyReflectionFilter' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate) == 0x000028, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_1) == 0x000038, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_1' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_2) == 0x000048, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_2' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue) == 0x000058, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_3) == 0x000060, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_3' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_1) == 0x000070, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_4) == 0x000078, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_4' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_5) == 0x000088, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_5' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_2) == 0x000098, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateContinueButton_ReturnValue) == 0x0000A0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateContinueButton_ReturnValue' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_6) == 0x0000A8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_6' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_3) == 0x0000B8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_4) == 0x0000C0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_4' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_7) == 0x0000C8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_7' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_8) == 0x0000D8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_8' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_5) == 0x0000E8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_5' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_6) == 0x0000F0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_6' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_IsStandalone_ReturnValue) == 0x0000F8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_IsStandalone_ReturnValue' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_9) == 0x0000FC, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_9' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_7) == 0x000110, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_7' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_10) == 0x000118, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_10' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_11) == 0x000128, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_11' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_12) == 0x000138, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_12' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_13) == 0x000148, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_13' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_14) == 0x000158, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_14' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_8) == 0x000168, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_8' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_9) == 0x000170, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_9' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_10) == 0x000178, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_10' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_11) == 0x000180, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_11' has a wrong offset!");
 static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_12) == 0x000188, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_12' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, Temp_bool_Variable) == 0x000190, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::Temp_bool_Variable' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_Event_NewContext) == 0x000194, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_Event_NewContext' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_Event_Widget_1) == 0x0001A0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_Event_Widget_1' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_EqualEqual_NameName_ReturnValue) == 0x0001A8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_EqualEqual_NameName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_SwitchName_CmpSuccess) == 0x0001A9, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_SwitchName_CmpSuccess' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_Select_Default) == 0x0001AA, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_Select_Default' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_16) == 0x0001AC, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_16' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_13) == 0x0001C0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_13' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CustomEvent_Result_1) == 0x0001C8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CustomEvent_Result_1' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_GetGameInstance_ReturnValue) == 0x0001D0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_GetGameInstance_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x0001D8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_DynamicCast_AsBrick_Game_Instance) == 0x0001E0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_DynamicCast_AsBrick_Game_Instance' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_DynamicCast_bSuccess) == 0x0001E8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_DynamicCast_bSuccess' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_QuitGame_ReturnValue) == 0x0001E9, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_QuitGame_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_GetGameInstance_ReturnValue_1) == 0x0001F0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_GetGameInstance_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_DynamicCast_AsBrick_Game_Instance_1) == 0x0001F8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_DynamicCast_AsBrick_Game_Instance_1' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_DynamicCast_bSuccess_1) == 0x000200, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CustomEvent_Result) == 0x000201, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CustomEvent_Result' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_GetGameInstance_ReturnValue_2) == 0x000208, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_GetGameInstance_ReturnValue_2' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_EqualEqual_ByteByte_ReturnValue_1) == 0x000210, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_EqualEqual_ByteByte_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_DynamicCast_AsBrick_Game_Instance_2) == 0x000218, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_DynamicCast_AsBrick_Game_Instance_2' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_DynamicCast_bSuccess_2) == 0x000220, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_GetGameInstance_ReturnValue_3) == 0x000228, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_GetGameInstance_ReturnValue_3' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_DynamicCast_AsBrick_Game_Instance_3) == 0x000230, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_DynamicCast_AsBrick_Game_Instance_3' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_DynamicCast_bSuccess_3) == 0x000238, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_DynamicCast_bSuccess_3' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_OpenMessagePopup_ReturnValue) == 0x000239, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_OpenMessagePopup_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_AddChild_ReturnValue) == 0x000240, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_AddChild_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_Event_Widget) == 0x000248, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_Event_Widget' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_GetProjectVersion_ReturnValue) == 0x000250, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_GetProjectVersion_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_Conv_StringToText_ReturnValue) == 0x000260, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_MakeStruct_FormatArgumentData) == 0x000278, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_MakeStruct_FormatArgumentData' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_MakeArray_Array) == 0x0002B8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_MakeArray_Array' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_17) == 0x0002C8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_17' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_Format_ReturnValue) == 0x0002D8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_Format_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_14) == 0x0002F0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_14' has a wrong offset!");
-static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_OpenMessagePopup_ReturnValue_1) == 0x0002F8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_OpenMessagePopup_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, Temp_byte_Variable) == 0x000190, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::Temp_byte_Variable' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, Temp_byte_Variable_1) == 0x000191, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::Temp_byte_Variable_1' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_15) == 0x000194, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_15' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, Temp_bool_Variable) == 0x0001A4, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::Temp_bool_Variable' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_13) == 0x0001A8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_13' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_Event_NewContext) == 0x0001B0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_Event_NewContext' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_Event_Widget_1) == 0x0001B8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_Event_Widget_1' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_EqualEqual_NameName_ReturnValue) == 0x0001C0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_EqualEqual_NameName_ReturnValue' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_SwitchName_CmpSuccess) == 0x0001C1, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_SwitchName_CmpSuccess' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_Select_Default) == 0x0001C2, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_Select_Default' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_16) == 0x0001C4, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_16' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_CreateButton_ReturnValue_14) == 0x0001D8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_CreateButton_ReturnValue_14' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CreateDelegate_OutputDelegate_17) == 0x0001E0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CreateDelegate_OutputDelegate_17' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CustomEvent_Result_1) == 0x0001F0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CustomEvent_Result_1' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_GetGameInstance_ReturnValue) == 0x0001F8, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_GetGameInstance_ReturnValue' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x000200, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_DynamicCast_AsBrick_Game_Instance) == 0x000208, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_DynamicCast_AsBrick_Game_Instance' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_DynamicCast_bSuccess) == 0x000210, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_DynamicCast_bSuccess' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_QuitGame_ReturnValue) == 0x000211, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_QuitGame_ReturnValue' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_GetGameInstance_ReturnValue_1) == 0x000218, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_GetGameInstance_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_DynamicCast_AsBrick_Game_Instance_1) == 0x000220, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_DynamicCast_AsBrick_Game_Instance_1' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_DynamicCast_bSuccess_1) == 0x000228, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_CustomEvent_Result) == 0x000229, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_CustomEvent_Result' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_GetGameInstance_ReturnValue_2) == 0x000230, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_GetGameInstance_ReturnValue_2' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_EqualEqual_ByteByte_ReturnValue_1) == 0x000238, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_EqualEqual_ByteByte_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_DynamicCast_AsBrick_Game_Instance_2) == 0x000240, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_DynamicCast_AsBrick_Game_Instance_2' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_DynamicCast_bSuccess_2) == 0x000248, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_DynamicCast_bSuccess_2' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_GetGameInstance_ReturnValue_3) == 0x000250, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_GetGameInstance_ReturnValue_3' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_DynamicCast_AsBrick_Game_Instance_3) == 0x000258, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_DynamicCast_AsBrick_Game_Instance_3' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_DynamicCast_bSuccess_3) == 0x000260, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_DynamicCast_bSuccess_3' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_Event_Widget) == 0x000268, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_Event_Widget' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_AddChild_ReturnValue) == 0x000270, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_AddChild_ReturnValue' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_GetProjectVersion_ReturnValue) == 0x000278, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_GetProjectVersion_ReturnValue' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_Conv_StringToText_ReturnValue) == 0x000288, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_Conv_StringToText_ReturnValue' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_MakeStruct_FormatArgumentData) == 0x0002A0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_MakeStruct_FormatArgumentData' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, K2Node_MakeArray_Array) == 0x0002E0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::K2Node_MakeArray_Array' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_Format_ReturnValue) == 0x0002F0, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_Format_ReturnValue' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_OpenMessagePopup_ReturnValue) == 0x000308, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_OpenMessagePopup_ReturnValue' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_OpenMessagePopup_ReturnValue_1) == 0x000309, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_OpenMessagePopup_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(WBP_Menu_C_ExecuteUbergraph_WBP_Menu, CallFunc_GetUserSettings_ReturnValue) == 0x000310, "Member 'WBP_Menu_C_ExecuteUbergraph_WBP_Menu::CallFunc_GetUserSettings_ReturnValue' has a wrong offset!");
 
 // Function WBP_Menu.WBP_Menu_C.RemoveMenuPage
 // 0x0008 (0x0008 - 0x0000)

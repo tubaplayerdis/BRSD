@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Coupling_2x2x1s_Front_Male.BP_Coupling_2x2x1s_Front_Male_C
-// 0x0000 (0x0178 - 0x0178)
+// 0x0000 (0x01A0 - 0x01A0)
 class UBP_Coupling_2x2x1s_Front_Male_C final : public UCouplingBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_Coupling_2x2x1s_Front_Male_C) == 0x000008, "Wrong alignment on UBP_Coupling_2x2x1s_Front_Male_C");
-static_assert(sizeof(UBP_Coupling_2x2x1s_Front_Male_C) == 0x000178, "Wrong size on UBP_Coupling_2x2x1s_Front_Male_C");
+static_assert(sizeof(UBP_Coupling_2x2x1s_Front_Male_C) == 0x0001A0, "Wrong size on UBP_Coupling_2x2x1s_Front_Male_C");
 
 }
 

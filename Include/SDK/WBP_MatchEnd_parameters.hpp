@@ -11,15 +11,13 @@
 #include "Basic.hpp"
 
 #include "BrickRigs_structs.hpp"
-#include "AIModule_structs.hpp"
-#include "Engine_structs.hpp"
 
 
 namespace SDK::Params
 {
 
 // Function WBP_MatchEnd.WBP_MatchEnd_C.ExecuteUbergraph_WBP_MatchEnd
-// 0x01B0 (0x01B0 - 0x0000)
+// 0x0118 (0x0118 - 0x0000)
 struct WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd final
 {
 public:
@@ -57,22 +55,13 @@ public:
 	class UGameInstance*                          CallFunc_GetGameInstance_ReturnValue_1;            // 0x00D0(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	class UBrickGameInstance*                     K2Node_DynamicCast_AsBrick_Game_Instance_1;        // 0x00D8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	bool                                          K2Node_DynamicCast_bSuccess_1;                     // 0x00E0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_E1[0x7];                                       // 0x00E1(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UBrickTeam*                             K2Node_Event_WinnerTeam;                           // 0x00E8(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETeamAttitude                                 K2Node_Event_TeamAttitude;                         // 0x00F0(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EBrickUIColorStyle                            CallFunc_GetTeamAttitudeColorStyle_ReturnValue;    // 0x00F1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	uint8                                         Pad_F2[0x6];                                       // 0x00F2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class FText                                   CallFunc_GetTeamDisplayName_ReturnValue;           // 0x00F8(0x0018)()
-	bool                                          Temp_bool_Variable_1;                              // 0x0110(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_111[0x7];                                      // 0x0111(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FFormatArgumentData                    K2Node_MakeStruct_FormatArgumentData;              // 0x0118(0x0040)(HasGetValueTypeHash)
-	TArray<struct FFormatArgumentData>            K2Node_MakeArray_Array;                            // 0x0158(0x0010)(ReferenceParm)
-	class FText                                   K2Node_Select_Default;                             // 0x0168(0x0018)()
-	class FText                                   CallFunc_Format_ReturnValue;                       // 0x0180(0x0018)()
-	class FText                                   K2Node_Select_Default_1;                           // 0x0198(0x0018)()
+	bool                                          Temp_bool_Variable_1;                              // 0x00E1(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_E2[0x6];                                       // 0x00E2(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class FText                                   K2Node_Select_Default;                             // 0x00E8(0x0018)()
+	class FText                                   K2Node_Select_Default_1;                           // 0x0100(0x0018)()
 };
 static_assert(alignof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd) == 0x000008, "Wrong alignment on WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd");
-static_assert(sizeof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd) == 0x0001B0, "Wrong size on WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd");
+static_assert(sizeof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd) == 0x000118, "Wrong size on WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd");
 static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, EntryPoint) == 0x000000, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::EntryPoint' has a wrong offset!");
 static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, Temp_text_Variable) == 0x000008, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::Temp_text_Variable' has a wrong offset!");
 static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, Temp_text_Variable_1) == 0x000020, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::Temp_text_Variable_1' has a wrong offset!");
@@ -99,29 +88,9 @@ static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, CallFunc_Op
 static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, CallFunc_GetGameInstance_ReturnValue_1) == 0x0000D0, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::CallFunc_GetGameInstance_ReturnValue_1' has a wrong offset!");
 static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, K2Node_DynamicCast_AsBrick_Game_Instance_1) == 0x0000D8, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::K2Node_DynamicCast_AsBrick_Game_Instance_1' has a wrong offset!");
 static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, K2Node_DynamicCast_bSuccess_1) == 0x0000E0, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::K2Node_DynamicCast_bSuccess_1' has a wrong offset!");
-static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, K2Node_Event_WinnerTeam) == 0x0000E8, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::K2Node_Event_WinnerTeam' has a wrong offset!");
-static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, K2Node_Event_TeamAttitude) == 0x0000F0, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::K2Node_Event_TeamAttitude' has a wrong offset!");
-static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, CallFunc_GetTeamAttitudeColorStyle_ReturnValue) == 0x0000F1, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::CallFunc_GetTeamAttitudeColorStyle_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, CallFunc_GetTeamDisplayName_ReturnValue) == 0x0000F8, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::CallFunc_GetTeamDisplayName_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, Temp_bool_Variable_1) == 0x000110, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::Temp_bool_Variable_1' has a wrong offset!");
-static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, K2Node_MakeStruct_FormatArgumentData) == 0x000118, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::K2Node_MakeStruct_FormatArgumentData' has a wrong offset!");
-static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, K2Node_MakeArray_Array) == 0x000158, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::K2Node_MakeArray_Array' has a wrong offset!");
-static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, K2Node_Select_Default) == 0x000168, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::K2Node_Select_Default' has a wrong offset!");
-static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, CallFunc_Format_ReturnValue) == 0x000180, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::CallFunc_Format_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, K2Node_Select_Default_1) == 0x000198, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::K2Node_Select_Default_1' has a wrong offset!");
-
-// Function WBP_MatchEnd.WBP_MatchEnd_C.UpdateMatchWinner
-// 0x0010 (0x0010 - 0x0000)
-struct WBP_MatchEnd_C_UpdateMatchWinner final
-{
-public:
-	class UBrickTeam*                             WinnerTeam;                                        // 0x0000(0x0008)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	ETeamAttitude                                 TeamAttitude;                                      // 0x0008(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_MatchEnd_C_UpdateMatchWinner) == 0x000008, "Wrong alignment on WBP_MatchEnd_C_UpdateMatchWinner");
-static_assert(sizeof(WBP_MatchEnd_C_UpdateMatchWinner) == 0x000010, "Wrong size on WBP_MatchEnd_C_UpdateMatchWinner");
-static_assert(offsetof(WBP_MatchEnd_C_UpdateMatchWinner, WinnerTeam) == 0x000000, "Member 'WBP_MatchEnd_C_UpdateMatchWinner::WinnerTeam' has a wrong offset!");
-static_assert(offsetof(WBP_MatchEnd_C_UpdateMatchWinner, TeamAttitude) == 0x000008, "Member 'WBP_MatchEnd_C_UpdateMatchWinner::TeamAttitude' has a wrong offset!");
+static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, Temp_bool_Variable_1) == 0x0000E1, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::Temp_bool_Variable_1' has a wrong offset!");
+static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, K2Node_Select_Default) == 0x0000E8, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::K2Node_Select_Default' has a wrong offset!");
+static_assert(offsetof(WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd, K2Node_Select_Default_1) == 0x000100, "Member 'WBP_MatchEnd_C_ExecuteUbergraph_WBP_MatchEnd::K2Node_Select_Default_1' has a wrong offset!");
 
 // Function WBP_MatchEnd.WBP_MatchEnd_C.OnClosedExitMatchPopup
 // 0x0001 (0x0001 - 0x0000)

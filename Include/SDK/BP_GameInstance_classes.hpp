@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_GameInstance.BP_GameInstance_C
-// 0x0000 (0x0628 - 0x0628)
+// 0x0000 (0x0608 - 0x0608)
 class UBP_GameInstance_C final : public UBrickGameInstance
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_GameInstance_C) == 0x000008, "Wrong alignment on UBP_GameInstance_C");
-static_assert(sizeof(UBP_GameInstance_C) == 0x000628, "Wrong size on UBP_GameInstance_C");
+static_assert(sizeof(UBP_GameInstance_C) == 0x000608, "Wrong size on UBP_GameInstance_C");
 
 }
 

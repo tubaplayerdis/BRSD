@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_CornerBrick_1x1x1s_Flat.BP_CornerBrick_1x1x1s_Flat_C
-// 0x0000 (0x0168 - 0x0168)
+// 0x0000 (0x0190 - 0x0190)
 class UBP_CornerBrick_1x1x1s_Flat_C final : public URedirectorBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_CornerBrick_1x1x1s_Flat_C) == 0x000008, "Wrong alignment on UBP_CornerBrick_1x1x1s_Flat_C");
-static_assert(sizeof(UBP_CornerBrick_1x1x1s_Flat_C) == 0x000168, "Wrong size on UBP_CornerBrick_1x1x1s_Flat_C");
+static_assert(sizeof(UBP_CornerBrick_1x1x1s_Flat_C) == 0x000190, "Wrong size on UBP_CornerBrick_1x1x1s_Flat_C");
 
 }
 

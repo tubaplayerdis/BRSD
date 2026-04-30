@@ -34,8 +34,8 @@ public:
 
 public:
 	void ExecuteUbergraph_WBP_ScoreboardPlayer(int32 EntryPoint);
+	void UpdateAdminRole(const EAdminRole Role);
 	void UpdateIsAlive(bool bIsAlive);
-	void UpdateIsAdmin(bool bIsAdmin);
 	void PreConstruct(bool IsDesignTime);
 	void UpdateButtonStyle(bool bNewSelected, bool bIsLocalPlayer, ETeamAttitude TeamAttitude);
 	void BndEvt__Button_K2Node_ComponentBoundEvent_0_OnUpdateContentStyle__DelegateSignature(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InContentStyleState);

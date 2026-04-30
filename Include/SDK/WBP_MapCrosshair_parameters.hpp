@@ -16,28 +16,6 @@
 namespace SDK::Params
 {
 
-// Function WBP_MapCrosshair.WBP_MapCrosshair_C.SetColorStyle
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_MapCrosshair_C_SetColorStyle final
-{
-public:
-	EBrickUIColorStyle                            NewStyle;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_MapCrosshair_C_SetColorStyle) == 0x000001, "Wrong alignment on WBP_MapCrosshair_C_SetColorStyle");
-static_assert(sizeof(WBP_MapCrosshair_C_SetColorStyle) == 0x000001, "Wrong size on WBP_MapCrosshair_C_SetColorStyle");
-static_assert(offsetof(WBP_MapCrosshair_C_SetColorStyle, NewStyle) == 0x000000, "Member 'WBP_MapCrosshair_C_SetColorStyle::NewStyle' has a wrong offset!");
-
-// Function WBP_MapCrosshair.WBP_MapCrosshair_C.SetStyleState
-// 0x0001 (0x0001 - 0x0000)
-struct WBP_MapCrosshair_C_SetStyleState final
-{
-public:
-	EBrickUIStyleState                            NewState;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_MapCrosshair_C_SetStyleState) == 0x000001, "Wrong alignment on WBP_MapCrosshair_C_SetStyleState");
-static_assert(sizeof(WBP_MapCrosshair_C_SetStyleState) == 0x000001, "Wrong size on WBP_MapCrosshair_C_SetStyleState");
-static_assert(offsetof(WBP_MapCrosshair_C_SetStyleState, NewState) == 0x000000, "Member 'WBP_MapCrosshair_C_SetStyleState::NewState' has a wrong offset!");
-
 // Function WBP_MapCrosshair.WBP_MapCrosshair_C.ExecuteUbergraph_WBP_MapCrosshair
 // 0x0008 (0x0008 - 0x0000)
 struct WBP_MapCrosshair_C_ExecuteUbergraph_WBP_MapCrosshair final
@@ -52,6 +30,28 @@ static_assert(sizeof(WBP_MapCrosshair_C_ExecuteUbergraph_WBP_MapCrosshair) == 0x
 static_assert(offsetof(WBP_MapCrosshair_C_ExecuteUbergraph_WBP_MapCrosshair, EntryPoint) == 0x000000, "Member 'WBP_MapCrosshair_C_ExecuteUbergraph_WBP_MapCrosshair::EntryPoint' has a wrong offset!");
 static_assert(offsetof(WBP_MapCrosshair_C_ExecuteUbergraph_WBP_MapCrosshair, K2Node_Event_NewStyle) == 0x000004, "Member 'WBP_MapCrosshair_C_ExecuteUbergraph_WBP_MapCrosshair::K2Node_Event_NewStyle' has a wrong offset!");
 static_assert(offsetof(WBP_MapCrosshair_C_ExecuteUbergraph_WBP_MapCrosshair, K2Node_Event_NewState) == 0x000005, "Member 'WBP_MapCrosshair_C_ExecuteUbergraph_WBP_MapCrosshair::K2Node_Event_NewState' has a wrong offset!");
+
+// Function WBP_MapCrosshair.WBP_MapCrosshair_C.SetStyleState
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_MapCrosshair_C_SetStyleState final
+{
+public:
+	EBrickUIStyleState                            NewState;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_MapCrosshair_C_SetStyleState) == 0x000001, "Wrong alignment on WBP_MapCrosshair_C_SetStyleState");
+static_assert(sizeof(WBP_MapCrosshair_C_SetStyleState) == 0x000001, "Wrong size on WBP_MapCrosshair_C_SetStyleState");
+static_assert(offsetof(WBP_MapCrosshair_C_SetStyleState, NewState) == 0x000000, "Member 'WBP_MapCrosshair_C_SetStyleState::NewState' has a wrong offset!");
+
+// Function WBP_MapCrosshair.WBP_MapCrosshair_C.SetColorStyle
+// 0x0001 (0x0001 - 0x0000)
+struct WBP_MapCrosshair_C_SetColorStyle final
+{
+public:
+	EBrickUIColorStyle                            NewStyle;                                          // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_MapCrosshair_C_SetColorStyle) == 0x000001, "Wrong alignment on WBP_MapCrosshair_C_SetColorStyle");
+static_assert(sizeof(WBP_MapCrosshair_C_SetColorStyle) == 0x000001, "Wrong size on WBP_MapCrosshair_C_SetColorStyle");
+static_assert(offsetof(WBP_MapCrosshair_C_SetColorStyle, NewStyle) == 0x000000, "Member 'WBP_MapCrosshair_C_SetColorStyle::NewStyle' has a wrong offset!");
 
 }
 

@@ -17,41 +17,39 @@ namespace SDK::Params
 {
 
 // Function WBP_VideoSettings.WBP_VideoSettings_C.ExecuteUbergraph_WBP_VideoSettings
-// 0x0080 (0x0080 - 0x0000)
+// 0x0070 (0x0070 - 0x0000)
 struct WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings final
 {
 public:
 	int32                                         EntryPoint;                                        // 0x0000(0x0004)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
 	uint8                                         Pad_4[0x4];                                        // 0x0004(0x0004)(Fixing Size After Last Property [ Dumper-7 ])
-	struct FBrickPropertyReflectionFilter         K2Node_MakeStruct_BrickPropertyReflectionFilter;   // 0x0008(0x0020)()
-	class UMenuWidget*                            CallFunc_GetMenuWidget_ReturnValue;                // 0x0028(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0030(0x0010)(ZeroConstructor, NoDestructor)
-	bool                                          K2Node_Event_bCanApply;                            // 0x0040(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_41[0x7];                                       // 0x0041(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMenuButtonWidget*                      CallFunc_CreateApplyButton_ReturnValue;            // 0x0048(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EPopupResult                                  K2Node_CustomEvent_Result;                         // 0x0050(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0051(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_52[0x6];                                       // 0x0052(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMenuWidget*                            CallFunc_GetMenuWidget_ReturnValue_1;              // 0x0058(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	bool                                          CallFunc_StepBack_ReturnValue;                     // 0x0060(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
-	uint8                                         Pad_61[0x7];                                       // 0x0061(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
-	class UMyUserSettings*                        CallFunc_Get_ReturnValue;                          // 0x0068(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	TArray<class UObject*>                        K2Node_MakeArray_Array;                            // 0x0070(0x0010)(ConstParm, ReferenceParm)
+	class UFluGameUserSettings*                   CallFunc_Get_ReturnValue;                          // 0x0008(0x0008)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	class UMenuWidget*                            CallFunc_GetMenuWidget_ReturnValue;                // 0x0010(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	TDelegate<void()>                             K2Node_CreateDelegate_OutputDelegate;              // 0x0018(0x0010)(ZeroConstructor, NoDestructor)
+	bool                                          K2Node_Event_bCanApply;                            // 0x0028(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_29[0x7];                                       // 0x0029(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMenuButtonWidget*                      CallFunc_CreateApplyButton_ReturnValue;            // 0x0030(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EPopupResult                                  K2Node_CustomEvent_Result;                         // 0x0038(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_EqualEqual_ByteByte_ReturnValue;          // 0x0039(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_3A[0x6];                                       // 0x003A(0x0006)(Fixing Size After Last Property [ Dumper-7 ])
+	class UMenuWidget*                            CallFunc_GetMenuWidget_ReturnValue_1;              // 0x0040(0x0008)(ZeroConstructor, InstancedReference, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	bool                                          CallFunc_StepBack_ReturnValue;                     // 0x0048(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor)
+	uint8                                         Pad_49[0x7];                                       // 0x0049(0x0007)(Fixing Size After Last Property [ Dumper-7 ])
+	struct FBrickPropertyReflectionFilter         K2Node_MakeStruct_BrickPropertyReflectionFilter;   // 0x0050(0x0020)()
 };
 static_assert(alignof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings) == 0x000008, "Wrong alignment on WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings");
-static_assert(sizeof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings) == 0x000080, "Wrong size on WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings");
+static_assert(sizeof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings) == 0x000070, "Wrong size on WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings");
 static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, EntryPoint) == 0x000000, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::EntryPoint' has a wrong offset!");
-static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, K2Node_MakeStruct_BrickPropertyReflectionFilter) == 0x000008, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::K2Node_MakeStruct_BrickPropertyReflectionFilter' has a wrong offset!");
-static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, CallFunc_GetMenuWidget_ReturnValue) == 0x000028, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::CallFunc_GetMenuWidget_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, K2Node_CreateDelegate_OutputDelegate) == 0x000030, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
-static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, K2Node_Event_bCanApply) == 0x000040, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::K2Node_Event_bCanApply' has a wrong offset!");
-static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, CallFunc_CreateApplyButton_ReturnValue) == 0x000048, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::CallFunc_CreateApplyButton_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, K2Node_CustomEvent_Result) == 0x000050, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::K2Node_CustomEvent_Result' has a wrong offset!");
-static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x000051, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, CallFunc_GetMenuWidget_ReturnValue_1) == 0x000058, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::CallFunc_GetMenuWidget_ReturnValue_1' has a wrong offset!");
-static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, CallFunc_StepBack_ReturnValue) == 0x000060, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::CallFunc_StepBack_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, CallFunc_Get_ReturnValue) == 0x000068, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::CallFunc_Get_ReturnValue' has a wrong offset!");
-static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, K2Node_MakeArray_Array) == 0x000070, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::K2Node_MakeArray_Array' has a wrong offset!");
+static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, CallFunc_Get_ReturnValue) == 0x000008, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::CallFunc_Get_ReturnValue' has a wrong offset!");
+static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, CallFunc_GetMenuWidget_ReturnValue) == 0x000010, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::CallFunc_GetMenuWidget_ReturnValue' has a wrong offset!");
+static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, K2Node_CreateDelegate_OutputDelegate) == 0x000018, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::K2Node_CreateDelegate_OutputDelegate' has a wrong offset!");
+static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, K2Node_Event_bCanApply) == 0x000028, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::K2Node_Event_bCanApply' has a wrong offset!");
+static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, CallFunc_CreateApplyButton_ReturnValue) == 0x000030, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::CallFunc_CreateApplyButton_ReturnValue' has a wrong offset!");
+static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, K2Node_CustomEvent_Result) == 0x000038, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::K2Node_CustomEvent_Result' has a wrong offset!");
+static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, CallFunc_EqualEqual_ByteByte_ReturnValue) == 0x000039, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::CallFunc_EqualEqual_ByteByte_ReturnValue' has a wrong offset!");
+static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, CallFunc_GetMenuWidget_ReturnValue_1) == 0x000040, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::CallFunc_GetMenuWidget_ReturnValue_1' has a wrong offset!");
+static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, CallFunc_StepBack_ReturnValue) == 0x000048, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::CallFunc_StepBack_ReturnValue' has a wrong offset!");
+static_assert(offsetof(WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings, K2Node_MakeStruct_BrickPropertyReflectionFilter) == 0x000050, "Member 'WBP_VideoSettings_C_ExecuteUbergraph_WBP_VideoSettings::K2Node_MakeStruct_BrickPropertyReflectionFilter' has a wrong offset!");
 
 // Function WBP_VideoSettings.WBP_VideoSettings_C.OnSaveSettingsPopupClosed
 // 0x0001 (0x0001 - 0x0000)

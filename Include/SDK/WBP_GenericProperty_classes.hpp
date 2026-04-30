@@ -10,16 +10,34 @@
 
 #include "Basic.hpp"
 
+#include "Engine_structs.hpp"
+#include "UMG_structs.hpp"
+#include "BrickRigs_structs.hpp"
 #include "BrickRigs_classes.hpp"
+#include "Slate_structs.hpp"
 
 
 namespace SDK
 {
 
 // WidgetBlueprintGeneratedClass WBP_GenericProperty.WBP_GenericProperty_C
-// 0x0000 (0x0288 - 0x0288)
+// 0x0020 (0x02A8 - 0x0288)
 class UWBP_GenericProperty_C final : public UGenericPropertyWidget
 {
+public:
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0288(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	class UBrickRichTextBlock*                    RichTextBlock;                                     // 0x0290(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UBrickBorder*                           RichTextBorder;                                    // 0x0298(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_BrickTextBox_C*                    TextBox;                                           // 0x02A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+
+public:
+	void ExecuteUbergraph_WBP_GenericProperty(int32 EntryPoint);
+	void BndEvt__WBP_GenericProperty_TextBox_K2Node_ComponentBoundEvent_0_OnTextBoxChanged__DelegateSignature(const class FText& NewText, EValueChangedEventType EventType);
+	void UpdateIsReadOnly(bool bNewReadOnly);
+	void UpdateTextBoxes();
+	void ToggleDisplayRichText();
+	void UpdateText(const class FText& Text, const ETextJustify Justification, const int32 MaxLength, const bool bAllowMultiLine, const bool bIsPassword, const bool bValidateText, const bool bAllowRichText, const class FName& TextFormat);
+
 public:
 	static class UClass* StaticClass()
 	{
@@ -31,7 +49,11 @@ public:
 	}
 };
 static_assert(alignof(UWBP_GenericProperty_C) == 0x000008, "Wrong alignment on UWBP_GenericProperty_C");
-static_assert(sizeof(UWBP_GenericProperty_C) == 0x000288, "Wrong size on UWBP_GenericProperty_C");
+static_assert(sizeof(UWBP_GenericProperty_C) == 0x0002A8, "Wrong size on UWBP_GenericProperty_C");
+static_assert(offsetof(UWBP_GenericProperty_C, UberGraphFrame) == 0x000288, "Member 'UWBP_GenericProperty_C::UberGraphFrame' has a wrong offset!");
+static_assert(offsetof(UWBP_GenericProperty_C, RichTextBlock) == 0x000290, "Member 'UWBP_GenericProperty_C::RichTextBlock' has a wrong offset!");
+static_assert(offsetof(UWBP_GenericProperty_C, RichTextBorder) == 0x000298, "Member 'UWBP_GenericProperty_C::RichTextBorder' has a wrong offset!");
+static_assert(offsetof(UWBP_GenericProperty_C, TextBox) == 0x0002A0, "Member 'UWBP_GenericProperty_C::TextBox' has a wrong offset!");
 
 }
 

@@ -18,11 +18,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Brick_8x8x1s.BP_Brick_8x8x1s_C
-// 0x0008 (0x0170 - 0x0168)
+// 0x0008 (0x0198 - 0x0190)
 class UBP_Brick_8x8x1s_C final : public UBrickStaticInfo
 {
 public:
-	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0168(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
+	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0190(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
 	void ExecuteUbergraph_BP_Brick_8x8x1s(int32 EntryPoint);
@@ -40,8 +40,8 @@ public:
 	}
 };
 static_assert(alignof(UBP_Brick_8x8x1s_C) == 0x000008, "Wrong alignment on UBP_Brick_8x8x1s_C");
-static_assert(sizeof(UBP_Brick_8x8x1s_C) == 0x000170, "Wrong size on UBP_Brick_8x8x1s_C");
-static_assert(offsetof(UBP_Brick_8x8x1s_C, UberGraphFrame) == 0x000168, "Member 'UBP_Brick_8x8x1s_C::UberGraphFrame' has a wrong offset!");
+static_assert(sizeof(UBP_Brick_8x8x1s_C) == 0x000198, "Wrong size on UBP_Brick_8x8x1s_C");
+static_assert(offsetof(UBP_Brick_8x8x1s_C, UberGraphFrame) == 0x000190, "Member 'UBP_Brick_8x8x1s_C::UberGraphFrame' has a wrong offset!");
 
 }
 

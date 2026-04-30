@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SprocketWheel.BP_SprocketWheel_C
-// 0x0000 (0x01C0 - 0x01C0)
+// 0x0000 (0x01E8 - 0x01E8)
 class UBP_SprocketWheel_C final : public USprocketWheelBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_SprocketWheel_C) == 0x000008, "Wrong alignment on UBP_SprocketWheel_C");
-static_assert(sizeof(UBP_SprocketWheel_C) == 0x0001C0, "Wrong size on UBP_SprocketWheel_C");
+static_assert(sizeof(UBP_SprocketWheel_C) == 0x0001E8, "Wrong size on UBP_SprocketWheel_C");
 
 }
 

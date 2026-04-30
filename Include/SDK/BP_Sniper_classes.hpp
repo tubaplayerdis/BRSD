@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Sniper.BP_Sniper_C
-// 0x0000 (0x0298 - 0x0298)
+// 0x0000 (0x02B0 - 0x02B0)
 class ABP_Sniper_C final : public AFirearm
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_Sniper_C) == 0x000008, "Wrong alignment on ABP_Sniper_C");
-static_assert(sizeof(ABP_Sniper_C) == 0x000298, "Wrong size on ABP_Sniper_C");
+static_assert(sizeof(ABP_Sniper_C) == 0x0002B0, "Wrong size on ABP_Sniper_C");
 
 }
 

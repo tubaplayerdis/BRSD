@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Actuator_1x1x3_Bottom.BP_Actuator_1x1x3_Bottom_C
-// 0x0000 (0x0198 - 0x0198)
+// 0x0000 (0x01C0 - 0x01C0)
 class UBP_Actuator_1x1x3_Bottom_C final : public UActuatorBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_Actuator_1x1x3_Bottom_C) == 0x000008, "Wrong alignment on UBP_Actuator_1x1x3_Bottom_C");
-static_assert(sizeof(UBP_Actuator_1x1x3_Bottom_C) == 0x000198, "Wrong size on UBP_Actuator_1x1x3_Bottom_C");
+static_assert(sizeof(UBP_Actuator_1x1x3_Bottom_C) == 0x0001C0, "Wrong size on UBP_Actuator_1x1x3_Bottom_C");
 
 }
 

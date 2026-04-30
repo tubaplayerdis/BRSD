@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Missile_Medium.BP_Missile_Medium_C
-// 0x0000 (0x03F0 - 0x03F0)
+// 0x0000 (0x0400 - 0x0400)
 class ABP_Missile_Medium_C final : public ABP_Missile_Large_C
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_Missile_Medium_C) == 0x000010, "Wrong alignment on ABP_Missile_Medium_C");
-static_assert(sizeof(ABP_Missile_Medium_C) == 0x0003F0, "Wrong size on ABP_Missile_Medium_C");
+static_assert(sizeof(ABP_Missile_Medium_C) == 0x000400, "Wrong size on ABP_Missile_Medium_C");
 
 }
 

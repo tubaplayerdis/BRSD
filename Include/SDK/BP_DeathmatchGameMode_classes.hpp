@@ -17,11 +17,11 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_DeathmatchGameMode.BP_DeathmatchGameMode_C
-// 0x0008 (0x0400 - 0x03F8)
+// 0x0008 (0x0450 - 0x0448)
 class ABP_DeathmatchGameMode_C final : public ADeathmatchGameMode
 {
 public:
-	class USceneComponent*                        DefaultSceneRoot;                                  // 0x03F8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class USceneComponent*                        DefaultSceneRoot;                                  // 0x0448(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -34,8 +34,8 @@ public:
 	}
 };
 static_assert(alignof(ABP_DeathmatchGameMode_C) == 0x000008, "Wrong alignment on ABP_DeathmatchGameMode_C");
-static_assert(sizeof(ABP_DeathmatchGameMode_C) == 0x000400, "Wrong size on ABP_DeathmatchGameMode_C");
-static_assert(offsetof(ABP_DeathmatchGameMode_C, DefaultSceneRoot) == 0x0003F8, "Member 'ABP_DeathmatchGameMode_C::DefaultSceneRoot' has a wrong offset!");
+static_assert(sizeof(ABP_DeathmatchGameMode_C) == 0x000450, "Wrong size on ABP_DeathmatchGameMode_C");
+static_assert(offsetof(ABP_DeathmatchGameMode_C, DefaultSceneRoot) == 0x000448, "Member 'ABP_DeathmatchGameMode_C::DefaultSceneRoot' has a wrong offset!");
 
 }
 

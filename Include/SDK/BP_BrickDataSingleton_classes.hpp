@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_BrickDataSingleton.BP_BrickDataSingleton_C
-// 0x0000 (0x1570 - 0x1570)
+// 0x0000 (0x1550 - 0x1550)
 class UBP_BrickDataSingleton_C final : public UBrickDataSingleton
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_BrickDataSingleton_C) == 0x000010, "Wrong alignment on UBP_BrickDataSingleton_C");
-static_assert(sizeof(UBP_BrickDataSingleton_C) == 0x001570, "Wrong size on UBP_BrickDataSingleton_C");
+static_assert(sizeof(UBP_BrickDataSingleton_C) == 0x001550, "Wrong size on UBP_BrickDataSingleton_C");
 
 }
 

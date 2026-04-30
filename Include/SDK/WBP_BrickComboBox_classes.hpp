@@ -29,11 +29,11 @@ public:
 	class UGridPanel*                             ButtonPanel;                                       // 0x0300(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_WBP_BrickComboBox(int32 EntryPoint);
-	void UpdateUseItemList(bool bInUseItemList);
-	void AddSelectedItemWidget(class UBrickComboBoxItemWidget* Widget);
-	void BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InContentStyleState);
 	void BndEvt__Button_K2Node_ComponentBoundEvent_0_OnClicked__DelegateSignature();
+	void BndEvt__Button_K2Node_ComponentBoundEvent_1_OnUpdateContentStyle__DelegateSignature(EBrickUIColorStyle InColorStyle, EBrickUIStyleState InContentStyleState);
+	void AddSelectedItemWidget(class UBrickComboBoxItemWidget* Widget);
+	void UpdateUseItemList(bool bInUseItemList);
+	void ExecuteUbergraph_WBP_BrickComboBox(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_RC_Sequence_CloseUp.BP_RC_Sequence_CloseUp_C
-// 0x0000 (0x0290 - 0x0290)
+// 0x0000 (0x02A0 - 0x02A0)
 class ABP_RC_Sequence_CloseUp_C final : public ABP_RC_Sequence_2_C
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(ABP_RC_Sequence_CloseUp_C) == 0x000008, "Wrong alignment on ABP_RC_Sequence_CloseUp_C");
-static_assert(sizeof(ABP_RC_Sequence_CloseUp_C) == 0x000290, "Wrong size on ABP_RC_Sequence_CloseUp_C");
+static_assert(sizeof(ABP_RC_Sequence_CloseUp_C) == 0x0002A0, "Wrong size on ABP_RC_Sequence_CloseUp_C");
 
 }
 

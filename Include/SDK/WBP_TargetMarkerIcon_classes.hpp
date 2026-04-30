@@ -31,11 +31,11 @@ public:
 	class UBrickImage*                            FireActionIcon;                                    // 0x02B0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void UpdateAmmoType(EAmmoType NewType);
-	void UpdateTargetDistance(float NewDist);
-	void UpdateFireAction(int32 NewActionIndex);
-	void UpdateHasValidTarget(bool bNewHasValidTarget);
 	void ExecuteUbergraph_WBP_TargetMarkerIcon(int32 EntryPoint);
+	void UpdateHasValidTarget(bool bNewHasValidTarget);
+	void UpdateFireAction(int32 NewActionIndex);
+	void UpdateTargetDistance(float NewDist);
+	void UpdateAmmoType(EAmmoType NewType);
 
 public:
 	static class UClass* StaticClass()

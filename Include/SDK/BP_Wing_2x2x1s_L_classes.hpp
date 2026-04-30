@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Wing_2x2x1s_L.BP_Wing_2x2x1s_L_C
-// 0x0000 (0x0168 - 0x0168)
+// 0x0000 (0x0190 - 0x0190)
 class UBP_Wing_2x2x1s_L_C final : public UWingBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_Wing_2x2x1s_L_C) == 0x000008, "Wrong alignment on UBP_Wing_2x2x1s_L_C");
-static_assert(sizeof(UBP_Wing_2x2x1s_L_C) == 0x000168, "Wrong size on UBP_Wing_2x2x1s_L_C");
+static_assert(sizeof(UBP_Wing_2x2x1s_L_C) == 0x000190, "Wrong size on UBP_Wing_2x2x1s_L_C");
 
 }
 

@@ -29,8 +29,8 @@ public:
 	class UBrickTextBlock*                        TextBlock;                                         // 0x0270(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_WBP_PagedListHeaderField(int32 EntryPoint);
 	void UpdateItem(bool bNewVisible, const class FText& NewText, EBrickUIColorStyle NewColorStyle, EBrickUITextStyle NewTextStyle);
+	void ExecuteUbergraph_WBP_PagedListHeaderField(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

@@ -29,9 +29,9 @@ public:
 	class UBrickTextBlock*                        TextBlock;                                         // 0x0290(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_WBP_MatchState(int32 EntryPoint);
-	void OnAnimationFinished(const class UWidgetAnimation* Animation);
 	void UpdateMatchState(const class FText& NewDisplayText, EBrickUIColorStyle NewColorStyle, bool bFadeOut);
+	void OnAnimationFinished(const class UWidgetAnimation* Animation);
+	void ExecuteUbergraph_WBP_MatchState(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()

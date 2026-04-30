@@ -25,10 +25,10 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x02A0(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 
 public:
-	void Construct();
-	void OnClickedExit();
-	void OnClickedReset();
 	void ExecuteUbergraph_WBP_MapPopup(int32 EntryPoint);
+	void OnClickedReset();
+	void OnClickedExit();
+	void Construct();
 
 public:
 	static class UClass* StaticClass()

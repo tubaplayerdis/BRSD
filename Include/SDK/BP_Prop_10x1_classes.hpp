@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Prop_10x1.BP_Prop_10x1_C
-// 0x0000 (0x0170 - 0x0170)
+// 0x0000 (0x0198 - 0x0198)
 class UBP_Prop_10x1_C final : public UPropellerBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_Prop_10x1_C) == 0x000008, "Wrong alignment on UBP_Prop_10x1_C");
-static_assert(sizeof(UBP_Prop_10x1_C) == 0x000170, "Wrong size on UBP_Prop_10x1_C");
+static_assert(sizeof(UBP_Prop_10x1_C) == 0x000198, "Wrong size on UBP_Prop_10x1_C");
 
 }
 

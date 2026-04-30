@@ -12,9 +12,9 @@
 
 #include "Engine_structs.hpp"
 #include "Engine_classes.hpp"
-#include "Landscape_structs.hpp"
 #include "CoreUObject_structs.hpp"
 #include "CoreUObject_classes.hpp"
+#include "Landscape_structs.hpp"
 #include "DeveloperSettings_classes.hpp"
 
 
@@ -43,12 +43,12 @@ static_assert(sizeof(AControlPointMeshActor) == 0x000228, "Wrong size on AContro
 static_assert(offsetof(AControlPointMeshActor, ControlPointMeshComponent) == 0x000220, "Member 'AControlPointMeshActor::ControlPointMeshComponent' has a wrong offset!");
 
 // Class Landscape.ControlPointMeshComponent
-// 0x0010 (0x0550 - 0x0540)
+// 0x0000 (0x0540 - 0x0540)
 class UControlPointMeshComponent final : public UStaticMeshComponent
 {
 public:
-	float                                         VirtualTextureMainPassMaxDrawDistance;             // 0x0540(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
-	uint8                                         Pad_544[0xC];                                      // 0x0544(0x000C)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	float                                         VirtualTextureMainPassMaxDrawDistance;             // 0x0538(0x0004)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPublic)
+	uint8                                         Pad_53C[0x4];                                      // 0x053C(0x0004)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -61,8 +61,8 @@ public:
 	}
 };
 static_assert(alignof(UControlPointMeshComponent) == 0x000010, "Wrong alignment on UControlPointMeshComponent");
-static_assert(sizeof(UControlPointMeshComponent) == 0x000550, "Wrong size on UControlPointMeshComponent");
-static_assert(offsetof(UControlPointMeshComponent, VirtualTextureMainPassMaxDrawDistance) == 0x000540, "Member 'UControlPointMeshComponent::VirtualTextureMainPassMaxDrawDistance' has a wrong offset!");
+static_assert(sizeof(UControlPointMeshComponent) == 0x000540, "Wrong size on UControlPointMeshComponent");
+static_assert(offsetof(UControlPointMeshComponent, VirtualTextureMainPassMaxDrawDistance) == 0x000538, "Member 'UControlPointMeshComponent::VirtualTextureMainPassMaxDrawDistance' has a wrong offset!");
 
 // Class Landscape.LandscapeProxy
 // 0x03E0 (0x0600 - 0x0220)
@@ -692,14 +692,14 @@ static_assert(sizeof(ALandscapeMeshProxyActor) == 0x000228, "Wrong size on ALand
 static_assert(offsetof(ALandscapeMeshProxyActor, LandscapeMeshProxyComponent) == 0x000220, "Member 'ALandscapeMeshProxyActor::LandscapeMeshProxyComponent' has a wrong offset!");
 
 // Class Landscape.LandscapeMeshProxyComponent
-// 0x0030 (0x0570 - 0x0540)
+// 0x0020 (0x0560 - 0x0540)
 class ULandscapeMeshProxyComponent final : public UStaticMeshComponent
 {
 public:
-	struct FGuid                                  LandscapeGuid;                                     // 0x0540(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	TArray<struct FIntPoint>                      ProxyComponentBases;                               // 0x0550(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
-	int8                                          ProxyLOD;                                          // 0x0560(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
-	uint8                                         Pad_561[0xF];                                      // 0x0561(0x000F)(Fixing Struct Size After Last Property [ Dumper-7 ])
+	struct FGuid                                  LandscapeGuid;                                     // 0x0538(0x0010)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	TArray<struct FIntPoint>                      ProxyComponentBases;                               // 0x0548(0x0010)(ZeroConstructor, NativeAccessSpecifierPrivate)
+	int8                                          ProxyLOD;                                          // 0x0558(0x0001)(ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash, NativeAccessSpecifierPrivate)
+	uint8                                         Pad_559[0x7];                                      // 0x0559(0x0007)(Fixing Struct Size After Last Property [ Dumper-7 ])
 
 public:
 	static class UClass* StaticClass()
@@ -712,10 +712,10 @@ public:
 	}
 };
 static_assert(alignof(ULandscapeMeshProxyComponent) == 0x000010, "Wrong alignment on ULandscapeMeshProxyComponent");
-static_assert(sizeof(ULandscapeMeshProxyComponent) == 0x000570, "Wrong size on ULandscapeMeshProxyComponent");
-static_assert(offsetof(ULandscapeMeshProxyComponent, LandscapeGuid) == 0x000540, "Member 'ULandscapeMeshProxyComponent::LandscapeGuid' has a wrong offset!");
-static_assert(offsetof(ULandscapeMeshProxyComponent, ProxyComponentBases) == 0x000550, "Member 'ULandscapeMeshProxyComponent::ProxyComponentBases' has a wrong offset!");
-static_assert(offsetof(ULandscapeMeshProxyComponent, ProxyLOD) == 0x000560, "Member 'ULandscapeMeshProxyComponent::ProxyLOD' has a wrong offset!");
+static_assert(sizeof(ULandscapeMeshProxyComponent) == 0x000560, "Wrong size on ULandscapeMeshProxyComponent");
+static_assert(offsetof(ULandscapeMeshProxyComponent, LandscapeGuid) == 0x000538, "Member 'ULandscapeMeshProxyComponent::LandscapeGuid' has a wrong offset!");
+static_assert(offsetof(ULandscapeMeshProxyComponent, ProxyComponentBases) == 0x000548, "Member 'ULandscapeMeshProxyComponent::ProxyComponentBases' has a wrong offset!");
+static_assert(offsetof(ULandscapeMeshProxyComponent, ProxyLOD) == 0x000558, "Member 'ULandscapeMeshProxyComponent::ProxyLOD' has a wrong offset!");
 
 // Class Landscape.LandscapeSettings
 // 0x0008 (0x0040 - 0x0038)

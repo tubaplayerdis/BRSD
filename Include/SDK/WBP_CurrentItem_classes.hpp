@@ -27,21 +27,22 @@ public:
 	struct FPointerToUberGraphFrame               UberGraphFrame;                                    // 0x0268(0x0008)(ZeroConstructor, Transient, DuplicateTransient)
 	class UWBP_BrickSliderReadOnly_C*             AmmoSlider;                                        // 0x0270(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UBrickBorder*                           AmmoTypeBorder;                                    // 0x0278(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UBrickImage*                            AmmoTypeImage;                                     // 0x0280(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_ControlHint_C*                     AmmoTypeControlHint;                               // 0x0280(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UWBP_FadingPanel_C*                     FadingPanel;                                       // 0x0288(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UBrickBorder*                           FireModeBorder;                                    // 0x0290(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
-	class UBrickImage*                            FireModeImage;                                     // 0x0298(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
+	class UWBP_ControlHint_C*                     FireModeControlHint;                               // 0x0298(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 	class UBrickTextBlock*                        NameTextBlock;                                     // 0x02A0(0x0008)(BlueprintVisible, ExportObject, ZeroConstructor, InstancedReference, IsPlainOldData, RepSkip, NoDestructor, PersistentInstance, HasGetValueTypeHash)
 
 public:
-	void ExecuteUbergraph_WBP_CurrentItem(int32 EntryPoint);
-	void BndEvt__WBP_CurrentItem_FadingPanel_K2Node_ComponentBoundEvent_0_OnFadedOut__DelegateSignature();
-	void UpdateItemName(const class FText& NewName);
-	void FadeOut(bool bImmediate);
-	void FadeIn();
-	void UpdateAmmo(int32 Current, int32 Capacity, int32 Ammo);
-	void UpdateAmmoType(EAmmoType NewType);
 	void UpdateFireMode(const EFireMode NewMode, const bool bHasFirearm);
+	void UpdateAmmoType(EAmmoType NewType);
+	void UpdateAmmo(int32 Current, int32 Capacity, int32 Ammo);
+	void FadeIn();
+	void FadeOut(bool bImmediate);
+	void UpdateItemName(const class FText& NewName);
+	void BndEvt__WBP_CurrentItem_FadingPanel_K2Node_ComponentBoundEvent_0_OnFadedOut__DelegateSignature();
+	void PreConstruct(bool IsDesignTime);
+	void ExecuteUbergraph_WBP_CurrentItem(int32 EntryPoint);
 
 public:
 	static class UClass* StaticClass()
@@ -58,10 +59,10 @@ static_assert(sizeof(UWBP_CurrentItem_C) == 0x0002A8, "Wrong size on UWBP_Curren
 static_assert(offsetof(UWBP_CurrentItem_C, UberGraphFrame) == 0x000268, "Member 'UWBP_CurrentItem_C::UberGraphFrame' has a wrong offset!");
 static_assert(offsetof(UWBP_CurrentItem_C, AmmoSlider) == 0x000270, "Member 'UWBP_CurrentItem_C::AmmoSlider' has a wrong offset!");
 static_assert(offsetof(UWBP_CurrentItem_C, AmmoTypeBorder) == 0x000278, "Member 'UWBP_CurrentItem_C::AmmoTypeBorder' has a wrong offset!");
-static_assert(offsetof(UWBP_CurrentItem_C, AmmoTypeImage) == 0x000280, "Member 'UWBP_CurrentItem_C::AmmoTypeImage' has a wrong offset!");
+static_assert(offsetof(UWBP_CurrentItem_C, AmmoTypeControlHint) == 0x000280, "Member 'UWBP_CurrentItem_C::AmmoTypeControlHint' has a wrong offset!");
 static_assert(offsetof(UWBP_CurrentItem_C, FadingPanel) == 0x000288, "Member 'UWBP_CurrentItem_C::FadingPanel' has a wrong offset!");
 static_assert(offsetof(UWBP_CurrentItem_C, FireModeBorder) == 0x000290, "Member 'UWBP_CurrentItem_C::FireModeBorder' has a wrong offset!");
-static_assert(offsetof(UWBP_CurrentItem_C, FireModeImage) == 0x000298, "Member 'UWBP_CurrentItem_C::FireModeImage' has a wrong offset!");
+static_assert(offsetof(UWBP_CurrentItem_C, FireModeControlHint) == 0x000298, "Member 'UWBP_CurrentItem_C::FireModeControlHint' has a wrong offset!");
 static_assert(offsetof(UWBP_CurrentItem_C, NameTextBlock) == 0x0002A0, "Member 'UWBP_CurrentItem_C::NameTextBlock' has a wrong offset!");
 
 }

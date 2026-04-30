@@ -17,13 +17,13 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_RC_Sequence_Winter.BP_RC_Sequence_Winter_C
-// 0x0018 (0x02A8 - 0x0290)
+// 0x0018 (0x02B8 - 0x02A0)
 class ABP_RC_Sequence_Winter_C final : public ABP_RC_Sequence_2_C
 {
 public:
-	class UChildActorComponent*                   FloodLight2;                                       // 0x0290(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UChildActorComponent*                   FloodLight1;                                       // 0x0298(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
-	class UChildActorComponent*                   FloodLight;                                        // 0x02A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UChildActorComponent*                   FloodLight2;                                       // 0x02A0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UChildActorComponent*                   FloodLight1;                                       // 0x02A8(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
+	class UChildActorComponent*                   FloodLight;                                        // 0x02B0(0x0008)(BlueprintVisible, ZeroConstructor, InstancedReference, IsPlainOldData, NonTransactional, NoDestructor, HasGetValueTypeHash)
 
 public:
 	static class UClass* StaticClass()
@@ -36,10 +36,10 @@ public:
 	}
 };
 static_assert(alignof(ABP_RC_Sequence_Winter_C) == 0x000008, "Wrong alignment on ABP_RC_Sequence_Winter_C");
-static_assert(sizeof(ABP_RC_Sequence_Winter_C) == 0x0002A8, "Wrong size on ABP_RC_Sequence_Winter_C");
-static_assert(offsetof(ABP_RC_Sequence_Winter_C, FloodLight2) == 0x000290, "Member 'ABP_RC_Sequence_Winter_C::FloodLight2' has a wrong offset!");
-static_assert(offsetof(ABP_RC_Sequence_Winter_C, FloodLight1) == 0x000298, "Member 'ABP_RC_Sequence_Winter_C::FloodLight1' has a wrong offset!");
-static_assert(offsetof(ABP_RC_Sequence_Winter_C, FloodLight) == 0x0002A0, "Member 'ABP_RC_Sequence_Winter_C::FloodLight' has a wrong offset!");
+static_assert(sizeof(ABP_RC_Sequence_Winter_C) == 0x0002B8, "Wrong size on ABP_RC_Sequence_Winter_C");
+static_assert(offsetof(ABP_RC_Sequence_Winter_C, FloodLight2) == 0x0002A0, "Member 'ABP_RC_Sequence_Winter_C::FloodLight2' has a wrong offset!");
+static_assert(offsetof(ABP_RC_Sequence_Winter_C, FloodLight1) == 0x0002A8, "Member 'ABP_RC_Sequence_Winter_C::FloodLight1' has a wrong offset!");
+static_assert(offsetof(ABP_RC_Sequence_Winter_C, FloodLight) == 0x0002B0, "Member 'ABP_RC_Sequence_Winter_C::FloodLight' has a wrong offset!");
 
 }
 

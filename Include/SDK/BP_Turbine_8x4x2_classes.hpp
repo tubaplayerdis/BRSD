@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_Turbine_8x4x2.BP_Turbine_8x4x2_C
-// 0x0000 (0x01C8 - 0x01C8)
+// 0x0000 (0x01F0 - 0x01F0)
 class UBP_Turbine_8x4x2_C final : public UTurbineBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_Turbine_8x4x2_C) == 0x000008, "Wrong alignment on UBP_Turbine_8x4x2_C");
-static_assert(sizeof(UBP_Turbine_8x4x2_C) == 0x0001C8, "Wrong size on UBP_Turbine_8x4x2_C");
+static_assert(sizeof(UBP_Turbine_8x4x2_C) == 0x0001F0, "Wrong size on UBP_Turbine_8x4x2_C");
 
 }
 

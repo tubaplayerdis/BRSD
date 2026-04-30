@@ -140,7 +140,7 @@ bool interpreter::Commands::AmmoType(PlayerInfo info, std::string ammotype)
     if (!CItem) { sendUserSpecificMessageCommandFailed(info, "You do not have a active item! Equip a weapon to your active item to change your ammotype!"); RETF; }
     if (!CItem->IsA(SDK::AFirearm::StaticClass())) { sendUserSpecificMessageCommandFailed(info, "Your active item is not a weapon! Equip a weapon as your active item to change your ammotype!"); RETF; }
     SDK::AFirearm* Firearm = static_cast<SDK::AFirearm*>(CItem);
-    Firearm->FirearmComponent->FirearmState.AmmoType = selected;
+    //Firearm->FirearmComponent->FirearmState.AmmoType = selected;
     RETT;
 }
 

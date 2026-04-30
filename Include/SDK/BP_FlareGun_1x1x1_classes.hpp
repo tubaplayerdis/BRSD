@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_FlareGun_1x1x1.BP_FlareGun_1x1x1_C
-// 0x0000 (0x02A0 - 0x02A0)
+// 0x0000 (0x02C0 - 0x02C0)
 class UBP_FlareGun_1x1x1_C final : public UFlareBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_FlareGun_1x1x1_C) == 0x000010, "Wrong alignment on UBP_FlareGun_1x1x1_C");
-static_assert(sizeof(UBP_FlareGun_1x1x1_C) == 0x0002A0, "Wrong size on UBP_FlareGun_1x1x1_C");
+static_assert(sizeof(UBP_FlareGun_1x1x1_C) == 0x0002C0, "Wrong size on UBP_FlareGun_1x1x1_C");
 
 }
 

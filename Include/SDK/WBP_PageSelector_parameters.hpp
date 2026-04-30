@@ -16,6 +16,45 @@
 namespace SDK::Params
 {
 
+// Function WBP_PageSelector.WBP_PageSelector_C.BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature
+// 0x0002 (0x0002 - 0x0000)
+struct WBP_PageSelector_C_BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature final
+{
+public:
+	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EBrickUIStyleState                            InContentStyleState;                               // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_PageSelector_C_BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature) == 0x000001, "Wrong alignment on WBP_PageSelector_C_BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature");
+static_assert(sizeof(WBP_PageSelector_C_BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature) == 0x000002, "Wrong size on WBP_PageSelector_C_BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature");
+static_assert(offsetof(WBP_PageSelector_C_BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature, InColorStyle) == 0x000000, "Member 'WBP_PageSelector_C_BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature::InColorStyle' has a wrong offset!");
+static_assert(offsetof(WBP_PageSelector_C_BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature, InContentStyleState) == 0x000001, "Member 'WBP_PageSelector_C_BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature::InContentStyleState' has a wrong offset!");
+
+// Function WBP_PageSelector.WBP_PageSelector_C.BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature
+// 0x0002 (0x0002 - 0x0000)
+struct WBP_PageSelector_C_BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature final
+{
+public:
+	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+	EBrickUIStyleState                            InContentStyleState;                               // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
+};
+static_assert(alignof(WBP_PageSelector_C_BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature) == 0x000001, "Wrong alignment on WBP_PageSelector_C_BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature");
+static_assert(sizeof(WBP_PageSelector_C_BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature) == 0x000002, "Wrong size on WBP_PageSelector_C_BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature");
+static_assert(offsetof(WBP_PageSelector_C_BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature, InColorStyle) == 0x000000, "Member 'WBP_PageSelector_C_BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature::InColorStyle' has a wrong offset!");
+static_assert(offsetof(WBP_PageSelector_C_BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature, InContentStyleState) == 0x000001, "Member 'WBP_PageSelector_C_BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature::InContentStyleState' has a wrong offset!");
+
+// Function WBP_PageSelector.WBP_PageSelector_C.UpdateButtons
+// 0x0002 (0x0002 - 0x0000)
+struct WBP_PageSelector_C_UpdateButtons final
+{
+public:
+	bool                                          bCanGoBack;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+	bool                                          bCanGoForward;                                     // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
+};
+static_assert(alignof(WBP_PageSelector_C_UpdateButtons) == 0x000001, "Wrong alignment on WBP_PageSelector_C_UpdateButtons");
+static_assert(sizeof(WBP_PageSelector_C_UpdateButtons) == 0x000002, "Wrong size on WBP_PageSelector_C_UpdateButtons");
+static_assert(offsetof(WBP_PageSelector_C_UpdateButtons, bCanGoBack) == 0x000000, "Member 'WBP_PageSelector_C_UpdateButtons::bCanGoBack' has a wrong offset!");
+static_assert(offsetof(WBP_PageSelector_C_UpdateButtons, bCanGoForward) == 0x000001, "Member 'WBP_PageSelector_C_UpdateButtons::bCanGoForward' has a wrong offset!");
+
 // Function WBP_PageSelector.WBP_PageSelector_C.ExecuteUbergraph_WBP_PageSelector
 // 0x000C (0x000C - 0x0000)
 struct WBP_PageSelector_C_ExecuteUbergraph_WBP_PageSelector final
@@ -38,45 +77,6 @@ static_assert(offsetof(WBP_PageSelector_C_ExecuteUbergraph_WBP_PageSelector, K2N
 static_assert(offsetof(WBP_PageSelector_C_ExecuteUbergraph_WBP_PageSelector, K2Node_ComponentBoundEvent_InContentStyleState) == 0x000007, "Member 'WBP_PageSelector_C_ExecuteUbergraph_WBP_PageSelector::K2Node_ComponentBoundEvent_InContentStyleState' has a wrong offset!");
 static_assert(offsetof(WBP_PageSelector_C_ExecuteUbergraph_WBP_PageSelector, K2Node_Event_bCanGoBack) == 0x000008, "Member 'WBP_PageSelector_C_ExecuteUbergraph_WBP_PageSelector::K2Node_Event_bCanGoBack' has a wrong offset!");
 static_assert(offsetof(WBP_PageSelector_C_ExecuteUbergraph_WBP_PageSelector, K2Node_Event_bCanGoForward) == 0x000009, "Member 'WBP_PageSelector_C_ExecuteUbergraph_WBP_PageSelector::K2Node_Event_bCanGoForward' has a wrong offset!");
-
-// Function WBP_PageSelector.WBP_PageSelector_C.UpdateButtons
-// 0x0002 (0x0002 - 0x0000)
-struct WBP_PageSelector_C_UpdateButtons final
-{
-public:
-	bool                                          bCanGoBack;                                        // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-	bool                                          bCanGoForward;                                     // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor)
-};
-static_assert(alignof(WBP_PageSelector_C_UpdateButtons) == 0x000001, "Wrong alignment on WBP_PageSelector_C_UpdateButtons");
-static_assert(sizeof(WBP_PageSelector_C_UpdateButtons) == 0x000002, "Wrong size on WBP_PageSelector_C_UpdateButtons");
-static_assert(offsetof(WBP_PageSelector_C_UpdateButtons, bCanGoBack) == 0x000000, "Member 'WBP_PageSelector_C_UpdateButtons::bCanGoBack' has a wrong offset!");
-static_assert(offsetof(WBP_PageSelector_C_UpdateButtons, bCanGoForward) == 0x000001, "Member 'WBP_PageSelector_C_UpdateButtons::bCanGoForward' has a wrong offset!");
-
-// Function WBP_PageSelector.WBP_PageSelector_C.BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature
-// 0x0002 (0x0002 - 0x0000)
-struct WBP_PageSelector_C_BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature final
-{
-public:
-	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EBrickUIStyleState                            InContentStyleState;                               // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_PageSelector_C_BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature) == 0x000001, "Wrong alignment on WBP_PageSelector_C_BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature");
-static_assert(sizeof(WBP_PageSelector_C_BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature) == 0x000002, "Wrong size on WBP_PageSelector_C_BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature");
-static_assert(offsetof(WBP_PageSelector_C_BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature, InColorStyle) == 0x000000, "Member 'WBP_PageSelector_C_BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature::InColorStyle' has a wrong offset!");
-static_assert(offsetof(WBP_PageSelector_C_BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature, InContentStyleState) == 0x000001, "Member 'WBP_PageSelector_C_BndEvt__NextButton_K2Node_ComponentBoundEvent_3_OnUpdateContentStyle__DelegateSignature::InContentStyleState' has a wrong offset!");
-
-// Function WBP_PageSelector.WBP_PageSelector_C.BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature
-// 0x0002 (0x0002 - 0x0000)
-struct WBP_PageSelector_C_BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature final
-{
-public:
-	EBrickUIColorStyle                            InColorStyle;                                      // 0x0000(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-	EBrickUIStyleState                            InContentStyleState;                               // 0x0001(0x0001)(BlueprintVisible, BlueprintReadOnly, Parm, ZeroConstructor, IsPlainOldData, NoDestructor, HasGetValueTypeHash)
-};
-static_assert(alignof(WBP_PageSelector_C_BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature) == 0x000001, "Wrong alignment on WBP_PageSelector_C_BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature");
-static_assert(sizeof(WBP_PageSelector_C_BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature) == 0x000002, "Wrong size on WBP_PageSelector_C_BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature");
-static_assert(offsetof(WBP_PageSelector_C_BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature, InColorStyle) == 0x000000, "Member 'WBP_PageSelector_C_BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature::InColorStyle' has a wrong offset!");
-static_assert(offsetof(WBP_PageSelector_C_BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature, InContentStyleState) == 0x000001, "Member 'WBP_PageSelector_C_BndEvt__PrevButton_K2Node_ComponentBoundEvent_2_OnUpdateContentStyle__DelegateSignature::InContentStyleState' has a wrong offset!");
 
 }
 

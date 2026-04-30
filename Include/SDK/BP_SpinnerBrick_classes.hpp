@@ -17,7 +17,7 @@ namespace SDK
 {
 
 // BlueprintGeneratedClass BP_SpinnerBrick.BP_SpinnerBrick_C
-// 0x0000 (0x0168 - 0x0168)
+// 0x0000 (0x0190 - 0x0190)
 class UBP_SpinnerBrick_C final : public USpinnerBrickStaticInfo
 {
 public:
@@ -31,7 +31,7 @@ public:
 	}
 };
 static_assert(alignof(UBP_SpinnerBrick_C) == 0x000008, "Wrong alignment on UBP_SpinnerBrick_C");
-static_assert(sizeof(UBP_SpinnerBrick_C) == 0x000168, "Wrong size on UBP_SpinnerBrick_C");
+static_assert(sizeof(UBP_SpinnerBrick_C) == 0x000190, "Wrong size on UBP_SpinnerBrick_C");
 
 }
 
