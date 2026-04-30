@@ -1384,7 +1384,7 @@
       <AdditionalIncludeDirectories>C:\Users\aaron\source\repos\Brick Rigs Server Director\include;;C:\dev\VCPKG\vcpkg\installed\x64-windows\include</AdditionalIncludeDirectories>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
-    <ClCompile Include="Source\Modules\DiscordBase.cpp" />
+    <ClCompile Include="Source\Modules\OnlineBase.cpp" />
     <ClCompile Include="Source\Modules\Server Director\Messages.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
