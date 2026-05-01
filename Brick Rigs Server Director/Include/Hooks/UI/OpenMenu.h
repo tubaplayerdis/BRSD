@@ -27,15 +27,6 @@ namespace hooks
         static void __fastcall HookedFunction(SDK::UMenuWidget* This, SDK::FName InMenu)
         {
             S_OpenMenu->OriginalFunction(This, InMenu);
-            Sleep(10);
-            if (!This) return;
-            if (InMenu.GetRawString().c_str() == nullptr) return;
-            if (InMenu.GetRawString() == "InGameMenu") {
-                watermark::ShowWaterMark();
-            }
-            else if (InMenu.GetRawString() == "Players") {
-            }
-            if (InMenu.GetRawString() == "None" && global::isMapValid()) watermark::HideWaterWark();
         }
 
         OpenMenu() : Hook(UMENUWIDGET_OPENMENU, HookedFunction) {}

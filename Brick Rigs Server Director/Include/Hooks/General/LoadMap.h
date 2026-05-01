@@ -15,7 +15,6 @@
 #include <Windows.h>
 #include <BR-SDK.hpp>
 #include "../../Global/Global.h"
-#include "../../Modules/UI/Watermark.h"
 
 
 namespace hooks
@@ -32,7 +31,6 @@ namespace hooks
             char ret = S_LoadMap->OriginalFunction(This, WorldContext, URL, Pending, Error);
             Sleep(20);
             global::mapLevelName = SDK::UGameplayStatics::GetCurrentLevelName(World(), true).ToString();
-            if (global::mapLevelName == "MainMenu") watermark::ShowWaterMark();
             return ret;
         }
 

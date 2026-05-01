@@ -8,61 +8,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6bb5657-266a-4372-9b1f-80a00cd11c3c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/o_client.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Events/GeneralEvents.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/o_client.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Brick Rigs Server Director/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Brick Rigs Server Director/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Brick Rigs Server Director.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Brick Rigs Server Director.vcxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/GUI/GuiManager.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/GUI/GuiMenus.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/GUI/Kiero/kiero.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/Command Engine/Commands.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/Command Engine/Interpreter.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/Command Engine/Messages.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/Messages.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/Module.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/Modules.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/Server Director/Moderation.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/Server Director/Saver.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/Server Director/Welcome.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/Server Director/blacklist.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/UI/UIBase.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/UI/Watermark.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/GUI/GuiManager.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/GUI/Kiero/kiero.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/GUI/command_engine_menu.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/GUI/main_menu.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/GUI/moderation_menu.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/AddChatMessage.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/AddChatMessage.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/BeginPlay.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/BeginPlay.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/LoadMap.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/LoadMap.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/OnPlayerJoined.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/OnPlayerJoined.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/UI/OpenMenu.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/UI/OpenMenu.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/Vehicle/RestartPlayerAt.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/Vehicle/RestartPlayerAt.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/o_client.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/o_client.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Events/GeneralEvents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Events/GeneralEvents.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/Command Engine/Interpreter.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/Command Engine/enviroment_commands.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/Command Engine/main_commands.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/Command Engine/master_commands.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/Command Engine/moderation_commands.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/Command Engine/movement_commands.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/Command Engine/weapons_commands.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/OnlineBase.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/Server Director/Messages.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/Messages.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/Server Director/Moderation.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/UI/UIBase.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/UI/Watermark.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/imconfig.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/imgui.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/imgui.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/imgui_demo.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/imgui_draw.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/imgui_impl_dx11.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/imgui_impl_dx11.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/imgui_impl_win32.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/imgui_impl_win32.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/imgui_internal.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/imgui_tables.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/imgui_widgets.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/implot.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/implot.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/implot_internal.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/implot_items.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/imstb_rectpack.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/imstb_textedit.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/imgui/imstb_truetype.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/o_client.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/o_client.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +92,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777553969338</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Remove old mod implement networking basics on new mod">
+      <option name="closed" value="true" />
+      <created>1777589312676</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1777589312676</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,7 +111,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="untracked files" />
-    <option name="LAST_COMMIT_MESSAGE" value="untracked files" />
+    <MESSAGE value="Remove old mod implement networking basics on new mod" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove old mod implement networking basics on new mod" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

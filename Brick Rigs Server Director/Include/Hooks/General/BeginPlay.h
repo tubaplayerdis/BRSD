@@ -15,12 +15,10 @@
 #include <BR-SDK.hpp>
 #include <thread>
 
-#include "../../Modules/Modules.h"
 #include "../../Global/Global.h"
 #include "AddChatMessage.h"
 #include "OnPlayerJoined.h"
 #include "StartPlay.h"
-#include "../../Modules/UI/Watermark.h"
 
 namespace hooks
 {
@@ -39,7 +37,7 @@ namespace hooks
 				S_AddChatMessage->Disable();
 				S_OnPlayerJoined->Disable();
 				S_StartPlay->Disable();
-				watermark::HideWaterWark();
+				//watermark::HideWaterWark();
 				return;
 			}
 			else {
@@ -49,9 +47,6 @@ namespace hooks
 				S_StartPlay->Enable();
 			}
 			global::pointers::UpdatePointers(This);
-			if (global::isMapValid()) watermark::HideWaterWark();
-			else { watermark::ShowWaterMark(); }
-			welcome::SendWelcomeMessageA();
 			//std::cout << "Started server on map: " << SDK::UGameplayStatics::GetCurrentLevelName(This, true).ToString() << std::endl;
 		}
 

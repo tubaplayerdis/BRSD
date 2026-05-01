@@ -18,6 +18,7 @@
 #include "../Include/Modules/Messages.h"
 #include "../Include/Hooks/General/AddChatMessage.h"
 #include "../Include/Logging/logger.h"
+#include "../Include/Modules/o_client.h"
 
 using namespace global;
 
@@ -48,7 +49,7 @@ void MainLoop()
 
 	hooks::EnableHooks();
 
-	Module::EnableModules();
+	auto client = o_client::get();
 
 	std::cout << "Starting Main Loop!" << std::endl;
 
@@ -63,7 +64,6 @@ void MainLoop()
 
 	}
 
-	Module::DisableModules();
 
 	hooks::DestroyHookObjects();
 

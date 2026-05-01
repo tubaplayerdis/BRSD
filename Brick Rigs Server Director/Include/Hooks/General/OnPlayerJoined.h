@@ -14,7 +14,6 @@
 #include "../../Utils/Offsets.h"
 #include <windows.h>
 #include <BR-SDK.hpp>
-#include "../../Modules/Command Engine/Messages.h"
 #include "../../Utils/StringLiterals.h"
 #include "../../Global/Global.h"
 #include <fstream>
@@ -50,8 +49,8 @@ namespace hooks
         static void __fastcall HookedFunction(SDK::ABrickGameSession* This, SDK::ABrickPlayerController* PC)
         {
             S_OnPlayerJoined->OriginalFunction(This, PC);
-            messages::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(PC), WelcomeClientMessage, SDK::EChatContext::Global, L"Welcome!");
-            Release(LogPlayerJoining(GetPlayerInfoFromController(PC));)
+            //messages::sendUserSpecificMessageWithContext(GetPlayerInfoFromController(PC), WelcomeClientMessage, SDK::EChatContext::Global, L"Welcome!");
+            //Release(LogPlayerJoining(GetPlayerInfoFromController(PC));)
 
         }
 
