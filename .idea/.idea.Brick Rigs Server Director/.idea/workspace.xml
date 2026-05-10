@@ -8,17 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6bb5657-266a-4372-9b1f-80a00cd11c3c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Brick Rigs Server Director/.idea/.name" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Brick Rigs Server Director/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Brick Rigs Server Director/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Brick Rigs Server Director.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Brick Rigs Server Director.vcxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/AddChatMessage.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/AddChatMessage.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/BeginPlay.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/BeginPlay.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/LoadMap.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/LoadMap.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/OnPlayerJoined.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/OnPlayerJoined.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/UI/OpenMenu.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/UI/OpenMenu.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/Vehicle/RestartPlayerAt.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/Vehicle/RestartPlayerAt.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/o_client.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/o_client.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Events/GeneralEvents.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Events/GeneralEvents.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/o_client.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/o_client.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,6 +75,11 @@
       <workItem from="1777298585508" duration="139000" />
       <workItem from="1777553769845" duration="1562000" />
       <workItem from="1777564619498" duration="857000" />
+      <workItem from="1777736625092" duration="1647000" />
+      <workItem from="1777942897721" duration="125000" />
+      <workItem from="1778114229660" duration="567000" />
+      <workItem from="1778362776285" duration="1277000" />
+      <workItem from="1778429878028" duration="689000" />
     </task>
     <task id="LOCAL-00001" summary="untracked files">
       <option name="closed" value="true" />
@@ -100,7 +97,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777589312676</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Get first working model!">
+      <option name="closed" value="true" />
+      <created>1777607561161</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1777607561161</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,7 +117,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="untracked files" />
     <MESSAGE value="Remove old mod implement networking basics on new mod" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove old mod implement networking basics on new mod" />
+    <MESSAGE value="Get first working model!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Get first working model!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

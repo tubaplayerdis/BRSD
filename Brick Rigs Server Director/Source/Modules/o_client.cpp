@@ -12,7 +12,7 @@ namespace
 
 o_client::o_client() : client_()
 {
-    events_ = std::vector<o_event>();
+    events_ = std::vector<o_event*>();
 
     #ifdef _DEBUG
     client_.connect("http://127.0.0.1:3000");
@@ -24,10 +24,10 @@ o_client::o_client() : client_()
     {
         for (auto& event : events_)
         {
-            if (e.get_name() == event.get_name())
+            if (e.get_name() == event->get_name())
             {
                 if (!SDK::UKismetSystemLibrary::IsServer(SDK::UWorld::GetWorld())) return;
-                event.execute(e);
+                event->execute(e);
             }
         }
     });
@@ -58,6 +58,25 @@ o_client::o_client() : client_()
 
         ev.put_ack_message(packet);
     });
+
+    //Send initial identify.
+    {
+        SDK::ABrickGameState* state = SDK::ABrickGameState::Get(SDK::UWorld::GetWorld());
+
+        if (!state) return; //The message will timeout
+
+        std::string host_identity = "none";
+
+        for (const auto player : state->PlayerArray)
+        {
+            if (reinterpret_cast<SDK::ABrickPlayerState*>(player)->GetAdminRole() == SDK::EAdminRole::Owner)
+            {
+                host_identity = SDK::UBrickStatics::UniqueNetIdToString(player->UniqueId).ToString();
+            }
+        }
+
+        client_.socket()->emit("self-identify", sio::string_message::create(host_identity));
+    }
 }
 
 o_client::~o_client()
@@ -71,7 +90,7 @@ o_client* o_client::get()
     return base.get();
 }
 
-void o_client::event_register(const o_event& e)
+void o_client::event_register(o_event* e)
 {
     events_.push_back(e);
 }
@@ -81,7 +100,7 @@ void o_client::message_emit(std::string const& name, sio::message::list const& m
     client_.socket()->emit(name, msglist, ack);
 }
 
-o_event::o_event(const std::string& name, const std::function<void(sio::event&)>& function) : name_(name), function_(function)
+o_event::o_event(std::string name, const std::function<void(sio::event&)>& function) : name_(std::move(name)), function_(function)
 {
-    o_client::get()->event_register(*this);
+    o_client::get()->event_register(this);
 }
