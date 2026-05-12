@@ -14,12 +14,6 @@ o_client::o_client() : client_()
 {
     events_ = std::vector<o_event*>();
 
-    #ifdef _DEBUG
-    client_.connect("http://127.0.0.1:3000");
-    #else
-    client_.connect("https://aaronwilk.dev:3000");
-    #endif
-
     client_.socket()->on_any([this](sio::event& e) -> void
     {
         for (auto& event : events_)
@@ -59,24 +53,12 @@ o_client::o_client() : client_()
         ev.put_ack_message(packet);
     });
 
-    //Send initial identify.
-    {
-        SDK::ABrickGameState* state = SDK::ABrickGameState::Get(SDK::UWorld::GetWorld());
+    #ifdef _DEBUG
+    client_.connect("http://127.0.0.1:3000");
+    #else
+    client_.connect("https://aaronwilk.dev:3000");
+    #endif
 
-        if (!state) return; //The message will timeout
-
-        std::string host_identity = "none";
-
-        for (const auto player : state->PlayerArray)
-        {
-            if (reinterpret_cast<SDK::ABrickPlayerState*>(player)->GetAdminRole() == SDK::EAdminRole::Owner)
-            {
-                host_identity = SDK::UBrickStatics::UniqueNetIdToString(player->UniqueId).ToString();
-            }
-        }
-
-        client_.socket()->emit("self-identify", sio::string_message::create(host_identity));
-    }
 }
 
 o_client::~o_client()

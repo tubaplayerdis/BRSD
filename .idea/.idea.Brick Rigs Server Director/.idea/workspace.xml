@@ -7,12 +7,7 @@
     <option name="flavorId" value="CMakePlainProjectFlavor" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6bb5657-266a-4372-9b1f-80a00cd11c3c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Brick Rigs Server Director/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Brick Rigs Server Director/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Brick Rigs Server Director/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/o_client.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/o_client.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/o_client.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/o_client.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="a6bb5657-266a-4372-9b1f-80a00cd11c3c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
