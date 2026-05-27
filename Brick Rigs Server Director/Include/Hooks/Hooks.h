@@ -12,15 +12,6 @@
 
 #pragma once
 
-//Include all hook files
-#include "General/AddChatMessage.h"
-#include "General/BeginPlay.h"
-#include "General/LoadMap.h"
-#include "General/OnPlayerJoined.h"
-#include "UI/OpenMenu.h"
-#include "General/StartPlay.h"
-#include "Vehicle/RestartPlayerAt.h"
-
 namespace hooks
 {
 	bool InitHooks();

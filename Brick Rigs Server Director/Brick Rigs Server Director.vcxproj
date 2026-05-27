@@ -534,14 +534,7 @@
   <ItemGroup>
     <ClInclude Include="Include\Functions\Functions.h" />
     <ClInclude Include="Include\Global\Global.h" />
-    <ClInclude Include="Include\Hooks\General\AddChatMessage.h" />
-    <ClInclude Include="Include\Hooks\General\BeginPlay.h" />
-    <ClInclude Include="Include\Hooks\General\LoadMap.h" />
-    <ClInclude Include="Include\Hooks\General\OnPlayerJoined.h" />
-    <ClInclude Include="Include\Hooks\General\StartPlay.h" />
     <ClInclude Include="Include\Hooks\Hooks.h" />
-    <ClInclude Include="Include\Hooks\UI\OpenMenu.h" />
-    <ClInclude Include="Include\Hooks\Vehicle\RestartPlayerAt.h" />
     <ClInclude Include="Include\Logging\logger.h" />
     <ClInclude Include="Include\Logging\LoggerStream.h" />
     <ClInclude Include="Include\Main.h" />
@@ -556,6 +549,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="functions.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Include\Hooks\General\" />
+    <Folder Include="Include\Hooks\UI\" />
+    <Folder Include="Include\Hooks\Vehicle\" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -7,7 +7,24 @@
     <option name="flavorId" value="CMakePlainProjectFlavor" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6bb5657-266a-4372-9b1f-80a00cd11c3c" name="Changes" comment="" />
+    <list default="true" id="a6bb5657-266a-4372-9b1f-80a00cd11c3c" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Brick Rigs Server Director/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Brick Rigs Server Director/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Brick Rigs Server Director.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Brick Rigs Server Director.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/AddChatMessage.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/BeginPlay.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/LoadMap.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/OnPlayerJoined.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/General/StartPlay.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/Hooks.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/Hooks.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/UI/OpenMenu.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/Vehicle/RestartPlayerAt.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Hooks/Hooks.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Hooks/Hooks.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Include/Hooking/Hook.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Include/Hooking/Hook.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Include/Utils/GameFunctions.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Include/Utils/GameFunctions.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Include/Utils/Offsets.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Include/Utils/Offsets.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Include/Utils/UtilitiesImplementation.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Include/Utils/UtilitiesImplementation.hpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +91,8 @@
       <workItem from="1777942897721" duration="125000" />
       <workItem from="1778114229660" duration="567000" />
       <workItem from="1778362776285" duration="1277000" />
-      <workItem from="1778429878028" duration="689000" />
+      <workItem from="1778429878028" duration="966000" />
+      <workItem from="1779907109749" duration="2984000" />
     </task>
     <task id="LOCAL-00001" summary="untracked files">
       <option name="closed" value="true" />
@@ -100,7 +118,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777607561161</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Start change to self identification pattern">
+      <option name="closed" value="true" />
+      <created>1778430837002</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1778430837002</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,7 +139,8 @@
     <MESSAGE value="untracked files" />
     <MESSAGE value="Remove old mod implement networking basics on new mod" />
     <MESSAGE value="Get first working model!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Get first working model!" />
+    <MESSAGE value="Start change to self identification pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start change to self identification pattern" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

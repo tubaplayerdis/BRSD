@@ -16,7 +16,6 @@
 #include "../Include/Hooks/Hooks.h"
 #include "../Include/Global/Global.h"
 #include "../Include/Modules/Messages.h"
-#include "../Include/Hooks/General/AddChatMessage.h"
 #include "../Include/Logging/logger.h"
 #include "../Include/Modules/o_client.h"
 

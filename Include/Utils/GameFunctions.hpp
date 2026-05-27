@@ -12,26 +12,18 @@
 
 #pragma once
 #include <stdexcept>
+#include "../Hooking/Signature.hpp"
 #include <windows.h>
 #include <libloaderapi.h>
 #include <cstdlib>
 #include <utility>
 #include <psapi.h>
 
-/// Current module base address.
-#define BASE ((unsigned long long)GetModuleHandle(nullptr))
-
 /// Call an internal game function using its address.
 /// @param addr Address of the function.
 /// @param sig Signature of the function
 /// @param ... Arguments to pass
 #define CALL_GAME_FUNCTION(addr, sig, ...) ( (reinterpret_cast<sig>(addr))(__VA_ARGS__) )
-
-/// Resolve a signature to an address. Uses the format: "48 89 7C 24 ?? 41 56 48 83 EC ?? 48 8B FA 4C 8B F1 E8 ?? ?? ?? ??"
-/// @note THIS WILL NOT WORK IF A HOOK HAS BEEN REGISTERED FOR THIS FUNCTION BEFOREHAND. Use the CallOriginal() function on the hook.
-/// @param signature signature to resolve
-/// @return address of the function representing the signature. 0 if not found.
-unsigned long long ResolveSignature(const char* signature);
 
 /// Call an internal game function using its address.
 /// @tparam TRet Return type of the function
@@ -58,8 +50,24 @@ TRet CallGameFunction(unsigned long long addr, TArgs... args)
 template<typename TRet, typename... TArgs>
 TRet CallGameFunction(const char* signature, TArgs... args)
 {
-    unsigned long long addr = ResolveSignature(signature);
+    unsigned long long addr = Signature(signature).GetPtr();
     if (addr == 0) throw std::runtime_error(signature);
+    return CallGameFunction<TRet, TArgs...>(addr, args...);
+}
+
+/// Call an internal game function using its signature. WILL NOT WORK IF A HOOK IS HOOKING THE DESIRED FUNCTION.
+/// @note THIS WILL NOT WORK IF A HOOK HAS BEEN REGISTERED FOR THIS FUNCTION BEFOREHAND. Use the CallOriginal() function on the hook.
+/// @tparam TRet Return type of the function
+/// @tparam TArgs Argument types of the function
+/// @param signature Signature of the function.
+/// @param args Arguments to pass
+/// @return TRet
+/// @throws runtime_error The signature as a runtime error when the signature function is not found.
+template<typename TRet, typename... TArgs>
+TRet CallGameFunction(Signature& signature, TArgs... args)
+{
+    unsigned long long addr = signature.GetPtr();
+    if (addr == 0) throw std::runtime_error(signature.GetSig());
     return CallGameFunction<TRet, TArgs...>(addr, args...);
 }
 

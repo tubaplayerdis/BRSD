@@ -18,8 +18,8 @@
 //Version of Brick Rigs the SDK is mapped to.
 
 #define MAPPED_SDK_VERSION_RELEASE 1
-#define MAPPED_SDK_VERSION_MAJOR 8
-#define MAPPED_SDK_VERSION_MINOR 4
+#define MAPPED_SDK_VERSION_MAJOR 10
+#define MAPPED_SDK_VERSION_MINOR 7
 
 /*
 * This file is used to store various information regarding non-sdk functions/hooks so that when an update rolls around it is easier to update the information
