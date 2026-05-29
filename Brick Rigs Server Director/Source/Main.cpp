@@ -25,10 +25,8 @@ using namespace Statics;
 
 #ifdef _DEBUG
 #define UninjectPress() GetAsyncKeyState(VK_DIVIDE) & 1
-#define TogglePress() GetAsyncKeyState(VK_MULTIPLY) & 1
 #else
 #define UninjectPress() (IsActiveWindow() && (GetAsyncKeyState(VK_CONTROL) & PRESSED) && (GetAsyncKeyState('U') & PRESSED))
-#define TogglePress() (IsActiveWindow() && (GetAsyncKeyState(VK_CONTROL) & PRESSED) && (GetAsyncKeyState('T') & PRESSED))
 #endif
 
 #define ContinuePress() (IsActiveWindow() && (GetAsyncKeyState(VK_RETURN) & 1))

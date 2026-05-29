@@ -105,8 +105,6 @@ void o_client::event_register(o_event* e)
 
 void o_client::connect()
 {
-    std::cout << "Attempting Connection!" << std::endl;
-
     if (!Statics::IsGameValid() || !Statics::IsHost()) return;
 
     #ifdef _DEBUG
@@ -114,14 +112,10 @@ void o_client::connect()
     #else
         client_.connect("https://aaronwilk.dev:3000");
     #endif
-
-    std::cout << "Connected!" << std::endl;
 }
 
 void o_client::disconnect()
 {
-    std::cout << "Attempting Disconnection!" << std::endl;
-
     if (!client_.opened()) return;
     client_.sync_close();
 }

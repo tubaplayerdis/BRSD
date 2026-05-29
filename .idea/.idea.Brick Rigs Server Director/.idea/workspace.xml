@@ -8,19 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6bb5657-266a-4372-9b1f-80a00cd11c3c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Brick Rigs Server Director/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Brick Rigs Server Director/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Functions/Functions.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Functions/Functions.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Global/Global.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Global/Global.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/Hooks.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Hooks/Hooks.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/o_client.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Modules/o_client.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Utils/Offsets.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Utils/Offsets.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Utils/PlayerInfo.h" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Include/Utils/PlayerInfo.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Global/Global.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Global/Global.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Hooks/Hooks.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Hooks/Hooks.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/Messages.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/Messages.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/o_client.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Brick Rigs Server Director/Source/Modules/o_client.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Include/Hooking/Hook.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/Include/Hooking/Hook.hpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +88,7 @@
       <workItem from="1779985955391" duration="1026000" />
       <workItem from="1779987000393" duration="676000" />
       <workItem from="1780004804576" duration="634000" />
-      <workItem from="1780062635906" duration="11676000" />
+      <workItem from="1780062635906" duration="12840000" />
     </task>
     <task id="LOCAL-00001" summary="untracked files">
       <option name="closed" value="true" />
@@ -141,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1779910263716</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add full guild association system&#10;Change socket connections to use auto connect disconnect on server start/end&#10;Change code to be more robust">
+      <option name="closed" value="true" />
+      <created>1780087183341</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1780087183341</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,7 +164,8 @@
     <MESSAGE value="Get first working model!" />
     <MESSAGE value="Start change to self identification pattern" />
     <MESSAGE value="lean down" />
-    <option name="LAST_COMMIT_MESSAGE" value="lean down" />
+    <MESSAGE value="Add full guild association system&#10;Change socket connections to use auto connect disconnect on server start/end&#10;Change code to be more robust" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add full guild association system&#10;Change socket connections to use auto connect disconnect on server start/end&#10;Change code to be more robust" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
