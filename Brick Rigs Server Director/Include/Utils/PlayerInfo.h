@@ -11,6 +11,8 @@
 /*----------------------------------------------------------------------------*/
 
 #pragma once
+#include <SDK/BrickRigs_classes.hpp>
+#include "../Global/Global.h"
 #include "string"
 
 struct PlayerInfo
@@ -28,29 +30,33 @@ struct PlayerInfo
 	bool operator==(const PlayerInfo& other) const {
 		return other.name == name;
 	}
-};
 
-struct BlockedPlayer
-{
-	PlayerInfo Blocker;
-	PlayerInfo Blocked;
-
-	BlockedPlayer() {
-		Blocker = PlayerInfo();
-		Blocked = PlayerInfo();
+	SDK::ABrickPlayerController* GetController() const
+	{
+		return GetBrickPlayerControllerFromName(name);
 	}
 
-	BlockedPlayer(std::string blocker, std::string blocked) {
-		Blocker = PlayerInfo(blocker);
-		Blocked = PlayerInfo(blocked);
+	SDK::ABrickCharacter* GetCharacter() const
+	{
+		return reinterpret_cast<SDK::ABrickCharacter*>(GetBrickPlayerControllerFromName(name)->GetPlayerCharacter());
 	}
 
-	BlockedPlayer(PlayerInfo blocker, PlayerInfo blocked) {
-		Blocker = PlayerInfo(blocker);
-		Blocked = PlayerInfo(blocked);
+	SDK::ABrickPlayerState* GetPlayerState() const
+	{
+		return reinterpret_cast<SDK::ABrickPlayerState*>(GetBrickPlayerControllerFromName(name)->PlayerState);
 	}
 
-	bool operator==(const BlockedPlayer& other) const {
-		return (Blocker == other.Blocker && Blocked == other.Blocked);
+	static PlayerInfo GetPlayerInfoFromController(SDK::ABrickPlayerController* controller)
+	{
+		if (controller == nullptr) return PlayerInfo();
+		PlayerInfo ret = PlayerInfo();
+		SDK::ABrickPlayerState* state = static_cast<SDK::ABrickPlayerState*>(controller->PlayerState);
+		ret.name = state->GetPlayerNameText().ToString();
+		return ret;
+	}
+
+	static PlayerInfo GetPlayerInfoFromState(SDK::ABrickPlayerState* State)
+	{
+		return GetPlayerInfoFromController(GetBrickPlayerControllerFromID(std::to_string(State->PlayerId)));
 	}
 };

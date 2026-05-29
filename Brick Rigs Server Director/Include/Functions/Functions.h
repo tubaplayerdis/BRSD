@@ -21,8 +21,3 @@ namespace FBrickChatMessage
 		return CallGameFunction<void, SDK::FBrickChatMessage*, SDK::EChatMessageType, SDK::ABrickPlayerController*>(FFBrickChatMessageConstructor, This, ChatType, PC);
 	}
 }
-
-inline void SynchronizeProperties(SDK::UBrickBorder* This)
-{
-	return CallGameFunction<void, SDK::UBrickBorder*>(UBRICKBORDER_SYNCHRONIZEPROPERTIES, This);
-}

@@ -19,7 +19,7 @@
 #include "../Include/Logging/logger.h"
 #include "../Include/Modules/o_client.h"
 
-using namespace global;
+using namespace Statics;
 
 #define PRESSED 0x8000
 
@@ -39,14 +39,7 @@ void MainLoop()
 
 	std::cout << reinterpret_cast<const char*>(CommandLineLogo) << std::endl;
 
-	if (!hooks::InitHooks()) {
-		if (MessageBox(GetActiveWindow(), L"Failed To Hook Critical Functions. Uninjecting BRSD. Would you like to look at the crash log?", L"Uninjecting BRSD", MB_YESNO) == IDYES) hooks::OpenCrashFile();
-		return;
-	}
-
-	global::pointers::InitPointers();
-
-	hooks::EnableHooks();
+	EnableHooks();
 
 	auto client = o_client::get();
 
@@ -64,11 +57,9 @@ void MainLoop()
 	}
 
 
-	hooks::DestroyHookObjects();
+	DestroyHooks();
 
 	MessageHost("Uninjecting BRSD!");
-
-	Notification(L"Uninjecting BRSD!", 9);
 
 	DestroyLogging();
 }

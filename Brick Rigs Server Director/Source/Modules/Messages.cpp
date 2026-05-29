@@ -19,8 +19,8 @@
 
 void messages::sendUserSpecificMessage(PlayerInfo info, std::string message)
 {
-    if (!global::isMapValid()) return;
-    SDK::FText Fmessage = TEXT(global::to_wstring_n(message).c_str());
+    if (!Statics::IsGameValid()) return;
+    SDK::FText Fmessage = TEXT(Statics::to_wstring_n(message).c_str());
     SDK::FBrickChatMessage SMessage;
     SDK::ABrickPlayerController* cont = GetBrickPlayerControllerFromName(info.name);
     if (cont != nullptr) {
@@ -35,7 +35,7 @@ void messages::sendUserSpecificMessage(PlayerInfo info, std::string message)
     else {
         auto PlayerController = GetBrickPlayerController();
         if (PlayerController == nullptr) return;
-        SDK::FText FmessageN = SDK::UKismetTextLibrary::Conv_StringToText(SDK::UKismetStringLibrary::Concat_StrStr(UC::FString(L"Message Failed To Send To: "), UC::FString(global::to_wstring_n(info.name).c_str())));
+        SDK::FText FmessageN = SDK::UKismetTextLibrary::Conv_StringToText(SDK::UKismetStringLibrary::Concat_StrStr(UC::FString(L"Message Failed To Send To: "), UC::FString(Statics::to_wstring_n(info.name).c_str())));
         auto SMessageN = SDK::FBrickChatMessage();
         SMessageN.TextOption = FmessageN;
         PlayerController->ClientReceiveChatMessage(SMessageN);
@@ -44,8 +44,8 @@ void messages::sendUserSpecificMessage(PlayerInfo info, std::string message)
 
 void messages::sendUserSpecificMessageWithContext(SDK::ABrickPlayerController* cont, std::string message, SDK::EChatContext context, const wchar_t* sender)
 {
-    if (!global::isMapValid()) return;
-    SDK::FText Fmessage = TEXT(global::to_wstring_n(message).c_str());
+    if (!Statics::IsGameValid()) return;
+    SDK::FText Fmessage = TEXT(Statics::to_wstring_n(message).c_str());
     SDK::FBrickChatMessage SMessage;
     if (cont != nullptr) {
         FBrickChatMessage::FBrickChatMessageConstructor(&SMessage, SDK::EChatMessageType::Message, cont);
@@ -60,8 +60,8 @@ void messages::sendUserSpecificMessageWithContext(SDK::ABrickPlayerController* c
 
 void messages::sendUserSpecificMessageWithContext(PlayerInfo info, std::string message, SDK::EChatContext context, const wchar_t* sender)
 {
-    if (!global::isMapValid()) return;
-    SDK::FText Fmessage = TEXT(global::to_wstring_n(message).c_str());
+    if (!Statics::IsGameValid()) return;
+    SDK::FText Fmessage = TEXT(Statics::to_wstring_n(message).c_str());
     SDK::FBrickChatMessage SMessage;
     SDK::ABrickPlayerController* cont = GetBrickPlayerControllerFromName(info.name);
     if (cont != nullptr) {
@@ -76,7 +76,7 @@ void messages::sendUserSpecificMessageWithContext(PlayerInfo info, std::string m
     else {
         auto PlayerController = GetBrickPlayerController();
         if (PlayerController == nullptr) return;
-        SDK::FText FmessageN = SDK::UKismetTextLibrary::Conv_StringToText(SDK::UKismetStringLibrary::Concat_StrStr(UC::FString(L"Message Failed To Send To: "), UC::FString(global::to_wstring_n(info.name).c_str())));
+        SDK::FText FmessageN = SDK::UKismetTextLibrary::Conv_StringToText(SDK::UKismetStringLibrary::Concat_StrStr(UC::FString(L"Message Failed To Send To: "), UC::FString(Statics::to_wstring_n(info.name).c_str())));
         auto SMessageN = SDK::FBrickChatMessage();
         SMessageN.TextOption = FmessageN;
         PlayerController->ClientReceiveChatMessage(SMessageN);
@@ -85,13 +85,13 @@ void messages::sendUserSpecificMessageWithContext(PlayerInfo info, std::string m
 
 void messages::sendMessageAdmin(std::string message)
 {
-    if (!global::isMapValid()) return;
-    sendUserSpecificMessageWithContext(GetPlayerInfoFromController(GetBrickPlayerController()), message, SDK::EChatContext::Admin, BRSD);
+    if (!Statics::IsGameValid()) return;
+    sendUserSpecificMessageWithContext(PlayerInfo::GetPlayerInfoFromController(GetBrickPlayerController()), message, SDK::EChatContext::Admin, BRSD);
 }
 
 void messages::sendMessageToAdmins(std::string message)
 {
-    if (!global::isMapValid()) return;
+    if (!Statics::IsGameValid()) return;
     for (SDK::APlayerState* astate : GetBrickGameState()->PlayerArray)
     {
         SDK::ABrickPlayerState* state = static_cast<SDK::ABrickPlayerState*>(astate);

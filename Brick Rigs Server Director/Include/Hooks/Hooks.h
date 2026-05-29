@@ -12,13 +12,12 @@
 
 #pragma once
 
-namespace hooks
-{
-	bool InitHooks();
+#include <Hooking/Hook.hpp>
+#include <BR-SDK.hpp>
 
-	void EnableHooks();
+extern Hook<void(SDK::ABrickGameSession*, const SDK::FBrickChatMessage&)> AddChatMessageHook;
+extern Hook<void(SDK::UWorld*)> BeginPlayHook;
+extern Hook<void(SDK::UWorld*, bool, bool, SDK::UWorld*)> CleanUpWorldInternalHook;
 
-	void DestroyHookObjects();
-
-	void OpenCrashFile();
-}
+void EnableHooks();
+void DestroyHooks();

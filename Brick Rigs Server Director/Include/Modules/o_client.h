@@ -46,5 +46,8 @@ public:
 
     static o_client* get();
 
+    void connect();
+    void disconnect();
+
     void message_emit(std::string const& name, sio::message::list const& msglist = nullptr, std::function<void (sio::message::list const&)> const& ack = nullptr);
 };

@@ -5,6 +5,10 @@
 #include <SDK/Engine_classes.hpp>
 #include <socketio/sio_client.h>
 
+#include "../../Include/Modules/Messages.h"
+
+#include <sstream>
+
 namespace
 {
     std::unique_ptr<o_client> base;
@@ -28,9 +32,10 @@ o_client::o_client() : client_()
 
     client_.socket()->on("identify", [&](sio::event& ev)
     {
+
         SDK::ABrickGameState* state = SDK::ABrickGameState::Get(SDK::UWorld::GetWorld());
 
-        if (!state) return; //The message will timeout
+        if (!state) return; //The message will time out
 
         std::string host_identity = "None";
         std::string host_name = "None";
@@ -53,16 +58,37 @@ o_client::o_client() : client_()
         ev.put_ack_message(packet);
     });
 
-    #ifdef _DEBUG
-    client_.connect("http://127.0.0.1:3000");
-    #else
-    client_.connect("https://aaronwilk.dev:3000");
-    #endif
+    client_.socket()->on("guild_associate", [&](sio::event& ev)
+    {
+        const sio::message::ptr res_false = sio::bool_message::create(false);
+        const sio::message::ptr res_true = sio::bool_message::create(true);
 
+        const sio::message::list& args = ev.get_messages();
+
+        if (args.size() < 2)
+        {
+            ev.put_ack_message(res_false);
+            return;
+        }
+
+        std::stringstream stream;
+        stream << "Would you like to associate this Brick Rigs Server with: \n" << args[0]->get_string() << " (ServerID: " << args[1]->get_string() << ")";
+
+        if (MessageBoxA(nullptr, stream.str().c_str(), "Brick Rigs Server Director", MB_YESNO) == IDYES)
+        {
+            ev.put_ack_message(res_true);
+            return;
+        }
+
+        ev.put_ack_message(res_false);
+    });
+
+    connect();
 }
 
 o_client::~o_client()
 {
+    client_.clear_socket_listeners();
     client_.sync_close();
 }
 
@@ -75,6 +101,29 @@ o_client* o_client::get()
 void o_client::event_register(o_event* e)
 {
     events_.push_back(e);
+}
+
+void o_client::connect()
+{
+    std::cout << "Attempting Connection!" << std::endl;
+
+    if (!Statics::IsGameValid() || !Statics::IsHost()) return;
+
+    #ifdef _DEBUG
+        client_.connect("http://127.0.0.1:3000");
+    #else
+        client_.connect("https://aaronwilk.dev:3000");
+    #endif
+
+    std::cout << "Connected!" << std::endl;
+}
+
+void o_client::disconnect()
+{
+    std::cout << "Attempting Disconnection!" << std::endl;
+
+    if (!client_.opened()) return;
+    client_.sync_close();
 }
 
 void o_client::message_emit(std::string const& name, sio::message::list const& msglist, std::function<void (sio::message::list const&)> const& ack)
